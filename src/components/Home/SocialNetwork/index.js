@@ -3,11 +3,11 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 // images
-import facebook from '../../../assets/images/Facebook.png';
-import twitch from '../../../assets/images/Twitch.png';
-import twitter from '../../../assets/images/twitter.png';
-import youtube from '../../../assets/images/Youtube.png';
-import instagram from '../../../assets/images/Instagram.png';
+import facebook from '../../../assets/images/socialNetwork/Facebook.png';
+import twitch from '../../../assets/images/socialNetwork/Twitch.png';
+import twitter from '../../../assets/images/socialNetwork/twitter.png';
+import youtube from '../../../assets/images/socialNetwork/Youtube.png';
+import instagram from '../../../assets/images/socialNetwork/Instagram.png';
 import './socialNetwork.scss';
 
 const SocialNetwork = () => {

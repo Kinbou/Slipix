@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import discord from '../../../assets/images/Discord.png';
+import discord from '../../../assets/images/socialNetwork/Discord.png';
 // import utip from '../../../assets/images/Utip.png';
 import discordTitle from '../../../assets/images/discordTitle.png';
 import teamSlip from '../../../assets/images/teamSlip.png';

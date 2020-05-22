@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
-import youtube from '../../assets/images/YoutubeSLIPIX.png';
-import twitch from '../../assets/images/TwitchSlipixSlide.png';
+import youtube from '../../assets/images/banner/YoutubeSLIPIX.png';
+import twitch from '../../assets/images/banner/TwitchSlipixSlide.png';
 import coaching from '../../assets/images/CoachingSLIPIX.png';
 
 import './slideshow.scss';

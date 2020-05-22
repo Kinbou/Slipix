@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import SocialNetwork from '../Home/SocialNetwork';
 // images
 import refuseResist from '../../assets/images/refuseResist.png';
-import coachingSlipix from '../../assets/images/coachingSlipix.jpg';
+import coachingSlipix from '../../assets/images/picturesYoutube/coachingSlipix.jpg';
 import './presentation.scss';
 
 const Presentation = () => (
   <div className="presentation">
-    <h1>Présentation</h1>
+    <h1 className="globalTitle-page">Présentation</h1>
     <h2>Salut c'est <span className="presentation__slipix">Slipix</span>  Bienvenue sur mon site Officiel !</h2>
     <img className="presentation__coaching" src={coachingSlipix} alt="" />
     <p>Joueur de League of Legends depuis 2014, Coach <span className="presentation__slipix">Mental/Stratégique</span> depuis 2018.</p>
