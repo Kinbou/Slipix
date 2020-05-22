@@ -1,0 +1,89 @@
+.socialNetwork--home {
+  // margin-top: 1rem;
+  
+  padding: 4rem;
+  .socialNetwork__card {
+    width: 240px;
+    height: 165px;
+    margin: auto;
+    &__cover {
+      &__picture {
+        width: 65%;     
+      }
+    }
+  }  
+}
+
+.socialNetwork--presentation {
+  .socialNetwork__card {
+    width: 140px;
+    height: 100px;
+    // background-color: white;
+    margin: 2rem;
+    &__cover {
+      img {
+        width: 60%;
+
+       }
+       &__twitter {
+         width: 40%;
+       }
+       &__facebook {
+         width: 45%;
+       }
+       &__twitch {
+         width: 47%;
+       }
+    }    
+  }
+}
+
+.socialNetwork {
+  display: flex;
+  flex-direction: initial;
+  justify-content: space-around;
+  &__card {
+    display: flex;
+    transition: 0.3s;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: auto;
+    &:hover {
+    //   transform:scale(1.03);
+    //   transition: .1s;
+    //  -webkit-transform:scale(1.03);
+    //  -moz-transform:scale(1.03);
+    //  -ms-transform:scale(1.03);
+    //  -o-transform:scale(1.03);
+ 
+    //  -webkit-box-shadow: 20px 58px 40px -56px black;
+    //  -moz-box-shadow: 0px 58px 36px -56px black;
+    //  box-shadow: 0px 58px -36px -56px black;
+    //  -webkit-transition: .3s ease-in-out;
+    //  -moz-transition: .3s ease-in-out;
+    //  -ms-transition: .3s ease-in-out;
+    //  -o-transition: .3s ease-in-out;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    // box-shadow: 10px 10px 5px black;
+    box-shadow: 1px 1px 12px black;
+    }
+  }
+}
+
+  //   background:
+  //   linear-gradient(
+  //     to right, #4267b2, #6440a5,#6440a5, #fd0100,#1da1f2,#fd0100,#6440a5, #6440a5,#4267b2
+  //   )
+  //   no-repeat top,
+  //   linear-gradient(
+  //     to right, #4267b2, #6440a5, #6440a5, #fd0100,#1da1f2,#fd0100,#6440a5,#6440a5,#4267b2
+  //   )
+  //   no-repeat bottom
+  //  ;/* couleur de fond a inclure dans la derniere image/gradient de fond */
+  // background-size:100% 3px;
+  // padding:50px 10px; 

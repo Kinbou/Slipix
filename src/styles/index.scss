@@ -1,0 +1,68 @@
+@import 'reset';
+@import 'vars';
+
+// image
+
+body {
+  //font-family: 'Gotu', sans-serif;
+  // font-family: 'Righteous', cursive;
+  font-family: 'Bebas Neue', cursive;
+  // font-weight: bold;
+  // background-color: #173042;
+}
+main {
+  min-height: calc(100vh - 160px);
+}
+
+.app--home {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.6), rgba(3, 23, 32, 0.6)), url("https://cdn.discordapp.com/attachments/554341007144124416/710470768802136134/faille_de_linvocateur.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+}
+
+.app--presentation {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.2), rgba(3, 23, 32, 0.2)), url("https://cdn.discordapp.com/attachments/554341007144124416/711288671508365352/bar_entre.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+}
+
+.app--news {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundDemacia.jpg);
+ 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+}
+
+.app--tutoriels {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundMont_targon.jpg);
+ 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+
+.app--jungle {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundJungle.jpg);
+ 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+
+/* 
+  // or you can import your own font
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.ttf');
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+*/

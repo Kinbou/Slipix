@@ -1,0 +1,80 @@
+.containerSlide {
+  width: 100%;
+  height: 318px;
+  &__each-slide {
+    &__image {
+      position: relative;
+      max-width: 100%;
+      &__content {
+        line-height: 3em;
+        text-transform: uppercase;
+        h2 {
+          font-size: 2em;
+        }
+        p {
+          font-size: 1.7em;
+        }
+        button {
+          border: none;
+          border-radius: 5px;
+          padding: .5rem .5rem;
+          font-size: 1.4em;
+          margin-top: .5rem;
+        }
+        &__youtube {
+          position: absolute;
+          color: cornsilk;
+          left: calc(29% - 125px);
+          top: calc(40% - 30px);
+          z-index: 2;
+          text-align: center;
+          button {
+            color: red;
+            border: red solid 1px;
+            background-color: transparent;
+            &:hover{
+              color: white;
+              background-color: red;
+            }
+          }
+
+        }
+        &__twitch {
+          position: absolute;
+          color: cornsilk;
+          left: calc(50% - 125px);
+          top: calc(40% - 30px);
+          z-index: 2;
+          text-align: center;
+          button {
+            color: #6340a4;
+            border: #6340a4 solid 1px;
+            background-color: transparent;
+            &:hover{
+              color: white;
+              background-color: #6340a4;
+            }
+          }
+        }
+        &__coaching {
+          position: absolute;
+          color: cornsilk;
+          left: calc(67% - 125px);
+          top: calc(40% - 30px);
+          z-index: 2;
+          font-size: 1.1em;
+          text-align: center;
+          button {
+            color: #7289da;
+            border: #7289da solid 1px;
+            background-color: transparent;
+            &:hover{
+              color: white;
+              background-color: #7289da;
+            }
+          }
+        }
+      }
+    }
+  }
+}

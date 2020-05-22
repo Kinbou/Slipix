@@ -1,0 +1,104 @@
+.home {
+  // margin: 3rem;
+  // margin-top: 3rem;
+  h2 {
+    font-family: 'Squada One', cursive;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 4em;
+    margin-top: 8rem;
+    // padding-bottom: 2rem;
+    color: #ffaa55;
+    text-shadow: 2px 2px  30px black;
+  }
+  &__introduction {
+    width: 100%;
+    // height: 200px;
+    margin: 1px;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    // box-shadow: 0 0 0 8px #192a37;
+    border-radius: 8px;
+    background-color: rgba(28,36,45,0.5);
+    img {
+      width: 6%;
+    }
+    h1 {
+      font-family: 'Squada One', cursive;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 1.3em;
+      padding: 0 2rem;
+      color: #ffaa55;
+      text-shadow: 2px 2px  30px black;
+      margin: auto 0;
+    }
+    p {
+      color: white;
+      text-align: center;
+      font-size: 1.5em;
+    }
+    &__content {
+      margin-top: 6rem;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      &__important {
+        color: #ffaa55;
+      }
+    }  
+  }
+  
+  &__content {
+    font-family: 'Squada One', cursive;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3.5em;
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+    color: #ffaa55;
+    text-shadow: 2px 2px  30px black;
+ 
+  }
+  &__news {
+    margin: auto 10rem;
+    text-align: center;
+    display: block;
+    
+    img {
+      width: 35%;
+      margin: 1.2rem;
+      border-radius: 10px;
+      transition: .3s;
+      border: 2px solid transparent;
+      transition:all .2s ease-in-out;
+      -webkit-box-shadow: 0 28px 16px -26px black;
+      -moz-box-shadow: 0 28px 16px -26px black;
+      box-shadow: 0 28px 16px -26px black;
+      transition:all .6s ease-in-out;
+      -webkit-transition:all .6s ease-in-out;
+      -moz-transition:all .6s ease-in-out;
+      -ms-transition:all .6s ease-in-out;
+      -o-transition:all .6s ease-in-out;
+      &:hover {
+         transform:scale(1.03);
+         transition: .1s;
+        -webkit-transform:scale(1.03);
+        -moz-transform:scale(1.03);
+        -ms-transform:scale(1.03);
+        -o-transform:scale(1.03);
+        -webkit-box-shadow: 0 58px 40px -56px black;
+        -moz-box-shadow: 0 58px 36px -56px black;
+        box-shadow: 0 58px 36px -56px black;
+        -webkit-transition: .3s ease-in-out;
+        -moz-transition: .3s ease-in-out;
+        -ms-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
+        border-color: #80afd1;
+      }
+
+    }
+  }
+}

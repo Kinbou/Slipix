@@ -1,0 +1,98 @@
+.presentation {
+  margin: 5rem 20rem 10rem 20rem;
+  background-color: rgba(35, 22, 4, 0.7);
+  padding: 1rem 5rem;
+  border-radius: 20px;
+  font-size: 1.2em;
+  &__slipix {
+    color: #ff3e29;
+  }
+  &__coaching {
+    display: block;
+    width: 50%;
+    margin: 3rem auto;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px rgba(35, 22, 4, 1);
+  }
+  &__but {
+    line-height: 3.5em;
+  }
+  &__content__refuseResist {
+    // line-height: 75px;
+    position: relative;
+  }
+  &__link {
+    background-color: crimson;
+    margin-left: 1rem;
+    padding: .5rem;
+    border-radius: 10px;
+    &:hover {
+      border: crimson solid 1px;
+      background-color: white;
+      color: crimson;
+    }
+  }
+  &__image {
+    &__refuseResist {
+      width: 8%;
+      margin: .5rem;
+      position: absolute;
+      bottom: -45px;
+      // right: 0;
+    }
+    &__utip {
+      width: 5%;
+      position: absolute;
+      // left: -20px;
+    }
+  }
+  &__refuseResist {
+    color: #fa2b1c;
+
+  }
+  &__discord {
+    color: #7289da;
+  }
+  &__soloDuo {
+    color: #ff7b4e;
+  }
+  &__ligue {
+    color: #52a4f3;
+  }
+  &__guide {
+    color: forestgreen;
+  }
+  // &__game {
+  //   color: hotpink;
+  // }
+  // &__youtube {
+  // border-bottom:2px solid #ff0000;
+  // text-decoration: underline;
+  // }
+  // &__twitch {
+  //   color: #6444a3;
+  // }
+  h1 {
+    font-family: 'Squada One', cursive;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 6em;
+    padding: 2.5rem;
+    color: #ffaa55;
+    text-shadow: 2px 2px  30px black;
+    margin: 2rem;
+  }
+  h2 {
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 2rem ;
+
+  }
+  color: white;
+  line-height: 2em;
+  p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+}

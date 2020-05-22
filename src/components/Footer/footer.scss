@@ -1,0 +1,12 @@
+.footer {
+  color: white;
+  height: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: rgba(28,36,45,0.5);
+  p{
+    margin: auto;
+    font-size: .9rem;
+  }
+}

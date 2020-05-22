@@ -1,0 +1,75 @@
+.publi {
+  color: white;
+  margin: auto;
+  font-weight: bold;
+  font-size: .8em;
+  &__banner {
+    width: 65%;
+    margin: 2rem auto;
+    height: 260px;
+    padding: 3rem 5rem 3rem 5rem ;
+    display: flex;
+    justify-content: space-between;
+    font-size: 3em;
+    // box-shadow: 0 0 0 8px #192a37;
+    border-radius: 8px;
+    background-color: rgba(28,36,45,0.5);
+    transition:all .2s ease-in-out;
+    // -webkit-box-shadow: 0 28px 16px -26px black;
+    -moz-box-shadow: 0 28px 16px -26px black;
+    // box-shadow: 0 28px 16px -26px black;
+    transition:all .6s ease-in-out;
+    -webkit-transition:all .6s ease-in-out;
+    -moz-transition:all .6s ease-in-out;
+    -ms-transition:all .6s ease-in-out;
+    -o-transition:all .6s ease-in-out;
+    &__left {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      line-height: 1.5em;
+      width: 75%;
+      img {
+        // width: 80%;
+      }
+    }
+    &__right {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      img {
+        width: 60%;
+        text-align: center;
+        margin: auto;
+      }
+      &__picture {
+        // width: 50%;
+        display: flex;
+      }
+    }
+    &:hover {
+      transform:scale(1.03);
+      transition: .1s;
+     -webkit-transform:scale(1.03);
+     -moz-transform:scale(1.03);
+     -ms-transform:scale(1.03);
+     -o-transform:scale(1.03);
+ 
+     -webkit-box-shadow: 0 58px 40px -56px black;
+     -moz-box-shadow: 0 58px 36px -56px black;
+     box-shadow: 0 58px 36px -56px black;
+     -webkit-transition:all .3s ease-in-out;
+     -moz-transition:all .3s ease-in-out;
+     -ms-transition:all .3s ease-in-out;
+     -o-transition:all .3s ease-in-out;
+    }
+  }
+}
+
+.discord {
+  span {
+    color: #7489da;
+  }
+}
