@@ -3,7 +3,10 @@
   background-color: rgba(35, 22, 4, 0.7);
   padding: 1rem 5rem;
   border-radius: 20px;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  h1 {
+    font-size: 4em;
+  }
   &__slipix {
     color: #ff3e29;
   }
@@ -63,30 +66,11 @@
   &__guide {
     color: forestgreen;
   }
-  // &__game {
-  //   color: hotpink;
-  // }
-  // &__youtube {
-  // border-bottom:2px solid #ff0000;
-  // text-decoration: underline;
-  // }
-  // &__twitch {
-  //   color: #6444a3;
-  // }
-  h1 {
-    font-family: 'Squada One', cursive;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 6em;
-    padding: 2.5rem;
-    color: #ffaa55;
-    text-shadow: 2px 2px  30px black;
-    margin: 2rem;
-  }
+
   h2 {
     font-size: 2em;
     text-align: center;
-    padding-bottom: 2rem ;
+    padding: 2rem ;
 
   }
   color: white;

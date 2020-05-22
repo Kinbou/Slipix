@@ -2,21 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // images
-import toplane from '../../assets/images/toplane.png';
-import jungle from '../../assets/images/jungle.png';
-import mid from '../../assets/images/mid.png';
-import adc from '../../assets/images/adc.png';
-import support from '../../assets/images/support.png';
-import titleTuto from '../../assets/images/titleTuto.png';
-import titleTuto2 from '../../assets/images/titleTuto2.png';
+import toplane from '../../assets/images/logoLanes/toplane.png';
+import jungle from '../../assets/images/logoLanes/jungle.png';
+import mid from '../../assets/images/logoLanes/mid.png';
+import adc from '../../assets/images/logoLanes/adc.png';
+import support from '../../assets/images/logoLanes/support.png';
 import './tutoriels.scss';
 
 const Tutoriels = () => (
   <div className="tutoriels">
-    {/* <h1>Tutoriels champions</h1> */}
-    <h1>Tutoriels champions</h1>
-    {/* <img src={titleTuto} alt="" className="" />
-    <img src={titleTuto2} alt="" className="" /> */}
+    <h1 className="globalTitle-page">Tutoriels champions</h1>
     <p>Vous trouverez ici mes tutoriels sur vos champions favoris</p>
     <div className="tutoriels__cards">
       <div className="tutoriels__cards__line tutoriels__cards__line__one">

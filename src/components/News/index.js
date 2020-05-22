@@ -1,13 +1,13 @@
 import React from 'react';
 
 // images
-import Janna from '../../assets/images/JannaForet.jpg';
+import Janna from '../../assets/images/picturesYoutube/JannaForet.jpg';
 import './news.scss';
 
 const News = () => (
 
   <div className="news">
-    <h1>Nouveautés</h1>
+    <h1 className="globalTitle-page">Nouveautés</h1>
     <h3>Vous trouverez ici mes vidéos du moment</h3>
     <div className="news__cards">
       <div className="news__cards__ligne">
