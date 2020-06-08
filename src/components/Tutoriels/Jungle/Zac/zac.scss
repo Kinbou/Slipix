@@ -1,0 +1,171 @@
+.zac {
+  margin: 0 15rem;
+  color: white;
+  text-align: center;
+  &__title {
+    font-family: 'Squada One', cursive;
+    margin: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    font-size: 5em;
+    padding: 1rem;
+    color: #ffaa55;
+    justify-content: center;
+    box-shadow: 0 0 0 8px #192a37;
+    border-radius: 8px;
+    background-color: rgba(28,36,45,0.5);
+    &__zac {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+    }
+    h1 {
+      padding: 0 2rem 0 2rem;
+      text-shadow: 2px 2px  30px black;
+    }
+    img {
+      width: 5%;
+    }
+  }
+  span {
+    color: #ffaa55;
+    // font-size: 1.2em;
+  }
+  h4 {
+    font-family: 'Squada One', cursive;
+    text-transform: uppercase ;
+    margin: 2rem;
+    font-size: 2.7em;
+    color: #ffaa55;
+  }
+  &__definition {
+    font-size: 1.6rem;
+    padding-bottom: 2rem;
+  }
+  h3 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-bottom: 3rem;
+    
+  }
+  &__content {
+   // background-color: rgba(28,36,45,0.6);
+    border-radius: 15px;
+    padding: 0.1rem;
+    &__history {
+      
+      margin-bottom: 4rem;
+      &__content {
+        margin-bottom: 2rem;
+        line-height: 1.2em;
+        text-align: center;
+        font-size: 1.5em;
+        text-transform: none;
+        background-color: rgba(28,36,45,0.9);
+        border-radius: 15px;
+        padding: 2rem;
+      }
+
+    }
+
+    &__skill {
+      width: 80%;
+      margin: auto;
+      &__content {
+        display: flex;
+        background-color: rgba(28,36,45,0.9);
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 1rem 0 1rem 0;
+        justify-content: center;
+        font-size: 1.3em;
+        line-height: 1.2em;
+        &__left {
+          width: 15%;
+          margin: auto;
+        }
+        &__right {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          justify-content: center;
+          width: 85%;
+          &__title {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+    
+    &__asset {
+      margin: 6rem 0 6rem 0;
+      &__list {
+        background-color: rgba(28,36,45,0.9);
+        display: flex;
+        justify-content: center;
+        font-size: 1.3rem;
+        padding: 2rem 2rem 2rem 2rem;
+        text-align: left;
+        width: 80%;
+        border-radius: 15px;
+        margin: auto;
+        line-height: 1.3em;
+        h4 {
+          text-align: center;
+          font-size: 2.1em;
+          margin: 0;
+          
+        }
+        &__left {
+          
+          width: 50%;
+          &__force {
+            color: green;
+          }
+          &__content {
+            padding: 2rem;
+            border-right: 1px solid #ffaa55;
+          }
+        }
+        &__right {
+          padding: 0 0 0 3rem;
+          width: 50%;
+          &__content {
+            padding: 2rem;
+          }
+        }
+      }
+    }
+    &__carry {
+      margin: 2rem;
+      &__content {
+        background-color: rgba(28,36,45,0.9);
+        padding: 2rem;
+        border-radius: 15px;
+        display: flex;
+        font-size: 1.4em;
+        line-height: 1.5em;
+        margin: 3rem;
+        width: 80%;
+        margin: auto;
+        &__left {
+
+
+        }
+        &__right {
+          h6 {
+            font-size: 1.5em;
+            text-decoration: underline;
+            // border-bottom: solid 1px white;
+            padding-bottom: 2rem;
+          }
+          &__content {
+          }
+
+          padding: 1rem;
+          max-width: 50%;
+        }
+      }
+    }
+  }
+}

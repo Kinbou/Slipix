@@ -1,6 +1,8 @@
-.jungle {
+.midlane {
+  h1 {
+    padding-bottom: 3rem;
+  }
   &__breadcrumb {
-    color: white;
     margin: 2rem 3rem;
   }
   &__cards {
@@ -56,5 +58,5 @@
        font-size: 2rem;
      }
   }
-}
+  }
 }

@@ -66,8 +66,7 @@ const Header = () => (
           Présentation
         </NavLink>
         <NavLink
-          to=""
-          target="_blanc"
+          to="/me-soutenir"
           className="header__nav__menu__item"
           activeClassName="header__nav__menu__item--active"
           exact
@@ -83,7 +82,7 @@ const Header = () => (
           Boutique
         </NavLink>
         <NavLink
-          to="/guides"
+          to="/me-contacter"
           className="header__nav__menu__item"
           activeClassName="header__nav__menu__item--active"
           exact

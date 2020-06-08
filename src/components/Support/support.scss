@@ -1,0 +1,82 @@
+.support {
+  color: white;
+  text-align: center;
+  h4 {
+    text-align: center;
+    font-size: 2.5em;
+    padding:2rem  0 4rem 0;
+    color: #ffaa55;
+  }
+  h5 {
+    font-size: 2.5em;
+  }
+  p {
+    font-size: 1.7rem;
+    line-height: 1.3em;
+  }
+  span {
+    color: #ffaa55;
+  }
+  a {
+    background-color: crimson;
+    margin-left: 1rem;
+    padding: .3rem;
+    border-radius: 10px;
+    &:hover {
+      border: crimson solid 1px;
+      background-color: white;
+      color: crimson;
+    }
+  }
+  &__content {
+    margin: 5rem 20rem 10rem 20rem;
+    background-color: rgba(9, 30, 51, 0.7);
+    padding: 1rem 5rem;
+    border-radius: 20px;
+    font-size: 1.1em;
+    &__utip {
+      display: flex;
+      justify-content: center;
+      margin: 4rem 0 2rem 0;
+      &__content {
+        text-align: left;
+        width: 80%;
+        margin: auto;
+      }
+
+      img {
+        width: 8%;
+      }
+    }
+    &__twitch {
+      margin: 6rem 0 2rem 0;
+      img {
+        padding-left: 1rem;
+        width: 8%;
+        border-radius: 5px;
+        
+      }
+      p {
+        text-align: left;
+        width: 80%;
+        margin: 2rem auto;
+      }
+    }
+    &__don {
+      margin: 6rem 0 2rem 0;
+      p {
+        text-align: left;
+        width: 80%;
+        margin: 2rem auto;
+      }
+    }
+    &__social {
+      margin: 6rem 0 2rem 0;
+      p {
+        text-align: left;
+        width: 80%;
+        margin: 2rem auto;
+      }
+    }
+  }
+}

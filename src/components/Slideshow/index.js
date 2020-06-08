@@ -22,24 +22,24 @@ const Slideshow = () => {
           <img src={youtube} alt="youtube" className="containerSlide__each-slide__image" />
           <div className="containerSlide__each-slide__image__content containerSlide__each-slide__image__content__youtube">
             <h2>Rejoins moi sur Youtube !</h2>
-            <p>Une vidéo par semaine</p>
-            <button type="button">Rejoindre</button>
+            <p>Plein de vidéos</p>
+            <button type="button">Cliquez Ici</button>
           </div>
         </div>
         <div className="each-slide">
           <img src={twitch} alt="twitch" className="containerSlide__each-slide__image" />
           <div className="containerSlide__each-slide__image__content containerSlide__each-slide__image__content__twitch">
-            <h2>Rejoins moi sur Twitch !</h2>
-            <p>Une vidéo par semaine</p>
-            <button type="button">Rejoindre</button>
+            <h2>Rejoingnez moi sur Twitch !</h2>
+            <p>Viens discuter avec moi en Live</p>
+            <button type="button">Cliquez Ici</button>
           </div>
         </div>
         <div className="each-slide">
           <img src={coaching} alt="coaching" className="containerSlide__each-slide__image" />
           <div className="containerSlide__each-slide__image__content containerSlide__each-slide__image__content__coaching">
-            <h2>REJOINS LA #TEAMSLIP SUR DISCORD !</h2>
+            <h2>Rejoingnez LA #TEAMSLIP SUR DISCORD !</h2>
             <p>+ de 5000 membres</p>
-            <button type="button">Rejoindre</button>
+            <button type="button">Cliquez Ici</button>
           </div>
         </div>
       </Slide>

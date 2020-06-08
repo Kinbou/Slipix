@@ -15,7 +15,7 @@ const Tutoriels = () => (
     <p>Vous trouverez ici mes tutoriels sur vos champions favoris</p>
     <div className="tutoriels__cards">
       <div className="tutoriels__cards__line tutoriels__cards__line__one">
-        <Link to="/">
+        <Link to="/tutoriels-toplane">
           <div className="tutoriels__cards__card">
             <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Toplane</h3>
             <img src={toplane} alt="" />
@@ -27,7 +27,7 @@ const Tutoriels = () => (
             <img src={jungle} alt="" />
           </div>
         </Link>
-        <Link to="/">
+        <Link to="/tutoriels-midlane">
           <div className="tutoriels__cards__card">
             <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Midlane</h3>
             <img src={mid} alt="" />
