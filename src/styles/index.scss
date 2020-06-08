@@ -47,7 +47,25 @@ main {
 }
 
 .app--jungle {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/backgroundJungle.jpg);
+  background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.7)), url(../assets/images/backgroundPages/backgroundJungle.jpg);
+ 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+
+.app--supportPage {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.6), rgba(3, 23, 32, 0.6)), url(../assets/images/backgroundPages/me-soutenir.jpg);
+ 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+
+.app--contact {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/taverneNight.png);
  
   background-repeat: no-repeat;
   background-attachment: fixed;

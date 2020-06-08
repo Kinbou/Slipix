@@ -1,0 +1,36 @@
+.contact {
+  margin: 5rem 20rem 10rem 20rem;
+  background-color:rgba(0, 0, 0, 0.7);
+  padding: 1rem 5rem;
+  border-radius: 20px;
+  color: white;
+  span {
+    color: #ffaa55;
+  }
+  &__content {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    &__title {
+      font-size: 1.3em;
+      padding-bottom: .5rem;
+    }
+    &__refuseResist {
+      position: relative;
+      img {
+        width: 6%;
+        width: 8%;
+        margin: .5rem;
+        position: absolute;
+        bottom: 50px;
+      }
+    }
+    h4 {
+      margin: auto;
+      font-size: 1.5em;
+      text-align: center;
+      padding: 2rem;
+      color:#ff3e29;
+    }
+
+  }
+}
