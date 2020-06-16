@@ -17,7 +17,7 @@
   span {
     color: #ffaa55;
   }
-  a {
+  .link {
     background-color: crimson;
     margin-left: 1rem;
     padding: .3rem;
@@ -76,6 +76,32 @@
         text-align: left;
         width: 80%;
         margin: 2rem auto;
+      }
+      &__picture {
+        display: flex;
+  flex-direction: initial;
+  justify-content: space-around;
+        &__card {
+          padding: 1rem;
+          width: 40%;
+          display: flex;
+          transition: 0.3s;
+          flex-direction: column;
+          justify-content: space-evenly;
+          text-align: center;
+          margin: auto;
+          background-color: transparent;
+          &:hover {
+          -o-transition:.5s;
+          -ms-transition:.5s;
+          -moz-transition:.5s;
+          -webkit-transition:.5s;
+          transition:.5s;
+          // box-shadow: 10px 10px 5px black;
+          box-shadow: 1px 1px 12px black;
+          }
+        
+        }
       }
     }
   }

@@ -2,6 +2,18 @@
   margin: 0 15rem;
   color: white;
   text-align: center;
+  a {
+    // color: #ffaa55;
+    a:hover {
+      color: #ffaa55;
+      text-decoration: underline;
+    }
+  }
+  &__breadcrumb {
+    color: white;
+    margin: 2rem 3rem;
+    text-align: left;
+  }
   &__title {
     font-family: 'Squada One', cursive;
     margin: 3rem;
