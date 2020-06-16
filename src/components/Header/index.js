@@ -1,10 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from './SlipixIcon.png';
 
 import './header.scss';
-
-console.log(logo);
 
 const Header = () => (
   <header className="header">

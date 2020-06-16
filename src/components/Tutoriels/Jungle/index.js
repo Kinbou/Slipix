@@ -21,19 +21,19 @@ const Jungle = () => (
     <h1 className="globalTitle-page">Tutoriels Jungle</h1>
     <div className="jungle__cards">
       <div className="jungle__cards__line">
-        <Link to="/tutoriels-jungle/zac">
+        <Link to="/tutoriels-champions/jungle/zac">
           <div className="jungle__cards__card">
             <img src={zac} alt="" />
             <h2>Zac</h2>
           </div>
         </Link>
-        <Link to="/tutoriels-jungle/olaf">
+        <Link to="/tutoriels-champions/jungle/olaf">
           <div className="jungle__cards__card">
             <img src={olaf} alt="" />
             <h2>Olaf</h2>
           </div>
         </Link>
-        <Link to="/tutoriels-jungle/ekko">
+        <Link to="/tutoriels-champions/jungle/ekko">
           <div className="jungle__cards__card">
             <img src={ekko} alt="" />
             <h2>Ekko</h2>

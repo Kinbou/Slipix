@@ -3,7 +3,6 @@ import YouTube from 'react-youtube';
 
 class Youtube extends Component {
   videoOnReady(event) {
-    console.log(event.target);
   }
 
   videoOnPlay(event) {
