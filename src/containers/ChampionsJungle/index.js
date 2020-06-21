@@ -4,7 +4,7 @@ import Champion from 'src/components/Tutoriels/Jungle/Zac';
 
 import { fetchAllChampions, fetchOneChampion, stateName } from 'src/actions/champions';
 
-import { fetchOneCompetence, saveCompetence } from 'src/actions/competences';
+import { fetchOneCompetence } from 'src/actions/competences';
 import { setAppLoading } from 'src/actions/global';
 
 const mapStateToProps = (state) => ({

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useParams } from 'react-router-dom';
-import { test } from 'src/utils/selectors';
+import { test, helloworld } from 'src/utils/selectors';
 // import { truncateText, formatDate, slugifyId } from 'src/utils/selectors';
 import Loader from 'src/components/Loader';
 // import YouTube from 'react-youtube';
@@ -112,18 +112,18 @@ const Zac = ({
             <div className="zac__content__asset">
               <div className="zac__content__asset__list">
                 <div className="zac__content__asset__list__left">
-                  <h4 className="zac__content__asset__list__left__force">Forces</h4>
+                  <h4 className="zac__content__asset__list__left__force"><i className="fas fa-plus-circle zac__content__asset__list__left__force__icon" />Forces</h4>
                   <div className="zac__content__asset__list__left__content">
                     {test(champion[0].strength).map((strengths) => (
-                      <p>-{strengths}</p>
+                      <p><span className="dashes">-</span>{strengths}</p>
                     ))}
                   </div>
                 </div>
                 <div className="zac__content__asset__list__right">
-                  <h4>Faiblesses</h4>
+                  <h4><i className="fas fa-minus-circle zac__content__asset__list__right__icon" />Faiblesses</h4>
                   <div className="zac__content__asset__list__right__content">
                     {test(champion[0].weakness).map((weaknes) => (
-                      <p>-{weaknes}</p>
+                      <p><span className="dashes">-</span>{weaknes}</p>
                     ))}
                   </div>
                 </div>
@@ -134,7 +134,7 @@ const Zac = ({
               <h4>Comment Carry avec {champion[0].name} ?</h4>
               <div className="zac__content__carry__content">
                 <div className="zac__content__carry__content__left">
-                  <Youtube videoId={champion[0].youtube_id} SameSite="" />
+                  <Youtube videoId={test(champion[0].youtube_id)[0]} SameSite="" />
                 </div>
                 <div className="zac__content__carry__content__right">
                   <h6>{champion[0].youtube_intro}</h6>
@@ -153,13 +153,15 @@ const Zac = ({
               </div>
             </div>
             {/* Ajout potentiel d'autres vidéo  */}
-            <div className="zac__content__carry">
-              <div className="zac__content__carry__content">
-                <div className="zac__content__carry__content__left">
-                  <Youtube videoId="WhccITr_MPc" SameSite="" />
+            {test(champion[0].youtube_id)[1] && (
+              <div className="zac__content__carry">
+                <div className="zac__content__carry__content">
+                  <div className="zac__content__carry__content__left">
+                    <Youtube videoId={test(champion[0].youtube_id)[1]} SameSite="" />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </>
       )}
@@ -196,6 +198,7 @@ Zac.propTypes = {
       sort_r_content: PropTypes.string.isRequired,
       youtube_id: PropTypes.string.isRequired,
       youtube_acteur: PropTypes.string.isRequired,
+      youtube_intro: PropTypes.string.isRequired,
       strength: PropTypes.string.isRequired,
       weakness: PropTypes.string.isRequired,
     }).isRequired,

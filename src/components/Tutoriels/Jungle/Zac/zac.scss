@@ -1,3 +1,6 @@
+.dashes {
+  padding: 0 .5rem 0 0;
+}
 .zac {
   margin: 0 15rem;
   color: white;
@@ -132,7 +135,12 @@
           
           width: 50%;
           &__force {
-            color: green;
+            &__icon {
+              color: green;
+              font-size: 0.7em;
+              padding-right: 0.5rem;
+            }
+            
           }
           &__content {
             padding: 2rem;
@@ -142,6 +150,11 @@
         &__right {
           padding: 0 0 0 3rem;
           width: 50%;
+          &__icon {
+            color: red;
+            font-size: 0.7em;
+            padding-right: 0.5rem;
+          }
           &__content {
             padding: 2rem;
           }
