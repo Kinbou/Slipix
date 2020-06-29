@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useParams } from 'react-router-dom';
-import { test, helloworld } from 'src/utils/selectors';
+import { test } from 'src/utils/selectors';
 // import { truncateText, formatDate, slugifyId } from 'src/utils/selectors';
 import Loader from 'src/components/Loader';
 // import YouTube from 'react-youtube';
@@ -154,11 +154,9 @@ const Zac = ({
             </div>
             {/* Ajout potentiel d'autres vidéo  */}
             {test(champion[0].youtube_id)[1] && (
-              <div className="zac__content__carry">
-                <div className="zac__content__carry__content">
-                  <div className="zac__content__carry__content__left">
-                    <Youtube videoId={test(champion[0].youtube_id)[1]} SameSite="" />
-                  </div>
+              <div className="zac__content__carry__secondary">
+                <div className="zac__content__carry__secondary__content">
+                  <Youtube videoId={test(champion[0].youtube_id)[1]} SameSite="" />
                 </div>
               </div>
             )}

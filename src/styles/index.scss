@@ -73,6 +73,29 @@ main {
   min-height: 100vh;
 }
 
+.app--guides {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/backgroundGuides.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+.app--guide {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/mentalRage.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+
+.app--roleChampion {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/roleChampion.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+
 .globalTitle-page {
   font-family: 'Squada One', cursive;
   text-transform: uppercase;

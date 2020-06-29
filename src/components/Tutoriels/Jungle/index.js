@@ -8,6 +8,7 @@ import leeSin from '../../../assets/images/championsJungle/lee_sin.jpg';
 import evelynn from '../../../assets/images/championsJungle/evelynn.jpg';
 import xinZhao from '../../../assets/images/championsJungle/xin_zhao.jpg';
 import shaco from '../../../assets/images/championsJungle/shaco.jpg';
+import gragas from '../../../assets/images/championsMidlane/gragas.jpg';
 
 import './jungle.scss';
 
@@ -39,7 +40,7 @@ const Jungle = () => (
             <h2>Ekko</h2>
           </div>
         </Link>
-        <Link to="/tutoriels-jungle/lee-sin">
+        <Link to="/tutoriels-champions/jungle/lee-sin">
           <div className="jungle__cards__card">
             <img src={leeSin} alt="" />
             <h2>Lee Sin</h2>
@@ -48,6 +49,12 @@ const Jungle = () => (
       </div>
 
       <div className="jungle__cards__line">
+        <Link to="/tutoriels-champions/jungle/gragas">
+          <div className="jungle__cards__card">
+            <img src={gragas} alt="" />
+            <h2>Gragas</h2>
+          </div>
+        </Link>
         <div className="jungle__cards__card">
           <img src={evelynn} alt="" />
           <h2>Evelynn</h2>

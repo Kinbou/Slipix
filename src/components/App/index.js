@@ -12,10 +12,13 @@ import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import Presentation from 'src/components/Presentation';
 import News from 'src/components/News';
+import Guides from 'src/components/Guides';
+import Guide from 'src/components/Guides/Guide';
 import Tutoriels from 'src/components/Tutoriels';
 import Support from 'src/components/Support';
 import Contact from 'src/components/Contact';
 import Loader from 'src/components/Loader';
+import RoleChampion from 'src/components/Guides/RoleChampion';
 
 // Lanes
 import Jungle from 'src/components/Tutoriels/Jungle';
@@ -24,6 +27,7 @@ import Toplane from 'src/components/Tutoriels/Toplane';
 
 // Champions Jungle
 import Zac from 'src/containers/ChampionsJungle';
+
 
 // == Composant
 const App = () => {
@@ -38,17 +42,26 @@ const App = () => {
   const isJungle1 = currentPath === '/tutoriels-champions/jungle/zac';
   const isJungle2 = currentPath === '/tutoriels-champions/jungle/olaf';
   const isJungle3 = currentPath === '/tutoriels-champions/jungle/ekko';
+  const isJungle4 = currentPath === '/tutoriels-champions/jungle/lee-sin';
+  const isJungle5 = currentPath === '/tutoriels-champions/jungle/gragas';
   const isSupportPage = currentPath === '/me-soutenir';
   const isContact = currentPath === '/me-contacter';
+  const isGuides = currentPath === '/guides';
+  const isGuide = currentPath === '/guides/mental&rage';
+  const isRoleChampion = currentPath === '/guides/role-champion';
 
   const appClass = classNames('app', {
     'app--home': isHome,
     'app--presentation': isPresentation,
     'app--news': isNews,
     'app--tutoriels': isTutoriel,
-    'app--jungle': isJungle || isJungle1 || isJungle2 || isJungle3,
+    'app--jungle': isJungle || isJungle1 || isJungle2 || isJungle3 || isJungle4 || isJungle5,
     'app--supportPage': isSupportPage,
     'app--contact': isContact,
+    'app--guides': isGuides,
+    'app--guide': isGuide,
+    'app--roleChampion': isRoleChampion,
+    
     // 'app--error': isError,
   });
 
@@ -84,6 +97,15 @@ const App = () => {
           </Route>
           <Route exact path="/tutoriels-toplane">
             <Toplane />
+          </Route>
+          <Route exact path="/guides">
+            <Guides />
+          </Route>
+          <Route exact path="/guides/mental&rage">
+            <Guide />
+          </Route>
+          <Route exact path="/guides/role-champion">
+            <RoleChampion />
           </Route>
           <Route exact path="/me-soutenir">
             <Support />

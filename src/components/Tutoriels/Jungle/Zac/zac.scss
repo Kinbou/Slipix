@@ -191,6 +191,19 @@
           max-width: 50%;
         }
       }
+      &__secondary {
+        margin: 2rem;
+        &__content {
+          background-color: rgba(28,36,45,0.9);
+          padding: 2rem;
+          border-radius: 15px;
+          margin: 3rem;
+          width: 80%;
+          display: flex;
+          justify-content: center;
+          margin: auto;
+        }
+      }
     }
   }
 }
