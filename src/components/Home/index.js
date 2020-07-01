@@ -23,7 +23,7 @@ const Home = () => (
       <p className="home__introduction__content__italic">"La persévérance, c'est ce qui rend l'impossible possible, le possible probable et le probable réalisé." <span className="home__introduction__content__important">-Moine de IONIA</span></p>
     </div>
     <div className="home__content">
-      <p>Découvrez les 4 vidéos tendances</p>
+      <h2>Découvrez les 4 vidéos tendances</h2>
     </div>
     <div className="home__news">
       <img src={championBroken} alt="3 champion broken" />

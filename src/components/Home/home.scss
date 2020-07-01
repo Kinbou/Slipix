@@ -2,14 +2,7 @@
   // margin: 3rem;
   // margin-top: 3rem;
   h2 {
-    font-family: 'Squada One', cursive;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 4em;
-    margin-top: 8rem;
-    // padding-bottom: 2rem;
     color: #ffaa55;
-    text-shadow: 2px 2px  30px black;
   }
   &__introduction {
     width: 100%;
@@ -51,16 +44,10 @@
     }  
   }
   
-  &__content {
-    font-family: 'Squada One', cursive;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 3.5em;
-    padding-top: 7rem;
+  h2 {
     padding-bottom: 2rem;
-    color: #ffaa55;
-    text-shadow: 2px 2px  30px black;
- 
+    // color: #ffaa55;
+    text-transform: uppercase;
   }
   &__news {
     margin: auto 10rem;

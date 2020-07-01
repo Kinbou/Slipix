@@ -25,25 +25,25 @@ const Jungle = () => (
         <Link to="/tutoriels-champions/jungle/zac">
           <div className="jungle__cards__card">
             <img src={zac} alt="" />
-            <h2>Zac</h2>
+            <h3>Zac</h3>
           </div>
         </Link>
         <Link to="/tutoriels-champions/jungle/olaf">
           <div className="jungle__cards__card">
             <img src={olaf} alt="" />
-            <h2>Olaf</h2>
+            <h3>Olaf</h3>
           </div>
         </Link>
         <Link to="/tutoriels-champions/jungle/ekko">
           <div className="jungle__cards__card">
             <img src={ekko} alt="" />
-            <h2>Ekko</h2>
+            <h3>Ekko</h3>
           </div>
         </Link>
         <Link to="/tutoriels-champions/jungle/lee-sin">
           <div className="jungle__cards__card">
             <img src={leeSin} alt="" />
-            <h2>Lee Sin</h2>
+            <h3>Lee Sin</h3>
           </div>
         </Link>
       </div>
@@ -52,23 +52,23 @@ const Jungle = () => (
         <Link to="/tutoriels-champions/jungle/gragas">
           <div className="jungle__cards__card">
             <img src={gragas} alt="" />
-            <h2>Gragas</h2>
+            <h3>Gragas</h3>
           </div>
         </Link>
         <div className="jungle__cards__card">
           <img src={evelynn} alt="" />
-          <h2>Evelynn</h2>
+          <h3>Evelynn</h3>
         </div>
         <Link to="/tutoriels-jungle/lee-sin">
           <div className="jungle__cards__card">
             <img src={xinZhao} alt="" />
-            <h2>Xin Zhao</h2>
+            <h3>Xin Zhao</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/shaco">
           <div className="jungle__cards__card">
             <img src={shaco} alt="" />
-            <h2>Shaco</h2>
+            <h3>Shaco</h3>
           </div>
         </Link>
       </div>

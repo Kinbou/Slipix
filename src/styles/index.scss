@@ -7,6 +7,27 @@ body {
   //font-family: 'Gotu', sans-serif;
   // font-family: 'Righteous', cursive;
   font-family: 'Bebas Neue', cursive;
+  overflow-x: hidden;
+   /* width */
+   &::-webkit-scrollbar {
+    width: 10px;
+    background-color: #ffaa55;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+    // background-color: ;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background-color: #ffaa55;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background-color: #ffaa55t;
+  }
 }
 
 main {
@@ -96,12 +117,36 @@ main {
   min-height: 100vh;
 }
 
+.app--progressLol {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/progressLol.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+
 .globalTitle-page {
   font-family: 'Squada One', cursive;
   text-transform: uppercase;
   text-align: center;
   font-size: 5em;
-  padding: 3rem;
+  padding: 2rem 0 3rem 0;
   color: #ffaa55;
+  text-shadow: 2px 2px  30px black;
+}
+
+.breadcrumb {
+  color: white;
+  margin: 2rem 3rem;
+  text-align: left;
+} 
+
+h2 {
+  font-family: 'Squada One', cursive;
+  text-align: center;
+  font-size: 4em;
+  margin-top: 8rem;
+  // padding-bottom: 2rem;
+  
   text-shadow: 2px 2px  30px black;
 }

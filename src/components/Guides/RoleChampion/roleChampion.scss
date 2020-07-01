@@ -28,21 +28,27 @@
       padding: 0 .8rem 0 .8rem;
     }
   }
-
+  .space {
+    margin-bottom: 4rem;
+  }
   h2 {
     font-family: 'Squada One', cursive;
     text-transform: uppercase;
     text-align: center;
     font-size: 3.5em;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    margin: 2rem 0 5rem 0;
     text-shadow: 2px 2px  30px black;
   }
 
   p {
     line-height: 1.2em;
-    font-size: 2em;
+    font-size: 1.9em;
     margin-bottom: 1rem;
+    // text-shadow: 2px 2px  30px black
+  }
+  ul {
+    border-bottom: yellowgreen 0.5px solid;
+    margin-bottom: 8rem;
   }
   li {
     line-height: 1.2em;
@@ -51,28 +57,25 @@
     margin-bottom: 1rem;
     text-align: left;
     color: #ffaa55;
-    // border-bottom: yellowgreen 0.5px solid;
-    // display: inline-block;
-  }
-  ul {
-    border-bottom: yellowgreen 0.5px solid;
-    margin-bottom: 2rem;
   }
   &__lists {
-    margin-top: 2rem;
-    padding: 4rem;
+    margin: 2rem;
+    padding: 7rem 0 2rem 0;
     font-size: 2.3rem !important;
     border-bottom: yellowgreen 1px solid;
     color: yellowgreen;
   }
   &__betweenYoutube {
     margin: 5rem 0 1rem 0;
+    padding-top: 2rem;
+    border-top: solid 1px red;
   }
   &__introYoutube {
     padding: 4rem 0 1rem 0;
   }
   &__afterYoutube {
-    margin-top: 3rem;
+    margin-top: 4rem;
+    
   }
   &__intro {
     background-color: rgba(28,36,45,0.8);
@@ -113,21 +116,16 @@
     &__title {
       color: #00cefe;
     }
-    &__content {
-
-    }
     &__picture {
       width: 35%;
       border-radius: 15px;
       margin: 4rem;
       filter: drop-shadow(0 0 0.75rem #00cefe);
     }
-
     &__list {
       text-align: left;
       padding-left: 2rem;
     }
-
   }
   &__champion {
     background-color: rgba(28,36,45,0.8);
@@ -139,19 +137,17 @@
       color: red;
     }
     &__picture {
-      width: 35%;
       border-radius: 15px;
       filter: drop-shadow(0 0 0.75rem red);
       margin: 3rem;
+      &__notEasy {
+        width: 35%;
+      }
       &__yasuo {
-        border-radius: 15px;
-        filter: drop-shadow(0 0 0.75rem red);
         margin: 3rem;
       }
       &__troll {
         width: 30%;
-        border-radius: 15px;
-        filter: drop-shadow(0 0 0.75rem red);
         margin: 2rem;
       }
     }

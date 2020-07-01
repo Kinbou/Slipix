@@ -2,25 +2,26 @@ import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 
 class Youtube extends Component {
-  videoOnReady(event) {
-  }
+  // videoOnReady(event) {
+  // }
 
-  videoOnPlay(event) {
-    // event.target.playVideoAt(50);
-    // console.log(event.target.getCurrentTime());
-  }
+  // videoOnPlay(event) {
+  //   // event.target.playVideoAt(50);
+  //   // console.log(event.target.getCurrentTime());
+  // }
 
-  videoStateChange(event) {
-    // console.log(event.target.getCurrentTime);
-  }
+  // videoStateChange(event) {
+  //   // console.log(event.target.getCurrentTime);
+  // }
 
   render() {
     const opts = {
       height: '390',
       width: '640',
+      margin: '1rem',
       playerVars: {
         // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
+        autoplay: 0,
       },
     };
     const { videoId } = this.props;

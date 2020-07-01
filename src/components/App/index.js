@@ -2,12 +2,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Route, useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 // == Import
 import Header from 'src/components/Header';
-// import Slideshow from 'src/components/Slideshow';
-// import Partenaires from 'src/components/Partenaires';
 import Home from 'src/components/Home';
 import Footer from 'src/components/Footer';
 import Presentation from 'src/components/Presentation';
@@ -17,8 +14,8 @@ import Guide from 'src/components/Guides/Guide';
 import Tutoriels from 'src/components/Tutoriels';
 import Support from 'src/components/Support';
 import Contact from 'src/components/Contact';
-import Loader from 'src/components/Loader';
 import RoleChampion from 'src/components/Guides/RoleChampion';
+import ProgressLol from 'src/components/Guides/ProgressLol';
 
 // Lanes
 import Jungle from 'src/components/Tutoriels/Jungle';
@@ -27,7 +24,6 @@ import Toplane from 'src/components/Tutoriels/Toplane';
 
 // Champions Jungle
 import Zac from 'src/containers/ChampionsJungle';
-
 
 // == Composant
 const App = () => {
@@ -49,6 +45,7 @@ const App = () => {
   const isGuides = currentPath === '/guides';
   const isGuide = currentPath === '/guides/mental&rage';
   const isRoleChampion = currentPath === '/guides/role-champion';
+  const isProgressLol = currentPath === '/guides/progresser-sur-leagueOfLegends';
 
   const appClass = classNames('app', {
     'app--home': isHome,
@@ -61,13 +58,12 @@ const App = () => {
     'app--guides': isGuides,
     'app--guide': isGuide,
     'app--roleChampion': isRoleChampion,
-    
+    'app--progressLol': isProgressLol,
     // 'app--error': isError,
   });
 
   return (
     <div className="app">
-      {/* <Slideshow /> */}
       <div className={appClass}>
         <Header />
         <main>
@@ -107,6 +103,9 @@ const App = () => {
           <Route exact path="/guides/role-champion">
             <RoleChampion />
           </Route>
+          <Route exact path="/guides/progresser-sur-leagueOfLegends">
+            <ProgressLol />
+          </Route>
           <Route exact path="/me-soutenir">
             <Support />
           </Route>
@@ -119,9 +118,6 @@ const App = () => {
 
     </div>
   );
-};
-
-App.propTypes = {
 };
 
 // == Export

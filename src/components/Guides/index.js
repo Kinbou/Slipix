@@ -21,10 +21,12 @@ const Guides = () => (
           <img src={role} alt="" />
         </div>
       </Link>
-      <div className="guides__cards__card">
-        <h3>Progresser sur League of Legends</h3>
-        <img src={progression} alt="" />
-      </div>
+      <Link to="/guides/progresser-sur-leagueOfLegends">
+        <div className="guides__cards__card">
+          <h3>Progresser sur League of Legends</h3>
+          <img src={progression} alt="" />
+        </div>
+      </Link>
       <div className="guides__cards__card">
         <h3>Gagner sa lane facilement</h3>
         <img src={laneWin} alt="" />

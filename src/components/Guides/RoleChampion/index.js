@@ -8,7 +8,7 @@ import logoSlipix from '../../../assets/images/roleChampion/slipixLogoRole.png';
 import twistedfast from '../../../assets/images/roleChampion/twistedfast.jpg';
 import superRammus from '../../../assets/images/roleChampion/superRammus.jpg';
 import riverWick from '../../../assets/images/roleChampion/riverWick.jpg';
-import coupleTroll from '../../../assets/images/roleChampion/coupleTroll.jpg';
+import coupleTroll from '../../../assets/images/roleChampion/coupleTroll.png';
 import duplaisir from '../../../assets/images/roleChampion/duplaisir.jpg';
 import pasFacile from '../../../assets/images/roleChampion/pasFacile.jpg';
 import banYasuo from '../../../assets/images/roleChampion/banYasuo.jpg';
@@ -107,20 +107,27 @@ const RoleChampion = () => (
       <p>Le problème c'est que ce côté positif de large choix est également un vice
         pour votre progression dans le jeu.
       </p>
-      <img className="roleChampion__champion__picture" src={pasFacile} alt="" />
-      <p>J'ai souvent remarqué que dans mes coachings, les élèves bas elo (Fer,Bronze,Argent,Or) changeaient très souvent de champions et se lassaient très vite d'un champion. C'est le problème quand on a beaucoup de choix.</p>
-      <p> Par exemple quand on veut acheter une voiture c'est bien + simple de
+      <img className="roleChampion__champion__picture roleChampion__champion__picture__notEasy" src={pasFacile} alt="" />
+      <p>J'ai souvent remarqué que dans mes coachings, les élèves bas elo (Fer,
+        Bronze,Argent,Or) changeaient très souvent de champions et se lassaient
+        très vite d'un champion. C'est le problème quand on a beaucoup de choix.
+      </p>
+      <p className="space">Par exemple quand on veut acheter une voiture c'est bien + simple de
         choisir quand on a le choix entre 5 modèles au lieu de 150.
-      </p><br /><br />
+      </p>
       <p>Maintenant que vous avez trouvé votre rôle (j'espère grâce à mon
         aide) il est temps de choisir votre premier champion !
       </p>
       <p>Ce que je conseille au début, c'est de faire beaucoup de normales games en
         draft et non en classée pour ne pas abîmer votre MMR.
       </p>
-      <p>Jouez sur le même rôle tous les champions que vous trouvez intéressants, c'est vital pour votre préparation aux rankeds.</p><br /><br />
-      <p>Attention de ne pas spam un seul champion sans avoir essayé les autres, il vaut mieux commencer à en découvrir plusieurs avant de faire son ultime choix.</p>
-      <img className="roleChampion__champion__picture__yasuo" src={banYasuo} alt="" />
+      <p className="space">Jouez sur le même rôle tous les champions que vous trouvez intéressants,
+        c'est vital pour votre préparation aux rankeds.
+      </p>
+      <p>Attention de ne pas spam un seul champion sans avoir essayé les autres, il
+        vaut mieux commencer à en découvrir plusieurs avant de faire son ultime choix.
+      </p>
+      <img className="roleChampion__champion__picture roleChampion__champion__picture__yasuo" src={banYasuo} alt="" />
       <p>Si par exemple vous voullez devenir un joueur de toplane, vous pouvez
         essayer plein de champions différents en toplane jusqu'à trouver votre coup de coeur !
       </p>
@@ -154,10 +161,9 @@ const RoleChampion = () => (
       <p className="roleChampion__betweenYoutube">Et pour terminer une liste de champions qui ont atteint de très gros pourcentages de victoires en saison 10 ! Il en faut pour tous les goûts, allez-y les tryharders celle la est pour vous !</p>
       <Youtube videoId="J_WiOifXAv4" SameSite="" />
       <p className="roleChampion__afterYoutube">J'espère que ce guide vous aura aider, à bientot sur la faille la <span className="red">#TEAMSLIP</span></p>
-      <img className="roleChampion__champion__picture__troll" src={trollPicture} alt="" />
+      <img className="roleChampion__champion__picture roleChampion__champion__picture__troll" src={trollPicture} alt="" />
       <p className="roleChampion__intro__best">N'hésitez pas à aller consulter les autres guides de COACH SLIPIX</p>
     </div>
-
   </div>
 );
 

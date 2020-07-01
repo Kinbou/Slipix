@@ -1,8 +1,8 @@
 import React from 'react';
-
-
 import { Link } from 'react-router-dom';
 import Youtube from '../../Tutoriels/Youtube';
+
+// Picture
 import logoSlipix from '../../../assets/images/slipixLogo2.png';
 import cerveau from '../../../assets/images/cerveau.jpg';
 import OMental from '../../../assets/images/0Mental.jpg';
