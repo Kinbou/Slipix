@@ -1,0 +1,20 @@
+.lowElo {
+  color: white;
+  text-align: center;
+  padding: 0 10rem 4rem 10rem;
+  &__breadcrumb {
+    color: white;
+    margin: 2rem 3rem;
+    text-align: left;
+  }
+  .picture {
+    &__logoSlipix {
+      width: 40%;
+    }
+  }
+  p {
+    line-height: 1.2em;
+    font-size: 1.9em;
+    margin-bottom: 1rem;
+  }
+}

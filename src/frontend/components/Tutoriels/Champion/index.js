@@ -5,13 +5,13 @@ import { test } from 'src/utils/selectors';
 // import { truncateText, formatDate, slugifyId } from 'src/utils/selectors';
 import Loader from 'src/frontend/components/Loader';
 // import YouTube from 'react-youtube';
-import Youtube from '../../Youtube';
-import logoLol from '../../../../../assets/images/logoLol.png';
+import Youtube from '../Youtube';
+import logoLol from '../../../../assets/images/logoLol.png';
 
 import './zac.scss';
 
 
-const Zac = ({
+const Champion = ({
   fetchOneChampion,
   champion,
   appIsLoading,
@@ -167,7 +167,7 @@ const Zac = ({
   );
 };
 
-Zac.propTypes = {
+Champion.propTypes = {
   fetchOneChampion: PropTypes.func.isRequired,
   appIsLoading: PropTypes.bool.isRequired,
   setAppLoading: PropTypes.func.isRequired,
@@ -203,4 +203,4 @@ Zac.propTypes = {
   ).isRequired,
 };
 
-export default Zac;
+export default Champion;

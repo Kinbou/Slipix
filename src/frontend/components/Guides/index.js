@@ -33,10 +33,12 @@ const Guides = () => (
       </div>
     </div>
     <div className="guides__cards">
-      <div className="guides__cards__card">
-        <h3>Sortir du bas Elo</h3>
-        <img src={lowEloProblem} alt="" />
-      </div>
+      <Link to="/guides/sortir-du-bas-elo">
+        <div className="guides__cards__card">
+          <h3>Sortir du bas Elo</h3>
+          <img src={lowEloProblem} alt="" />
+        </div>
+      </Link>
       <Link to="/guides/mental&rage">
         <div className="guides__cards__card">
           <h3>Le mental & la rage</h3>

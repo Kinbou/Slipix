@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 // import Champion from 'src/frontend/components/Tutoriels/Jungle/Zac';
-import Champion from 'src/frontend/components/Tutoriels/Jungle/Zac';
+import Champion from 'src/frontend/components/Tutoriels/Champion';
 
 import { fetchAllChampions, fetchOneChampion, stateName } from 'src/actions/champions';
 

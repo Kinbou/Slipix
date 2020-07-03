@@ -1,8 +1,6 @@
 @import 'reset';
 @import 'vars';
 
-// image
-
 body {
   //font-family: 'Gotu', sans-serif;
   // font-family: 'Righteous', cursive;
@@ -16,7 +14,7 @@ body {
 
   /* Track */
   &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
     // background-color: ;
   }
 
@@ -25,9 +23,9 @@ body {
     background-color: #ffaa55;
     border-radius: 10px;
   }
-  &::-webkit-scrollbar-track-piece {
-    background-color: #ffaa55t;
-  }
+  // &::-webkit-scrollbar-track-piece {
+  //   // background-color: #ffaa55;
+  // }
 }
 
 main {
@@ -124,6 +122,13 @@ main {
   background-position: bottom;
   min-height: 100vh;
 }
+.app--lowElo {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/lowElo.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
 
 .globalTitle-page {
   font-family: 'Squada One', cursive;
@@ -145,8 +150,6 @@ h2 {
   font-family: 'Squada One', cursive;
   text-align: center;
   font-size: 4em;
-  margin-top: 8rem;
   // padding-bottom: 2rem;
-  
   text-shadow: 2px 2px  30px black;
 }

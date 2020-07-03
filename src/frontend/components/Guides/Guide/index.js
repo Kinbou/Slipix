@@ -56,7 +56,7 @@ const Guide = () => (
       <img className="guide__rage__content__textRage" src={textRage} alt="" />
       <p className="guide__rage__content">Alors maintenant on va trouver une solution ! Voici mes 4 étapes pour éviter de trop <span>rager</span> sur le jeu :</p>
       <ul>
-        <li><i className="fas fa-plus-circle positif" />Faire des pauses entre les défaites, 30 minutes minimum oui c'est beaucoup mais c'est indispensable pour repartir à 0 mentalement !</li><br />
+        <li><i className="fas fa-plus-circle positif" />Faire des pauses entre les défaites, 15 minutes minimum oui c'est beaucoup mais c'est indispensable pour repartir à 0 mentalement !</li><br />
         <li><i className="fas fa-plus-circle positif" />Ne pas jouer si vous n'avez pas envie, Oui j'ai remarqué que beaucoup de mes élèves lancent des parties juste pour "monter en elo" et pas forcément pour jouer à son jeu préféré !</li>
         <li><i className="fas fa-plus-circle positif" />Mute le tchat dans la game, Oui parfois on a besoin de se concentrer sur nous même et si vous êtes sensible aux alliés qui écrivent des abominations, go bouton MUTE !</li>
         <li><i className="fas fa-plus-circle positif" />Faites de la DuoQ avec un joueur qui est positif, c'est toujours mieux d'être accompagné pour pouvoir se rassurer et se donner à fond !</li><br />
@@ -64,12 +64,14 @@ const Guide = () => (
       <p className="guide__rage__content">Et toi Slipix ça t'arrive de <span>rager</span> ? Bien evidemment mes petits ! On <span>rage</span> tous sur ce jeu c'est comme ça, mais je sais le prendre sur moi ça va être la différence avec quelqu'un qui n'aura pas le mental pour se remettre en question et donc il va moins monter en ranked (oui ça y joue beaucoup).</p>
       <p className="guide__rage__content">Je vous ai preparé une vidéo qui regroupe toutes les situations qui me font le + <span>rager</span> dans League of Legends, il est temps de voir si on a des points en commun !</p>
       <Youtube className="guide__mental__youtube" videoId="EvWGqQWxeU8" SameSite="" />
-      <p className="guide__rage__content">Il n'y a pas que les situations qui font <span>rager</span>, certains champions vont déclencher une haine en nous quand on va jouer contre. Alors pour votre plaisir voici une vidéo qui regroupe tous les champions qui me font le + <span>rager</span> dans League of Legends ! (On a tous nos Nemesis c'est ça qui est bon)</p>
+      <p className="guide__rage__content">Il n'y a pas que les situations qui font <span>rager</span>, certains champions vont déclencher une haine en nous quand on va jouer contre. Alors pour votre plaisir voici une vidéo qui regroupe tous les champions qui me font le + <span>rager</span> dans League of Legends !</p>
+      <p className="guide__rage__content">(On a tous nos Nemesis c'est ça qui est bon)</p>
       <Youtube className="guide__mental__youtube" videoId="msp79-TYqtk" SameSite="" />
       <p className="guide__rage__content">Pour résumer sur cette page qui parle du <span className="mental">Mental</span> et de la <span>Rage</span> ne sous-estimez jamais votre bonne humeur sur le jeu. Alors prenez du plaisir, amusez vous avec vos ami(e)s et ne lancez pas de rankeds après 7 défaites.
-        J'espère que ce guide vous aura aider , à bientôt sur la faille la <span>#TEAMSLIP</span> !
       </p>
+      <p className="guide__rage__content">J'espère que ce guide vous aura aider , à bientôt sur la faille la <span>#TEAMSLIP</span> !</p>
       <img className="guide__rage__content__troll" src={troll} alt="" />
+      <p className="guide__end">N'hésitez pas à consulter les autres guides de Coach Slipix</p>
     </div>
   </div>
 );

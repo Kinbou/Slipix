@@ -9,21 +9,26 @@ import Home from 'src/frontend/components/Home';
 import Footer from 'src/frontend/components/Footer';
 import Presentation from 'src/frontend/components/Presentation';
 import News from 'src/frontend/components/News';
-import Guides from 'src/frontend/components/Guides';
-import Guide from 'src/frontend/components/Guides/Guide';
-import Tutoriels from 'src/frontend/components/Tutoriels';
 import Support from 'src/frontend/components/Support';
 import Contact from 'src/frontend/components/Contact';
+
+// Guides
+import Guides from 'src/frontend/components/Guides';
+import Guide from 'src/frontend/components/Guides/Guide';
 import RoleChampion from 'src/frontend/components/Guides/RoleChampion';
 import ProgressLol from 'src/frontend/components/Guides/ProgressLol';
+import LowElo from 'src/frontend/components/Guides/LowElo';
+
+// Tutoriels
+import Tutoriels from 'src/frontend/components/Tutoriels';
+import Champion from 'src/frontend/containers/Tutoriels/Champion';
+
 
 // Lanes
 import Jungle from 'src/frontend/components/Tutoriels/Jungle';
 import Midlane from 'src/frontend/components/Tutoriels/Midlane';
 import Toplane from 'src/frontend/components/Tutoriels/Toplane';
 
-// Champions Jungle
-import Zac from 'src/frontend/containers/ChampionsJungle';
 
 // == Composant
 const App = () => {
@@ -46,6 +51,7 @@ const App = () => {
   const isGuide = currentPath === '/guides/mental&rage';
   const isRoleChampion = currentPath === '/guides/role-champion';
   const isProgressLol = currentPath === '/guides/progresser-sur-leagueOfLegends';
+  const isLowElo = currentPath === '/guides/sortir-du-bas-elo';
 
   const appClass = classNames('app', {
     'app--home': isHome,
@@ -59,6 +65,7 @@ const App = () => {
     'app--guide': isGuide,
     'app--roleChampion': isRoleChampion,
     'app--progressLol': isProgressLol,
+    'app--lowElo': isLowElo,
     // 'app--error': isError,
   });
 
@@ -86,7 +93,7 @@ const App = () => {
             <Jungle />
           </Route>
           <Route exact path="/tutoriels-champions/jungle/:name">
-            <Zac />
+            <Champion />
           </Route>
           <Route exact path="/tutoriels-midlane">
             <Midlane />
@@ -105,6 +112,9 @@ const App = () => {
           </Route>
           <Route exact path="/guides/progresser-sur-leagueOfLegends">
             <ProgressLol />
+          </Route>
+          <Route exact path="/guides/sortir-du-bas-elo">
+            <LowElo />
           </Route>
           <Route exact path="/me-soutenir">
             <Support />

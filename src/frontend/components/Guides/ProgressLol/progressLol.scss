@@ -1,3 +1,171 @@
 .progressLol {
-                                                                                 
+  color: white;
+  text-align: center;
+  padding: 0 10rem 4rem 10rem;
+  p {
+    line-height: 1.2em;
+    font-size: 1.9em;
+    margin-bottom: 1rem;
+    
+  }
+  ul {
+    margin: 2rem 8rem;
+    border: #ffaa55 solid 1px;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+  li {
+    font-size: 2.1em;
+    line-height: 1.4em;
+    color: #ffaa55;
+  }
+  &__icon {
+    &__book {
+      padding-right: 1rem;
+      color: white;
+    }
+  }
+  .red {
+    color: red;
+  }
+  .green {
+    color: rgb(115, 255, 0);
+  }
+  .gold {
+    color: #ffaa55;
+  }
+  .end {
+    color: #ffaa55;
+    margin: 1rem;
+    font-size: 2em;
+  }
+  &__logo {
+    width: 40%;
+  }
+  &__link {
+    background-color: crimson;
+    margin: 2rem;
+    padding: .5rem;
+    font-size: 1.9em;
+    border-radius: 10px;
+    &:hover {
+      border: crimson solid 1px;
+      background-color: white;
+      color: crimson;
+    }
+  }
+  &__best {
+    color: #ffaa55;
+    font-size: 2.2rem!important;
+  }
+
+  &__pictures {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3rem;
+    &__image {
+      width: 20%;
+      border-radius: 35%;
+      filter: drop-shadow(0 0 0.75rem #76eafc);
+    }
+    &__trollPotter {
+      width: 20%;
+      margin: 2rem;
+      border-radius: 10px;
+      filter: drop-shadow(0 0 0.75rem #255e47)
+    }
+  }
+  h2 {
+    color: #ffaa55;
+    margin-bottom: 4rem!important;
+  }
+  &__beforeYoutube {
+    padding-bottom: 2rem;
+  }
+
+&__betweenYoutube {
+  padding: 2rem 0 2rem 0;
+  border-top: red solid 1px;
+  margin-top: 3rem;
+}
+&__afterYoutube {
+    padding-top: 2rem;
+}
+&__intro {
+   
+  background-color: rgba(28,36,45,0.8);
+  padding: 3rem 3rem;
+  border-radius: 10px;
+  margin: 3rem;
+  &__content {
+    font-size: 2.3em!important;
+    color: #ffaa55;
+    margin-bottom: 3rem!important;
+  }
+  &__pictures {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3rem;
+    &__image {
+      width: 20%;
+      border-radius: 35%;
+      filter: drop-shadow(0 0 0.75rem crimson);
+    }
+  }
+}
+  &__optimization {
+    background-color: rgba(28,36,45,0.8);
+    padding: 3rem 3rem;
+    border-radius: 10px;
+    margin: 3rem;
+    &__title {
+      color: #ffaa55;
+      text-transform: capitalize!important;
+      margin: 2rem 0 2rem 0;
+    }
+    &__pictureTime {
+      width: 30%;
+      margin: 2rem 0 3rem 0;
+      border-radius: 15px;
+      filter: drop-shadow(0 0 0.75rem #ffaa55);
+    }
+  }
+  &__championPool {
+    background-color: rgba(28,36,45,0.8);
+    padding: 3rem 3rem;
+    border-radius: 10px;
+    margin: 3rem;
+
+  }
+  &__positive {
+    background-color: rgba(28,36,45,0.8);
+    padding: 3rem 3rem;
+    border-radius: 10px;
+    margin: 3rem;
+    &__faker {
+      width: 35%;
+      border-radius: 15px;
+      margin: 2rem;
+      filter: drop-shadow(0 0 0.75rem crimson)
+    }
+    &__troll {
+      width: 25%;
+      border-radius: 15px;
+      margin: 2rem;
+      filter: drop-shadow(0 0 0.75rem #923fde)
+    }
+  }
+  &__secret {
+    background-color: rgba(28,36,45,0.8);
+    padding: 3rem 3rem;
+    border-radius: 10px;
+    margin: 3rem;
+  }
+  &__knowledge {
+    background-color: rgba(28,36,45,0.8);
+    padding: 3rem 3rem;
+    border-radius: 10px;
+    margin: 3rem;
+  }
+                                                                              
 }
