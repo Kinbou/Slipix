@@ -196,10 +196,17 @@ h2 {
 .purple {
   color: #ab70eafc;
 }
+.witchColor {
+  color: #9aa5f4;
+}
+
+.orange {
+  color: #ffa600;
+}
 
 // youtube
 .betweenYoutube {
-  margin: 5rem 0 1rem 0;
+  margin: 5rem 2rem 1rem 2rem;
   padding-top: 2rem;
   border-top: solid 1px red;
 }
@@ -258,4 +265,37 @@ h2 {
   color: #ffaa55;
   margin: 1rem;
   font-size: 2em;
+}
+
+
+// effet
+.effectImage {
+  margin: 2rem;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition:all .2s ease-in-out;
+  -webkit-box-shadow: 0 28px 16px -26px black;
+  -moz-box-shadow: 0 28px 16px -26px black;
+  box-shadow: 0 28px 16px -26px black;
+  transition:all .6s ease-in-out;
+  -webkit-transition:all .6s ease-in-out;
+  -moz-transition:all .6s ease-in-out;
+  -ms-transition:all .6s ease-in-out;
+  -o-transition:all .6s ease-in-out;
+  &:hover {
+    transform:scale(1.03);
+    transition: .1s;
+   -webkit-transform:scale(1.03);
+   -moz-transform:scale(1.03);
+   -ms-transform:scale(1.03);
+   -o-transform:scale(1.03);
+   -webkit-box-shadow: 0 58px 40px -56px black;
+   -moz-box-shadow: 0 58px 36px -56px black;
+   box-shadow: 0 58px 36px -56px black;
+   -webkit-transition: .3s ease-in-out;
+   -moz-transition: .3s ease-in-out;
+   -ms-transition: .3s ease-in-out;
+   -o-transition: .3s ease-in-out;
+   border-color: #ffaa55;
+  }
 }

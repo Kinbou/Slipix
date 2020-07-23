@@ -30,7 +30,7 @@ const TrollPicks = () => (
         </Link>
       </div>
       <div className="trollpicks__cards__line tutoriels__cards__line__one">
-        <Link to="/tutoriels-toplane">
+        <Link to="/trollpicks/thresh-flak">
           <div className="trollpicks__cards__card">
             <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Thresh Flak OneShot</h3>
             <img src={tresh} alt="" />
@@ -46,7 +46,7 @@ const TrollPicks = () => (
         </Link>
       </div>
       <div className="trollpicks__cards__line tutoriels__cards__line__one">
-        <Link to="/tutoriels-toplane">
+        <Link to="/trollpicks/kaisa-laser">
           <div className="trollpicks__cards__card">
             <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Kaïsa Laser</h3>
             <img src={kaisa} alt="" />

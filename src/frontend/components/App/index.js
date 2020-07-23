@@ -29,6 +29,8 @@ import Champion from 'src/frontend/containers/Tutoriels/Champion';
 // Trollpicks
 import TrollPicks from 'src/frontend/components/TrollPicks';
 import XinAutoroute from 'src/frontend/components/TrollPicks/XinAutoroute';
+import ThreshFlak from 'src/frontend/components/TrollPicks/ThreshFlak';
+import KaisaLaser from 'src/frontend/components/TrollPicks/KaisaLaser';
 
 // Lanes
 import Jungle from 'src/frontend/components/Tutoriels/Jungle';
@@ -61,6 +63,8 @@ const App = () => {
   const isVisionGame = currentPath === '/guides/vision-du-jeu';
   const isTrollPicks = currentPath === '/trollpicks';
   const isXinAutoroute = currentPath === '/trollpicks/xinZhao-autoroute';
+  const isThreshFlak = currentPath === '/trollpicks/thresh-flak';
+  const isKaisaLaser = currentPath === '/trollpicks/kaisa-laser';
 
   const appClass = classNames('app', {
     'app--home': isHome,
@@ -76,7 +80,7 @@ const App = () => {
     'app--progressLol': isProgressLol,
     'app--lowElo': isLowElo,
     'app--winLane': isWinLane || isVisionGame,
-    'app--trollPicks': isTrollPicks || isXinAutoroute,
+    'app--trollPicks': isTrollPicks || isXinAutoroute || isThreshFlak || isKaisaLaser,
     // 'app--error': isError,
   });
 
@@ -138,6 +142,12 @@ const App = () => {
           </Route>
           <Route exact path="/trollpicks/xinZhao-autoroute">
             <XinAutoroute />
+          </Route>
+          <Route exact path="/trollpicks/thresh-flak">
+            <ThreshFlak />
+          </Route>
+          <Route exact path="/trollpicks/kaisa-laser">
+            <KaisaLaser />
           </Route>
           <Route exact path="/me-soutenir">
             <Support />
