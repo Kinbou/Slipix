@@ -40,25 +40,25 @@ const Midlane = () => (
         <Link to="/tutoriels-jungle/zac">
           <div className="midlane__cards__card">
             <img src={yasuo} alt="" />
-            <h2>Yasuo</h2>
+            <h3>Yasuo</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={ekko} alt="" />
-            <h2>Ekko</h2>
+            <h3>Ekko</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={katarina} alt="" />
-            <h2>Katarina</h2>
+            <h3>Katarina</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={ryze} alt="" />
-            <h2>Ryze</h2>
+            <h3>Ryze</h3>
           </div>
         </Link>
       </div>
@@ -66,25 +66,25 @@ const Midlane = () => (
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={lux} alt="" />
-            <h2>Lux</h2>
+            <h3>Lux</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={akali} alt="" />
-            <h2>Akali</h2>
+            <h3>Akali</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={orianna} alt="" />
-            <h2>Orianna</h2>
+            <h3>Orianna</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={ahri} alt="" />
-            <h2>Ahri</h2>
+            <h3>Ahri</h3>
           </div>
         </Link>
       </div>
@@ -92,25 +92,25 @@ const Midlane = () => (
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={leBlanc} alt="" />
-            <h2>Le Blanc</h2>
+            <h3>Le Blanc</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={galio} alt="" />
-            <h2>Galio</h2>
+            <h3>Galio</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={vladimir} alt="" />
-            <h2>Vladimir</h2>
+            <h3>Vladimir</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={zoe} alt="" />
-            <h2>Zoé</h2>
+            <h3>Zoé</h3>
           </div>
         </Link>
       </div>
@@ -118,25 +118,25 @@ const Midlane = () => (
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={annie} alt="" />
-            <h2>Annie</h2>
+            <h3>Annie</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={twistedFate} alt="" />
-            <h2>Twisted Fate</h2>
+            <h3>Twisted Fate</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={kassadin} alt="" />
-            <h2>Kassadin</h2>
+            <h3>Kassadin</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={veigar} alt="" />
-            <h2>Veigar</h2>
+            <h3>Veigar</h3>
           </div>
         </Link>
       </div>
@@ -144,25 +144,25 @@ const Midlane = () => (
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={corki} alt="" />
-            <h2>Corki</h2>
+            <h3>Corki</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={gragas} alt="" />
-            <h2>Gragas</h2>
+            <h3>Gragas</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={zed} alt="" />
-            <h2>Zed</h2>
+            <h3>Zed</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={fizz} alt="" />
-            <h2>Fizz</h2>
+            <h3>Fizz</h3>
           </div>
         </Link>
       </div>
@@ -170,7 +170,7 @@ const Midlane = () => (
         <Link to="/tutoriels-jungle/olaf">
           <div className="midlane__cards__card">
             <img src={talon} alt="" />
-            <h2>Talon</h2>
+            <h3>Talon</h3>
           </div>
         </Link>
       </div>

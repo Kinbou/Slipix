@@ -1,0 +1,92 @@
+.trollpicks {
+  color: white;
+  h3 {
+    font-family: 'Squada One', cursive;
+    text-transform: uppercase;
+    color: #ffaa55;
+    // padding-left: 4rem;
+    font-size: 2em;
+    flex-grow: 1;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  h4 {
+    text-align: center;
+    font-size: 2.7em;
+    // padding: 3rem;
+    color: white;
+    margin-bottom: 3rem;
+  }
+  &__intro {
+    margin: 0 7rem 0 7rem;
+    &__warning {
+      font-size: 2.1em;
+    }
+  }
+  .icons {
+    &__exclamation {
+      margin: 0 1rem 0 1rem;
+    }
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 2rem 0;
+    &__line {
+      display: flex;
+      justify-content: center;
+    }
+    &__card {
+      width: 920px;
+      margin: 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      // flex-direction: column;
+      // background-color: #655c54;
+      background-color: rgba(28,36,45,0.8);
+      border-radius: 20px;
+      border: 2px solid transparent;
+      transition:all .2s ease-in-out;
+      -webkit-box-shadow: 0 28px 16px -26px black;
+      -moz-box-shadow: 0 28px 16px -26px black;
+      box-shadow: 0 28px 16px -26px black;
+      transition:all .6s ease-in-out;
+      -webkit-transition:all .6s ease-in-out;
+      -moz-transition:all .6s ease-in-out;
+      -ms-transition:all .6s ease-in-out;
+      -o-transition:all .6s ease-in-out;
+      &:hover {
+        transform:scale(1.03);
+        transition: .1s;
+       -webkit-transform:scale(1.03);
+       -moz-transform:scale(1.03);
+       -ms-transform:scale(1.03);
+       -o-transform:scale(1.03);
+       -webkit-box-shadow: 0 58px 40px -56px black;
+       -moz-box-shadow: 0 58px 36px -56px black;
+       box-shadow: 0 58px 36px -56px black;
+       -webkit-transition: .3s ease-in-out;
+       -moz-transition: .3s ease-in-out;
+       -ms-transition: .3s ease-in-out;
+       -o-transition: .3s ease-in-out;
+       border-color: #ffaa55;
+     }
+      &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 2.2em;
+        margin: 1rem 0rem;
+        text-align: center;
+   
+      }
+      img {
+        width: 45%;
+        border-radius: 20px;
+      }
+    }
+  }
+}

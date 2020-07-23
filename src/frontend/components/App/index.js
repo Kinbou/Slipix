@@ -9,6 +9,7 @@ import Home from 'src/frontend/components/Home';
 import Footer from 'src/frontend/components/Footer';
 import Presentation from 'src/frontend/components/Presentation';
 import News from 'src/frontend/components/News';
+
 import Support from 'src/frontend/components/Support';
 import Contact from 'src/frontend/components/Contact';
 
@@ -18,17 +19,21 @@ import Guide from 'src/frontend/components/Guides/Guide';
 import RoleChampion from 'src/frontend/components/Guides/RoleChampion';
 import ProgressLol from 'src/frontend/components/Guides/ProgressLol';
 import LowElo from 'src/frontend/components/Guides/LowElo';
+import WinLane from 'src/frontend/components/Guides/WinLane';
+import VisionGame from 'src/frontend/components/Guides/VisionGame';
 
 // Tutoriels
 import Tutoriels from 'src/frontend/components/Tutoriels';
 import Champion from 'src/frontend/containers/Tutoriels/Champion';
 
+// Trollpicks
+import TrollPicks from 'src/frontend/components/TrollPicks';
+import XinAutoroute from 'src/frontend/components/TrollPicks/XinAutoroute';
 
 // Lanes
 import Jungle from 'src/frontend/components/Tutoriels/Jungle';
 import Midlane from 'src/frontend/components/Tutoriels/Midlane';
 import Toplane from 'src/frontend/components/Tutoriels/Toplane';
-
 
 // == Composant
 const App = () => {
@@ -52,6 +57,10 @@ const App = () => {
   const isRoleChampion = currentPath === '/guides/role-champion';
   const isProgressLol = currentPath === '/guides/progresser-sur-leagueOfLegends';
   const isLowElo = currentPath === '/guides/sortir-du-bas-elo';
+  const isWinLane = currentPath === '/guides/gagner-sa-phase-de-lane';
+  const isVisionGame = currentPath === '/guides/vision-du-jeu';
+  const isTrollPicks = currentPath === '/trollpicks';
+  const isXinAutoroute = currentPath === '/trollpicks/xinZhao-autoroute';
 
   const appClass = classNames('app', {
     'app--home': isHome,
@@ -66,6 +75,8 @@ const App = () => {
     'app--roleChampion': isRoleChampion,
     'app--progressLol': isProgressLol,
     'app--lowElo': isLowElo,
+    'app--winLane': isWinLane || isVisionGame,
+    'app--trollPicks': isTrollPicks || isXinAutoroute,
     // 'app--error': isError,
   });
 
@@ -115,6 +126,18 @@ const App = () => {
           </Route>
           <Route exact path="/guides/sortir-du-bas-elo">
             <LowElo />
+          </Route>
+          <Route exact path="/guides/gagner-sa-phase-de-lane">
+            <WinLane />
+          </Route>
+          <Route exact path="/guides/vision-du-jeu">
+            <VisionGame />
+          </Route>
+          <Route exact path="/trollpicks">
+            <TrollPicks />
+          </Route>
+          <Route exact path="/trollpicks/xinZhao-autoroute">
+            <XinAutoroute />
           </Route>
           <Route exact path="/me-soutenir">
             <Support />

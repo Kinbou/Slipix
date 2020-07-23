@@ -1,7 +1,7 @@
 
 export const test = (data) => {
   console.log(data);
-  const test2 = data.split('-');
+  const test2 = data.split('|');
   console.log(test2);
   return test2;
 };

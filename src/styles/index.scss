@@ -129,6 +129,20 @@ main {
   background-position: bottom;
   min-height: 100vh;
 }
+.app--winLane {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.7)), url(../assets/images/backgroundPages/winLane.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+.app--trollPicks {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.6), rgba(3, 23, 32, 0.6)), url(../assets/images/backgroundPages/trollpick.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
 
 .globalTitle-page {
   font-family: 'Squada One', cursive;
@@ -144,12 +158,104 @@ main {
   color: white;
   margin: 2rem 3rem;
   text-align: left;
+  &__link:hover {
+    color: #ffaa55;
+  }
 } 
 
 h2 {
   font-family: 'Squada One', cursive;
+  text-transform: uppercase;
   text-align: center;
-  font-size: 4em;
-  // padding-bottom: 2rem;
+  font-size: 3.5em;
+  margin: 2rem 0 5rem 0;
   text-shadow: 2px 2px  30px black;
+}
+
+//background
+.backgroundParagraphe {
+  background-color: rgba(28,36,45,0.8);
+  padding: 3rem 3rem;
+  border-radius: 10px;
+  margin: 3rem;
+}
+
+// color
+.red {
+  color: #c00;
+}
+.green {
+  color: rgb(115, 255, 0);
+}
+.gold {
+  color: #ffaa55;
+}
+.blue {
+  color: #44acd4;
+}
+.purple {
+  color: #ab70eafc;
+}
+
+// youtube
+.betweenYoutube {
+  margin: 5rem 0 1rem 0;
+  padding-top: 2rem;
+  border-top: solid 1px red;
+}
+.introYoutube {
+  padding: 4rem 0 1rem 0;
+}
+.afterYoutube {
+  margin-top: 4rem; 
+}
+.beforeYoutube {
+  margin: 3rem 0 1rem 0!important;
+}
+
+//paragraph
+.paragraph {
+  line-height: 1.2em;
+  font-size: 1.7em;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 2.1em;
+  color: #ffaa55;
+  margin-bottom: 2rem;
+}
+
+//Link
+.beforeLink {
+  margin-bottom: 2rem;
+}
+
+.link {
+  background-color: #ffaa55;
+  margin-top: 2rem;
+  padding: .5rem;
+  font-size: 1.9em;
+  border-radius: 10px;
+  color: black;
+  &:hover {
+    border: #ffaa55 solid 1px;
+    background-color: black;
+    color: #ffaa55;
+  }
+}
+
+.preEnd {
+  margin-top: 3rem;
+}
+
+//images
+.logo {
+  width: 40%;
+}
+
+.end {
+  color: #ffaa55;
+  margin: 1rem;
+  font-size: 2em;
 }

@@ -18,6 +18,7 @@
   }
   &__cards {
     display: flex;
+    justify-content: center;
     &__card {
       width: 550px;
       margin: 3rem;

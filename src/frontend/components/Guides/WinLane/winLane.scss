@@ -1,0 +1,63 @@
+.winLane {
+  color: white;
+  text-align: center;
+  padding: 0 10rem 4rem 10rem;
+  h2 {
+    color: #ffaa55;
+  }
+  ul {
+    margin: 2rem 8rem;
+    border: #ffaa55 solid 1px;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+  li {
+    font-size: 2.1em;
+    line-height: 1.4em;
+    color: #ffaa55;
+  }
+  .pictures {
+    &__troll, &__troll2 {
+      width: 30%;
+      margin: 1rem 0 2rem 0;
+      border-radius: 10px;
+      filter: drop-shadow(0 0 0.75rem #23acb5);
+    }
+    &__trollEnd {
+      width: 30%;
+      margin: 2rem 0 3rem 0;
+      border-radius: 10px;
+      filter: drop-shadow(0 0 0.75rem #23acb5);
+    }
+  }
+  .icons {
+    &__coins, &__change, &__trophy, &__balance {
+      margin: 0 2rem 0 2rem;
+      font-size: 0.8em;
+    }
+  }
+  &__intro {
+    &__pictures {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 3rem;
+      &__picture {
+        width: 20%;
+        border-radius: 35%;
+        filter: drop-shadow(0 0 0.75rem #23acb5);
+      }
+    }
+  }
+  &__wave {
+    &__definition {
+      margin: 2rem 4rem;
+      border: #ffaa55 solid 1px;
+      border-radius: 10px;
+      padding: 2rem;
+      &__border {
+        border-top: solid 2px #ffaa55;
+        padding: 2rem;
+      }
+    }
+  }
+}

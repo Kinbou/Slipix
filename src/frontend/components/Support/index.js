@@ -19,11 +19,11 @@ const Support = () => (
       </p><br />
       <p>Il existe plusieurs façons de le faire, que ça soit gratuit ou payant.</p>
       <div className="support__content__utip">
-        <h5>me soutenir gratuitement avec <span>uTip</span></h5>
+        <h5>me soutenir gratuitement avec <span className="gold">uTip</span></h5>
         <img src={utip} alt="" />
       </div>
       <div>
-        <p className="support__content__utip__content">Le principe est simple : Vous pouvez regarder des publicités d'une durée de 20 secondes environ et le site <span>Utip</span> me reversera de l'argent.<br />  ça ne vous coûtera rien, seulement un peu de votre temps alors merci si vous prenez la peine de le faire. N'oubliez pas de désactiver votre <span>ADBLOCK</span>. <a className="link" type="a" href="https://utip.io/slipix" target="_blanc">Cliquez ici</a></p>
+        <p className="support__content__utip__content">Le principe est simple : Vous pouvez regarder des publicités d'une durée de 20 secondes environ et le site <span className="gold">Utip</span> me reversera de l'argent.<br />  ça ne vous coûtera rien, seulement un peu de votre temps alors merci si vous prenez la peine de le faire. N'oubliez pas de désactiver votre <span className="gold">ADBLOCK</span>. <a className="link" type="a" href="https://utip.io/slipix" target="_blanc">Cliquez ici</a></p>
       </div>
       <div className="support__content__twitch">
         <h5>Me soutenir gratuitement avec  <img src={twitchPrime} alt="" /> </h5>

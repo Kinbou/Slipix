@@ -14,24 +14,17 @@
     font-size: 1.7rem;
     line-height: 1.3em;
   }
-  span {
-    color: #ffaa55;
-  }
+
   .link {
-    background-color: crimson;
     margin-left: 1rem;
-    padding: .3rem;
-    border-radius: 10px;
-    &:hover {
-      border: crimson solid 1px;
-      background-color: white;
-      color: crimson;
-    }
+    padding: .25rem;
+    border-radius: 5px!important;
+    font-size: 0.9em!important;
   }
   &__content {
     margin: 5rem 20rem 10rem 20rem;
     background-color: rgba(9, 30, 51, 0.7);
-    padding: 1rem 5rem;
+    padding: 1rem 2rem;
     border-radius: 20px;
     font-size: 1.1em;
     &__utip {
@@ -79,8 +72,8 @@
       }
       &__picture {
         display: flex;
-  flex-direction: initial;
-  justify-content: space-around;
+        flex-direction: initial;
+        justify-content: space-around;
         &__card {
           padding: 1rem;
           width: 40%;

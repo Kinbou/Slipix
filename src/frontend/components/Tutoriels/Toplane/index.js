@@ -22,25 +22,25 @@ const Toplane = () => (
         <Link to="/tutoriels-jungle/olaf">
           <div className="toplane__cards__card">
             <img src={rumble} alt="" />
-            <h2>Rumble</h2>
+            <h3>Rumble</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="toplane__cards__card">
             <img src={pantheon} alt="" />
-            <h2>Pantheon</h2>
+            <h3>Pantheon</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="toplane__cards__card">
             <img src={gnar} alt="" />
-            <h2>Gnar</h2>
+            <h3>Gnar</h3>
           </div>
         </Link>
         <Link to="/tutoriels-jungle/olaf">
           <div className="toplane__cards__card">
             <img src={camille} alt="" />
-            <h2>Camille</h2>
+            <h3>Camille</h3>
           </div>
         </Link>
       </div>

@@ -27,16 +27,19 @@ const Guides = () => (
           <img src={progression} alt="" />
         </div>
       </Link>
-      <div className="guides__cards__card">
-        <h3>Gagner sa lane facilement</h3>
-        <img src={laneWin} alt="" />
-      </div>
-    </div>
-    <div className="guides__cards">
       <Link to="/guides/sortir-du-bas-elo">
         <div className="guides__cards__card">
           <h3>Sortir du bas Elo</h3>
           <img src={lowEloProblem} alt="" />
+        </div>
+      </Link>
+
+    </div>
+    <div className="guides__cards">
+      <Link to="/guides/gagner-sa-phase-de-lane">
+        <div className="guides__cards__card">
+          <h3>Gagner sa phase de lane</h3>
+          <img src={laneWin} alt="" />
         </div>
       </Link>
       <Link to="/guides/mental&rage">
@@ -45,10 +48,12 @@ const Guides = () => (
           <img className="guides__cards__card__test__picture" src={mentalWin} alt="" />
         </div>
       </Link>
-      <div className="guides__cards__card">
-        <h3>La vision du jeu</h3>
-        <img src={gameWin} alt="" />
-      </div>
+      {/* <Link to="/guides/vision-du-jeu">
+        <div className="guides__cards__card">
+          <h3>La vision du jeu</h3>
+          <img src={gameWin} alt="" />
+        </div>
+      </Link> */}
     </div>
   </div>
 );

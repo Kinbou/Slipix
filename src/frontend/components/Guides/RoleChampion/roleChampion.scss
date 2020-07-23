@@ -2,20 +2,7 @@
   color: white;
   text-align: center;
   padding: 0 10rem 4rem 10rem;
-  &__breadcrumb {
-    color: white;
-    margin: 2rem 3rem;
-    text-align: left;
-  }
-  &__logo {
-    width: 40%;
-  }
-  .red {
-    color: red;
-  }
-  .blue {
-    color: #00cefe;
-  }
+
   .icon {
     color: yellowgreen;
     padding-right: .5rem;
@@ -40,11 +27,6 @@
     text-shadow: 2px 2px  30px black;
   }
 
-  p {
-    line-height: 1.2em;
-    font-size: 1.9em;
-    margin-bottom: 1rem;
-  }
   ul {
     border-bottom: yellowgreen 0.5px solid;
     margin-bottom: 8rem;
@@ -77,22 +59,8 @@
     
   }
   &__intro {
-    background-color: rgba(28,36,45,0.8);
-    // margin: 0 10rem 4rem 10rem;
-    padding: 3rem 3rem;
-    border-radius: 10px;
-    margin: 3rem;
-    &__best {
-      font-size: 2.3em!important;
-      color: #ffaa55;
-      margin-bottom: 3rem!important;
-    }
     &__heart {
       width: 20%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%; 
-      -o-border-radius: 50%;
-      // border-radius: 50%; 
     }
     &__pictures {
       display: flex;
@@ -107,11 +75,6 @@
   }
 
   &__role {
-    background-color: rgba(28,36,45,0.8);
-    // margin: 0 10rem 4rem 10rem;
-    padding: 3rem 3rem;
-    border-radius: 10px;
-    margin: 3rem;
     &__title {
       color: #00cefe;
     }

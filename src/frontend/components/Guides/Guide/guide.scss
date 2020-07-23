@@ -1,21 +1,23 @@
 .guide {
-
+  text-align: center;
+  padding: 0 10rem 4rem 10rem;
   color: white;
-  span {
-    color: red;
+  ul {
+    border: 2px solid #ffaa55;
+    border-radius: 10px;
+    margin: 2rem;
+    padding: 2rem 0 1rem 0;
+    li {
+      line-height: 1.2em;
+      font-size: 2em;
+      margin: 1rem 3rem;
+    }
   }
-  &__end {
-    color: #ffaa55;
-    margin-top: 3rem;
-  }
-  p {
-    line-height: 1.2em;
-    font-size: 2em;
-  }
-  li {
-    line-height: 1.2em;
-    font-size: 2em;
-    margin: 1rem 3rem;
+  .icons {
+    &__brain, &__raised {
+      margin: 0 2rem 0 2rem;
+      font-size: 0.8em;
+    }
   }
   .positif {
     color: yellowgreen;
@@ -30,55 +32,12 @@
     text-align: center;
     display: block;
   }
-  .gg {
-    color: #ffaa55;
-  }
   &__youtube {
     border-radius: 50px;
     margin: auto;
 
   }
-  h3 {
-    font-family: 'Squada One', cursive;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 3.5em;
-    padding-top: 7rem;
-    padding-bottom: 2rem;
-
-    text-shadow: 2px 2px  30px black;
-  }
-  .mental {
-    color: #00cefe;
-  }
-
-  .rage {
-    color: crimson;
-  }
-  &__breadcrumb {
-    color: white;
-    margin: 2rem 3rem;
-    text-align: left;
-  }
   &__mental {
-    background-color: rgba(28,36,45,0.8);
-    margin: 0 10rem 4rem 10rem;
-    padding-bottom: 3rem;
-    border-radius: 10px;
-    text-align: center;
-    &__content {
-      font-size: 2em;
-      margin: 1rem 3rem;
-      line-height: 1.2em;
-      &__introYoutube {
-        font-size: 2em;
-        margin: 3rem;
-        line-height: 1.2em;
-      }
-      &__afterYoutube {
-        margin-top: 3rem;
-      }
-    }
     &__cerveau {
       border-radius: 50%;
       margin: 2rem auto;
@@ -93,15 +52,7 @@
     }
   }
   &__rage {
-    background-color: rgba(28,36,45,0.8);
-    margin: 0 10rem 4rem 10rem;
-    padding-bottom: 3rem;
-    border-radius: 10px;
-    text-align: center;
     &__content {
-      text-align: center;
-      // margin: auto 4rem;
-      margin: 3rem 3rem;
       &__rage {
         border-radius: 50%;
         filter: drop-shadow(0 0 0.75rem crimson);
@@ -110,22 +61,14 @@
       &__textRage {
         border-radius: 15px;
         filter: drop-shadow(0 0 0.75rem #232122);
+        margin: 2rem 0 4rem 0;
       }
       &__troll {
         width: 30%;
         border-radius: 50px;
         filter: drop-shadow(0 0 0.50rem rgb(220, 207, 20));
+        margin: 2rem;
       }
     }
   }
-  &__content {
-    text-align: center;
-    // margin: auto 4rem;
-    margin: 1rem 3rem;
-  }
-  &__intro1 {
-    margin-bottom: 3rem;
-    font-size: 2.5em;
-  }
-
 }

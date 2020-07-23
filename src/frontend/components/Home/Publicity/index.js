@@ -12,7 +12,7 @@ const Publicity = () => (
     <Link to="">
       <div className="publi__banner discord">
         <div className="publi__banner__left">
-          <img src={discordTitle} alt="" />
+          <img className="discordTitle" src={discordTitle} alt="" />
         </div>
         <div className="publi__banner__right">
           <p>Rejoins Nous</p>
