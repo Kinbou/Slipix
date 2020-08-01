@@ -25,7 +25,7 @@ const reducer = (state = initialState, action = {}) => {
     case SET_APP_LOADING:
       return {
         ...state,
-        appIsLoading: !state.appIsLoading,
+        appIsLoading: action.value,
       };
 
 

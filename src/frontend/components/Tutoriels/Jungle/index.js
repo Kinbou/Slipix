@@ -1,79 +1,105 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import Loader from 'src/frontend/components/Loader';
+import PropTypes from 'prop-types';
+
 // images
-import zac from '../../../../assets/images/championsJungle/zac.jpg';
-import olaf from '../../../../assets/images/championsJungle/olaf.jpg';
-import ekko from '../../../../assets/images/championsJungle/ekko.jpg';
-import leeSin from '../../../../assets/images/championsJungle/lee_sin.jpg';
-import evelynn from '../../../../assets/images/championsJungle/evelynn.jpg';
-import xinZhao from '../../../../assets/images/championsJungle/xin_zhao.jpg';
-import shaco from '../../../../assets/images/championsJungle/shaco.jpg';
-import gragas from '../../../../assets/images/championsMidlane/gragas.jpg';
+// import zac from '../../../../assets/images/championsJungle/zac.jpg';
+// import olaf from '../../../../assets/images/championsJungle/olaf.jpg';
+// import ekko from '../../../../assets/images/championsJungle/ekko.jpg';
+// import leeSin from '../../../../assets/images/championsJungle/lee_sin.jpg';
+// import evelynn from '../../../../assets/images/championsJungle/evelynn.jpg';
+// import xinZhao from '../../../../assets/images/championsJungle/xin_zhao.jpg';
+// import shaco from '../../../../assets/images/championsJungle/shaco.jpg';
+// import gragas from '../../../../assets/images/championsMidlane/gragas.jpg';
+// import hecarim from '../../../../assets/images/championsJungle/hecarim.jpg';
 
 import './jungle.scss';
 
-const Jungle = () => (
-  <div className="jungle">
-    <div className="jungle__breadcrumb">
-      <Link to="/">Accueil ></Link>
-      <Link to="/tutoriels-champions"> Tutoriels champions > </Link>
-      jungle
-    </div>
-    <h1 className="globalTitle-page">Tutoriels Jungle</h1>
-    <div className="jungle__cards">
-      <div className="jungle__cards__line">
-        <Link to="/tutoriels-champions/jungle/zac">
-          <div className="jungle__cards__card">
-            <img src={zac} alt="" />
-            <h3>Zac</h3>
-          </div>
-        </Link>
-        <Link to="/tutoriels-champions/jungle/olaf">
-          <div className="jungle__cards__card">
-            <img src={olaf} alt="" />
-            <h3>Olaf</h3>
-          </div>
-        </Link>
-        <Link to="/tutoriels-champions/jungle/ekko">
-          <div className="jungle__cards__card">
-            <img src={ekko} alt="" />
-            <h3>Ekko</h3>
-          </div>
-        </Link>
-        <Link to="/tutoriels-champions/jungle/lee-sin">
-          <div className="jungle__cards__card">
-            <img src={leeSin} alt="" />
-            <h3>Lee Sin</h3>
-          </div>
-        </Link>
-      </div>
-
-      <div className="jungle__cards__line">
-        <Link to="/tutoriels-champions/jungle/gragas">
-          <div className="jungle__cards__card">
-            <img src={gragas} alt="" />
-            <h3>Gragas</h3>
-          </div>
-        </Link>
-        <div className="jungle__cards__card">
-          <img src={evelynn} alt="" />
-          <h3>Evelynn</h3>
+const Jungle = ({
+  stateNameLane,
+  laneActif,
+  laneSoon,
+  setLaneIsLoad,
+  laneIsLoad,
+  fetchAllLane,
+  fetchSoonLane,
+}) => {
+  const slug = useParams();
+  // permet de récupérer le nom du champion dans l'url
+  stateNameLane(slug);
+  useEffect(() => {
+    fetchAllLane();
+    fetchSoonLane();
+    console.log('passage dans le useEffect');
+    return () => {
+      setLaneIsLoad();
+    };
+  }, []);
+  return (
+    <div className="jungle">
+      {!laneIsLoad && <Loader />}
+      {laneIsLoad && (
+      <>
+        <div className="breadcrumb">
+          <Link className="breadcrumb__link" to="/">Accueil </Link> >
+          <Link className="breadcrumb__link" to="/tutoriels-champions"> Tutoriels champions  </Link> >
+          {laneActif[0].lane}
         </div>
-        <Link to="/tutoriels-jungle/lee-sin">
-          <div className="jungle__cards__card">
-            <img src={xinZhao} alt="" />
-            <h3>Xin Zhao</h3>
+        <h1 className="globalTitle-page">Tutoriels {laneActif[0].lane}</h1>
+        <div className="jungle__cards">
+          {laneActif.map((listChampion) => (
+            <>
+              {listChampion.actif === 1 && (
+              <Link to={`/tutoriels-champions/${listChampion.lane}/${listChampion.name}`}>
+                <div className="jungle__cards__card">
+                  <img src={`http://localhost:8090/images/champions/${listChampion.pictureChampion}`} alt="" />
+                  <h3>{listChampion.name}</h3>
+                </div>
+              </Link>
+              )}
+            </>
+          ))}
+          {laneSoon.length !== 0 && (
+          <div>
+            <div className="betweenParagraph" />
+            <h2>Prochainement</h2>
+            <div className="jungle__cards">
+              {laneSoon.map((listChampion) => (
+                <>
+                  <Link to={`/tutoriels-champions/${listChampion.lane}/${listChampion.name}`}>
+                    <div className="jungle__cards__cardSoon">
+                      <img src={`http://localhost:8090/images/champions/${listChampion.pictureChampion}`} alt="" />
+                      <p className="jungle__cards__cardSoon__content">Bientôt disponible</p>
+                      <h3>{listChampion.name}</h3>
+                    </div>
+                  </Link>
+                </>
+              ))}
+            </div>
           </div>
-        </Link>
-        <Link to="/tutoriels-jungle/shaco">
-          <div className="jungle__cards__card">
-            <img src={shaco} alt="" />
-            <h3>Shaco</h3>
-          </div>
-        </Link>
-      </div>
+          )}
+        </div>
+      </>
+      )}
     </div>
-  </div>
-);
+  );
+};
+
+Jungle.propTypes = {
+  stateNameLane: PropTypes.func.isRequired,
+  fetchAllLane: PropTypes.func.isRequired,
+  fetchSoonLane: PropTypes.func.isRequired,
+  laneIsLoad: PropTypes.bool.isRequired,
+  setLaneIsLoad: PropTypes.func.isRequired,
+  laneActif: PropTypes.arrayOf(
+    PropTypes.shape({
+    }).isRequired,
+  ).isRequired,
+  laneSoon: PropTypes.arrayOf(
+    PropTypes.shape({
+    }).isRequired,
+  ).isRequired,
+};
 
 export default Jungle;

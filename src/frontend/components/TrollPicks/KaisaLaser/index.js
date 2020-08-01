@@ -82,6 +82,8 @@ const KaisaLaser = () => (
       <Youtube videoId="LkXhz17WfKU" SameSite="" />
       <div className="betweenYoutube" />
       <Youtube videoId="3XnqK4nTEcM" SameSite="" />
+      <div className="betweenYoutube" />
+      <Youtube videoId="m-unHhqWTnM" SameSite="" />
     </div>
     <div className="backgroundParagraphe">
       <h2><i className="fas fa-skull-crossbones icons__crossbones" />Les Faiblesses<i className="fas fa-skull-crossbones icons__crossbones" /></h2>

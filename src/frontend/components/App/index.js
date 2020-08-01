@@ -33,9 +33,9 @@ import ThreshFlak from 'src/frontend/components/TrollPicks/ThreshFlak';
 import KaisaLaser from 'src/frontend/components/TrollPicks/KaisaLaser';
 
 // Lanes
-import Jungle from 'src/frontend/components/Tutoriels/Jungle';
-import Midlane from 'src/frontend/components/Tutoriels/Midlane';
-import Toplane from 'src/frontend/components/Tutoriels/Toplane';
+import Jungle from 'src/frontend/containers/Tutoriels/Jungle';
+// import Midlane from 'src/frontend/components/Tutoriels/Midlane';
+// import Toplane from 'src/frontend/components/Tutoriels/Toplane';
 
 // == Composant
 const App = () => {
@@ -46,12 +46,31 @@ const App = () => {
   const isPresentation = currentPath === '/presentation';
   const isNews = currentPath === '/nouveaute';
   const isTutoriel = currentPath === '/tutoriels-champions';
-  const isJungle = currentPath === '/tutoriels-jungle';
+  const isJungle = currentPath === '/tutoriels-champions/jungle';
   const isJungle1 = currentPath === '/tutoriels-champions/jungle/zac';
   const isJungle2 = currentPath === '/tutoriels-champions/jungle/olaf';
   const isJungle3 = currentPath === '/tutoriels-champions/jungle/ekko';
   const isJungle4 = currentPath === '/tutoriels-champions/jungle/lee-sin';
   const isJungle5 = currentPath === '/tutoriels-champions/jungle/gragas';
+  const isJungle6 = currentPath === '/tutoriels-champions/jungle/hecarim';
+  const isTutorielTop = currentPath === '/tutoriels-champions/toplane';
+  const isTop1 = currentPath === '/tutoriels-champions/toplane/hecarim';
+  const isTop2 = currentPath === '/tutoriels-champions/toplane/volibear';
+  const isTop3 = currentPath === '/tutoriels-champions/toplane/pantheon';
+  const isTop4 = currentPath === '/tutoriels-champions/toplane/rumble';
+  const isTop5 = currentPath === '/tutoriels-champions/toplane/camille';
+  const isTop6 = currentPath === '/tutoriels-champions/toplane/mordekaiser';
+  const isTop7 = currentPath === '/tutoriels-champions/toplane/gnar';
+  const isTop8 = currentPath === '/tutoriels-champions/toplane/kled';
+  const isTop9 = currentPath === '/tutoriels-champions/toplane/vladimir';
+  const isTutorielMid = currentPath === '/tutoriels-champions/midlane';
+  const isMid1 = currentPath === '/tutoriels-champions/midlane/lux';
+  const isMidZed = currentPath === '/tutoriels-champions/midlane/zed';
+  const isMidLeblanc = currentPath === '/tutoriels-champions/midlane/leblanc';
+  const isMidRyze = currentPath === '/tutoriels-champions/midlane/ryze';
+  const isMidAhri = currentPath === '/tutoriels-champions/midlane/ahri';
+  const isMidYasuo = currentPath === '/tutoriels-champions/midlane/yasuo';
+  const isMidKatarina = currentPath === '/tutoriels-champions/midlane/katarina';
   const isSupportPage = currentPath === '/me-soutenir';
   const isContact = currentPath === '/me-contacter';
   const isGuides = currentPath === '/guides';
@@ -71,7 +90,9 @@ const App = () => {
     'app--presentation': isPresentation,
     'app--news': isNews,
     'app--tutoriels': isTutoriel,
-    'app--jungle': isJungle || isJungle1 || isJungle2 || isJungle3 || isJungle4 || isJungle5,
+    'app--jungle': isJungle || isJungle1 || isJungle2 || isJungle3 || isJungle4 || isJungle5 || isJungle6,
+    'app--tutorielTop': isTutorielTop || isTop1 || isTop2 || isTop3 || isTop4 || isTop5 || isTop6 || isTop7 || isTop8 || isTop9,
+    'app--tutorielMid': isTutorielMid || isMid1 || isMidZed || isMidLeblanc || isMidRyze || isMidAhri || isMidYasuo || isMidKatarina,
     'app--supportPage': isSupportPage,
     'app--contact': isContact,
     'app--guides': isGuides,
@@ -104,17 +125,11 @@ const App = () => {
           <Route exact path="/tutoriels-champions">
             <Tutoriels />
           </Route>
-          <Route exact path="/tutoriels-jungle">
+          <Route exact path="/tutoriels-champions/:lane">
             <Jungle />
           </Route>
-          <Route exact path="/tutoriels-champions/jungle/:name">
+          <Route exact path="/tutoriels-champions/:lane/:name">
             <Champion />
-          </Route>
-          <Route exact path="/tutoriels-midlane">
-            <Midlane />
-          </Route>
-          <Route exact path="/tutoriels-toplane">
-            <Toplane />
           </Route>
           <Route exact path="/guides">
             <Guides />

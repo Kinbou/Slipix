@@ -144,6 +144,21 @@ main {
   min-height: 100vh;
 }
 
+.app--tutorielTop {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/tutorielTop.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+.app--tutorielMid {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/tutorielMid.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+  min-height: 100vh;
+}
+
 .globalTitle-page {
   font-family: 'Squada One', cursive;
   text-transform: uppercase;
@@ -161,7 +176,17 @@ main {
   &__link:hover {
     color: #ffaa55;
   }
-} 
+}
+
+h1 {
+  font-family: 'Squada One', cursive;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.1em;
+  margin: auto 0;
+  text-shadow: 2px 2px  30px black;
+  color: #ffaa55;
+}
 
 h2 {
   font-family: 'Squada One', cursive;
@@ -170,6 +195,7 @@ h2 {
   font-size: 3.5em;
   margin: 2rem 0 5rem 0;
   text-shadow: 2px 2px  30px black;
+  color: #ffaa55;
 }
 
 //background
@@ -202,6 +228,12 @@ h2 {
 
 .orange {
   color: #ffa600;
+}
+.facebook {
+  color: #4267b2;
+}
+.instagram {
+  color: #ee4a5c;
 }
 
 // youtube
@@ -240,10 +272,10 @@ h2 {
 
 .link {
   background-color: #ffaa55;
-  margin-top: 2rem;
-  padding: .5rem;
-  font-size: 1.9em;
-  border-radius: 10px;
+  margin-left: 1rem;
+  padding: .3rem;
+  font-size: 1em;
+  border-radius: 5px;
   color: black;
   &:hover {
     border: #ffaa55 solid 1px;
@@ -298,4 +330,10 @@ h2 {
    -o-transition: .3s ease-in-out;
    border-color: #ffaa55;
   }
+}
+
+.betweenParagraph {
+  margin: 2rem 2rem 1rem 2rem;
+  // padding-top: 2rem;
+  border-top: solid 2px #ffaa55;
 }

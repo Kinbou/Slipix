@@ -70,14 +70,13 @@ const Header = () => (
         >
           me soutenir
         </NavLink>
-        <NavLink
-          to="/informations"
+        <a
+          href="https://teespring.com/stores/boutique-teamslip"
+          target="_blanc"
           className="header__nav__menu__item"
-          activeClassName="header__nav__menu__item--active"
-          exact
         >
           Boutique
-        </NavLink>
+        </a>
         <NavLink
           to="/me-contacter"
           className="header__nav__menu__item"

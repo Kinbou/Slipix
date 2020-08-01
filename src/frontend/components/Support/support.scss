@@ -8,7 +8,9 @@
     color: #ffaa55;
   }
   h5 {
+    color: #ffaa55;
     font-size: 2.5em;
+    margin-bottom: 3rem;
   }
   p {
     font-size: 1.7rem;
@@ -20,6 +22,11 @@
     padding: .25rem;
     border-radius: 5px!important;
     font-size: 0.9em!important;
+  }
+  .icons {
+    &__coins, &__headset, &__cart {
+      margin-left: 1rem;
+    }
   }
   &__content {
     margin: 5rem 20rem 10rem 20rem;
@@ -94,6 +101,23 @@
           box-shadow: 1px 1px 12px black;
           }
         
+        }
+      }
+    }
+    &__shop {
+      margin: 6rem 0 2rem 0;
+      p {
+        text-align: left;
+        width: 80%;
+        margin: 1rem auto;
+      }
+      &__pictures {
+        display: flex;
+        justify-content: space-evenly;
+        &__picture {
+          width: 50%;
+          border-radius: 15px;
+          border: 4px solid transparent;
         }
       }
     }

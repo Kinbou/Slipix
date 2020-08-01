@@ -1,21 +1,16 @@
 .dashes {
   padding: 0 .5rem 0 0;
 }
+.zed {
+  margin-top: 10rem;
+}
 .zac {
   margin: 0 15rem;
   color: white;
   text-align: center;
-  a {
-    // color: #ffaa55;
-    a:hover {
-      color: #ffaa55;
-      text-decoration: underline;
-    }
-  }
-  &__breadcrumb {
-    color: white;
-    margin: 2rem 3rem;
-    text-align: left;
+  line-height: 1.2em;
+  .secondary {
+    display: flex;
   }
   &__title {
     font-family: 'Squada One', cursive;
@@ -42,10 +37,7 @@
       width: 5%;
     }
   }
-  span {
-    color: #ffaa55;
-    // font-size: 1.2em;
-  }
+
   h4 {
     font-family: 'Squada One', cursive;
     text-transform: uppercase ;
@@ -72,7 +64,7 @@
       margin-bottom: 4rem;
       &__content {
         margin-bottom: 2rem;
-        line-height: 1.2em;
+        line-height: 1.4em;
         text-align: center;
         font-size: 1.5em;
         text-transform: none;
@@ -173,9 +165,8 @@
         margin: 3rem;
         width: 80%;
         margin: auto;
-        &__left {
-
-
+        &__center {
+          margin: auto;
         }
         &__right {
           h6 {
@@ -185,23 +176,12 @@
             padding-bottom: 2rem;
           }
           &__content {
+            text-align: center;
+            margin: auto;
           }
-
+          margin: auto;
           padding: 1rem;
           max-width: 50%;
-        }
-      }
-      &__secondary {
-        margin: 2rem;
-        &__content {
-          background-color: rgba(28,36,45,0.9);
-          padding: 2rem;
-          border-radius: 15px;
-          margin: 3rem;
-          width: 80%;
-          display: flex;
-          justify-content: center;
-          margin: auto;
         }
       }
     }

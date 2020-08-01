@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // import Champion from 'src/frontend/components/Tutoriels/Jungle/Zac';
 import Champion from 'src/frontend/components/Tutoriels/Champion';
 
-import { fetchAllChampions, fetchOneChampion, stateName } from 'src/actions/champions';
+import { fetchAllChampions, fetchOneChampion, stateName, setChampionIsLoad } from 'src/actions/champions';
 
 import { fetchOneCompetence } from 'src/actions/competences';
 import { setAppLoading } from 'src/actions/global';
@@ -16,6 +16,7 @@ const mapStateToProps = (state) => ({
   appIsLoading: state.global.appIsLoading,
   name: state.champions.name,
   competence: state.competences,
+  championIsLoad: state.champions.championIsLoad,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -38,6 +39,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   stateName: (name) => {
     dispatch(stateName(name));
+  },
+  setChampionIsLoad: () => {
+    dispatch(setChampionIsLoad());
   },
 });
 

@@ -1,9 +1,10 @@
-import { SAVE_CHAMPION, STATE_NAME } from 'src/actions/champions';
+import { SAVE_CHAMPION, STATE_NAME, SET_CHAMPION_IS_LOAD } from 'src/actions/champions';
 
 
 const initialState = {
   champion: [],
   name: '',
+  championIsLoad: false,
 };
 
 const championsReducer = (state = initialState, action = {}) => {
@@ -18,6 +19,12 @@ const championsReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         name: action.name,
+      };
+
+    case SET_CHAMPION_IS_LOAD:
+      return {
+        ...state,
+        championIsLoad: !state.championIsLoad,
       };
 
     default: return state;

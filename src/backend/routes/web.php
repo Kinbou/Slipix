@@ -23,7 +23,7 @@ $router->get('/toto-route', ['as'=> 'toto', 'uses'=>'MainController@toto']);
 
 $router->get('/champions', 'ChampionController@list');
 
-$router->get('/champions/{name}',[
+$router->get('/champions/{lane}/{champion}',[
     'as' => 'champion',
     'uses' => 'ChampionController@fetchChampion'
 ]);
@@ -39,5 +39,27 @@ $router->get('/competences/{id}',[
     'as' => 'competences',
     'uses' =>  'CompetenceController@fetchCompetence'
 ]);
+
+// ----- LANES -------
+
+// champion actif lane
+$router->get('/lanes/{name}/actif',[
+    'as' => 'lane',
+    'uses' => 'LaneController@fetchLaneActif'
+]);
+
+// champion soon ane
+$router->get('/lanes/{name}/soon',[
+    'as' => 'lane',
+    'uses' => 'LaneController@fetchLaneSoon'
+]);
+
+// all champion lane
+$router->get('/lanes/{name}',[
+    'as' => 'lane',
+    'uses' => 'LaneController@fetchLaneActif'
+]);
+
+
 
 

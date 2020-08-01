@@ -1,9 +1,15 @@
 import axios from 'axios';
-import { FETCH_ALL_CHAMPIONS, FETCH_ONE_CHAMPION, saveChampion } from 'src/actions/champions';
-import { setAppLoading } from 'src/actions/global';
+import {
+  FETCH_ALL_CHAMPIONS,
+  FETCH_ONE_CHAMPION,
+  saveChampion,
+  setChampionIsLoad,
+} from 'src/actions/champions';
+// import { setAppLoading } from 'src/actions/global';
 
 const championsMiddleware = (store) => (next) => (action) => {
-  const { name } = store.getState().champions;
+  const { champion } = store.getState().champions.name;
+  const { lane } = store.getState().champions.name;
   console.log();
   switch (action.type) {
     case FETCH_ALL_CHAMPIONS:
@@ -15,16 +21,15 @@ const championsMiddleware = (store) => (next) => (action) => {
           console.warn(error);
         })
         .finally(() => {
-          store.dispatch(setAppLoading());
+          store.dispatch(setChampionIsLoad());
         });
       break;
 
     case FETCH_ONE_CHAMPION:
-
+      console.log(store.getState().champions.name);
       axios({
-
         method: 'get',
-        url: `http://localhost:8090/champions/${name.name}`,
+        url: `http://localhost:8090/champions/${store.getState().champions.name.lane}/${store.getState().champions.name.name}`,
       })
         .then((response) => {
           console.log('passage dans la requete champion');
@@ -34,7 +39,7 @@ const championsMiddleware = (store) => (next) => (action) => {
           console.warn(error);
         })
         .finally(() => {
-          store.dispatch(setAppLoading());
+          store.dispatch(setChampionIsLoad());
         });
       next(action);
       break;
