@@ -60,26 +60,26 @@ const Jungle = ({
               )}
             </>
           ))}
-          {laneSoon.length !== 0 && (
-          <div>
-            <div className="betweenParagraph" />
-            <h2>Prochainement</h2>
-            <div className="jungle__cards">
-              {laneSoon.map((listChampion) => (
-                <>
-                  <Link to={`/tutoriels-champions/${listChampion.lane}/${listChampion.name}`}>
-                    <div className="jungle__cards__cardSoon">
-                      <img src={`http://localhost:8090/images/champions/${listChampion.pictureChampion}`} alt="" />
-                      <p className="jungle__cards__cardSoon__content">Bientôt disponible</p>
-                      <h3>{listChampion.name}</h3>
-                    </div>
-                  </Link>
-                </>
-              ))}
-            </div>
-          </div>
-          )}
         </div>
+        {laneSoon.length !== 0 && (
+        <>
+          <div className="betweenParagraph" />
+          <h2>Prochainement</h2>
+          <div className="jungle__cards">
+            {laneSoon.map((listChampion) => (
+              <>
+                <Link to={`/tutoriels-champions/${listChampion.lane}/${listChampion.name}`}>
+                  <div className="jungle__cards__cardSoon">
+                    <img src={`http://localhost:8090/images/champions/${listChampion.pictureChampion}`} alt="" />
+                    <p className="jungle__cards__cardSoon__content">Bientôt disponible</p>
+                    <h3>{listChampion.name}</h3>
+                  </div>
+                </Link>
+              </>
+            ))}
+          </div>
+        </>
+        )}
       </>
       )}
     </div>

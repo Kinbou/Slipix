@@ -20,14 +20,10 @@
     &__card {
       width: auto;
       display: inline-block;
-      // height: 300px;
       margin: 3rem;
-      // text-align: center;
       color: white;
-      // background-color: #655c54;
       background-color: rgba(28,36,45,0.8);
       border-radius: 10px;
-      // padding: 1rem;
       border: 2px solid transparent;
       transition:all .2s ease-in-out;
       -webkit-box-shadow: 0 28px 16px -26px black;
@@ -68,15 +64,12 @@
     &__cardSoon {
     width: auto;
     display: inline-block;
-    // height: 300px;
     margin: 3rem;
     color: white;
-    // background-color: #655c54;
     background-color: rgba(28,36,45,0.8);
     border-radius: 10px;
     position: relative;
     z-index: 1;
-    // padding: 1rem;
       &__content {
         position: absolute;
         bottom : 2rem;
