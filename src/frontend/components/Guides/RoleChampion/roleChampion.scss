@@ -2,7 +2,6 @@
   color: white;
   text-align: center;
   padding: 0 10rem 4rem 10rem;
-
   .icon {
     color: yellowgreen;
     padding-right: .5rem;
@@ -112,6 +111,84 @@
         width: 30%;
         margin: 2rem;
       }
+    }
+  }
+}
+
+@media (max-width: 1231px) {
+  .roleChampion {
+    padding: 0 5rem 4rem 5rem;
+  }
+}
+
+@media (max-width: 1117px) {
+  .roleChampion {
+    padding: 0 .5rem 2rem .5rem;
+  }
+}
+
+@media (max-width: 840px) {
+  .roleChampion {
+    h1 {
+      font-size: 3.5em;
+    }
+    &__champion, &__end, &__intro, &__role  {
+      margin: .5rem;
+    }
+    h2 {
+      font-size: 3em;
+    }
+    iframe {
+      width: 550px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 676px) {
+  .roleChampion {
+    h2 {
+      font-size: 3em;
+    }
+    iframe {
+      width: 450px;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 582px) {
+  .roleChampion {
+    iframe {
+      width: 380px;
+    }
+    &__champion__picture {
+      margin: 3rem 0;
+    }
+  }
+}
+
+@media (max-width: 509px) {
+  .roleChampion {
+    iframe {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 419px) {
+  .roleChampion {
+    h2 {
+      font-size: 2.4em;
+      margin: 1rem 0;
+    }
+    iframe {
+      width: 250px;
+    }
+    &__champion__picture {
+      margin: 3rem 0;
+      width: 80%;
     }
   }
 }

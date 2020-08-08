@@ -9,7 +9,7 @@ import './publicity.scss';
 
 const Publicity = () => (
   <div className="publi">
-    <Link to="">
+    <a href="https://discord.com/invite/fsTYTg5" target="_blanc">
       <div className="publi__banner discord">
         <div className="publi__banner__left">
           <img className="discordTitle" src={discordTitle} alt="" />
@@ -22,7 +22,7 @@ const Publicity = () => (
           </div>
         </div>
       </div>
-    </Link>
+    </a>
     {/* <Link to="">
       <div className="publi__banner discord">
         <div className="publi__banner__left">

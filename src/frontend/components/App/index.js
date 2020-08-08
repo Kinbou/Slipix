@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Route, useLocation } from 'react-router-dom';
 
 // == Import
-import Header from 'src/frontend/components/Header';
+import Header from 'src/frontend/containers/Header';
 import Home from 'src/frontend/components/Home';
 import Footer from 'src/frontend/components/Footer';
 import Presentation from 'src/frontend/components/Presentation';

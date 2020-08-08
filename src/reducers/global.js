@@ -1,11 +1,16 @@
 import {
   SET_APP_LOADING,
+  SHOW_MENU,
+  SHOW_MODAL,
 
 } from 'src/actions/global';
 
 const initialState = {
   // redirectTo: '',
   appIsLoading: false,
+  showMenu: '',
+  showModal: '',
+  modalParams: {},
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -28,6 +33,19 @@ const reducer = (state = initialState, action = {}) => {
         appIsLoading: action.value,
       };
 
+    // Menu burger
+    case SHOW_MENU:
+      return {
+        ...state,
+        showMenu: action.name,
+      };
+
+    case SHOW_MODAL:
+      return {
+        ...state,
+        showModal: action.name,
+        modalParams: action.params,
+      };
 
     default:
       return state;

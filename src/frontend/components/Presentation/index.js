@@ -9,7 +9,7 @@ import './presentation.scss';
 const Presentation = () => (
   <div className="presentation">
     <h1 className="globalTitle-page">Présentation</h1>
-    <h2>Salut c'est <span className="presentation__slipix">Slipix</span>  Bienvenue sur mon site Officiel !</h2>
+    <h2>Salut c'est <span className="red">Slipix</span>  Bienvenue sur mon site Officiel !</h2>
     <img className="presentation__coaching" src={coachingSlipix} alt="" />
     <p>Joueur de League of Legends depuis 2014, Coach <span className="red">Mental/Stratégique</span> depuis 2018.</p>
     <p>YouTuber/Streamer sur <span className="purple">Twitch</span> par passion depuis 2016, j'ai toujours aimé

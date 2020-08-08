@@ -15,10 +15,36 @@
     height: 80px;
     padding: 0 2rem;
     position: relative;
-    &:hover {
-      // color:#50535780;
-    }
     &__menu{
+      &__burger {
+        position: relative;
+        z-index: 99;
+        background-color: transparent;
+        border: 0;
+        color: #fff;
+        font-size: 2em;
+      }
+      &__container {
+        z-index: 99;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #E3E5EC;
+        color: darkBlue;
+        padding: 1rem;
+        min-width: 50%;
+        border-radius: 0 0 1rem 0;
+
+        a {
+          display: block;
+          line-height: 3;
+          border-bottom: 2px solid lightBlue;
+
+          &:last-child {
+            border: 0;
+          }
+        }
+      }
       &__item {
         text-decoration: none;
         font-size: 1.5em;

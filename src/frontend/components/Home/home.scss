@@ -3,6 +3,7 @@
   // margin-top: 3rem;
   h2 {
     color: #ffaa55;
+    margin: 9rem 0 2rem 0;
   }
   &__introduction {
     width: 100%;
@@ -15,17 +16,18 @@
     // box-shadow: 0 0 0 8px #192a37;
     border-radius: 8px;
     background-color: rgba(28,36,45,0.5);
+    &__logo {
+      width: 5%!important;
+      margin: auto 0;
+      filter: drop-shadow(0 0 0.55rem #e39200);
+    }
     img {
       width: 6%;
     }
     h1 {
-      font-family: 'Squada One', cursive;
-      text-transform: uppercase;
       text-align: center;
       font-size: 1.3em;
       padding: 0 2rem;
-      color: #ffaa55;
-      text-shadow: 2px 2px  30px black;
       margin: auto 0;
     }
     p {
@@ -80,6 +82,135 @@
         border-color: #80afd1;
       }
 
+    }
+  }
+}
+
+@media (max-width: 1750px) {
+  .home {
+    &__news {
+      img {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1355px) {
+  .home {
+    &__news {
+      margin: auto 0;
+      img {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1215px) {
+  .home {
+    h1 {
+     font-size: 1em;
+    }
+    
+  }
+}
+
+@media (max-width: 923px) {
+  .home {
+    h2 {
+      margin: 6rem 0 0rem 0;
+      font-size: 3em;
+    }
+    &__news {
+      margin: auto 0;
+      img {
+        width: 45%;
+      }
+    }
+    &__introduction {
+      &__logo {
+        width: 8%!important;
+        // margin: 0 .5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 733px) {
+  .home {
+    h2 {
+      font-size: 3em;
+    }
+    &__news {
+      margin: auto 0;
+      img {
+        width: 58%;
+      }
+    }
+  }
+}
+
+@media (max-width: 733px) {
+  .home {
+    &__introduction {
+      &__logo {
+        width: 10%!important;
+        // margin: 0 .5rem;
+      }
+    }
+    h2 {
+      font-size: 3em;
+    }
+    &__news {
+      margin: auto 0;
+      img {
+        width: 65%;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    p {
+      font-size: 0.7em;
+    }
+    h1 {
+      font-size: 0.8em;
+    }
+    &__introduction {
+      &__logo {
+        width: 12%!important;
+        // margin: 0 .5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .home {
+    p {
+      font-size: .7em;
+    }
+    h1 {
+      font-size: 0.7em;
+    }
+    h2 {
+      margin: 4rem 0 0rem 0;
+      font-size: 2.2em;
+    }
+    &__introduction {
+      &__logo {
+        width: 14%!important;
+        // margin: 0 .5rem;
+      }
+    }
+    &__news {
+      margin: auto 0;
+      img {
+        width: 80%;
+      }
     }
   }
 }

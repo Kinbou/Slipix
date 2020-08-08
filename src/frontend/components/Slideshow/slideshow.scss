@@ -1,15 +1,18 @@
 .containerSlide {
   width: 100%;
-  height: 318px;
+  // box-shadow: 1px 1px 12px black;
   &__each-slide {
     &__image {
       position: relative;
       max-width: 100%;
+      height: auto;
       &__content {
         line-height: 3em;
         text-transform: uppercase;
         h2 {
-          font-size: 2.2em;
+          font-size: 2.7em;
+          margin: 0;
+          color: white;
         }
         p {
           font-size: 1.7em;
@@ -24,7 +27,7 @@
         &__youtube {
           position: absolute;
           color: cornsilk;
-          left: calc(30% - 125px);
+          left: calc(29.2% - 125px);
           top: calc(40% - 30px);
           z-index: 2;
           text-align: center;
@@ -59,7 +62,7 @@
         &__coaching {
           position: absolute;
           color: cornsilk;
-          left: calc(69% - 135px);
+          left: calc(67.2% - 135px);
           top: calc(40% - 30px);
           z-index: 2;
           font-size: 1.1em;
@@ -71,6 +74,51 @@
             &:hover{
               color: white;
               background-color: #7289da;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .containerSlide {
+    h2 {
+      font-size: 1.8em!important;
+    }
+    p {
+      font-size: 1em!important;
+    }
+    button {
+      font-size: 1.2em;
+    }
+    &__each-slide {
+      &__image {
+        &__content {
+          &__coaching {
+            top: calc(30% - 30px);
+            left: calc(68% - 135px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .containerSlide {
+    h2 {
+      font-size: 1.4em;
+    }
+    &__each-slide {
+      &__image {
+        height: 155px;
+        &__content {
+          &__coaching {
+            left: calc(67.4% - 135px);
+            p {
+              font-size: 1em!important;
             }
           }
         }

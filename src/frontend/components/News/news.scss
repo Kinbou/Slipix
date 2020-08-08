@@ -1,20 +1,22 @@
 .news {
+  // padding: 0 5rem;
+  p {
+    text-align: center;
+  }
   h3 {
     text-align: center;
     font-size: 3em;
-    // padding: 3rem;
     color: white;
   }
   &__cards {
     display: flex;
-    flex-direction: column;
-    // justify-content: space-evenly;
     margin: 2rem;
+    text-align: center;
     &__ligne {
-      display: flex;
-      justify-content: center;
+
     }
     &__card {
+      display: inline-block;
       width: 550px;
       margin: 3rem;
       color: white;
@@ -66,6 +68,98 @@
     &__first {
       &__janna {
         color: #ec4e5b;
+      }
+    }
+  }
+}
+
+@media (max-width: 1516px) {
+  .news {
+
+    &__cards {
+      &__card {
+        width: 450px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1156px) {
+  .news {
+    h3 {
+      font-size: 2.5em;
+    }
+    &__cards {
+      &__card {
+        width: 445px;
+      }
+    }
+  }
+}
+
+@media (max-width: 579px) {
+  .news {
+    h1 {
+      font-size: 4em;
+    }
+    h3 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    &__cards {
+      &__card {
+        margin: 1rem;
+        width: 370px;
+      }
+    }
+  }
+}
+
+@media (max-width: 459px) {
+  .news {
+    h1 {
+      font-size: 4em;
+    }
+    h3 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    &__cards {
+      &__card {
+        margin: .5rem;
+        width: 330px;
+      }
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .news {
+    h1 {
+      font-size: 3.5em;
+    }
+    h3 {
+      font-size: 1.5em;
+    }
+    &__cards {
+      &__card {
+        margin: .5rem;
+        width: 290px;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .news {
+    &__cards {
+      &__card {
+        margin: .5rem;
+        width: 250px;
       }
     }
   }

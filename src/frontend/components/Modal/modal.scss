@@ -1,0 +1,47 @@
+.modal-background {
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+  width: 800px;
+  position: fixed;
+  left: calc(50% - 400px);
+  top: 100px;
+  z-index: 99;
+  background-color: red;
+  color: darkBlue;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  &__close {
+    padding: .3rem 1rem;
+    font-size: 1.2em;
+    position: absolute;
+    right: 1rem/2;
+    top: 1rem/2;
+  }
+
+  h1 {
+    font-size: 2em;
+    color: darkBlue;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .modal {
+    width: calc(100% -2rem);
+    margin: 0 1rem/2;
+    left: 0;
+    top: 50px;
+    bottom: 50px;
+    overflow-y: auto;
+  }
+}

@@ -7,6 +7,9 @@
   h1 {
     font-size: 4em;
   }
+  h2 {
+    color: white;
+  }
   &__slipix {
     color: #ff3e29;
   }
@@ -78,5 +81,76 @@
   p {
     font-size: 1.5em;
     line-height: 1.5em;
+  }
+}
+
+@media (max-width: 1500px) {
+  .presentation {
+    margin: 5rem 10rem 5rem 10rem;
+    padding: 1rem 4rem;
+  }
+
+}
+
+@media (max-width: 1050px) {
+  .presentation {
+    margin: 3rem 5rem 3rem 5rem;
+    padding: 1rem 4rem;
+    p {
+      font-size: 1.3em;
+    }
+    &__image {
+      &__refuseResist {
+        bottom: -32px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .presentation {
+    margin: 3rem 1rem 3rem 1rem;
+    padding: 1rem 3rem;
+    p {
+      font-size: 1.3em;
+    }
+    &__image {
+      &__refuseResist {
+        bottom: -32px;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .presentation {
+    margin: 3rem .5rem 3rem .5rem;
+    padding: 1rem 1rem;
+
+    &__image {
+      &__refuseResist {
+        bottom: -22px;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .presentation {
+    h1 {
+      font-size: 3em;
+    }
+    h2 {
+      font-size: 1.8em;
+    }
+    &__coaching {
+      width: 75%;
+    }
+    &__image {
+      &__refuseResist {
+        bottom: -11px;
+        width: 12%;
+      }
+    }
   }
 }

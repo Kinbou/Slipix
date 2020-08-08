@@ -163,7 +163,7 @@ const RoleChampion = () => (
       <p className="roleChampion__betweenYoutube paragraph">Et pour terminer une liste de <span className="red">champions</span> que je trouve super fun dans le jeu, dans la victoire ou la défaite ! (Ce n'est que mon avis et je préfère vous le partager)</p>
       <Youtube videoId="RnO3eqRYNNk" SameSite="" />
     </div>
-    <div className="backgroundParagraphe">
+    <div className="backgroundParagraphe roleChampion__end">
       <p className="paragraph">Pour résumer sur cette page qui parle de votre rôle et de votre champion, n'hésitez pas à vous poser les bonnes questions pour vite trouver votre playstyle et ainsi commencer une bonne courbe de progression !<br /> N'oubliez pas que ça reste un jeu il faut s'amuser, <span className="gold">ne vous forcez pas à jouer des champions forts que vous n'aimez pas...</span></p>
       <p className="paragraph">J'espère que ce guide vous aura aider, à bientot sur la faille la <span className="red">#TEAMSLIP</span></p>
       <img className="roleChampion__champion__picture roleChampion__champion__picture__troll" src={trollPicture} alt="" />

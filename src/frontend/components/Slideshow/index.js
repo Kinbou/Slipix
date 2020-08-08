@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import youtube from '../../../assets/images/banner/YoutubeSLIPIX.png';
-import twitch from '../../../assets/images/banner/TwitchSlipixSlide.png';
+import twitch from '../../../assets/images/banner/twitchSlipixSlide.png';
 import coaching from '../../../assets/images/CoachingSLIPIX.png';
 
 import './slideshow.scss';
@@ -36,7 +36,7 @@ const Slideshow = () => {
           <img src={coaching} alt="coaching" className="containerSlide__each-slide__image" />
           <div className="containerSlide__each-slide__image__content containerSlide__each-slide__image__content__coaching">
             <h2>Rejoignez LA #TEAMSLIP SUR DISCORD !</h2>
-            <p>+ de 6000 membres</p>
+            <p>+ de 7000 membres</p>
             <button type="button">Cliquez Ici</button>
           </div>
         </div>

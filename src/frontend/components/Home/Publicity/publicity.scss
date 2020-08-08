@@ -4,7 +4,7 @@
   font-weight: bold;
   font-size: .8em;
   .discordTitle {
-    // width: 100%;
+    width: 90%;
   }
   &__banner {
     width: 65%;
@@ -32,7 +32,7 @@
       text-align: center;
       justify-content: center;
       line-height: 1.5em;
-      width: 75%;
+      width: 60%;
       img {
         // width: 80%;
       }
@@ -42,8 +42,9 @@
       flex-direction: column;
       text-align: center;
       justify-content: center;
+      width: 40%;
       img {
-        width: 60%;
+        width: 40%;
         text-align: center;
         margin: auto;
       }
@@ -74,5 +75,48 @@
 .discord {
   span {
     color: #7489da;
+  }
+}
+
+@media (max-width: 950px) {
+  .publi {
+    p {
+      font-size: .9em!important;
+    }
+    &__banner {
+      padding: 2rem ;
+      width: 90%;
+      margin: 2rem auto;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .publi {
+    p {
+      font-size: .8em;
+    }
+    &__banner {
+      padding: 1rem ;
+      width: 90%;
+      margin: 2rem auto;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .publi {
+    margin: 0;
+    p {
+      font-size: .6em!important;
+    }
+    &__banner {
+      padding: 1rem ;
+      width: 90%;
+      margin: auto;
+      
+    }
   }
 }

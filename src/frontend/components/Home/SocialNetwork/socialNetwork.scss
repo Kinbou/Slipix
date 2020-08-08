@@ -1,6 +1,4 @@
 .socialNetwork--home {
-  // margin-top: 1rem;
-  
   padding: 4rem;
   .socialNetwork__card {
     width: 240px;
@@ -18,12 +16,10 @@
   .socialNetwork__card {
     width: 140px;
     height: 100px;
-    // background-color: white;
     margin: 2rem;
     &__cover {
       img {
         width: 60%;
-
        }
        &__twitter {
          width: 40%;
@@ -74,3 +70,116 @@
   //  ;/* couleur de fond a inclure dans la derniere image/gradient de fond */
   // background-size:100% 3px;
   // padding:50px 10px; 
+
+  @media (max-width: 1550px) {
+    .socialNetwork--home {
+      .socialNetwork__card {
+        &__cover {
+          &__picture {
+            width: 55%;     
+          }
+        }
+      }  
+    }
+  }
+
+  @media (max-width: 900px) {
+    .socialNetwork--home {
+      padding: 1rem;
+      .socialNetwork__card {
+        &__cover {
+          &__picture {
+            width: 65%;     
+          }
+        }
+      }  
+    }
+  }
+
+  @media (max-width: 700px) {
+    .socialNetwork--home {
+      padding: 2rem;
+      .socialNetwork__card {
+        &__cover {
+          &__picture {
+            width: 65%;     
+          }
+        }
+      }  
+    }
+  }
+
+  @media (max-width: 500px) {
+    .socialNetwork--home {
+      padding: .5rem;
+      .socialNetwork__card {
+        width: 50%;
+        &__cover {
+          &__picture {
+            width: 85%;     
+          }
+        }
+      }  
+    }
+  }
+
+
+// Présentation
+@media (max-width: 1300px) {
+  .socialNetwork--presentation {
+    padding: .5rem;
+    .socialNetwork__card {
+      img {
+        width: 80%;
+      }
+      &__cover {
+        &__picture {
+          width: 85%;     
+        }
+      }
+    }  
+  }
+}
+
+@media (max-width: 860px) {
+  .socialNetwork--presentation {
+    padding: .5rem;
+    .socialNetwork__card {
+      img {
+        width: 100%;
+      }
+    }  
+  }
+}
+
+@media (max-width: 650px) {
+  .socialNetwork--presentation {
+    padding: .5rem;
+    .socialNetwork__card {
+      img {
+        width: 120%;
+      }
+    }  
+  }
+}
+
+@media (max-width: 550px) {
+  .socialNetwork--presentation {
+    .socialNetwork__card {
+      img {
+        width: 220%;
+      }
+    }  
+  }
+}
+
+@media (max-width: 450px) {
+  .socialNetwork--presentation {
+    padding: .5rem;
+    .socialNetwork__card {
+      img {
+        width: 620%;
+      }
+    }  
+  }
+}
