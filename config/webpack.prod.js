@@ -19,7 +19,7 @@ module.exports = merge.smart(common, {
       filename: 'css/[name].css',
     }),
     // Stats bundle
-    new BundleStatsWebpackPlugin(),
+    //new BundleStatsWebpackPlugin(),
   ],
   module: {
     rules: [
