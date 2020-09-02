@@ -21,7 +21,9 @@ const Jungle = ({
   laneActif,
   laneSoon,
   setLaneIsLoad,
+  setLaneIsLoad2,
   laneIsLoad,
+  laneIsLoad2,
   fetchAllLane,
   fetchSoonLane,
 }) => {
@@ -33,13 +35,14 @@ const Jungle = ({
     fetchSoonLane();
     console.log('passage dans le useEffect');
     return () => {
-      setLaneIsLoad();
+      setLaneIsLoad(false);
+      setLaneIsLoad2(false);
     };
   }, []);
   return (
     <div className="jungle">
-      {!laneIsLoad && <Loader />}
-      {laneIsLoad && (
+      {(!laneIsLoad || !laneIsLoad2) && <Loader />}
+      {(laneIsLoad && laneIsLoad2) && (
       <>
         <div className="breadcrumb">
           <Link className="breadcrumb__link" to="/">Accueil </Link> >
@@ -53,7 +56,7 @@ const Jungle = ({
               {listChampion.actif === 1 && (
               <Link to={`/tutoriels-champions/${listChampion.lane}/${listChampion.name}`}>
                 <div className="jungle__cards__card">
-                  <img src={`http://localhost:8090/images/champions/${listChampion.pictureChampion}`} alt="" />
+                  <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${listChampion.pictureChampion}`} alt="" />
                   <h3>{listChampion.name}</h3>
                 </div>
               </Link>
@@ -70,7 +73,7 @@ const Jungle = ({
               <>
                 <Link to={`/tutoriels-champions/${listChampion.lane}/${listChampion.name}`}>
                   <div className="jungle__cards__cardSoon">
-                    <img src={`http://localhost:8090/images/champions/${listChampion.pictureChampion}`} alt="" />
+                    <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${listChampion.pictureChampion}`} alt="" />
                     <p className="jungle__cards__cardSoon__content">Bientôt disponible</p>
                     <h3>{listChampion.name}</h3>
                   </div>
@@ -91,7 +94,9 @@ Jungle.propTypes = {
   fetchAllLane: PropTypes.func.isRequired,
   fetchSoonLane: PropTypes.func.isRequired,
   laneIsLoad: PropTypes.bool.isRequired,
+  laneIsLoad2: PropTypes.bool.isRequired,
   setLaneIsLoad: PropTypes.func.isRequired,
+  setLaneIsLoad2: PropTypes.func.isRequired,
   laneActif: PropTypes.arrayOf(
     PropTypes.shape({
     }).isRequired,

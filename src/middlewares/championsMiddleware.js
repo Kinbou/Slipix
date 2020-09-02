@@ -8,12 +8,12 @@ import {
 // import { setAppLoading } from 'src/actions/global';
 
 const championsMiddleware = (store) => (next) => (action) => {
-  const { champion } = store.getState().champions.name;
-  const { lane } = store.getState().champions.name;
+  // const { champion } = store.getState().champions.name;
+  // const { lane } = store.getState().champions.name;
   console.log();
   switch (action.type) {
     case FETCH_ALL_CHAMPIONS:
-      axios.get('http://localhost:8090/champions')
+      axios.get('https://backend.slipix-progresser-sur-league-of-legends.fr/champions')
         .then((response) => {
           store.dispatch(saveChampion(response.data));
         })
@@ -29,7 +29,7 @@ const championsMiddleware = (store) => (next) => (action) => {
       console.log(store.getState().champions.name);
       axios({
         method: 'get',
-        url: `http://localhost:8090/champions/${store.getState().champions.name.lane}/${store.getState().champions.name.name}`,
+        url: `https://backend.slipix-progresser-sur-league-of-legends.fr/champions/${store.getState().champions.name.lane}/${store.getState().champions.name.name}`,
       })
         .then((response) => {
           console.log('passage dans la requete champion');

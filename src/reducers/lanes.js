@@ -2,6 +2,7 @@ import {
   STATE_NAME_LANE,
   SAVE_ALL_LANE,
   SET_LANE_IS_LOAD,
+  SET_LANE_IS_LOAD2,
   SAVE_SOON_LANE,
 } from 'src/actions/lanes';
 
@@ -10,6 +11,7 @@ const initialState = {
   listLaneSoon: [],
   name: '',
   laneIsLoad: false,
+  laneIsLoad2: false,
 };
 
 const lanesReducer = (state = initialState, action = {}) => {
@@ -35,8 +37,14 @@ const lanesReducer = (state = initialState, action = {}) => {
     case SET_LANE_IS_LOAD:
       return {
         ...state,
-        laneIsLoad: !state.laneIsLoad,
+        laneIsLoad: action.value,
       };
+
+      case SET_LANE_IS_LOAD2:
+        return {
+          ...state,
+          laneIsLoad2: action.value,
+        };
 
     default: return state;
   }

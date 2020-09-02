@@ -10,6 +10,7 @@ import {
   saveAllLane,
   saveSoonLane,
   setLaneIsLoad,
+  setLaneIsLoad2,
 } from 'src/actions/lanes';
 import { setAppLoading } from 'src/actions/global';
 
@@ -23,6 +24,7 @@ const mapStateToProps = (state) => ({
   laneActif: state.lanes.listLaneActif,
   laneSoon: state.lanes.listLaneSoon,
   laneIsLoad: state.lanes.laneIsLoad,
+  laneIsLoad2: state.lanes.laneIsLoad2,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -45,9 +47,12 @@ const mapDispatchToProps = (dispatch) => ({
   saveSoonLane: (listLaneSoon) => {
     dispatch(saveSoonLane(listLaneSoon));
   },
-  setLaneIsLoad: () => {
-    dispatch(setLaneIsLoad());
+  setLaneIsLoad: (value) => {
+    dispatch(setLaneIsLoad(value));
   },
+  setLaneIsLoad2: (value) => {
+    dispatch(setLaneIsLoad2(value));
+  }, 
 });
 
 export default connect(

@@ -6,7 +6,7 @@ const competencesMiddleware = (store) => (next) => (action) => {
   // console.log(idCompetence);
   switch (action.type) {
     case FETCH_ONE_COMPETENCE:
-      axios.get('http://localhost:8090/competences/1')
+      axios.get('https://backend.slipix-progresser-sur-league-of-legends.fr/competences/1')
         .then((response) => {
           console.log('passage dans la requête competence');
           store.dispatch(saveCompetence(response.data));
