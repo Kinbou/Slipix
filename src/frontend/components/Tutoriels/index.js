@@ -35,19 +35,17 @@ const Tutoriels = () => (
         </Link>
       </div>
       <div className="tutoriels__cards__line tutoriels__cards__line__two">
-        <Link to="/">
-          <div className="tutoriels__cards__card">
-            <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels ad carry</h3>
-            <img src={adc} alt="" />
-          </div>
-        </Link>
-        <Link to="/">
-          <div className="tutoriels__cards__card">
-            <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Support</h3>
-            <img src={support} alt="" />
-          </div>
-        </Link>
-      </div>    
+        <div className="tutoriels__cards__cardSoon">
+          <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels ad carry</h3>
+          <img src={adc} alt="" />
+          <p className="tutoriels__cards__cardSoon__content">Bientôt disponible</p>
+        </div>
+        <div className="tutoriels__cards__cardSoon">
+          <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Support</h3>
+          <img src={support} alt="" />
+          <p className="tutoriels__cards__cardSoon__content">Bientôt disponible</p>
+        </div>
+      </div>
     </div>
   </div>
 );

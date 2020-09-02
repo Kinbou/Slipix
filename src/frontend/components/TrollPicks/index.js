@@ -38,12 +38,10 @@ const TrollPicks = () => (
         </Link>
       </div>
       <div className="trollpicks__cards__line tutoriels__cards__line__one">
-        <Link to="/tutoriels-toplane">
-          <div className="trollpicks__cards__card">
-            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Caitlyn Sniper</h3>
-            <img src={caitlyn} alt="" />
-          </div>
-        </Link>
+        <div className="trollpicks__cards__card">
+          <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Caitlyn Sniper</h3>
+          <img src={caitlyn} alt="" />
+        </div>
       </div>
       <div className="trollpicks__cards__line tutoriels__cards__line__one">
         <Link to="/trollpicks/kaisa-laser">
