@@ -1,7 +1,8 @@
 // == Import npm
 import React from 'react';
 import classNames from 'classnames';
-import { Route, useLocation } from 'react-router-dom';
+import { Route, useLocation, Switch } from 'react-router-dom';
+import Analytics from 'react-router-ga';
 
 // == Import
 import Header from 'src/frontend/containers/Header';
@@ -9,7 +10,6 @@ import Home from 'src/frontend/components/Home';
 import Footer from 'src/frontend/components/Footer';
 import Presentation from 'src/frontend/components/Presentation';
 import News from 'src/frontend/components/News';
-
 import Support from 'src/frontend/components/Support';
 import Contact from 'src/frontend/components/Contact';
 
@@ -31,6 +31,7 @@ import TrollPicks from 'src/frontend/components/TrollPicks';
 import XinAutoroute from 'src/frontend/components/TrollPicks/XinAutoroute';
 import ThreshFlak from 'src/frontend/components/TrollPicks/ThreshFlak';
 import KaisaLaser from 'src/frontend/components/TrollPicks/KaisaLaser';
+import CaitlynSniper from 'src/frontend/components/TrollPicks/CaitlynSniper';
 
 // Lanes
 import Jungle from 'src/frontend/containers/Tutoriels/Jungle';
@@ -84,6 +85,7 @@ const App = () => {
   const isXinAutoroute = currentPath === '/trollpicks/xinZhao-autoroute';
   const isThreshFlak = currentPath === '/trollpicks/thresh-flak';
   const isKaisaLaser = currentPath === '/trollpicks/kaisa-laser';
+  const isCaitlynSniper = currentPath === '/trollpicks/caitlyn-sniper';
 
   const appClass = classNames('app', {
     'app--home': isHome,
@@ -101,7 +103,7 @@ const App = () => {
     'app--progressLol': isProgressLol,
     'app--lowElo': isLowElo,
     'app--winLane': isWinLane || isVisionGame,
-    'app--trollPicks': isTrollPicks || isXinAutoroute || isThreshFlak || isKaisaLaser,
+    'app--trollPicks': isTrollPicks || isXinAutoroute || isThreshFlak || isKaisaLaser || isCaitlynSniper,
     // 'app--error': isError,
   });
 
@@ -111,69 +113,75 @@ const App = () => {
         <Header />
         <main>
           {/* {!appIsLoad && <Loader />} */}
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/presentation">
-            <Presentation />
-          </Route>
-          <Route exact path="/nouveaute">
-            <News />
-          </Route>
-          {/* <Partenaires />
+          <Analytics id="UA-176591379-1" debug>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/presentation">
+                <Presentation />
+              </Route>
+              <Route exact path="/nouveaute">
+                <News />
+              </Route>
+              {/* <Partenaires />
           */}
-          <Route exact path="/tutoriels-champions">
-            <Tutoriels />
-          </Route>
-          <Route exact path="/tutoriels-champions/:lane">
-            <Jungle />
-          </Route>
-          <Route exact path="/tutoriels-champions/:lane/:name">
-            <Champion />
-          </Route>
-          <Route exact path="/guides">
-            <Guides />
-          </Route>
-          <Route exact path="/guides/mental&rage">
-            <Guide />
-          </Route>
-          <Route exact path="/guides/role-champion">
-            <RoleChampion />
-          </Route>
-          <Route exact path="/guides/progresser-sur-leagueOfLegends">
-            <ProgressLol />
-          </Route>
-          <Route exact path="/guides/sortir-du-bas-elo">
-            <LowElo />
-          </Route>
-          <Route exact path="/guides/gagner-sa-phase-de-lane">
-            <WinLane />
-          </Route>
-          <Route exact path="/guides/vision-du-jeu">
-            <VisionGame />
-          </Route>
-          <Route exact path="/trollpicks">
-            <TrollPicks />
-          </Route>
-          <Route exact path="/trollpicks/xinZhao-autoroute">
-            <XinAutoroute />
-          </Route>
-          <Route exact path="/trollpicks/thresh-flak">
-            <ThreshFlak />
-          </Route>
-          <Route exact path="/trollpicks/kaisa-laser">
-            <KaisaLaser />
-          </Route>
-          <Route exact path="/me-soutenir">
-            <Support />
-          </Route>
-          <Route exact path="/me-contacter">
-            <Contact />
-          </Route>
+              <Route exact path="/tutoriels-champions">
+                <Tutoriels />
+              </Route>
+              <Route exact path="/tutoriels-champions/:lane">
+                <Jungle />
+              </Route>
+              <Route exact path="/tutoriels-champions/:lane/:name">
+                <Champion />
+              </Route>
+              <Route exact path="/guides">
+                <Guides />
+              </Route>
+              <Route exact path="/guides/mental&rage">
+                <Guide />
+              </Route>
+              <Route exact path="/guides/role-champion">
+                <RoleChampion />
+              </Route>
+              <Route exact path="/guides/progresser-sur-leagueOfLegends">
+                <ProgressLol />
+              </Route>
+              <Route exact path="/guides/sortir-du-bas-elo">
+                <LowElo />
+              </Route>
+              <Route exact path="/guides/gagner-sa-phase-de-lane">
+                <WinLane />
+              </Route>
+              <Route exact path="/guides/vision-du-jeu">
+                <VisionGame />
+              </Route>
+              <Route exact path="/trollpicks">
+                <TrollPicks />
+              </Route>
+              <Route exact path="/trollpicks/xinZhao-autoroute">
+                <XinAutoroute />
+              </Route>
+              <Route exact path="/trollpicks/thresh-flak">
+                <ThreshFlak />
+              </Route>
+              <Route exact path="/trollpicks/kaisa-laser">
+                <KaisaLaser />
+              </Route>
+              <Route exact path="/trollpicks/caitlyn-sniper">
+                <CaitlynSniper />
+              </Route>
+              <Route exact path="/me-soutenir">
+                <Support />
+              </Route>
+              <Route exact path="/me-contacter">
+                <Contact />
+              </Route>
+            </Switch>
+          </Analytics>
         </main>
         <Footer />
       </div>
-
     </div>
   );
 };

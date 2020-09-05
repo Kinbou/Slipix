@@ -1,0 +1,33 @@
+.caitlynSniper {
+  text-align: center;
+  padding: 0 10rem 4rem 10rem;
+  color: white;
+
+  &__pictures {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem;
+    &__troll {
+      border-radius: 15px;
+      filter: drop-shadow(0 0 0.75rem #e40b19);
+      margin: 2rem 0 3rem 0;
+    }
+    &__picture {
+      width: 25%;
+      border-radius: 35%;
+      filter: drop-shadow(0 0 0.75rem #e40b19);
+      &__troll {
+        border-radius: 15px;
+        filter: drop-shadow(0 0 0.75rem #e40b19);
+        margin: 2rem 0 3rem 0;
+        width: 30%;
+      }
+    }
+  }
+  .icons {
+    &__rune, &__gameplay, &__crossbones {
+      margin: 0 2rem 0 2rem;
+      font-size: 0.8em;
+    }
+  }
+}
