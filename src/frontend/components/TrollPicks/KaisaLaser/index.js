@@ -5,6 +5,14 @@ import { Link } from 'react-router-dom';
 import logoSlipix from 'src/assets/images/trollpicks/kaisaLaser/slipixLogo.png';
 import degatsBroken from 'src/assets/images/trollpicks/kaisaLaser/degatsBroken.jpg';
 
+// runes
+import moissonNoire from 'src/assets/images/runes/moissonNoire.png';
+import rueeOffensive from 'src/assets/images/runes/rueeOffensive.png';
+import arracheurOeil from 'src/assets/images/runes/arracheurOeil.png';
+import chasseurVorace from 'src/assets/images/runes/chasseurVorace.png';
+import presenceDesprit from 'src/assets/images/runes/presenceDesprit.png';
+import coupDeGrace from 'src/assets/images/runes/coupDeGrace.png';
+
 import rune from 'src/assets/images/trollpicks/kaisaLaser/pageRune.png';
 import laser from 'src/assets/images/trollpicks/kaisaLaser/laser.png';
 import troll from 'src/assets/images/trollpicks/kaisaLaser/troll.png';
@@ -43,27 +51,27 @@ const KaisaLaser = () => {
         <div className="xinAutoroute__runes__list">
           <ul>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img className="xinAutoroute__pictures" src="" alt="" />
+              <img className="xinAutoroute__pictures" src={moissonNoire} alt="" />
               <li className="paragraph "><span className="red definition">Moisson noire :</span>C'est la rune principale pour Kaïsa laser, ça va augmenter les dégâts de votre Z quand l'ennemi sera low hp. Il est facile de récupérer des stacks de moisson noire avec Kaïsa laser grâce à la portée du Z.</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src="" alt="" />
+              <img src={rueeOffensive} alt="" />
               <li className="paragraph "><span className="red definition">Ruée Offensive :</span>Vous permet de gagner de la pénétration magique pour le Z et le passif ainsi que le de la létalité pour le A. Quand vous allez utiliser votre ultime et votre E.</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src="" alt="" />
+              <img src={arracheurOeil} alt="" />
               <li className="paragraph "><span className="red definition">Arracheur d'œil :</span>Des dégâts d'attaque bonus on ne dit pas non !</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src="" alt="" />
+              <img src={chasseurVorace} alt="" />
               <li className="paragraph "><span className="red definition">Chasseur Vorace :</span>Vous permettra de récupérer des points de vie avec vos sorts, parfait en phase de siège quand vous allez prendre du poke.</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src="" alt="" />
+              <img src={presenceDesprit} alt="" />
               <li className="paragraph "><span className="gold definition">Présence d'esprit :</span>Rune indispensable qui vous donnera beaucoup de Mana pour spam votre Z sans se soucier de la mana, bonne synergie avec le Luden.</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src="" alt="" />
+              <img src={coupDeGrace} alt="" />
               <li className="paragraph "><span className="gold definition">Coup de grâce :</span>Rune pour finir votre adversaire, très grosse synergie avec Moisson Noire.</li>
             </div>
             <li className="paragraph">Je conseille de prendre 2x force adaptative. Ensuite vous prenez l'armure contre un AD et la résistance magique contre un AP.</li>

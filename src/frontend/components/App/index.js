@@ -72,6 +72,7 @@ const App = () => {
   const isMidAhri = currentPath === '/tutoriels-champions/midlane/ahri';
   const isMidYasuo = currentPath === '/tutoriels-champions/midlane/yasuo';
   const isMidKatarina = currentPath === '/tutoriels-champions/midlane/katarina';
+  const isMidYone = currentPath === '/tutoriels-champions/midlane/yone';
   const isSupportPage = currentPath === '/me-soutenir';
   const isContact = currentPath === '/me-contacter';
   const isGuides = currentPath === '/guides';
@@ -94,7 +95,7 @@ const App = () => {
     'app--tutoriels': isTutoriel,
     'app--jungle': isJungle || isJungle1 || isJungle2 || isJungle3 || isJungle4 || isJungle5 || isJungle6,
     'app--tutorielTop': isTutorielTop || isTop1 || isTop2 || isTop3 || isTop4 || isTop5 || isTop6 || isTop7 || isTop8 || isTop9,
-    'app--tutorielMid': isTutorielMid || isMid1 || isMidZed || isMidLeblanc || isMidRyze || isMidAhri || isMidYasuo || isMidKatarina,
+    'app--tutorielMid': isTutorielMid || isMid1 || isMidZed || isMidLeblanc || isMidRyze || isMidAhri || isMidYasuo || isMidKatarina || isMidYone,
     'app--supportPage': isSupportPage,
     'app--contact': isContact,
     'app--guides': isGuides,

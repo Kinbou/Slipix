@@ -8,6 +8,10 @@ import zin from '../../../assets/images/trollpicks/zinAutoroutee.jpg';
 import caitlyn from '../../../assets/images/trollpicks/caitlyn.jpg';
 import kaisa from '../../../assets/images/trollpicks/kaisa.jpg';
 import tresh from '../../../assets/images/trollpicks/tresh.jpg';
+import zedForet from '../../../assets/images/trollpicks/zedForet.jpg';
+import jinxZap from '../../../assets/images/trollpicks/jinxZap.png';
+import olafVolVie from '../../../assets/images/trollpicks/olafVolVie.png';
+import lucianAp from '../../../assets/images/trollpicks/lucianAp.jpg';
 
 const TrollPicks = () => {
   useTitle('TrollPicks');
@@ -55,6 +59,36 @@ const TrollPicks = () => {
               <img src={kaisa} alt="" />
             </div>
           </Link>
+        </div>
+        <div className="betweenParagraph" />
+        <h2>Prochainement</h2>
+        <div className="trollpicks__cards__line tutoriels__cards__line__one">
+          <div className="trollpicks__cards__cardSoon">
+            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
+            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Zed Forêt</h3>
+            <img src={zedForet} alt="" />
+          </div>
+        </div>
+        <div className="trollpicks__cards__line tutoriels__cards__line__one">
+          <div className="trollpicks__cards__cardSoon">
+            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
+            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez jinx zap</h3>
+            <img src={jinxZap} alt="" />
+          </div>
+        </div>
+        <div className="trollpicks__cards__line tutoriels__cards__line__one">
+          <div className="trollpicks__cards__cardSoon">
+            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
+            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Olaf vol de vie</h3>
+            <img src={olafVolVie} alt="" />
+          </div>
+        </div>
+        <div className="trollpicks__cards__line tutoriels__cards__line__one">
+          <div className="trollpicks__cards__cardSoon">
+            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
+            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Lucian Ap</h3>
+            <img src={lucianAp} alt="" />
+          </div>
         </div>
       </div>
     </div>

@@ -1,22 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Youtube from '../../Tutoriels/Youtube';
-import { useTitle } from '../../../../hooks/useTitle';
-// images
-import logoSlipix from '../../../../assets/images/trollpicks/xinAutoroute/slipixLogo.png';
-import lowElo from '../../../../assets/images/trollpicks/xinAutoroute/lowElo.jpg';
-import degats from '../../../../assets/images/trollpicks/xinAutoroute/degats.jpg';
-import runePage from '../../../../assets/images/trollpicks/xinAutoroute/runePage.png';
-import troll from '../../../../assets/images/trollpicks/xinAutoroute/troll.png';
-import trollContent from '../../../../assets/images/trollpicks/xinAutoroute/trollContent.jpg';
 
 // runes
-import rune2 from '../../../../assets/images/trollpicks/xinAutoroute/runes/xin_rune_2.png';
-import rune3 from '../../../../assets/images/trollpicks/xinAutoroute/runes/xin_rune_3.png';
-import rune4 from '../../../../assets/images/trollpicks/xinAutoroute/runes/xin_rune_4.png';
-import rune5 from '../../../../assets/images/trollpicks/xinAutoroute/runes/xin_rune_5.png';
-import rune7 from '../../../../assets/images/trollpicks/xinAutoroute/runes/xin_rune_7.png';
-import rune8 from '../../../../assets/images/trollpicks/xinAutoroute/runes/xin_rune_8.png';
+import delugeDesLames from 'src/assets/images/runes/delugeDesLames.png';
+import rueeOffensive from 'src/assets/images/runes/rueeOffensive.png';
+import arracheurOeil from 'src/assets/images/runes/arracheurOeil.png';
+import chasseurVorace from 'src/assets/images/runes/chasseurVorace.png';
+import coupDeGrace from 'src/assets/images/runes/coupDeGrace.png';
+import legendAlacrite from 'src/assets/images/runes/legendAlacrite.png';
+
+// images
+import logoSlipix from 'src/assets/images/trollpicks/xinAutoroute/slipixLogo.png';
+import lowElo from 'src/assets/images/trollpicks/xinAutoroute/lowElo.jpg';
+import degats from 'src/assets/images/trollpicks/xinAutoroute/degats.jpg';
+import runePage from 'src/assets/images/trollpicks/xinAutoroute/runePage.png';
+import troll from 'src/assets/images/trollpicks/xinAutoroute/troll.png';
+import trollContent from 'src/assets/images/trollpicks/xinAutoroute/trollContent.jpg';
+
+import Youtube from '../../Tutoriels/Youtube';
+import { useTitle } from '../../../../hooks/useTitle';
 import './xinAutoroute.scss';
 
 const XinAutoroute = () => {
@@ -48,27 +50,27 @@ const XinAutoroute = () => {
         <div className="xinAutoroute__runes__list">
           <ul>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img className="xinAutoroute__pictures" src={rune2} alt="" />
+              <img className="xinAutoroute__pictures" src={delugeDesLames} alt="" />
               <li className="paragraph "><span className="red definition">Déluge de Lames :</span>C'est la rune la + importante pour Xin Zhao Autoroute, c'est simple les 3 prochaines auto-attaques seront très rapides ! Donc ça fonctionne sur le A de Xin Zhao ce qui vous permet de faire des courts trade d'une puissance phénoménale !</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src={rune3} alt="" />
+              <img src={rueeOffensive} alt="" />
               <li className="paragraph "><span className="red definition">Ruée Offensive :</span>Vous permet de gagner de la létalité quand vous allez utiliser votre E sur un champion ennemi, bonne synergie avec le Z qui possède d'énormes dégâts de base en early game.</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src={rune4} alt="" />
+              <img src={arracheurOeil} alt="" />
               <li className="paragraph "><span className="red definition">Arracheur d'œil :</span>Des dégâts d'attaque bonus on ne dit pas non !</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src={rune5} alt="" />
+              <img src={chasseurVorace} alt="" />
               <li className="paragraph "><span className="red definition">Chasseur Vorace :</span>Une bonne rune late game, vous donne du vol de vie sur vos sorts ! (fonctionne avec le Z et le R)</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src={rune7} alt="" />
+              <img src={coupDeGrace} alt="" />
               <li className="paragraph "><span className="gold definition">Coup de Grâce :</span>Très bonne rune vu que vous jouez Ignite en toplane, vous permet de dive votre adversaire très rapidement pour ensuite taper les tourelles !</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src={rune8} alt="" />
+              <img src={legendAlacrite} alt="" />
               <li className="paragraph "><span className="gold definition">Légende Alacrité :</span>Donne de la vitesse d'attaque, très intéressant quand vous prenez des kills en early. Elle va vous aider à creuser la toplane !</li>
             </div>
             <li className="paragraph">Je conseille de prendre 2x force adaptative (on a déjà assez de vitesse d'attaque avec déluge de lames et alacrité). Ensuite vous prenez l'armure contre un AD et la résistance magique contre un AP.</li>

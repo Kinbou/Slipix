@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Youtube from '../../Tutoriels/Youtube';
-import { useTitle } from '../../../../hooks/useTitle';
+
+// runes
+import delugeDesLames from 'src/assets/images/runes/delugeDesLames.png';
+import coupBas from 'src/assets/images/runes/coupBas.png';
+import arracheurOeil from 'src/assets/images/runes/arracheurOeil.png';
+import chasseurAcharne from 'src/assets/images/runes/chasseurAcharne.png';
+import tempeteMenacante from 'src/assets/images/runes/tempeteMenacante.png';
+import celerite from 'src/assets/images/runes/celerite.png';
 
 // images
 import logoSlipix from '../../../../assets/images/trollpicks/threshFlak/slipixLogo.png';
@@ -13,7 +19,8 @@ import threshFlak from '../../../../assets/images/trollpicks/threshFlak/threshFl
 import threshFlakEnd from '../../../../assets/images/trollpicks/threshFlak/threshFlakEnd.png';
 import troll from '../../../../assets/images/trollpicks/threshFlak/troll.jpg';
 
-
+import Youtube from '../../Tutoriels/Youtube';
+import { useTitle } from '../../../../hooks/useTitle';
 import './threshFlak.scss';
 
 const ThreshFlak = () => {
@@ -44,27 +51,27 @@ const ThreshFlak = () => {
         <div className="xinAutoroute__runes__list">
           <ul>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img className="xinAutoroute__pictures" src="" alt="" />
+              <img className="xinAutoroute__pictures" src={delugeDesLames} alt="" />
               <li className="paragraph "><span className="red definition">Déluge de Lames :</span>Cette rune va vous permettre de prendre des kills en early game, 3 attaques rapide pour saisir les opportunités. Moisson noire est + optimale dans l'idée de oneshot mais elle est clairement pas indispensable, thresh flak possède assez de dégâts.</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src="" alt="" />
+              <img src={coupBas} alt="" />
               <li className="paragraph "><span className="red definition">Coup bas :</span>Vous donne des dégâts BRUT bonus après votre E ou votre A. Très intéressant en early game.</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src="" alt="" />
+              <img src={arracheurOeil} alt="" />
               <li className="paragraph "><span className="red definition">Arracheur d'œil :</span>Des dégâts d'attaque bonus on ne dit pas non !</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src="" alt="" />
+              <img src={chasseurAcharne} alt="" />
               <li className="paragraph "><span className="red definition">Chasseur acharné :</span>La rune la + importante de Thresh FLAK, elle vous permettra d'avoir énormément de moovespeed hors combat pour atteindre le carry ennemi et lui glisser votre auto-attaque</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src="" alt="" />
+              <img src={tempeteMenacante} alt="" />
               <li className="paragraph "><span className="witchColor definition">Tempête menaçante :</span>La rune late game par excellence, parfait pour annoncer à vos adversaire que ça va flaker hardcore.</li>
             </div>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">
-              <img src="" alt="" />
+              <img src={celerite} alt="" />
               <li className="paragraph "><span className="witchColor definition">Célérité :</span>Une rune qui va augmenter la moovespeed et qui va très bien synergiser avec Chasseur Acharné + les bottes de mobilité.</li>
             </div>
             <li className="paragraph">Je conseille de prendre 2x force adaptative (on a déjà assez de vitesse d'attaque avec déluge de lames). Ensuite vous prenez l'armure contre un AD et la résistance magique contre un AP.</li>

@@ -22,14 +22,14 @@ const Slideshow = () => {
           <img src={youtube} alt="youtube" className="containerSlide__each-slide__image" />
           <div className="containerSlide__each-slide__image__content containerSlide__each-slide__image__content__youtube">
             <h2>Rejoignez moi sur Youtube !</h2>
-            <button type="button">Cliquez Ici</button>
+            <a href="https://www.youtube.com/user/DeiiZFamily" target="_blanc" label><button type="button" target="_blanc">Cliquez Ici</button></a>
           </div>
         </div>
         <div className="each-slide">
           <img src={twitch} alt="twitch" className="containerSlide__each-slide__image" />
           <div className="containerSlide__each-slide__image__content containerSlide__each-slide__image__content__twitch">
             <h2>Rejoignez moi sur Twitch !</h2>
-            <button type="button">Cliquez Ici</button>
+            <a href="https://www.twitch.tv/slipixxx" target="_blanc" label><button type="button">Cliquez Ici</button></a>
           </div>
         </div>
         <div className="each-slide">
@@ -37,7 +37,7 @@ const Slideshow = () => {
           <div className="containerSlide__each-slide__image__content containerSlide__each-slide__image__content__coaching">
             <h2>Rejoignez LA #TEAMSLIP SUR DISCORD !</h2>
             <p>+ de 7000 membres</p>
-            <button type="button">Cliquez Ici</button>
+            <a href="https://discord.gg/xsZbWs" target="_blanc" label><button type="button">Cliquez Ici</button></a>
           </div>
         </div>
       </Slide>
