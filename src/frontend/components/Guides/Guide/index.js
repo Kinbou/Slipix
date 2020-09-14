@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Youtube from '../../Tutoriels/Youtube';
-import { useTitle } from '../../../../hooks/useTitle';
+import Youtube from 'src/frontend/components/Youtube';
+import { useTitle } from 'src/hooks/useTitle';
 // Picture
-import logoSlipix from '../../../../assets/images/slipixLogo2.png';
-import cerveau from '../../../../assets/images/cerveau.jpg';
-import OMental from '../../../../assets/images/0Mental.jpg';
-import rage from '../../../../assets/images/guides/rage.jpeg';
-import textRage from '../../../../assets/images/guides/textRage.jpg';
-import troll from '../../../../assets/images/guides/troll.jpg';
+import logoSlipix from 'src/assets/images/slipixLogo2.png';
+import cerveau from 'src/assets/images/cerveau.jpg';
+import OMental from 'src/assets/images/0Mental.jpg';
+import rage from 'src/assets/images/guides/rage.jpeg';
+import textRage from 'src/assets/images/guides/textRage.jpg';
+import troll from 'src/assets/images/guides/troll.jpg';
 import './guide.scss';
 
 const Guide = () => {

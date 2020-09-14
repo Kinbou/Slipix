@@ -1,17 +1,16 @@
 import React from 'react';
 
+// picture
+import championBroken from 'src/assets/images/picturesYoutube/ChampionBroken.jpg';
+import lowEloProblem from 'src/assets/images/picturesYoutube/PROBLEMEBASELO.jpg';
+import trueOneShot from 'src/assets/images/picturesYoutube/VraiOneShot.jpg';
+import tierlist from 'src/assets/images/home/tierlist.jpg';
+import logoLol from 'src/assets/images/logoLol.png';
+import logoSlipix from 'src/assets/images/SlipixLogo.png';
+
 // import
 import SocialNetwork from './SocialNetwork';
 import Publicity from './Publicity';
-
-// picture
-import championBroken from '../../../assets/images/picturesYoutube/ChampionBroken.jpg';
-import lowEloProblem from '../../../assets/images/picturesYoutube/PROBLEMEBASELO.jpg';
-import trueOneShot from '../../../assets/images/picturesYoutube/VraiOneShot.jpg';
-import championOtpSaison10 from '../../../assets/images/picturesYoutube/championOtpSaison10.jpg';
-import tierlist from '../../../assets/images/home/tierlist.jpg';
-import logoLol from '../../../assets/images/logoLol.png';
-import logoSlipix from '../../../assets/images/SlipixLogo.png';
 import './home.scss';
 
 const Home = () => (

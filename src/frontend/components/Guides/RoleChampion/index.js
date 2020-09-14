@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Youtube from '../../Tutoriels/Youtube';
-import { useTitle } from '../../../../hooks/useTitle';
+
+import { useTitle } from 'src/hooks/useTitle';
 import './roleChampion.scss';
 
 // images
-import logoSlipix from '../../../../assets/images/roleChampion/slipixLogoRole.png';
-import twistedfast from '../../../../assets/images/roleChampion/twistedfast.jpg';
-import superRammus from '../../../../assets/images/roleChampion/superRammus.jpg';
-import riverWick from '../../../../assets/images/roleChampion/riverWick.jpg';
-import coupleTroll from '../../../../assets/images/roleChampion/coupleTroll.png';
-import duplaisir from '../../../../assets/images/roleChampion/duplaisir.jpg';
-import pasFacile from '../../../../assets/images/roleChampion/pasFacile.jpg';
-import banYasuo from '../../../../assets/images/roleChampion/banYasuo.jpg';
-import trollPicture from '../../../../assets/images/roleChampion/trollPicture.jpg';
+import logoSlipix from 'src/assets/images/roleChampion/slipixLogoRole.png';
+import twistedfast from 'src/assets/images/roleChampion/twistedfast.jpg';
+import superRammus from 'src/assets/images/roleChampion/superRammus.jpg';
+import riverWick from 'src/assets/images/roleChampion/riverWick.jpg';
+import coupleTroll from 'src/assets/images/roleChampion/coupleTroll.png';
+import duplaisir from 'src/assets/images/roleChampion/duplaisir.jpg';
+import pasFacile from 'src/assets/images/roleChampion/pasFacile.jpg';
+import banYasuo from 'src/assets/images/roleChampion/banYasuo.jpg';
+import trollPicture from 'src/assets/images/roleChampion/trollPicture.jpg';
+
+import Youtube from 'src/frontend/components/Youtube';
 
 const RoleChampion = () => {
   useTitle('Trouver son Rôle/Champion');

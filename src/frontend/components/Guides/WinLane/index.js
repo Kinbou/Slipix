@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Youtube from '../../Tutoriels/Youtube';
-import { useTitle } from '../../../../hooks/useTitle';
+import Youtube from 'src/frontend/components/Youtube';
+import { useTitle } from 'src/hooks/useTitle';
+
 // images
-import logoSlipix from '../../../../assets/images/winLane/slipixLogoLane.png';
-import snowball from '../../../../assets/images/winLane/snowballLol.jpg';
-import back from '../../../../assets/images/winLane/back.jpg';
-import roaming from '../../../../assets/images/winLane/roaming.jpg';
-import troll from '../../../../assets/images/winLane/troll.jpg';
-import troll2 from '../../../../assets/images/winLane/troll2.jpg';
-import trollEnd from '../../../../assets/images/winLane/trollEnd.jpg';
+import logoSlipix from 'src/assets/images/winLane/slipixLogoLane.png';
+import snowball from 'src/assets/images/winLane/snowballLol.jpg';
+import back from 'src/assets/images/winLane/back.jpg';
+import roaming from 'src/assets/images/winLane/roaming.jpg';
+import troll from 'src/assets/images/winLane/troll.jpg';
+import troll2 from 'src/assets/images/winLane/troll2.jpg';
+import trollEnd from 'src/assets/images/winLane/trollEnd.jpg';
 
 import './winLane.scss';
 

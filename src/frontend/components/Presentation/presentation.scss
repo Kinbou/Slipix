@@ -1,14 +1,16 @@
 .presentation {
-  margin: 5rem 20rem 10rem 20rem;
-  background-color: rgba(35, 22, 4, 0.7);
-  padding: 1rem 5rem;
-  border-radius: 20px;
   font-size: 1.1em;
   h1 {
-    font-size: 4em;
+    padding: 5rem 0 3rem 0;
   }
   h2 {
     color: white;
+  }
+  &__background {
+    margin: 5rem 20rem 10rem 20rem;
+    background-color: rgba(35, 22, 4, 0.7);
+    padding: 1rem 5rem;
+    border-radius: 20px;
   }
   &__slipix {
     color: #ff3e29;
@@ -84,20 +86,23 @@
   }
 }
 
-@media (max-width: 1500px) {
-  .presentation {
-    margin: 5rem 10rem 5rem 10rem;
+@media (max-width: 1505px) {
+  .presentation__background {
+    margin: 5rem ;
     padding: 1rem 4rem;
   }
 
 }
 
 @media (max-width: 1050px) {
-  .presentation {
-    margin: 3rem 5rem 3rem 5rem;
+  .presentation__background {
+    margin: 0rem 5rem 3rem 5rem;
     padding: 1rem 4rem;
     p {
       font-size: 1.3em;
+    }
+    h2 {
+      font-size: 1.5em;
     }
     &__image {
       &__refuseResist {
@@ -108,7 +113,7 @@
 }
 
 @media (max-width: 900px) {
-  .presentation {
+  .presentation__background {
     margin: 3rem 1rem 3rem 1rem;
     padding: 1rem 3rem;
     p {
@@ -123,7 +128,7 @@
 }
 
 @media (max-width: 700px) {
-  .presentation {
+  .presentation__background {
     margin: 3rem .5rem 3rem .5rem;
     padding: 1rem 1rem;
 
@@ -141,7 +146,10 @@
       font-size: 3em;
     }
     h2 {
-      font-size: 1.8em;
+      font-size: 1.5em;
+    }
+    &__background {
+      margin: 0 .5rem 3rem .5rem;
     }
     &__coaching {
       width: 75%;

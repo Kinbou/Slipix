@@ -145,31 +145,21 @@
   .socialNetwork--presentation {
     padding: .5rem;
     .socialNetwork__card {
-      img {
-        width: 100%;
+      margin: 0rem!important;
+
+      &__cover {
+        img {
+          width: 50%;
+        }
       }
+
     }  
   }
 }
 
 @media (max-width: 650px) {
   .socialNetwork--presentation {
-    padding: .5rem;
-    .socialNetwork__card {
-      img {
-        width: 120%;
-      }
-    }  
-  }
-}
-
-@media (max-width: 550px) {
-  .socialNetwork--presentation {
-    .socialNetwork__card {
-      img {
-        width: 220%;
-      }
-    }  
+    padding: .5rem; 
   }
 }
 
@@ -178,7 +168,7 @@
     padding: .5rem;
     .socialNetwork__card {
       img {
-        width: 620%;
+        width: 80%;
       }
     }  
   }

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTitle } from '../../../hooks/useTitle';
+import { useTitle } from 'src/hooks/useTitle';
+
 // import image
-import role from '../../../assets/images/guides/1280x720_LoL.jpg';
-import laneWin from '../../../assets/images/guides/laneWin.jpg';
-// import gameWin from '../../../assets/images/guides/gameWin.jpg';
-import progression from '../../../assets/images/guides/progression.png';
-import mentalWin from '../../../assets/images/guides/mentalWin.png';
-import lowEloProblem from '../../../assets/images/picturesYoutube/PROBLEMEBASELO.jpg';
+import role from 'src/assets/images/guides/1280x720_LoL.jpg';
+import laneWin from 'src/assets/images/guides/laneWin.jpg';
+import progression from 'src/assets/images/guides/progression.png';
+import mentalWin from 'src/assets/images/guides/mentalWin.png';
+import lowEloProblem from 'src/assets/images/picturesYoutube/PROBLEMEBASELO.jpg';
 
 import './guides.scss';
 

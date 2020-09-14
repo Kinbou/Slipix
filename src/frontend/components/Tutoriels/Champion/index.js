@@ -2,14 +2,12 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useParams } from 'react-router-dom';
 import { test } from 'src/utils/selectors';
-// import { truncateText, formatDate, slugifyId } from 'src/utils/selectors';
 import Loader from 'src/frontend/components/Loader';
-// import YouTube from 'react-youtube';
-import Youtube from '../Youtube';
-import logoLol from '../../../../assets/images/logoLol.png';
-
+import Youtube from 'src/frontend/components/Youtube';
 import './zac.scss';
 
+// images
+import logoLol from 'src/assets/images/logoLol.png';
 
 const Champion = ({
   fetchOneChampion,
@@ -21,16 +19,12 @@ const Champion = ({
   const slug = useParams();
   // permet de récupérer le nom du champion dans l'url
   stateName(slug);
-  console.log(slug.name);
   useEffect(() => {
     fetchOneChampion();
-    console.log('passage dans le useEffect');
     return () => {
       setChampionIsLoad();
     };
   }, []);
-
-  // const url = 'http://localhost:8090/images/champions'
 
   return (
 
@@ -39,14 +33,14 @@ const Champion = ({
       {championIsLoad && (
         <>
           <div className="breadcrumb">
-            <Link className="breadcrumb__link" to="/">Accueil</Link> >
-            <Link className="breadcrumb__link" to="/tutoriels-champions"> Tutoriels champions  </Link> >
-            <Link className="breadcrumb__link" to={`/tutoriels-champions/${champion[0].lane}`}> {champion[0].lane} </Link> >
+            <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
+            <Link className="breadcrumb__link" to="/tutoriels-champions"> Tutoriels champions  </Link> &gt;
+            <Link className="breadcrumb__link" to={`/tutoriels-champions/${champion[0].lane}`}> {champion[0].lane} </Link> &gt;
             { champion[0].name}
           </div>
           <div className="zac__title">
             <img src={logoLol} alt="" />
-            <h1 className="">Tutoriel {champion[0].name}</h1>
+            <h1 className="globalTitle-page">Tutoriel {champion[0].name}</h1>
             <img className="zac__title__zac" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${champion[0].pictureHead}`} alt="" />
           </div>
           <h3>Comment bien jouer {champion[0].name} ? C'est ici que ça se passe !</h3>

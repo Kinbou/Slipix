@@ -1,14 +1,16 @@
 .contact {
-  margin: 5rem 20rem 5rem 20rem;
-  background-color:rgba(0, 0, 0, 0.7);
-  padding: 1rem 5rem;
-  border-radius: 20px;
   color: white;
   .icons {
     &__exclamation {
       margin:0 .7rem 0 .7rem;
       font-size: .9em;
     }
+  }
+  &__background {
+    margin: 2rem 20rem 5rem 20rem;
+    background-color:rgba(0, 0, 0, 0.7);
+    padding: 3rem 5rem;
+    border-radius: 20px;
   }
   &__content {
     font-size: 1.5em;
@@ -46,36 +48,34 @@
       text-align: center;
       padding: 2rem;
     }
-
   }
 }
 
 @media (max-width: 1750px) {
   .contact {
-    margin: 5rem 3rem;
-    padding-bottom: 2rem;
-    &__content {
-      &__refuseResist {
-        position: relative;
-        img {
-          width: 6%;
+    &__content__refuseResist  {
+      position: relative;
+      img {
+        width: 5.5%;
 
-          margin: .5rem;
-          position: absolute;
-          bottom: 40px;
-        }
+        margin: .5rem;
+        position: absolute;
+        bottom: 80px;
       }
     }
   }
 }
 
+
 @media (max-width: 1590px) {
   .contact {
-    &__content {
-      &__refuseResist {
-        img {
-          bottom: 70px;
-        }
+    &__background {
+      margin: 2rem 10rem 5rem 10rem;
+    }
+    &__content__refuseResist  {
+      img {
+        bottom: 80px;
+        width: 4.5%;
       }
     }
   }
@@ -83,120 +83,91 @@
 
 @media (max-width: 1195px) {
   .contact {
-    &__content {
-      &__refuseResist {
-        img {
-          bottom: 80px;
-        }
+    &__background {
+      margin: 2rem 5rem 5rem 5rem;
+      padding: 3rem 2rem;
+    }
+    p {
+      font-size: .9em;
+    }
+    &__content__refuseResist  {
+      img {
+        bottom: 80px;
       }
     }
   }
 }
 
-@media (max-width: 935px) {
-  .contact {
-    &__content {
-      &__refuseResist {
-        img {
-          bottom: 120px;
-        }
-      }
+@media (max-width: 1000px) {
+  .contact.contact__content__refuseResist  {
+    img {
+      bottom: 90px;
     }
   }
 }
 
-@media (max-width: 826px) {
+@media (max-width: 834px) {
   .contact {
-    &__content {
-      &__refuseResist {
-        img {
-          width: 7%;
-          bottom: 150px;
-        }
-      }
+    &__background {
+      margin: 1rem .5rem;
+      padding-bottom: 1.5rem;
     }
   }
 }
 
-@media (max-width: 805px) {
-  .contact {
-    margin: 5rem 3rem;
-    padding-bottom: 2rem;
-    &__content {  
-      &__refuseResist {
-        img {       
-          bottom: 155px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 805px) {
-  .contact {
-    margin: 4rem 2rem;
-    padding-bottom: 2rem;
-    &__content {
-      
-      &__refuseResist {
-        img {
-          
-          bottom: 155px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 670px) {
-  .contact {
-    margin: 2rem .5rem;
-    padding: 1rem 3rem;
-    &__content {
-      
-      &__refuseResist {
-        img {
-          width: 8%;
-          bottom: 150px;
-        }
-      }
+@media (max-width: 680px) {
+  .contact__content__refuseResist  {
+    img {
+      bottom: 125px;
     }
   }
 }
 
 @media (max-width: 555px) {
   .contact {
-    padding: 1rem 2rem;
     h1 {
       font-size: 3em;
     }
     h4 {
-      font-size: 1.1em;
+      font-size: 1em;
       padding: 2rem 0;
     }
     p {
-      font-size: 0.9em;
+      font-size: 0.8em;
     }
-    &__content { 
-      &__refuseResist {
-        img {
-          width: 9%;
-          bottom: 185px;
-        }
+    &__content__refuseResist {
+      img {
+        width: 8%;
+        bottom: 150px;
       }
     }
   }
 }
 
-@media (max-width: 418px) {
-  .contact {
-    &__content { 
-      &__refuseResist {
-        img {
-          width: 9%;
-          bottom: 185px;
-        }
-      }
+@media (max-width: 456px) {
+  .contact__content__refuseResist  {
+    img {
+      bottom: 190px;
+      width: 9%;
     }
   }
 }
+
+@media (max-width: 375px) {
+  .contact__content__refuseResist {
+    img {
+      bottom: 225px;
+      width: 10%;
+    }
+  }
+}
+
+@media (max-width: 330px) {
+  .contact__content__refuseResist  {
+    img {
+      bottom: 255px;
+      width: 12%;
+    }
+  }
+}
+

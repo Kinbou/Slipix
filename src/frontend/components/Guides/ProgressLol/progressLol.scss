@@ -37,7 +37,7 @@
   }
   .icons {
     &__hourglass, &__users, &__positive, &__ninja, &__book {
-      margin: 0 2rem 0 2rem;
+      margin: 0 1rem;
       font-size: 0.8em;
     }
   }
@@ -87,6 +87,137 @@
       margin: 2rem;
       filter: drop-shadow(0 0 0.75rem #923fde)
     }
+  }                                                                            
+}
+
+@media (max-width: 1350px) {
+  .progressLol {
+    padding: 0 5rem 4rem 5rem;
+    .intro {
+      font-size: 1.7em;
+    }
+    h2 {
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.5em;
+    }
+    li {
+      font-size: 1.8em;
+    }
   }
-                                                                              
+}
+
+@media (max-width: 1125px) {
+  .progressLol {
+    padding: 0 .5rem 4rem .5rem;
+    li {
+      font-size: 1.75em;
+    }
+    ul {
+      margin: 2rem 5rem;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .progressLol {
+    padding: 0 .5rem 4rem .5rem;
+    h1 {
+      padding: 3rem 0 3rem 0!important;
+    }
+    p {
+      font-size: 1.4em;
+    }
+    h2 {
+      font-size: 2.8em;
+    }
+    li {
+      font-size: 1.70em;
+    }
+    ul {
+      margin: 2rem 1rem;
+    }
+    &__intro__pictures {
+      margin: 3rem 0;
+      &__image {
+      width: 25%;
+      }
+    }
+    &__pictures {
+      margin: 3rem 0;
+      &__image {
+        width: 25%;
+      }
+    }
+  }
+}
+
+@media (max-width: 845px) {
+  .progressLol {
+    padding: 0 .5rem 4rem .5rem;
+    .backgroundParagraphe {
+      margin: 3rem .5rem;
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .progressLol {
+    iframe {
+      width: 550px;
+    }
+  }
+}
+@media (max-width: 680px) {
+  .progressLol {
+    .backgroundParagraphe {
+      padding: 3rem .5rem;
+    }
+    iframe {
+      width: 500px;
+    }
+  }
+}
+
+@media (max-width: 625px) {
+  .progressLol {
+    iframe {
+      width: 450px;
+    }
+  }
+}
+
+@media (max-width: 526px) {
+  .progressLol {
+    iframe {
+      width: 400px;
+    }
+  }
+}
+
+@media (max-width: 469px) {
+  .progressLol {
+    h2 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    iframe {
+      width: 350px;
+    }
+  }
+}
+
+@media (max-width: 412px) {
+  .progressLol {
+    padding: 0 .2rem 4rem .2rem;
+    .backgroundParagraphe {
+      padding: 1rem .5rem;
+    }
+    iframe {
+      width: 330px;
+    }
+  }
 }

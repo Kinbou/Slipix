@@ -121,19 +121,41 @@
   }
 }
 
-@media (max-width: 1117px) {
+@media (max-width: 1000px) {
   .roleChampion {
     padding: 0 .5rem 2rem .5rem;
+    h1 {
+      padding-top: 3rem!important;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    li {
+      font-size: 1.9em;
+    }
+    .paragraph {
+      font-size: 1.5em;
+    }
+    .backgroundParagraphe {
+      margin: 1rem;
+    }
   }
 }
 
 @media (max-width: 840px) {
   .roleChampion {
     h1 {
-      font-size: 3.5em;
+      font-size: 3em;
     }
     &__champion, &__end, &__intro, &__role  {
       margin: .5rem;
+    }
+    &__intro__pictures {
+      margin: 1rem;
+      &__picture {
+      width: 25%;
+      margin: .5rem;
+      }
     }
     h2 {
       font-size: 3em;
@@ -147,48 +169,117 @@
 
 @media (max-width: 676px) {
   .roleChampion {
-    h2 {
-      font-size: 3em;
+    h1 {
+      font-size: 2.5rem;
+    }
+    .intro {
+      font-size: 1.8em;
+    }
+    li {
+      font-size: 1.7em;
+    }
+    ul {
+      margin-bottom: 4rem;
+    }
+    .paragraph {
+      font-size: 1.4em;
+    }
+    .backgroundParagraphe {
+      padding: 2rem .5rem;
+      margin: .5rem;
+    }
+    &__role {
+      &__picture {
+        width: 55%;
+        margin: 3rem;
+        &__notEasy {
+          width: 50%;
+        }
+      }
+    }
+    &__champion__picture {
+      &__notEasy {
+        width: 50%;
+      }
     }
     iframe {
-      width: 450px;
-      height: auto;
+      width: 530px;
+      height: 300px;
       border-radius: 10px;
     }
   }
 }
 
-@media (max-width: 582px) {
+@media (max-width: 598px) {
   .roleChampion {
     iframe {
-      width: 380px;
-    }
-    &__champion__picture {
-      margin: 3rem 0;
+      width: 450px;
     }
   }
 }
 
-@media (max-width: 509px) {
+@media (max-width: 522px) {
   .roleChampion {
     iframe {
-      width: 300px;
+      width: 400px;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .roleChampion {
+    iframe {
+      width: 350px;
     }
   }
 }
 
 @media (max-width: 419px) {
   .roleChampion {
+    .backgroundParagraphe {
+      margin: .5rem 0.2rem;
+    }
+    h1 {
+      font-size: 2.15em;
+    }
+    &__intro__pictures {
+      margin: 1rem;
+      &__picture {
+      width: 28%;
+      margin: 0;
+      }
+    }
+    &__lists {
+      padding: 3rem 0 2rem 0;
+      font-size: 1.3em!important;
+    }
+    li {
+      font-size: 1.3rem;
+    }
+    ul {
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: 1.2em!important;
+    }
     h2 {
-      font-size: 2.4em;
+      font-size: 1.9em;
       margin: 1rem 0;
     }
     iframe {
-      width: 250px;
+      width: 300px;
     }
     &__champion__picture {
       margin: 3rem 0;
       width: 80%;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .roleChampion {
+    iframe {
+      width: 260px;
     }
   }
 }

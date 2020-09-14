@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Youtube from 'src/frontend/components/Youtube';
+import { useTitle } from 'src/hooks/useTitle';
+import './threshFlak.scss';
 
 // runes
 import delugeDesLames from 'src/assets/images/runes/delugeDesLames.png';
@@ -10,18 +13,14 @@ import tempeteMenacante from 'src/assets/images/runes/tempeteMenacante.png';
 import celerite from 'src/assets/images/runes/celerite.png';
 
 // images
-import logoSlipix from '../../../../assets/images/trollpicks/threshFlak/slipixLogo.png';
-import oneshotflak from '../../../../assets/images/trollpicks/threshFlak/oneshotflak.jpg';
-import retourOneShot from '../../../../assets/images/trollpicks/threshFlak/retourOneShot.jpg';
-import runePage from '../../../../assets/images/trollpicks/threshFlak/runePage.png';
-import capture from '../../../../assets/images/trollpicks/threshFlak/capture.jpg';
-import threshFlak from '../../../../assets/images/trollpicks/threshFlak/threshFlak.png';
-import threshFlakEnd from '../../../../assets/images/trollpicks/threshFlak/threshFlakEnd.png';
-import troll from '../../../../assets/images/trollpicks/threshFlak/troll.jpg';
-
-import Youtube from '../../Tutoriels/Youtube';
-import { useTitle } from '../../../../hooks/useTitle';
-import './threshFlak.scss';
+import logoSlipix from 'src/assets/images/trollpicks/threshFlak/slipixLogo.png';
+import oneshotflak from 'src/assets/images/trollpicks/threshFlak/oneshotflak.jpg';
+import retourOneShot from 'src/assets/images/trollpicks/threshFlak/retourOneShot.jpg';
+import runePage from 'src/assets/images/trollpicks/threshFlak/runePage.png';
+import capture from 'src/assets/images/trollpicks/threshFlak/capture.jpg';
+import threshFlak from 'src/assets/images/trollpicks/threshFlak/threshFlak.png';
+import threshFlakEnd from 'src/assets/images/trollpicks/threshFlak/threshFlakEnd.png';
+import troll from 'src/assets/images/trollpicks/threshFlak/troll.jpg';
 
 const ThreshFlak = () => {
   useTitle('Thresh Flak Oneshot');

@@ -9,7 +9,6 @@
   }
   &__cards {
     display: inline-block;
-    // flex-direction: column;
     text-align: center;
     padding: 0 10rem 0 10rem;
     margin: auto;
@@ -105,7 +104,40 @@
     h3 {
       text-align: center;
       font-size: 2rem;
+      }
     }
+  }
+}
+
+@media (max-width: 1500px) {
+  .jungle {
+    &__cards {
+      padding: 0 .5rem;
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .jungle {
+    h1 {
+      padding-top: 3rem!important;
+    }
+  }
+}
+
+@media (max-width: 405px) {
+  .jungle {
+    h2 {
+      font-size: 2.5em;
+    }
+    &__cards {
+      &__card {
+        margin: 2rem 0;
+
+      }
+      &__cardSoon {
+        margin: 2rem 0;
+      }
     }
   }
 }

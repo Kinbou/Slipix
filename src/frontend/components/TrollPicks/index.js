@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTitle } from '../../../hooks/useTitle';
+import { useTitle } from 'src/hooks/useTitle';
 import './trollPicks.scss';
 
 // images
-import zin from '../../../assets/images/trollpicks/zinAutoroutee.jpg';
-import caitlyn from '../../../assets/images/trollpicks/caitlyn.jpg';
-import kaisa from '../../../assets/images/trollpicks/kaisa.jpg';
-import tresh from '../../../assets/images/trollpicks/tresh.jpg';
-import zedForet from '../../../assets/images/trollpicks/zedForet.jpg';
-import jinxZap from '../../../assets/images/trollpicks/jinxZap.png';
-import olafVolVie from '../../../assets/images/trollpicks/olafVolVie.png';
-import lucianAp from '../../../assets/images/trollpicks/lucianAp.jpg';
+import zin from 'src/assets/images/trollpicks/zinAutoroutee.jpg';
+import caitlyn from 'src/assets/images/trollpicks/caitlyn.jpg';
+import kaisa from 'src/assets/images/trollpicks/kaisa.jpg';
+import tresh from 'src/assets/images/trollpicks/tresh.jpg';
+import zedForet from 'src/assets/images/trollpicks/zedForet.jpg';
+import jinxZap from 'src/assets/images/trollpicks/jinxZap.png';
+import olafVolVie from 'src/assets/images/trollpicks/olafVolVie.png';
+import lucianAp from 'src/assets/images/trollpicks/lucianAp.jpg';
 
 const TrollPicks = () => {
   useTitle('TrollPicks');

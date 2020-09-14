@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Youtube from 'src/frontend/components/Youtube';
+import { useTitle } from 'src/hooks/useTitle';
+import './kaisaLaser.scss';
 
 // images
 import logoSlipix from 'src/assets/images/trollpicks/kaisaLaser/slipixLogo.png';
@@ -12,14 +15,10 @@ import arracheurOeil from 'src/assets/images/runes/arracheurOeil.png';
 import chasseurVorace from 'src/assets/images/runes/chasseurVorace.png';
 import presenceDesprit from 'src/assets/images/runes/presenceDesprit.png';
 import coupDeGrace from 'src/assets/images/runes/coupDeGrace.png';
-
 import rune from 'src/assets/images/trollpicks/kaisaLaser/pageRune.png';
 import laser from 'src/assets/images/trollpicks/kaisaLaser/laser.png';
 import troll from 'src/assets/images/trollpicks/kaisaLaser/troll.png';
 import wtf from 'src/assets/images/trollpicks/kaisaLaser/wtf.jpg';
-import Youtube from '../../Tutoriels/Youtube';
-import { useTitle } from '../../../../hooks/useTitle';
-import './kaisaLaser.scss';
 
 const KaisaLaser = () => {
   useTitle('Kaisa Laser');

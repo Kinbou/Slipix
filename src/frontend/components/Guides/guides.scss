@@ -1,11 +1,7 @@
 .guides {
-  h1 {
-    margin-top: 2rem;
-  }
+
   h3 {
-    color: white;
     font-size: 2.5em;
-    text-align: center;
     color: #ffaa55;
     margin: 1rem;
   }
@@ -54,58 +50,26 @@
        -ms-transition: .3s ease-in-out;
        -o-transition: .3s ease-in-out;
        border-color: #021320;
-     
-      }
-      &__test {
-        width: 640px;
-
-        margin: 3rem;
-        color: white;
-        background-color: rgba(28,36,45,0.8);;
-        border-radius: 10px;
-        border: 2px solid transparent;
-        transition:all .2s ease-in-out;
-        -webkit-box-shadow: 0 28px 16px -26px black;
-        -moz-box-shadow: 0 28px 16px -26px black;
-        box-shadow: 0 28px 16px -26px black;
-        transition:all .6s ease-in-out;
-        -webkit-transition:all .6s ease-in-out;
-        -moz-transition:all .6s ease-in-out;
-        -ms-transition:all .6s ease-in-out;
-        -o-transition:all .6s ease-in-out;
-        &__picture {
-          width: 80%;
-        }
-        &:hover {
-          transform:scale(1.03);
-          transition: .1s;
-         -webkit-transform:scale(1.03);
-         -moz-transform:scale(1.03);
-         -ms-transform:scale(1.03);
-         -o-transform:scale(1.03);
-         -webkit-box-shadow: 0 58px 40px -56px black;
-         -moz-box-shadow: 0 58px 36px -56px black;
-         box-shadow: 0 58px 36px -56px black;
-         -webkit-transition: .3s ease-in-out;
-         -moz-transition: .3s ease-in-out;
-         -ms-transition: .3s ease-in-out;
-         -o-transition: .3s ease-in-out;
-         border-color: #021320;
-       
-        }
       }
     }
   }
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1000px) {
   .guides {
     padding: 1rem;
-    h1 {
-      font-size: 4em;
+    h3 {
+      font-size: 2.2em;
     }
-    p {
+    &__intro {
       font-size: 2em;
+      margin-bottom: 2rem;
+    }
+    &__cards {
+      &__card {
+        margin: 1.5rem;
+        padding: .5rem
+      }
     }
   }
 }
@@ -145,41 +109,20 @@
   .guides {
     &__cards {
       &__card {
-        padding: .5rem;
-        width: 350px;
+        padding: 0rem;
+        margin: .9rem 0;
+        width: auto;
       }
     }
   }
 }
 
-@media (max-width: 396px) {
+@media (max-width: 372px) {
   .guides {
-    h1 {
-      font-size: 2.5em;
-    }
     h3 {
-      font-size: 1.5em;
-    }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 2rem;
-    }
-    &__cards {
-      &__card {
-        width: 300px;
-        margin: .5rem;
-      }
+      font-size: 1.7em;
     }
   }
 }
 
-@media (max-width: 351px) {
-  .guides {
-    &__cards {
-      &__card {
-        width: 250px;
-      }
-    }
-  }
-}
 

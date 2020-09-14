@@ -1,11 +1,10 @@
 import React from 'react';
-import { useTitle } from '../../../hooks/useTitle';
+import { useTitle } from 'src/hooks/useTitle';
 // images
-import Janna from '../../../assets/images/picturesYoutube/JannaForet.jpg';
-import coachingPetitCousin from '../../../assets/images/news/coachingPetitCousin.jpg';
-import oneshotflak from '../../../assets/images/news/oneshotflak.jpg';
-import coupDeGueule from '../../../assets/images/news/coupDeGueule.jpg';
-import ironVsDiamant from '../../../assets/images/news/ironVsDiamant.jpg';
+import coachingPetitCousin from 'src/assets/images/news/coachingPetitCousin.jpg';
+import oneshotflak from 'src/assets/images/news/oneshotflak.jpg';
+import coupDeGueule from 'src/assets/images/news/coupDeGueule.jpg';
+import ironVsDiamant from 'src/assets/images/news/ironVsDiamant.jpg';
 import './news.scss';
 
 const News = () => {
@@ -45,22 +44,6 @@ const News = () => {
             </div>
           </a>
         </div>
-        {/* <div className="news__cards__ligne">
-          <a href="">
-            <div className="news__cards__card news__cards__first">
-              <h2 className="news__cards__card__title news__cards__first__title">Découvrez Janna Forêt</h2>
-              <img src={Janna} alt="" />
-              <p className="news__cards__card__content">Vidéo Fun avec une Janna jungle full ap, on essaye de voir un petit potentiel sur le pick...</p>
-            </div>
-          </a>
-          <a href="">
-            <div className="news__cards__card news__cards__first">
-              <h2 className="news__cards__card__title news__cards__first__title">Découvrez Janna Forêt</h2>
-              <img src={Janna} alt="" />
-              <p className="news__cards__card__content">Vidéo Fun avec une Janna jungle full ap, on essaye de voir un petit potentiel sur le pick...</p>
-            </div>
-          </a>
-        </div> */}
       </div>
     </div>
   );

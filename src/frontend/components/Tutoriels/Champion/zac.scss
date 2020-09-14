@@ -17,7 +17,6 @@
     margin: 3rem;
     margin-bottom: 3rem;
     display: flex;
-    font-size: 5em;
     padding: 1rem;
     color: #ffaa55;
     justify-content: center;
@@ -26,16 +25,21 @@
     background-color: rgba(28,36,45,0.5);
     &__zac {
       border-radius: 50%;
-      width: 80px;
-      height: 80px;
+      width: 6%;
+      height: 6%;
     }
     h1 {
       padding: 0 2rem 0 2rem;
       text-shadow: 2px 2px  30px black;
     }
     img {
-      width: 5%;
+      width: 6%;
+      height: 6%;
     }
+  }
+  p {
+    font-size: 1.5em;
+    line-height: 1.25em;
   }
 
   h4 {
@@ -85,8 +89,6 @@
         padding: 2rem;
         margin: 1rem 0 1rem 0;
         justify-content: center;
-        font-size: 1.3em;
-        line-height: 1.2em;
         &__left {
           width: 15%;
           margin: auto;
@@ -110,16 +112,13 @@
         background-color: rgba(28,36,45,0.9);
         display: flex;
         justify-content: center;
-        font-size: 1.3rem;
         padding: 2rem 2rem 2rem 2rem;
         text-align: left;
         width: 80%;
         border-radius: 15px;
         margin: auto;
-        line-height: 1.3em;
         h4 {
           text-align: center;
-          font-size: 2.1em;
           margin: 0;
           
         }
@@ -160,8 +159,6 @@
         padding: 2rem;
         border-radius: 15px;
         display: flex;
-        font-size: 1.4em;
-        line-height: 1.5em;
         margin: 3rem;
         width: 80%;
         margin: auto;
@@ -169,21 +166,182 @@
           margin: auto;
         }
         &__right {
+          margin: auto;
+          padding: 1rem;
+          max-width: 50%;
           h6 {
-            font-size: 1.5em;
+            font-size: 1.6em;
             text-decoration: underline;
-            // border-bottom: solid 1px white;
             padding-bottom: 2rem;
           }
           &__content {
             text-align: center;
             margin: auto;
           }
-          margin: auto;
-          padding: 1rem;
-          max-width: 50%;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1800px) {
+  .zac {
+
+    margin: 0 5rem;
+    &__content {
+      &__asset__list {
+        width: 90%;
+      }
+      &__skill {
+        width: 90%;
+      }
+      &__history__content {
+        font-size: 1.3em;
+      }
+      &__carry {
+        &__content {
+          flex-direction: column;
+          &__right {
+            max-width: 90%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .zac {
+    margin: 0 .5rem;
+    iframe {
+      width: 600px;
+    }
+    h1 {
+      padding-top: 0!important;
+    }
+    p {
+      font-size: 1.3em;
+    }
+    h3, h4 {
+      font-size: 2.4em;
+    }
+
+    &__title img {
+      width: 8%;
+      height: 7%;
+    }
+    &__content {
+      &__asset__list {
+        width: 99%;
+        padding: 2rem .5rem;
+      }
+      &__skill {
+        width: 99%;
+      }
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .zac {
+    margin: 0 .5rem;
+    iframe {
+      width: 500px;
+    }
+
+  }
+}
+
+@media (max-width: 790px) {
+  .zac {
+    margin: 0 .5rem;
+    h4 {
+      font-size: 2.1em;
+    }
+    h3 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.3em;
+    }
+    iframe {
+      width: 400px;
+    }
+    &__title img {
+      width: 10%;
+      height: 7%;
+    }
+    &__content {
+      &__asset__list__right {
+        padding-left:  .5rem;
+      }
+      &__carry__content {
+      width: 95%;
+      padding: .5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .zac {
+    h1 {
+      font-size: 2.3em;
+    }
+    &__title {
+      margin: 3rem 1rem;
+    }
+    iframe {
+      width: 300px;
+    }
+    &__content {
+      &__carry {
+        margin: 2rem .5rem;
+        &__content {
+        width: 100%;
+        padding: .5rem;
+        }
+      }
+      &__skill__content {
+        padding: 2rem .5rem;
+        &__right {
+        width: 78%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 412px) {
+  .zac {
+    h1 {
+      font-size: 2em!important;
+    }
+    p {
+      font-size: 1em;
+    }
+    h3 {
+      font-size: 1.7em;
+      line-height: 1.2em;
+    }
+    h4 {
+      font-size: 1.7em;
+    }
+    &__content__history__content {
+      padding: 2rem .5rem;
+    }
+    &__content__asset__list {
+      &__right__content, &__left__content {
+        padding: 2rem .5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 368px) {
+  .zac {
+    iframe {
+      width: 200px;
     }
   }
 }

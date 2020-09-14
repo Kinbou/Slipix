@@ -1,9 +1,15 @@
 .tutoriels {  
-  p {
+  &__intro {
     text-align: center;
-    font-size: 3em;
-    // padding: 3rem;
+    font-size: 2.1em;
+    padding: 3rem;
     color: white;
+    text-align: center;
+    margin: auto;
+  }
+  &__picture {
+    width: 40%;
+    margin: auto;
   }
 
   &__cards {
@@ -11,18 +17,27 @@
     flex-direction: column;
     &__line {
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
     }
     &__card {
       width: 400px;
-      margin: 3rem;
+      height: 210px;
+      margin: 4rem 0;
       color: white;
       display: flex;
-      // flex-direction: column;
-      // background-color: #655c54;
       background-color: rgba(28,36,45,0.8);
       border-radius: 10px;
       padding: 1rem;
+      &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 2.1em;
+        margin: 1rem 0rem;
+        text-align: center;
+      }
+    }
+    &__cardActif {
       border: 2px solid transparent;
       transition:all .2s ease-in-out;
       -webkit-box-shadow: 0 28px 16px -26px black;
@@ -49,37 +64,19 @@
        -o-transition: .3s ease-in-out;
        border-color: #021320;
      }
-      &__title {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: 2.2em;
-        margin: 1rem 0rem;
-        text-align: center;
-   
-      }
-      img {
-        width: 50%;
-        padding: .7rem 0 .7rem 0;
-        justify-content: center;
-      }
     }
     &__cardSoon {
-      width: 400px;
-      margin: 3rem;
-      color: white;
-      display: flex;
-      padding: 1rem;
-      background-color: rgba(28,36,45,0.8);
-      border-radius: 10px;
       position: relative;
       z-index: 1;
         &__content {
           position: absolute;
-          font-size: 2em;
+          font-size: 2.5em;
+          text-align: center;
+          width: 370px;
+          height: 180px;
           color: #ffaa55!important;
           background-color: rgba(28,36,45,0.8);
-          padding: 5rem 2.5rem;
+          padding: 4.4rem 2.5rem;
           border-radius: 15px;
           opacity: 0;
           &:hover {
@@ -101,20 +98,120 @@
         -ms-transition: .3s ease-in-out;
         -o-transition: .3s ease-in-out;
       }
-      &__title {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: 2.2em;
-        margin: 1rem 0rem;
-        text-align: center;
-   
+    }
+  }
+}
+
+@media (max-width: 1340px) {
+  .tutoriels {
+    &__cards {
+      &__card {
+      width: 300px;
+      height: auto;
+      padding: 2rem 1rem;
       }
-      img {
-        width: 50%;
-        padding: .7rem 0 .7rem 0;
-        justify-content: center;
+      &__cardSoon__content {
+        width: 280px;
+        height: auto;
+        font-size: 1.9em;
+        padding: 2.2rem 1.5rem;
       }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .tutoriels {
+    &__cards{
+      &__line{
+      margin: auto 0;
+      display: inline-block;
+      text-align: center;
       }
+      a {
+        display: inline-block;
+      }
+      &__card {
+        margin: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 804px) {
+  .tutoriels {
+    &__picture {
+      width: 32%;
+    }
+    &__intro {
+      font-size: 1.8em;
+    }
+    &__cards{
+      &__line {
+        display: inline;
+      }
+      &__card {
+        width: auto;
+        &__title {
+          font-size: 1.8em;
+        }
+      }
+      &__cardSoon__content {
+        width: 300px;
+        height: auto;
+        font-size: 1.9em;
+        padding: 2rem 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 607px) {
+  .tutoriels {
+    a {
+      display: inline-flex;
+      width: auto;
+    }
+    &__intro {
+      margin: 0;
+      padding: 2rem 0;
+      font-size: 1.5em;
+    }
+    &__picture {
+      width: 30%;
+    }
+    &__cards {
+      &__card {
+        width: 310px;
+        &__title {
+          font-size: 1.6em;
+        }
+      }
+      &__cardSoon__content {
+        width: 280px;
+        height: auto;
+        font-size: 1.7em;
+        padding: 2rem 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .tutoriels {
+    &__intro {
+      font-size: 1.4em;
+    }
+    &__cards {
+      &__card {
+      width: auto;
+      }
+      &__cardSoon__content {
+        width: 250px;
+        height: auto;
+        font-size: 1.9em;
+        padding: 2rem 1rem;
+      }
+    }
   }
 }

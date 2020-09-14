@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-
+import Youtube from 'src/frontend/components/Youtube';
 import './caitlynSniper.scss';
 
 // runes
@@ -19,8 +18,6 @@ import missionSniper from 'src/assets/images/trollpicks/caitlynSniper/missionSni
 import pageRune from 'src/assets/images/trollpicks/caitlynSniper/pageRune.png';
 import trollSniper from 'src/assets/images/trollpicks/caitlynSniper/trollSniper.png';
 import sniperCaitlyn from 'src/assets/images/trollpicks/caitlynSniper/sniperCaitlyn.png';
-
-import Youtube from '../../Tutoriels/Youtube';
 
 const CaitlynSniper = () => (
   <div className="caitlynSniper">

@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Youtube from '../../Tutoriels/Youtube';
-import { useTitle } from '../../../../hooks/useTitle';
+import Youtube from 'src/frontend/components/Youtube';
+import { useTitle } from 'src/hooks/useTitle';
+
 // images
-import logoSlipix from '../../../../assets/images/lowElo/logoSlipix.png';
-import lowEloPicture from '../../../../assets/images/lowElo/lowEloPicture.jpg';
-import championOtp from '../../../../assets/images/lowElo/championOtp.jpg';
-import championStrong from '../../../../assets/images/lowElo/championStrong.png';
-import historiqueGame from '../../../../assets/images/lowElo/historiqueGame.jpg';
-import troll from '../../../../assets/images/lowElo/troll.jpeg';
-import trollRenekton from '../../../../assets/images/lowElo/trollRenekton.jpg';
-import trollVs from '../../../../assets/images/lowElo/trollVs.jpg';
-import heavyToCarry from '../../../../assets/images/lowElo/heavyToCarry.jpg';
-import trollSimpson from '../../../../assets/images/lowElo/trollSimpson.jpg';
+import logoSlipix from 'src/assets/images/lowElo/logoSlipix.png';
+import lowEloPicture from 'src/assets/images/lowElo/lowEloPicture.jpg';
+import championOtp from 'src/assets/images/lowElo/championOtp.jpg';
+import championStrong from 'src/assets/images/lowElo/championStrong.png';
+import historiqueGame from 'src/assets/images/lowElo/historiqueGame.jpg';
+import troll from 'src/assets/images/lowElo/troll.jpeg';
+import trollRenekton from 'src/assets/images/lowElo/trollRenekton.jpg';
+import trollVs from 'src/assets/images/lowElo/trollVs.jpg';
+import heavyToCarry from 'src/assets/images/lowElo/heavyToCarry.jpg';
+import trollSimpson from 'src/assets/images/lowElo/trollSimpson.jpg';
 
 import './lowElo.scss';
 
@@ -20,7 +21,7 @@ const LowElo = () => {
   useTitle('Sortir du bas Elo');
   return (
     <div className="lowElo">
-      <div className="lowElo__breadcrumb">
+      <div className="breadcrumb">
         <Link to="/">Accueil</Link> &gt;
         <Link to="/guides"> guides</Link> &gt;
         progresser sur League of Legends

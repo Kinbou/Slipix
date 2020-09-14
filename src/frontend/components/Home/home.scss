@@ -116,6 +116,21 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .home__introduction {
+    font-size: 2.5em;
+    padding: 82px 0 5px 0;
+    margin: 0;
+    &__logo {
+      display: none;
+    }
+    &__content {
+      font-size: 1.5em;
+    }
+  }
+  
+}
+
 @media (max-width: 923px) {
   .home {
     h2 {
@@ -194,16 +209,15 @@
       font-size: .7em;
     }
     h1 {
-      font-size: 0.7em;
+      font-size: 0.6em;
     }
     h2 {
       margin: 4rem 0 0rem 0;
-      font-size: 2.2em;
+      font-size: 2em;
     }
     &__introduction {
       &__logo {
         width: 14%!important;
-        // margin: 0 .5rem;
       }
     }
     &__news {

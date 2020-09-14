@@ -8,9 +8,9 @@
   }
   &__banner {
     width: 65%;
-    margin: 2rem auto;
+    margin: 3rem auto;
     height: 260px;
-    padding: 3rem 5rem 3rem 5rem ;
+    padding: 0 5rem 0 5rem ;
     display: flex;
     justify-content: space-between;
     font-size: 3em;
@@ -32,24 +32,22 @@
       text-align: center;
       justify-content: center;
       line-height: 1.5em;
-      width: 60%;
-      img {
-        // width: 80%;
-      }
+      width: 50%;
+      margin: auto;
     }
     &__right {
       display: flex;
       flex-direction: column;
       text-align: center;
       justify-content: center;
-      width: 40%;
+      width: 30%;
+      margin: auto;
       img {
         width: 40%;
         text-align: center;
         margin: auto;
       }
       &__picture {
-        // width: 50%;
         display: flex;
       }
     }
@@ -78,7 +76,7 @@
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
   .publi {
     p {
       font-size: .9em!important;
@@ -86,8 +84,22 @@
     &__banner {
       padding: 2rem ;
       width: 90%;
-      margin: 2rem auto;
       height: auto;
+      &__right {
+        width: 30%;
+      }
+    }
+  }
+  .discordTitle {
+    width: 80%!important;
+    margin: auto;
+  }
+}
+
+@media (max-width: 1450px) {
+  .publi {
+    &__banner {
+      height: 210px;
     }
   }
 }

@@ -1,21 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Youtube from '../../Tutoriels/Youtube';
-import { useTitle } from '../../../../hooks/useTitle';
+import Youtube from 'src/frontend/components/Youtube';
+import { useTitle } from 'src/hooks/useTitle';
 import './progressLol.scss';
 
 // images
-import logoSlipix from '../../../../assets/images/progressLol/slipixLogo.png';
-import quicklyProgress from '../../../../assets/images/progressLol/quicklyProgress.jpg';
-import initiative from '../../../../assets/images/progressLol/initiative.jpg';
-import trust from '../../../../assets/images/progressLol/trust.jpg';
-import time from '../../../../assets/images/progressLol/time.jpg';
-import sylasBroken from '../../../../assets/images/progressLol/sylasBroken.jpg';
-import brandJungleWtf from '../../../../assets/images/progressLol/brandJungleWtf.jpg';
-import zedForet from '../../../../assets/images/progressLol/zedForet.jpg';
-import giveEverything from '../../../../assets/images/progressLol/giveEverything.jpg';
-import trollPicture from '../../../../assets/images/progressLol/trollPicture.jpg';
-import trollPotter from '../../../../assets/images/progressLol/trollPotter.jpg';
+import logoSlipix from 'src/assets/images/progressLol/slipixLogo.png';
+import quicklyProgress from 'src/assets/images/progressLol/quicklyProgress.jpg';
+import initiative from 'src/assets/images/progressLol/initiative.jpg';
+import trust from 'src/assets/images/progressLol/trust.jpg';
+import time from 'src/assets/images/progressLol/time.jpg';
+import sylasBroken from 'src/assets/images/progressLol/sylasBroken.jpg';
+import brandJungleWtf from 'src/assets/images/progressLol/brandJungleWtf.jpg';
+import zedForet from 'src/assets/images/progressLol/zedForet.jpg';
+import giveEverything from 'src/assets/images/progressLol/giveEverything.jpg';
+import trollPicture from 'src/assets/images/progressLol/trollPicture.jpg';
+import trollPotter from 'src/assets/images/progressLol/trollPotter.jpg';
 
 
 const progressLol = () => {
@@ -84,7 +84,7 @@ const progressLol = () => {
         <p className="paragraph">Alors si vous ne pouvez pas trop jouer, rester sur vos acquis et <span className="green">spammez vos champions préférés</span> !
         </p>
         <p className="paragraph beforeYoutube">Voici un coaching très intéressant d'un abonné qui ne connait pas assez son champion, par manque d'optimisation de son temps de jeu et parce qu'il jouait <span className="green">trop de champions</span>.</p>
-        <Youtube videoId="MSSYY_bY9KM" SameSite="" />
+        <Youtube videoId="MSSYY_bY9KM" SameSite="Strict" />
         <p className="paragraph afterYoutube"><span className="red">Attention</span> on part du principe que vous voulez progresser, je ne vous oblige pas à jouer les même champions, si vous avez peu de temps et que vous voulez juste jouer tranquilou, allez en normale draft mais ne pénalisez pas vos alliés en classées.</p>
       </div>
       <div className="backgroundParagraphe progressLol__championPool">
@@ -173,7 +173,7 @@ const progressLol = () => {
         </p>
         <p className="intro">La technique Paire de Couilles. </p>
         <p className="paragraph beforeYoutube">(Oui désolé pour le nom mais j'en suis fier)</p>
-        <Youtube videoId="EDA82qt7AyY" SameSite="" />
+        <Youtube videoId="EDA82qt7AyY" SameSite="Strict" />
         <p className="paragraph afterYoutube">Vous l'avez donc compris, on tente les plays, on se sort les doigts, on connait ses <span className="green">limites</span> et le potentiel de son champion et donc on sait quand on peut go in ou reculer ! </p>
         <p className="paragraph">Jouer safe vous empêche de connaître vos <span className="green">limites</span> et c'est le problème de
           BEAUCOUP de joueurs bloqués dans un elo.
@@ -189,15 +189,15 @@ const progressLol = () => {
           Voici une vidéo ou je coach un abonné qui joue LUX et qui <span className="green">se laisse totalement dominer</span> par un RYZE à cause de son gameplay beaucoup trop safe,
           vous allez voir le problème directement lié à ma technique.
         </p>
-        <Youtube videoId="yX6EcSmjQRU" SameSite="" />
+        <Youtube videoId="yX6EcSmjQRU" SameSite="Strict" />
         <p className="paragraph betweenYoutube">
           Une autre vidéo intéressante ou je coach une abonnée qui joue support et qui
           elle aussi se laisse dominer, ne tente pas de plays, ne poke pas bref
           <span className="green">évitez ce genre de gameplay</span> si vous voulez progresser !
         </p>
-        <Youtube videoId="-Y35aQrFt9g" SameSite="" />
+        <Youtube videoId="-Y35aQrFt9g" SameSite="Strict" />
         <p className="paragraph betweenYoutube">Pour terminer ce thème encore un coaching très important d'un élève qui joue Ahri, il a réussi a avoir un <span className="green">très bon score</span> mais il perd la partie par manque d'initiative.<br /><span className="green">Il laisse ses adversaires dominer la map</span> et les objectifs alors qu'il peut changer les choses avec ses ressources !</p>
-        <Youtube videoId="djvQl7o_He0" SameSite="" />
+        <Youtube videoId="djvQl7o_He0" SameSite="Strict" />
       </div>
       <div className="backgroundParagraphe progressLol__knowledge">
         <h2><i className="fas fa-book icons__book" />La connaissance<i className="fas fa-book icons__book" /></h2>
@@ -215,7 +215,7 @@ const progressLol = () => {
           quand vous voulez progresser rapidement dessus, ce n'est pas en le jouant <span className="green">1 partie par jour que vous allez vous améliorer</span>.
         </p>
         <p className="paragraph beforeYoutube">Dans ce coaching je vais vous expliquer pourquoi c'est très important de connaître le potentiel de votre champion à 100%</p>
-        <Youtube videoId="90Fk-maGe8k" SameSite="" />
+        <Youtube videoId="90Fk-maGe8k" SameSite="Strict" />
         <p className="paragraph afterYoutube">Pour ce qui est du stuff et des runes à utiliser ainsi que les sorts à améliorer en priorité selon les patchs je vous conseille d'utiliser <span className="green">PROBUILD</span>, car les meilleurs joueurs sont obligés d'optimiser pour pouvoir monter donc ça sera à 95% le bon stuff à faire.</p>
         <a className="link" href="https://www.probuilds.net/" target="_blanc">ProBuild Cliquez ici</a>
         <p className="paragraph afterYoutube">Le stuff est-il si important que ça dans League of Legends ? Bien evidemment que oui, acheter le mauvais stuff c'est mal investir les golds que l'on obtient dans la faille.</p>
@@ -234,11 +234,11 @@ const progressLol = () => {
           remarque que le stuff dans la game en général est une catastrophe, mal
           optimisé donc les joueurs perdent un <span className="green">gros potentiel de victoire</span> !
         </p>
-        <Youtube videoId="V5ZCs62ujoI" SameSite="" />
+        <Youtube videoId="V5ZCs62ujoI" SameSite="Strict" />
         <p className="paragraph betweenYoutube">Maintenant voici une vidéo qui regroupe un peu tout ce qu'on a dit, ça devrait compléter le guide écrit !</p>
-        <Youtube videoId="AC1t5ESlfrM" SameSite="" />
+        <Youtube videoId="AC1t5ESlfrM" SameSite="Strict" />
         <p className="paragraph betweenYoutube">Et pour terminer voici l'épisode 1 de ma série de gameplays "<span className="green">PROGRESSER SUR LEAGUE OF LEGENDS</span>" au programme environ 30 vidéos ou je joue plein de champions dans des rôles différents et j'explique tout ce que je fais dans les games. Parfait pour <span className="green">bien apprendre</span> et reproduire ensuite dans vos parties !</p>
-        <Youtube videoId="EsgqDFrnVt0" SameSite="" />
+        <Youtube videoId="EsgqDFrnVt0" SameSite="Strict" />
       </div>
       <div className="backgroundParagraphe">
         <p className="paragraph">Pour résumer sur cette page qui parle de la progression dans League of Legends, optimisez votre temps de jeu, trouvez vos champions principaux, soyez positifs, tentez les plays pour connaître vos limites et renseignez-vous sur vos champions au maximum !<br /> <span className="gold">Le diamant est tout proche</span>, donnez tout pour l'obtenir...</p>

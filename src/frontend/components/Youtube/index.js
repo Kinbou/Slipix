@@ -32,6 +32,7 @@ class Youtube extends Component {
         onReady={this.videoOnReady}
         onPlay={this.videoOnPlay}
         onStateChange={this.videoStateChange}
+        SameSite="Strict"
       />
     );
   }

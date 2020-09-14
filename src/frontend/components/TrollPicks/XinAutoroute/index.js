@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Youtube from 'src/frontend/components/Youtube';
+import { useTitle } from 'src/hooks/useTitle';
+import './xinAutoroute.scss';
 
 // runes
 import delugeDesLames from 'src/assets/images/runes/delugeDesLames.png';
@@ -16,10 +19,6 @@ import degats from 'src/assets/images/trollpicks/xinAutoroute/degats.jpg';
 import runePage from 'src/assets/images/trollpicks/xinAutoroute/runePage.png';
 import troll from 'src/assets/images/trollpicks/xinAutoroute/troll.png';
 import trollContent from 'src/assets/images/trollpicks/xinAutoroute/trollContent.jpg';
-
-import Youtube from '../../Tutoriels/Youtube';
-import { useTitle } from '../../../../hooks/useTitle';
-import './xinAutoroute.scss';
 
 const XinAutoroute = () => {
   useTitle('Xin Zhao Autoroute');
