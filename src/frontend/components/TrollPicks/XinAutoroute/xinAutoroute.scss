@@ -18,7 +18,7 @@
   }
   .icons {
     &__rune, &__gameplay, &__crossbones {
-      margin: 0 2rem 0 2rem;
+      margin: 0 1rem;
       font-size: 0.8em;
     }
   }
@@ -29,6 +29,7 @@
     &__rune {
       margin: 2rem;
       border-radius: 10px;
+      width: 80%;
       border: 2px solid transparent;
       transition:all .2s ease-in-out;
       -webkit-box-shadow: 0 28px 16px -26px black;
@@ -99,7 +100,6 @@
         }
       }
       &__border {
-        // padding-bottom: 3rem!important;
         border-bottom: #ffaa55 1px solid;
       }
     }
@@ -117,3 +117,75 @@
     }
   }
 }
+
+@media (max-width: 1458px) {
+  .xinAutoroute {
+    .paragraph {
+      font-size: 1.4em;
+    }
+    padding: 0 5rem 4rem 5rem;
+    ul {
+      margin: 2rem 0;
+      padding: 2rem;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .xinAutoroute {
+    padding: 0 0 1rem 0;
+    h1 {
+      padding-top: 3rem!important;
+    }
+    h2 {
+      padding-top: 0;
+      margin: 0 0 3rem 0;
+    }
+    .backgroundParagraphe {
+      margin: 3rem 1rem;
+    }
+    .paragraph {
+      font-size: 1.3em;
+    }
+  }
+}
+
+@media (max-width: 852px) {
+  .xinAutoroute {
+    .paragraph {
+      font-size: 1.3em;
+    }
+    .backgroundParagraphe {
+      padding: 3rem .5rem;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .xinAutoroute {
+    h2 {
+      font-size: 3em;
+      margin: 0 0 3rem 0;
+    }
+    .paragraph {
+      font-size: 1.2em;
+    }
+    .backgroundParagraphe {
+      padding: 3rem .5rem;
+      margin: 2rem .5rem;
+    }
+    &__gameplay__content {
+      padding: .5rem;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .xinAutoroute {
+    h2 {
+      font-size: 2.4em;
+    }
+  }
+}
+
+

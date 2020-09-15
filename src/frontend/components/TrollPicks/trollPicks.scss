@@ -46,6 +46,22 @@
       justify-content: space-between;
       background-color: rgba(28,36,45,0.8);
       border-radius: 20px;
+
+      &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 2.2em;
+        margin: 1rem 0rem;
+        text-align: center;
+   
+      }
+      img {
+        width: 45%;
+        border-radius: 0 20px 20px 0;
+      }
+    }
+    &__cardActif {
       border: 2px solid transparent;
       transition:all .2s ease-in-out;
       -webkit-box-shadow: 0 28px 16px -26px black;
@@ -72,28 +88,8 @@
        -o-transition: .3s ease-in-out;
        border-color: #ffaa55;
      }
-      &__title {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: 2.2em;
-        margin: 1rem 0rem;
-        text-align: center;
-   
-      }
-      img {
-        width: 45%;
-        border-radius: 0 20px 20px 0;
-      }
     }
     &__cardSoon {
-      width: 920px;
-      margin: 2rem;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      background-color: rgba(28,36,45,0.8);
-      border-radius: 20px;
       position: relative;
       z-index: 1;
         &__content {
@@ -134,7 +130,6 @@
         font-size: 2.2em;
         margin: 1rem 0rem;
         text-align: center;
-   
       }
       img {
         width: 45%;
@@ -142,5 +137,182 @@
       }
     }
   }
+}
 
+@media (max-width: 1000px) {
+  .trollpicks {
+    .backgroundParagraphe {
+      margin: 0 2rem;
+    }
+    p {
+      font-size: 1.5em;
+    }
+    h4 {
+      font-size: 2em;
+    }
+    &__cards {
+      &__card {
+        width: 800px;
+        margin: 2rem auto;
+      }
+      &__cardSoon {
+        &__content {
+          width: 790px;
+          height: 170px;
+          font-size: 2em!important;
+          // padding: 2.5rem 4.5rem;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 852px) {
+  .trollpicks {
+    .backgroundParagraphe {
+      margin: 0 1rem;
+      padding: 3rem 2rem;
+    }
+    p {
+      font-size: 1.4em;
+    }
+    h3 {
+      font-size: 1.8em;
+    }
+    h4 {
+      font-size: 1.8em;
+    }
+    &__cards {
+      &__card {
+        width: 650px;
+      }
+      &__cardSoon {
+        &__content {
+          width: 630px;
+          height: 140px;
+          font-size: 2em!important;
+          margin: 0;
+          padding: 3.5rem ;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .trollpicks {
+    .backgroundParagraphe {
+      margin: 0 .5rem;
+      padding: 2rem 1rem;
+    }
+    p {
+      font-size: 1.3em;
+    }
+    h3 {
+      font-size: 1.7em;
+    }
+
+    &__cards {
+      &__card {
+        width: 550px;
+      }
+      &__cardSoon {
+        &__content {
+          width: 540px;
+          height: 115px;
+          padding: 2.5rem ;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 583px) {
+  .trollpicks {
+    p {
+      font-size: 1.3em;
+    }
+    h3 {
+      font-size: 1.36em;
+    }
+    &__cards {
+      &__card {
+        width: 450px;
+      }
+      &__cardSoon__content {
+        width: 440px;
+        height: 90px;
+        padding: 2.5rem ;
+      }
+    }
+  }
+}
+
+@media (max-width: 463px) {
+  .trollpicks {
+    .backgroundParagraphe {
+      margin: 0 .3rem;
+      padding: 1rem .3rem;
+    }
+    p {
+      font-size: 1.1em;
+    }
+    h2 {
+      font-size: 3em;
+    }
+    h3 {
+      font-size: 1.36em;
+    }
+    h4 {
+      font-size: 1.6em;
+    }
+    &__cards {
+      &__card {
+        width: 350px;
+        margin: 1rem auto;
+        border-radius: 5px;
+      }
+      &__cardSoon__content {
+        width: 340px;
+        height: 75px;
+        padding: 1.7rem ;
+        font-size: 1.7em!important;
+      }
+    }
+  }
+}
+
+@media (max-width: 463px) {
+  .trollpicks {
+    img {
+      border-radius: 5px;
+    }
+    p {
+      font-size: 1.1em;
+    }
+    h2 {
+      font-size: 2.8em;
+      margin: 2rem 0 3rem 0;
+    }
+    h3 {
+      font-size: 1.36em;
+    }
+    h4 {
+      font-size: 1.5em;
+    }
+    &__cards {
+      &__card {
+        width: 300px;
+        margin: 1rem auto;
+        border-radius: 5px;
+      }
+      &__cardSoon__content {
+        width: 290px;
+        height: 65px;
+        padding: 1.5rem ;
+        font-size: 1.5em!important;
+      }
+    }
+  }
 }

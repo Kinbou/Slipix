@@ -46,7 +46,7 @@ const ThreshFlak = () => {
       <div className="backgroundParagraphe">
         <h2><i className="fas fa-scroll icons__rune" />La page de rune<i className="fas fa-scroll icons__rune" /></h2>
         <p className="paragraph">On part sur une page de runes qui sera la pour vous aider à prendre des kills en early game !</p>
-        <img className="effectImage" src={runePage} alt="" />
+        <img className="effectImage threshFlak__pictures__runes" src={runePage} alt="" />
         <div className="xinAutoroute__runes__list">
           <ul>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">

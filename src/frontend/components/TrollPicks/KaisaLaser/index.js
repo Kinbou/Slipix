@@ -25,8 +25,8 @@ const KaisaLaser = () => {
   return (
     <div className="kaisaLaser">
       <div className="breadcrumb">
-        <Link className="breadcrumb__link" to="/">Accueil</Link>
-        <Link className="breadcrumb__link" to="/trollpicks"> trollpicks</Link>
+        <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
+        <Link className="breadcrumb__link" to="/trollpicks"> trollpicks</Link> &gt;
         Kaisa Laser
       </div>
       <h1 className="globalTitle-page">Kaisa Laser</h1>
@@ -46,7 +46,7 @@ const KaisaLaser = () => {
         <h2><i className="fas fa-scroll icons__rune" />La page de rune<i className="fas fa-scroll icons__rune" /></h2>
         <p className="paragraph">Voici la page de rune la + optimale pour être efficace avec Kaïsa Laser !</p>
 
-        <img className="effectImage" src={rune} alt="" />
+        <img className="effectImage kaisaLaser__pictures__runes" src={rune} alt="" />
         <div className="xinAutoroute__runes__list">
           <ul>
             <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">

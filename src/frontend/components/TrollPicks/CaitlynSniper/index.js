@@ -42,7 +42,7 @@ const CaitlynSniper = () => (
     <div className="backgroundParagraphe">
       <h2><i className="fas fa-scroll icons__rune" />La page de rune<i className="fas fa-scroll icons__rune" /></h2>
       <p className="paragraph">On part sur une page de runes qui sera la pour maximiser vos dégâts et votre génération de ressources</p>
-      <img className="effectImage" src={pageRune} alt="" />
+      <img className="effectImage caitlynSniper__pictures__runes" src={pageRune} alt="" />
       <div className="xinAutoroute__runes__list">
         <ul>
           <div className="xinAutoroute__runes__list__content xinAutoroute__runes__list__border">

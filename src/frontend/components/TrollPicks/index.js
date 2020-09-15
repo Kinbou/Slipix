@@ -30,7 +30,7 @@ const TrollPicks = () => {
       <div className="trollpicks__cards">
         <div className="trollpicks__cards__line tutoriels__cards__line__one">
           <Link to="/trollpicks/xinZhao-autoroute">
-            <div className="trollpicks__cards__card">
+            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
               <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Xin Zhao Autoroute</h3>
               <img src={zin} alt="" />
             </div>
@@ -38,7 +38,7 @@ const TrollPicks = () => {
         </div>
         <div className="trollpicks__cards__line tutoriels__cards__line__one">
           <Link to="/trollpicks/thresh-flak">
-            <div className="trollpicks__cards__card">
+            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
               <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Thresh Flak OneShot</h3>
               <img src={tresh} alt="" />
             </div>
@@ -46,7 +46,7 @@ const TrollPicks = () => {
         </div>
         <div className="trollpicks__cards__line tutoriels__cards__line__one">
           <Link to="/trollpicks/caitlyn-sniper">
-            <div className="trollpicks__cards__card">
+            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
               <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Caitlyn Sniper</h3>
               <img src={caitlyn} alt="" />
             </div>
@@ -54,7 +54,7 @@ const TrollPicks = () => {
         </div>
         <div className="trollpicks__cards__line tutoriels__cards__line__one">
           <Link to="/trollpicks/kaisa-laser">
-            <div className="trollpicks__cards__card">
+            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
               <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Kaïsa Laser</h3>
               <img src={kaisa} alt="" />
             </div>
@@ -63,28 +63,28 @@ const TrollPicks = () => {
         <div className="betweenParagraph" />
         <h2>Prochainement</h2>
         <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <div className="trollpicks__cards__cardSoon">
+          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
             <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
             <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Zed Forêt</h3>
             <img src={zedForet} alt="" />
           </div>
         </div>
         <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <div className="trollpicks__cards__cardSoon">
+          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
             <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
             <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez jinx zap</h3>
             <img src={jinxZap} alt="" />
           </div>
         </div>
         <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <div className="trollpicks__cards__cardSoon">
+          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
             <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
             <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Olaf vol de vie</h3>
             <img src={olafVolVie} alt="" />
           </div>
         </div>
         <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <div className="trollpicks__cards__cardSoon">
+          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
             <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
             <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Lucian Ap</h3>
             <img src={lucianAp} alt="" />

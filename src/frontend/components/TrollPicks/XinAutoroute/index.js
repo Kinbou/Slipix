@@ -29,7 +29,7 @@ const XinAutoroute = () => {
         <Link className="breadcrumb__link" to="/trollpicks"> trollpicks</Link> &gt;
         xin Zhao Autoroute
       </div>
-      <h2 className="globalTitle-page">Xin Zhao Autoroute</h2>
+      <h1 className="globalTitle-page">Xin Zhao Autoroute</h1>
       <p className="paragraph">Salut la <span className="red">#TEAMSLIP</span> c'est Coach Slipix et on va parler de <span className="green">Xin Zhao</span> autoroute dans League of Legends !</p>
       <img className="logo" src={logoSlipix} alt="" />
       <div className="backgroundParagraphe">

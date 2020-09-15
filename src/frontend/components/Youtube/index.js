@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 
+import './youtube.scss';
+
 class Youtube extends Component {
   // videoOnReady(event) {
   // }
