@@ -13,6 +13,9 @@ import News from 'src/frontend/components/News';
 import Support from 'src/frontend/components/Support';
 import Contact from 'src/frontend/components/Contact';
 
+// outils
+import ScrollToTop from 'src/frontend/components/ScrollToTop';
+
 // Guides
 import Guides from 'src/frontend/components/Guides';
 import Guide from 'src/frontend/components/Guides/Guide';
@@ -110,6 +113,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <ScrollToTop />
       <div className={appClass}>
         <Header />
         <main>
