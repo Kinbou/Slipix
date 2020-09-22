@@ -4,16 +4,16 @@ import Youtube from 'src/frontend/components/Youtube';
 import { useTitle } from 'src/hooks/useTitle';
 
 // images
-import logoSlipix from 'src/assets/images/lowElo/logoSlipix.png';
-import lowEloPicture from 'src/assets/images/lowElo/lowEloPicture.jpg';
-import championOtp from 'src/assets/images/lowElo/championOtp.jpg';
-import championStrong from 'src/assets/images/lowElo/championStrong.png';
-import historiqueGame from 'src/assets/images/lowElo/historiqueGame.jpg';
-import troll from 'src/assets/images/lowElo/troll.jpeg';
-import trollRenekton from 'src/assets/images/lowElo/trollRenekton.jpg';
-import trollVs from 'src/assets/images/lowElo/trollVs.jpg';
-import heavyToCarry from 'src/assets/images/lowElo/heavyToCarry.jpg';
-import trollSimpson from 'src/assets/images/lowElo/trollSimpson.jpg';
+import logoSlipix from 'src/assets/images/guides/lowElo/logoSlipix.png';
+import lowEloPicture from 'src/assets/images/guides/lowElo/lowEloPicture.jpg';
+import championOtp from 'src/assets/images/guides/lowElo/championOtp.jpg';
+import championStrong from 'src/assets/images/guides/lowElo/championStrong.jpg';
+import historiqueGame from 'src/assets/images/guides/lowElo/historiqueGame.jpg';
+import troll from 'src/assets/images/guides/lowElo/troll.jpeg';
+import trollRenekton from 'src/assets/images/guides/lowElo/trollRenekton.jpg';
+import trollVs from 'src/assets/images/guides/lowElo/trollVs.jpg';
+import heavyToCarry from 'src/assets/images/guides/lowElo/heavyToCarry.jpg';
+import trollSimpson from 'src/assets/images/guides/lowElo/trollSimpson.jpg';
 
 import './lowElo.scss';
 

@@ -6,7 +6,11 @@ import './kaisaLaser.scss';
 
 // images
 import logoSlipix from 'src/assets/images/trollpicks/kaisaLaser/slipixLogo.png';
-import degatsBroken from 'src/assets/images/trollpicks/kaisaLaser/degatsBroken.jpg';
+import degatsBroken from 'src/assets/images/trollpicks/kaisaLaser/kaisa.jpg';
+import rune from 'src/assets/images/trollpicks/kaisaLaser/pageRune.jpg';
+import laser from 'src/assets/images/trollpicks/kaisaLaser/laser.jpg';
+import troll from 'src/assets/images/trollpicks/kaisaLaser/troll.jpg';
+import wtf from 'src/assets/images/trollpicks/kaisaLaser/wtf.jpg';
 
 // runes
 import moissonNoire from 'src/assets/images/runes/moissonNoire.png';
@@ -15,10 +19,7 @@ import arracheurOeil from 'src/assets/images/runes/arracheurOeil.png';
 import chasseurVorace from 'src/assets/images/runes/chasseurVorace.png';
 import presenceDesprit from 'src/assets/images/runes/presenceDesprit.png';
 import coupDeGrace from 'src/assets/images/runes/coupDeGrace.png';
-import rune from 'src/assets/images/trollpicks/kaisaLaser/pageRune.png';
-import laser from 'src/assets/images/trollpicks/kaisaLaser/laser.png';
-import troll from 'src/assets/images/trollpicks/kaisaLaser/troll.png';
-import wtf from 'src/assets/images/trollpicks/kaisaLaser/wtf.jpg';
+
 
 const KaisaLaser = () => {
   useTitle('Kaisa Laser');

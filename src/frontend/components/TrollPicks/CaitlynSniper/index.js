@@ -13,9 +13,9 @@ import coupDeGrace from 'src/assets/images/runes/coupDeGrace.png';
 
 // images
 import logoSlipix from 'src/assets/images/trollpicks/caitlynSniper/logoSlipix.png';
-import caitlynLetalite from 'src/assets/images/trollpicks/caitlynSniper/caitlyn_letalite.png';
-import missionSniper from 'src/assets/images/trollpicks/caitlynSniper/missionSniper.jpg';
-import pageRune from 'src/assets/images/trollpicks/caitlynSniper/pageRune.png';
+import caitlynLetalite from 'src/assets/images/trollpicks/caitlynSniper/caitlyn_letalite.jpg';
+import missionSniper from 'src/assets/images/trollpicks/caitlynSniper/caitlyn.jpg';
+import pageRune from 'src/assets/images/trollpicks/caitlynSniper/pageRune.jpg';
 import trollSniper from 'src/assets/images/trollpicks/caitlynSniper/trollSniper.png';
 import sniperCaitlyn from 'src/assets/images/trollpicks/caitlynSniper/sniperCaitlyn.png';
 

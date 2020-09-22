@@ -1,0 +1,35 @@
+.zedForet {
+  text-align: center;
+  padding: 0 10rem 4rem 10rem;
+  color: white;
+  &__pictures {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem;
+    &__runes {
+      width: 80%;
+    }
+    &__troll {
+      border-radius: 15px;
+      filter: drop-shadow(0 0 0.75rem #aa58db);
+      margin: 2rem 0 3rem 0;
+    }
+    &__picture {
+      width: 25%;
+      border-radius: 35%;
+      filter: drop-shadow(0 0 0.75rem #de6d55);
+      &__trollEnd {
+        border-radius: 15px;
+        filter: drop-shadow(0 0 0.75rem #b94220);
+        margin: 2rem 0 3rem 0;
+        width: 30%;
+      }
+      &__trollHeart {
+        border-radius: 15px;
+        filter: drop-shadow(0 0 0.75rem #aa58db);
+        margin: 2rem 0 3rem 0;
+        width: 30%;
+      }
+    }
+  }
+}

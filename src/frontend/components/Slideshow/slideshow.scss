@@ -1,6 +1,5 @@
 .containerSlide {
   width: 100%;
-  // box-shadow: 1px 1px 12px black;
   &__each-slide {
     &__image {
       position: relative;
@@ -67,6 +66,9 @@
           z-index: 2;
           font-size: 1.1em;
           text-align: center;
+          p {
+            text-align: center;
+          }
           button {
             color: #7289da;
             border: #7289da solid 1px;

@@ -16,9 +16,9 @@ import celerite from 'src/assets/images/runes/celerite.png';
 import logoSlipix from 'src/assets/images/trollpicks/threshFlak/slipixLogo.png';
 import oneshotflak from 'src/assets/images/trollpicks/threshFlak/oneshotflak.jpg';
 import retourOneShot from 'src/assets/images/trollpicks/threshFlak/retourOneShot.jpg';
-import runePage from 'src/assets/images/trollpicks/threshFlak/runePage.png';
+import runePage from 'src/assets/images/trollpicks/threshFlak/runePage.jpg';
 import capture from 'src/assets/images/trollpicks/threshFlak/capture.jpg';
-import threshFlak from 'src/assets/images/trollpicks/threshFlak/threshFlak.png';
+import threshFlak from 'src/assets/images/trollpicks/threshFlak/threshFlak.jpg';
 import threshFlakEnd from 'src/assets/images/trollpicks/threshFlak/threshFlakEnd.png';
 import troll from 'src/assets/images/trollpicks/threshFlak/troll.jpg';
 

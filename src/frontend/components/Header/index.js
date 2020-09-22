@@ -7,7 +7,7 @@ import './header.scss';
 
 const Header = () => (
   <header className="header">
-    <nav className="header__nav">
+    <nav className="header__nav active">
       <img src={logoSlipix} alt="logo" className="header__nav__logo__picture" />
       <Burger />
     </nav>

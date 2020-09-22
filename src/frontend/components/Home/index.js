@@ -9,7 +9,7 @@ import logoLol from 'src/assets/images/logoLol.png';
 import logoSlipix from 'src/assets/images/SlipixLogo.png';
 
 // import
-import SocialNetwork from './SocialNetwork';
+import SocialNetwork from 'src/frontend/components/SocialNetwork';
 import Publicity from './Publicity';
 import './home.scss';
 

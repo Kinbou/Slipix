@@ -4,14 +4,17 @@ import { useTitle } from 'src/hooks/useTitle';
 import './trollPicks.scss';
 
 // images
-import zin from 'src/assets/images/trollpicks/zinAutoroutee.jpg';
-import caitlyn from 'src/assets/images/trollpicks/caitlyn.jpg';
-import kaisa from 'src/assets/images/trollpicks/kaisa.jpg';
-import tresh from 'src/assets/images/trollpicks/tresh.jpg';
+import zin from 'src/assets/images/trollpicks/xinAutoroute/zinAutoroutee.jpg';
+import caitlyn from 'src/assets/images/trollpicks/caitlynSniper/caitlyn.jpg';
+import kaisa from 'src/assets/images/trollpicks/kaisaLaser/kaisa.jpg';
+import tresh from 'src/assets/images/trollpicks/threshFlak/tresh.jpg';
 import zedForet from 'src/assets/images/trollpicks/zedForet.jpg';
 import jinxZap from 'src/assets/images/trollpicks/jinxZap.png';
 import olafVolVie from 'src/assets/images/trollpicks/olafVolVie.png';
-import lucianAp from 'src/assets/images/trollpicks/lucianAp.jpg';
+import lucianAp from 'src/assets/images/trollpicks/lucianLanceMissiles/lucianAp.jpg';
+import braumPaf from 'src/assets/images/trollpicks/braumPaf/braumPaf.jpg';
+import twistedMitraillette from 'src/assets/images/trollpicks/twistedMitraillette.jpg';
+import hecarimCharge from 'src/assets/images/trollpicks/hecarimCharge.jpg';
 
 const TrollPicks = () => {
   useTitle('TrollPicks');
@@ -60,15 +63,24 @@ const TrollPicks = () => {
             </div>
           </Link>
         </div>
+        <div className="trollpicks__cards__line tutoriels__cards__line__one">
+          <Link to="/trollpicks/lucian-lance-missiles">
+            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
+              <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Lucian Lance-Missiles</h3>
+              <img src={lucianAp} alt="" />
+            </div>
+          </Link>
+        </div>
+        <div className="trollpicks__cards__line tutoriels__cards__line__one">
+          <Link to="/trollpicks/zed-foret">
+            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
+              <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Zed Forêt</h3>
+              <img src={zedForet} alt="" />
+            </div>
+          </Link>
+        </div>
         <div className="betweenParagraph" />
         <h2>Prochainement</h2>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
-            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
-            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Zed Forêt</h3>
-            <img src={zedForet} alt="" />
-          </div>
-        </div>
         <div className="trollpicks__cards__line tutoriels__cards__line__one">
           <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
             <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
@@ -86,8 +98,22 @@ const TrollPicks = () => {
         <div className="trollpicks__cards__line tutoriels__cards__line__one">
           <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
             <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
-            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Lucian Ap</h3>
-            <img src={lucianAp} alt="" />
+            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Braum paf</h3>
+            <img src={braumPaf} alt="" />
+          </div>
+        </div>
+        <div className="trollpicks__cards__line tutoriels__cards__line__one">
+          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
+            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
+            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Twisted Mitraillette</h3>
+            <img src={twistedMitraillette} alt="" />
+          </div>
+        </div>
+        <div className="trollpicks__cards__line tutoriels__cards__line__one">
+          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
+            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
+            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Hecarim charge</h3>
+            <img src={hecarimCharge} alt="" />
           </div>
         </div>
       </div>

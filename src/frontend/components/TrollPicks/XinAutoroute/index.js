@@ -16,8 +16,8 @@ import legendAlacrite from 'src/assets/images/runes/legendAlacrite.png';
 import logoSlipix from 'src/assets/images/trollpicks/xinAutoroute/slipixLogo.png';
 import lowElo from 'src/assets/images/trollpicks/xinAutoroute/lowElo.jpg';
 import degats from 'src/assets/images/trollpicks/xinAutoroute/degats.jpg';
-import runePage from 'src/assets/images/trollpicks/xinAutoroute/runePage.png';
-import troll from 'src/assets/images/trollpicks/xinAutoroute/troll.png';
+import runePage from 'src/assets/images/trollpicks/xinAutoroute/runePage.jpg';
+import troll from 'src/assets/images/trollpicks/xinAutoroute/troll.jpg';
 import trollContent from 'src/assets/images/trollpicks/xinAutoroute/trollContent.jpg';
 
 const XinAutoroute = () => {

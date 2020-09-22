@@ -5,17 +5,17 @@ import { useTitle } from 'src/hooks/useTitle';
 import './progressLol.scss';
 
 // images
-import logoSlipix from 'src/assets/images/progressLol/slipixLogo.png';
-import quicklyProgress from 'src/assets/images/progressLol/quicklyProgress.jpg';
-import initiative from 'src/assets/images/progressLol/initiative.jpg';
-import trust from 'src/assets/images/progressLol/trust.jpg';
-import time from 'src/assets/images/progressLol/time.jpg';
-import sylasBroken from 'src/assets/images/progressLol/sylasBroken.jpg';
-import brandJungleWtf from 'src/assets/images/progressLol/brandJungleWtf.jpg';
-import zedForet from 'src/assets/images/progressLol/zedForet.jpg';
-import giveEverything from 'src/assets/images/progressLol/giveEverything.jpg';
-import trollPicture from 'src/assets/images/progressLol/trollPicture.jpg';
-import trollPotter from 'src/assets/images/progressLol/trollPotter.jpg';
+import logoSlipix from 'src/assets/images/guides/progressLol/slipixLogo.png';
+import quicklyProgress from 'src/assets/images/guides/progressLol/quicklyProgress.jpg';
+import initiative from 'src/assets/images/guides/progressLol/initiative.jpg';
+import trust from 'src/assets/images/guides/progressLol/trust.jpg';
+import time from 'src/assets/images/guides/progressLol/time.jpg';
+import sylasBroken from 'src/assets/images/guides/progressLol/sylasBroken.jpg';
+import brandJungleWtf from 'src/assets/images/guides/progressLol/brandJungleWtf.jpg';
+import zedForet from 'src/assets/images/guides/progressLol/zedForet.jpg';
+import giveEverything from 'src/assets/images/guides/progressLol/giveEverything.jpg';
+import trollPicture from 'src/assets/images/guides/progressLol/trollPicture.jpg';
+import trollPotter from 'src/assets/images/guides/progressLol/trollPotter.jpg';
 
 
 const progressLol = () => {

@@ -5,15 +5,15 @@
   }
   h2 {
     color: white;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1rem;
   }
   &__background {
     margin: 5rem 20rem 10rem 20rem;
     background-color: rgba(35, 22, 4, 0.7);
     padding: 1rem 5rem;
     border-radius: 20px;
-  }
-  &__slipix {
-    color: #ff3e29;
   }
   &__coaching {
     display: block;
@@ -27,19 +27,7 @@
     line-height: 3.5em;
   }
   &__content__refuseResist {
-    // line-height: 75px;
     position: relative;
-  }
-  &__link {
-    background-color: crimson;
-    margin-left: 1rem;
-    padding: .5rem;
-    border-radius: 10px;
-    &:hover {
-      border: crimson solid 1px;
-      background-color: white;
-      color: crimson;
-    }
   }
   &__image {
     &__refuseResist {
@@ -47,36 +35,17 @@
       margin: .5rem;
       position: absolute;
       bottom: -45px;
-      // right: 0;
     }
     &__utip {
       width: 5%;
       position: absolute;
-      // left: -20px;
     }
-  }
-  &__refuseResist {
-    color: #fa2b1c;
-
   }
   &__discord {
     color: #7289da;
   }
-  &__soloDuo {
-    color: #ff7b4e;
-  }
   &__ligue {
     color: #52a4f3;
-  }
-  &__guide {
-    color: forestgreen;
-  }
-
-  h2 {
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 1rem;
-
   }
   color: white;
   line-height: 2em;

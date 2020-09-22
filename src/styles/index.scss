@@ -4,8 +4,8 @@
 body {
   font-family: 'Bebas Neue', cursive;
   overflow-x: hidden;
-   /* width */
-   &::-webkit-scrollbar {
+
+  &::-webkit-scrollbar {
     width: 10px;
     background-color: #ffaa55;
   }
@@ -13,7 +13,6 @@ body {
   /* Track */
   &::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
-    // background-color: ;
   }
 
   /* Handle */
@@ -31,130 +30,68 @@ main {
 }
 
 // background
-.app--home {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.6), rgba(3, 23, 32, 0.6)), url("https://cdn.discordapp.com/attachments/554341007144124416/710470768802136134/faille_de_linvocateur.jpg");
+.app {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom;
 }
+.app--home {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/faille_de_linvocateur.jpg);
+}
 
 .app--presentation {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.2), rgba(3, 23, 32, 0.2)), url("https://cdn.discordapp.com/attachments/554341007144124416/711288671508365352/bar_entre.png");
-  width: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.2), rgba(3, 23, 32, 0.2)), url(../assets/images/backgroundPages/presentation.jpg);
 }
 
 .app--news {
   background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/backgroundDemacia.jpg);
- 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
 }
 
 .app--tutoriels {
   background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/backgroundMont_targon.jpg);
- 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
 }
 
 .app--jungle {
   background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.7)), url(../assets/images/backgroundPages/backgroundJungle.jpg);
- 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
 }
 
 .app--supportPage {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.6), rgba(3, 23, 32, 0.6)), url(../assets/images/backgroundPages/me-soutenir.jpg);
- 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/me-soutenir.jpg);
 }
 
 .app--contact {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/taverneNight.png);
- 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.3), rgba(3, 23, 32, 0.3)), url(../assets/images/backgroundPages/contact.jpg);
 }
 
 .app--guides {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/backgroundGuides.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.3), rgba(3, 23, 32, 0.3)), url(../assets/images/backgroundPages/backgroundGuides.jpg);
 }
 .app--guide {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/mentalRage.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/mentalRage.jpg);
 }
 
 .app--roleChampion {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/roleChampion.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/roleChampion.jpg);
 }
 
 .app--progressLol {
   background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/progressLol.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
 }
 .app--lowElo {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/lowElo.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.3), rgba(3, 23, 32, 0.3)), url(../assets/images/backgroundPages/lowElo.jpg);
 }
 .app--winLane {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.7)), url(../assets/images/backgroundPages/winLane.jpeg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.6), rgba(3, 23, 32, 0.6)), url(../assets/images/backgroundPages/winLane.jpeg);
 }
 .app--trollPicks {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.6), rgba(3, 23, 32, 0.6)), url(../assets/images/backgroundPages/trollpick.jpeg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/trollPicks.jpg);
 }
 
 .app--tutorielTop {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/tutorielTop.jpeg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/tutorielTop.jpeg);
 }
 .app--tutorielMid {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/tutorielMid.jpeg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  min-height: 100vh;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/tutorielMid.jpeg);
 }
 
 .globalTitle-page {
@@ -316,7 +253,7 @@ h3 {
   background-color: #ffaa55;
   margin-left: 1rem;
   padding: .3rem;
-  font-size: 1.5em;
+  // font-size: 1.5em;
   border-radius: 5px;
   color: black;
   &:hover {
@@ -378,6 +315,13 @@ h3 {
   margin: 2rem 2rem 1rem 2rem;
   // padding-top: 2rem;
   border-top: solid 2px #ffaa55;
+}
+
+.icons {
+  &__rune, &__gameplay, &__crossbones {
+    margin: 0 1rem;
+    font-size: 0.8em;
+  }
 }
 
 iframe {

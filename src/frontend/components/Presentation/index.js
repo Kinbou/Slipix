@@ -4,8 +4,8 @@ import { useTitle } from 'src/hooks/useTitle';
 
 // images
 import refuseResist from 'src/assets/images/refuseResist.png';
-import coachingSlipix from 'src/assets/images/picturesYoutube/coachingSlipix.jpg';
-import SocialNetwork from '../Home/SocialNetwork';
+import coachingSlipix from 'src/assets/images/presentation/coachingSlipix.jpg';
+import SocialNetwork from 'src/frontend/components/SocialNetwork';
 import './presentation.scss';
 
 const Presentation = () => {
@@ -16,7 +16,7 @@ const Presentation = () => {
       <div className="presentation__background">
         <h2>Salut c'est <span className="red">Slipix</span>  Bienvenue sur mon site Officiel !</h2>
         <img className="presentation__coaching" src={coachingSlipix} alt="" />
-        <p>Joueur de League of Legends depuis 2014, Coach <span className="red">Mental/Stratégique</span> depuis 2018.</p>
+        <p>Joueur de League of Legends depuis 2014, Coach <span className="red">Mental</span>/<span className="red">Stratégique</span> depuis 2018.</p>
         <p>YouTuber/Streamer sur <span className="purple">Twitch</span> par passion depuis 2016, j'ai toujours aimé
           le contact avec ma communauté.
         </p>
@@ -24,9 +24,9 @@ const Presentation = () => {
         <p>Je me suis trouvé une passion pour le Coaching quand j'ai appris 2-3
           trucs à des amis sur League of Legends, et depuis je ne m'en lasse pas.
         </p><br />
-        <p>Je suis actuellement à 2000 heures d'experience de coaching en <span className="orange">SoloQ/DuoQ</span> et 1000 heures en Team complète.
+        <p>Je suis actuellement à 2000 heures d'experience de coaching en <span className="orange">SoloQ</span>/<span className="orange">DuoQ</span> et 1000 heures en Team complète.
         </p>
-        <p>Je ne prend plus de réservations coaching <span className="orange">SoloQ/DuoQ</span> depuis juin 2020 afin de me concentrer exclusivement sur le coaching de team</p><br />
+        <p>Je ne prend plus de réservations coaching <span className="orange">SoloQ</span>/<span className="orange">DuoQ</span> depuis juin 2020 afin de me concentrer exclusivement sur le coaching de team</p><br />
         <p className="presentation__content__refuseResist">Je suis en ce moment leader de la Team <span className="red">REFUSE RESIST</span><img src={refuseResist} alt="" className="presentation__image__refuseResist" /></p><p> qui a pour objectif  de rejoindre la <span className="blue">Ligue 2</span>.</p>
         <br />
         <p className="presentation__but">Le but de ce site est simple :<br />

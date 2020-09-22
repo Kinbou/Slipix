@@ -1,0 +1,50 @@
+.lucianMissiles {
+  text-align: center;
+  padding: 0 10rem 4rem 10rem;
+  color: white;
+
+  h2 {
+    color: #ffaa55;
+  }
+  &__pictures {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem;
+    &__runes {
+      width: 80%;
+    }
+    &__troll {
+      border-radius: 15px;
+      filter: drop-shadow(0 0 0.75rem #aa58db);
+      margin: 2rem 0 3rem 0;
+    }
+    &__picture {
+      width: 25%;
+      border-radius: 35%;
+      filter: drop-shadow(0 0 0.75rem #de6d55);
+      &__troll {
+        border-radius: 15px;
+        filter: drop-shadow(0 0 0.75rem #aa58db);
+        margin: 2rem 0 3rem 0;
+        width: 30%;
+      }
+    }
+  }
+  &__gameplay {
+    &__content {
+      &__important {
+        border: #8b0808 5px solid;
+        border-radius: 15px;
+        padding-top: 1rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 8px 8px 3px #2d0101;
+      }
+    }
+  }
+  .icons {
+    &__rune, &__gameplay, &__crossbones {
+      margin: 0 1rem;
+      font-size: 0.8em;
+    }
+  }
+}

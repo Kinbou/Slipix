@@ -5,15 +5,15 @@ import { useTitle } from 'src/hooks/useTitle';
 import './roleChampion.scss';
 
 // images
-import logoSlipix from 'src/assets/images/roleChampion/slipixLogoRole.png';
-import twistedfast from 'src/assets/images/roleChampion/twistedfast.jpg';
-import superRammus from 'src/assets/images/roleChampion/superRammus.jpg';
-import riverWick from 'src/assets/images/roleChampion/riverWick.jpg';
-import coupleTroll from 'src/assets/images/roleChampion/coupleTroll.png';
-import duplaisir from 'src/assets/images/roleChampion/duplaisir.jpg';
-import pasFacile from 'src/assets/images/roleChampion/pasFacile.jpg';
-import banYasuo from 'src/assets/images/roleChampion/banYasuo.jpg';
-import trollPicture from 'src/assets/images/roleChampion/trollPicture.jpg';
+import logoSlipix from 'src/assets/images/guides/roleChampion/slipixLogoRole.png';
+import twistedfast from 'src/assets/images/guides/roleChampion/twistedfast.jpg';
+import superRammus from 'src/assets/images/guides/roleChampion/superRammus.jpg';
+import riverWick from 'src/assets/images/guides/roleChampion/riverWick.jpg';
+import coupleTroll from 'src/assets/images/guides/roleChampion/coupleTroll.png';
+import duplaisir from 'src/assets/images/guides/roleChampion/duplaisir.jpg';
+import pasFacile from 'src/assets/images/guides/roleChampion/pasFacile.jpg';
+import banYasuo from 'src/assets/images/guides/roleChampion/banYasuo.jpg';
+import trollPicture from 'src/assets/images/guides/roleChampion/trollPicture.jpg';
 
 import Youtube from 'src/frontend/components/Youtube';
 

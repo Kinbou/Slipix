@@ -18,7 +18,7 @@ import ScrollToTop from 'src/frontend/components/ScrollToTop';
 
 // Guides
 import Guides from 'src/frontend/components/Guides';
-import Guide from 'src/frontend/components/Guides/Guide';
+import MentalRage from 'src/frontend/components/Guides/Mental&rage';
 import RoleChampion from 'src/frontend/components/Guides/RoleChampion';
 import ProgressLol from 'src/frontend/components/Guides/ProgressLol';
 import LowElo from 'src/frontend/components/Guides/LowElo';
@@ -35,6 +35,9 @@ import XinAutoroute from 'src/frontend/components/TrollPicks/XinAutoroute';
 import ThreshFlak from 'src/frontend/components/TrollPicks/ThreshFlak';
 import KaisaLaser from 'src/frontend/components/TrollPicks/KaisaLaser';
 import CaitlynSniper from 'src/frontend/components/TrollPicks/CaitlynSniper';
+import LucianLanceMissiles from 'src/frontend/components/TrollPicks/LucianLanceMissiles';
+import ZedForet from 'src/frontend/components/TrollPicks/ZedForet';
+
 
 // Lanes
 import Jungle from 'src/frontend/containers/Tutoriels/Jungle';
@@ -90,6 +93,8 @@ const App = () => {
   const isThreshFlak = currentPath === '/trollpicks/thresh-flak';
   const isKaisaLaser = currentPath === '/trollpicks/kaisa-laser';
   const isCaitlynSniper = currentPath === '/trollpicks/caitlyn-sniper';
+  const isLucianLanceMissiles = currentPath === '/trollpicks/lucian-lance-missiles';
+  const isZedForet = currentPath === '/trollpicks/zed-foret';
 
   const appClass = classNames('app', {
     'app--home': isHome,
@@ -107,7 +112,7 @@ const App = () => {
     'app--progressLol': isProgressLol,
     'app--lowElo': isLowElo,
     'app--winLane': isWinLane || isVisionGame,
-    'app--trollPicks': isTrollPicks || isXinAutoroute || isThreshFlak || isKaisaLaser || isCaitlynSniper,
+    'app--trollPicks': isTrollPicks || isXinAutoroute || isThreshFlak || isKaisaLaser || isCaitlynSniper || isLucianLanceMissiles || isZedForet,
     // 'app--error': isError,
   });
 
@@ -144,7 +149,7 @@ const App = () => {
                 <Guides />
               </Route>
               <Route exact path="/guides/mental&rage">
-                <Guide />
+                <MentalRage />
               </Route>
               <Route exact path="/guides/role-champion">
                 <RoleChampion />
@@ -175,6 +180,12 @@ const App = () => {
               </Route>
               <Route exact path="/trollpicks/caitlyn-sniper">
                 <CaitlynSniper />
+              </Route>
+              <Route exact path="/trollpicks/lucian-lance-missiles">
+                <LucianLanceMissiles />
+              </Route>
+              <Route exact path="/trollpicks/zed-foret">
+                <ZedForet />
               </Route>
               <Route exact path="/me-soutenir">
                 <Support />
