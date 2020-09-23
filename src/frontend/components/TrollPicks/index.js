@@ -23,7 +23,7 @@ const TrollPicks = () => {
       <h1 className="globalTitle-page">TrollPicks</h1>
       <div className="backgroundParagraphe trollpicks__intro">
         <h4>Vous trouverez ici mes TrollPicks favoris de la faille</h4>
-        <p className="paragraph">Les trollpicks et les picks exotiques font partis de League of Legends depuis toujours!</p>
+        <p className="paragraph">Les trollpicks et les picks exotiques font partie de League of Legends depuis toujours!</p>
         <p className="paragraph">Vous l'avez peut être déjà remarqué dans mon contenu mais je suis fan de ce genre de gameplays "originaux" !</p>
         <p className="paragraph">L'avantage d'un pick exotique ou d'un trollpick c'est premièrement de se taper des bonnes barres de rire mais surtout de surprendre vos adversaires!</p>
         <p className="paragraph">Voici mes trollpicks que je joue le + souvent, que j'ai theorycraft moi même, adapté moi même à la meta.</p>
