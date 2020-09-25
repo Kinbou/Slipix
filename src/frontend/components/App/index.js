@@ -12,6 +12,7 @@ import Presentation from 'src/frontend/components/Presentation';
 import News from 'src/frontend/components/News';
 import Support from 'src/frontend/components/Support';
 import Contact from 'src/frontend/components/Contact';
+import ScrollToTopButton from 'src/frontend/components/ScrollToTopButton';
 
 // outils
 import ScrollToTop from 'src/frontend/components/ScrollToTop';
@@ -124,6 +125,7 @@ const App = () => {
         <main>
           {/* {!appIsLoad && <Loader />} */}
           <Analytics id="UA-176591379-1" debug>
+            <ScrollToTopButton />
             <Switch>
               <Route exact path="/">
                 <Home />

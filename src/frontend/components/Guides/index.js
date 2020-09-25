@@ -8,7 +8,6 @@ import laneWin from 'src/assets/images/guides/laneWin.jpg';
 import progression from 'src/assets/images/guides/progression.jpg';
 import mentalWin from 'src/assets/images/guides/mentalWin.jpg';
 import lowEloProblem from 'src/assets/images/picturesYoutube/PROBLEMEBASELO.jpg';
-
 import './guides.scss';
 
 const Guides = () => {
