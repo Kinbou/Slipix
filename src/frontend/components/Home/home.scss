@@ -1,19 +1,15 @@
 .home {
-  // margin: 3rem;
-  // margin-top: 3rem;
   h2 {
     color: #ffaa55;
     margin: 9rem 0 2rem 0;
   }
   &__introduction {
     width: 100%;
-    // height: 200px;
     margin: 1px;
     margin-bottom: 3rem;
     display: flex;
     justify-content: center;
     font-size: 3em;
-    // box-shadow: 0 0 0 8px #192a37;
     border-radius: 8px;
     background-color: rgba(28,36,45,0.5);
     &__logo {
