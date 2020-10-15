@@ -30,69 +30,129 @@ main {
 }
 
 // background
-.app {
+.appp {
+  background-position: center;
+  z-index: -1;
+  width: 100vw;
+  min-height: 100vh;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
+  background-size: 100%;
+  top: 0;
+  position: fixed;
 }
+
 .app--home {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/faille_de_linvocateur.jpg);
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/faille_de_linvocateur.jpg);
   
 }
+.app--news {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/backgroundDemacia.jpg);
+}
+.app--guides {
+  background-image:linear-gradient(rgba(23, 48, 66, 0.3), rgba(3, 23, 32, 0.3)), url(../assets/images/backgroundPages/backgroundGuides.jpg);
+}
+
+// Format tablette
+@media (max-width: 1024px) {
+  .appp {
+    background-size: cover;
+  }
+  .app--home {
+
+    background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/faille_de_linvocateurFormat-tablette.jpg);
+    background-size: cover;
+  }
+  .app--news {
+    background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/backgroundDemacia-formatTablette.jpg);
+    background-size: cover;
+  }
+  .app--guides {
+    background-image:linear-gradient(rgba(23, 48, 66, 0.3), rgba(3, 23, 32, 0.3)), url(../assets/images/backgroundPages/backgroundGuidesFormat-tablette.jpg);
+  }
+}
+
+@media (max-width: 600px){
+  .app--home {
+    background: rgba(3, 23, 32);
+    background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/faille_de_linvocateurFormat-phone.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  }
+  .app--news {
+    background: #060808c9;
+    background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/backgroundDemacia-formatPhone.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .app--guides {
+    background: rgba(3, 23, 32);
+    background-image:linear-gradient(rgba(23, 48, 66, 0.3), rgba(3, 23, 32, 0.3)), url(../assets/images/backgroundPages/backgroundGuidesFormat-phone.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+
 
 .app--presentation {
   background-image:linear-gradient(rgba(23, 48, 66, 0.2), rgba(3, 23, 32, 0.2)), url(../assets/images/backgroundPages/presentation.jpg);
-}
-
-.app--news {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/backgroundDemacia.jpg);
+  position: fixed;
 }
 
 .app--tutoriels {
   background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/backgroundMont_targon.jpg);
+  position: fixed;
 }
 
 .app--jungle {
   background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.7)), url(../assets/images/backgroundPages/backgroundJungle.jpg);
+  position: fixed;
 }
 
 .app--supportPage {
   background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/me-soutenir.jpg);
+  position: fixed;
 }
 
 .app--contact {
   background-image:linear-gradient(rgba(23, 48, 66, 0.3), rgba(3, 23, 32, 0.3)), url(../assets/images/backgroundPages/contact.jpg);
-}
-
-.app--guides {
-  background-image:linear-gradient(rgba(23, 48, 66, 0.3), rgba(3, 23, 32, 0.3)), url(../assets/images/backgroundPages/backgroundGuides.jpg);
+  position: fixed;
 }
 .app--guide {
   background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/mentalRage.jpg);
+  position: fixed;
 }
 
 .app--roleChampion {
   background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/roleChampion.jpg);
+  position: fixed;
 }
 
 .app--progressLol {
   background-image:linear-gradient(rgba(23, 48, 66, 0.7), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/progressLol.jpg);
+  position: fixed;
 }
 .app--lowElo {
   background-image:linear-gradient(rgba(23, 48, 66, 0.3), rgba(3, 23, 32, 0.3)), url(../assets/images/backgroundPages/lowElo.jpg);
+  position: fixed;
 }
 .app--winLane {
   background-image:linear-gradient(rgba(23, 48, 66, 0.6), rgba(3, 23, 32, 0.6)), url(../assets/images/backgroundPages/winLane.jpeg);
+  position: fixed;
 }
 .app--trollPicks {
   background-image:linear-gradient(rgba(23, 48, 66, 0.5), rgba(3, 23, 32, 0.5)), url(../assets/images/backgroundPages/trollPicks.jpg);
+  position: fixed;
 }
 
 .app--tutorielTop {
   background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/tutorielTop.jpeg);
+  position: fixed;
 }
 .app--tutorielMid {
   background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(../assets/images/backgroundPages/tutorielMid.jpeg);
+  position: fixed;
 }
 
 .globalTitle-page {

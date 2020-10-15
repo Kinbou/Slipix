@@ -97,7 +97,7 @@ const App = () => {
   const isLucianLanceMissiles = currentPath === '/trollpicks/lucian-lance-missiles';
   const isZedForet = currentPath === '/trollpicks/zed-foret';
 
-  const appClass = classNames('app', {
+  const appClass = classNames('appp', {
     'app--home': isHome,
     'app--presentation': isPresentation,
     'app--news': isNews,
@@ -120,86 +120,86 @@ const App = () => {
   return (
     <div className="app">
       <ScrollToTop />
-      <div className={appClass}>
-        <Header />
-        <main>
-          {/* {!appIsLoad && <Loader />} */}
-          <Analytics id="UA-176591379-1" debug>
-            <ScrollToTopButton />
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/presentation">
-                <Presentation />
-              </Route>
-              <Route exact path="/nouveaute">
-                <News />
-              </Route>
-              {/* <Partenaires />
+      <div className={appClass} />
+      <Header />
+      <main>
+        {/* {!appIsLoad && <Loader />} */}
+        <Analytics id="UA-176591379-1" debug>
+          <ScrollToTopButton />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/presentation">
+              <Presentation />
+            </Route>
+            <Route exact path="/nouveaute">
+              <News />
+            </Route>
+            {/* <Partenaires />
           */}
-              <Route exact path="/tutoriels-champions">
-                <Tutoriels />
-              </Route>
-              <Route exact path="/tutoriels-champions/:lane">
-                <Jungle />
-              </Route>
-              <Route exact path="/tutoriels-champions/:lane/:name">
-                <Champion />
-              </Route>
-              <Route exact path="/guides">
-                <Guides />
-              </Route>
-              <Route exact path="/guides/mental&rage">
-                <MentalRage />
-              </Route>
-              <Route exact path="/guides/role-champion">
-                <RoleChampion />
-              </Route>
-              <Route exact path="/guides/progresser-sur-leagueOfLegends">
-                <ProgressLol />
-              </Route>
-              <Route exact path="/guides/sortir-du-bas-elo">
-                <LowElo />
-              </Route>
-              <Route exact path="/guides/gagner-sa-phase-de-lane">
-                <WinLane />
-              </Route>
-              <Route exact path="/guides/vision-du-jeu">
-                <VisionGame />
-              </Route>
-              <Route exact path="/trollpicks">
-                <TrollPicks />
-              </Route>
-              <Route exact path="/trollpicks/xinZhao-autoroute">
-                <XinAutoroute />
-              </Route>
-              <Route exact path="/trollpicks/thresh-flak">
-                <ThreshFlak />
-              </Route>
-              <Route exact path="/trollpicks/kaisa-laser">
-                <KaisaLaser />
-              </Route>
-              <Route exact path="/trollpicks/caitlyn-sniper">
-                <CaitlynSniper />
-              </Route>
-              <Route exact path="/trollpicks/lucian-lance-missiles">
-                <LucianLanceMissiles />
-              </Route>
-              <Route exact path="/trollpicks/zed-foret">
-                <ZedForet />
-              </Route>
-              <Route exact path="/me-soutenir">
-                <Support />
-              </Route>
-              <Route exact path="/me-contacter">
-                <Contact />
-              </Route>
-            </Switch>
-          </Analytics>
-        </main>
-        <Footer />
-      </div>
+            <Route exact path="/tutoriels-champions">
+              <Tutoriels />
+            </Route>
+            <Route exact path="/tutoriels-champions/:lane">
+              <Jungle />
+            </Route>
+            <Route exact path="/tutoriels-champions/:lane/:name">
+              <Champion />
+            </Route>
+            <Route exact path="/guides">
+              <Guides />
+            </Route>
+            <Route exact path="/guides/mental&rage">
+              <MentalRage />
+            </Route>
+            <Route exact path="/guides/role-champion">
+              <RoleChampion />
+            </Route>
+            <Route exact path="/guides/progresser-sur-leagueOfLegends">
+              <ProgressLol />
+            </Route>
+            <Route exact path="/guides/sortir-du-bas-elo">
+              <LowElo />
+            </Route>
+            <Route exact path="/guides/gagner-sa-phase-de-lane">
+              <WinLane />
+            </Route>
+            <Route exact path="/guides/vision-du-jeu">
+              <VisionGame />
+            </Route>
+            <Route exact path="/trollpicks">
+              <TrollPicks />
+            </Route>
+            <Route exact path="/trollpicks/xinZhao-autoroute">
+              <XinAutoroute />
+            </Route>
+            <Route exact path="/trollpicks/thresh-flak">
+              <ThreshFlak />
+            </Route>
+            <Route exact path="/trollpicks/kaisa-laser">
+              <KaisaLaser />
+            </Route>
+            <Route exact path="/trollpicks/caitlyn-sniper">
+              <CaitlynSniper />
+            </Route>
+            <Route exact path="/trollpicks/lucian-lance-missiles">
+              <LucianLanceMissiles />
+            </Route>
+            <Route exact path="/trollpicks/zed-foret">
+              <ZedForet />
+            </Route>
+            <Route exact path="/me-soutenir">
+              <Support />
+            </Route>
+            <Route exact path="/me-contacter">
+              <Contact />
+            </Route>
+          </Switch>
+        </Analytics>
+      </main>
+      <Footer />
+
     </div>
   );
 };
