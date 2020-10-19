@@ -1,0 +1,132 @@
+.thanks {
+  color: white;
+  text-align: center;
+  --gradient-shadow: linear-gradient(
+		45deg,
+		#fb0094,
+		#0000ff,
+		#00ff00,
+		#ffff00,
+		#ff0000,
+		#fb0094,
+		#0000ff,
+		#00ff00,
+		#ffff00,
+		#ff0000
+  );
+  &__icon {
+    border-radius: 50%;
+  }
+  &__pictures {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    &__merguez {
+      width: 320px;
+    }
+    &__muii {
+      width: 90%;
+    }
+    &__troll {
+      margin: 1rem;
+      width: 300px;
+    }
+  }
+  .line {
+    border-top: solid 2px #ffaa55;
+    padding: .5rem 0;
+  }
+  &__backgroundParagraphe {
+    background-color: rgba(28,36,45,0.8);
+    padding: 2rem;
+    width: 70%;
+    margin: 5rem auto;
+    border-radius: 10px;
+  }
+  &__cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    &__card {
+      position: relative;
+      max-width: 700px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #060c21;
+      margin: 40px;
+      &__box {
+        margin: 1rem;
+        padding: .5rem;
+        display: inline-block;
+        
+        position: relative;
+        color: #fff;
+        height: auto;
+        text-align: center;
+        font-weight: bold;
+        max-width: 700px;
+        border-radius: 10px;
+        &__author {
+          display: flex;
+          justify-content: center;
+          padding: 1rem;
+          &__name {
+           margin: auto 1.5rem;
+           font-family: 'Squada One', cursive;
+           text-transform: uppercase;
+           font-size: 2em;
+          }
+        }
+        &__content {
+          font-size: 1.4em;
+          line-height: 1.3em;
+        }
+      }
+    }      
+    &__card:after {
+      filter: blur(30px);
+    }
+    &__card:before, &__card:after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: #fff;
+      z-index: -1;
+    }
+    &__card .glass {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      display: block;
+      background: rgba(255,255,255,.1);
+      pointer-events: none;
+    }
+  
+    &__card .content {
+      padding: 20px;
+      color: #fff;
+    }
+  }
+  .greenBlue:before, .greenBlue:after {
+    background: linear-gradient(20deg, #89ff00, #010615, #00bcd4);
+  }
+
+  .redYellow:before, .redYellow:after {
+    background: linear-gradient(20deg, #ff005e, #010615, #fbff00);
+  }
+
+  .purpleBlue:before, .purpleBlue:after {
+    background: linear-gradient(20deg, #772aff, #010615, #2196F3);
+  }
+  .multicolor:before, .multicolor:after {
+    background: var(--gradient-shadow);
+  }
+
+}

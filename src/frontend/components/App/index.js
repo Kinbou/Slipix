@@ -13,6 +13,7 @@ import News from 'src/frontend/components/News';
 import Support from 'src/frontend/components/Support';
 import Contact from 'src/frontend/components/Contact';
 import ScrollToTopButton from 'src/frontend/components/ScrollToTopButton';
+import Thanks from 'src/frontend/components/Thanks';
 
 // outils
 import ScrollToTop from 'src/frontend/components/ScrollToTop';
@@ -53,6 +54,7 @@ const App = () => {
   const isHome = currentPath === '/';
   const isPresentation = currentPath === '/presentation';
   const isNews = currentPath === '/nouveaute';
+  const isThanks = currentPath === '/remerciements';
   const isTutoriel = currentPath === '/tutoriels-champions';
   const isJungle = currentPath === '/tutoriels-champions/jungle';
   const isJungle1 = currentPath === '/tutoriels-champions/jungle/zac';
@@ -101,6 +103,7 @@ const App = () => {
     'app--home': isHome,
     'app--presentation': isPresentation,
     'app--news': isNews,
+    'app--thanks': isThanks,
     'app--tutoriels': isTutoriel,
     'app--jungle': isJungle || isJungle1 || isJungle2 || isJungle3 || isJungle4 || isJungle5 || isJungle6,
     'app--tutorielTop': isTutorielTop || isTop1 || isTop2 || isTop3 || isTop4 || isTop5 || isTop6 || isTop7 || isTop8 || isTop9,
@@ -194,6 +197,9 @@ const App = () => {
             </Route>
             <Route exact path="/me-contacter">
               <Contact />
+            </Route>
+            <Route exact path="/remerciements">
+              <Thanks />
             </Route>
           </Switch>
         </Analytics>
