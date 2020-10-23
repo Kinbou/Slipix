@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useParams } from 'react-router-dom';
-import { test } from 'src/utils/selectors';
+import { pipe } from 'src/utils/selectors';
 import Loader from 'src/frontend/components/Loader';
 import Youtube from 'src/frontend/components/Youtube';
 import './zac.scss';
@@ -107,7 +107,7 @@ const Champion = ({
                 <div className="zac__content__asset__list__left">
                   <h4 className="zac__content__asset__list__left__force"><i className="fas fa-plus-circle zac__content__asset__list__left__force__icon" />Forces</h4>
                   <div className="zac__content__asset__list__left__content">
-                    {test(champion[0].strength).map((strengths) => (
+                    {pipe(champion[0].strength).map((strengths) => (
                       <p><span className="dashes gold">-</span>{strengths}</p>
                     ))}
                   </div>
@@ -115,7 +115,7 @@ const Champion = ({
                 <div className="zac__content__asset__list__right">
                   <h4><i className="fas fa-minus-circle zac__content__asset__list__right__icon" />Faiblesses</h4>
                   <div className="zac__content__asset__list__right__content">
-                    {test(champion[0].weakness).map((weaknes) => (
+                    {pipe(champion[0].weakness).map((weaknes) => (
                       <p><span className="dashes gold">-</span>{weaknes}</p>
                     ))}
                   </div>
@@ -127,13 +127,13 @@ const Champion = ({
               <h4>Comment Carry avec {champion[0].name} ?</h4>
               <div className="zac__content__carry__content">
                 <div className="zac__content__carry__content__left">
-                  <Youtube videoId={test(champion[0].youtube_identifiant)[0]} SameSite="" />
+                  <Youtube videoId={pipe(champion[0].youtube_identifiant)[0]} SameSite="" />
                 </div>
                 <div className="zac__content__carry__content__right">
                   <h6>{champion[0].youtube_intro}</h6>
                   <div className="zac__content__carry__content__right__content">
                     {champion[0].name === 'zed' && (
-                      <p>{test(champion[0].youtube_content_coaching)[0]}</p>
+                      <p>{pipe(champion[0].youtube_content_coaching)[0]}</p>
                     )}
                     {champion[0].name !== 'zed' && (
                       <>
@@ -155,11 +155,11 @@ const Champion = ({
               </div>
             </div>
             {/* VIDEO ABONNES : 2ième vidéo de Lee-Sin, lux et Hecarim et Ahri  */}
-            {test(champion[0].youtube_identifiant)[1] && (champion[0].name === 'lee-sin' || champion[0].name === 'lux' || champion[0].name === 'hecarim' || champion[0].name === 'ahri') && (
+            {pipe(champion[0].youtube_identifiant)[1] && (champion[0].name === 'lee-sin' || champion[0].name === 'lux' || champion[0].name === 'hecarim' || champion[0].name === 'ahri') && (
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">
-                    <Youtube videoId={test(champion[0].youtube_identifiant)[1]} SameSite="" />
+                    <Youtube videoId={pipe(champion[0].youtube_identifiant)[1]} SameSite="" />
                   </div>
                   <div className="zac__content__carry__content__right secondary">
                     <div className="zac__content__carry__content__right__content">
@@ -176,11 +176,11 @@ const Champion = ({
               </div>
             )}
             {/* 2ième VIDEO TUTO  de Ekko, Yasuo, KATARINA */}
-            {test(champion[0].youtube_identifiant)[1] && (champion[0].name === 'ekko' || champion[0].name === 'yasuo' || champion[0].name === 'katarina') && (
+            {pipe(champion[0].youtube_identifiant)[1] && (champion[0].name === 'ekko' || champion[0].name === 'yasuo' || champion[0].name === 'katarina') && (
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">
-                    <Youtube videoId={test(champion[0].youtube_identifiant)[1]} SameSite="" />
+                    <Youtube videoId={pipe(champion[0].youtube_identifiant)[1]} SameSite="" />
                   </div>
                   <div className="zac__content__carry__content__right secondary">
                     <div className="zac__content__carry__content__right__content">
@@ -203,16 +203,16 @@ const Champion = ({
             <div className="zac__content__carry">
               <div className="zac__content__carry__content">
                 <div className="zac__content__carry__content__left">
-                  <Youtube videoId={test(champion[0].youtube_identifiant)[2]} SameSite="" />
+                  <Youtube videoId={pipe(champion[0].youtube_identifiant)[2]} SameSite="" />
                 </div>
                 <div className="zac__content__carry__content__right secondary">
                   <div className="zac__content__carry__content__right__content">
                     {champion[0].name === 'yasuo' && (
-                      <p>{test(champion[0].youtube_content_coaching)[0]}
+                      <p>{pipe(champion[0].youtube_content_coaching)[0]}
                       </p>
                     )}
                     {champion[0].name === 'lee-sin' && (
-                      <p>{test(champion[0].youtube_content_coaching)[1]}
+                      <p>{pipe(champion[0].youtube_content_coaching)[1]}
                       </p>
                     )}
                     {champion[0].name === 'katarina' && (
@@ -239,14 +239,14 @@ const Champion = ({
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">
-                    <Youtube videoId={test(champion[0].youtube_identifiant)[3]} SameSite="" />
+                    <Youtube videoId={pipe(champion[0].youtube_identifiant)[3]} SameSite="" />
                   </div>
                   <div className="zac__content__carry__content__right secondary">
                     <div className="zac__content__carry__content__right__content">
                       {champion[0].name === 'yasuo' && (
                         <>
                           <p>Voici un coaching d'un abonné jouant Yasuo Midlane.</p>
-                          <p>{test(champion[0].youtube_content_coaching)[1]}</p>
+                          <p>{pipe(champion[0].youtube_content_coaching)[1]}</p>
                         </>
                       )}
                       {champion[0].name === 'katarina' && (
@@ -274,9 +274,9 @@ const Champion = ({
               <>
                 <p className="intro afterYoutube zed">VOICI UNE SERIE DE GAMEPLAYS EXPLICATIFS TRES COMPLETS POUR SAVOIR COMMENT JOUER ZED DIRECTEMENT SUR LE TERRAIN !</p>
                 <p className="paragraph">Si vous avez des questions n'hésitez pas à les poser directement en commentaires sur la vidéo YouTube</p>
-                {test(champion[0].youtube_identifiant).map((zed) => (
+                {pipe(champion[0].youtube_identifiant).map((zed) => (
                   <>
-                    {test(champion[0].youtube_identifiant).indexOf(zed) !== 0 && (
+                    {pipe(champion[0].youtube_identifiant).indexOf(zed) !== 0 && (
                     <div className="zac__content__carry">
                       <div className="zac__content__carry__content">
                         <div className="zac__content__carry__content__center">

@@ -3,6 +3,7 @@ import globalReducer from './global';
 import championsReducer from './champions';
 import competencesReducer from './competences';
 import lanesReducer from './lanes';
+import thanksReducer from './thanks';
 
 
 const rootReducer = combineReducers({
@@ -10,6 +11,7 @@ const rootReducer = combineReducers({
   champions: championsReducer,
   competences: competencesReducer,
   lanes: lanesReducer,
+  thanks: thanksReducer,
 });
 
 export default rootReducer;

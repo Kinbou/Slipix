@@ -58,6 +58,7 @@
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
+    "react-i18next": "^11.7.3",
     "react-media-hook": "^0.4.7",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",

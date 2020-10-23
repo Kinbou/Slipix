@@ -40,11 +40,11 @@ const lanesReducer = (state = initialState, action = {}) => {
         laneIsLoad: action.value,
       };
 
-      case SET_LANE_IS_LOAD2:
-        return {
-          ...state,
-          laneIsLoad2: action.value,
-        };
+    case SET_LANE_IS_LOAD2:
+      return {
+        ...state,
+        laneIsLoad2: action.value,
+      };
 
     default: return state;
   }

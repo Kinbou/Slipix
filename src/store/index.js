@@ -5,6 +5,7 @@ import reducer from 'src/reducers';
 import championsMiddleware from '../middlewares/championsMiddleware';
 import competencesMiddleware from '../middlewares/competencesMiddleware';
 import lanesMiddleware from '../middlewares/lanesMiddleware';
+import thanksMiddleware from '../middlewares/thanksMiddleware';
 
 // on combine plusieurs enhancers : devTools et chaque middleware
 const enhancers = composeWithDevTools(
@@ -12,6 +13,7 @@ const enhancers = composeWithDevTools(
     championsMiddleware,
     competencesMiddleware,
     lanesMiddleware,
+    thanksMiddleware,
   ),
 );
 

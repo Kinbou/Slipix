@@ -1,16 +1,14 @@
-
-export const test = (data) => {
-  console.log(data);
-  const test2 = data.split('|');
-  console.log(test2);
-  return test2;
+// pipe = barre verticale
+// Créer plusieurs string (tableau) à chaque |
+export const pipe = (data) => {
+  const pipes = data.split('|');
+  return pipes;
 };
 
-export const helloworld = () => {
-  const array = test("w3Q1camdA6w-WhccITr_MPc");
-  const youtubeId = array[0];
-  console.log(youtubeId);
-  return youtubeId;
+// Créer plusieurs string (tableau) à chaque -
+export const hyphen = (data) => {
+  const hyphenn = data.split('-');
+  return hyphenn;
 };
 
 // export const maj = (data) => {

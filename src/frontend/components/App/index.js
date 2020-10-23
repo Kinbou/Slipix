@@ -13,7 +13,7 @@ import News from 'src/frontend/components/News';
 import Support from 'src/frontend/components/Support';
 import Contact from 'src/frontend/components/Contact';
 import ScrollToTopButton from 'src/frontend/components/ScrollToTopButton';
-import Thanks from 'src/frontend/components/Thanks';
+import Thanks from 'src/frontend/containers/Thanks';
 
 // outils
 import ScrollToTop from 'src/frontend/components/ScrollToTop';
