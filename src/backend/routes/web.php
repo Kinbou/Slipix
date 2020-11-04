@@ -63,6 +63,33 @@ Route::get('/lanes/{name}',[
 
 // all thanks
 Route::get('/thanks',[
-    'as' => 'thanks',
+    'as' => 'thank',
     'uses' => 'ThankController@list'
 ]);
+
+// ------ TROLLPICKS ------
+
+// all trollpicks
+Route::get('/trollpicks/trollpick/{id}',[
+    'as' => 'trollpicks',
+    'uses' => 'TrollpickController@fetchOneTrollpick',
+]);
+
+Route::get('/trollpicks/actif',[
+    'as' => 'trollpick',
+    'uses' => 'TrollpickController@fetchTrollpickActif'
+]);
+
+Route::get('/trollpicks/soon',[
+    'as' => 'trollpicks',
+    'uses' => 'TrollpickController@fetchTrollpickSoon'
+]);
+
+Route::get('/trollpicks',[
+    'as' => 'trollpick',
+    'uses' => 'TrollpickController@list'
+]);
+
+
+
+

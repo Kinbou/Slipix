@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Loader from 'src/frontend/components/Loader';
 import { useTitle } from 'src/hooks/useTitle';
+import slugify from 'react-slugify';
 import './trollPicks.scss';
 
-// images
-import zin from 'src/assets/images/trollpicks/xinAutoroute/zinAutoroutee.jpg';
-import caitlyn from 'src/assets/images/trollpicks/caitlynSniper/caitlyn.jpg';
-import kaisa from 'src/assets/images/trollpicks/kaisaLaser/kaisa.jpg';
-import tresh from 'src/assets/images/trollpicks/threshFlak/tresh.jpg';
-import zedForet from 'src/assets/images/trollpicks/zedForet.jpg';
-import jinxZap from 'src/assets/images/trollpicks/jinxZap.png';
-import olafVolVie from 'src/assets/images/trollpicks/olafVolVie.png';
-import lucianAp from 'src/assets/images/trollpicks/lucianLanceMissiles/lucianAp.jpg';
-import braumPaf from 'src/assets/images/trollpicks/braumPaf/braumPaf.jpg';
-import twistedMitraillette from 'src/assets/images/trollpicks/twistedMitraillette.jpg';
-import hecarimCharge from 'src/assets/images/trollpicks/hecarimCharge.jpg';
-
-const TrollPicks = () => {
+const TrollPicks = ({
+  fetchTrollpickActif,
+  fetchTrollpickSoon,
+  trollpicksActif,
+  trollpicksSoon,
+  trollpickActifIsLoad,
+  trollpickSoonIsLoad,
+  setTrollpickActifIsLoad,
+  setTrollpickSoonIsLoad,
+}) => {
   useTitle('TrollPicks');
+  useEffect(() => {
+    fetchTrollpickActif();
+    fetchTrollpickSoon();
+    return () => {
+      setTrollpickActifIsLoad(false);
+      setTrollpickSoonIsLoad(false);
+    };
+  }, []);
   return (
     <div className="trollpicks">
       <h1 className="globalTitle-page">TrollPicks</h1>
@@ -30,95 +37,63 @@ const TrollPicks = () => {
         <p className="paragraph red trollpicks__intro__warning">Attention</p>
         <p className="paragraph"><i className="fas fa-exclamation-triangle icons__exclamation red" />Ce ne sont pas des picks optimaux pour monter en ranked ou rush le ladder mais vous allez sûrement prendre beaucoup de plaisir !<i className="fas fa-exclamation-triangle icons__exclamation red" /></p>
       </div>
-      <div className="trollpicks__cards">
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <Link to="/trollpicks/xinZhao-autoroute">
-            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
-              <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Xin Zhao Autoroute</h3>
-              <img src={zin} alt="" />
-            </div>
-          </Link>
-        </div>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <Link to="/trollpicks/thresh-flak">
-            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
-              <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Thresh Flak OneShot</h3>
-              <img src={tresh} alt="" />
-            </div>
-          </Link>
-        </div>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <Link to="/trollpicks/caitlyn-sniper">
-            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
-              <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Caitlyn Sniper</h3>
-              <img src={caitlyn} alt="" />
-            </div>
-          </Link>
-        </div>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <Link to="/trollpicks/kaisa-laser">
-            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
-              <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Kaïsa Laser</h3>
-              <img src={kaisa} alt="" />
-            </div>
-          </Link>
-        </div>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <Link to="/trollpicks/lucian-lance-missiles">
-            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
-              <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Lucian Lance-Missiles</h3>
-              <img src={lucianAp} alt="" />
-            </div>
-          </Link>
-        </div>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <Link to="/trollpicks/zed-foret">
-            <div className="trollpicks__cards__card trollpicks__cards__cardActif">
-              <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Zed Forêt</h3>
-              <img src={zedForet} alt="" />
-            </div>
-          </Link>
-        </div>
-        <div className="betweenParagraph" />
-        <h2>Prochainement</h2>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
-            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
-            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez jinx zap</h3>
-            <img src={jinxZap} alt="" />
+      {(!trollpickActifIsLoad || !trollpickSoonIsLoad) && <Loader />}
+
+      {(trollpickActifIsLoad && trollpickSoonIsLoad) && (
+        <>
+          <div className="trollpicks__cards">
+            { trollpicksActif.length !== 0 && (
+              trollpicksActif.map((trollpick) => (
+                <div className="trollpicks__cards__line tutoriels__cards__line__one" key={trollpick.id}>
+                  <Link to={`/trollpicks/${slugify(trollpick.name)}/${trollpick.id}`}>
+                    <div className="trollpicks__cards__card trollpicks__cards__cardActif">
+                      <h3 className="trollpicks__cards__card__title news__cards__first__title">{trollpick.title}</h3>
+                      <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick.image}`} alt="" />
+                    </div>
+                  </Link>
+                </div>
+              ))
+            )}
+            { trollpicksSoon.length !== 0 && (
+            <>
+              <div className="betweenParagraph" />
+              <h2>Prochainement</h2>
+              {trollpicksSoon.map((trollpick) => (
+                <div className="trollpicks__cards__line tutoriels__cards__line__one" key={trollpick.id}>
+                  <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
+                    <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
+                    <h3 className="trollpicks__cards__card__title news__cards__first__title">{trollpick.title}</h3>
+                    <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick.image}`} alt="" />
+                  </div>
+                </div>
+              ))}
+            </>
+            )}
           </div>
-        </div>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
-            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
-            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Olaf vol de vie</h3>
-            <img src={olafVolVie} alt="" />
-          </div>
-        </div>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
-            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
-            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Braum paf</h3>
-            <img src={braumPaf} alt="" />
-          </div>
-        </div>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
-            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
-            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Twisted Mitraillette</h3>
-            <img src={twistedMitraillette} alt="" />
-          </div>
-        </div>
-        <div className="trollpicks__cards__line tutoriels__cards__line__one">
-          <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
-            <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
-            <h3 className="trollpicks__cards__card__title news__cards__first__title">Découvrez Hecarim charge</h3>
-            <img src={hecarimCharge} alt="" />
-          </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
+};
+
+TrollPicks.propTypes = {
+  fetchTrollpickActif: PropTypes.func.isRequired,
+  fetchTrollpickSoon: PropTypes.func.isRequired,
+  setTrollpickActifIsLoad: PropTypes.func.isRequired,
+  setTrollpickSoonIsLoad: PropTypes.func.isRequired,
+  trollpickActifIsLoad: PropTypes.bool.isRequired,
+  trollpickSoonIsLoad: PropTypes.bool.isRequired,
+
+  trollpicksActif: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+  trollpicksSoon: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 export default TrollPicks;

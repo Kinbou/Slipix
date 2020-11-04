@@ -7,11 +7,14 @@ import {
 } from 'src/actions/thanks';
 
 const thanksMiddleware = (store) => (next) => (action) => {
+  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
+  // const urlLocal = 'http://localhost:8090';
+
   switch (action.type) {
     case FETCH_ALL_THANKS:
       axios({
         method: 'get',
-        url: 'https://backend.slipix-progresser-sur-league-of-legends.fr/thanks',
+        url: `${url}/thanks`,
       })
         .then((response) => {
           store.dispatch(saveAllThanks(response.data));

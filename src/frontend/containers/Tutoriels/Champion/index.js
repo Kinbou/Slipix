@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-
-// import Champion from 'src/frontend/components/Tutoriels/Jungle/Zac';
 import Champion from 'src/frontend/components/Tutoriels/Champion';
-
-import { fetchAllChampions, fetchOneChampion, stateName, setChampionIsLoad } from 'src/actions/champions';
+import {
+  fetchAllChampions,
+  fetchOneChampion,
+  stateName,
+  setChampionIsLoad,
+} from 'src/actions/champions';
 
 import { fetchOneCompetence } from 'src/actions/competences';
 import { setAppLoading } from 'src/actions/global';
 
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir: donnée à récupérer dans le state
-
-  // offers: state.offers.allOffers,
   champion: state.champions.champion,
   appIsLoading: state.global.appIsLoading,
   name: state.champions.name,
@@ -30,9 +30,6 @@ const mapDispatchToProps = (dispatch) => ({
   fetchOneCompetence: () => {
     dispatch(fetchOneCompetence());
   },
-  // saveCompetence: (competence) => {
-  //   dispatch(saveCompetence(competence));
-  // },
 
   setAppLoading: () => {
     dispatch(setAppLoading());

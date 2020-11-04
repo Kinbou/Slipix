@@ -1,3 +1,9 @@
+import slugify from 'react-slugify';
+
+export const slugifyName = (name) => slugify(name, {
+  lower: true,
+});
+
 // pipe = barre verticale
 // Créer plusieurs string (tableau) à chaque |
 export const pipe = (data) => {

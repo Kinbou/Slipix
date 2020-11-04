@@ -1,9 +1,13 @@
-.xinAutoroute {
+.trollpick {
   text-align: center;
   padding: 0 10rem 4rem 10rem;
   color: white;
   .definition {
     text-decoration: underline;
+  }
+  .introTrollpickYoutube {
+    margin: 2rem .5rem 2.5rem .5rem;
+    border-bottom: 1px red solid;
   }
   h2 {
     color: #ffaa55;
@@ -26,6 +30,29 @@
     display: flex;
     justify-content: space-evenly;
     margin: 2rem;
+    img {
+      width: 25%;
+      border-radius: 35%;
+    }
+    &__xin{
+      filter: drop-shadow(0 0 0.75rem #fbfc40);
+    }
+    &__thresh{
+      filter: drop-shadow(0 0 0.75rem #40fbae);
+    }
+    &__caitlyn {
+      filter: drop-shadow(0 0 0.75rem #e40b19);
+    }
+    &__kaïsa {
+      filter: drop-shadow(0 0 0.75rem #aa58db);
+    }
+    &__lucian {
+      filter: drop-shadow(0 0 0.75rem #de6d55);
+    }
+    &__zed {
+      filter: drop-shadow(0 0 0.75rem #b94220);
+    }
+
     &__rune {
       margin: 2rem;
       border-radius: 10px;
@@ -57,11 +84,31 @@
        border-color: #ffaa55;
       }
     }
-    &__troll {
+    &__end {
       width: 20%;
       border-radius: 15px;
-      margin: 1rem;
-      filter: drop-shadow(0 0 0.75rem #642b21);
+      margin: 2rem 0 3rem 0;
+      &__xin {
+        filter: drop-shadow(0 0 0.75rem #642b21);
+      }
+      &__thresh {
+        width: 25%;
+        border-radius: 50%;
+        filter: drop-shadow(0 0 0.75rem #40fbae);
+      }
+      &__caitlyn {
+        border-radius: 15px;
+        filter: drop-shadow(0 0 0.75rem #e40b19);
+        width: 30%;
+      }
+      &__kaïsa, &__lucian {
+        filter: drop-shadow(0 0 0.75rem #aa58db);
+        width: 25%;
+      }
+      &__zed {
+        filter: drop-shadow(0 0 0.75rem #b94220);
+        width: 30%;
+      }
     }
     &__trollContent {
       width: 35%;
@@ -69,10 +116,36 @@
       margin: 2rem 0 3rem 0;
       filter: drop-shadow(0 0 0.75rem #642b21);
     }
-    img {
-      width: 25%;
-      border-radius: 35%;
-      filter: drop-shadow(0 0 0.75rem #fbfc40);
+    &__capture {
+      margin: 2rem 0 3rem 0;
+      border-radius: 10px;
+      width: 40%;
+      filter: drop-shadow(0 0 0.75rem #40fbae);
+    }
+    &__troll {
+      width: 40%;
+      border-radius: 15px;
+      margin: 2rem 0 3rem 0;
+      filter: drop-shadow(0 0 0.75rem #40fbae);
+    }
+    &__trollWeakness {
+      margin: 2rem 0 3rem 0;
+      border-radius: 15px;
+      &__caitlyn {
+        filter: drop-shadow(0 0 0.75rem #e40b19);
+        width: 15%;
+      }
+      &__thresh {
+        width: 40%;
+        filter: drop-shadow(0 0 0.75rem #40fbae);
+      }
+      &__kaïsa , &__lucian {
+        filter: drop-shadow(0 0 0.75rem #aa58db);
+      }
+      &__zed {
+        filter: drop-shadow(0 0 0.75rem #b94220);
+        width: 30%;
+      }
     }
   }
   &__runes {
@@ -119,7 +192,7 @@
 }
 
 @media (max-width: 1458px) {
-  .xinAutoroute {
+  .trollpick {
     .paragraph {
       font-size: 1.4em;
     }
@@ -131,9 +204,15 @@
   }
 }
 
-@media (max-width: 1000px) {
-  .xinAutoroute {
+@media (max-width: 1025px) {
+  .trollpick {
     padding: 0 0 1rem 0;
+    &__pictures {
+      &__rune {
+        width: 95%;
+        margin: .5rem;
+      }
+    }
     h1 {
       padding-top: 3rem!important;
     }
@@ -151,7 +230,7 @@
 }
 
 @media (max-width: 852px) {
-  .xinAutoroute {
+  .trollpick {
     .paragraph {
       font-size: 1.3em;
     }
@@ -162,10 +241,17 @@
 }
 
 @media (max-width: 650px) {
-  .xinAutoroute {
+  .trollpick {
     h2 {
       font-size: 3em;
       margin: 0 0 3rem 0;
+    }
+    &__pictures {
+      
+      &__end {
+        margin: 0.5rem 0 1rem 0;
+        width: 25%;
+      }
     }
     .paragraph {
       font-size: 1.2em;
@@ -181,7 +267,7 @@
 }
 
 @media (max-width: 400px) {
-  .xinAutoroute {
+  .trollpick {
     h2 {
       font-size: 2.4em;
     }

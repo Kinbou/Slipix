@@ -5,15 +5,14 @@ import {
   saveChampion,
   setChampionIsLoad,
 } from 'src/actions/champions';
-// import { setAppLoading } from 'src/actions/global';
 
 const championsMiddleware = (store) => (next) => (action) => {
-  // const { champion } = store.getState().champions.name;
-  // const { lane } = store.getState().champions.name;
-  console.log();
+  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
+  // const urlLocal = 'http://localhost:8090';
+
   switch (action.type) {
     case FETCH_ALL_CHAMPIONS:
-      axios.get('https://backend.slipix-progresser-sur-league-of-legends.fr/champions')
+      axios.get(`${url}/champions`)
         .then((response) => {
           store.dispatch(saveChampion(response.data));
         })
@@ -26,13 +25,11 @@ const championsMiddleware = (store) => (next) => (action) => {
       break;
 
     case FETCH_ONE_CHAMPION:
-      console.log(store.getState().champions.name);
       axios({
         method: 'get',
-        url: `https://backend.slipix-progresser-sur-league-of-legends.fr/champions/${store.getState().champions.name.lane}/${store.getState().champions.name.name}`,
+        url: `${url}/champions/${store.getState().champions.name.lane}/${store.getState().champions.name.name}`,
       })
         .then((response) => {
-          console.log('passage dans la requete champion');
           store.dispatch(saveChampion(response.data));
         })
         .catch((error) => {

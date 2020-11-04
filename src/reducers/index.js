@@ -4,6 +4,7 @@ import championsReducer from './champions';
 import competencesReducer from './competences';
 import lanesReducer from './lanes';
 import thanksReducer from './thanks';
+import trollpicksReducer from './trollpicks';
 
 
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   competences: competencesReducer,
   lanes: lanesReducer,
   thanks: thanksReducer,
+  trollpicks: trollpicksReducer,
 });
 
 export default rootReducer;

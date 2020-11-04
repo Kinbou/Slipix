@@ -1,4 +1,3 @@
-// == Import npm
 import React from 'react';
 import classNames from 'classnames';
 import { Route, useLocation, Switch } from 'react-router-dom';
@@ -32,19 +31,11 @@ import Tutoriels from 'src/frontend/components/Tutoriels';
 import Champion from 'src/frontend/containers/Tutoriels/Champion';
 
 // Trollpicks
-import TrollPicks from 'src/frontend/components/TrollPicks';
-import XinAutoroute from 'src/frontend/components/TrollPicks/XinAutoroute';
-import ThreshFlak from 'src/frontend/components/TrollPicks/ThreshFlak';
-import KaisaLaser from 'src/frontend/components/TrollPicks/KaisaLaser';
-import CaitlynSniper from 'src/frontend/components/TrollPicks/CaitlynSniper';
-import LucianLanceMissiles from 'src/frontend/components/TrollPicks/LucianLanceMissiles';
-import ZedForet from 'src/frontend/components/TrollPicks/ZedForet';
-
+import TrollPicks from 'src/frontend/containers/TrollPicks';
+import Trollpick from 'src/frontend/containers/TrollPicks/Trollpick';
 
 // Lanes
 import Jungle from 'src/frontend/containers/Tutoriels/Jungle';
-// import Midlane from 'src/frontend/components/Tutoriels/Midlane';
-// import Toplane from 'src/frontend/components/Tutoriels/Toplane';
 
 // == Composant
 const App = () => {
@@ -92,12 +83,12 @@ const App = () => {
   const isWinLane = currentPath === '/guides/gagner-sa-phase-de-lane';
   const isVisionGame = currentPath === '/guides/vision-du-jeu';
   const isTrollPicks = currentPath === '/trollpicks';
-  const isXinAutoroute = currentPath === '/trollpicks/xinZhao-autoroute';
-  const isThreshFlak = currentPath === '/trollpicks/thresh-flak';
-  const isKaisaLaser = currentPath === '/trollpicks/kaisa-laser';
-  const isCaitlynSniper = currentPath === '/trollpicks/caitlyn-sniper';
-  const isLucianLanceMissiles = currentPath === '/trollpicks/lucian-lance-missiles';
-  const isZedForet = currentPath === '/trollpicks/zed-foret';
+  const isXinAutoroute = currentPath === '/trollpicks/xin-zhao-autoroute/1';
+  const isThreshFlak = currentPath === '/trollpicks/thresh-flak-oneshot/2';
+  const isKaisaLaser = currentPath === '/trollpicks/kaisa-laser/4';
+  const isCaitlynSniper = currentPath === '/trollpicks/caitlyn-sniper/3';
+  const isLucianLanceMissiles = currentPath === '/trollpicks/lucian-lance-missiles/5';
+  const isZedForet = currentPath === '/trollpicks/zed-foret/6';
 
   const appClass = classNames('appp', {
     'app--home': isHome,
@@ -174,23 +165,8 @@ const App = () => {
             <Route exact path="/trollpicks">
               <TrollPicks />
             </Route>
-            <Route exact path="/trollpicks/xinZhao-autoroute">
-              <XinAutoroute />
-            </Route>
-            <Route exact path="/trollpicks/thresh-flak">
-              <ThreshFlak />
-            </Route>
-            <Route exact path="/trollpicks/kaisa-laser">
-              <KaisaLaser />
-            </Route>
-            <Route exact path="/trollpicks/caitlyn-sniper">
-              <CaitlynSniper />
-            </Route>
-            <Route exact path="/trollpicks/lucian-lance-missiles">
-              <LucianLanceMissiles />
-            </Route>
-            <Route exact path="/trollpicks/zed-foret">
-              <ZedForet />
+            <Route exact path="/trollpicks/:name/:id">
+              <Trollpick />
             </Route>
             <Route exact path="/me-soutenir">
               <Support />
@@ -205,10 +181,8 @@ const App = () => {
         </Analytics>
       </main>
       <Footer />
-
     </div>
   );
 };
 
-// == Export
 export default App;

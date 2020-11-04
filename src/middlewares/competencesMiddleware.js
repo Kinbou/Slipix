@@ -2,20 +2,18 @@ import axios from 'axios';
 import { FETCH_ONE_COMPETENCE, saveCompetence } from 'src/actions/competences';
 
 const competencesMiddleware = (store) => (next) => (action) => {
-  // const { idCompetence } = store.getState().champions;
-  // console.log(idCompetence);
+  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
+  // const urlLocal = 'http://localhost:8090';
   switch (action.type) {
     case FETCH_ONE_COMPETENCE:
-      axios.get('https://backend.slipix-progresser-sur-league-of-legends.fr/competences/1')
+      axios.get(`${url}/competences/1`)
         .then((response) => {
-          console.log('passage dans la requête competence');
           store.dispatch(saveCompetence(response.data));
         })
         .catch((error) => {
           console.warn(error);
         })
         .finally(() => {
-          // store.dispatch(setAppLoading());
         });
       break;
 
