@@ -55,6 +55,7 @@
     "bundle-stats-webpack-plugin": "^2.2.0",
     "classnames": "^2.2.6",
     "components": "^0.1.0",
+    "html-react-parser": "^0.14.1",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",

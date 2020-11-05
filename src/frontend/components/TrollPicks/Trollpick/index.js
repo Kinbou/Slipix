@@ -1,8 +1,9 @@
-/* eslint-disable react/no-danger */
+
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Youtube from 'src/frontend/components/Youtube';
 import PropTypes from 'prop-types';
+import parse from 'html-react-parser';
 import { pipe } from 'src/utils/selectors';
 import { useTitle } from 'src/hooks/useTitle';
 import './xinAutoroute.scss';
@@ -27,8 +28,8 @@ const XinAutoroute = ({
   }, []);
   // useTitle(`Trollpicks - ${trollpick[0].name}`);
   const indexRune = [0, 1, 2, 3, 4, 5];
-  // console.log(pipe(trollpick[0].gameplay_contentImage)[0]);
   useTitle('Trollpicks');
+
   return (
 
     <div className="trollpick">
@@ -44,9 +45,9 @@ const XinAutoroute = ({
           <p className="paragraph">Salut la <span className="red">#TEAMSLIP</span> c'est Coach Slipix et on va parler de <span className="green">{trollpick[0].name_intro}</span> {trollpick[0].name_intro2} dans League of Legends !</p>
           <img className="logo" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick[0].logo}`} alt="" />
           <div className="backgroundParagraphe">
-            <p className="intro" dangerouslySetInnerHTML={{ __html: trollpick[0].intro_intro }} />
+            <p className="intro">{parse(trollpick[0].intro_intro)}</p>
             {pipe(trollpick[0].intro_content).map((content) => (
-              <p className="paragraph" dangerouslySetInnerHTML={{ __html: content }} key={content} />
+              <p className="paragraph" key={content}>{parse(content)}</p>
             ))}
             <div className="trollpick__pictures">
               {pipe(trollpick[0].intro_picture).map((picture) => (
@@ -73,29 +74,27 @@ const XinAutoroute = ({
           <div className="backgroundParagraphe">
             <h2><i className="fas fa-gamepad icons__gameplay" />Le gameplay<i className="fas fa-gamepad icons__gameplay" /></h2>
             {pipe(trollpick[0].gameplay_intro).map((content) => (
-              // eslint-disable-next-line react/no-danger
-              <p className="paragraph" dangerouslySetInnerHTML={{ __html: content }} key={content} />
+              <p className="paragraph" key={content}>{parse(content)}</p>
             ))}
             <div className="trollpick__gameplay__content">
               {pipe(trollpick[0].gameplay_content).map((content) => (
-              // eslint-disable-next-line react/no-danger
-                <p className="paragraph" dangerouslySetInnerHTML={{ __html: content }} key={content} />
+                <p className="paragraph" key={content}>{parse(content)}</p>
               ))}
 
               {/* Pour Thresh */}
               {trollpick[0].gameplay_method === 2 && (
               <>
                 <img className="trollpick__pictures__capture" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />
-                <div dangerouslySetInnerHTML={{ __html: trollpick[0].gameplay_content2 }} />
+                <div>{parse(trollpick[0].gameplay_content2)}</div>
                 <img className="trollpick__pictures__capture" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[1]}`} alt="" />
-                <p className="paragraph" dangerouslySetInnerHTML={{ __html: trollpick[0].gameplay_content3 }} />
+                <p className="paragraph">{parse(trollpick[0].gameplay_content3)}</p>
               </>
               )}
               {/* Pour Xin Zhao */}
               {(trollpick[0].gameplay_method === 1) && (
               <>
                 <img className="trollpick__pictures__trollContent" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick[0].gameplay_contentImage}`} alt="" />
-                <div dangerouslySetInnerHTML={{ __html: trollpick[0].gameplay_content2 }} />
+                <div>{parse(trollpick[0].gameplay_content2)}</div>
               </>
               )}
               {trollpick[0].gameplay_method === 3 && (
@@ -103,7 +102,7 @@ const XinAutoroute = ({
               )}
               {trollpick[0].gameplay_method === 4 && (
                 <>
-                  <div className="lucianMissiles__gameplay__content__important" dangerouslySetInnerHTML={{ __html: trollpick[0].gameplay_content2 }} />
+                  <div className="lucianMissiles__gameplay__content__important">{parse(trollpick[0].gameplay_content2)}</div>
                   <p className="paragraph gold">{trollpick[0].gameplay_content3}</p>
                 </>
               )}
@@ -125,9 +124,8 @@ const XinAutoroute = ({
           </div>
           <div className="backgroundParagraphe">
             <h2><i className="fas fa-skull-crossbones icons__crossbones" />Les Faiblesses<i className="fas fa-skull-crossbones icons__crossbones" /></h2>
-            {pipe(trollpick[0].weakness_content).map((content, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <p className="paragraph" dangerouslySetInnerHTML={{ __html: content }} key={index} />
+            {pipe(trollpick[0].weakness_content).map((content) => (
+              <p className="paragraph" key={content}>{parse(content)} </p>
             ))}
             {trollpick[0].weakness_method === 1 ? (
               <>
@@ -138,7 +136,7 @@ const XinAutoroute = ({
               <img className={`trollpick__pictures__trollWeakness trollpick__pictures__trollWeakness__${trollpick[0].name_intro}`} src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick[0].weakness_picture}`} alt="" />
             )}
             {pipe(trollpick[0].weakness_end).map((content) => (
-              <p className="paragraph" dangerouslySetInnerHTML={{ __html: content }} key={content} />
+              <p className="paragraph" key={content}>{parse(content)}</p>
             ))}
           </div>
 
