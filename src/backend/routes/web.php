@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 // Champions
 
 Route::get('/champions', 'ChampionController@list');
@@ -89,6 +90,8 @@ Route::get('/trollpicks',[
     'as' => 'trollpick',
     'uses' => 'TrollpickController@list'
 ]);
+
+
 
 
 

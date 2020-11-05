@@ -1,2 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
+
+Sitemap : https://www.slipix-progresser-sur-league-of-legends.fr/sitemap.xml
