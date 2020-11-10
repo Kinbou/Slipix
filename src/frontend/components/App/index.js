@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { Route, useLocation, Switch } from 'react-router-dom';
 import Analytics from 'react-router-ga';
+import styled from 'styled-components';
 
 // == Import
 import Header from 'src/frontend/containers/Header';
@@ -13,6 +14,7 @@ import Support from 'src/frontend/components/Support';
 import Contact from 'src/frontend/components/Contact';
 import ScrollToTopButton from 'src/frontend/components/ScrollToTopButton';
 import Thanks from 'src/frontend/containers/Thanks';
+import MentionLegales from 'src/frontend/components/Legal-mentions';
 
 // outils
 import ScrollToTop from 'src/frontend/components/ScrollToTop';
@@ -47,74 +49,71 @@ const App = () => {
   const isNews = currentPath === '/nouveaute';
   const isThanks = currentPath === '/remerciements';
   const isTutoriel = currentPath === '/tutoriels-champions';
-  const isJungle = currentPath === '/tutoriels-champions/jungle';
-  const isJungle1 = currentPath === '/tutoriels-champions/jungle/zac';
-  const isJungle2 = currentPath === '/tutoriels-champions/jungle/olaf';
-  const isJungle3 = currentPath === '/tutoriels-champions/jungle/ekko';
-  const isJungle4 = currentPath === '/tutoriels-champions/jungle/lee-sin';
-  const isJungle5 = currentPath === '/tutoriels-champions/jungle/gragas';
-  const isJungle6 = currentPath === '/tutoriels-champions/jungle/hecarim';
-  const isTutorielTop = currentPath === '/tutoriels-champions/toplane';
-  const isTop1 = currentPath === '/tutoriels-champions/toplane/hecarim';
-  const isTop2 = currentPath === '/tutoriels-champions/toplane/volibear';
-  const isTop3 = currentPath === '/tutoriels-champions/toplane/pantheon';
-  const isTop4 = currentPath === '/tutoriels-champions/toplane/rumble';
-  const isTop5 = currentPath === '/tutoriels-champions/toplane/camille';
-  const isTop6 = currentPath === '/tutoriels-champions/toplane/mordekaiser';
-  const isTop7 = currentPath === '/tutoriels-champions/toplane/gnar';
-  const isTop8 = currentPath === '/tutoriels-champions/toplane/kled';
-  const isTop9 = currentPath === '/tutoriels-champions/toplane/vladimir';
-  const isTutorielMid = currentPath === '/tutoriels-champions/midlane';
-  const isMid1 = currentPath === '/tutoriels-champions/midlane/lux';
-  const isMidZed = currentPath === '/tutoriels-champions/midlane/zed';
-  const isMidLeblanc = currentPath === '/tutoriels-champions/midlane/leblanc';
-  const isMidRyze = currentPath === '/tutoriels-champions/midlane/ryze';
-  const isMidAhri = currentPath === '/tutoriels-champions/midlane/ahri';
-  const isMidYasuo = currentPath === '/tutoriels-champions/midlane/yasuo';
-  const isMidKatarina = currentPath === '/tutoriels-champions/midlane/katarina';
-  const isMidYone = currentPath === '/tutoriels-champions/midlane/yone';
+  const isTop = currentPath.includes('/tutoriels-champions/toplane');
+  const isJungle = currentPath.includes('/tutoriels-champions/jungle');
+  const isMid = currentPath.includes('/tutoriels-champions/mid');
+  const isTrollPicks = currentPath.includes('/trollpicks');
   const isSupportPage = currentPath === '/me-soutenir';
   const isContact = currentPath === '/me-contacter';
   const isGuides = currentPath === '/guides';
-  const isGuide = currentPath === '/guides/mental&rage';
+  const isMentalRage = currentPath === '/guides/mental&rage';
   const isRoleChampion = currentPath === '/guides/role-champion';
   const isProgressLol = currentPath === '/guides/progresser-sur-leagueOfLegends';
   const isLowElo = currentPath === '/guides/sortir-du-bas-elo';
   const isWinLane = currentPath === '/guides/gagner-sa-phase-de-lane';
-  const isVisionGame = currentPath === '/guides/vision-du-jeu';
-  const isTrollPicks = currentPath === '/trollpicks';
-  const isXinAutoroute = currentPath === '/trollpicks/xin-zhao-autoroute/1';
-  const isThreshFlak = currentPath === '/trollpicks/thresh-flak-oneshot/2';
-  const isKaisaLaser = currentPath === '/trollpicks/kaisa-laser/4';
-  const isCaitlynSniper = currentPath === '/trollpicks/caitlyn-sniper/3';
-  const isLucianLanceMissiles = currentPath === '/trollpicks/lucian-lance-missiles/5';
-  const isZedForet = currentPath === '/trollpicks/zed-foret/6';
 
-  const appClass = classNames('appp', {
-    'app--home': isHome,
-    'app--presentation': isPresentation,
-    'app--news': isNews,
-    'app--thanks': isThanks,
-    'app--tutoriels': isTutoriel,
-    'app--jungle': isJungle || isJungle1 || isJungle2 || isJungle3 || isJungle4 || isJungle5 || isJungle6,
-    'app--tutorielTop': isTutorielTop || isTop1 || isTop2 || isTop3 || isTop4 || isTop5 || isTop6 || isTop7 || isTop8 || isTop9,
-    'app--tutorielMid': isTutorielMid || isMid1 || isMidZed || isMidLeblanc || isMidRyze || isMidAhri || isMidYasuo || isMidKatarina || isMidYone,
-    'app--supportPage': isSupportPage,
-    'app--contact': isContact,
-    'app--guides': isGuides,
-    'app--guide': isGuide,
-    'app--roleChampion': isRoleChampion,
-    'app--progressLol': isProgressLol,
-    'app--lowElo': isLowElo,
-    'app--winLane': isWinLane || isVisionGame,
-    'app--trollPicks': isTrollPicks || isXinAutoroute || isThreshFlak || isKaisaLaser || isCaitlynSniper || isLucianLanceMissiles || isZedForet,
-    // 'app--error': isError,
+  const appClass = classNames({
+    home: isHome,
+    presentation: isPresentation,
+    news: isNews,
+    thanks: isThanks,
+    tutoriels: isTutoriel,
+    tutorielJungle: isJungle,
+    tutorielTop: isTop,
+    tutorielMid: isMid,
+    support: isSupportPage,
+    contact: isContact,
+    guides: isGuides,
+    mentalRage: isMentalRage,
+    roleChampion: isRoleChampion,
+    progressLol: isProgressLol,
+    lowElo: isLowElo,
+    winLane: isWinLane,
+    trollPicks: isTrollPicks,
   });
+
+  const BackgroundImage = styled.div`
+  /* object-fit: fill; */
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${appClass}/format-standard.jpg);
+
+    /* Grand écran */
+    @media (min-width: 3400px) {
+      background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${appClass}/format-3440x1440.jpg)
+    }
+    /* Grand écran */
+    @media (min-width: 2000px) {
+      background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${appClass}/format-2560x1440.jpg)
+    }
+    /* Format tablette */
+    @media (max-width: 1024px) {
+      background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${appClass}/format-tablette.jpg)
+    }
+    /* Format phone */
+    @media (max-width: 600px) {
+      background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${appClass}/format-phone.jpg)
+    }
+`;
 
   return (
     <div className="app">
       <ScrollToTop />
-      <div className={appClass} />
+      <BackgroundImage />
       <Header />
       <main>
         {/* {!appIsLoad && <Loader />} */}
@@ -130,8 +129,6 @@ const App = () => {
             <Route exact path="/nouveaute">
               <News />
             </Route>
-            {/* <Partenaires />
-          */}
             <Route exact path="/tutoriels-champions">
               <Tutoriels />
             </Route>
@@ -173,6 +170,9 @@ const App = () => {
             </Route>
             <Route exact path="/me-contacter">
               <Contact />
+            </Route>
+            <Route exact path="/mentions-legales">
+              <MentionLegales />
             </Route>
             <Route exact path="/remerciements">
               <Thanks />
