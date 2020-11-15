@@ -71,6 +71,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "styled": "^1.0.0",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "yarn": "^1.22.10"
   }
 }
