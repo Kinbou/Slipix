@@ -5,8 +5,27 @@
   justify-content: space-evenly;
   text-align: center;
   background-color: rgba(28,36,45,0.5);
+  &__containDroit {
+    text-align: center;
+    margin: auto;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
   p{
     margin: auto;
-    font-size: .9rem;
+    font-size: .9em;
+    line-height: 1.3em;
+  }
+}
+
+@media (max-width: 419px) {
+  .footer {
+    p {
+      font-size: .7em;
+    }
+    &__containDroit {
+      margin: auto .5rem;
+    }
   }
 }

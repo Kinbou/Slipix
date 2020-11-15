@@ -16,3 +16,18 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .legal-mentions {
+    margin: 0 .5rem 1rem .5rem;
+    &__title {
+      font-size: 2.1rem;
+    }
+    &__content {
+      margin: 1rem 0rem 2rem 0rem;
+    }
+    p {
+      font-size: 1.1em;
+    }
+  }
+}

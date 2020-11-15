@@ -52,6 +52,9 @@
     &__zed {
       filter: drop-shadow(0 0 0.75rem #b94220);
     }
+    &__tartiSett {
+      filter: drop-shadow(0 0 0.75rem #fa2d76);
+    }
 
     &__rune {
       margin: 2rem;
@@ -109,6 +112,9 @@
         filter: drop-shadow(0 0 0.75rem #b94220);
         width: 30%;
       }
+      &__tartiSett {
+        filter: drop-shadow(0 0 0.75rem #40fbae);
+      }
     }
     &__trollContent {
       width: 35%;
@@ -121,6 +127,9 @@
       border-radius: 10px;
       width: 40%;
       filter: drop-shadow(0 0 0.75rem #40fbae);
+      &__tartiSett {
+        width: 20%;
+      }
     }
     &__troll {
       width: 40%;
@@ -131,6 +140,10 @@
     &__trollWeakness {
       margin: 2rem 0 3rem 0;
       border-radius: 15px;
+      &__tartiSett {
+        filter: drop-shadow(0 0 0.75rem #fff);
+        width: 20%;
+      }
       &__caitlyn {
         filter: drop-shadow(0 0 0.75rem #e40b19);
         width: 15%;

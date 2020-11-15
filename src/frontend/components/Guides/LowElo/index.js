@@ -22,8 +22,8 @@ const LowElo = () => {
   return (
     <div className="lowElo">
       <div className="breadcrumb">
-        <Link to="/">Accueil</Link> &gt;
-        <Link to="/guides"> guides</Link> &gt;
+        <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
+        <Link className="breadcrumb__link" to="/guides"> guides</Link> &gt;
         progresser sur League of Legends
       </div>
       <h1 className="globalTitle-page">Sortir du bas Elo</h1>

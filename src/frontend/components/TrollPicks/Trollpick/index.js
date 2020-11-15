@@ -106,6 +106,18 @@ const XinAutoroute = ({
                   <p className="paragraph gold">{trollpick[0].gameplay_content3}</p>
                 </>
               )}
+              {trollpick[0].gameplay_method === 5 && (
+              <>
+                <img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick[0].name_intro}`} src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />
+                  {pipe(trollpick[0].gameplay_content2).map((content) => (
+                    <p className="paragraph">{parse(content)}</p>
+                  ))}
+                <img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick[0].name_intro}`} src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[1]}`} alt="" />
+                {pipe(trollpick[0].gameplay_content3).map((content) => (
+                  <p className="paragraph">{parse(content)}</p>
+                ))}
+              </>
+              )}
             </div>
             {trollpick[0].gameplay_method === 4 ? (
               pipe(trollpick[0].gameplay_introVideo).map((content) => (
