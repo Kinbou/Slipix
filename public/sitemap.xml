@@ -213,22 +213,29 @@
     <priority>0.8</priority>
   </url>
 
-    <url>
+  <url>
     <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/midlane/katarina</loc>
     <lastmod>2018-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-    <url>
+  <url>
     <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/jungle/hecarim</loc>
     <lastmod>2018-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-    <url>
+  <url>
     <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/midlane/yone</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/adc/vayne</loc>
     <lastmod>2018-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

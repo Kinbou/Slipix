@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import RightNav from './RightNav';
+import Menu from 'src/frontend/containers/Header/Menu';
 
 const StyledBurger = styled.div`
   width: 2.5rem;
@@ -28,14 +28,14 @@ const StyledBurger = styled.div`
     transition: all .3s linear;
 
     &:nth-child(1) {
-      transform: ${({ open }) => (open ? 'rotate(38deg)' : 'rotate(0)')};
+      transform: ${({ open }) => (open ? 'rotate(37deg)' : 'rotate(0)')};
     }
     &:nth-child(2) {
       transform: ${({ open }) => (open ? 'translateX(100%)' : 'translateX(0)')};
       opacity: ${({ open }) => (open ? 0 : 1)};
     }
     &:nth-child(3) {
-      transform: ${({ open }) => (open ? 'rotate(-38deg)' : 'rotate(0)')};
+      transform: ${({ open }) => (open ? 'rotate(-37deg)' : 'rotate(0)')};
     }
   }
 `;
@@ -49,7 +49,7 @@ const Burger = () => {
         <div />
         <div />
       </StyledBurger>
-      <RightNav open={open} setOpen={setOpen} />
+      <Menu open={open} setOpen={setOpen} />
     </>
   );
 };

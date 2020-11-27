@@ -16,13 +16,18 @@
     display: flex;
     flex-direction: column;
     &__line {
-      display: flex;
-      justify-content: space-evenly;
+      display: inline-block;
+      // justify-content: space-evenly;
+      margin: auto 2rem;
+      text-align: center;
+    }
+    a {
+      display: inline-block;
     }
     &__card {
       width: 400px;
       height: 210px;
-      margin: 4rem 0;
+      margin: 4rem 1rem;
       color: white;
       display: flex;
       background-color: rgba(28,36,45,0.8);
@@ -122,18 +127,8 @@
 
 @media (max-width: 1000px) {
   .tutoriels {
-    &__cards{
-      &__line{
-      margin: auto 0;
-      display: inline-block;
-      text-align: center;
-      }
-      a {
-        display: inline-block;
-      }
-      &__card {
+    &__cards__card{
         margin: 1rem;
-      }
     }
   }
 }

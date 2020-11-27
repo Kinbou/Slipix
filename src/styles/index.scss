@@ -273,4 +273,24 @@ iframe {
   border-radius: 10px;
 }
 
+.global-input {
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: .3rem;
+  border: none;
+  padding: .6rem 1rem;
+  background-color: #fff;
+  color: #2d3f57;
+  max-width: 100%;
+
+  &:focus, &:active {
+    border: none;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: #c7cad2;
+  }
+}
+
 

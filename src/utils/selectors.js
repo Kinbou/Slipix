@@ -1,4 +1,5 @@
 import slugify from 'react-slugify';
+import classNames from 'classnames';
 
 export const slugifyName = (name) => slugify(name, {
   lower: true,
@@ -20,3 +21,14 @@ export const hyphen = (data) => {
 // export const maj = (data) => {
 //   const test = strUcFirst(data);
 // };
+
+// Dynamic label
+export const labelClassname = (input) => {
+  if (input !== null) {
+    if (typeof input === 'number') {
+      return classNames('global-label', { 'global-label--active': input > 0 });
+    }
+    return classNames('global-label', { 'global-label--active': input.length > 0 });
+  }
+  return input;
+};

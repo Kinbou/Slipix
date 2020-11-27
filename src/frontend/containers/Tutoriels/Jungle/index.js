@@ -52,7 +52,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   setLaneIsLoad2: (value) => {
     dispatch(setLaneIsLoad2(value));
-  }, 
+  },
 });
 
 export default connect(

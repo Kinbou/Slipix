@@ -22,6 +22,20 @@
     height: 80px;
     padding: 0 2rem;
     position: relative;
+    &__account {
+      &__button {
+        position: relative;
+        border: 1px solid #fa5;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        font-size: 1.4em;
+        &:hover {
+          color: #fa5;
+          background-color: black;
+        }
+      }
+    }
     &__global {
       display: contents;
     }
@@ -87,6 +101,42 @@
     &__logo {
       &__picture {
         display: none;
+      }
+    }
+  }
+}
+
+.authentification {
+  &__nav {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    &__item {
+      font-size: inherit;
+      font-family: inherit;
+      border: 0;
+      padding: .5rem 1.5rem;
+      background-color: #d1d3dc;
+      color: #3d5471;
+
+      &--active {
+        // background-color: $lightBlue;
+        background-color: #4abb6d;
+        color: #fff;
+      }
+
+      &:not(&--active):hover {
+        background-color: #ED7250;
+        color: #fff;
+      }
+
+      &:first-child {
+        border-radius: .4rem 0 0 .4rem;
+      }
+
+      &:last-child {
+        border-radius: 0 .4rem .4rem 0;
       }
     }
   }

@@ -16,6 +16,7 @@ const Jungle = ({
   laneIsLoad2,
   fetchAllLane,
   fetchSoonLane,
+  name,
 }) => {
   const slug = useParams();
   // permet de récupérer le nom du champion dans l'url
@@ -23,7 +24,6 @@ const Jungle = ({
   useEffect(() => {
     fetchAllLane();
     fetchSoonLane();
-    console.log('passage dans le useEffect');
     return () => {
       setLaneIsLoad(false);
       setLaneIsLoad2(false);
@@ -37,23 +37,25 @@ const Jungle = ({
         <div className="breadcrumb">
           <Link className="breadcrumb__link" to="/">Accueil </Link> &gt;
           <Link className="breadcrumb__link" to="/tutoriels-champions"> Tutoriels champions  </Link> &gt;
-          {laneActif[0].lane}
+          {name.lane}
         </div>
-        <h1 className="globalTitle-page">Tutoriels {laneActif[0].lane}</h1>
-        <div className="jungle__cards">
-          {laneActif.map((listChampion) => (
-            <>
-              {listChampion.actif === 1 && (
-              <Link to={`/tutoriels-champions/${listChampion.lane}/${listChampion.name}`}>
-                <div className="jungle__cards__card">
-                  <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${listChampion.pictureChampion}`} alt="" />
-                  <h3>{listChampion.name}</h3>
-                </div>
-              </Link>
-              )}
-            </>
-          ))}
-        </div>
+        <h1 className="globalTitle-page">Tutoriels {name.lane}</h1>
+        {laneActif.length !== 0 && (
+          <div className="jungle__cards">
+            {laneActif.map((listChampion) => (
+              <>
+                {listChampion.actif === 1 && (
+                <Link to={`/tutoriels-champions/${listChampion.lane}/${listChampion.name}`}>
+                  <div className="jungle__cards__card">
+                    <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${listChampion.pictureChampion}`} alt="" />
+                    <h3>{listChampion.name}</h3>
+                  </div>
+                </Link>
+                )}
+              </>
+            ))}
+          </div>
+        )}
         {laneSoon.length !== 0 && (
         <>
           <div className="betweenParagraph" />
@@ -71,6 +73,9 @@ const Jungle = ({
           </div>
         </>
         )}
+        {(laneActif.length === 0 && laneSoon.length === 0) && (
+          <h2>Aucun tutoriels {name.lane} n'est disponible</h2>
+        )}
       </>
       )}
     </div>
@@ -85,6 +90,7 @@ Jungle.propTypes = {
   laneIsLoad2: PropTypes.bool.isRequired,
   setLaneIsLoad: PropTypes.func.isRequired,
   setLaneIsLoad2: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
   laneActif: PropTypes.arrayOf(
     PropTypes.shape({
       lane: PropTypes.string.isRequired,

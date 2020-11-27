@@ -56,6 +56,8 @@
     margin: 3rem;
     &__image {
       width: 20%;
+      // essaie pour Apple
+      object-fit: contain;
       border-radius: 35%;
       filter: drop-shadow(0 0 0.75rem crimson);
     }

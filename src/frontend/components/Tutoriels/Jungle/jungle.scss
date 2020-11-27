@@ -8,7 +8,7 @@
 
   }
   &__cards {
-    display: inline-block;
+    // display: inline-block;
     text-align: center;
     padding: 0 10rem 0 10rem;
     margin: auto;
@@ -21,6 +21,7 @@
       display: inline-block;
       margin: 3rem;
       color: white;
+      display: inline-block;
       background-color: rgba(28,36,45,0.8);
       border-radius: 10px;
       border: 2px solid transparent;

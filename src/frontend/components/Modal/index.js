@@ -12,7 +12,14 @@ const Modal = ({ displayModal, content }) => {
     <>
       <div className="modal-background" onClick={closeModal}> </div>
       <div className="modal">
-        <button className="modal__close global-button" type="button" title="Fermer la fenêtre" onClick={closeModal}><i className="fas fa-times" /> </button>
+        <button
+          className="modal__close global-button"
+          type="button"
+          title="Fermer la fenêtre"
+          onClick={closeModal}
+        >
+          <i className="fas fa-times" />
+        </button>
         {content}
       </div>
     </>

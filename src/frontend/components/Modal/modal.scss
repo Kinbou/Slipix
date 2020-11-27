@@ -14,8 +14,8 @@
   left: calc(50% - 400px);
   top: 100px;
   z-index: 99;
-  background-color: red;
-  color: darkBlue;
+  background-color: #E3E5EC;
+  color: #2d3f57;
   padding: 1rem;
   border-radius: 1rem;
 
@@ -23,15 +23,35 @@
     padding: .3rem 1rem;
     font-size: 1.2em;
     position: absolute;
-    right: 1rem/2;
-    top: 1rem/2;
+    right: 2rem/2;
+    top: 2rem/2;
   }
 
   h1 {
-    font-size: 2em;
-    color: darkBlue;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    font-size: 3em;
+    color: #ffaa55;
+    margin-bottom: 2rem;
+  }
+}
+.global-button {
+  font-family: inherit;
+  font-size: inherit;
+  padding: .8rem 1rem;
+  color: #fff;
+  background-color: #2d3f57;
+  border: none;
+  border-radius: .3rem;
+  right: 10px;
+  top: 10px;
+
+  &--light {
+    color: #2d3f57;
+    background-color: #E3E5EC;
+  }
+
+  &:hover {
+    background-color:  #ED7250;
+    color: #fff;
   }
 }
 

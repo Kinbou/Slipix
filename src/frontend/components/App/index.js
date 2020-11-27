@@ -52,6 +52,7 @@ const App = () => {
   const isTop = currentPath.includes('/tutoriels-champions/toplane');
   const isJungle = currentPath.includes('/tutoriels-champions/jungle');
   const isMid = currentPath.includes('/tutoriels-champions/mid');
+  const isAdc = currentPath.includes('/tutoriels-champions/adc');
   const isTrollPicks = currentPath.includes('/trollpicks');
   const isSupportPage = currentPath === '/me-soutenir';
   const isContact = currentPath === '/me-contacter';
@@ -71,6 +72,7 @@ const App = () => {
     tutorielJungle: isJungle,
     tutorielTop: isTop,
     tutorielMid: isMid,
+    tutorielAdc: isAdc,
     support: isSupportPage,
     contact: isContact,
     guides: isGuides,

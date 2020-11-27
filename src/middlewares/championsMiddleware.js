@@ -25,6 +25,7 @@ const championsMiddleware = (store) => (next) => (action) => {
       break;
 
     case FETCH_ONE_CHAMPION:
+      console.log(`${url}/champions/${store.getState().champions.name.lane}/${store.getState().champions.name.name}`);
       axios({
         method: 'get',
         url: `${url}/champions/${store.getState().champions.name.lane}/${store.getState().champions.name.name}`,
