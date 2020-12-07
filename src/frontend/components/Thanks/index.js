@@ -25,7 +25,7 @@ const Thanks = ({
       { !thanksIsLoad && <Loader />}
       { thanksIsLoad && (
         <>
-          <h1 className="globalTitle-page">Remerciements test {thanks.thanks[0].name}</h1>
+          <h1 className="globalTitle-page">Remerciements</h1>
           <div className="thanks__backgroundParagraphe">
 
             <p className="paragraph">Yo le Slip, on a décidé de te faire une petite surprise !

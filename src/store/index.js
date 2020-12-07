@@ -20,9 +20,7 @@ const enhancers = composeWithDevTools(
 );
 
 const store = createStore(
-  // reducer
   reducer,
-  // enhancer
   enhancers,
 );
 
