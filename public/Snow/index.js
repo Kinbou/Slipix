@@ -1,11 +1,14 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-mixed-operators */
+/* eslint-disable func-names */
+/* eslint-disable no-shadow */
+/* eslint-disable no-use-before-define */
 const now = new Date();
 const christmas = new Date('2020-12-25 00:00:00');
 
 const nbMsBeforeChristmas = christmas.getTime() - now.getTime();
 let nbDaysBeforeChristmas = nbMsBeforeChristmas / (1000 * 3600 * 24);
 nbDaysBeforeChristmas = Math.ceil(nbDaysBeforeChristmas);
-
-console.log(nbDaysBeforeChristmas);
 
 const christmasModeWidget = document.createElement('div');
 christmasModeWidget.innerText = `Noël est dans ${nbDaysBeforeChristmas} jours`;
@@ -94,15 +97,14 @@ function initSnow(isRunning) {
   function Flake(x, y) {
     const maxWeight = 20; // poids Maximum
     const maxSpeed = 3; // vitesse maximum
-
     const random = +(Math.random() * 10).toFixed(0);
-    console.log(random);
     this.img = createImage(random);
     this.initialX = x; // position initial
     this.x = x;
     this.y = y;
     this.horizontalMovement = randomBetween(-1, 1); // mouvement aléatoire entre -1 et 1
     this.weight = randomBetween(1, maxWeight); // taille entre 2 et poids maximum (4)
+    // eslint-disable-next-line max-len
     this.alpha = (this.weight / maxWeight); // transparence définit entre leur poids et poids maximum
     this.speed = this.alpha * maxSpeed; // vitesse basé sur la transparence
     this.rotation = 0;
@@ -158,6 +160,7 @@ function initSnow(isRunning) {
 
   function buildFlakes() {
     flakes = [];
+    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < numFlakes; i++) {
       const x = randomBetween(0, windowW);
       const y = randomBetween(-0, -windowH);
@@ -176,11 +179,8 @@ function initSnow(isRunning) {
       ctx.save();
       ctx.translate(flake.x + (flake.weight / 2), flake.y + (flake.weight / 2));
       ctx.rotate(flake.rotation);
-      // ctx.drawImage(flake.img, flake.x, flake.y, flake.weight, flake.weight);
       ctx.drawImage(flake.img, 0, 0, flake.weight, flake.weight);
       ctx.restore();
-      // ctx.setTransform(1, 0, 0, 1, flake.weight / 2, flake.weight /2); // sets scale and origin
-      // ctx.drawImage(flake.img, flake.x / 2, flake.y / 2, 1, - Math.PI / 2);
     }
     requestAnimationFrame(loop);
   }

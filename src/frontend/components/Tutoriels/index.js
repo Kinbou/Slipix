@@ -39,9 +39,15 @@ const Tutoriels = () => (
             <img className="tutoriels__picture" src={adc} alt="" />
           </div>
         </Link>
+        <Link to="/tutoriels-champions/support">
+          <div className="tutoriels__cards__card tutoriels__cards__cardActif">
+            <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Support</h3>
+            <img className="tutoriels__picture" src={support} alt="" />
+          </div>
+        </Link>
       </div>
-      <div className="betweenParagraph" />
-      <div className="tutoriels__cards__line tutoriels__cards__line__two">
+      {/* <div className="betweenParagraph" /> */}
+      {/* <div className="tutoriels__cards__line tutoriels__cards__line__two">
         <a>
           <div className="tutoriels__cards__card tutoriels__cards__cardSoon">
             <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Support</h3>
@@ -49,7 +55,7 @@ const Tutoriels = () => (
             <p className="tutoriels__cards__cardSoon__content">Bientôt disponible</p>
           </div>
         </a>
-      </div>
+      </div> */}
     </div>
   </div>
 );

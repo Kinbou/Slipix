@@ -36,6 +36,7 @@ const Thanks = ({
             </p>
           </div>
           <div className="thanks__cards">
+            {/* eslint-disable-next-line react/prop-types */}
             {thanks.thanks.map((listThanks) => (
               <div className={`thanks__cards__card ${listThanks.borderColor}`} key={listThanks.id}>
                 <div className="glass" />
