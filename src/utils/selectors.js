@@ -32,3 +32,5 @@ export const labelClassname = (input) => {
   }
   return input;
 };
+
+export const urlBack = () => 'https://backend.slipix-progresser-sur-league-of-legends.fr/';

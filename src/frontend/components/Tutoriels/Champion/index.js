@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useParams } from 'react-router-dom';
-import { pipe } from 'src/utils/selectors';
+import { pipe, urlBack } from 'src/utils/selectors';
 import Loader from 'src/frontend/components/Loader';
 import Youtube from 'src/frontend/components/Youtube';
 import './zac.scss';
@@ -26,8 +26,16 @@ const Champion = ({
     };
   }, []);
 
-  return (
+  const endContent = () => (
+    <p>Si vous avez des questions n'hésitez pas à les poser
+      directement en commentaires sur la <span className="gold">vidéo YouTube</span>
+    </p>
+  );
+  const filter = (elemInArray, nameArray) => (
+    pipe(champion[0].youtube_identifiant)[elemInArray] && nameArray.includes(champion[0].name)
+  );
 
+  return (
     <div className="zac">
       {!championIsLoad && <Loader />}
       {championIsLoad && (
@@ -41,7 +49,7 @@ const Champion = ({
           <div className="zac__title">
             <img src={logoLol} alt="" />
             <h1 className="globalTitle-page">Tutoriel {champion[0].name}</h1>
-            <img className="zac__title__zac" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${champion[0].pictureHead}`} alt="" />
+            <img className="zac__title__zac" src={`${urlBack()}images/champions/${champion[0].pictureHead}`} alt="" />
           </div>
           <h3>Comment bien jouer {champion[0].name} ? C'est ici que ça se passe !</h3>
           <p className="zac__definition">{champion[0].intro}</p>
@@ -54,7 +62,7 @@ const Champion = ({
               <h4>Les compétences</h4>
               <div className="zac__content__skill__content">
                 <div className="zac__content__skill__content__left">
-                  <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${champion[0].sort_passif_picture}`} alt="" />
+                  <img src={`${urlBack()}images/champions/${champion[0].sort_passif_picture}`} alt="" />
                 </div>
                 <div className="zac__content__skill__content__right">
                   <p className="zac__content__skill__content__right__title">Passif : <span className="gold">{champion[0].sort_passif_name}</span></p><br />
@@ -63,7 +71,7 @@ const Champion = ({
               </div>
               <div className="zac__content__skill__content">
                 <div className="zac__content__skill__content__left">
-                  <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${champion[0].sort_a_picture}`} alt="" />
+                  <img src={`${urlBack()}images/champions/${champion[0].sort_a_picture}`} alt="" />
                 </div>
                 <div className="zac__content__skill__content__right">
                   <p className="zac__content__skill__content__right__title">A : <span className="gold">{champion[0].sort_a_name}</span></p><br />
@@ -73,7 +81,7 @@ const Champion = ({
               </div>
               <div className="zac__content__skill__content">
                 <div className="zac__content__skill__content__left">
-                  <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${champion[0].sort_z_picture}`} alt="" />
+                  <img src={`${urlBack()}images/champions/${champion[0].sort_z_picture}`} alt="" />
                 </div>
                 <div className="zac__content__skill__content__right">
                   <p className="zac__content__skill__content__right__title">Z : <span className="gold">{champion[0].sort_z_name}</span></p><br />
@@ -83,7 +91,7 @@ const Champion = ({
               </div>
               <div className="zac__content__skill__content">
                 <div className="zac__content__skill__content__left">
-                  <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${champion[0].sort_e_picture}`} alt="" />
+                  <img src={`${urlBack()}images/champions/${champion[0].sort_e_picture}`} alt="" />
                 </div>
                 <div className="zac__content__skill__content__right">
                   <p className="zac__content__skill__content__right__title">E : <span className="gold">{champion[0].sort_e_name}</span></p><br />
@@ -93,7 +101,7 @@ const Champion = ({
               </div>
               <div className="zac__content__skill__content">
                 <div className="zac__content__skill__content__left">
-                  <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${champion[0].sort_r_picture}`} alt="" />
+                  <img src={`${urlBack()}images/champions/${champion[0].sort_r_picture}`} alt="" />
                 </div>
                 <div className="zac__content__skill__content__right">
                   <p className="zac__content__skill__content__right__title">R : <span className="gold">{champion[0].sort_r_name}</span></p><br />
@@ -147,15 +155,14 @@ const Champion = ({
                       </>
                     )}
                     <br />
-                    <p>Si vous avez des questions n'hésitez pas à les poser
-                      directement en commentaires sur la <span className="gold">vidéo YouTube</span>
-                    </p>
+                    {endContent()}
                   </div>
                 </div>
               </div>
             </div>
-            {/* VIDEO ABONNES : 2ième vidéo de Lee-Sin, lux et Hecarim et Ahri  */}
-            {pipe(champion[0].youtube_identifiant)[1] && (champion[0].name === 'lee-sin' || champion[0].name === 'lux' || champion[0].name === 'hecarim' || champion[0].name === 'ahri') && (
+            {/* VIDEO ABONNES : 2ième et dernière vidéo de lux et Hecarim et Ahri  */}
+            {pipe(champion[0].youtube_identifiant)[1] && ['lux', 'hecarim', 'ahri'].includes(champion[0].name)
+            && (
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">
@@ -167,16 +174,33 @@ const Champion = ({
                       </p>
                       <p>{champion[0].youtube_content_coaching}</p>
                       <br />
-                      <p>Si vous avez des questions n'hésitez pas à les poser
-                        directement en commentaires sur la <span className="gold">vidéo YouTube</span>
-                      </p>
+                      {endContent()}
                     </div>
                   </div>
                 </div>
               </div>
             )}
-            {/* 2ième VIDEO TUTO  de Ekko, Yasuo, KATARINA */}
-            {pipe(champion[0].youtube_identifiant)[1] && (champion[0].name === 'ekko' || champion[0].name === 'yasuo' || champion[0].name === 'katarina') && (
+            {/* VIDEO ABONNES : 2ième vidéo de Lee-Sin mais ce n'est pas la dernière ! */}
+            {filter(1, ['lee-sin']) && (
+              <div className="zac__content__carry">
+                <div className="zac__content__carry__content">
+                  <div className="zac__content__carry__content__left">
+                    <Youtube videoId={pipe(champion[0].youtube_identifiant)[1]} SameSite="" />
+                  </div>
+                  <div className="zac__content__carry__content__right secondary">
+                    <div className="zac__content__carry__content__right__content">
+                      <p>Voici un <span className="gold">coaching d'un abonné</span> jouant {champion[0].name}.
+                      </p>
+                      <p>{pipe(champion[0].youtube_content_coaching)[0]}</p>
+                      <br />
+                      {endContent()}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {/* 2ième VIDEO TUTO  de Ekko, Yasuo */}
+            {filter(1, ['ekko', 'yasuo']) && (
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">
@@ -190,16 +214,14 @@ const Champion = ({
                       <p>Ce gameplay est realisé par <span className="gold">{champion[0].youtube_actor}</span>, un
                         joueur haut elo de {champion[0].name}
                       </p><br />
-                      <p>Si vous avez des questions n'hésitez pas à les poser
-                        directement en commentaires sur la <span className="gold">vidéo YouTube</span>
-                      </p>
+                      {endContent()}
                     </div>
                   </div>
                 </div>
               </div>
             )}
-            {/* 3ième vidéo de LEE-SIN et YASUO, KATARINA  */}
-            {(champion[0].name === 'lee-sin' || champion[0].name === 'yasuo' || champion[0].name === 'katarina') && (
+            {/* 3ième vidéo de LEE-SIN et YASUO */}
+            {['lee-sin', 'yasuo'].includes(champion[0].name) && (
             <div className="zac__content__carry">
               <div className="zac__content__carry__content">
                 <div className="zac__content__carry__content__left">
@@ -215,27 +237,15 @@ const Champion = ({
                       <p>{pipe(champion[0].youtube_content_coaching)[1]}
                       </p>
                     )}
-                    {champion[0].name === 'katarina' && (
-                      <>
-                        <p>voici un autre <span className="gold">gameplay explicatif</span> très complet pour
-                          savoir comment jouer {champion[0].name} directement sur le terrain !
-                        </p>
-                        <p>Ce gameplay est realisé par <span className="gold">{champion[0].youtube_actor}</span>, un
-                          joueur haut elo de {champion[0].name}
-                        </p>
-                      </>
-                    )}
                     <br />
-                    <p>Si vous avez des questions n'hésitez pas à les poser
-                      directement en commentaires sur la <span className="gold">vidéo YouTube</span>
-                    </p>
+                    {endContent()}
                   </div>
                 </div>
               </div>
             </div>
             )}
-            {/* 4ième vidéo de YASUO et KATARINA  */}
-            {(champion[0].name === 'yasuo' || champion[0].name === 'katarina') && (
+            {/* 4ième vidéo de YASUO  */}
+            {(champion[0].name === 'yasuo') && (
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">
@@ -249,24 +259,44 @@ const Champion = ({
                           <p>{pipe(champion[0].youtube_content_coaching)[1]}</p>
                         </>
                       )}
-                      {champion[0].name === 'katarina' && (
-                      <>
-                        <p>voici un autre <span className="gold">gameplay explicatif</span> très complet pour
-                          savoir comment jouer {champion[0].name} directement sur le terrain !
-                        </p>
-                        <p>Ce gameplay est realisé par <span className="gold">{champion[0].youtube_actor}</span>, un
-                          joueur haut elo de {champion[0].name}
-                        </p>
-                      </>
-                      )}
                       <br />
-                      <p>Si vous avez des questions n'hésitez pas à les poser
-                        directement en commentaires sur la <span className="gold">vidéo YouTube</span>
-                      </p>
+                      {endContent()}
                     </div>
                   </div>
                 </div>
               </div>
+            )}
+
+            {/* SERIES TUTO KATARINA */}
+            {champion[0].name === 'katarina' && (
+              <>
+                {pipe(champion[0].youtube_identifiant).map((katarina) => (
+                  <>
+                    {pipe(champion[0].youtube_identifiant).indexOf(katarina) !== 0 && (
+                    <div className="zac__content__carry">
+                      <div className="zac__content__carry__content">
+                        <div className="zac__content__carry__content__left">
+                          <Youtube videoId={katarina} SameSite="" />
+                        </div>
+                        <div className="zac__content__carry__content__right secondary">
+                          <div className="zac__content__carry__content__right__content">
+                            <p>Voici un autre<span className="gold">gameplay explicatif</span> très complet pour savoir comment jouer {champion[0].name} directement sur le terrain.
+                            </p>
+                            <p>
+                              Ce gameplay est réalisé par {champion[0].youtube_actor}
+                              , un joueur haut élo de {champion[0].name}
+                            </p>
+                            <br />
+                            {endContent()}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    )}
+                  </>
+                ))}
+
+              </>
             )}
 
             {/* SERIES DE ZED  */}
