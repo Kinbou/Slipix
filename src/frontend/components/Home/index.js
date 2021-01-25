@@ -1,11 +1,13 @@
 import React from 'react';
 import { useTitle } from 'src/hooks/useTitle';
 
+// picture TENDANCES
+import turboBroken from 'src/assets/images/picturesYoutube/turboBroken.jpg';
+import cestPasNormal from 'src/assets/images/picturesYoutube/cestPasNormal.jpg';
+import indestructible from 'src/assets/images/picturesYoutube/indestructible.jpg';
+import monterDiamant from 'src/assets/images/picturesYoutube/monterDiamant.jpg';
+
 // picture
-import championBroken from 'src/assets/images/picturesYoutube/ChampionBroken.jpg';
-import lowEloProblem from 'src/assets/images/picturesYoutube/PROBLEMEBASELO.jpg';
-import trueOneShot from 'src/assets/images/picturesYoutube/VraiOneShot.jpg';
-import tierlist from 'src/assets/images/home/tierlist.jpg';
 import logoLol from 'src/assets/images/logoLol.png';
 import logoSlipix from 'src/assets/images/SlipixLogo.png';
 
@@ -31,10 +33,10 @@ const Home = () => {
         <h2>Découvrez les 4 vidéos tendances</h2>
       </div>
       <div className="home__news">
-        <a href="https://www.youtube.com/watch?v=J_WiOifXAv4" target="_blanc"><img src={championBroken} alt="3 champion broken" /></a>
-        <a href="https://www.youtube.com/watch?v=Krg3QdeQqX4&t=34s" target="_blanc"><img src={lowEloProblem} alt="problème bas élo" /></a>
-        <a href="https://www.youtube.com/watch?v=bMXWro5I1bM&t=18s" target="_blanc"><img src={trueOneShot} alt="le vrai one shot" /></a>
-        <a href="https://www.youtube.com/watch?v=YFYA-_KQ6BU&t=" target="_blanc"><img src={tierlist} alt="tierlist" /></a>
+        <a href="https://www.youtube.com/watch?v=ZF1cilZr74Y&t&ab_channel=Slipix-LeagueofLegends" target="_blanc"><img src={monterDiamant} alt="3 champion broken" /></a>
+        <a href="https://www.youtube.com/watch?v=4lhiFpicaWE&start&ab_channel=Slipix-LeagueofLegends" target="_blanc"><img src={cestPasNormal} alt="problème bas élo" /></a>
+        <a href="https://www.youtube.com/watch?v=qxUQwmXqPbI&start&ab_channel=Slipix-LeagueofLegends" target="_blanc"><img src={indestructible} alt="le vrai one shot" /></a>
+        <a href="https://www.youtube.com/watch?v=EVYQ5zTrjAw&start=1s&ab_channel=Slipix-LeagueofLegends" target="_blanc"><img src={turboBroken} alt="tierlist" /></a>
       </div>
       <h2>Mes réseaux sociaux et plateformes</h2>
       <SocialNetwork />

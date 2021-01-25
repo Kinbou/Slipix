@@ -3,15 +3,15 @@
 /* eslint-disable func-names */
 /* eslint-disable no-shadow */
 /* eslint-disable no-use-before-define */
-const now = new Date();
-const christmas = new Date('2020-12-25 00:00:00');
+// const now = new Date();
+// const christmas = new Date('2020-12-25 00:00:00');
 
-const nbMsBeforeChristmas = christmas.getTime() - now.getTime();
-let nbDaysBeforeChristmas = nbMsBeforeChristmas / (1000 * 3600 * 24);
-nbDaysBeforeChristmas = Math.ceil(nbDaysBeforeChristmas);
+// const nbMsBeforeChristmas = christmas.getTime() - now.getTime();
+// let nbDaysBeforeChristmas = nbMsBeforeChristmas / (1000 * 3600 * 24);
+// nbDaysBeforeChristmas = Math.ceil(nbDaysBeforeChristmas);
 
 const christmasModeWidget = document.createElement('div');
-christmasModeWidget.innerText = `Noël est dans ${nbDaysBeforeChristmas} jours`;
+christmasModeWidget.innerText = 'Bonnes fêtes';
 christmasModeWidget.style = `
 position: fixed;
 bottom: 20px;
@@ -24,7 +24,7 @@ border-radius: 4px;
 font-weight: bold;
 font-family: sans-serif;
 box-shadow: 0px 0px 16px red;
-padding: 1rem;
+padding: .5rem;
 `;
 document.body.appendChild(christmasModeWidget);
 
@@ -47,7 +47,6 @@ enableChristmasModeBtn.addEventListener('click', enableChristmasMode);
 let isRunning = false;
 let audioPlayer;
 function enableChristmasMode() {
-  console.log('Joyeux Noël');
   isRunning = !isRunning;
   enableChristmasModeBtn.innerText = isRunning ? 'Désactiver le mode de Noël 🎅' : 'Activer le mode de Noël 🎅';
   if (isRunning) {
