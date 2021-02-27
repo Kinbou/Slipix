@@ -60,7 +60,6 @@ const Thanks = ({
                         ))}
                       </>
                     )
-
                     : (<p className="thanks__cards__card__box__content">{listThanks.content}</p>)}
                 </div>
               </div>
@@ -77,7 +76,6 @@ const Thanks = ({
 };
 
 Thanks.propTypes = {
-
   fetchAllThanks: PropTypes.func.isRequired,
   thanksIsLoad: PropTypes.bool.isRequired,
   setThanksIsLoad: PropTypes.func.isRequired,

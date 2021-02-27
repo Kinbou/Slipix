@@ -148,7 +148,6 @@ const Champion = ({
                         <p>voici un <span className="gold">gameplay explicatif</span> très complet pour
                           savoir comment jouer {champion[0].name} directement sur le terrain !
                         </p>
-
                         <p>Ce gameplay est realisé par <span className="gold">{champion[0].youtube_actor}</span>, un
                           joueur haut elo de {champion[0].name}
                         </p>
@@ -200,7 +199,7 @@ const Champion = ({
               </div>
             )}
             {/* 2ième VIDEO TUTO  de Ekko, Yasuo */}
-            {filter(1, ['ekko', 'yasuo']) && (
+            {filter(1, ['ekko', 'yasuo', 'zac']) && (
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">

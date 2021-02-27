@@ -72,6 +72,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  // ----- TOPLANE -----
   
   <url>
     <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/toplane/volibear</loc>
@@ -129,6 +131,8 @@
     <priority>0.8</priority>
   </url>
 
+  // ----- JUNGLE -----
+
   <url>
     <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/jungle</loc>
     <lastmod>2018-06-04</lastmod>
@@ -170,6 +174,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/jungle/hecarim</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  // ----- MIDLANE -----
 
   <url>
     <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/midlane</loc>
@@ -221,13 +234,6 @@
   </url>
 
   <url>
-    <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/jungle/hecarim</loc>
-    <lastmod>2018-06-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/midlane/yone</loc>
     <lastmod>2018-06-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -236,6 +242,22 @@
 
   <url>
     <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/adc/vayne</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
+    <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/adc/miss fortune</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
+  // ----- SUPPORT -----
+  <url>
+    <loc>https://www.slipix-progresser-sur-league-of-legends.fr/tutoriels-champions/support/pyke</loc>
     <lastmod>2018-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
