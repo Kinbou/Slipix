@@ -17,5 +17,8 @@ class Authenticate extends Middleware
         if (! $request->expectsJson()) {
             return route('login');
         }
+        else { 
+           return response()->json(['message'=> 'non autorisé'], 401);  
+        }
     }
 }

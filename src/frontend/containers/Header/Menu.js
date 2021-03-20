@@ -2,10 +2,12 @@ import { connect } from 'react-redux';
 import Menu from 'src/frontend/components/Header/Menu';
 
 import { showMenu, showModal } from 'src/actions/global';
+import { requestUserAuthentification } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   showMenu: state.global.showMenu,
   showModal: state.global.showModal,
+  user: state.users.user,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -14,6 +16,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   displayModal: (name) => {
     dispatch(showModal(name));
+  },
+  requestUserAuthentification: () => {
+    dispatch(requestUserAuthentification());
   },
 });
 

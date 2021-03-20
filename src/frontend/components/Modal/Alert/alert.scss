@@ -1,0 +1,50 @@
+.knight {
+  color: green;
+  display: inline-block;
+}
+.alert {
+  background: grey;
+  width: 400px;
+  text-align: center;
+  padding: 2rem 1rem 2rem 2.5rem;
+  border-radius: .3rem 0 0 .3rem;
+  position: fixed;
+  right: 0;
+  line-height: 1.6;
+  z-index: 80;
+  color: darkBlue;
+
+  &__icon {
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    left: -30px;
+    top: calc(50% - 30px);
+    color: #fff;
+    font-size: 2em;
+
+    &--success {
+      background-color: green;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .alert {
+    width: auto;
+    left: 0;
+    border-radius: 0;
+    padding: 2.5rem 1rem 1rem 1rem;
+
+    &__icon {
+      top: -30px;
+      left: calc(50% - 30px);
+    }
+  }
+}

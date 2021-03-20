@@ -15,6 +15,7 @@ import Contact from 'src/frontend/components/Contact';
 import ScrollToTopButton from 'src/frontend/components/ScrollToTopButton';
 import Thanks from 'src/frontend/containers/Thanks';
 import MentionLegales from 'src/frontend/components/Legal-mentions';
+import Profil from 'src/frontend/containers/Profil';
 
 // outils
 import ScrollToTop from 'src/frontend/components/ScrollToTop';
@@ -48,6 +49,7 @@ const App = () => {
   const isPresentation = currentPath === '/presentation';
   const isNews = currentPath === '/nouveaute';
   const isThanks = currentPath === '/remerciements';
+  const isProfil = currentPath === '/profil';
   const isTutoriel = currentPath === '/tutoriels-champions';
   const isTop = currentPath.includes('/tutoriels-champions/toplane');
   const isJungle = currentPath.includes('/tutoriels-champions/jungle');
@@ -84,6 +86,7 @@ const App = () => {
     lowElo: isLowElo,
     winLane: isWinLane,
     trollPicks: isTrollPicks,
+    profil: isProfil,
   });
 
   const BackgroundImage = styled.div`
@@ -115,6 +118,7 @@ const App = () => {
 `;
 
   return (
+    
     <div className="app">
       <ScrollToTop />
       <BackgroundImage />
@@ -180,6 +184,9 @@ const App = () => {
             </Route>
             <Route exact path="/remerciements">
               <Thanks />
+            </Route>
+            <Route exact path="/profil">
+              <Profil />
             </Route>
           </Switch>
         </Analytics>

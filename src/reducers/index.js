@@ -5,7 +5,7 @@ import competencesReducer from './competences';
 import lanesReducer from './lanes';
 import thanksReducer from './thanks';
 import trollpicksReducer from './trollpicks';
-
+import usersReducer from './users';
 
 const rootReducer = combineReducers({
   global: globalReducer,
@@ -14,6 +14,7 @@ const rootReducer = combineReducers({
   lanes: lanesReducer,
   thanks: thanksReducer,
   trollpicks: trollpicksReducer,
+  users: usersReducer,
 });
 
 export default rootReducer;

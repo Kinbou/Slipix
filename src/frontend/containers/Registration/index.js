@@ -1,22 +1,16 @@
 import { connect } from 'react-redux';
-import Login from 'src/frontend/components/Login';
+import Registration from 'src/frontend/components/Registration';
 
-import { showModal } from 'src/actions/global';
-import {
-  loginUser,
-} from 'src/actions/user';
+import { fetchUserRegistration } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
 
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  displayModal: (name) => {
-    dispatch(showModal(name));
-  },
 
-  loginUser: (emailUser, passwordUser) => {
-    dispatch(loginUser(emailUser, passwordUser));
+  fetchUserRegistration: (data) => {
+    dispatch(fetchUserRegistration(data));
   },
 //   changeValue: (identifier, newValue) => {
 //     dispatch(changeInputOfLogin(identifier, newValue));
@@ -41,4 +35,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Login);
+)(Registration);

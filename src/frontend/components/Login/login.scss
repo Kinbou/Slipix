@@ -7,13 +7,13 @@
       margin: 0 auto;
       width: 50%;
       text-align: center;
+      display: flex;
+      flex-direction: column;
   
-      .global-input {
-        width: 100%;
-        margin-bottom: .5rem;
-      }
       .global-button {
         padding: .5rem 1rem;
+        right: 10px;
+        top: 10px;
       }
   
       &__remember {
@@ -32,7 +32,7 @@
       background-color: transparent;
   
       &:hover {
-        color:#ffaa55;
+        text-decoration: underline;
       }
     }
   }
@@ -45,3 +45,74 @@
       }
     }
   }
+  @-webkit-keyframes autofill {
+    0%,100% {
+        color: #666;
+        background: transparent;
+    }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  // transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0 30px #e3e5ec inset;
+}
+
+  input[type="text"], [type="password"], [type="email"]{
+    font: 15px/24px 'Muli', Gotu;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    &:-internal-autofill-selected{
+      background-color: transparent;
+    }
+  }
+:focus{outline: none;}
+
+.global-input{
+  width: 100%;
+  margin: 1rem;
+  position: relative;
+  font-family: 'Gotu';
+  text-transform: capitalize;
+}
+
+.inputAnimation{
+  border: 0;
+  padding: 4px 0;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.inputAnimation ~ label{
+  position: absolute!important;
+  left: 0px!important;
+  text-align: left;
+  width: 100%;
+  top: 9px;
+  color: #aaa;
+  transition: 0.4s;
+  z-index: -1;
+  letter-spacing: 0.5px;
+}
+
+// .inputAnimation ~ .focus-border{
+//   position: absolute;
+//   bottom: 0; left: 0;
+//   width: 0; height: 2px;
+//   background-color: #3399FF;
+//   transition: 0.4s;
+// }
+// .inputAnimation:focus ~ .focus-border{
+//   width: 100%;
+//   transition: 0.4s;
+// }
+
+.inputAnimation:focus ~ label, .has-content.inputAnimation ~ label, .label--active{
+  top: -9px!important;
+  font-size: 12px;
+  color:#ffaa55!important;
+  transition: 0.4s;
+}

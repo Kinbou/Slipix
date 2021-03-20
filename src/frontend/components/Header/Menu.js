@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import Modal from 'src/frontend/containers/Modal';
@@ -22,13 +22,20 @@ const Ul = styled.ul`
 const Menu = ({
   open,
   setOpen,
-  // displayModal,
+  displayModal,
   showModal,
-}) =>
-  // const handleModal = () => {
-  //   displayModal('login');
-  // };
-  (
+  user,
+  requestUserAuthentification,
+}) => {
+  useEffect(() => {
+    requestUserAuthentification();
+  }, []);
+
+  const handleModal = () => {
+    displayModal('login');
+  };
+
+  return (
     <Ul open={open}>
       <div className="menu-background" onClick={() => setOpen(!open)}> </div>
       <div className="header__nav__global">
@@ -117,7 +124,15 @@ const Menu = ({
           </NavLink>
         </div>
         {/* Si l'utilisateur n'est pas loggé */}
-        {/* <div className="header__nav__menu header__nav__menu__two">
+
+        <div className="header__nav__menu header__nav__menu__two">
+          {console.log(user)}
+          {user && (
+            <>
+              <p>Bonjour {user.name}</p>
+              {/* <img src={`http://localhost:8000/${user.avatar}`} alt="" /> */}
+            </>
+          )}
           <button
             type="button"
             className="header__nav__account__button"
@@ -125,15 +140,17 @@ const Menu = ({
             onClick={handleModal}
           ><i className="fas fa-user"> </i>
           </button>
-        </div> */}
+        </div>
       </div>
     </Ul>
   );
+};
 Menu.propTypes = {
   open: PropTypes.bool.isRequired,
   setOpen: PropTypes.func.isRequired,
-  // displayModal: PropTypes.func.isRequired,
+  displayModal: PropTypes.func.isRequired,
   showModal: PropTypes.string.isRequired,
+  requestUserAuthentification: PropTypes.func.isRequired,
 };
 
 export default Menu;

@@ -4,7 +4,9 @@
 body {
   font-family: 'Bebas Neue', cursive;
   overflow-x: hidden;
-  background-color: #4c6280;
+  // background-color: #4c6280;
+  // background-color: #23272a;
+  background-color: #181820;
 
   &::-webkit-scrollbar {
     width: 10px;
@@ -239,20 +241,20 @@ h3 {
   -ms-transition:all .6s ease-in-out;
   -o-transition:all .6s ease-in-out;
   &:hover {
-    transform:scale(1.03);
-    transition: .1s;
-   -webkit-transform:scale(1.03);
-   -moz-transform:scale(1.03);
-   -ms-transform:scale(1.03);
-   -o-transform:scale(1.03);
-   -webkit-box-shadow: 0 58px 40px -56px black;
-   -moz-box-shadow: 0 58px 36px -56px black;
-   box-shadow: 0 58px 36px -56px black;
-   -webkit-transition: .3s ease-in-out;
-   -moz-transition: .3s ease-in-out;
-   -ms-transition: .3s ease-in-out;
-   -o-transition: .3s ease-in-out;
-   border-color: #ffaa55;
+  transform:scale(1.03);
+  transition: .1s;
+  -webkit-transform:scale(1.03);
+  -moz-transform:scale(1.03);
+  -ms-transform:scale(1.03);
+  -o-transform:scale(1.03);
+  -webkit-box-shadow: 0 58px 40px -56px black;
+  -moz-box-shadow: 0 58px 36px -56px black;
+  box-shadow: 0 58px 36px -56px black;
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  -ms-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  border-color: #ffaa55;
   }
 }
 
@@ -273,24 +275,6 @@ iframe {
   border-radius: 10px;
 }
 
-.global-input {
-  font-family: inherit;
-  font-size: inherit;
-  border-radius: .3rem;
-  border: none;
-  padding: .6rem 1rem;
-  background-color: #fff;
-  color: #2d3f57;
-  max-width: 100%;
-
-  &:focus, &:active {
-    border: none;
-    outline: none;
-  }
-
-  &:disabled {
-    background-color: #c7cad2;
-  }
+.profil {
+  background-color: darkblue!important;
 }
-
-
