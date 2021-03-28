@@ -3,6 +3,8 @@ export const FETCH_USER = 'FETCH_USER';
 export const REQUEST_USER_AUTHENTIFICATION = 'REQUEST_USER_AUTHENTIFICATION';
 export const FETCH_REQUEST_USER_DATA = 'FETCH_REQUEST_USER_DATA';
 export const FETCH_USER_REGISTRATION = 'FETCH_USER_REGISTRATION';
+export const LOGOUT_USER = 'LOGOUT_USER';
+export const UPDATE_USER = 'UPDATE_USER';
 
 export const loginUser = (emailUser, passwordUser) => ({
   type: LOGIN_USER,
@@ -26,4 +28,13 @@ export const fetchRequestUserData = (userData) => ({
 export const fetchUserRegistration = (data) => ({
   type: FETCH_USER_REGISTRATION,
   data,
+});
+
+export const logoutUser = () => ({
+  type: LOGOUT_USER,
+});
+
+export const updateUser = (userData) => ({
+  type: UPDATE_USER,
+  userData,
 });

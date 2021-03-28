@@ -1,76 +1,92 @@
-import React, { useState, useRef } from 'react';
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import useClickOutside from 'src/hooks/useClickOutside';
 
+
 const index = ({
   type,
-  value,
-  setValue,
+  value = '',
   name,
+  onChange,
+  onCancel,
   classNames,
-  cancel,
-  disabled = true,
 }) => {
+  const elementRef = useRef();
   const inputRef = useRef();
-  const [isDisabled, setIsDisabled] = useState(disabled);
+  const [disabled, setDisabled] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
-  const onValueChange = (e) => {
-    setValue(e.target.value);
+
+  const onClose = () => {
+    if (type === 'password' && showPassword) setShowPassword(false);
+    setDisabled(true);
   };
-  const reset = () => {
-    setIsDisabled(true);
-    if (showPassword) {
-      setShowPassword(false);
-    }
+
+  const doCancel = () => {
+    onCancel();
+    onClose();
   };
-  const showHidePassword = () => {
-    if (showPassword) {
-      return 'text';
+
+  // Permet d'auto focus le input
+  useEffect(() => {
+    if (showPassword || !showPassword || !disabled) {
+      inputRef.current.focus();
+      // Permets de mettre le curseur à la fin du input
+      if (['password', 'text', 'search', 'url', 'tel'].includes(type.toLowerCase()) && value) inputRef.current.setSelectionRange(value.length, value.length);
     }
-    return 'password';
-  };
-  const editCloseButton = () => {
-    console.log('EDIT =>', isDisabled);
-    if (isDisabled) {
-      setIsDisabled(false);
-    }
-    else {
-      cancel(name);
-    }
-  };
-  useClickOutside(inputRef, reset);
+  }, [disabled, showPassword]);
+
+  useClickOutside(elementRef, () => onClose()); // Le ref de la div parent
 
   return (
-    <>
+    <div ref={elementRef}>
+      {' '}
       <input
         ref={inputRef}
-        type={type === 'password' ? showHidePassword() : type}
+        type={showPassword ? 'text' : type}
         value={value}
-        onChange={onValueChange}
+        onChange={(e) => onChange(e.target.value)}
         name={name}
-        className={[classNames.join(' '), isDisabled ? '' : 'account-profil__container__label__disabled'].join(' ')}
-        disabled={isDisabled}
+        className={[classNames.join(' '), disabled ? '' : 'account-profil__container__label__disabled'].join(' ')}
+        disabled={disabled}
       />
-      {type === 'password' && (
-        <i className={`fas ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`} onClick={() => setShowPassword(!showPassword)} />
+      {!disabled ? (
+        <>
+          {type === 'password' && (
+            <button
+              onClick={() => setShowPassword(!showPassword)}
+              type="button"
+              className="account-profil__container__label__button"
+            >
+              {showPassword ? <i className="fas fa-eye-slash" /> : <i className="fas fa-eye" />}
+            </button>
+          )}
+          <button
+            onClick={doCancel}
+            type="button"
+            className="account-profil__container__label__button"
+          ><i className="fas fa-times" />
+          </button>
+        </>
+      ) : (
+        <button
+          onClick={() => setDisabled(false)}
+          type="button"
+          className="account-profil__container__label__button"
+        ><i className="fas fa-pen" />
+        </button>
       )}
-      <i
-        className={isDisabled ? 'fas fa-pen' : 'fas fa-times'}
-        onClick={editCloseButton}
-      />
-    </>
+    </div>
   );
 };
 
 index.propTypes = {
   type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  setValue: PropTypes.func.isRequired,
-  cancel: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   classNames: PropTypes.array.isRequired,
-  disabled: PropTypes.bool.isRequired,
 };
-
 
 export default index;

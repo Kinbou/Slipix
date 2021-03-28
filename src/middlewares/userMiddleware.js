@@ -7,7 +7,11 @@ import {
   REQUEST_USER_AUTHENTIFICATION,
   fetchRequestUserData,
   FETCH_USER_REGISTRATION,
+  LOGOUT_USER,
+  UPDATE_USER,
 } from 'src/actions/user';
+
+import { showModal } from 'src/actions/global';
 
 const userMiddleware = (store) => (next) => (action) => {
   // const { rememberMe, userData } = store.getState().user;
@@ -35,6 +39,7 @@ const userMiddleware = (store) => (next) => (action) => {
             httpOnly: false,
           });
           store.dispatch((fetchUser(response.data.user)));
+          store.dispatch((showModal('')));
         })
         .catch((error) => {
           console.warn(error);
@@ -75,11 +80,59 @@ const userMiddleware = (store) => (next) => (action) => {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
-        
         data: action.data,
       })
         .then((response) => {
           console.log(response.data);
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+      next(action);
+      break;
+    }
+
+    case LOGOUT_USER: {
+      const token = new Cookie().get('token');
+      axios({
+        method: 'post',
+        url: `${urlLocal}api/auth/logout`,
+        withCredentials: true,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          store.dispatch((fetchUser('')));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+      next(action);
+      break;
+    }
+
+    case UPDATE_USER: {
+      const token = new Cookie().get('token');
+      console.log(action.payload);
+      axios({
+        method: 'put',
+        url: `${urlLocal}api/auth/update-user`,
+        withCredentials: true,
+        // data: {
+        //   password: action.payload.passwordUser,
+        //   email: action.payload.emailUser,
+        // },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          store.dispatch((fetchUser('')));
         })
         .catch((error) => {
           console.warn(error);

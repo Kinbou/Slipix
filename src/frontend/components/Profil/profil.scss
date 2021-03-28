@@ -56,7 +56,18 @@
       width: 70%;
       display: flex;
       flex-direction: column;
-      margin: auto;
+      margin: 1.2rem auto;
+      &__button {
+        background-color: transparent;
+        color: white;
+        border: none;
+        i {
+          font-size: 1.4em;
+        }
+      }
+      .global-input {
+        margin: .5rem .5rem 1rem .5rem;
+      }
       &__disabled {
         border-bottom: #ffaa55 1px solid!important;
       }

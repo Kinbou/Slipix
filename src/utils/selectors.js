@@ -18,10 +18,6 @@ export const hyphen = (data) => {
   return hyphenn;
 };
 
-// export const maj = (data) => {
-//   const test = strUcFirst(data);
-// };
-
 // Dynamic label
 export const labelClassname = (input) => {
   if (input !== null) {

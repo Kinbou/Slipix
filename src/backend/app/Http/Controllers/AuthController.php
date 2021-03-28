@@ -40,6 +40,69 @@ class AuthController extends Controller
         return $this->createNewToken($token);
     }
 
+    public function update(Request $request){
+        $validator = Validator::make($request->all(), [
+            'email' => 'email',
+            'pseudo' => 'string',
+            'name' => 'string',
+            'password' => 'string',
+            'newPassword' => 'string',
+            'confirmNewPassword' => 'string',
+        ]);
+        $user = auth()->user();
+        if ($request->password) {
+          if (strlen($request->newPassword) < 6) {
+            if (Hash::check($request->password, $user->password)) {
+              if ($request->password !== $request->newPassword) {
+                if ($request->newPassword === $request->newPasswordConfirmation) {
+                  $password = Hash::make($request->newPassword);
+                  $user->password = $password;
+                } else {
+                  return response()->json(['success' => false, "message" => "Le nouveau mot de passe ne corespond pas à la confirmation du mot de passe"]);
+                }
+              } else {
+                  return response()->json(['success' => false, "message" => "Le nouveau mot de passe doit être différent"]);
+              }
+            } else {
+              return response()->json(['success' => false, "message" => "Mauvais mot de passe"]);
+            }
+          } else {
+            return response()->json(['success' => false, "message" => "Le mot de passe doit contenir au minimmum 6 caractères"]);
+          }
+        }
+    
+        if ($request->pseudo) {
+          $user->pseudo = $request->pseudo;
+        }
+        if ($request->email) {
+          $emailExist = User::where(['email' => $request->email]).first();
+          if ($emailExist) {
+            return response()->json(['success' => false, "message" => "L'email est déjà utilisé"]);
+          } else {
+            $user->email = $request->email;
+          }
+        }
+        
+        if ($request->name) {
+          $user->name = $request->name;
+        }
+    
+        if ($request->hasFile('avatar')) {
+          $avatar = $request->file('avatar');
+          $name = $user->pseudo . '_' . time();
+          $folder = 'avatar';
+          if ($user->avatar !== 'images/avatar/defaultAvatar.png') {
+            $this->removeOne($user->avatar, 'public');
+          }
+          $path = $this->uploadOne($avatar, $folder, 'public', $name);
+          $user->avatar = $path;
+        }
+    
+        $user->update();
+    
+        return response()->json(['success' => true, "message" => "Informations mises à jour", "user" => $user]);
+    }
+
     /**
      * Register a User.
      *
@@ -47,7 +110,7 @@ class AuthController extends Controller
      */
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
-            'pseudo' => 'required|string|between:2,100|min:3',
+            'pseudo' => 'required|string|between:2,100|min:3|unique:users',
             'email' => 'required|string|email|max:100|unique:users',
             'password' => 'required|string|confirmed|min:6',
         ]);

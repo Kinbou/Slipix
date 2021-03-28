@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Modal from 'src/frontend/containers/Modal';
 import Authentification from 'src/frontend/containers/Header/Authentification';
 import PropTypes from 'prop-types';
@@ -26,13 +26,23 @@ const Menu = ({
   showModal,
   user,
   requestUserAuthentification,
+  logoutUser,
 }) => {
   useEffect(() => {
     requestUserAuthentification();
   }, []);
 
+  const [classActive, setClassActive] = useState(false);
   const handleModal = () => {
     displayModal('login');
+  };
+
+  const handleLogout = () => {
+    logoutUser();
+  };
+
+  const handleClassActive = () => {
+    document.getElementsByClassName('authentification__nav__profil__avatar__image').className = 'authentification__nav__profil__avatar__image authentification__nav__profil__avatar__image--active';
   };
 
   return (
@@ -119,27 +129,41 @@ const Menu = ({
             activeClassName="header__nav__menu__item--active"
             exact
             onClick={() => setOpen(!open)}
+            onChange={handleClassActive()}
           >
             Me contacter
           </NavLink>
         </div>
-        {/* Si l'utilisateur n'est pas loggé */}
-
         <div className="header__nav__menu header__nav__menu__two">
-          {console.log(user)}
-          {user && (
-            <>
-              <p>Bonjour {user.name}</p>
-              {/* <img src={`http://localhost:8000/${user.avatar}`} alt="" /> */}
-            </>
-          )}
-          <button
-            type="button"
-            className="header__nav__account__button"
-            title="S'inscrire / Se connecter"
-            onClick={handleModal}
-          ><i className="fas fa-user"> </i>
-          </button>
+          {user ? (
+            <div className="authentification__nav__profil">
+              <p className="authentification__nav__profil__content">Slip {user.pseudo}</p>
+              <div className="authentification__nav__profil__avatar">
+                <img
+                  className="authentification__nav__profil__avatar__image"
+                  src={`http://localhost:8000/${user.avatar}`}
+                  alt="avatar"
+                  onClick={() => {
+                    setClassActive(!classActive);
+                  }}
+                />
+                <div className="authentification__nav__profil__avatar__dropdownList">
+                  <Link to="/profil">Mon Profil</Link>
+                  <Link to="" className="authentification__nav__profil__dropdownList__list" onClick={() => handleLogout()}>Se déconnecter</Link>
+                </div>
+              </div>
+            </div>
+          )
+            : (
+              <button
+                type="button"
+                className="header__nav__account__button"
+                title="S'inscrire / Se connecter"
+                onClick={handleModal}
+              ><i className="fas fa-user"> </i>
+              </button>
+            )}
+
         </div>
       </div>
     </Ul>
@@ -151,6 +175,22 @@ Menu.propTypes = {
   displayModal: PropTypes.func.isRequired,
   showModal: PropTypes.string.isRequired,
   requestUserAuthentification: PropTypes.func.isRequired,
+  logoutUser: PropTypes.func.isRequired,
+  user: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: PropTypes.string,
+      pseudo: PropTypes.string,
+    }),
+  ),
+};
+
+Menu.defaultProps = {
+  user: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: '',
+      pseudo: '',
+    }),
+  ),
 };
 
 export default Menu;

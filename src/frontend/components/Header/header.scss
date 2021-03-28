@@ -64,7 +64,7 @@
       }
       &__item {
         text-decoration: none;
-        font-size: 1.5em;
+        font-size: 1.3em;
         margin: 0px 10px;
         padding: 5px 5px;
         position: relative;
@@ -112,6 +112,64 @@
     width: 100%;
     text-align: center;
     margin-bottom: 2rem;
+    &__profil {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      &__content {
+        margin: auto 1rem;
+        font-family: 'Gotu';
+        text-transform: capitalize;
+      }
+      &__avatar {
+        &:hover .authentification__nav__profil__avatar__dropdownList{
+          display: block;
+        }
+        &:active .authentification__nav__profil__avatar__dropdownList{
+          display: block;
+        }
+        &__image {
+          width: 50px;
+          margin: auto;
+          border-radius: 50%;
+          background-color: blanchedalmond;
+          position: relative;
+        }
+        &__dropdownList {
+          display: none;
+          top: 50px;
+          border-radius: 0 0 5px 5px;
+          max-width: 150px;
+          box-shadow: 0px 1px 2px brown;
+          background-color: #21212b;
+          position: absolute;
+          width: 100%;
+          right: 1px;
+          z-index: 1000;
+          &__list {
+            padding:20px;
+            border-bottom: none;
+            &:hover {
+              border-bottom: none;
+              background-color: RGBa(200,200,200,0.1);
+            }
+          }
+          a {
+            display: block;
+            text-decoration: none;
+            color: brown;
+            border-bottom: 2px solid transparent;
+            padding: 10px;
+            &:hover {
+              color: orange;
+              border-bottom: 2px solid gold;
+            }
+          }
+        }
+      }
+      
+   
+    }
 
     &__item {
       font-size: inherit;
@@ -122,7 +180,6 @@
       color: #3d5471;
 
       &--active {
-        // background-color: $lightBlue;
         background-color: #4abb6d;
         color: #fff;
       }

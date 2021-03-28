@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Menu from 'src/frontend/components/Header/Menu';
 
 import { showMenu, showModal } from 'src/actions/global';
-import { requestUserAuthentification } from 'src/actions/user';
+import { requestUserAuthentification, logoutUser } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   showMenu: state.global.showMenu,
@@ -19,6 +19,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   requestUserAuthentification: () => {
     dispatch(requestUserAuthentification());
+  },
+  logoutUser: () => {
+    dispatch(logoutUser());
   },
 });
 
