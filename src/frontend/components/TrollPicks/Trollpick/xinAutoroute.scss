@@ -37,7 +37,7 @@
     &__xin{
       filter: drop-shadow(0 0 0.75rem #fbfc40);
     }
-    &__thresh{
+    &__thresh, &__Jinx{
       filter: drop-shadow(0 0 0.75rem #40fbae);
     }
     &__caitlyn {
@@ -73,18 +73,18 @@
       &:hover {
         transform:scale(1.03);
         transition: .1s;
-       -webkit-transform:scale(1.03);
-       -moz-transform:scale(1.03);
-       -ms-transform:scale(1.03);
-       -o-transform:scale(1.03);
-       -webkit-box-shadow: 0 58px 40px -56px black;
-       -moz-box-shadow: 0 58px 36px -56px black;
-       box-shadow: 0 58px 36px -56px black;
-       -webkit-transition: .3s ease-in-out;
-       -moz-transition: .3s ease-in-out;
-       -ms-transition: .3s ease-in-out;
-       -o-transition: .3s ease-in-out;
-       border-color: #ffaa55;
+        -webkit-transform:scale(1.03);
+        -moz-transform:scale(1.03);
+        -ms-transform:scale(1.03);
+        -o-transform:scale(1.03);
+        -webkit-box-shadow: 0 58px 40px -56px black;
+        -moz-box-shadow: 0 58px 36px -56px black;
+        box-shadow: 0 58px 36px -56px black;
+        -webkit-transition: .3s ease-in-out;
+        -moz-transition: .3s ease-in-out;
+        -ms-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
+        border-color: #ffaa55;
       }
     }
     &__end {
@@ -104,7 +104,7 @@
         filter: drop-shadow(0 0 0.75rem #e40b19);
         width: 30%;
       }
-      &__kaïsa, &__lucian {
+      &__kaïsa, &__lucian, &__Jinx {
         filter: drop-shadow(0 0 0.75rem #aa58db);
         width: 25%;
       }
@@ -117,10 +117,16 @@
       }
     }
     &__trollContent {
-      width: 35%;
       border-radius: 15px;
       margin: 2rem 0 3rem 0;
-      filter: drop-shadow(0 0 0.75rem #642b21);
+      &__Jinx {
+        width: 24%;
+        filter: drop-shadow(0 0 0.75rem #c8686f);
+      }
+      &__xin, &__thresh, &__kaïsa, &__lucian, &__caitlyn, &__zed, &__tartiSett {
+        width: 35%;
+        filter: drop-shadow(0 0 0.75rem #642b21);
+      }
     }
     &__capture {
       margin: 2rem 0 3rem 0;
@@ -206,10 +212,8 @@
 
 @media (max-width: 1458px) {
   .trollpick {
-    .paragraph {
-      font-size: 1.4em;
-    }
-    padding: 0 5rem 4rem 5rem;
+
+    padding: 0 1rem 4rem 1rem;
     ul {
       margin: 2rem 0;
       padding: 2rem;

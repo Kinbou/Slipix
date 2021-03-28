@@ -34,7 +34,7 @@ main {
   font-family: 'Squada One', cursive;
   text-transform: uppercase;
   text-align: center;
-  font-size: 5em;
+  font-size: 4.9em;
   padding: 3rem 0 3rem 0;
   color: #ffaa55;
   text-shadow: 2px 2px  30px black;
@@ -63,7 +63,7 @@ h2 {
   font-family: 'Squada One', cursive;
   text-transform: uppercase;
   text-align: center;
-  font-size: 3.5em;
+  font-size: 3.4em;
   margin: 2rem 0 5rem 0;
   text-shadow: 2px 2px  30px black;
   color: #ffaa55;
@@ -79,7 +79,12 @@ h3 {
   .globalTitle-page {
     font-size: 4em;
   }
-
+  .paragraph {
+    font-size: 1.3em;
+  }
+  .backgroundParagraphe {
+    padding: 3rem 1rem;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -179,12 +184,12 @@ h3 {
 //paragraph
 .paragraph {
   line-height: 1.2em;
-  font-size: 1.7em;
+  font-size: 1.6em;
   margin-bottom: 1rem;
 }
 
 .intro {
-  font-size: 2.1em;
+  font-size: 2em;
   color: #ffaa55;
   margin-bottom: 2rem;
 }
