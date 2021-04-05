@@ -1,14 +1,22 @@
+/* eslint-disable max-len */
 export const LOGIN_USER = 'LOGIN_USER';
+export const ERROR_LOGIN_USER = 'ERROR_LOGIN_USER';
 export const FETCH_USER = 'FETCH_USER';
-export const REQUEST_USER_AUTHENTIFICATION = 'REQUEST_USER_AUTHENTIFICATION';
+export const REQUEST_USER_AUTHENTIFICATION = 'REQUEST_USER_AUTHENTIFICATION'; // vérifie si l'utilisateur est logé.
 export const FETCH_REQUEST_USER_DATA = 'FETCH_REQUEST_USER_DATA';
 export const FETCH_USER_REGISTRATION = 'FETCH_USER_REGISTRATION';
 export const LOGOUT_USER = 'LOGOUT_USER';
 export const UPDATE_USER = 'UPDATE_USER';
+export const UPDATE_AVATAR_USER = 'UPDATE_AVATAR_USER';
 
-export const loginUser = (emailUser, passwordUser) => ({
+export const loginUser = (emailUser, passwordUser, checkedRememberUser) => ({
   type: LOGIN_USER,
-  payload: { emailUser, passwordUser },
+  payload: { emailUser, passwordUser, checkedRememberUser },
+});
+
+export const errorLoginUser = (dataError) => ({
+  type: ERROR_LOGIN_USER,
+  dataError,
 });
 
 export const fetchUser = (user) => ({
@@ -37,4 +45,9 @@ export const logoutUser = () => ({
 export const updateUser = (userData) => ({
   type: UPDATE_USER,
   userData,
+});
+
+export const updateAvatarUser = (file) => ({
+  type: UPDATE_AVATAR_USER,
+  file,
 });

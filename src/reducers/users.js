@@ -1,10 +1,12 @@
 import {
   FETCH_USER,
   FETCH_REQUEST_USER_DATA,
+  ERROR_LOGIN_USER,
 } from 'src/actions/user';
 
 const initialState = {
   user: null,
+  errorLogin: null,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -19,6 +21,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         user: action.userData,
+      };
+
+    case ERROR_LOGIN_USER:
+      return {
+        ...state,
+        errorLogin: action.dataError,
       };
 
     default:

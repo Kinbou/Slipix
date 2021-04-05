@@ -106,12 +106,53 @@
     }
   }
 }
-
+.label__errors {
+  color: red;
+  text-align: left;
+  font-size: .7em;
+  padding: .3rem 0 0 .2rem;
+}
+.inputAnimation--errors {
+  border-bottom: red 1px solid;
+}
 .authentification {
   &__nav {
     width: 100%;
     text-align: center;
     margin-bottom: 2rem;
+    margin-top: -30px;
+
+    &__content {
+      display: inline-block;
+      position: relative;
+      &::before {
+        min-width: 100%;
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/logo/authentification/banniereRegistration.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 42px;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 14px);
+        pointer-events: none;
+      }
+      &__picture {
+        position: absolute;
+        width: 35%;
+        pointer-events: none;
+        &--login {
+          left: -60px;
+        }
+        &--registration {
+          right: -60px;
+        }
+      }
+    }
+    
     &__profil {
       display: flex;
       justify-content: center;
@@ -167,17 +208,17 @@
           }
         }
       }
-      
-   
     }
 
     &__item {
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
       font-size: inherit;
       font-family: inherit;
       border: 0;
       padding: .5rem 1.5rem;
       background-color: #d1d3dc;
       color: #3d5471;
+      width: 107px;
 
       &--active {
         background-color: #4abb6d;
@@ -185,7 +226,7 @@
       }
 
       &:not(&--active):hover {
-        background-color: #ED7250;
+        background-color: #ffaa55;
         color: #fff;
       }
 

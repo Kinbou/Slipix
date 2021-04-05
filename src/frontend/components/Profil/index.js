@@ -1,26 +1,32 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './profil.scss';
 import InputProfil from 'src/frontend/components/Inputs';
 import Modal from 'src/frontend/containers/Modal';
-import Upload from 'src/frontend/components/Modal/Upload';
+import Crop from 'src/frontend/components/Modal/Upload/crop';
 
 const Profil = ({
   user,
   showModal,
   displayModal,
   updateUser,
+  updateAvatarUser,
 }) => {
+  const inputUploadRef = useRef();
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
+  const [newAvatar, setNewAvatar] = useState(null);
+  const [imgType, setImgType] = useState(null);
   const [pseudo, setPseudo] = useState('');
   const [email, setEmail] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
+  const [errors, setErrors] = useState(null);
 
   useEffect(() => {
     if (user) {
@@ -31,29 +37,92 @@ const Profil = ({
     }
   }, [user]);
 
-  const handleClickUpload = () => {
-    displayModal('upload');
+  useEffect(() => {
+
+  });
+
+  const removeError = (key) => {
+    if (errors && errors[key]) {
+      delete errors[key];
+      setErrors(errors);
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleClickUpload = () => {
+    inputUploadRef.current.click();
+  };
+
+  const onFileChange = (e) => {
+    setImgType(e.target.files[0].type);
+    setNewAvatar(URL.createObjectURL(e.target.files[0]));
+    displayModal('crop');
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('passage dans le handleSubmit');
+    if (avatar !== user.avatar) {
+      const blob = await fetch(avatar).then((r) => r.blob());
+      const data = { avatar: blob, imgType };
+      updateAvatarUser(data);
+      setImgType(null);
+    }
+
+    if (pseudo === user.pseudo && name === user.name && newPassword === '') return;
+
     const data = {};
     if (pseudo !== user.pseudo && pseudo.length > 3) {
       data.pseudo = pseudo;
     }
+    else if (pseudo !== user.pseudo) {
+      setErrors((err) => ({
+        ...err,
+        pseudo: 'Le pseudo doit avoir au minimum 3 caractères',
+      }));
+    }
     if (name !== user.name) {
       data.name = name;
     }
-    // if (avatar !== user.avatar) {
-    //   data.avatar = avatar;
-    // }
-    // email en stand by
+
     if (newPassword.length >= 6 && currentPassword.length >= 6 && newPassword === confirmNewPassword) {
       data.password = currentPassword;
       data.newPassword = newPassword;
       data.confirmNewPassword = confirmNewPassword;
     }
+
+    if (currentPassword && (newPassword.length < 6 || confirmNewPassword.length < 6)) {
+      setErrors((err) => ({
+        ...err,
+        newPassword: 'Le nouveau mot de passe doit avoir au minimum 6 caractères',
+      }));
+    }
+
+    if (!errors.newPassword && currentPassword && (newPassword !== confirmNewPassword)) {
+      setErrors((err) => ({
+        ...err,
+        newPassword: 'La confirmation du mot de passe doit être identique au nouveau mot de passe',
+      }));
+    }
+
+    if (errors !== null) {
+      return;
+    }
+
+    console.log(data);
+    if (data) {
+      console.log('je passe dans l\'action updateData', data);
+      updateUser(data);
+    }
+  };
+
+  const onCancel = () => {
+    setNewAvatar(null);
+    inputUploadRef.current.value = '';
+    displayModal('');
+  };
+
+  const onCrop = (url) => {
+    setAvatar(url);
+    onCancel();
   };
 
   return (
@@ -62,14 +131,16 @@ const Profil = ({
         <Link to="/" className="breadcrumb__link">Accueil</Link> &gt; Mon profil
       </div>
 
-      {showModal === 'upload' && <Modal avatar={avatar} content={<Upload />} />}
+      <input type="file" style={{ visibility: 'hidden' }} accept="image/*" ref={inputUploadRef} onChange={onFileChange} />
+
+      {showModal === 'crop' && <Modal content={<Crop img={newAvatar} imgType={imgType} onCancel={onCancel} onCrop={onCrop} />} />}
 
       <h1 className="globalTitle-page">Mon profil</h1>
       {user && (
         <form className="account-profil__form" onSubmit={handleSubmit}>
           <div className="account-profil__person">
             <div className="account-profil__person__avatar" onClick={handleClickUpload}>
-              <img src="https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/akali/akali.jpg" alt="Avatar" />
+              <img src={avatar.startsWith('blob') ? avatar : `http://localhost:8000/${avatar}`} alt="Avatar" />
               <i className="fas fa-image account-profil__person__avatar__icon " />
             </div>
             <div className="account-profil__person__avatar__content">
@@ -82,6 +153,7 @@ const Profil = ({
               <h2 className="account-profil__subtitle">Informations personnelles</h2>
 
               <label className="account-profil__container__label">
+                { (errors && errors.name) && <p>{ errors.name }</p> }
                 <span>Prénom</span>
                 <div>
                   <InputProfil
@@ -96,7 +168,7 @@ const Profil = ({
                   />
                 </div>
               </label>
-              <label className="account-profil__container__label">
+              <label className={`${errors && errors.pseudo ? 'account-profil__container__label account-profil__container__label--errors' : 'account-profil__container__label'}`}>
                 <span>Pseudo</span>
                 <div>
                   <InputProfil
@@ -108,7 +180,9 @@ const Profil = ({
                     onChange={setPseudo}
                     onCancel={() => setPseudo(user.pseudo)}
                     disabled
+                    setFocused={() => removeError('pseudo')}
                   />
+                  { (errors && errors.pseudo) && <p className="account-profil__container__error">{ errors.pseudo }</p> }
                 </div>
               </label>
               <label className="account-profil__container__label">
@@ -131,6 +205,7 @@ const Profil = ({
           <div className="account-profil__container">
             <h2 className="account-profil__subtitle">Mot de passe</h2>
             <label className="account-profil__container__label">
+              { (errors && errors.currentPassword) && <p>{ errors.currentPassword }</p> }
               <span>Mot de passe actuel</span>
               <div>
                 <InputProfil
@@ -146,6 +221,7 @@ const Profil = ({
               </div>
             </label>
             <label className="account-profil__container__label">
+              { (errors && errors.newPassword) && <p>{ errors.newPassword }</p> }
               <span>Nouveau mot de passe</span>
               <div>
                 <InputProfil
@@ -161,6 +237,7 @@ const Profil = ({
               </div>
             </label>
             <label className="account-profil__container__label">
+              { (errors && errors.confirmNewPassword) && <p>{ errors.confirmNewPassword }</p> }
               <span>Confirmation du nouveau mot de passe</span>
               <div>
                 <InputProfil
@@ -194,6 +271,7 @@ Profil.propTypes = {
     }).isRequired,
   ).isRequired,
   updateUser: PropTypes.func.isRequired,
+  updateAvatarUser: PropTypes.func.isRequired,
 };
 
 export default Profil;

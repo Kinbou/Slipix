@@ -7,7 +7,7 @@ import {
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
-
+  errorLogin: state.users.errorLogin,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -15,26 +15,11 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(showModal(name));
   },
 
-  loginUser: (emailUser, passwordUser) => {
-    dispatch(loginUser(emailUser, passwordUser));
+  loginUser: (emailUser, passwordUser, checkedRememberUser) => {
+    dispatch(loginUser(emailUser, passwordUser, checkedRememberUser));
   },
-//   changeValue: (identifier, newValue) => {
-//     dispatch(changeInputOfLogin(identifier, newValue));
-//   },
-//   submitLogin: () => {
-//     dispatch(submitLogin());
-//   },
 //   displayAlert: (message, success) => {
 //     dispatch(showAlert(message, success));
-//   },
-//   changeLoginError: (message) => {
-//     dispatch(changeLoginError(message));
-//   },
-//   clearLoginError: () => {
-//     dispatch(clearLoginError());
-//   },
-//   setRequestIsLoad: () => {
-//     dispatch(setRequestIsLoad());
 //   },
 });
 

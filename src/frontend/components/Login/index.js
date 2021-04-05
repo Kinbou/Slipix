@@ -8,9 +8,11 @@ import './login.scss';
 const Login = ({
   displayModal,
   loginUser,
+  errorLogin,
 }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [checkedRemember, setCheckedRemember] = useState(false);
 
   const handleForgotPasseword = () => {
     displayModal('forgotPassword');
@@ -18,7 +20,8 @@ const Login = ({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    loginUser(email, password);
+    console.log(email, password, checkedRemember);
+    loginUser(email, password, checkedRemember);
   };
 
   return (
@@ -51,12 +54,11 @@ const Login = ({
           <input
             type="checkbox"
             name="rememberMe"
+            onChange={(e) => setCheckedRemember(e.target.value === 'on')}
           /> Se souvenir de moi
         </label>
-        {/* {!requestIsLoad && <button type="submit" className="global-button">Se connecter</button>} */}
+        {errorLogin && <p className="label__errors login__label__error">{errorLogin.error}</p>}
         <button type="submit" className="global-button">Se connecter</button>
-        {/* {requestIsLoad && <button type="button" className="global-button" disabled><Loader withMargin={false} />
-      </button>} */}
       </form>
       <button type="button" className="login__link" onClick={handleForgotPasseword}>Mot de passe oublié ?</button>
     </div>
@@ -66,6 +68,7 @@ const Login = ({
 Login.propTypes = {
   displayModal: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
+
 };
 
 export default Login;

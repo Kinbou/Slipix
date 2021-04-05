@@ -46,6 +46,7 @@
     "webpack-merge": "*"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.13.10",
     "@types/classnames": "^2.2.10",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
@@ -59,7 +60,8 @@
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
-    "react-i18next": "^11.7.3",
+    "react-easy-crop": "^3.3.2",
+    "react-google-recaptcha": "^2.1.0",
     "react-media-hook": "^0.4.7",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
@@ -68,6 +70,7 @@
     "react-slugify": "^2.0.2",
     "react-use": "^15.3.4",
     "react-youtube": "^7.11.2",
+    "reaptcha": "^1.7.2",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "styled": "^1.0.0",

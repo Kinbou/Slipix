@@ -8,8 +8,9 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Traits\UploadTrait;
+use Illuminate\Support\Facades\Log;
 
-class Upload extends Controller 
+class UploadController extends Controller 
 {
 
   use UploadTrait;
@@ -27,7 +28,8 @@ class Upload extends Controller
       }
       $user->avatar = $path; // On assigne le chemin de l'avatar (ex: /images/avatar/john_872346876.jpeg)
       $user->save(); // On sauvegarde 
-      return response()->json(['success' => true, 'avatar' => $path], 204); // On retourne un succès
+      Log::info($picture);
+      return response()->json(['success' => true, 'avatar' => $path, 'file' => $picture], 204); // On retourne un succès
     }
     return response()->json(['success' => false, 'message' => 'Aucun fichier uploadé'], 400); // Il n'y a pas de fichier 'avatar' donc on retourne une 'Bad request'
   }

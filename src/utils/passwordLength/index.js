@@ -18,17 +18,22 @@ const PasswordStrength = ({
   inputProps,
   style,
   children,
+  setFocused,
 }) => {
   const reactPasswordStrengthInput = useRef();
   const [score, setScore] = useState(0);
   const [isValid, setIsValid] = useState(false);
   const [password, setPassword] = useState('');
 
+  // useEffect(() => {
+  //   if (defaultValue.length > 0) {
+  //     setPassword(defaultValue);
+  //   }
+  // }, []);
+
   useEffect(() => {
-    if (defaultValue.length > 0) {
-      setPassword(defaultValue);
-    }
-  }, []);
+    setPassword(defaultValue);
+  }, [defaultValue]);
 
   const clear = () => {
     setScore(0);
@@ -84,6 +89,7 @@ const PasswordStrength = ({
         onChange={handleChange}
         ref={reactPasswordStrengthInput}
         value={password}
+        onFocus={setFocused}
       />
       {children}
       {password.length ? (
@@ -91,6 +97,7 @@ const PasswordStrength = ({
           onClick={clear}
           style={{
             zIndex: 999,
+            color: '#ffaa55',
             position: 'absolute',
             right: 0,
             top: '50%',
@@ -101,9 +108,12 @@ const PasswordStrength = ({
         />
       ) : null}
       <div className={`${namespaceClassName}-strength-bar`} />
-      {/* <span className={`${namespaceClassName}-strength-desc`}>{strengthDesc}</span> */}
     </div>
   );
+};
+
+PasswordStrength.defaultProps = {
+  setFocused: null,
 };
 
 PasswordStrength.propTypes = {
@@ -119,6 +129,7 @@ PasswordStrength.propTypes = {
   tooShortWord: PropTypes.string.isRequired,
   userInputs: PropTypes.array.isRequired,
   children: PropTypes.node.isRequired,
+  setFocused: PropTypes.func,
 };
 
 export default PasswordStrength;

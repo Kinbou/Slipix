@@ -118,7 +118,6 @@ const App = () => {
 `;
 
   return (
-    
     <div className="app">
       <ScrollToTop />
       <BackgroundImage />

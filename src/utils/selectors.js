@@ -52,4 +52,4 @@ export const validEmail = (data) => {
   return true;
 };
 
-export const urlBack = () => 'https://backend.slipix-progresser-sur-league-of-legends.fr/';
+export const urlBack = 'https://backend.slipix-progresser-sur-league-of-legends.fr';

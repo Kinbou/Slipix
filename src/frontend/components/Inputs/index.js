@@ -11,6 +11,7 @@ const index = ({
   onChange,
   onCancel,
   classNames,
+  setFocused,
 }) => {
   const elementRef = useRef();
   const inputRef = useRef();
@@ -70,7 +71,10 @@ const index = ({
         </>
       ) : (
         <button
-          onClick={() => setDisabled(false)}
+          onClick={() => {
+            if (setFocused)setFocused();
+            setDisabled(false);
+          }}
           type="button"
           className="account-profil__container__label__button"
         ><i className="fas fa-pen" />
@@ -80,6 +84,10 @@ const index = ({
   );
 };
 
+index.defaultProps = {
+  setFocused: null,
+};
+
 index.propTypes = {
   type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
@@ -87,6 +95,7 @@ index.propTypes = {
   onCancel: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   classNames: PropTypes.array.isRequired,
+  setFocused: PropTypes.func,
 };
 
 export default index;

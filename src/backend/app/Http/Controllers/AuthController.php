@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Validator;
+use Illuminate\Support\Facades\Hash;
 
 
 class AuthController extends Controller
@@ -28,56 +29,60 @@ class AuthController extends Controller
     	$validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string|min:6',
+            'checkedRemember' => 'required|boolean',
         ]);
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
 
-        if (! $token = auth()->attempt($validator->validated(),true)) {
-            return response()->json(['error' => 'Unauthorized'], 401);
+        if (! $token = auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
+            return response()->json(['error' => '*Votre mot de passe ou votre email est incorrecte'], 401);
         }
-        return $this->createNewToken($token);
+        return $this->createNewToken($token, $request->checkedRemember);
     }
 
     public function update(Request $request){
-        $validator = Validator::make($request->all(), [
+        $validator = $request->validate([
             'email' => 'email',
-            'pseudo' => 'string',
+            'pseudo' => 'string|min:3',
             'name' => 'string',
             'password' => 'string',
             'newPassword' => 'string',
             'confirmNewPassword' => 'string',
+        ],[
+          'pseudo.min' => "Le pseudo doit avoir au moins 3 caractères"
         ]);
         $user = auth()->user();
         if ($request->password) {
-          if (strlen($request->newPassword) < 6) {
+          if (strlen($request->newPassword) >= 6) {
             if (Hash::check($request->password, $user->password)) {
               if ($request->password !== $request->newPassword) {
-                if ($request->newPassword === $request->newPasswordConfirmation) {
+                if ($request->newPassword === $request->confirmNewPassword) {
                   $password = Hash::make($request->newPassword);
                   $user->password = $password;
                 } else {
-                  return response()->json(['success' => false, "message" => "Le nouveau mot de passe ne corespond pas à la confirmation du mot de passe"]);
+                  return response()->json(['success' => false, "message" => "Le nouveau mot de passe ne corespond pas à la confirmation du mot de passe"], 400);
                 }
               } else {
-                  return response()->json(['success' => false, "message" => "Le nouveau mot de passe doit être différent"]);
+                  return response()->json(['success' => false, "message" => "Le nouveau mot de passe doit être différent"], 400);
               }
             } else {
-              return response()->json(['success' => false, "message" => "Mauvais mot de passe"]);
+              return response()->json(['success' => false, "message" => "Mauvais mot de passe"], 400);
             }
           } else {
-            return response()->json(['success' => false, "message" => "Le mot de passe doit contenir au minimmum 6 caractères"]);
+            return response()->json(['success' => false, "message" => "Le mot de passe doit contenir au minimmum 6 caractères"], 400);
           }
         }
     
         if ($request->pseudo) {
+
           $user->pseudo = $request->pseudo;
         }
         if ($request->email) {
           $emailExist = User::where(['email' => $request->email]).first();
           if ($emailExist) {
-            return response()->json(['success' => false, "message" => "L'email est déjà utilisé"]);
+            return response()->json(['success' => false, "message" => "L'email est déjà utilisé"], 400);
           } else {
             $user->email = $request->email;
           }
@@ -87,20 +92,9 @@ class AuthController extends Controller
           $user->name = $request->name;
         }
     
-        if ($request->hasFile('avatar')) {
-          $avatar = $request->file('avatar');
-          $name = $user->pseudo . '_' . time();
-          $folder = 'avatar';
-          if ($user->avatar !== 'images/avatar/defaultAvatar.png') {
-            $this->removeOne($user->avatar, 'public');
-          }
-          $path = $this->uploadOne($avatar, $folder, 'public', $name);
-          $user->avatar = $path;
-        }
-    
         $user->update();
     
-        return response()->json(['success' => true, "message" => "Informations mises à jour", "user" => $user]);
+        return response()->json(['success' => true, "message" => "Informations mises à jour", "user" => $user], 200);
     }
 
     /**
@@ -109,10 +103,21 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function register(Request $request) {
-        $validator = Validator::make($request->all(), [
-            'pseudo' => 'required|string|between:2,100|min:3|unique:users',
-            'email' => 'required|string|email|max:100|unique:users',
+        $validator = $request->validate([
+            'pseudo' => 'required|string|between:3,50|unique:users',
+            'email' => 'required|string|email|max:50|unique:users',
             'password' => 'required|string|confirmed|min:6',
+        ], [
+          'pseudo.required' => 'Le pseudo est requis',
+          'pseudo.between' => 'Le pseudo doit être compris entre 3 et 50 caractères',
+          'pseudo.unique' => 'Le pseudo est déjà utilisé',
+          'email.required' => 'L\'email est requis',
+          'email.email' => 'L\'email n\'est pas valide',
+          'email.max' => 'L\'email ne peux pas dépasser les 50 caractères',
+          'email.unique' => 'L\'email doit être unique',
+          'password.required' => 'Le mot de passe est requis',
+          'password.confirmed' => 'La confirmation du mot de passe n\'est pas identique',
+          'password.min' => 'Le mot de passe doit contenir au moins 6 caractères',
         ]);
 
         if($validator->fails()){
@@ -121,7 +126,7 @@ class AuthController extends Controller
 
         $user = User::create(array_merge(
                     $validator->validated(),
-                    ['password' => bcrypt($request->password), 'avatar' => 'images/avatar/defaultAvatar.png']
+                    ['password' => Hash::make($request->password), 'avatar' => 'images/avatar/defaultAvatar.png']
 
                 ));
 
@@ -138,7 +143,7 @@ class AuthController extends Controller
      */
     public function logout() {
         auth()->logout();
-        return response()->json(['message' => 'User successfully signed out']);
+        return response()->json(['message' => 'Vous avez bien été déconecté']);
     }
 
     /**
@@ -166,14 +171,14 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    protected function createNewToken($token){
+    protected function createNewToken($token, $remember){
         return response()->json([
           'access_token' => $token,
           'token_type' => 'bearer',
-          'expires_in' => auth()->factory()->getTTL() * 60,
+          'expires_in' => $remember ? strtotime(date('Y-m-d', strtotime('+1 year'))) / 1000 : auth()->factory()->getTTL() * 1440,
           
           'user' => auth()->user()
         ]
-        )->cookie('access_token', $token, auth()->factory()->getTTL() * 60, '/', true, false);
+        )->cookie('access_token', $token, auth()->factory()->getTTL() * 1440, '/', true, false);
     }
 }

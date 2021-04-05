@@ -60,6 +60,13 @@ class User extends Authenticatable implements JWTSubject
      * @return array
      */
     public function getJWTCustomClaims() {
-        return [];
+        // if ($this->can('use-extended-token-timelines')) {
+        //     $expiration = date('Y-m-d', strtotime('+1 year'));
+        //     return ['exp' => $expiration];
+        // }
+        // return [];
+        
+            $expiration = strtotime(date('Y-m-d', strtotime('+1 year')));
+            return ['exp' => $expiration];
     }    
 }

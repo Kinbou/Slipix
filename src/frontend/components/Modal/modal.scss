@@ -14,7 +14,10 @@
   left: calc(50% - 400px);
   top: 100px;
   z-index: 99;
-  background-color: #E3E5EC;
+  background-color: #000d15;
+  // background: 
+  // radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+  // radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
   color: #2d3f57;
   padding: 1rem;
   border-radius: 1rem;
@@ -22,6 +25,7 @@
   &__close {
     padding: .55rem .8rem;
     position: absolute;
+    z-index: 10;
     right: 1rem;
     top: 1rem;
     border-radius: 50%;

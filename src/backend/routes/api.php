@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,9 @@ use App\Http\Controllers\AuthController;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+// Route::group(['middleware' => 'throttle:10,3'], function () => {
 
+// });
 Route::group([
     'middleware' => 'api',
     'prefix' => 'auth'
@@ -30,6 +33,7 @@ Route::group([
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);    
     Route::put('/update-user',[AuthController::class, 'update']);
+    Route::post('/update-avatar', [UploadController::class, 'updateAvatar']);
 });
 
 Route::get('/test', [AuthController::class, 'test']);
