@@ -15,8 +15,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(showModal(name));
   },
 
-  loginUser: (emailUser, passwordUser, checkedRememberUser) => {
-    dispatch(loginUser(emailUser, passwordUser, checkedRememberUser));
+  loginUser: (emailUser, passwordUser, checkedRememberUser, checkedCaptchaUser) => {
+    dispatch(loginUser(emailUser, passwordUser, checkedRememberUser, checkedCaptchaUser));
   },
 //   displayAlert: (message, success) => {
 //     dispatch(showAlert(message, success));

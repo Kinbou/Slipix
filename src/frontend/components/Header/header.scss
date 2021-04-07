@@ -112,6 +112,27 @@
   font-size: .7em;
   padding: .3rem 0 0 .2rem;
 }
+.captcha {
+  transform: scale(.8);
+  margin: auto;
+  position: relative;
+  img {
+    position: absolute;
+    width: 35%;
+    right: -75px;
+    top: -40px;
+    pointer-events: none;
+  }
+  &__content {
+    margin: 1rem auto;
+  }
+}
+
+#rc-anchor-container.rc-anchor-dark {
+  background: none;
+  color: red!important;
+}
+
 .inputAnimation--errors {
   border-bottom: red 1px solid;
 }

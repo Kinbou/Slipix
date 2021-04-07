@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 
 class AuthController extends Controller
@@ -26,20 +27,34 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function login(Request $request){
-    	$validator = Validator::make($request->all(), [
-            'email' => 'required|email',
-            'password' => 'required|string|min:6',
-            'checkedRemember' => 'required|boolean',
-        ]);
+    	$validator = $request->validate([
+        'email' => 'required|email|exists:users',
+        'password' => 'required|string|min:6',
+        'checkedRemember' => 'required|boolean',
+        'checkedCaptcha' => 'required|string|min:400',
+      ], [
+        'email.required' => 'Votre email est obligatoire',
+        'email.email' => 'Votre email est invalide',
+        'password.required' => 'Veuillez saisir votre mot de passe',
+        'password.min' => 'Votre mot de passe doit faire au moins 6 caractères',
+        'email.exists' =>'Votre mot de passe ou votre email est incorrecte',
+        'checkedCaptcha.required' => 'Captcha invalide',
+        'checkedCaptcha.string' => 'Captcha invalide',
+        'checkedCaptcha.min' => 'Captcha invalide',
+      ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
-
-        if (! $token = auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return response()->json(['error' => '*Votre mot de passe ou votre email est incorrecte'], 401);
-        }
-        return $this->createNewToken($token, $request->checkedRemember);
+      $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+        'secret' => env("GOOGLE_RECAPTCHA_SECRET"),
+        'response' => $request->checkedCaptcha,
+        'remoteip' => $request->ip(),
+      ]);
+      if($response['success'] === false) {
+        return response()->json(['error' => 'Captcha invalide'], 401);
+      }
+      if (! $token = auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
+        return response()->json(['error' => '*Votre mot de passe ou votre email est incorrecte'], 401);
+      }
+      return $this->createNewToken($token, $request->checkedRemember);
     }
 
     public function update(Request $request){

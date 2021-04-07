@@ -9,9 +9,9 @@ export const LOGOUT_USER = 'LOGOUT_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 export const UPDATE_AVATAR_USER = 'UPDATE_AVATAR_USER';
 
-export const loginUser = (emailUser, passwordUser, checkedRememberUser) => ({
+export const loginUser = (emailUser, passwordUser, checkedRememberUser, checkedCaptchaUser) => ({
   type: LOGIN_USER,
-  payload: { emailUser, passwordUser, checkedRememberUser },
+  payload: { emailUser, passwordUser, checkedRememberUser, checkedCaptchaUser },
 });
 
 export const errorLoginUser = (dataError) => ({

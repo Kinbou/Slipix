@@ -33,6 +33,7 @@ const userMiddleware = (store) => (next) => (action) => {
           password: action.payload.passwordUser,
           email: action.payload.emailUser,
           checkedRemember: action.payload.checkedRememberUser || false,
+          checkedCaptcha: action.payload.checkedCaptchaUser,
         },
         headers: {
           'Content-Type': 'application/json', Accept: 'application/json',
