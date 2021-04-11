@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Reaptcha from 'reaptcha';
 
-import { labelClassname } from 'src/utils/selectors';
+import { labelClassname, validEmail } from 'src/utils/selectors';
 import './login.scss';
 
 const Login = ({
@@ -17,6 +17,32 @@ const Login = ({
   const [checkedRemember, setCheckedRemember] = useState(false);
   const [checkedCaptcha, setCheckedCaptcha] = useState(null);
   const [errorCaptcha, setErrorCaptcha] = useState(null);
+  const [errorFront, setErrorFront] = useState({ email: null, password: null });
+  const captchaRef = useRef();
+
+  const onExpire = () => {
+    setCheckedCaptcha(null);
+    captchaRef.current.reset();
+  };
+
+  useEffect(() => {
+    onExpire();
+  }, [errorLogin]);
+
+  const verifyEmail = () => {
+    if (!validEmail(email) && email.length) {
+      setErrorFront({ ...errorFront, email: '*Ton email n\'est pas valide' });
+    }
+    else if (!email.length) {
+      setErrorFront({ ...errorFront, email: '*Ton email est obligatoire' });
+    }
+  };
+
+  const verifyPassword = () => {
+    if (!password.length) {
+      setErrorFront({ ...errorFront, password: '*Ton mot de passe est requis' });
+    }
+  };
 
   const handleForgotPasseword = () => {
     displayModal('forgotPassword');
@@ -24,7 +50,6 @@ const Login = ({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(checkedCaptcha);
     if (checkedCaptcha === null) {
       setErrorCaptcha('Coche le captcha');
       return;
@@ -36,31 +61,36 @@ const Login = ({
     <div className="login">
       <h1>Connexion</h1>
       <p className="login__text">Vous avez déjà un compte ? Connectez-vous ci-dessous.</p>
-      {errorLogin && console.log(errorLogin)}
       {errorLogin && errorLogin.errors.email && (
-
         <p>{errorLogin.errors.email}</p>
       )}
+
       <form className="login__form" onSubmit={handleSubmit}>
         <div className="global-input">
           <input
             name="email"
             type="text"
-            className="inputAnimation"
+            className={errorFront.email ? 'inputAnimation inputAnimation--errors' : 'inputAnimation'}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onBlur={verifyEmail}
+            onFocus={() => setErrorFront({ ...errorFront, email: null })}
           />
           <label className={labelClassname(email)}>Adresse email</label>
+          {errorFront.email && (<p className="label__errors">{errorFront.email}</p>)}
         </div>
         <div className="global-input">
           <input
             name="password"
             type="password"
-            className="inputAnimation"
+            className={errorFront.password ? 'inputAnimation inputAnimation--errors' : 'inputAnimation'}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onBlur={verifyPassword}
+            onFocus={() => setErrorFront({ ...errorFront, password: null })}
           />
           <label className={labelClassname(password)}>Mot de passe</label>
+          {errorFront.password && (<p className="label__errors">{errorFront.password}</p>)}
         </div>
         <label className="login__form__remember">
           <input
@@ -77,10 +107,11 @@ const Login = ({
             onVerify={(response) => setCheckedCaptcha(response)}
             theme="dark"
             className="captcha__content"
+            onExpire={onExpire}
+            ref={captchaRef}
           />
           {errorCaptcha && <p>{errorCaptcha}</p>}
         </div>
-
         {errorLogin && <p className="label__errors login__label__error">{errorLogin.error}</p>}
         <button type="submit" className="global-button">Se connecter</button>
       </form>
@@ -89,10 +120,18 @@ const Login = ({
   );
 };
 
+Login.defaultProps = {
+  errorLogin: null,
+};
+
 Login.propTypes = {
   displayModal: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
-
+  errorLogin: PropTypes.arrayOf(
+    PropTypes.shape({
+      email: PropTypes.string,
+    }),
+  ),
 };
 
 export default Login;

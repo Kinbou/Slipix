@@ -35,6 +35,9 @@ const Registration = ({ fetchUserRegistration }) => {
     if (!isLegalMentionsChecked) {
       dataError.isLegalMentionsChecked = '*Veuillez accepter les mentions légales';
     }
+    if (!confirmPassword.length) {
+      dataError.confirmPassword = '*La confirmation du mot de passe est obligatoire';
+    }
     if (Object.keys(dataError).length) {
       setErrors(dataError);
       setPassword('');
@@ -52,10 +55,42 @@ const Registration = ({ fetchUserRegistration }) => {
     }
   };
 
-  const removeError = (key) => {
+  const verifyEmail = () => {
+    if (!validEmail(email) && email.length) {
+      setErrors({ ...errors, email: '*Ton email n\'est pas valide' });
+    }
+    else if (!email.length) {
+      setErrors({ ...errors, email: '*Ton email est obligatoire' });
+    }
+  };
+
+  const verifyPseudo = () => {
+    if (pseudo.length < 3) {
+      setErrors({ ...errors, pseudo: '*Ton pseudo doit contenir au moins 3 caractères' });
+    }
+  };
+
+  const verifyPassword = () => {
+    if (!password.length) {
+      setErrors({ ...errors, password: '*Ton mot de passe est obligatoire' });
+    }
+    if (password.length < 8) {
+      setErrors({ ...errors, password: '*Ton mot de passe doit contenir au moins 8 caractères' });
+    }
+  };
+
+  const verifyConfirmPassword = () => {
+    if (!confirmPassword) {
+      setErrors({ ...errors, confirmPassword: '*La confirmation du mot de passe est obligatoire' });
+    }
+    if (password && password !== confirmPassword) {
+      setErrors({ ...errors, confirmPassword: '*Ta confirmation du mot de passe est différente du mot de passe' });
+    }
+  };
+
+  const updateError = (key) => {
     if (errors && errors[key]) {
-      delete errors[key];
-      setErrors(errors);
+      errors[key] = null;
     }
   };
 
@@ -74,7 +109,8 @@ const Registration = ({ fetchUserRegistration }) => {
               placeholder=""
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              onFocus={() => removeError('email')}
+              onFocus={() => updateError('email')}
+              onBlur={verifyEmail}
             />
             <label className={labelClassname(email)}>Adresse email</label>
             { (errors && errors.email) && <p className="label__errors">{ errors.email }</p> }
@@ -86,7 +122,8 @@ const Registration = ({ fetchUserRegistration }) => {
               className={errors && errors.pseudo ? 'inputAnimation inputAnimation--errors' : 'inputAnimation'}
               value={pseudo}
               onChange={(e) => setPseudo(e.target.value)}
-              onFocus={() => removeError('pseudo')}
+              onFocus={() => updateError('pseudo')}
+              onBlur={verifyPseudo}
             />
             <label className={labelClassname(pseudo)}>Pseudo</label>
             { (errors && errors.pseudo) && <p className="label__errors">{ errors.pseudo }</p> }
@@ -102,13 +139,14 @@ const Registration = ({ fetchUserRegistration }) => {
               inputProps={{
                 name: 'password',
                 autoComplete: 'off',
-                className: errors && errors.pseudo ? 'inputAnimation inputAnimation--errors' : 'inputAnimation',
+                className: errors && errors.password ? 'inputAnimation inputAnimation--errors' : 'inputAnimation',
               }}
               defaultValue={password}
               changeCallback={(e) => {
                 setPassword(e);
               }}
-              setFocused={() => removeError('password')}
+              setFocused={() => updateError('password')}
+              onBlur={verifyPassword}
             ><label className={labelClassname(password)}>Mot de passe</label>
             </PasswordStrength>
             { (errors && errors.password) && <p className="label__errors">{ errors.password }</p> }
@@ -117,10 +155,11 @@ const Registration = ({ fetchUserRegistration }) => {
             <input
               name="confirmPassword"
               type="password"
-              className={errors && errors.pseudo ? 'inputAnimation inputAnimation--errors' : 'inputAnimation'}
+              className={errors && errors.confirmPassword ? 'inputAnimation inputAnimation--errors' : 'inputAnimation'}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              onFocus={() => removeError('confirmPassword')}
+              onFocus={() => updateError('confirmPassword')}
+              onBlur={verifyConfirmPassword}
 
             />
             <label className={labelClassname(confirmPassword)}>Confirmer le mot de passe</label>
@@ -130,7 +169,7 @@ const Registration = ({ fetchUserRegistration }) => {
             <input name="mentionsChecked" type="checkbox" onChange={(e) => setisLegalMentionsChecked(e.target.checked)} /> J'ai lu et accepté les <Link to="/mentions-legales" target="_blank" className="">mentions légales</Link>
             { (errors && errors.isLegalMentionsChecked && !isLegalMentionsChecked) && <p className="label__errors">{ errors.isLegalMentionsChecked }</p> }
           </div>
-          <button type="submit" className="global-button registration__button">S'inscrire</button>
+          <button type="submit" className="global-button registration__button" disabled={errors ? 'disabled' : ''}>S'inscrire</button>
         </form>
 
         <div className="registration__infos">

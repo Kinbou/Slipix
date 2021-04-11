@@ -26,6 +26,9 @@
       color: white;
       padding: 1rem;
       position: relative;
+      &:hover {
+        content: 'test';
+      }
       &__icon {
         position: absolute;
         font-size: .4em;

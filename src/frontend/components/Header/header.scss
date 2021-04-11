@@ -113,7 +113,7 @@
   padding: .3rem 0 0 .2rem;
 }
 .captcha {
-  transform: scale(.8);
+  transform: scale(.9);
   margin: auto;
   position: relative;
   img {
@@ -128,10 +128,6 @@
   }
 }
 
-#rc-anchor-container.rc-anchor-dark {
-  background: none;
-  color: red!important;
-}
 
 .inputAnimation--errors {
   border-bottom: red 1px solid;

@@ -12,24 +12,19 @@ const PasswordStrength = ({
   minLength = 5,
   minScore = 2,
   namespaceClassName = 'ReactPasswordStrength',
-  scoreWords = ['Faible', 'Faible', 'OK', 'Bon', 'Super!'],
-  tooShortWord = 'Trop court',
+  // scoreWords = ['Faible', 'Faible', 'OK', 'Bon', 'Super!'],
+  // tooShortWord = 'Trop court',
   userInputs = [],
   inputProps,
   style,
   children,
   setFocused,
+  onBlur,
 }) => {
   const reactPasswordStrengthInput = useRef();
   const [score, setScore] = useState(0);
   const [isValid, setIsValid] = useState(false);
   const [password, setPassword] = useState('');
-
-  // useEffect(() => {
-  //   if (defaultValue.length > 0) {
-  //     setPassword(defaultValue);
-  //   }
-  // }, []);
 
   useEffect(() => {
     setPassword(defaultValue);
@@ -67,7 +62,7 @@ const PasswordStrength = ({
     className ? 'className' : '',
     password.length > 0 ? `is-strength-${score}` : '',
   ];
-  const strengthDesc = isTooShort(password, minLength) ? tooShortWord : scoreWords[score];
+  // const strengthDesc = isTooShort(password, minLength) ? tooShortWord : scoreWords[score];
 
   if (isValid === true) {
     inputClasses.push('is-password-valid');
@@ -90,6 +85,7 @@ const PasswordStrength = ({
         ref={reactPasswordStrengthInput}
         value={password}
         onFocus={setFocused}
+        onBlur={onBlur}
       />
       {children}
       {password.length ? (
@@ -130,6 +126,7 @@ PasswordStrength.propTypes = {
   userInputs: PropTypes.array.isRequired,
   children: PropTypes.node.isRequired,
   setFocused: PropTypes.func,
+  onBlur: PropTypes.func.isRequired,
 };
 
 export default PasswordStrength;
