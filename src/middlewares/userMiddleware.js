@@ -82,7 +82,6 @@ const userMiddleware = (store) => (next) => (action) => {
 
     // Enregistrement
     case FETCH_USER_REGISTRATION: {
-      console.log(action.data, 'test');
       axios({
         method: 'post',
         url: `${urlLocal}api/auth/register`,

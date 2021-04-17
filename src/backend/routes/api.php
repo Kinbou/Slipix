@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +35,19 @@ Route::group([
     Route::get('/user-profile', [AuthController::class, 'userProfile']);    
     Route::put('/update-user',[AuthController::class, 'update']);
     Route::post('/update-avatar', [UploadController::class, 'updateAvatar']);
+
+    Route::get('/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
+    Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
 });
 
-Route::get('/test', [AuthController::class, 'test']);
 
 
 
 
+// Route::group([
+//     'middleware' => 'api',
+//     'pefix' => 'email'
+// ], function ($router) {
+//     Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
+//     Route::get('/email/resend', [VerificationController::class, 'resend']);
+// });

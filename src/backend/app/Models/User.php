@@ -6,11 +6,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 // use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use App\Notifications\VerifyEmail;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable implements JWTSubject, MustVerifyEmail
 {
     use Notifiable;
 
@@ -60,13 +60,18 @@ class User extends Authenticatable implements JWTSubject
      * @return array
      */
     public function getJWTCustomClaims() {
-        // if ($this->can('use-extended-token-timelines')) {
-        //     $expiration = date('Y-m-d', strtotime('+1 year'));
-        //     return ['exp' => $expiration];
-        // }
-        // return [];
-        
-            $expiration = strtotime(date('Y-m-d', strtotime('+1 year')));
-            return ['exp' => $expiration];
-    }    
+      // if ($this->can('use-extended-token-timelines')) {
+      //     $expiration = date('Y-m-d', strtotime('+1 year'));
+      //     return ['exp' => $expiration];
+      // }
+      // return [];
+      
+      $expiration = strtotime(date('Y-m-d', strtotime('+1 year')));
+      return ['exp' => $expiration];
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+      $this->notify(new VerifyEmail);
+    }
 }

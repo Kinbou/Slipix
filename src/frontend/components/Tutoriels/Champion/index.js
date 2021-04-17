@@ -37,8 +37,8 @@ const Champion = ({
 
   return (
     <div className="zac">
-      {!championIsLoad && <Loader />}
-      {championIsLoad && (
+      {}
+      {!championIsLoad ? <Loader /> : (
         <>
           <div className="breadcrumb">
             <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
@@ -49,7 +49,7 @@ const Champion = ({
           <div className="zac__title">
             <img src={logoLol} alt="" />
             <h1 className="globalTitle-page">Tutoriel {champion[0].name}</h1>
-            <img className="zac__title__zac" src={`${urlBack()}images/champions/${champion[0].pictureHead}`} alt="" />
+            <img className="zac__title__zac" src={`${urlBack}/images/champions/${champion[0].pictureHead}`} alt="" />
           </div>
           <h3>Comment bien jouer {champion[0].name} ? C'est ici que ça se passe !</h3>
           <p className="zac__definition">{champion[0].intro}</p>
@@ -62,7 +62,7 @@ const Champion = ({
               <h4>Les compétences</h4>
               <div className="zac__content__skill__content">
                 <div className="zac__content__skill__content__left">
-                  <img src={`${urlBack()}images/champions/${champion[0].sort_passif_picture}`} alt="" />
+                  <img src={`${urlBack}/images/champions/${champion[0].sort_passif_picture}`} alt="" />
                 </div>
                 <div className="zac__content__skill__content__right">
                   <p className="zac__content__skill__content__right__title">Passif : <span className="gold">{champion[0].sort_passif_name}</span></p><br />
@@ -71,7 +71,7 @@ const Champion = ({
               </div>
               <div className="zac__content__skill__content">
                 <div className="zac__content__skill__content__left">
-                  <img src={`${urlBack()}images/champions/${champion[0].sort_a_picture}`} alt="" />
+                  <img src={`${urlBack}/images/champions/${champion[0].sort_a_picture}`} alt="" />
                 </div>
                 <div className="zac__content__skill__content__right">
                   <p className="zac__content__skill__content__right__title">A : <span className="gold">{champion[0].sort_a_name}</span></p><br />
@@ -81,7 +81,7 @@ const Champion = ({
               </div>
               <div className="zac__content__skill__content">
                 <div className="zac__content__skill__content__left">
-                  <img src={`${urlBack()}images/champions/${champion[0].sort_z_picture}`} alt="" />
+                  <img src={`${urlBack}/images/champions/${champion[0].sort_z_picture}`} alt="" />
                 </div>
                 <div className="zac__content__skill__content__right">
                   <p className="zac__content__skill__content__right__title">Z : <span className="gold">{champion[0].sort_z_name}</span></p><br />
@@ -91,7 +91,7 @@ const Champion = ({
               </div>
               <div className="zac__content__skill__content">
                 <div className="zac__content__skill__content__left">
-                  <img src={`${urlBack()}images/champions/${champion[0].sort_e_picture}`} alt="" />
+                  <img src={`${urlBack}/images/champions/${champion[0].sort_e_picture}`} alt="" />
                 </div>
                 <div className="zac__content__skill__content__right">
                   <p className="zac__content__skill__content__right__title">E : <span className="gold">{champion[0].sort_e_name}</span></p><br />
@@ -101,7 +101,7 @@ const Champion = ({
               </div>
               <div className="zac__content__skill__content">
                 <div className="zac__content__skill__content__left">
-                  <img src={`${urlBack()}images/champions/${champion[0].sort_r_picture}`} alt="" />
+                  <img src={`${urlBack}/images/champions/${champion[0].sort_r_picture}`} alt="" />
                 </div>
                 <div className="zac__content__skill__content__right">
                   <p className="zac__content__skill__content__right__title">R : <span className="gold">{champion[0].sort_r_name}</span></p><br />

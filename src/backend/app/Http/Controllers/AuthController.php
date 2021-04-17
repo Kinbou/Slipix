@@ -8,6 +8,7 @@ use App\Models\User;
 use Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Auth\Events\Registered;
 
 
 class AuthController extends Controller
@@ -135,16 +136,12 @@ class AuthController extends Controller
           'password.min' => 'Le mot de passe doit contenir au moins 6 caractères',
         ]);
 
-        if($validator->fails()){
-            return response()->json($validator->errors()->toJson(), 400);
-        }
-
         $user = User::create(array_merge(
-                    $validator->validated(),
-                    ['password' => Hash::make($request->password), 'avatar' => 'images/avatar/defaultAvatar.png']
+          $request->only(['pseudo', 'email']),
+          ['password' => Hash::make($request->password), 'avatar' => 'images/avatar/defaultAvatar.png']
+        ));
 
-                ));
-
+        event(new Registered($user));
         return response()->json([
             'message' => 'User successfully registered',
             'user' => $user
@@ -195,5 +192,29 @@ class AuthController extends Controller
           'user' => auth()->user()
         ]
         )->cookie('access_token', $token, auth()->factory()->getTTL() * 1440, '/', true, false);
+    }
+
+    public function verificationEmail($user_id, Request $request) {
+      if (!$request->hasValidSignature()) {
+        return response()->json(['message' => 'l\'url de vérification de l\'email est non valide']);
+      }
+
+      $user = User::findOrFail($user_id);
+
+      if (!$user->hasVerifiedEmail()) {
+        $user->markEmailAsVerified();
+      }
+
+      return redirect()->to('/');
+    }
+
+    public function resendEmail() {
+      if (auth()->user()->hasVerifiedEmail()) {
+        return response()->json(['message' => 'L\'email est déjà vérifié']);
+      }
+
+      auth()->user()->sendEmailVerificationNotification();
+
+      return response()->json(['message' => 'le lien de vérification par e-mail à été envoyé sur votre boîte mail']);
     }
 }

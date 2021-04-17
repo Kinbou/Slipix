@@ -16,6 +16,7 @@ import ScrollToTopButton from 'src/frontend/components/ScrollToTopButton';
 import Thanks from 'src/frontend/containers/Thanks';
 import MentionLegales from 'src/frontend/components/Legal-mentions';
 import Profil from 'src/frontend/containers/Profil';
+import EmailVerification from 'src/frontend/components/EmailVerification';
 
 // outils
 import ScrollToTop from 'src/frontend/components/ScrollToTop';
@@ -186,6 +187,9 @@ const App = () => {
             </Route>
             <Route exact path="/profil">
               <Profil />
+            </Route>
+            <Route path="/email-verification">
+              <EmailVerification />
             </Route>
           </Switch>
         </Analytics>

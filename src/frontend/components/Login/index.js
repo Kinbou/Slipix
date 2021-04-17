@@ -61,8 +61,8 @@ const Login = ({
     <div className="login">
       <h1>Connexion</h1>
       <p className="login__text">Vous avez déjà un compte ? Connectez-vous ci-dessous.</p>
-      {errorLogin && errorLogin.errors.email && (
-        <p>{errorLogin.errors.email}</p>
+      {errorLogin && errorLogin.error && (
+        <p className="label__errors login__label__error">{errorLogin.error}</p>
       )}
 
       <form className="login__form" onSubmit={handleSubmit}>
@@ -112,7 +112,6 @@ const Login = ({
           />
           {errorCaptcha && <p>{errorCaptcha}</p>}
         </div>
-        {errorLogin && <p className="label__errors login__label__error">{errorLogin.error}</p>}
         <button type="submit" className="global-button">Se connecter</button>
       </form>
       <button type="button" className="login__link" onClick={handleForgotPasseword}>Mot de passe oublié ?</button>
