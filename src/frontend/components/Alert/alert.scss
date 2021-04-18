@@ -1,0 +1,56 @@
+.knight {
+  color: green;
+  display: inline-block;
+}
+.alert {
+  z-index: 60;
+  background: rgba(28,36,45,0.9);
+  max-width: 400px;
+  min-width: 300px;
+  text-align: center;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border-radius: .3rem 0 0 .3rem;
+  position: fixed;
+  right: 0;
+  line-height: 1.6;
+  color: #ffaa55;
+  border: red 1px solid;
+  transition: all 1s ease-in-out;
+  &--success {
+    border: green 1px solid;
+  }
+
+  &__icon {
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    left: -20px;
+    top: calc(50% - 23px);
+    color: #fff;
+    font-size: 2em;
+
+    &--success {
+      background-color: green;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .alert {
+    width: auto;
+    left: 0;
+    border-radius: 0;
+    padding: 2.5rem 1rem 1rem 1rem;
+
+    &__icon {
+      top: -30px;
+      left: calc(50% - 30px);
+    }
+  }
+}

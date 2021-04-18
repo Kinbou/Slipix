@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
 
-import App from 'src/frontend/components/App';
-import { setAppLoading } from 'src/actions/global';
+import Alert from 'src/frontend/components/Alert';
+import { showAlert, setAppLoading } from 'src/actions/global';
 
 const mapStateToProps = (state) => ({
+  message: state.global.alertMessage,
+  isSuccess: state.global.alertSuccess,
   appIsLoad: state.global.appIsLoad,
-  showAlert: state.global.showAlert,
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  displayAlert: (message, success) => {
+    dispatch(showAlert(message, success));
+  },
   setAppLoading: (value) => {
     dispatch(setAppLoading(value));
   },
@@ -17,4 +21,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(App);
+)(Alert);

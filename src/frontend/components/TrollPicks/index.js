@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import slugify from 'react-slugify';
+
 import Loader from 'src/frontend/components/Loader';
 import { useTitle } from 'src/hooks/useTitle';
-import slugify from 'react-slugify';
 import './trollPicks.scss';
 
 const TrollPicks = ({
@@ -83,7 +84,6 @@ TrollPicks.propTypes = {
   setTrollpickSoonIsLoad: PropTypes.func.isRequired,
   trollpickActifIsLoad: PropTypes.bool.isRequired,
   trollpickSoonIsLoad: PropTypes.bool.isRequired,
-
   trollpicksActif: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

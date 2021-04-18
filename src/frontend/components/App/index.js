@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import { Route, useLocation, Switch } from 'react-router-dom';
 import Analytics from 'react-router-ga';
+import PropTypes from 'prop-types';
+
 import styled from 'styled-components';
 
 // == Import
@@ -17,6 +19,8 @@ import Thanks from 'src/frontend/containers/Thanks';
 import MentionLegales from 'src/frontend/components/Legal-mentions';
 import Profil from 'src/frontend/containers/Profil';
 import EmailVerification from 'src/frontend/components/EmailVerification';
+import Alert from 'src/frontend/containers/Alert';
+import Loader from 'src/frontend/components/Loader';
 
 // outils
 import ScrollToTop from 'src/frontend/components/ScrollToTop';
@@ -42,9 +46,9 @@ import Trollpick from 'src/frontend/containers/TrollPicks/Trollpick';
 import Jungle from 'src/frontend/containers/Tutoriels/Jungle';
 
 // == Composant
-const App = () => {
+const App = ({ showAlert, appIsLoad }) => {
   const location = useLocation();
-  // return the current pathname
+
   const currentPath = location.pathname;
   const isHome = currentPath === '/';
   const isPresentation = currentPath === '/presentation';
@@ -118,15 +122,21 @@ const App = () => {
     }
 `;
 
+  useEffect(() => {
+    console.log('test');
+  }, [showAlert]);
+
   return (
     <div className="app">
       <ScrollToTop />
       <BackgroundImage />
       <Header />
       <main>
-        {/* {!appIsLoad && <Loader />} */}
+        {!appIsLoad && <Loader />}
         <Analytics id="UA-176591379-1" debug>
           <ScrollToTopButton />
+          {/* <Alert /> */}
+          {showAlert && <Alert />}
           <Switch>
             <Route exact path="/">
               <Home />
@@ -197,6 +207,11 @@ const App = () => {
       <Footer />
     </div>
   );
+};
+
+App.propTypes = {
+  showAlert: PropTypes.bool.isRequired,
+  appIsLoad: PropTypes.bool.isRequired,
 };
 
 export default App;

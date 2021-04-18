@@ -12,6 +12,8 @@ const index = ({
   onCancel,
   classNames,
   setFocused,
+  onBlur,
+  onFocus,
 }) => {
   const elementRef = useRef();
   const inputRef = useRef();
@@ -50,6 +52,8 @@ const index = ({
         name={name}
         className={[classNames.join(' '), disabled ? '' : 'account-profil__container__label__disabled'].join(' ')}
         disabled={disabled}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
       {!disabled ? (
         <>
@@ -86,6 +90,8 @@ const index = ({
 
 index.defaultProps = {
   setFocused: null,
+  onFocus: null,
+  onBlur: null,
 };
 
 index.propTypes = {
@@ -96,6 +102,8 @@ index.propTypes = {
   name: PropTypes.string.isRequired,
   classNames: PropTypes.array.isRequired,
   setFocused: PropTypes.func,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
 };
 
 export default index;

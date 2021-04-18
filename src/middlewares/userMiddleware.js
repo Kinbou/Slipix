@@ -12,10 +12,9 @@ import {
   LOGOUT_USER,
   UPDATE_USER,
   UPDATE_AVATAR_USER,
-
 } from 'src/actions/user';
 
-import { showModal } from 'src/actions/global';
+import { showModal, showAlert, setAppLoading } from 'src/actions/global';
 
 const userMiddleware = (store) => (next) => (action) => {
   // const { rememberMe, userData } = store.getState().user;
@@ -49,6 +48,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
           store.dispatch((fetchUser(response.data.user)));
           store.dispatch((showModal('')));
+          store.dispatch((showAlert('Tu es bien connecté', true)));
         })
         .catch((error) => {
           store.dispatch(errorLoginUser(error.response.data));
@@ -75,6 +75,9 @@ const userMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.warn(error);
+        })
+        .finally(() => {
+          store.dispatch(setAppLoading(true));
         });
       next(action);
       break;
@@ -94,6 +97,7 @@ const userMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response.data);
+          store.dispatch((showAlert('Tu es bien enregistré, tu vas recevoir un mail afin de confirmer ton adresse mail =)', true)));
         })
         .catch((error) => {
           console.warn(error);
@@ -118,9 +122,11 @@ const userMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           new Cookie().remove('token');
           store.dispatch((fetchUser('')));
+          store.dispatch((showAlert('Tu es bien déconnecté', true)));
         })
         .catch((error) => {
           console.warn(error);
+          store.dispatch((showAlert("Oups une erreur s'est produite réessaye ou contact le support", false)));
         });
       next(action);
       break;
@@ -142,12 +148,12 @@ const userMiddleware = (store) => (next) => (action) => {
         },
       })
         .then(() => {
-          console.log('passe en cas de succes');
           store.dispatch(requestUserAuthentification());
+          store.dispatch((showAlert('Tes modifications sont un succès', true)));
         })
         .catch((error) => {
-          console.log('passe en cas d\'erreur');
           console.warn(error.response);
+          store.dispatch((showAlert('Une erreur s\'est produite, réessaye ou contacte le support', false)));
         });
       next(action);
       break;

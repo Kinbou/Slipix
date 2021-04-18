@@ -37,10 +37,6 @@ const Profil = ({
     }
   }, [user]);
 
-  useEffect(() => {
-
-  });
-
   const removeError = (key) => {
     if (errors && errors[key]) {
       delete errors[key];
@@ -58,6 +54,27 @@ const Profil = ({
     displayModal('crop');
   };
 
+  const verifyPseudo = () => {
+    if (!pseudo.length) {
+      setErrors({ ...errors, pseudo: 'Ton pseudo est obligatoire' });
+    }
+    if (pseudo.length && pseudo.length < 3) {
+      setErrors({ ...errors, pseudo: 'Ton pseudo ne fait pas 3 caractères' });
+    }
+  };
+
+  const verifyPassword = () => {
+    if (currentPassword.length && currentPassword.length < 8) {
+      setErrors({ ...errors, password: 'Ton mot de passe ne contient pas 8 caractères' });
+    }
+  };
+
+  const verifyConfirmPassword = () => {
+    if (newPassword !== confirmNewPassword) {
+      setErrors({ ...errors, confirmNewPassword: 'Ton mot de passe n\'est pas identique au précédent' });
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (avatar !== user.avatar) {
@@ -73,17 +90,11 @@ const Profil = ({
     if (pseudo !== user.pseudo && pseudo.length > 3) {
       data.pseudo = pseudo;
     }
-    else if (pseudo !== user.pseudo) {
-      setErrors((err) => ({
-        ...err,
-        pseudo: 'Le pseudo doit avoir au minimum 3 caractères',
-      }));
-    }
     if (name !== user.name) {
       data.name = name;
     }
 
-    if (newPassword.length >= 6 && currentPassword.length >= 6 && newPassword === confirmNewPassword) {
+    if (newPassword && newPassword.length >= 6 && currentPassword.length >= 6 && newPassword === confirmNewPassword) {
       data.password = currentPassword;
       data.newPassword = newPassword;
       data.confirmNewPassword = confirmNewPassword;
@@ -95,8 +106,7 @@ const Profil = ({
         newPassword: 'Le nouveau mot de passe doit avoir au minimum 6 caractères',
       }));
     }
-
-    if (!errors.newPassword && currentPassword && (newPassword !== confirmNewPassword)) {
+    if (errors && !errors.newPassword && currentPassword && (newPassword !== confirmNewPassword)) {
       setErrors((err) => ({
         ...err,
         newPassword: 'La confirmation du mot de passe doit être identique au nouveau mot de passe',
@@ -107,9 +117,7 @@ const Profil = ({
       return;
     }
 
-    console.log(data);
     if (data) {
-      console.log('je passe dans l\'action updateData', data);
       updateUser(data);
     }
   };
@@ -144,7 +152,7 @@ const Profil = ({
               <i className="fas fa-image account-profil__person__avatar__icon " />
             </div>
             <div className="account-profil__person__avatar__content">
-              <p className="account-profil__person__avatar__content__name">Jennifer Bouquin</p>
+              <p className="account-profil__person__avatar__content__name">{user.pseudo}</p>
             </div>
           </div>
           <div className="account-profil__container">
@@ -153,13 +161,12 @@ const Profil = ({
               <h2 className="account-profil__subtitle">Informations personnelles</h2>
 
               <label className="account-profil__container__label">
-                { (errors && errors.name) && <p>{ errors.name }</p> }
                 <span>Prénom</span>
                 <div>
                   <InputProfil
                     type="text"
                     value={name}
-                    setValue={(val) => setName(val)}
+                    // setValue={(val) => setName(val)}
                     name="name"
                     classNames={['global-input']}
                     onChange={setName}
@@ -174,13 +181,14 @@ const Profil = ({
                   <InputProfil
                     type="text"
                     value={pseudo}
-                    setValue={(val) => setPseudo(val)}
+                    // setValue={(val) => setPseudo(val)}
                     name="pseudo"
                     classNames={['global-input']}
                     onChange={setPseudo}
                     onCancel={() => setPseudo(user.pseudo)}
                     disabled
                     setFocused={() => removeError('pseudo')}
+                    onBlur={verifyPseudo}
                   />
                   { (errors && errors.pseudo) && <p className="account-profil__container__error">{ errors.pseudo }</p> }
                 </div>
@@ -188,14 +196,11 @@ const Profil = ({
               <label className="account-profil__container__label">
                 <span>Adresse email</span>
                 <div>
-                  <InputProfil
+                  <input
                     type="email"
                     value={email}
-                    setValue={(val) => setEmail(val)}
                     name="email"
-                    classNames={['global-input']}
-                    onChange={setEmail}
-                    onCancel={() => setEmail(user.email)}
+                    className="inputAnimation"
                     disabled
                   />
                 </div>
@@ -211,13 +216,15 @@ const Profil = ({
                 <InputProfil
                   type="password"
                   value={currentPassword}
-                  setValue={(val) => setCurrentPassword(val)}
+                  // setValue={(val) => setCurrentPassword(val)}
                   name="currentPassword"
                   classNames={['global-input']}
                   onChange={setCurrentPassword}
                   onCancel={() => setCurrentPassword('')}
+                  onBlur={verifyPassword}
                   disabled
                 />
+                { (errors && errors.currentPassword) && <p className="account-profil__container__error">{ errors.currentPassword }</p> }
               </div>
             </label>
             <label className="account-profil__container__label">
@@ -227,29 +234,32 @@ const Profil = ({
                 <InputProfil
                   type="password"
                   value={newPassword}
-                  setValue={(val) => setNewPassword(val)}
+                  // setValue={(val) => setNewPassword(val)}
                   name="newPassword"
                   classNames={['global-input']}
                   onChange={setNewPassword}
                   onCancel={() => setNewPassword('')}
+                  onBlur={verifyPassword}
                   disabled
                 />
+                { (errors && errors.currentPassword) && <p className="account-profil__container__error">{ errors.currentPassword }</p> }
               </div>
             </label>
             <label className="account-profil__container__label">
-              { (errors && errors.confirmNewPassword) && <p>{ errors.confirmNewPassword }</p> }
               <span>Confirmation du nouveau mot de passe</span>
               <div>
                 <InputProfil
                   type="password"
                   value={confirmNewPassword}
-                  setValue={(val) => setConfirmNewPassword(val)}
+                  // setValue={(val) => setConfirmNewPassword(val)}
                   name="confirmNewPassword"
                   classNames={['global-input']}
                   onChange={setConfirmNewPassword}
                   onCancel={() => setConfirmNewPassword('')}
+                  onBlur={verifyConfirmPassword}
                   disabled
                 />
+                { (errors && errors.confirmNewPassword) && <p className="account-profil__container__error">{ errors.confirmNewPassword }</p> }
               </div>
             </label>
           </div>
