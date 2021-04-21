@@ -15,7 +15,9 @@
   line-height: 1.6;
   color: #ffaa55;
   border: red 1px solid;
-  transition: all 1s ease-in-out;
+  transform: translateX(100%);
+  opacity: 0;
+  animation: popUp 1s ease-in-out forwards, popUp 1s 4s ease-in-out reverse;
   &--success {
     border: green 1px solid;
   }
@@ -38,6 +40,17 @@
     &--success {
       background-color: green;
     }
+  }
+}
+
+@keyframes popUp {
+  from{
+    opacity: 0;
+    transform: translateX(100%);
+
+  } to{
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

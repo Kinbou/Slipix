@@ -9,7 +9,7 @@ const Alert = ({ message, isSuccess, displayAlert }) => {
       () => {
         displayAlert();
       },
-      6000,
+      4900,
     );
     return () => {
       clearTimeout(timeoutId);

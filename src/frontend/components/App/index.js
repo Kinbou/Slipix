@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Route, useLocation, Switch } from 'react-router-dom';
 import Analytics from 'react-router-ga';
 import PropTypes from 'prop-types';
+import { AnimatePresence } from 'framer-motion';
 
 import styled from 'styled-components';
 
@@ -24,6 +25,7 @@ import Loader from 'src/frontend/components/Loader';
 
 // outils
 import ScrollToTop from 'src/frontend/components/ScrollToTop';
+import BackgroundProfil from 'src/frontend/components/BackgroundProfil';
 
 // Guides
 import Guides from 'src/frontend/components/Guides';
@@ -129,80 +131,87 @@ const App = ({ showAlert, appIsLoad }) => {
   return (
     <div className="app">
       <ScrollToTop />
-      <BackgroundImage />
+      <BackgroundImage>
+
+        {appClass === 'profil' && (
+        <BackgroundProfil />
+        )}
+
+      </BackgroundImage>
       <Header />
       <main>
         {!appIsLoad && <Loader />}
-        <Analytics id="UA-176591379-1" debug>
-          <ScrollToTopButton />
-          {/* <Alert /> */}
-          {showAlert && <Alert />}
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/presentation">
-              <Presentation />
-            </Route>
-            <Route exact path="/nouveaute">
-              <News />
-            </Route>
-            <Route exact path="/tutoriels-champions">
-              <Tutoriels />
-            </Route>
-            <Route exact path="/tutoriels-champions/:lane">
-              <Jungle />
-            </Route>
-            <Route exact path="/tutoriels-champions/:lane/:name">
-              <Champion />
-            </Route>
-            <Route exact path="/guides">
-              <Guides />
-            </Route>
-            <Route exact path="/guides/mental&rage">
-              <MentalRage />
-            </Route>
-            <Route exact path="/guides/role-champion">
-              <RoleChampion />
-            </Route>
-            <Route exact path="/guides/progresser-sur-leagueOfLegends">
-              <ProgressLol />
-            </Route>
-            <Route exact path="/guides/sortir-du-bas-elo">
-              <LowElo />
-            </Route>
-            <Route exact path="/guides/gagner-sa-phase-de-lane">
-              <WinLane />
-            </Route>
-            <Route exact path="/guides/vision-du-jeu">
-              <VisionGame />
-            </Route>
-            <Route exact path="/trollpicks">
-              <TrollPicks />
-            </Route>
-            <Route exact path="/trollpicks/:name/:id">
-              <Trollpick />
-            </Route>
-            <Route exact path="/me-soutenir">
-              <Support />
-            </Route>
-            <Route exact path="/me-contacter">
-              <Contact />
-            </Route>
-            <Route exact path="/mentions-legales">
-              <MentionLegales />
-            </Route>
-            <Route exact path="/remerciements">
-              <Thanks />
-            </Route>
-            <Route exact path="/profil">
-              <Profil />
-            </Route>
-            <Route path="/email-verification">
-              <EmailVerification />
-            </Route>
-          </Switch>
-        </Analytics>
+        <AnimatePresence exitBeforeEnter>
+          <Analytics id="UA-176591379-1" debug>
+            <ScrollToTopButton />
+            {showAlert && <Alert />}
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/presentation">
+                <Presentation />
+              </Route>
+              <Route exact path="/nouveaute">
+                <News />
+              </Route>
+              <Route exact path="/tutoriels-champions">
+                <Tutoriels />
+              </Route>
+              <Route exact path="/tutoriels-champions/:lane">
+                <Jungle />
+              </Route>
+              <Route exact path="/tutoriels-champions/:lane/:name">
+                <Champion />
+              </Route>
+              <Route exact path="/guides">
+                <Guides />
+              </Route>
+              <Route exact path="/guides/mental&rage">
+                <MentalRage />
+              </Route>
+              <Route exact path="/guides/role-champion">
+                <RoleChampion />
+              </Route>
+              <Route exact path="/guides/progresser-sur-leagueOfLegends">
+                <ProgressLol />
+              </Route>
+              <Route exact path="/guides/sortir-du-bas-elo">
+                <LowElo />
+              </Route>
+              <Route exact path="/guides/gagner-sa-phase-de-lane">
+                <WinLane />
+              </Route>
+              <Route exact path="/guides/vision-du-jeu">
+                <VisionGame />
+              </Route>
+              <Route exact path="/trollpicks">
+                <TrollPicks />
+              </Route>
+              <Route exact path="/trollpicks/:name/:id">
+                <Trollpick />
+              </Route>
+              <Route exact path="/me-soutenir">
+                <Support />
+              </Route>
+              <Route exact path="/me-contacter">
+                <Contact />
+              </Route>
+              <Route exact path="/mentions-legales">
+                <MentionLegales />
+              </Route>
+              <Route exact path="/remerciements">
+                <Thanks />
+              </Route>
+              <Route exact path="/profil">
+                <Profil />
+              </Route>
+              <Route path="/email-verification">
+                <EmailVerification />
+              </Route>
+            </Switch>
+          </Analytics>
+        </AnimatePresence>
       </main>
       <Footer />
     </div>

@@ -55,6 +55,7 @@ const Profil = ({
   };
 
   const verifyPseudo = () => {
+    console.log('je passe dans le Blur');
     if (!pseudo.length) {
       setErrors({ ...errors, pseudo: 'Ton pseudo est obligatoire' });
     }
@@ -155,7 +156,7 @@ const Profil = ({
               <p className="account-profil__person__avatar__content__name">{user.pseudo}</p>
             </div>
           </div>
-          <div className="account-profil__container">
+          <div className="account-profil__container account">
 
             <div className="account-profil__infos">
               <h2 className="account-profil__subtitle">Informations personnelles</h2>

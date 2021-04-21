@@ -12,8 +12,8 @@ const index = ({
   onCancel,
   classNames,
   setFocused,
-  onBlur,
   onFocus,
+  onBlur,
 }) => {
   const elementRef = useRef();
   const inputRef = useRef();
@@ -21,6 +21,9 @@ const index = ({
   const [showPassword, setShowPassword] = useState(false);
 
   const onClose = () => {
+    if (onBlur) {
+      onBlur();
+    }
     if (type === 'password' && showPassword) setShowPassword(false);
     setDisabled(true);
   };
@@ -53,7 +56,6 @@ const index = ({
         className={[classNames.join(' '), disabled ? '' : 'account-profil__container__label__disabled'].join(' ')}
         disabled={disabled}
         onFocus={onFocus}
-        onBlur={onBlur}
       />
       {!disabled ? (
         <>

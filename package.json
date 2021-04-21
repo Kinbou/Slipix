@@ -56,6 +56,7 @@
     "bundle-stats-webpack-plugin": "^2.2.0",
     "classnames": "^2.2.6",
     "components": "^0.1.0",
+    "framer-motion": "^4.1.6",
     "html-react-parser": "^0.14.1",
     "prop-types": "*",
     "react": "*",
@@ -68,6 +69,7 @@
     "react-router-ga": "^1.2.3",
     "react-slideshow-image": "^1.4.2",
     "react-slugify": "^2.0.2",
+    "react-three-fiber": "^6.0.13",
     "react-use": "^15.3.4",
     "react-youtube": "^7.11.2",
     "reaptcha": "^1.7.2",
@@ -75,6 +77,7 @@
     "redux-devtools-extension": "^2.13.8",
     "styled": "^1.0.0",
     "styled-components": "^5.2.0",
+    "three": "^0.127.0",
     "universal-cookie": "^4.0.4",
     "yarn": "^1.22.10",
     "zxcvbn": "^4.4.2"

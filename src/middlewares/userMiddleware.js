@@ -52,6 +52,7 @@ const userMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           store.dispatch(errorLoginUser(error.response.data));
+          store.dispatch(showAlert('une erreur s\'est produite', false));
         });
       next(action);
       break;
