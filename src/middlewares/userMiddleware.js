@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import axios from 'axios';
 import Cookie from 'universal-cookie';
 
@@ -12,6 +13,7 @@ import {
   LOGOUT_USER,
   UPDATE_USER,
   UPDATE_AVATAR_USER,
+  FORGOT_PASSWORD_SEND_EMAIL,
 } from 'src/actions/user';
 
 import { showModal, showAlert, setAppLoading } from 'src/actions/global';
@@ -23,7 +25,6 @@ const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     // Connexion
     case LOGIN_USER: {
-      console.log(action.payload);
       axios({
         method: 'post',
         url: `${urlLocal}api/auth/login`,
@@ -120,14 +121,14 @@ const userMiddleware = (store) => (next) => (action) => {
           Authorization: `Bearer ${token}`,
         },
       })
-        .then((response) => {
+        .then(() => {
           new Cookie().remove('token');
           store.dispatch((fetchUser('')));
           store.dispatch((showAlert('Tu es bien déconnecté', true)));
         })
         .catch((error) => {
           console.warn(error);
-          store.dispatch((showAlert("Oups une erreur s'est produite réessaye ou contact le support", false)));
+          store.dispatch((showAlert("Oups... une erreur s'est produite réessaye ou contact le support", false)));
         });
       next(action);
       break;
@@ -136,7 +137,6 @@ const userMiddleware = (store) => (next) => (action) => {
     // Mettre à jour le profil
     case UPDATE_USER: {
       const token = new Cookie().get('token');
-      console.log(action);
       axios({
         method: 'put',
         url: `${urlLocal}api/auth/update-user`,
@@ -154,7 +154,7 @@ const userMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.warn(error.response);
-          store.dispatch((showAlert('Une erreur s\'est produite, réessaye ou contacte le support', false)));
+          store.dispatch((showAlert(error.response.data.message, false)));
         });
       next(action);
       break;
@@ -178,6 +178,30 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(requestUserAuthentification());
         })
         .catch((error) => {
+          console.warn(error);
+        });
+      next(action);
+      break;
+    }
+
+    case FORGOT_PASSWORD_SEND_EMAIL: {
+      axios.post(`${urlLocal}api/auth/password/email`, {
+        method: 'post',
+        withCredentials: true,
+        email: action.email,
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          Accept: 'application/json',
+        },
+      })
+        .then((response) => {
+          console.log(response);
+          store.dispatch(showModal(''));
+          // store.dispatch(requestUserAuthentification());
+          store.dispatch(showAlert(response.data.message, true));
+        })
+        .catch((error) => {
+          store.dispatch(showAlert(error.response.data.message, false));
           console.warn(error);
         });
       next(action);

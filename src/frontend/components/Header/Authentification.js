@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import Login from 'src/frontend/containers/Login';
 import Registration from 'src/frontend/containers/Registration';
-import ForgotPassword from 'src/frontend/components/ForgotPassword';
+import ForgotPassword from 'src/frontend/containers/ForgotPassword';
 import { urlBack } from 'src/utils/selectors';
 
 const Authentification = ({ showModal, displayModal }) => {

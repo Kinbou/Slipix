@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
 import Modal from 'src/frontend/containers/Modal';
@@ -33,8 +33,11 @@ const Menu = ({
   }, []);
 
   const [classActive, setClassActive] = useState(false);
+  const test = useRef(null);
   const handleModal = () => {
-    displayModal('login');
+    const button = test.current;
+    console.log(button.getBoundingClientRect());
+    displayModal('login', button.getBoundingClientRect());
   };
 
   const handleLogout = () => {
@@ -157,13 +160,13 @@ const Menu = ({
             : (
               <button
                 type="button"
+                ref={test}
                 className="header__nav__account__button"
                 title="S'inscrire / Se connecter"
                 onClick={handleModal}
-              ><i className="fas fa-user"> </i>
+              ><i className="fas fa-user" />
               </button>
             )}
-
         </div>
       </div>
     </Ul>

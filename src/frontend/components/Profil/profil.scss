@@ -102,13 +102,20 @@
     display: block;
     margin: 2rem auto;
     border: 0;
-    background-color: #21212b;
+    // background-color: #21212b;
     color: #fff;
     padding: .8rem 1rem;
     font-size: inherit;
     border-radius: .4rem;
-    &:hover {
-      background-color: #ffaa55;
+
+    &--actived {
+      background-color: #21212b;
+      &:hover {
+        background-color: #ffaa55;
+      }
+    }
+    &--disabled {
+      background-color: #21212bd6;
     }
   }
 

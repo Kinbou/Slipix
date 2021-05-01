@@ -70,7 +70,7 @@ class VerificationController extends Controller
         return $response;
       }
 
-          Log::debug('Tout est OK');
+      Log::debug('Tout est OK');
       // return new JsonResponse(['success' => true, "message" => "L'email a bien été vérifiée"], 204);
       return $request->wantsJson()
         ? new JsonResponse(['success' => true, "message" => "L'email a bien été vérifié"], 202)
@@ -85,7 +85,7 @@ class VerificationController extends Controller
      */
     public function resend(Request $request)
     {
-        if ($request->user()->hasVerifiedEmail()) {
+        if($request->user()->hasVerifiedEmail()) {
             Log::debug('Email déjà envoyée');
             return new JsonResponse(['success' => false, 'message' => "Email déjà vérifiée"], 202);
         }

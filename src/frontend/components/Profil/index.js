@@ -18,6 +18,8 @@ const Profil = ({
 }) => {
   const inputUploadRef = useRef();
   const [name, setName] = useState('');
+  const [nameDisabled, setNameDisabled] = useState('');
+  const [pseudoDisabled, setPseudoDisabled] = useState('');
   const [avatar, setAvatar] = useState('');
   const [newAvatar, setNewAvatar] = useState(null);
   const [imgType, setImgType] = useState(null);
@@ -54,19 +56,31 @@ const Profil = ({
     displayModal('crop');
   };
 
+  const verifyName = () => {
+    if (name !== user.name) {
+      setNameDisabled(name);
+    }
+  };
+
   const verifyPseudo = () => {
-    console.log('je passe dans le Blur');
     if (!pseudo.length) {
       setErrors({ ...errors, pseudo: 'Ton pseudo est obligatoire' });
     }
     if (pseudo.length && pseudo.length < 3) {
       setErrors({ ...errors, pseudo: 'Ton pseudo ne fait pas 3 caractères' });
     }
+    setPseudoDisabled(pseudo);
   };
 
   const verifyPassword = () => {
     if (currentPassword.length && currentPassword.length < 8) {
-      setErrors({ ...errors, password: 'Ton mot de passe ne contient pas 8 caractères' });
+      setErrors({ ...errors, currentPassword: 'Ton mot de passe ne contient pas 8 caractères' });
+    }
+  };
+
+  const verifyNewPassword = () => {
+    if (newPassword.length && newPassword.length < 8) {
+      setErrors({ ...errors, newPassword: 'Ton mot de passe ne contient pas 8 caractères' });
     }
   };
 
@@ -78,6 +92,7 @@ const Profil = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('je passe dans le handle submit');
     if (avatar !== user.avatar) {
       const blob = await fetch(avatar).then((r) => r.blob());
       const data = { avatar: blob, imgType };
@@ -119,6 +134,7 @@ const Profil = ({
     }
 
     if (data) {
+      console.log('données envoyé :', data);
       updateUser(data);
     }
   };
@@ -139,11 +155,8 @@ const Profil = ({
       <div className="breadcrumb">
         <Link to="/" className="breadcrumb__link">Accueil</Link> &gt; Mon profil
       </div>
-
       <input type="file" style={{ visibility: 'hidden' }} accept="image/*" ref={inputUploadRef} onChange={onFileChange} />
-
       {showModal === 'crop' && <Modal content={<Crop img={newAvatar} imgType={imgType} onCancel={onCancel} onCrop={onCrop} />} />}
-
       <h1 className="globalTitle-page">Mon profil</h1>
       {user && (
         <form className="account-profil__form" onSubmit={handleSubmit}>
@@ -157,22 +170,21 @@ const Profil = ({
             </div>
           </div>
           <div className="account-profil__container account">
-
             <div className="account-profil__infos">
               <h2 className="account-profil__subtitle">Informations personnelles</h2>
-
               <label className="account-profil__container__label">
                 <span>Prénom</span>
                 <div>
                   <InputProfil
                     type="text"
                     value={name}
-                    // setValue={(val) => setName(val)}
                     name="name"
                     classNames={['global-input']}
                     onChange={setName}
                     onCancel={() => setName(user.name)}
                     disabled
+                    onBlur={verifyName}
+                    setFocused={() => removeError('name')}
                   />
                 </div>
               </label>
@@ -182,7 +194,6 @@ const Profil = ({
                   <InputProfil
                     type="text"
                     value={pseudo}
-                    // setValue={(val) => setPseudo(val)}
                     name="pseudo"
                     classNames={['global-input']}
                     onChange={setPseudo}
@@ -210,62 +221,65 @@ const Profil = ({
           </div>
           <div className="account-profil__container">
             <h2 className="account-profil__subtitle">Mot de passe</h2>
-            <label className="account-profil__container__label">
-              { (errors && errors.currentPassword) && <p>{ errors.currentPassword }</p> }
+            <label className={`${errors && errors.currentPassword ? 'account-profil__container__label account-profil__container__label--errors' : 'account-profil__container__label'}`}>
               <span>Mot de passe actuel</span>
               <div>
                 <InputProfil
                   type="password"
                   value={currentPassword}
-                  // setValue={(val) => setCurrentPassword(val)}
                   name="currentPassword"
                   classNames={['global-input']}
                   onChange={setCurrentPassword}
                   onCancel={() => setCurrentPassword('')}
                   onBlur={verifyPassword}
                   disabled
+                  setFocused={() => removeError('currentPassword')}
                 />
                 { (errors && errors.currentPassword) && <p className="account-profil__container__error">{ errors.currentPassword }</p> }
               </div>
             </label>
-            <label className="account-profil__container__label">
-              { (errors && errors.newPassword) && <p>{ errors.newPassword }</p> }
+            <label className={`${errors && errors.newPassword ? 'account-profil__container__label account-profil__container__label--errors' : 'account-profil__container__label'}`}>
               <span>Nouveau mot de passe</span>
               <div>
                 <InputProfil
                   type="password"
                   value={newPassword}
-                  // setValue={(val) => setNewPassword(val)}
                   name="newPassword"
                   classNames={['global-input']}
                   onChange={setNewPassword}
                   onCancel={() => setNewPassword('')}
-                  onBlur={verifyPassword}
+                  onBlur={verifyNewPassword}
                   disabled
+                  setFocused={() => removeError('newPassword')}
                 />
-                { (errors && errors.currentPassword) && <p className="account-profil__container__error">{ errors.currentPassword }</p> }
+                { (errors && errors.newPassword) && <p className="account-profil__container__error">{ errors.newPassword }</p> }
               </div>
             </label>
-            <label className="account-profil__container__label">
+            <label className={`${errors && errors.confirmNewPassword ? 'account-profil__container__label account-profil__container__label--errors' : 'account-profil__container__label'}`}>
               <span>Confirmation du nouveau mot de passe</span>
               <div>
                 <InputProfil
                   type="password"
                   value={confirmNewPassword}
-                  // setValue={(val) => setConfirmNewPassword(val)}
                   name="confirmNewPassword"
                   classNames={['global-input']}
                   onChange={setConfirmNewPassword}
                   onCancel={() => setConfirmNewPassword('')}
                   onBlur={verifyConfirmPassword}
                   disabled
+                  setFocused={() => removeError('confirmNewPassword')}
                 />
                 { (errors && errors.confirmNewPassword) && <p className="account-profil__container__error">{ errors.confirmNewPassword }</p> }
               </div>
             </label>
           </div>
-
-          <button type="submit" className="account-profil__submit">Enregistrer les modifications</button>
+          <button
+            type="submit"
+            className={`${errors || (!nameDisabled && !pseudoDisabled && !newAvatar && !currentPassword && !newPassword && !confirmNewPassword) ? 'account-profil__submit account-profil__submit--disabled' : 'account-profil__submit account-profil__submit--actived'}`}
+            disabled={errors || (!nameDisabled && !pseudoDisabled && !newAvatar && !currentPassword && !newPassword && !confirmNewPassword)}
+          >
+            Enregistrer les modifications
+          </button>
         </form>
       )}
     </div>

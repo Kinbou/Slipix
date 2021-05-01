@@ -49,7 +49,7 @@ export const cardList = {
   out: {
     opacity: 1,
     transition: {
-      ...transition, duration: 0.9, delayChildren: 0.2, staggerChildren: 0.1,
+      ...transition, duration: 0.3, delayChildren: 0.2, staggerChildren: 0.1,
     },
   },
 
@@ -61,7 +61,7 @@ export const cardList = {
 };
 
 export const card = {
-  in: { x: 500, opacity: 0 },
-  out: { x: 0, opacity: 1, transition: { duration: 0.9 } },
-  end: { x: -500, opacity: 0 },
+  in: { x: 700, opacity: 0 },
+  out: { x: 0, opacity: 1, transition: { duration: 0.3 } },
+  end: { x: -700, opacity: 0 },
 };

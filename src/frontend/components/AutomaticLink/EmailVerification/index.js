@@ -26,7 +26,6 @@ const EmailVerification = () => {
           setMessage(result.data.message);
         })
         .catch((err) => {
-          console.log(err.response.data.message);
           setIsValid(false);
           setMessage(err.response.data.message);
         })

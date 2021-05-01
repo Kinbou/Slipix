@@ -84,7 +84,7 @@ class AuthController extends Controller
                   return response()->json(['success' => false, "message" => "Le nouveau mot de passe doit être différent"], 400);
               }
             } else {
-              return response()->json(['success' => false, "message" => "Mauvais mot de passe"], 400);
+              return response()->json(['success' => false, "message" => "Le mot de passe est incorrecte"], 400);
             }
           } else {
             return response()->json(['success' => false, "message" => "Le mot de passe doit contenir au minimmum 6 caractères"], 400);

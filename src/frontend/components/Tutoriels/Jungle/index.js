@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import Loader from 'src/frontend/components/Loader';
 import {
-  animationThree, cardList, card,
+  animationOne, cardList, card,
 } from 'src/utils/animations';
 import './jungle.scss';
 
@@ -33,21 +33,20 @@ const Jungle = ({
     };
   }, []);
   return (
-    <AnimatePresence initial="initial">
-      <motion.div
-        key="tutoriel"
-        initial="in"
-        animate="end"
-        exit="out"
-        variants={animationThree}
-      >
-        <div className="jungle">
-          {(!laneIsLoad || !laneIsLoad2) && <Loader />}
-          {(laneIsLoad && laneIsLoad2) && (
+    <motion.div
+      key="tutoriel1"
+      initial="in"
+      animate="end"
+      exit="in"
+      variants={animationOne}
+    >
+      <div className="jungle">
+        {(!laneIsLoad || !laneIsLoad2) && <Loader />}
+        {(laneIsLoad && laneIsLoad2) && (
           <>
             <div className="breadcrumb">
               <Link className="breadcrumb__link" to="/">Accueil </Link> &gt;
-              <Link className="breadcrumb__link" to="/tutoriels-champions"> Tutoriels champions  </Link> &gt;
+              <Link className="breadcrumb__link" to="/tutoriels-champions">Tutoriels champions </Link> &gt;
               {name.lane}
             </div>
             <h1 className="globalTitle-page">Tutoriels {name.lane}</h1>
@@ -63,11 +62,7 @@ const Jungle = ({
                 <>
                   <motion.div
                     key={listChampion.id}
-                    // initial="out"
-                    // animate="end"
-                    // exit="out"
                     variants={card}
-                  // // transition={{ duration: 2, time: [0, 0.2, 1] }}
                     className="jungle__cards__card"
                   >
                     {listChampion.actif === 1 && (
@@ -104,10 +99,9 @@ const Jungle = ({
             <h2>Aucun tutoriels {name.lane} n'est disponible</h2>
             )}
           </>
-          )}
-        </div>
-      </motion.div>
-    </AnimatePresence>
+        )}
+      </div>
+    </motion.div>
   );
 };
 

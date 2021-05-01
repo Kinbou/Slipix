@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Controllers\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,13 +36,11 @@ Route::group([
     Route::get('/user-profile', [AuthController::class, 'userProfile']);    
     Route::put('/update-user',[AuthController::class, 'update']);
     Route::post('/update-avatar', [UploadController::class, 'updateAvatar']);
-
     Route::get('/email/resend', [VerificationController::class, 'resend'])->name('verification.resend');
     Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
+    Route::post('/password/email', [ForgotPasswordController::class, 'forgot']);
+    Route::post('/password/reset', [ForgotPasswordController::class, 'reset'])->name('password.reset');
 });
-
-
-
 
 
 // Route::group([

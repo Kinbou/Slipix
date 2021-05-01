@@ -14,8 +14,8 @@ const mapDispatchToProps = (dispatch) => ({
   displayMenu: (name) => {
     dispatch(showMenu(name));
   },
-  displayModal: (name) => {
-    dispatch(showModal(name));
+  displayModal: (name, params) => {
+    dispatch(showModal(name, params));
   },
   requestUserAuthentification: () => {
     dispatch(requestUserAuthentification());

@@ -160,7 +160,6 @@ const Registration = ({ fetchUserRegistration }) => {
               onChange={(e) => setConfirmPassword(e.target.value)}
               onFocus={() => updateError('confirmPassword')}
               onBlur={verifyConfirmPassword}
-
             />
             <label className={labelClassname(confirmPassword)}>Confirmer le mot de passe</label>
             { (errors && errors.confirmPassword) && <p className="label__errors">{ errors.confirmPassword }</p> }

@@ -5,18 +5,18 @@ import PropTypes from 'prop-types';
 import { labelClassname, validEmail } from 'src/utils/selectors';
 import './forgotpassword.scss';
 
-const ForgotPassword = () => {
+const ForgotPassword = ({ forgotPasswordSendEmail }) => {
   const [email, setEmail] = useState('');
-  const [errors, setErrors] = useState(null);
+  const [errors, setErrors] = useState({ email: null });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // eslint-disable-next-line prefer-const
-    let dataError = {};
     if (!validEmail(email)) {
-      console.log('passage dans la fonction');
-      dataError.email = '*L\'email est invalide';
-      setErrors(dataError);
+      setErrors({ ...errors, email: "*L'email est invalide" });
+    }
+    console.log(errors);
+    if (errors.email === null) {
+      forgotPasswordSendEmail(email);
     }
   };
 
@@ -26,6 +26,13 @@ const ForgotPassword = () => {
       setErrors(errors);
     }
   };
+
+  const verifyEmail = () => {
+    if (!validEmail(email)) {
+      setErrors({ ...errors, email: "*L'email est invalide" });
+    }
+  };
+
   return (
     <div className="forgotpassword">
       <h1>Réinitialisation du mot de passe</h1>
@@ -41,6 +48,7 @@ const ForgotPassword = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             onFocus={() => removeError('email')}
+            onBlur={verifyEmail}
           />
           <label className={labelClassname(email)}>Adresse email</label>
           {errors && errors.email && (<p className="label__errors">{errors.email}</p>)}
@@ -52,7 +60,7 @@ const ForgotPassword = () => {
 };
 
 ForgotPassword.propTypes = {
-  email: PropTypes.string.isRequired,
+  forgotPasswordSendEmail: PropTypes.func.isRequired,
 };
 
 export default ForgotPassword;

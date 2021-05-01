@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { Route, useLocation, Switch } from 'react-router-dom';
 import Analytics from 'react-router-ga';
@@ -19,7 +19,6 @@ import ScrollToTopButton from 'src/frontend/components/ScrollToTopButton';
 import Thanks from 'src/frontend/containers/Thanks';
 import MentionLegales from 'src/frontend/components/Legal-mentions';
 import Profil from 'src/frontend/containers/Profil';
-import EmailVerification from 'src/frontend/components/EmailVerification';
 import Alert from 'src/frontend/containers/Alert';
 import Loader from 'src/frontend/components/Loader';
 
@@ -46,6 +45,10 @@ import Trollpick from 'src/frontend/containers/TrollPicks/Trollpick';
 
 // Lanes
 import Jungle from 'src/frontend/containers/Tutoriels/Jungle';
+
+// Automatic Link
+import EmailVerification from 'src/frontend/components/AutomaticLink/EmailVerification';
+import ResetPassword from 'src/frontend/containers/AutomaticLink/ResetPassword';
 
 // == Composant
 const App = ({ showAlert, appIsLoad }) => {
@@ -124,24 +127,19 @@ const App = ({ showAlert, appIsLoad }) => {
     }
 `;
 
-  useEffect(() => {
-    console.log('test');
-  }, [showAlert]);
-
   return (
     <div className="app">
-      <ScrollToTop />
-      <BackgroundImage>
+      <AnimatePresence exitBeforeEnter>
+        <ScrollToTop />
+        <BackgroundImage>
+          {appClass === 'profil' && (
+          <BackgroundProfil />
+          )}
+        </BackgroundImage>
+        <Header />
+        <main>
+          {!appIsLoad && <Loader />}
 
-        {appClass === 'profil' && (
-        <BackgroundProfil />
-        )}
-
-      </BackgroundImage>
-      <Header />
-      <main>
-        {!appIsLoad && <Loader />}
-        <AnimatePresence exitBeforeEnter>
           <Analytics id="UA-176591379-1" debug>
             <ScrollToTopButton />
             {showAlert && <Alert />}
@@ -209,11 +207,15 @@ const App = ({ showAlert, appIsLoad }) => {
               <Route path="/email-verification">
                 <EmailVerification />
               </Route>
+              <Route exact path="/reset-password">
+                <ResetPassword />
+              </Route>
             </Switch>
           </Analytics>
-        </AnimatePresence>
-      </main>
-      <Footer />
+
+        </main>
+        <Footer />
+      </AnimatePresence>
     </div>
   );
 };

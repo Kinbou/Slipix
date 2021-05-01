@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 import './modal.scss';
 
-const Modal = ({ displayModal, content, showModal }) => {
+const Modal = ({
+  displayModal, content, showModal, modalParams,
+}) => {
   const closeModal = () => {
     displayModal('');
   };
@@ -13,7 +16,17 @@ const Modal = ({ displayModal, content, showModal }) => {
       {showModal !== 'crop' ? (
         <>
           <div className="modal-background" onClick={closeModal}> </div>
-          <div className="modal">
+          <motion.div
+            className="modal"
+            // initial={{
+            //   x: modalParams.x, y: modalParams.y, scale: 0.2, borderRadius: '50%',
+            // }}
+            // animate={{
+            //   scale: 1, borderRadius: '10px', x: '800px', y: 'auto',
+            // }}
+            layout
+            transition={{ duration: 3, type: 'spring' }}
+          >
             <button
               className="modal__close global-button"
               type="button"
@@ -23,12 +36,12 @@ const Modal = ({ displayModal, content, showModal }) => {
               <i className="fas fa-times" />
             </button>
             {content}
-          </div>
+          </motion.div>
         </>
       ) : (
         <>
           <div className="modal-background" onClick={closeModal}> </div>
-          <div className="modal">
+          <motion.div className="modal">
             <button
               className="modal__close global-button"
               type="button"
@@ -39,7 +52,7 @@ const Modal = ({ displayModal, content, showModal }) => {
             </button>
             <h4>Modifier le média</h4>
             {content}
-          </div>
+          </motion.div>
         </>
       )}
     </>
@@ -50,6 +63,7 @@ Modal.propTypes = {
   content: PropTypes.element.isRequired,
   displayModal: PropTypes.func.isRequired,
   showModal: PropTypes.string.isRequired,
+  modalParams: PropTypes.object.isRequired,
 };
 
 export default Modal;
