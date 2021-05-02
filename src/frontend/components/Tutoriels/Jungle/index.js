@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import Loader from 'src/frontend/components/Loader';
 import {
@@ -37,7 +37,7 @@ const Jungle = ({
       key="tutoriel1"
       initial="in"
       animate="end"
-      exit="in"
+      exit="exit"
       variants={animationOne}
     >
       <div className="jungle">
@@ -57,6 +57,7 @@ const Jungle = ({
               animate="out"
               exit="end"
               className="jungle__cards"
+              key="listChampions"
             >
               {laneActif.map((listChampion) => (
                 <>

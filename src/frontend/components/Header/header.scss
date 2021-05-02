@@ -24,7 +24,6 @@
     position: relative;
     &__account {
       &__button {
-        // opacity: 0;
         position: relative;
         border: 1px solid #fa5;
         border-radius: 50%;
@@ -52,7 +51,6 @@
         min-width: 50%;
         border-radius: 0 0 1rem 0;
         transition:all .10s ease-in-out;
-
         a {
           display: block;
           line-height: 2;
@@ -116,6 +114,7 @@
   transform: scale(.9);
   margin: auto;
   position: relative;
+  min-height: 99px;
   img {
     position: absolute;
     width: 35%;
@@ -138,7 +137,6 @@
     text-align: center;
     margin-bottom: 2rem;
     margin-top: -30px;
-
     &__content {
       display: inline-block;
       position: relative;
@@ -169,7 +167,6 @@
         }
       }
     }
-    
     &__profil {
       display: flex;
       justify-content: center;
@@ -199,7 +196,7 @@
           border-radius: 0 0 5px 5px;
           max-width: 150px;
           box-shadow: 0px 1px 2px brown;
-          background-color: #21212b;
+          background-color: rgba(28,36,45,0.9);
           position: absolute;
           width: 100%;
           right: 1px;
@@ -316,6 +313,12 @@
         width: 7%;
       }
     }
+  }
+}
+
+@media (max-width: 900px) {
+  .captcha {
+    transform: scale(1);
   }
 }
 @media (max-width: 755px) {

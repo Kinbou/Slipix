@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Youtube from 'src/frontend/components/Youtube';
+import { motion } from 'framer-motion';
+
 import { useTitle } from 'src/hooks/useTitle';
+import { animationOne, transition } from 'src/utils/animations';
 import './progressLol.scss';
 
 // images
@@ -21,7 +24,15 @@ import trollPotter from 'src/assets/images/guides/progressLol/trollPotter.jpg';
 const progressLol = () => {
   useTitle('Progresser sur League of Legends');
   return (
-    <div className="progressLol">
+    <motion.div
+      className="progressLol"
+      key="progressLol"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
       <div className="breadcrumb">
         <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
         <Link className="breadcrumb__link" to="/guides"> guides</Link> &gt;
@@ -246,7 +257,7 @@ const progressLol = () => {
         <img className="progressLol__pictures__trollPotter" src={trollPotter} alt="" />
         <p className="end">N'hésitez pas à aller consulter les autres guides de Coach Slipix</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import './modal.scss';
+import { animationModal, transition } from 'src/utils/animations';
 
 const Modal = ({
   displayModal, content, showModal, modalParams,
@@ -12,20 +13,18 @@ const Modal = ({
   };
 
   return (
-    <>
+    <AnimatePresence exitBeforeEnter>
       {showModal !== 'crop' ? (
         <>
           <div className="modal-background" onClick={closeModal}> </div>
           <motion.div
             className="modal"
-            // initial={{
-            //   x: modalParams.x, y: modalParams.y, scale: 0.2, borderRadius: '50%',
-            // }}
-            // animate={{
-            //   scale: 1, borderRadius: '10px', x: '800px', y: 'auto',
-            // }}
-            layout
-            transition={{ duration: 3, type: 'spring' }}
+            key="home"
+            initial="in"
+            animate="out"
+            exit="exit"
+            variants={animationModal}
+            transition={transition}
           >
             <button
               className="modal__close global-button"
@@ -41,7 +40,15 @@ const Modal = ({
       ) : (
         <>
           <div className="modal-background" onClick={closeModal}> </div>
-          <motion.div className="modal">
+          <motion.div
+            className="modal"
+            key="home"
+            initial="in"
+            animate="out"
+            exit="exit"
+            variants={animationModal}
+            transition={transition}
+          >
             <button
               className="modal__close global-button"
               type="button"
@@ -55,7 +62,7 @@ const Modal = ({
           </motion.div>
         </>
       )}
-    </>
+    </AnimatePresence>
   );
 };
 

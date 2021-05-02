@@ -60,11 +60,7 @@
 
 @media (max-width: 900px) {
   .modal {
-    width: calc(100% -2rem);
-    margin: 0 1rem/2;
-    left: 0;
-    top: 50px;
-    bottom: 50px;
-    overflow-y: auto;
+    width: 95%;
+    left: 1rem;
   }
 }

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Route, useLocation, Switch } from 'react-router-dom';
 import Analytics from 'react-router-ga';
 import PropTypes from 'prop-types';
 import { AnimatePresence } from 'framer-motion';
-
+import dataImages from 'src/utils/dataImages.json';
+import { useResolution } from 'src/utils/selectors';
 import styled from 'styled-components';
 
 // == Import
@@ -50,10 +51,37 @@ import Jungle from 'src/frontend/containers/Tutoriels/Jungle';
 import EmailVerification from 'src/frontend/components/AutomaticLink/EmailVerification';
 import ResetPassword from 'src/frontend/containers/AutomaticLink/ResetPassword';
 
-// == Composant
-const App = ({ showAlert, appIsLoad }) => {
-  const location = useLocation();
+const BackgroundImage = styled.div`
+/* object-fit: fill; */
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }) => appClass}/format-standard.jpg);
 
+  /* Grand écran */
+  @media (min-width: 3400px) {
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }) => appClass}/format-3440x1440.jpg)
+  }
+  /* Grand écran */
+  @media (min-width: 2000px) {
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }) => appClass}/format-2560x1440.jpg)
+  }
+  /* Format tablette */
+  @media (max-width: 1024px) {
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }) => appClass}/format-tablette.jpg)
+  }
+  /* Format phone */
+  @media (max-width: 600px) {
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }) => appClass}/format-phone.jpg)
+  }
+`;
+
+// == Composant
+const App = ({ showAlert }) => {
+  const location = useLocation();
   const currentPath = location.pathname;
   const isHome = currentPath === '/';
   const isPresentation = currentPath === '/presentation';
@@ -98,131 +126,108 @@ const App = ({ showAlert, appIsLoad }) => {
     trollPicks: isTrollPicks,
     profil: isProfil,
   });
+  const [imgLoaded, setImgLoaded] = useState(false);
 
-  const BackgroundImage = styled.div`
-  /* object-fit: fill; */
-    z-index: -1;
-    width: 100%;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${appClass}/format-standard.jpg);
-
-    /* Grand écran */
-    @media (min-width: 3400px) {
-      background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${appClass}/format-3440x1440.jpg)
-    }
-    /* Grand écran */
-    @media (min-width: 2000px) {
-      background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${appClass}/format-2560x1440.jpg)
-    }
-    /* Format tablette */
-    @media (max-width: 1024px) {
-      background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${appClass}/format-tablette.jpg)
-    }
-    /* Format phone */
-    @media (max-width: 600px) {
-      background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${appClass}/format-phone.jpg)
-    }
-`;
+  const cacheImages = async (srcArray) => {
+    const images = [...srcArray];
+    const promises = await images.map((src) => new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = resolve();
+      img.onerror = reject();
+    }));
+    await Promise.all(promises);
+    setImgLoaded(true);
+  };
+  useEffect(() => {
+    const format = useResolution();
+    const imagesCopy = { ...dataImages[appClass] };
+    const images = [...imagesCopy.otherImage];
+    images.push(imagesCopy.background[format]);
+    cacheImages(images);
+  }, [appClass]);
 
   return (
     <div className="app">
-      <AnimatePresence exitBeforeEnter>
-        <ScrollToTop />
-        <BackgroundImage>
-          {appClass === 'profil' && (
+      <ScrollToTop />
+      <BackgroundImage appClass={appClass}>
+        {appClass === 'profil' && (
           <BackgroundProfil />
-          )}
-        </BackgroundImage>
-        <Header />
-        <main>
-          {!appIsLoad && <Loader />}
-
+        )}
+      </BackgroundImage>
+      <Header />
+      <main>
+        {!imgLoaded ? <Loader /> : (
           <Analytics id="UA-176591379-1" debug>
             <ScrollToTopButton />
             {showAlert && <Alert />}
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/presentation">
-                <Presentation />
-              </Route>
-              <Route exact path="/nouveaute">
-                <News />
-              </Route>
-              <Route exact path="/tutoriels-champions">
-                <Tutoriels />
-              </Route>
-              <Route exact path="/tutoriels-champions/:lane">
-                <Jungle />
-              </Route>
-              <Route exact path="/tutoriels-champions/:lane/:name">
-                <Champion />
-              </Route>
-              <Route exact path="/guides">
-                <Guides />
-              </Route>
-              <Route exact path="/guides/mental&rage">
-                <MentalRage />
-              </Route>
-              <Route exact path="/guides/role-champion">
-                <RoleChampion />
-              </Route>
-              <Route exact path="/guides/progresser-sur-leagueOfLegends">
-                <ProgressLol />
-              </Route>
-              <Route exact path="/guides/sortir-du-bas-elo">
-                <LowElo />
-              </Route>
-              <Route exact path="/guides/gagner-sa-phase-de-lane">
-                <WinLane />
-              </Route>
-              <Route exact path="/guides/vision-du-jeu">
-                <VisionGame />
-              </Route>
-              <Route exact path="/trollpicks">
-                <TrollPicks />
-              </Route>
-              <Route exact path="/trollpicks/:name/:id">
-                <Trollpick />
-              </Route>
-              <Route exact path="/me-soutenir">
-                <Support />
-              </Route>
-              <Route exact path="/me-contacter">
-                <Contact />
-              </Route>
-              <Route exact path="/mentions-legales">
-                <MentionLegales />
-              </Route>
-              <Route exact path="/remerciements">
-                <Thanks />
-              </Route>
-              <Route exact path="/profil">
-                <Profil />
-              </Route>
-              <Route path="/email-verification">
-                <EmailVerification />
-              </Route>
-              <Route exact path="/reset-password">
-                <ResetPassword />
-              </Route>
-            </Switch>
+            <AnimatePresence exitBeforeEnter>
+              <Switch location={location} key={location.pathname}>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route exact path="/presentation" component={Presentation} />
+                <Route exact path="/nouveaute" component={News} />
+                <Route exact path="/tutoriels-champions" component={Tutoriels} />
+                <Route exact path="/tutoriels-champions/:lane" component={Jungle} />
+                <Route exact path="/tutoriels-champions/:lane/:name" component={Champion} />
+                <Route exact path="/guides" component={Guides} />
+                <Route exact path="/guides/mental&rage" component={MentalRage} />
+                <Route exact path="/guides/role-champion">
+                  <RoleChampion />
+                </Route>
+                <Route exact path="/guides/progresser-sur-leagueOfLegends">
+                  <ProgressLol />
+                </Route>
+                <Route exact path="/guides/sortir-du-bas-elo">
+                  <LowElo />
+                </Route>
+                <Route exact path="/guides/gagner-sa-phase-de-lane">
+                  <WinLane />
+                </Route>
+                <Route exact path="/guides/vision-du-jeu">
+                  <VisionGame />
+                </Route>
+                <Route exact path="/trollpicks">
+                  <TrollPicks />
+                </Route>
+                <Route exact path="/trollpicks/:name/:id">
+                  <Trollpick />
+                </Route>
+                <Route exact path="/me-soutenir">
+                  <Support />
+                </Route>
+                <Route exact path="/me-contacter">
+                  <Contact />
+                </Route>
+                <Route exact path="/mentions-legales">
+                  <MentionLegales />
+                </Route>
+                <Route exact path="/remerciements">
+                  <Thanks />
+                </Route>
+                <Route exact path="/profil">
+                  <Profil />
+                </Route>
+                <Route path="/email-verification">
+                  <EmailVerification />
+                </Route>
+                <Route exact path="/reset-password">
+                  <ResetPassword />
+                </Route>
+              </Switch>
+            </AnimatePresence>
           </Analytics>
+        )}
+      </main>
+      <Footer />
 
-        </main>
-        <Footer />
-      </AnimatePresence>
     </div>
   );
 };
 
 App.propTypes = {
   showAlert: PropTypes.bool.isRequired,
-  appIsLoad: PropTypes.bool.isRequired,
 };
 
 export default App;

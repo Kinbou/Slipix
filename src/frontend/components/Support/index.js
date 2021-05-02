@@ -2,22 +2,33 @@
 import React from 'react';
 import Slideshow from 'src/frontend/components/Slideshow';
 import { useTitle } from 'src/hooks/useTitle';
-import twitchPrime from 'src/assets/images/twitchPrime.png';
+import { motion } from 'framer-motion';
 
-import facebook from 'src/assets/images/socialNetwork/Facebook.png';
-import twitter from 'src/assets/images/socialNetwork/twitter.png';
-import instagram from 'src/assets/images/socialNetwork/Instagram.png';
+import { animationOne, transition } from 'src/utils/animations';
 
+import './support.scss';
 // images
 import teeShirt from 'src/assets/images/support/teeShirt.png';
 import cupYasuo from 'src/assets/images/support/cupYasuo.png';
 import cupTroll from 'src/assets/images/support/cupTroll.png';
-import './support.scss';
+import facebook from 'src/assets/images/socialNetwork/Facebook.png';
+import twitter from 'src/assets/images/socialNetwork/twitter.png';
+import instagram from 'src/assets/images/socialNetwork/Instagram.png';
+import twitchPrime from 'src/assets/images/twitchPrime.png';
+
 
 const Support = () => {
   useTitle('Me soutenir');
   return (
-    <div className="support">
+    <motion.div
+      className="support"
+      key="support"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
       <h1 className="globalTitle-page">Me Soutenir</h1>
       <Slideshow />
       <div className="support__content">
@@ -73,7 +84,7 @@ const Support = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

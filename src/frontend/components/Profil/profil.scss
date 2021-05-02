@@ -1,7 +1,6 @@
 .account-profil {
   color: white;
   font-family: 'Gotu';
-
   &__subtitle {
     font-size: 1.4em;
     font-weight: bold;
@@ -18,9 +17,6 @@
     padding: 1rem;
     display: flex;
     cursor: pointer;
-    &:hover {
-
-    }
     &__avatar {
       font-size: 4em;
       color: white;
@@ -241,32 +237,27 @@
   }
 }
 
-
 .account-profil-upload {
   text-align: center;
 
   .global-button {
     padding: .5rem 1rem;
   }
-
   &__file {
     font-family: inherit;
   }
-
   &__error {
     background-color: red;
     color: #fff;
     padding: .5rem;
     margin-bottom: 1rem/2;
   }
-
   &__progress {
     background-color: #fff;
     margin: 1rem 0;
     position: relative;
     height: 25px;
     border-radius: .5rem;
-
     &__text {
       text-align: center;
       height: inherit;
@@ -275,7 +266,6 @@
       position: absolute;
       left: calc(50% - 50px);
     }
-
     &__bar {
       border-radius: .5rem; 
       background-color: green;
@@ -286,74 +276,27 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .account-profil {
-    &__container {
-      flex-direction: column;
-
-      &__left {
-        width: 100%;
-      }
-      &__right {
-        width: 100%;
-      }
-    }
-
-    &__avatar {
-      text-align: center;
-      &__image {
-        margin: 0 auto;
-      }
-      &__noimage {
-        margin: 0 auto;
-      }
-    }
-
-    &__infos {
-      text-align: center;
-      margin-bottom: 1rem;
-      &__field {
-      }
-    }
-    &__address {
-      text-align: center;
-      margin-bottom: 1rem;
-      &__field {
-
-      }
-    }
-    &__password {
-      text-align: center;  
-      margin-bottom: 1rem;
-      &__field {
-
-      }
-    }
+@media (max-width: 1450px) {
+  .account-profil__container {
+    width: 750px;
   }
 }
 
-@media (max-width: 425px) {
-  .account-profil {
-    &__container {
-      flex-direction: column;
-    }
+@media (max-width: 785px) {
+  .account-profil__container {
+    width: 95%;
 
-    &__infos {
-      &__field {
-        width: 100%;
-      }
-    }
-    &__address {
-      margin-bottom: 1rem;
-  
-      &__field {
-        width: 100%;
-      }
-    }
-    &__password {
-      &__field {
-        width: 100%;
-      }
-    }
+  }
+}
+
+@media (max-width: 630px) {
+  .account-profil__container__label {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .account-profil__container {
+    padding: 0 0 0 1rem;
   }
 }

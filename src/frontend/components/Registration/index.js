@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import PasswordStrength from 'src/utils/passwordLength';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 import { labelClassname, validEmail } from 'src/utils/selectors';
+import { animationOne, transition } from 'src/utils/animations';
+import PasswordStrength from 'src/utils/passwordLength';
 import './registration.scss';
 
 const Registration = ({ fetchUserRegistration }) => {
@@ -95,7 +97,15 @@ const Registration = ({ fetchUserRegistration }) => {
   };
 
   return (
-    <div className="registration">
+    <motion.div
+      className="registration"
+      key="registration"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
       <h1>Inscription</h1>
       <p className="registration__text">Vous n'avez pas encore de compte ? Créez en un ci-dessous.</p>
 
@@ -188,7 +198,7 @@ const Registration = ({ fetchUserRegistration }) => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

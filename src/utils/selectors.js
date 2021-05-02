@@ -55,3 +55,20 @@ export const validEmail = (data) => {
 
 export const urlBack = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
 export const urlLocal = 'http://localhost:8000';
+
+export const useResolution = () => {
+  const screenWidth = window.screen.width;
+  if (screenWidth > 3400) {
+    return '4k';
+  }
+  if (screenWidth > 2000) {
+    return '2k';
+  }
+  if (screenWidth > 1024) {
+    return 'standard';
+  }
+  if (screenWidth > 600) {
+    return 'tablette';
+  }
+  return 'phone';
+};

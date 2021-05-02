@@ -3,8 +3,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Reaptcha from 'reaptcha';
+import { motion } from 'framer-motion';
 
 import { labelClassname, validEmail } from 'src/utils/selectors';
+import { animationOne, transition } from 'src/utils/animations';
 import './login.scss';
 
 const Login = ({
@@ -58,7 +60,15 @@ const Login = ({
   };
 
   return (
-    <div className="login">
+    <motion.div
+      className="login"
+      key="login"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
       <h1>Connexion</h1>
       <p className="login__text">Vous avez déjà un compte ? Connectez-vous ci-dessous.</p>
       {errorLogin && errorLogin.error && (
@@ -115,7 +125,7 @@ const Login = ({
         <button type="submit" className="global-button">Se connecter</button>
       </form>
       <button type="button" className="login__link" onClick={handleForgotPasseword}>Mot de passe oublié ?</button>
-    </div>
+    </motion.div>
   );
 };
 

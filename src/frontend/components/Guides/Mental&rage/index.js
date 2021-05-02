@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Youtube from 'src/frontend/components/Youtube';
+import { motion } from 'framer-motion';
+
+import { animationOne, transition } from 'src/utils/animations';
 import { useTitle } from 'src/hooks/useTitle';
+import './mental&rage.scss';
 
 // Picture
 import logoSlipix from 'src/assets/images/guides/mental&rage/slipixLogo.png';
@@ -10,12 +14,20 @@ import OMental from 'src/assets/images/guides/mental&rage/0Mental.jpg';
 import rage from 'src/assets/images/guides/mental&rage/rage.jpeg';
 import textRage from 'src/assets/images/guides/mental&rage/textRage.jpg';
 import troll from 'src/assets/images/guides/mental&rage/troll.jpg';
-import './mental&rage.scss';
+
 
 const Guide = () => {
   useTitle('Mental & Rage');
   return (
-    <div className="guide">
+    <motion.div
+      className="guide"
+      key="mentalRage"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
       <div className="breadcrumb">
         <Link className="breadcrumb__link" to="/">Accueil </Link> &gt;
         <Link className="breadcrumb__link" to="/guides"> guides</Link> &gt;
@@ -79,7 +91,7 @@ const Guide = () => {
         <img className="guide__rage__content__troll" src={troll} alt="" />
         <p className="paragraph end">N'hésitez pas à consulter les autres guides de Coach Slipix</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

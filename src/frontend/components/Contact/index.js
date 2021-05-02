@@ -1,13 +1,24 @@
 import React from 'react';
-import { useTitle } from '../../../hooks/useTitle';
+import { motion } from 'framer-motion';
 
-import refuseResist from '../../../assets/images/refuseResist.png';
+import { useTitle } from 'src/hooks/useTitle';
+import { animationOne, transition } from 'src/utils/animations';
+
+import refuseResist from 'src/assets/images/refuseResist.png';
 import './contact.scss';
 
 const Contact = () => {
   useTitle('Me contacter');
   return (
-    <div className="contact">
+    <motion.div
+      className="contact"
+      key="contact"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
       <h1 className="globalTitle-page">Me Contacter</h1>
       <div className="contact__background">
         <div className="contact__content">
@@ -21,7 +32,7 @@ const Contact = () => {
           <p className="contact__content__refuseResist">Je ne prend plus de réservations pour du coaching car je veux me concentrer sur le coaching de ma team REFUSE RESIST.<img src={refuseResist} alt="" /><br /> Il est donc inutile de m'envoyer un message privé sur discord à ce sujet.<br /> Pareil pour les "conseils", il y a mes vidéos, mes guides et mes coachings en live pour ça. Ce n'est pas que je veux pas c'est que je n'ai pas le temps de répondre par écrit.</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

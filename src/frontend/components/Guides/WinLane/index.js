@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Youtube from 'src/frontend/components/Youtube';
+import { motion } from 'framer-motion';
+
 import { useTitle } from 'src/hooks/useTitle';
+import { animationOne, transition } from 'src/utils/animations';
+import './winLane.scss';
 
 // images
 import logoSlipix from 'src/assets/images/winLane/slipixLogoLane.png';
@@ -12,12 +16,18 @@ import troll from 'src/assets/images/winLane/troll.jpg';
 import troll2 from 'src/assets/images/winLane/troll2.jpg';
 import trollEnd from 'src/assets/images/winLane/trollEnd.jpg';
 
-import './winLane.scss';
-
 const WinLane = () => {
   useTitle('Gagner sa phase de lane');
   return (
-    <div className="winLane">
+    <motion.div
+      className="winLane"
+      key="home"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
       <div className="breadcrumb">
         <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
         <Link className="breadcrumb__link" to="/guides"> guides</Link> &gt;
@@ -126,7 +136,7 @@ const WinLane = () => {
         <img className="pictures__trollEnd" src={trollEnd} alt="" />
         <p className="paragraph intro">N'hésitez pas à aller consulter les autres guides de coach Slipix</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -19,7 +19,6 @@ import logoSlipix from 'src/assets/images/SlipixLogo.png';
 import SocialNetwork from 'src/frontend/components/SocialNetwork';
 import Publicity from './Publicity';
 
-
 const Home = () => {
   useTitle();
   return (
@@ -27,7 +26,7 @@ const Home = () => {
       key="home"
       initial="out"
       animate="in"
-      exit="out"
+      exit="exit"
       variants={animationOne}
       transition={transition}
     >

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import { useTitle } from 'src/hooks/useTitle';
+import { animationOne, transition } from 'src/utils/animations';
 import './roleChampion.scss';
 
 // images
@@ -20,7 +22,15 @@ import Youtube from 'src/frontend/components/Youtube';
 const RoleChampion = () => {
   useTitle('Trouver son Rôle/Champion');
   return (
-    <div className="roleChampion">
+    <motion.div
+      className="roleChampion"
+      key="roleChampion"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
       <div className="breadcrumb">
         <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
         <Link className="breadcrumb__link" to="/guides"> guides</Link> &gt;
@@ -174,7 +184,7 @@ const RoleChampion = () => {
         <img className="roleChampion__champion__picture roleChampion__champion__picture__troll" src={trollPicture} alt="" />
         <p className="end">N'hésitez pas à aller consulter les autres guides de COACH SLIPIX</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
