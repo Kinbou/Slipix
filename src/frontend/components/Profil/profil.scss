@@ -1,0 +1,302 @@
+.account-profil {
+  color: white;
+  font-family: 'Gotu';
+  &__subtitle {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 1rem/2 0;
+    color: #ffaa55; 
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__person {
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    cursor: pointer;
+    &__avatar {
+      font-size: 4em;
+      color: white;
+      padding: 1rem;
+      position: relative;
+      &:hover {
+        content: 'test';
+      }
+      &__icon {
+        position: absolute;
+        font-size: .4em;
+        right: 15px;
+      }
+      img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+      }
+      &__content {
+        padding: 2.5rem 0 0 1rem;
+        &__name {
+          font-size: 1.2em;
+        }
+      }
+  }
+}
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: #21212b;
+    width: 50%;
+    padding: 0 4rem 1rem 4rem;
+    border-radius: 10px;
+    margin: 1rem auto;
+    &__error {
+      color: red;
+      font-size: .7em;
+      position: absolute;
+      bottom: 0;
+    }
+    &__label {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      margin: 1.2rem auto;
+      position: relative;
+      &--errors {
+        .global-input {
+          border-bottom: red 1px solid;
+        }
+      }
+      &__button {
+        background-color: transparent;
+        color: white;
+        border: none;
+        i {
+          font-size: 1.4em;
+        }
+      }
+      .global-input {
+        margin: .5rem .5rem 1rem .5rem;
+      }
+      &__disabled {
+        border-bottom: #ffaa55 1px solid!important;
+      }
+    }
+    input {
+      background-color: transparent!important;
+      border: none;
+      width: 80%;
+      color: #ffaa55;
+    }
+    i:hover {
+      color: #ffaa55;
+    }
+  }
+
+  &__submit {
+    display: block;
+    margin: 2rem auto;
+    border: 0;
+    // background-color: #21212b;
+    color: #fff;
+    padding: .8rem 1rem;
+    font-size: inherit;
+    border-radius: .4rem;
+
+    &--actived {
+      background-color: #21212b;
+      &:hover {
+        background-color: #ffaa55;
+      }
+    }
+    &--disabled {
+      background-color: #21212bd6;
+    }
+  }
+
+  &__avatar {
+    margin-bottom: 1rem;
+
+    &__image {
+      position: relative;
+      width: 120px;
+      height: 120px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        display: inline-block;
+        width: 120px;
+        height: 120px; 
+        border-radius: 50%;
+      }
+
+      button {
+        position: absolute;
+        padding: .8rem 1rem;
+        background-color: orangered;
+        color: #fff;
+        border-radius: .5rem;
+        display: none;
+        font-size: .9em;
+        border: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        button {
+          display: block;
+        }
+      }
+    }
+
+    &__noimage {
+      width: 120px;
+      height: 120px;
+      background-color: #E3E5EC;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      i {
+        color: blue;
+        font-size: 3em;
+      }
+
+      button {
+        position: absolute;
+        padding: .8rem 1rem;
+        background-color: orangered;
+        color: #fff;
+        border-radius: .5rem;
+        display: none;
+        font-size: .9em;
+        border: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+        button {
+          display: block;
+        }
+      }
+    }
+    &__remove {
+      margin: 0 auto;
+      display: block;
+      border: 0;
+      background-color: transparent;
+      color: #E3E5EC;
+      padding: .5rem;
+      font-size: .9em;
+
+      &:hover {
+        color: orangered;
+      }
+    }
+  }
+
+  &__infos {
+    &__field {
+      margin-bottom: .3rem;
+      width: 60%;
+      .global-input {
+        width: 100%;
+      }
+    }
+  }
+  &__address {
+    margin-bottom: 1rem;
+
+    &__field {
+      margin-bottom: .3rem;
+      width: 60%;
+      .global-input {
+        width: 100%;
+      }
+    }
+  }
+  &__password {
+    margin-bottom: 1rem;
+    &__field {
+      margin-bottom: .3rem;
+      width: 60%; 
+      .global-input {
+        width: 100%;
+      }
+    }
+  }
+  &__params {
+    &__content {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.account-profil-upload {
+  text-align: center;
+
+  .global-button {
+    padding: .5rem 1rem;
+  }
+  &__file {
+    font-family: inherit;
+  }
+  &__error {
+    background-color: red;
+    color: #fff;
+    padding: .5rem;
+    margin-bottom: 1rem/2;
+  }
+  &__progress {
+    background-color: #fff;
+    margin: 1rem 0;
+    position: relative;
+    height: 25px;
+    border-radius: .5rem;
+    &__text {
+      text-align: center;
+      height: inherit;
+      line-height: 25px;
+      width: 100px;
+      position: absolute;
+      left: calc(50% - 50px);
+    }
+    &__bar {
+      border-radius: .5rem; 
+      background-color: green;
+      font-size: .8em;
+      text-align: center;
+      height: inherit;
+    }
+  }
+}
+
+@media (max-width: 1450px) {
+  .account-profil__container {
+    width: 750px;
+  }
+}
+
+@media (max-width: 785px) {
+  .account-profil__container {
+    width: 95%;
+
+  }
+}
+
+@media (max-width: 630px) {
+  .account-profil__container__label {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .account-profil__container {
+    padding: 0 0 0 1rem;
+  }
+}

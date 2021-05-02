@@ -1,17 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { useTitle } from 'src/hooks/useTitle';
 
+import { animationOne, transition } from 'src/utils/animations';
+import './presentation.scss';
 // images
 import refuseResist from 'src/assets/images/refuseResist.png';
 import coachingSlipix from 'src/assets/images/presentation/coachingSlipix.jpg';
 import SocialNetwork from 'src/frontend/components/SocialNetwork';
-import './presentation.scss';
+
 
 const Presentation = () => {
   useTitle('Présentation');
   return (
-    <div className="presentation">
+    <motion.div
+      className="presentation"
+      initial="out"
+      animate="in"
+      exit="out"
+      key="presentation"
+      variants={animationOne}
+      transition={transition}
+    >
       <h1 className="globalTitle-page">Présentation</h1>
       <div className="presentation__background">
         <h2>Salut c'est <span className="red">Slipix</span>  Bienvenue sur mon site Officiel !</h2>
@@ -46,7 +57,7 @@ const Presentation = () => {
           <span className="red"> Slipix.</span>
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

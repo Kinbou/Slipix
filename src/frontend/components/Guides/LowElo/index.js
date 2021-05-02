@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Youtube from 'src/frontend/components/Youtube';
+import { motion } from 'framer-motion';
+
 import { useTitle } from 'src/hooks/useTitle';
+import { animationOne, transition } from 'src/utils/animations';
+import './lowElo.scss';
 
 // images
 import logoSlipix from 'src/assets/images/guides/lowElo/logoSlipix.png';
@@ -15,12 +19,18 @@ import trollVs from 'src/assets/images/guides/lowElo/trollVs.jpg';
 import heavyToCarry from 'src/assets/images/guides/lowElo/heavyToCarry.jpg';
 import trollSimpson from 'src/assets/images/guides/lowElo/trollSimpson.jpg';
 
-import './lowElo.scss';
-
 const LowElo = () => {
   useTitle('Sortir du bas Elo');
   return (
-    <div className="lowElo">
+    <motion.div
+      className="lowElo"
+      key="lowElo"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
       <div className="breadcrumb">
         <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
         <Link className="breadcrumb__link" to="/guides"> guides</Link> &gt;
@@ -141,7 +151,7 @@ const LowElo = () => {
         <img className="picture__trollSimpson" src={trollSimpson} alt="" />
         <p className="end">N'hésitez pas à aller consulter les autres guides de coach Slipix</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

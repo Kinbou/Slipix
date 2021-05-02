@@ -1,5 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+import Loader from 'src/frontend/components/Loader';
+import {
+  animationOne, cardList, card,
+} from 'src/utils/animations';
+import './tutoriels.scss';
 
 // images
 import toplane from 'src/assets/images/logoLanes/toplane.png';
@@ -7,45 +14,77 @@ import jungle from 'src/assets/images/logoLanes/jungle.png';
 import mid from 'src/assets/images/logoLanes/mid.png';
 import adc from 'src/assets/images/logoLanes/adc.png';
 import support from 'src/assets/images/logoLanes/support.png';
-import './tutoriels.scss';
 
 const Tutoriels = () => (
-  <div className="tutoriels">
+  <motion.div
+    className="tutoriel"
+    key="tutorielChampion"
+    initial="in"
+    animate="end"
+    exit="exit"
+    variants={animationOne}
+  >
     <h1 className="globalTitle-page">Tutoriels champions</h1>
     <p className="tutoriels__intro">Vous trouverez ici mes tutoriels sur vos champions favoris</p>
     <div className="tutoriels__cards">
-      <div className="tutoriels__cards__line tutoriels__cards__line__one">
+      <motion.div
+        className="tutoriels__cards__line tutoriels__cards__line__one"
+        variants={cardList}
+        initial="in"
+        animate="out"
+        exit="end"
+      >
         <Link to="/tutoriels-champions/toplane">
-          <div className="tutoriels__cards__card tutoriels__cards__cardActif">
+          <motion.div
+            className="tutoriels__cards__card tutoriels__cards__cardActif"
+            variants={card}
+            key="tutorielToplane"
+          >
             <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Toplane</h3>
             <img className="tutoriels__picture" src={toplane} alt="" />
-          </div>
+          </motion.div>
         </Link>
         <Link to="/tutoriels-champions/jungle">
-          <div className="tutoriels__cards__card tutoriels__cards__cardActif">
+          <motion.div
+            className="tutoriels__cards__card tutoriels__cards__cardActif"
+            variants={card}
+            key="tutorielJungle"
+          >
             <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Jungle</h3>
             <img className="tutoriels__picture" src={jungle} alt="" />
-          </div>
+          </motion.div>
         </Link>
         <Link to="/tutoriels-champions/midlane">
-          <div className="tutoriels__cards__card tutoriels__cards__cardActif">
+          <motion.div
+            className="tutoriels__cards__card tutoriels__cards__cardActif"
+            variants={card}
+            key="tutorielMidlane"
+          >
             <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Midlane</h3>
             <img className="tutoriels__picture" src={mid} alt="" />
-          </div>
+          </motion.div>
         </Link>
         <Link to="/tutoriels-champions/adc">
-          <div className="tutoriels__cards__card tutoriels__cards__cardActif">
+          <motion.div
+            className="tutoriels__cards__card tutoriels__cards__cardActif"
+            variants={card}
+            key="tutorielAdc"
+          >
             <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels ad carry</h3>
             <img className="tutoriels__picture" src={adc} alt="" />
-          </div>
+          </motion.div>
         </Link>
         <Link to="/tutoriels-champions/support">
-          <div className="tutoriels__cards__card tutoriels__cards__cardActif">
+          <motion.div
+            className="tutoriels__cards__card tutoriels__cards__cardActif"
+            variants={card}
+            key="tutorielSupport"
+          >
             <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Support</h3>
             <img className="tutoriels__picture" src={support} alt="" />
-          </div>
+          </motion.div>
         </Link>
-      </div>
+      </motion.div>
       {/* <div className="betweenParagraph" /> */}
       {/* <div className="tutoriels__cards__line tutoriels__cards__line__two">
         <a>
@@ -57,7 +96,7 @@ const Tutoriels = () => (
         </a>
       </div> */}
     </div>
-  </div>
+  </motion.div>
 );
 
 export default Tutoriels;

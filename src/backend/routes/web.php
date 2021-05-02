@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +92,8 @@ Route::get('/trollpicks',[
     'as' => 'trollpick',
     'uses' => 'TrollpickController@list'
 ]);
+
+
 
 
 

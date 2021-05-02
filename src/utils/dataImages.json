@@ -1,0 +1,166 @@
+{
+  "home": {
+    "background": {
+      "4k" : "https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/home/format-3440x1440.jpg",
+      "2k": "https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/home/format-2560x1440.jpg",
+      "standard": "https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/home/format-standard.jpg",
+      "tablette": "https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/home/format-tablette.jpg",
+      "phone" : "https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/home/format-phone.jpg"
+    },
+    "otherImage": [
+
+    ]
+  },
+  "news": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "profil": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "guides": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "mentalRage": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "roleChampion": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "progressLol": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "lowElo": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "winLane": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "trollPicks": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "tutoriels": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "turotielJungle": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "tutorielTop": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "tutorielMid": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "tutorielAdc": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "tutorielSupport": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "support": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "contact": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "presentation": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "thanks": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  }
+}

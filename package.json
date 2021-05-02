@@ -46,6 +46,7 @@
     "webpack-merge": "*"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.13.10",
     "@types/classnames": "^2.2.10",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
@@ -55,23 +56,30 @@
     "bundle-stats-webpack-plugin": "^2.2.0",
     "classnames": "^2.2.6",
     "components": "^0.1.0",
+    "framer-motion": "^4.1.6",
     "html-react-parser": "^0.14.1",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
-    "react-i18next": "^11.7.3",
+    "react-easy-crop": "^3.3.2",
+    "react-google-recaptcha": "^2.1.0",
     "react-media-hook": "^0.4.7",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-router-ga": "^1.2.3",
     "react-slideshow-image": "^1.4.2",
     "react-slugify": "^2.0.2",
+    "react-three-fiber": "^6.0.13",
     "react-use": "^15.3.4",
     "react-youtube": "^7.11.2",
+    "reaptcha": "^1.7.2",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "styled": "^1.0.0",
     "styled-components": "^5.2.0",
-    "yarn": "^1.22.10"
+    "three": "^0.127.0",
+    "universal-cookie": "^4.0.4",
+    "yarn": "^1.22.10",
+    "zxcvbn": "^4.4.2"
   }
 }

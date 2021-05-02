@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from 'axios';
 import {
   FETCH_ALL_CHAMPIONS,
@@ -8,7 +9,7 @@ import {
 
 const championsMiddleware = (store) => (next) => (action) => {
   const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
-  // const urlLocal = 'http://localhost:8090';
+  const urlLocal = 'http://localhost:8000';
 
   switch (action.type) {
     case FETCH_ALL_CHAMPIONS:
@@ -25,19 +26,19 @@ const championsMiddleware = (store) => (next) => (action) => {
       break;
 
     case FETCH_ONE_CHAMPION:
-      console.log(`${url}/champions/${store.getState().champions.name.lane}/${store.getState().champions.name.name}`);
       axios({
         method: 'get',
         url: `${url}/champions/${store.getState().champions.name.lane}/${store.getState().champions.name.name}`,
       })
         .then((response) => {
           store.dispatch(saveChampion(response.data));
+          store.dispatch(setChampionIsLoad());
         })
         .catch((error) => {
+          console.log('je passe dans l erreur');
           console.warn(error);
         })
         .finally(() => {
-          store.dispatch(setChampionIsLoad());
         });
       next(action);
       break;

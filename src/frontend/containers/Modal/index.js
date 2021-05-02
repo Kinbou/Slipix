@@ -3,11 +3,14 @@ import Modal from 'src/frontend/components/Modal';
 
 import { showModal } from 'src/actions/global';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  showModal: state.global.showModal,
+  modalParams: state.global.modalParams,
+});
 
 const mapDispatchToProps = (dispatch) => ({
-  displayModal: (name) => {
-    dispatch(showModal(name));
+  displayModal: (name, params) => {
+    dispatch(showModal(name, params));
   },
 });
 

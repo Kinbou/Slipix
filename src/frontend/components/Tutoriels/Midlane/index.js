@@ -1,29 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Champions
-// import yasuo from '../../../../assets/images/championsMidlane/yasuo.jpg';
-// // import ekko from '../../../../assets/images/championsJungle/ekko.jpg';
-// import katarina from '../../../../assets/images/championsMidlane/katarina.jpg';
-// import ryze from '../../../../assets/images/championsMidlane/ryze.jpg';
-// import lux from '../../../../assets/images/championsMidlane/lux.jpg';
-// import akali from '../../../../assets/images/championsMidlane/akali.jpg';
-// import orianna from '../../../../assets/images/championsMidlane/orianna.jpg';
-// import ahri from '../../../../assets/images/championsMidlane/ahri.jpg';
-// import leBlanc from '../../../../assets/images/championsMidlane/le_blanc.jpg';
-// import galio from '../../../../assets/images/championsMidlane/galio.jpg';
-// import vladimir from '../../../../assets/images/championsMidlane/vladimir.jpg';
-// import zoe from '../../../../assets/images/championsMidlane/zoe.jpg';
-// import annie from '../../../../assets/images/championsMidlane/annie.jpg';
-// import twistedFate from '../../../../assets/images/championsMidlane/twisted_fate.jpg';
-// import kassadin from '../../../../assets/images/championsMidlane/kassadin.jpg';
-// import veigar from '../../../../assets/images/championsMidlane/veigar.jpg';
-// import corki from '../../../../assets/images/championsMidlane/corki.jpg';
-// // import gragas from '../../../../assets/images/championsMidlane/gragas.jpg';
-// import zed from '../../../../assets/images/championsMidlane/zed.jpg';
-// import fizz from '../../../../assets/images/championsMidlane/fizz.jpg';
-// import talon from '../../../../assets/images/championsMidlane/talon.jpg';
-
 
 import './midlane.scss';
 
