@@ -16,6 +16,8 @@ const XinAutoroute = ({
   setTrollpickIsLoad,
   trollpickIsLoad,
 }) => {
+  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
+  const urlLocal = 'http://localhost:8090';
   const slug = useParams();
   // permet de récupérer le nom du trollpicks dans l'url
 
@@ -83,32 +85,32 @@ const XinAutoroute = ({
             {pipe(trollpick[0].gameplay_content).map((content) => (
               <p className="paragraph" key={content}>{parse(content)}</p>
             ))}
-
-            {/* Pour Thresh */}
-            {trollpick[0].gameplay_method === 2 && (
-            <>
-              <img className="trollpick__pictures__capture" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />
-              <div>{parse(trollpick[0].gameplay_content2)}</div>
-              <img className="trollpick__pictures__capture" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[1]}`} alt="" />
-              <p className="paragraph">{parse(trollpick[0].gameplay_content3)}</p>
-            </>
-            )}
-            {/* Pour Xin Zhao */}
-            {(trollpick[0].gameplay_method === 1) && (
-            <>
-              <img className={`trollpick__pictures__trollContent trollpick__pictures__trollContent__${trollpick[0].name_intro}`} src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick[0].gameplay_contentImage}`} alt="" />
-              <div>{parse(trollpick[0].gameplay_content2)}</div>
-            </>
-            )}
-            {trollpick[0].gameplay_method === 3 && (
-              <p className="paragraph gold">{trollpick[0].gameplay_content2}</p>
-            )}
-            {trollpick[0].gameplay_method === 4 && (
+              
+              {/* Pour Thresh */}
+              {trollpick[0].gameplay_method === 2 && (
               <>
-                <div className="lucianMissiles__gameplay__content__important">{parse(trollpick[0].gameplay_content2)}</div>
-                <p className="paragraph gold">{trollpick[0].gameplay_content3}</p>
+                <img className="trollpick__pictures__capture" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />
+                <div>{parse(trollpick[0].gameplay_content2)}</div>
+                <img className="trollpick__pictures__capture" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[1]}`} alt="" />
+                <p className="paragraph">{parse(trollpick[0].gameplay_content3)}</p>
               </>
-            )}
+              )}
+              {/* Pour Xin Zhao / JINX */}
+              {(trollpick[0].gameplay_method === 1) && (
+              <>
+                <img className={`trollpick__pictures__trollContent trollpick__pictures__trollContent__${trollpick[0].name_intro}`} src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick[0].gameplay_contentImage}`} alt="" />
+                <div>{parse(trollpick[0].gameplay_content2)}</div>
+              </>
+              )}
+              {trollpick[0].gameplay_method === 3 && (
+                <p className="paragraph gold">{trollpick[0].gameplay_content2}</p>
+              )}
+              {trollpick[0].gameplay_method === 4 && (
+                <>
+                  <div className="lucianMissiles__gameplay__content__important">{parse(trollpick[0].gameplay_content2)}</div>
+                  <p className="paragraph gold">{trollpick[0].gameplay_content3}</p>
+                </>
+              )}
             {trollpick[0].gameplay_method === 5 && (
             <>
               <img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick[0].name_intro}`} src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />
