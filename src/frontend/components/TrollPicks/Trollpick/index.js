@@ -48,7 +48,7 @@ const XinAutoroute = ({
         </div>
         <h1 className="globalTitle-page">{trollpick[0].name}</h1>,
         <p className="paragraph">Salut la <span className="red">#TEAMSLIP</span> c'est Coach Slipix et on va parler de <span className="green">{trollpick[0].name_intro}</span> {trollpick[0].name_intro2} dans League of Legends !</p>
-        <img className="logo" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick[0].logo}`} alt="" />
+        <img className="logo" src={`${url}/images/trollpicks/${trollpick[0].logo}`} alt="" />
         <div className="backgroundParagraphe">
           <p className="intro">{parse(trollpick[0].intro_intro)}</p>
           {pipe(trollpick[0].intro_content).map((content, index) => (
@@ -56,19 +56,19 @@ const XinAutoroute = ({
           ))}
           <div className="trollpick__pictures">
             {pipe(trollpick[0].intro_picture).map((picture) => (
-              <img className={`trollpick__pictures__${trollpick[0].name_intro}`} src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${picture}`} key={picture} alt="" />
+              <img className={`trollpick__pictures__${trollpick[0].name_intro}`} src={`${url}/images/trollpicks/${picture}`} key={picture} alt="" />
             ))}
           </div>
         </div>
         <div className="backgroundParagraphe trollpick__runes">
           <h2><i className="fas fa-scroll icons__rune" />La page de rune<i className="fas fa-scroll icons__rune" /></h2>
           <p className="paragraph">{trollpick[0].rune_intro}</p>
-          <img className="trollpick__pictures__rune" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick[0].rune_picture}`} alt="" />
+          <img className="trollpick__pictures__rune" src={`${url}/images/trollpicks/${trollpick[0].rune_picture}`} alt="" />
           <div className="trollpick__runes__list">
             <ul>
               {indexRune.map((id) => (
                 <div className="trollpick__runes__list__content trollpick__runes__list__border" key={id}>
-                  <img className="trollpick__pictures" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/runes/${pipe(trollpick[0].rune_iconRune)[id]}`} alt="" />
+                  <img className="trollpick__pictures" src={`${url}/images/runes/${pipe(trollpick[0].rune_iconRune)[id]}`} alt="" />
                   <li className="paragraph "><span className={`definition ${pipe(trollpick[0].rune_colorName)[id]}`}>{pipe(trollpick[0].rune_nameRune)[id]} :</span>{pipe(trollpick[0].rune_contentRune)[id]}</li>
                 </div>
               ))}
@@ -85,32 +85,31 @@ const XinAutoroute = ({
             {pipe(trollpick[0].gameplay_content).map((content) => (
               <p className="paragraph" key={content}>{parse(content)}</p>
             ))}
-              
-              {/* Pour Thresh */}
-              {trollpick[0].gameplay_method === 2 && (
+            {/* Pour Thresh */}
+            {trollpick[0].gameplay_method === 2 && (
               <>
                 <img className="trollpick__pictures__capture" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />
                 <div>{parse(trollpick[0].gameplay_content2)}</div>
                 <img className="trollpick__pictures__capture" src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[1]}`} alt="" />
                 <p className="paragraph">{parse(trollpick[0].gameplay_content3)}</p>
               </>
-              )}
-              {/* Pour Xin Zhao / JINX */}
-              {(trollpick[0].gameplay_method === 1) && (
+            )}
+            {/* Pour Xin Zhao / JINX */}
+            {(trollpick[0].gameplay_method === 1) && (
               <>
                 <img className={`trollpick__pictures__trollContent trollpick__pictures__trollContent__${trollpick[0].name_intro}`} src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick[0].gameplay_contentImage}`} alt="" />
                 <div>{parse(trollpick[0].gameplay_content2)}</div>
               </>
-              )}
-              {trollpick[0].gameplay_method === 3 && (
-                <p className="paragraph gold">{trollpick[0].gameplay_content2}</p>
-              )}
-              {trollpick[0].gameplay_method === 4 && (
-                <>
-                  <div className="lucianMissiles__gameplay__content__important">{parse(trollpick[0].gameplay_content2)}</div>
-                  <p className="paragraph gold">{trollpick[0].gameplay_content3}</p>
-                </>
-              )}
+            )}
+            {trollpick[0].gameplay_method === 3 && (
+            <p className="paragraph gold">{trollpick[0].gameplay_content2}</p>
+            )}
+            {trollpick[0].gameplay_method === 4 && (
+            <>
+              <div className="lucianMissiles__gameplay__content__important">{parse(trollpick[0].gameplay_content2)}</div>
+              <p className="paragraph gold">{trollpick[0].gameplay_content3}</p>
+            </>
+            )}
             {trollpick[0].gameplay_method === 5 && (
             <>
               <img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick[0].name_intro}`} src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />

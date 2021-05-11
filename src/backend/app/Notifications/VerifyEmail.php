@@ -25,7 +25,7 @@ class VerifyEmail extends Notification
      */
     public function __construct()
     {
-      $this->pageUrl = 'http://localhost:8080/email-verification';
+      $this->pageUrl = 'https://www.slipix-progresser-sur-league-of-legends.fr/email-verification';
     }
 
     /**

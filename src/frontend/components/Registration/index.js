@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
@@ -9,39 +9,73 @@ import { animationOne, transition } from 'src/utils/animations';
 import PasswordStrength from 'src/utils/passwordLength';
 import './registration.scss';
 
-const Registration = ({ fetchUserRegistration }) => {
+const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
   const [email, setEmail] = useState('');
   const [pseudo, setPseudo] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isLegalMentionsChecked, setisLegalMentionsChecked] = useState(false);
-  const [errors, setErrors] = useState(null);
+  const [errors, setErrors] = useState('');
+
+  useEffect(() => {
+    if (errorsRegistration) {
+      let dataErrors = '';
+      if (errorsRegistration.email) {
+        dataErrors = ({ ...dataErrors, email: errorsRegistration.email[0] });
+      }
+      if (errorsRegistration.pseudo) {
+        dataErrors = ({ ...dataErrors, pseudo: errorsRegistration.pseudo[0] });
+      }
+      setErrors(dataErrors);
+    }
+  }, [errorsRegistration]);
 
   const handleRegistration = (e) => {
     e.preventDefault();
-    setErrors(null);
     // eslint-disable-next-line prefer-const
-    let dataError = {};
-    if (!validEmail(email)) {
-      dataError.email = '*L\'email est invalide';
+    if (!email && !pseudo && !password && !confirmPassword && !isLegalMentionsChecked) {
+      setErrors({
+        ...errors,
+        email: '*Ton email est requis',
+        pseudo: '*Ton pseudo est requis',
+        password: 'ton mot de passe est requis',
+        confirmPassword: 'Ta confirmation de password doit être identique à ton mdp',
+        isLegalMentionsChecked: 'Tu dois accepter les mentions légales',
+      });
+      return;
+    }
+    if (!email.length || !pseudo.length || !password.length || !confirmPassword.length || isLegalMentionsChecked === false) {
+      let dataError = '';
+      if (!email.length) {
+        dataError = { ...dataError, email: '*Ton email est requis' };
+      }
+      if (!pseudo.length) {
+        dataError = { ...dataError, pseudo: '*Ton pseudo est requis' };
+      }
+      if (!password.length) {
+        dataError = { ...dataError, password: '*Ton mot de passe est requis' };
+      }
+      if (!confirmPassword.length) {
+        dataError = { ...dataError, confirmPassword: '*La confirmation de ton mot de passe est requis' };
+      }
+      if (isLegalMentionsChecked === false) {
+        dataError = { ...dataError, isLegalMentionsChecked: '*Tu dois accepter les mentions légales' };
+      }
+      setErrors(dataError);
+      return;
     }
     if (pseudo.length <= 2) {
-      dataError.pseudo = '*Le pseudo doit avoir au minimum 3 caractères';
+      setErrors({ ...errors, pseudo: '*Ton pseudo est requis' });
     }
     if (password.length < 8) {
-      dataError.password = '*Le mot de passe doit avoir au minimum 6 caractères';
+      setErrors({ ...errors, password: 'Ton mot de passe est requis' });
     }
+
     if (confirmPassword !== password) {
-      dataError.confirmPassword = '*La confirmation du mot de passe est incorrecte';
+      setErrors({ ...errors, confirmPassword: 'Ta confirmation de password doit être identique à ton mdp' });
     }
-    if (!isLegalMentionsChecked) {
-      dataError.isLegalMentionsChecked = '*Veuillez accepter les mentions légales';
-    }
-    if (!confirmPassword.length) {
-      dataError.confirmPassword = '*La confirmation du mot de passe est obligatoire';
-    }
-    if (Object.keys(dataError).length) {
-      setErrors(dataError);
+
+    if (Object.keys(errors).length) {
       setPassword('');
       setConfirmPassword('');
       return;
@@ -92,7 +126,8 @@ const Registration = ({ fetchUserRegistration }) => {
 
   const updateError = (key) => {
     if (errors && errors[key]) {
-      errors[key] = null;
+      delete errors[key];
+      setErrors(errors);
     }
   };
 
@@ -178,7 +213,12 @@ const Registration = ({ fetchUserRegistration }) => {
             <input name="mentionsChecked" type="checkbox" onChange={(e) => setisLegalMentionsChecked(e.target.checked)} /> J'ai lu et accepté les <Link to="/mentions-legales" target="_blank" className="">mentions légales</Link>
             { (errors && errors.isLegalMentionsChecked && !isLegalMentionsChecked) && <p className="label__errors">{ errors.isLegalMentionsChecked }</p> }
           </div>
-          <button type="submit" className="global-button registration__button" disabled={errors ? 'disabled' : ''}>S'inscrire</button>
+          <button
+            type="submit"
+            className={`${Object.keys(errors).length !== 0 ? 'registration__button registration__button--disabled' : 'registration__button registration__button--actived'}`}
+            disabled={Object.keys(errors).length !== 0}
+          >S'inscrire
+          </button>
         </form>
 
         <div className="registration__infos">
@@ -204,6 +244,10 @@ const Registration = ({ fetchUserRegistration }) => {
 
 Registration.propTypes = {
   fetchUserRegistration: PropTypes.func.isRequired,
+  errorsRegistration: PropTypes.objectOf(
+    PropTypes.shape({
+    }).isRequired,
+  ).isRequired,
 };
 
 export default Registration;

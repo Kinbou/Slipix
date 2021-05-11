@@ -35,7 +35,6 @@ const championsMiddleware = (store) => (next) => (action) => {
           store.dispatch(setChampionIsLoad());
         })
         .catch((error) => {
-          console.log('je passe dans l erreur');
           console.warn(error);
         })
         .finally(() => {

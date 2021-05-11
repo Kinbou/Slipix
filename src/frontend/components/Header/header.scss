@@ -30,6 +30,7 @@
         height: 50px;
         width: 50px;
         font-size: 1.4em;
+        
         &:hover {
           color: #fa5;
           background-color: black;
@@ -258,7 +259,7 @@
 @media (max-width: 1168px) {
   .header{
     a {
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
   }
 }
@@ -268,16 +269,19 @@
     position: fixed;
     width: 100%;
     a {
-      font-size: 1.7em;
+      font-size: 1.6em;
       padding: .5rem;
     }
     &__nav {
       &__menu {
         z-index: 95;
         &__two{
-          top: 255px;
-          padding-bottom: .5rem;
+          top: 10px;
+          padding: .8rem 0 0 1rem;
           border-radius: 0 0 0 10px;
+        }
+        &__one {
+          padding: 5rem 0 1rem;
         }
       }
       &__global {
@@ -300,11 +304,9 @@
         }
         &__one{
           top: 0;
-          padding: 3.5rem 0 1rem 0;
         }
         &__two{
-          top: 270px;
-          padding-bottom: .8rem;
+          padding-bottom: .8rem 0 0 1rem;
           border-radius: 0 0 0 10px;
         }
       }
@@ -317,13 +319,26 @@
 }
 
 @media (max-width: 900px) {
-  .captcha {
-    transform: scale(1);
+  .captcha__content > div {
+    width: auto!important;
+    height: 150px!important;
+    iframe {
+      height: auto;
+      width: 380px;
+    }
   }
 }
 @media (max-width: 755px) {
   .header__nav__logo__picture {
     width: 9%;
+  }
+}
+
+@media (max-width: 660px) {
+  .captcha__content > div {
+    iframe {
+      width: 340px!important;
+    }
   }
 }
 
@@ -333,9 +348,45 @@
       width: 13%;
     }
   }
+  .captcha {
+    left: -30px;
+  }
+  .global-input {
+    margin: 1.5rem .5rem;
+  }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 500px) {
+  .authentification {
+    &__nav__content__picture {
+      &--login {
+        left: -50px;
+      }
+      &--registration {
+        right: -50px;
+      }
+    }
+    &__nav__content::before {
+      left: 95px;
+      width: calc(100% + 40px);
+    }
+    &__nav__item {
+      width: 95px;
+      padding: .5rem 1.5rem .5rem 1rem;
+    }
+  }
+}
+
+@media (max-width: 436px) {
+  .captcha__content > div {
+    font-size: .6rem!important;
+    iframe {
+      width: 300px!important;
+      .rc-anchor-checkbox-label {
+        font-size: .8rem!important;
+      }
+    }
+  }
   .header{
     position: fixed;
     a {
@@ -348,7 +399,6 @@
       }
       &__menu {
         &__two{
-          top: 255px;
           padding-bottom: .5rem;
         }
       }

@@ -16,7 +16,7 @@ const championsMiddleware = (store) => (next) => (action) => {
   const { nameTrollpick } = store.getState().trollpicks;
   switch (action.type) {
     case FETCH_ONE_TROLLPICK:
-      axios.get(`${urlLocal}/trollpicks/trollpick/${nameTrollpick.id}`)
+      axios.get(`${url}/trollpicks/trollpick/${nameTrollpick.id}`)
         .then((response) => {
           store.dispatch(saveTrollpick(response.data));
         })
@@ -28,7 +28,7 @@ const championsMiddleware = (store) => (next) => (action) => {
       break;
 
     case FETCH_TROLLPICK_ACTIF:
-      axios.get(`${urlLocal}/trollpicks/actif`)
+      axios.get(`${url}/trollpicks/actif`)
         .then((response) => {
           store.dispatch(saveTrollpickActif(response.data));
           store.dispatch(setTrollpickActifIsLoad(true));

@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
+
 import Modal from 'src/frontend/containers/Modal';
 import Authentification from 'src/frontend/containers/Header/Authentification';
 import PropTypes from 'prop-types';
+import { urlBack } from 'src/utils/selectors';
 
 const Ul = styled.ul`
   list-style: none;
@@ -36,7 +38,6 @@ const Menu = ({
   const test = useRef(null);
   const handleModal = () => {
     const button = test.current;
-    console.log(button.getBoundingClientRect());
     displayModal('login', button.getBoundingClientRect());
   };
 
@@ -144,7 +145,7 @@ const Menu = ({
               <div className="authentification__nav__profil__avatar">
                 <img
                   className="authentification__nav__profil__avatar__image"
-                  src={`http://localhost:8000/${user.avatar}`}
+                  src={`${urlBack}/${user.avatar}`}
                   alt="avatar"
                   onClick={() => {
                     setClassActive(!classActive);

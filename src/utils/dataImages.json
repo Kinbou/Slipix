@@ -131,6 +131,14 @@
 
     ]
   },
+  "tutorielJungle": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
   "support": {
     "background": {
 
@@ -156,6 +164,30 @@
     ]
   },
   "thanks": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "legalNotice": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "emailVerification": {
+    "background": {
+
+    },
+    "otherImage": [
+
+    ]
+  },
+  "resetPassword": {
     "background": {
 
     },

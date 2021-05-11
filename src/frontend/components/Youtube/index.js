@@ -4,17 +4,6 @@ import YouTube from 'react-youtube';
 import './youtube.scss';
 
 class Youtube extends Component {
-  // videoOnReady(event) {
-  // }
-
-  // videoOnPlay(event) {
-  //   // event.target.playVideoAt(50);
-  //   // console.log(event.target.getCurrentTime());
-  // }
-
-  // videoStateChange(event) {
-  //   // console.log(event.target.getCurrentTime);
-  // }
 
   render() {
     const opts = {

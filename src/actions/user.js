@@ -1,20 +1,31 @@
 /* eslint-disable max-len */
 export const LOGIN_USER = 'LOGIN_USER';
+export const LOGIN_USER_ERRORS = 'LOGIN_USER_ERRORS';
+
 export const ERROR_LOGIN_USER = 'ERROR_LOGIN_USER';
 export const FETCH_USER = 'FETCH_USER';
 export const REQUEST_USER_AUTHENTIFICATION = 'REQUEST_USER_AUTHENTIFICATION'; // vérifie si l'utilisateur est logé.
 export const FETCH_REQUEST_USER_DATA = 'FETCH_REQUEST_USER_DATA';
+
 export const FETCH_USER_REGISTRATION = 'FETCH_USER_REGISTRATION';
+export const FETCH_USER_REGISTRATION_ERRORS = 'FETCH_USER_REGISTRATION_ERRORS';
+
 export const LOGOUT_USER = 'LOGOUT_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 export const UPDATE_AVATAR_USER = 'UPDATE_AVATAR_USER';
 export const FORGOT_PASSWORD_SEND_EMAIL = 'FORGOT_PASSWORD_SEND_EMAIL';
+
 
 export const loginUser = (emailUser, passwordUser, checkedRememberUser, checkedCaptchaUser) => ({
   type: LOGIN_USER,
   payload: {
     emailUser, passwordUser, checkedRememberUser, checkedCaptchaUser,
   },
+});
+
+export const loginUserErrors = (data) => ({
+  type: LOGIN_USER_ERRORS,
+  data,
 });
 
 export const errorLoginUser = (dataError) => ({
@@ -38,6 +49,11 @@ export const fetchRequestUserData = (userData) => ({
 
 export const fetchUserRegistration = (data) => ({
   type: FETCH_USER_REGISTRATION,
+  data,
+});
+
+export const fetchUserRegistrationErrors = (data) => ({
+  type: FETCH_USER_REGISTRATION_ERRORS,
   data,
 });
 

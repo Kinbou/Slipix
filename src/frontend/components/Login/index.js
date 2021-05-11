@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Reaptcha from 'reaptcha';
 import { motion } from 'framer-motion';
 
-import { labelClassname, validEmail } from 'src/utils/selectors';
+import { labelClassname, validEmail, urlBack } from 'src/utils/selectors';
 import { animationOne, transition } from 'src/utils/animations';
 import './login.scss';
 
@@ -111,7 +111,7 @@ const Login = ({
         </label>
 
         <div className="captcha">
-          <img src="http://localhost:8000/images/logo/tristanaCaptcha300.png" alt="" />
+          <img src={`${urlBack}/images/logo/tristanaCaptcha300.png`} alt="" />
           <Reaptcha
             sitekey="6Le1jp0aAAAAAOUpDSbuRIioKNiPRrqLdX_erLPU"
             onVerify={(response) => setCheckedCaptcha(response)}
@@ -122,7 +122,12 @@ const Login = ({
           />
           {errorCaptcha && <p>{errorCaptcha}</p>}
         </div>
-        <button type="submit" className="global-button">Se connecter</button>
+        <button
+          type="submit"
+          className="global-button"
+          disabled={errorFront.email !== null || errorFront.password !== null || !errorCaptcha === null || checkedCaptcha === null}
+        >Se connecter
+        </button>
       </form>
       <button type="button" className="login__link" onClick={handleForgotPasseword}>Mot de passe oublié ?</button>
     </motion.div>

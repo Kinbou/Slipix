@@ -14,7 +14,6 @@ const ForgotPassword = ({ forgotPasswordSendEmail }) => {
     if (!validEmail(email)) {
       setErrors({ ...errors, email: "*L'email est invalide" });
     }
-    console.log(errors);
     if (errors.email === null) {
       forgotPasswordSendEmail(email);
     }

@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import Registration from 'src/frontend/components/Registration';
 
-import { fetchUserRegistration } from 'src/actions/user';
+import { fetchUserRegistration, fetchUserRegistrationErrors } from 'src/actions/user';
+import { showAlert } from 'src/actions/global';
 
 const mapStateToProps = (state) => ({
-
+  errorsRegistration: state.users.errorsRegistration,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -12,24 +13,12 @@ const mapDispatchToProps = (dispatch) => ({
   fetchUserRegistration: (data) => {
     dispatch(fetchUserRegistration(data));
   },
-//   changeValue: (identifier, newValue) => {
-//     dispatch(changeInputOfLogin(identifier, newValue));
-//   },
-//   submitLogin: () => {
-//     dispatch(submitLogin());
-//   },
-//   displayAlert: (message, success) => {
-//     dispatch(showAlert(message, success));
-//   },
-//   changeLoginError: (message) => {
-//     dispatch(changeLoginError(message));
-//   },
-//   clearLoginError: () => {
-//     dispatch(clearLoginError());
-//   },
-//   setRequestIsLoad: () => {
-//     dispatch(setRequestIsLoad());
-//   },
+  fetchUserRegistrationErrors: (data) => {
+    dispatch(fetchUserRegistrationErrors(data));
+  },
+  displayAlert: (message, success) => {
+    dispatch(showAlert(message, success));
+  },
 });
 
 export default connect(

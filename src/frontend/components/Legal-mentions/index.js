@@ -1,12 +1,23 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
 import { useTitle } from 'src/hooks/useTitle';
+import { animationOne, transition } from 'src/utils/animations';
 import './legal-mentions.scss';
 
 const LegalMentions = () => {
   useTitle('Mentions légales');
 
   return (
-    <div className="legal-mentions">
+    <motion.div
+      className="legal-mentions"
+      key="legalNotice"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animationOne}
+      transition={transition}
+    >
       <h1 className="globalTitle-page">Mentions légales</h1>
       <section className="legal-mentions__content">
         <p>
@@ -171,8 +182,8 @@ const LegalMentions = () => {
           slipix-progresser-sur-league-of-legends.fr.
         </p>
         {/* <p>Cependant, ce principe comporte certaines exceptions. En effet, pour
-         certains services proposés par notre site, vous pouvez être amenés à nous
-         communiquer certaines données telles que : votre nom et votre adresse
+        certains services proposés par notre site, vous pouvez être amenés à nous
+        communiquer certaines données telles que : votre nom et votre adresse
          électronique.</p> */}
         {/* <p>Dans tous les cas, vous pouvez refuser de fournir vos données
           personnelles. Dans ce cas, vous ne pourrez pas utiliser les services du site,
@@ -190,7 +201,7 @@ const LegalMentions = () => {
           du 11 mars 1996 relative à la protection juridique des bases de données.
         </p>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

@@ -103,6 +103,9 @@ const App = ({ showAlert }) => {
   const isProgressLol = currentPath === '/guides/progresser-sur-leagueOfLegends';
   const isLowElo = currentPath === '/guides/sortir-du-bas-elo';
   const isWinLane = currentPath === '/guides/gagner-sa-phase-de-lane';
+  const isLegalNotice = currentPath === '/mentions-legales';
+  const isEmailVerification = currentPath === '/email-verification';
+  const isResetPassword = currentPath === '/reset-password';
 
   const appClass = classNames({
     home: isHome,
@@ -125,6 +128,9 @@ const App = ({ showAlert }) => {
     winLane: isWinLane,
     trollPicks: isTrollPicks,
     profil: isProfil,
+    legalNotice: isLegalNotice,
+    emailVerification: isEmailVerification,
+    resetPassword: isResetPassword,
   });
   const [imgLoaded, setImgLoaded] = useState(false);
 
@@ -200,9 +206,7 @@ const App = ({ showAlert }) => {
                 <Route exact path="/me-contacter">
                   <Contact />
                 </Route>
-                <Route exact path="/mentions-legales">
-                  <MentionLegales />
-                </Route>
+                <Route exact path="/mentions-legales" component={MentionLegales} />
                 <Route exact path="/remerciements">
                   <Thanks />
                 </Route>

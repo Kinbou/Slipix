@@ -62,7 +62,7 @@ const Jungle = ({
               {laneActif.map((listChampion) => (
                 <>
                   <motion.div
-                    key={listChampion.id}
+                    key={listChampion.name}
                     variants={card}
                     className="jungle__cards__card"
                   >
@@ -86,7 +86,7 @@ const Jungle = ({
               <div className="jungle__cards">
                 {laneSoon.map((listChampion) => (
                   <>
-                    <div className="jungle__cards__cardSoon">
+                    <div className="jungle__cards__cardSoon" key={listChampion.name}>
                       <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${listChampion.pictureChampion}`} alt="" />
                       <p className="jungle__cards__cardSoon__content">Bientôt disponible</p>
                       <h3>{listChampion.name}</h3>
@@ -114,7 +114,11 @@ Jungle.propTypes = {
   laneIsLoad2: PropTypes.bool.isRequired,
   setLaneIsLoad: PropTypes.func.isRequired,
   setLaneIsLoad2: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.objectOf(
+    PropTypes.shape({
+      lane: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
   laneActif: PropTypes.arrayOf(
     PropTypes.shape({
       lane: PropTypes.string.isRequired,

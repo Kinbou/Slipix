@@ -49,7 +49,7 @@ const ResetPassword = ({ displayAlert }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (token && email && password && confirmPassword) {
-      axios.post(`${urlLocal}/api/auth/password/reset`, {
+      axios.post(`${urlBack}/api/auth/password/reset`, {
         method: 'post',
         token,
         email,

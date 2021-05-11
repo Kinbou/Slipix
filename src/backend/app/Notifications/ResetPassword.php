@@ -45,7 +45,7 @@ class ResetPassword extends Notification
     {
         Log::info($token);
         $this->token = $token;
-        $this->pageUrl = 'http://localhost:8080/reset-password';
+        $this->pageUrl = 'https://www.slipix-progresser-sur-league-of-legends.fr/reset-password';
     }
 
     /**
@@ -82,10 +82,10 @@ class ResetPassword extends Notification
 
         return (new MailMessage)
             ->subject(Lang::get('Réinitialisation du mot de passe'))
-            ->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
-            ->action(Lang::get('Reset Password'), $urlEmailReset)
-            ->line(Lang::get('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
-            ->line(Lang::get('If you did not request a password reset, no further action is required.'))
+            ->line(Lang::get('Tu as reçu cet e-mail car nous avons reçu une demande de réinitialisation de mot de passe pour ton compte'))
+            ->action(Lang::get('Réinitialiser le mot de passe'), $urlEmailReset)
+            ->line(Lang::get('Ce lien expirera dans :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
+            ->line(Lang::get('Si tu n\'as pas demandé de réinitialisation de mot de passe, aucune autre action n\'est requise'))
             ->salutation('La TeamSlip.');
     }
 

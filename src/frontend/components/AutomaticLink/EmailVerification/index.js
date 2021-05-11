@@ -19,8 +19,7 @@ const EmailVerification = () => {
 
   useEffect(() => {
     if (id && hash && expires && signature) {
-      console.log('test');
-      axios.get(`${urlLocal}/api/auth/email/verify/${id}/${hash}?expires=${expires}&signature=${signature}`, { headers: { Accept: 'application/json' } })
+      axios.get(`${urlBack}/api/auth/email/verify/${id}/${hash}?expires=${expires}&signature=${signature}`, { headers: { Accept: 'application/json' } })
         .then((result) => {
           setIsValid(true);
           setMessage(result.data.message);
