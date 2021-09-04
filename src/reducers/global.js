@@ -4,6 +4,7 @@ import {
   SHOW_MODAL,
   SHOW_ALERT,
 } from 'src/actions/global';
+import { SHOW_COMMENT } from '../actions/global';
 
 const initialState = {
   appIsLoad: false,
@@ -13,6 +14,7 @@ const initialState = {
   showAlert: false,
   alertMessage: ' ',
   alertSuccess: true,
+  showComment: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -35,6 +37,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         showModal: action.name,
         modalParams: action.params,
+      };
+
+    case SHOW_COMMENT:
+      return {
+        ...state,
+        showComment: action.value,
       };
 
     case SHOW_ALERT:

@@ -47,10 +47,12 @@ export const formatDate = (date, dateOnly = false) => {
 export const validEmail = (data) => {
   // eslint-disable-next-line no-useless-escape
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (!re.test(String(data).toLowerCase())) {
-    return false;
-  }
-  return true;
+  // if (!re.test(String(data).toLowerCase())) {
+  //   return false;
+  // }
+  // return true;
+
+  return re.test(String(data).toLowerCase());
 };
 
 export const urlBack = 'https://backend.slipix-progresser-sur-league-of-legends.fr';

@@ -1,0 +1,96 @@
+.global-input-comment {
+  width: 100%;
+  margin: 1rem;
+  position: relative;
+  font-family: Gotu;
+  text-transform: capitalize;
+  color: #a8a8a8;
+}
+
+.comment {
+  position: fixed;
+  display: flex;
+  right: 0;
+  top: 80px;
+  &__icon {
+    font-size: 2em;
+    padding: 1rem;
+    background-color: rgba(28, 36, 45, 0.9);
+    border-radius: 10px 0 0 10px;
+    height: 70px;
+    &:hover {
+      color: #ffaa55;
+      cursor: pointer;
+    }
+  }
+  &__content {
+    background-color: rgba(28, 36, 45, 0.9);
+    width: 700px;
+    height: 100vh;
+    &__title {
+      font-size: 2.5em;
+      margin: 1rem;
+    }
+    &__comment {
+      margin: 1rem;
+      display: block;
+      &__intro {
+        margin: 2rem;
+        text-align: left;
+      }
+      &__content {
+        display: flex;
+        width: 100%;
+        &__iconUser {
+          width: 50px;
+          height: 50px;
+          background-color: white;
+          border-radius: 50%;
+          border: 1px solid #fa5;
+          color: black;
+          font-size: 1.4em;
+          i {
+            display: inline-block;
+            padding: .6rem;
+          }
+        }
+        &__form {
+          width: 90%;
+          &__contentButton{           
+            &--hidden {
+              display: none;
+            }
+            &--display {
+              display: flex;
+              justify-content: flex-end;
+              margin: .5rem;
+            }
+            &__button {
+              padding: .5rem;
+              margin: .5rem;
+              border-radius: 5px;
+              border: none;
+              color: white;
+              &--cancel {
+                background-color: transparent;
+                &:hover {
+                  background-color: #c00;
+                }
+              }
+              &--validate {
+                background-color: #2d3f57;
+                &:hover {
+                  background-color: #ffaa55;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.inputAnimation:focus ~ label ~ div {
+  display: flex;
+}

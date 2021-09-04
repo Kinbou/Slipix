@@ -40,17 +40,7 @@
     }
   }
   
-  @media (max-width: 425px) {
-    .login {
-      &__form {
-        margin: 0 auto;
-        width: 100%;
-      }
-    }
-    .global-input {
-      width: auto!important;
-    }
-  }
+
   @-webkit-keyframes autofill {
     0%,100% {
       color: #a8a8a8;
@@ -87,7 +77,6 @@ input:-webkit-autofill:active  {
   font-family: 'Gotu';
   text-transform: capitalize;
   color: #a8a8a8;
-  // color: #9c1212;
 }
 
 .inputAnimation{
@@ -105,7 +94,8 @@ input:-webkit-autofill:active  {
   top: 9px;
   color: #aaa;
   transition: 0.4s;
-  z-index: -1;
+  // z-index: -1;
+  pointer-events: none;
   letter-spacing: 0.5px;
 }
 
@@ -138,5 +128,17 @@ input:-webkit-autofill:active  {
   }
   .global-input {
     width: 95%;
+  }
+}
+
+@media (max-width: 425px) {
+  .login {
+    &__form {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+  .global-input {
+    width: auto!important;
   }
 }

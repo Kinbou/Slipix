@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+import Comment from 'src/frontend/containers/Comment';
 import { useTitle } from 'src/hooks/useTitle';
 import { animationOne, transition } from 'src/utils/animations';
 import './roleChampion.scss';
@@ -31,6 +32,7 @@ const RoleChampion = () => {
       variants={animationOne}
       transition={transition}
     >
+      <Comment />
       <div className="breadcrumb">
         <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
         <Link className="breadcrumb__link" to="/guides"> guides</Link> &gt;

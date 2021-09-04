@@ -5,7 +5,7 @@ import './footer.scss';
 const Footer = () => (
   <div className="footer">
     <div className="footer__containDroit">
-      <p>© Slipix 2020 - Tous droits réservés</p>
+      <p>© Slipix 2020 / 2021 - Tous droits réservés</p>
       <p>© League of Legends images 2020 - Tous droits réservés</p>
     </div>
     <p><Link className="breadcrumb__link" to="/mentions-legales">Mentions Légales</Link></p>

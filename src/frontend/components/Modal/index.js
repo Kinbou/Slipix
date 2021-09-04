@@ -6,7 +6,9 @@ import './modal.scss';
 import { animationModal, transition } from 'src/utils/animations';
 
 const Modal = ({
-  displayModal, content, showModal, modalParams,
+  displayModal,
+  content,
+  showModal,
 }) => {
   const closeModal = () => {
     displayModal('');
@@ -70,7 +72,6 @@ Modal.propTypes = {
   content: PropTypes.element.isRequired,
   displayModal: PropTypes.func.isRequired,
   showModal: PropTypes.string.isRequired,
-  modalParams: PropTypes.object.isRequired,
 };
 
 export default Modal;
