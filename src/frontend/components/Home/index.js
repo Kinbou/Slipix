@@ -6,10 +6,10 @@ import { animationOne, transition } from 'src/utils/animations';
 import './home.scss';
 
 // picture TENDANCES
-import turboBroken from 'src/assets/images/picturesYoutube/turboBroken.jpg';
-import cestPasNormal from 'src/assets/images/picturesYoutube/cestPasNormal.jpg';
-import indestructible from 'src/assets/images/picturesYoutube/indestructible.jpg';
-import monterDiamant from 'src/assets/images/picturesYoutube/monterDiamant.jpg';
+import Winrate from 'src/assets/images/picturesYoutube/36%Winrate.jpg';
+import otpTeemo from 'src/assets/images/picturesYoutube/otpTeemo.jpg';
+import visiteFer4Garen from 'src/assets/images/picturesYoutube/visiteFer4Garen.jpg';
+import Xin90000 from 'src/assets/images/picturesYoutube/Xin90000.jpg';
 
 // picture
 import logoLol from 'src/assets/images/logoLol.png';
@@ -44,10 +44,10 @@ const Home = () => {
           <h2>Découvrez les 4 vidéos tendances</h2>
         </div>
         <div className="home__news">
-          <a href="https://www.youtube.com/watch?v=ZF1cilZr74Y&t&ab_channel=Slipix-LeagueofLegends" target="_blanc"><img src={monterDiamant} alt="3 champion broken" /></a>
-          <a href="https://www.youtube.com/watch?v=4lhiFpicaWE&start&ab_channel=Slipix-LeagueofLegends" target="_blanc"><img src={cestPasNormal} alt="problème bas élo" /></a>
-          <a href="https://www.youtube.com/watch?v=qxUQwmXqPbI&start&ab_channel=Slipix-LeagueofLegends" target="_blanc"><img src={indestructible} alt="le vrai one shot" /></a>
-          <a href="https://www.youtube.com/watch?v=EVYQ5zTrjAw&start=1s&ab_channel=Slipix-LeagueofLegends" target="_blanc"><img src={turboBroken} alt="tierlist" /></a>
+          <a href="https://youtu.be/aYa9Um6mmW0" target="_blanc"><img src={Winrate} alt="36% winrate" /></a>
+          <a href="https://www.youtube.com/watch?v=CVRFZDJRmc0" target="_blanc"><img src={otpTeemo} alt="otp teemo" /></a>
+          <a href="https://youtu.be/MMSXDskFFKE" target="_blanc"><img src={visiteFer4Garen} alt="Visite fer 4 Garen" /></a>
+          <a href="https://youtu.be/Je09x4vu6MU" target="_blanc"><img src={Xin90000} alt="Xin 9000000" /></a>
         </div>
         <h2>Mes réseaux sociaux et plateformes</h2>
         <SocialNetwork />
