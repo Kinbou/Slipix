@@ -10,9 +10,9 @@ import {
   setTrollpickSoonIsLoad,
 } from 'src/actions/trollpicks';
 
+import { apiBaseUrl as url } from './index';
+
 const championsMiddleware = (store) => (next) => (action) => {
-  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
-  const urlLocal = 'http://localhost:8000';
   const { nameTrollpick } = store.getState().trollpicks;
   switch (action.type) {
     case FETCH_ONE_TROLLPICK:

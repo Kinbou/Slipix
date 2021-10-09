@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  vite:
+    container_name: slipix_front_vite
+    image: httpd:2.4.51
+    volumes:
+      - ./slipix-front/dist:/usr/local/apache2/htdocs
+    ports:
+      - 8999:80
+  front:
+    container_name: slipix_front
+    image: httpd:2.4.51
+    volumes:
+      - ./dist:/usr/local/apache2/htdocs
+    ports:
+      - 8888:80
+
+  back:
+    container_name: slipix_back
+    env_file:
+      - ./src/backend/.env.local
+    build:
+      context: ./src/backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/backend:/app
+    ports:
+      - 8000:8000
+
+  db:
+    container_name: slipix_db
+    image: mariadb:10.3.31
+    ports:
+      - 3306:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: '5CR37P455'
+      MARIADB_DATABASE: eran7268_slipix
+      MARIADB_USER: eran7268_slipix
+      MARIADB_PASSWORD: 2zMHqgN6EaCF
+    volumes:
+      - ./db:/var/lib/mysql
+  
+  adminer:
+    container_name: adminer
+    image: adminer:4.8.1-standalone
+    ports:
+      - 8777:8080

@@ -6,10 +6,9 @@ import {
   setThanksIsLoad,
 } from 'src/actions/thanks';
 
-const thanksMiddleware = (store) => (next) => (action) => {
-  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
-  // const urlLocal = 'http://localhost:8090';
+import { apiBaseUrl as url } from './index';
 
+const thanksMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_ALL_THANKS:
       axios({

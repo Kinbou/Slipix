@@ -9,9 +9,9 @@ import {
 } from 'src/actions/lanes';
 // import { setLaneIsLoad } from 'src/actions/global';
 
+import { apiBaseUrl as url } from './index';
+
 const lanesMiddleware = (store) => (next) => (action) => {
-  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
-  // const urlLocal = 'http://localhost:8090';
   const { name } = store.getState().lanes;
   switch (action.type) {
     case FETCH_ALL_LANE:

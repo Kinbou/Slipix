@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { FETCH_ONE_COMPETENCE, saveCompetence } from 'src/actions/competences';
 
+import { apiBaseUrl as url } from './index';
+
 const competencesMiddleware = (store) => (next) => (action) => {
-  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
-  // const urlLocal = 'http://localhost:8090';
   switch (action.type) {
     case FETCH_ONE_COMPETENCE:
       axios.get(`${url}/competences/1`)
