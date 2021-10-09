@@ -2,7 +2,7 @@ version: '3'
 
 services:
   vite:
-    container_name: slipix_front
+    container_name: slipix_front_vite
     image: httpd:2.4.51
     volumes:
       - ./slipix-front/dist:/usr/local/apache2/htdocs
