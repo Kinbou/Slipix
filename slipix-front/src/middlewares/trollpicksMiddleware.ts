@@ -11,13 +11,13 @@ import {
   setTrollpickSoonIsLoad
 } from '@/actions/trollpicks'
 
+import { apiBaseUrl } from './index'
+
 const championsMiddleware = (store) => (next) => (action) => {
-  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr'
-  const urlLocal = 'http://localhost:8000'
   const { nameTrollpick } = store.getState().trollpicks
   switch (action.type) {
     case FETCH_ONE_TROLLPICK:
-      axios.get(`${url}/trollpicks/trollpick/${nameTrollpick.id}`)
+      axios.get(`${apiBaseUrl}/trollpicks/trollpick/${nameTrollpick.id}`)
         .then((response) => {
           store.dispatch(saveTrollpick(response.data))
         })
@@ -29,7 +29,7 @@ const championsMiddleware = (store) => (next) => (action) => {
       break
 
     case FETCH_TROLLPICK_ACTIF:
-      axios.get(`${url}/trollpicks/actif`)
+      axios.get(`${apiBaseUrl}/trollpicks/actif`)
         .then((response) => {
           store.dispatch(saveTrollpickActif(response.data))
           store.dispatch(setTrollpickActifIsLoad(true))
@@ -42,7 +42,7 @@ const championsMiddleware = (store) => (next) => (action) => {
       break
 
     case FETCH_TROLLPICK_SOON:
-      axios.get(`${url}/trollpicks/soon`)
+      axios.get(`${apiBaseUrl}/trollpicks/soon`)
         .then((response) => {
           store.dispatch(saveTrollpickSoon(response.data))
           store.dispatch(setTrollpickSoonIsLoad(true))

@@ -7,10 +7,9 @@ import {
   setChampionIsLoad,
 } from 'src/actions/champions';
 
-const championsMiddleware = (store) => (next) => (action) => {
-  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr';
-  const urlLocal = 'http://localhost:8000';
+import { apiBaseUrl as url } from './index';
 
+const championsMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_ALL_CHAMPIONS:
       axios.get(`${url}/champions`)

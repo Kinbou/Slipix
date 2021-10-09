@@ -18,18 +18,18 @@ import {
   FORGOT_PASSWORD_SEND_EMAIL
 } from '@/actions/user'
 
+import { apiBaseUrl } from './index'
 import { showModal, showAlert, setAppLoading } from '@/actions/global'
 
 const userMiddleware = (store) => (next) => (action) => {
   // const { rememberMe, userData } = store.getState().user;
-  const urlLocal = 'http://127.0.0.1:8000/'
-  const urlBack = 'https://backend.slipix-progresser-sur-league-of-legends.fr/'
+
   switch (action.type) {
     // Connexion
     case LOGIN_USER: {
       axios({
         method: 'post',
-        url: `${urlBack}api/auth/login`,
+        url: `${apiBaseUrl}api/auth/login`,
         withCredentials: true,
         data: {
           password: action.payload.passwordUser,
@@ -66,7 +66,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const token = new Cookie().get('token')
       axios({
         method: 'get',
-        url: `${urlBack}api/auth/user-profile`,
+        url: `${apiBaseUrl}api/auth/user-profile`,
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case FETCH_USER_REGISTRATION: {
       axios({
         method: 'post',
-        url: `${urlBack}api/auth/register`,
+        url: `${apiBaseUrl}api/auth/register`,
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const token = new Cookie().get('token')
       axios({
         method: 'post',
-        url: `${urlBack}api/auth/logout`,
+        url: `${apiBaseUrl}api/auth/logout`,
         withCredentials: true,
         headers: {
           'Content-Type': 'application/json',
@@ -142,7 +142,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const token = new Cookie().get('token')
       axios({
         method: 'put',
-        url: `${urlBack}api/auth/update-user`,
+        url: `${apiBaseUrl}api/auth/update-user`,
         withCredentials: true,
         data: action.userData,
         headers: {
@@ -168,7 +168,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const file = new File([action.file.avatar], `avatar.${action.file.imgType.split('/')[1]}`, { type: action.file.imgType })
       const formData = new FormData()
       formData.append('avatar', file)
-      axios.post(`${urlBack}api/auth/update-avatar`, formData, {
+      axios.post(`${apiBaseUrl}api/auth/update-avatar`, formData, {
         method: 'put',
         withCredentials: true,
         headers: {
@@ -189,7 +189,7 @@ const userMiddleware = (store) => (next) => (action) => {
     }
 
     case FORGOT_PASSWORD_SEND_EMAIL: {
-      axios.post(`${urlBack}api/auth/password/email`, {
+      axios.post(`${apiBaseUrl}api/auth/password/email`, {
         method: 'post',
         withCredentials: true,
         email: action.email,

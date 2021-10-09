@@ -10,15 +10,15 @@ import {
 } from '@/actions/lanes'
 // import { setLaneIsLoad } from '@/actions/global';
 
+import { apiBaseUrl } from './index'
+
 const lanesMiddleware = (store) => (next) => (action) => {
-  const url = 'https://backend.slipix-progresser-sur-league-of-legends.fr'
-  // const urlLocal = 'http://localhost:8090';
   const { name } = store.getState().lanes
   switch (action.type) {
     case FETCH_ALL_LANE:
       axios({
         method: 'get',
-        url: `${url}/lanes/${name.lane}/actif`
+        url: `${apiBaseUrl}/lanes/${name.lane}/actif`
       })
         .then((response) => {
           store.dispatch(saveAllLane(response.data))
@@ -34,7 +34,7 @@ const lanesMiddleware = (store) => (next) => (action) => {
     case FETCH_SOON_LANE:
       axios({
         method: 'get',
-        url: `${url}/lanes/${name.lane}/soon`
+        url: `${apiBaseUrl}/lanes/${name.lane}/soon`
       })
         .then((response) => {
           store.dispatch(saveSoonLane(response.data))
