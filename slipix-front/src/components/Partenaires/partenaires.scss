@@ -1,0 +1,16 @@
+.partenaires {
+  text-align: center;
+  &__title {
+    width: 20%;
+  }
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    &__picture {
+      width: 8%;
+      &__twitch {
+        // width: 12%;
+      }
+    }
+  }
+}
