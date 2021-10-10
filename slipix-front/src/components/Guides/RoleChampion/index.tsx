@@ -17,7 +17,7 @@ import pasFacile from '@/assets/images/guides/roleChampion/pasFacile.jpg'
 import banYasuo from '@/assets/images/guides/roleChampion/banYasuo.jpg'
 import trollPicture from '@/assets/images/guides/roleChampion/trollPicture.jpg'
 
-import Youtube from '@components/Youtube/index'
+import Youtube from '@components/Youtube'
 
 const RoleChampion = () => {
   useTitle('Trouver son Rôle/Champion')
@@ -108,10 +108,10 @@ const RoleChampion = () => {
           <p className="roleChampion__role__list paragraph">Si vous aimez sauver et protéger vos alliés de leurs pires bêtises, le rôle de support saura faire honneur à votre esprit d'entraide.</p>
         </ul>
         <p className="roleChampion__role__introYoutube paragraph">Pour vous aider en + de ma technique des questions/réponses voici une vidéo ou je vous explique comment trouver son <span className="blue">rôle</span> avec de la remise en forme !</p>
-        <Youtube videoId="Z7G2ywfAQz0" SameSite="" />
+        <Youtube idYoutube="Z7G2ywfAQz0" />
         <p className="roleChampion__afterYoutube paragraph">Une fois que vous avez enfin trouvé votre rôle de rêve, on va ensemble s'attaquer aux <span className="red">champions</span> ! Ne pas oublier que pour avoir une courbe de progression stable et positive, il faut jouer très souvent le même rôle et ne pas s'éparpiller !</p>
         <p className="roleChampion__introYoutube paragraph">Voici un exemple parfait d'un coaching sur un abonné qui jouait tous les <span className="blue">rôles</span> à la fois, on remarque une manque de connaissance de ses match-ups, à ne pas faire si vous voulez monter en rankeds rapidement.</p>
-        <Youtube videoId="uKVDl9wCl2U" SameSite="" />
+        <Youtube idYoutube="uKVDl9wCl2U" />
       </div>
       <div className="backgroundParagraphe roleChampion__champion">
         <h2 className="roleChampion__champion__title"><i className="fab fa-phoenix-framework icon__phoenix" />Trouver son Champion<i className="fab fa-phoenix-framework icon__phoenix" /></h2>
@@ -164,19 +164,19 @@ const RoleChampion = () => {
           <p className="roleChampion__role__list paragraph">Voici la question piège, je reçois beaucoup trop de messages dans ce style. Au début le but n'est pas de trouver un champion bon pour monter mais un champion avec lequel on prend du plaisir ! De + on peut monter avec TOUS les champions, alors ne vous prenez pas la tête à vous demander si votre champion est fort ou non, jouer les champions forts c'est important à partir du Master+ pour optimiser son winrate.</p>
         </ul>
         <p className="roleChampion__introYoutube paragraph">Pour vous aider en + de ma technique des questions/réponses voici une vidéo ou je vous explique comment trouver son <span className="red">champion</span> avec de la remise en forme !</p>
-        <Youtube videoId="q-rWwaUQ-4I" SameSite="" />
+        <Youtube idYoutube="q-rWwaUQ-4I" />
         <p className="roleChampion__betweenYoutube paragraph">Maintenant on passe à une vidéo qui va vous montrer 3 <span className="red">champions</span> à OTP (One trick Pony) ça consiste à jouer que un seul <span className="red">champion</span> et de le spam pour très vite le maîtriser, ce sont en principe des <span className="red">champions</span> qui sont redoutable une fois qu'on a un bon nombre de games dessus. Essayez les et à vous de carry !</p>
-        <Youtube videoId="OMRt2MQJIgw" SameSite="" />
+        <Youtube idYoutube="OMRt2MQJIgw" />
         <p className="roleChampion__betweenYoutube paragraph">Encore une vidéo ou je vous présente 5 <span className="red">champions</span> à OTP ! Et bah dis donc il est plein de ressources ce Coach Slipix héhé</p>
-        <Youtube videoId="ffEnte7s3bQ" SameSite="" />
+        <Youtube idYoutube="ffEnte7s3bQ" />
         <p className="roleChampion__betweenYoutube paragraph">On enchaine avec une vidéo ou je vous présente 3 <span className="red">champions</span> qui ont du potentiel et qui sont surtout très polyvalents, c'est à dire qu'ils n'ont pas vraiment de gros counterpicks et ils sauront s'adapter à la composition de votre équipe !</p>
-        <Youtube videoId="MAB-VUtQQL8" SameSite="" />
+        <Youtube idYoutube="MAB-VUtQQL8" />
         <p className="roleChampion__betweenYoutube paragraph">Je me devais de réaliser cette vidéo car beaucoup d'entre vous détestent les tanks mais ne savent pas comment les contrer. Voici une liste de 3 <span className="red">champions</span> pour les faire pleurer !</p>
-        <Youtube videoId="MXTAwZAZyyk" SameSite="" />
+        <Youtube idYoutube="MXTAwZAZyyk" />
         <p className="roleChampion__betweenYoutube paragraph">Une liste de <span className="red">champions</span> qui ont atteint de très gros pourcentages de victoires en saison 10 ! Il en faut pour tous les goûts, allez-y les tryharders celle la est pour vous !</p>
-        <Youtube videoId="J_WiOifXAv4" SameSite="" />
+        <Youtube idYoutube="J_WiOifXAv4" />
         <p className="roleChampion__betweenYoutube paragraph">Et pour terminer une liste de <span className="red">champions</span> que je trouve super fun dans le jeu, dans la victoire ou la défaite ! (Ce n'est que mon avis et je préfère vous le partager)</p>
-        <Youtube videoId="RnO3eqRYNNk" SameSite="" />
+        <Youtube idYoutube="RnO3eqRYNNk" />
       </div>
       <div className="backgroundParagraphe roleChampion__end">
         <p className="paragraph">Pour résumer sur cette page qui parle de votre rôle et de votre champion, n'hésitez pas à vous poser les bonnes questions pour vite trouver votre playstyle et ainsi commencer une bonne courbe de progression !<br /> N'oubliez pas que ça reste un jeu il faut s'amuser, <span className="gold">ne vous forcez pas à jouer des champions forts que vous n'aimez pas...</span></p>

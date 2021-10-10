@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
-import Youtube from '@components/Youtube/index'
+import Youtube from '@components/Youtube'
 import { useTitle } from '@/hooks/useTitle'
 import { animationOne, transition } from '@/utils/animations/index'
 import './lowElo.scss'
@@ -66,7 +66,7 @@ const LowElo = () => {
         <p className="paragraph">C'est bien beau de dire "<span className="green">j'ai pas de chance</span>" ou "<span className="green">impossible de monter dans ce jeu</span>" ou encore "<span className="green">j'ai toujours les mauvais alliés</span>" mais si on suit cette logique alors tout le monde serai en bas elo non ? Pourquoi il y a des diamants, puis des silvers ?</p>
         <p className="paragraph">Les diamants sont ceux qui ont réussi à s'améliorer, avec de la remise en question et un bon travail personnel.</p>
         <p className="beforeYoutube paragraph">Dans cette vidéo je vais vous montrer l'exemple parfait de quelqu'un qui pense être <span className="green">bloqué à cause de ses alliés</span> sauf que je vais analyser son historique et essayer de le remettre en place, à voir absolument !</p>
-        <Youtube videoId="vWfeB_2kbU4" SameSite="" />
+        <Youtube idYoutube="vWfeB_2kbU4" />
         <p className="afterYoutube paragraph">Vous l'avez compris, au + vous passerez de temps à vous trouver des excuses, au moins vous allez vous concentrer sur VOTRE game et VOS défauts sur le jeu.</p>
         <p className="paragraph">Oui League of Legends n'est pas parfait, oui il y a des games horribles avec des <span className="red">AFK</span>, des <span className="red">rageux</span>, des <span className="red">inters</span> mais ce n'est pas une raison pour rester en bas elo.</p>
         <p className="paragraph">Il faut juste chercher la lumière et la mettre en valeur (pololo je deviens chaud à force d'écrire, bientôt mon livre)</p>
@@ -86,9 +86,9 @@ const LowElo = () => {
         <img className="picture__historique" src={historiqueGame} alt="" />
         <p className="paragraph">Dans cette vidéo de coaching en silver/gold j'ai analysé un élève qui jouait Vel'koz et on a remarqué que son gros problème était qu'il se plaçait comme un assassin sauf qu'il joue un mage longue portée!</p>
         <p className="paragraph beforeYoutube">Avec l'analyse il a directement <span className="green">remarqué ses grosses erreurs</span> et il a pu les corriger rapidement !</p>
-        <Youtube videoId="ltWONmX0joA" SameSite="" />
+        <Youtube idYoutube="ltWONmX0joA" />
         <p className="paragraph betweenYoutube">Voici une série de vidéos ou j'analyse des parties des élèves en bas elo, <span className="green">très intéressant pour voir les erreurs</span> qui se répètent et ainsi les supprimer rapidement. Il y a en tout 7 épisodes de cette série, bon visionnage!</p>
-        <Youtube videoId="Igz6BnyN3_Y" SameSite="" />
+        <Youtube idYoutube="Igz6BnyN3_Y" />
       </div>
       <div className="backgroundParagraphe">
         <h2><i className="fas fa-adjust icons__adjust" />Trouver sa moitié<i className="fas fa-adjust icons__adjust" /></h2>
@@ -103,17 +103,17 @@ const LowElo = () => {
         <p className="paragraph">Ou pire encore quand votre champion est pick par l'équipe ennemi. Donc ce que je conseille c'est d'avoir son champion OTP + un champion de secours !</p>
         <p className="paragraph"><i className="fas fa-exclamation-triangle icons__warning" /> : à vos risques et périls si vous voulez OTP un champion qui est trop souvent joué ou ban en bas elo <br />exemple : <span className="red">ZED</span>, <span className="red">YASUO</span>, <span className="red">DARIUS</span>, <span className="red">MORDEKAISER</span>, <span className="red">PYKE</span>.</p>
         <p className="paragraph betweenYoutube">Voici une liste de 5 champions à OTP pour carry et sortir du bas elo !</p>
-        <Youtube videoId="Udf6A0N100w" SameSite="" />
+        <Youtube idYoutube="Udf6A0N100w" />
         <p className="paragraph betweenYoutube">Encore une liste de 5 champions à otp !</p>
-        <Youtube videoId="ffEnte7s3bQ" SameSite="" />
+        <Youtube idYoutube="ffEnte7s3bQ" />
         <p className="paragraph betweenYoutube">Une liste de champions AD carry qui sont parfait pour débuter et prendre rapidement du plaisir !</p>
-        <Youtube videoId="q3VjGRXzI1A" SameSite="" />
+        <Youtube idYoutube="q3VjGRXzI1A" />
         <p className="paragraph betweenYoutube">Une liste de champions MIDLANE  qui sont parfait pour débuter et prendre rapidement du plaisir ! </p>
-        <Youtube videoId="hdzF80rPSOE" SameSite="" />
+        <Youtube idYoutube="hdzF80rPSOE" />
         <p className="paragraph betweenYoutube">Une liste de champions JUNGLE  qui sont parfait pour débuter et prendre rapidement du plaisir !</p>
-        <Youtube videoId="Q2N6V9h_JWg" SameSite="" />
+        <Youtube idYoutube="Q2N6V9h_JWg" />
         <p className="paragraph betweenYoutube">Une vidéo ou je vous présente des champions qui ont les meilleurs pourcentages de victoire en bas elo ! (attention ils sont souvent ban/pick)</p>
-        <Youtube videoId="A3jerBTKHOU" SameSite="" />
+        <Youtube idYoutube="A3jerBTKHOU" />
         <p className="paragraph afterYoutube">Si avec ça vous ne trouvez pas votre moitié je ne peux plus rien faire pour vous mes petits ... Oh wait ! N'hésitez pas à visiter mon guide "<span className="gold">TROUVER SON RÔLE/CHAMPION</span>" ça pourrait encore vous aider à trouver la perle rare !</p>
         <Link className="link" to="/guides/role-champion" target="_blanc">Cliquez ici</Link>
       </div>
@@ -141,9 +141,9 @@ const LowElo = () => {
         <img className="picture__heavyToCarry" src={heavyToCarry} alt="" />
         <p className="paragraph">J'ai des élèves diamants+ qui galèrent à monter car ils pensent pouvoir le faire en jouant 6-7 champions et bien non c'est très très dur.</p>
         <p className="paragraph beforeYoutube">Voici l'exemple parfait, dans cette vidéo je coach un élève qui joue peu au jeu, et pour le peu de temps qu'il y passe il joue plusieurs rôles/champions à la fois ce qui donne une <span className="red">game catastrophique</span> !</p>
-        <Youtube videoId="Krg3QdeQqX4" SameSite="" />
+        <Youtube idYoutube="Krg3QdeQqX4" />
         <p className="paragraph betweenYoutube">Dans cette vidéo je vous explique les erreurs qui sont souvent la en bas elo avec la bonne réactivité à avoir !</p>
-        <Youtube videoId="Zzt76aIMpZI" SameSite="" />
+        <Youtube idYoutube="Zzt76aIMpZI" />
       </div>
       <div className="backgroundParagraphe">
         <p className="paragraph">Pour résumer sur cette page qui parle du bas elo de League of Legends, remettez-vous en question, trouvez votre champion, optimisez votre temps de jeu et surtout <span className="gold">prenez du plaisir</span> ! Derrière chaque bas elo se cache un futur challenger...</p>

@@ -188,7 +188,7 @@ const App = ({ showAlert }: any) => {
                 <Route exact path="/guides/gagner-sa-phase-de-lane" component={WinLane} />
                 <Route exact path="/guides/vision-du-jeu" component={VisionGame} />
                 <Route exact path="/trollpicks" component={TrollPicks} />
-                <Route exact path="/trollpicks/:name/:id" component={TrollPicks} />
+                <Route exact path="/trollpicks/:name/:id" component={Trollpick} />
                 <Route exact path="/me-soutenir" component={Support} />
                 <Route exact path="/me-contacter" component={Contact} />
                 <Route exact path="/mentions-legales" component={MentionLegales} />

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Youtube from '@components/Youtube/index'
+import Youtube from '@components/Youtube'
 import { motion } from 'framer-motion'
 
 import { animationOne, transition } from '@/utils/animations/index'
@@ -51,15 +51,15 @@ const Guide = () => {
         <p className="paragraph"> Ce n'est pas très grave, on passe vite à la game suivante et on essaye de se rappeler d'une victoire avec de bon alliés ou une victoire que vous avez <span className="gold">hard carry</span>.</p>
         <p className="paragraph">Ce n'est bien évidemment pas facile mais avec le temps ça ira beaucoup mieux, faites moi confiance se plaindre dans League of Legends ne vous attirera rien de bon si ce n'est de l'<span className="red">ego surdimensionné</span> et l'impression de n'avoir rien à se reprocher.</p>
         <p className="paragraph beforeYoutube">Voici une vidéo indispensable ou j'explique à un abonné que <span className="red">rager</span> et se <span className="red">plaindre</span> ne l'aidera jamais</p>
-        <Youtube className="guide__mental__youtube" videoId="vWfeB_2kbU4" SameSite="" />
+        <Youtube className="guide__mental__youtube" idYoutube="vWfeB_2kbU4" />
         <p className="paragraph afterYoutube">Un mauvais <span className="blue">mental</span> peut-il carrément changer votre façon de jouer ? Et bien oui, dans mes coachings j'ai remarqué que un élève avait un gameplay totalement différent après une série victoires et une série de défaites.</p>
         <p className="paragraph">Après la série de défaites, souvent les joueurs ont une perte de confiance et se mettent à jouer ultra safe et sans tenter de plays, ce n'est clairement pas la bonne solution.</p>
         <p className="paragraph beforeYoutube">Dans ce coaching de niveau <span className="gold">Gold/Platine</span> on assiste à l'exemple parfait du joueur qui a perdu confiance en lui à cause des défaites !</p>
-        <Youtube videoId="K2DZTVPWhYg" SameSite="" />
+        <Youtube idYoutube="K2DZTVPWhYg" />
         <p className="paragraph afterYoutube">Souvent en tant que spectateur d'un contenu <span className="red">Youtube</span>/<span className="twitch">Twitch</span> vous faites des remarques de différence de niveaux entre des bons joueurs dans une partie , et bien oui parfois on va remarquer une énorme différence parce que un des joueurs va perdre son <span className="blue">mental</span> et donc environ 25% de ses capacités sur le jeu.</p>
         <p className="paragraph">Sauf que 25% de capacités en haut elo sur League of Legends ça va se ressentir dès le début de partie et donc mener à faire de très mauvais scores. Ce n'est pas que le joueur est forcément mauvais, si il est arrivé dans le haut elo il ne l'est probablement pas. C'est qu'il ne se donne plus à fond et lance une game même sans en avoir envie !</p>
         <p className="paragraph beforeYoutube">Dans cette vidéo vous allez assister à une partie de niveau Haut <span className="gold">Diamant/Master</span> qui n'a absolument aucun sens, oui on dirait une game de bas elo mais c'est juste que mes ennemis étaient dans un très mauvais <span className="blue">mental</span> et donc ils jouent très mal !</p>
-        <Youtube videoId="mhxVmuJkNwU" SameSite="" />
+        <Youtube idYoutube="mhxVmuJkNwU" />
       </div>
       <div className="backgroundParagraphe guide__rage">
         <h2 className="rage red"><i className="fas fa-fist-raised icons__raised" />La rage<i className="fas fa-fist-raised icons__raised" /></h2>
@@ -78,10 +78,10 @@ const Guide = () => {
         </ul>
         <p className="paragraph">Et toi Slipix ça t'arrive de <span className="red">rager</span> ? Bien evidemment mes petits ! On <span className="red">rage</span> tous sur ce jeu c'est comme ça, mais je sais le prendre sur moi ça va être la différence avec quelqu'un qui n'aura pas le mental pour se remettre en question et donc il va moins monter en ranked (oui ça y joue beaucoup).</p>
         <p className="paragraph betweenYoutube">Je vous ai preparé une vidéo qui regroupe toutes les situations qui me font le + <span className="red">rager</span> dans League of Legends, il est temps de voir si on a des points en commun !</p>
-        <Youtube className="guide__mental__youtube" videoId="EvWGqQWxeU8" SameSite="" />
+        <Youtube className="guide__mental__youtube" idYoutube="EvWGqQWxeU8" />
         <p className="paragraph betweenYoutube">Il n'y a pas que les situations qui font <span className="red">rager</span>, certains champions vont déclencher une haine en nous quand on va jouer contre. Alors pour votre plaisir voici une vidéo qui regroupe tous les champions qui me font le + <span className="red">rager</span> dans League of Legends !</p>
         <p className="paragraph before">(On a tous nos Nemesis c'est ça qui est bon)</p>
-        <Youtube className="guide__mental__youtube" videoId="msp79-TYqtk" SameSite="" />
+        <Youtube className="guide__mental__youtube" idYoutube="msp79-TYqtk" />
       </div>
       <div className="backgroundParagraphe">
         <p className="paragraph">Pour résumer sur cette page qui parle du <span className="blue">Mental</span> et de la <span className="red">Rage</span> ne sous-estimez jamais votre bonne humeur sur le jeu. Alors prenez du plaisir, amusez vous avec vos ami(e)s et ne lancez pas de rankeds après 7 défaites.

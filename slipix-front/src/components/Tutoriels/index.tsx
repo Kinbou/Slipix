@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 import Loader from '@components/Loader/index'
-
 import {
   animationOne, cardList, card
 } from '@/utils/animations/index'
@@ -86,16 +85,6 @@ const Tutoriels = () => (
           </motion.div>
         </Link>
       </motion.div>
-      {/* <div className="betweenParagraph" /> */}
-      {/* <div className="tutoriels__cards__line tutoriels__cards__line__two">
-        <a>
-          <div className="tutoriels__cards__card tutoriels__cards__cardSoon">
-            <h3 className="tutoriels__cards__card__title news__cards__first__title">Tutoriels Support</h3>
-            <img className="tutoriels__picture" src={support} alt="" />
-            <p className="tutoriels__cards__cardSoon__content">Bientôt disponible</p>
-          </div>
-        </a>
-      </div> */}
     </div>
   </motion.div>
 )

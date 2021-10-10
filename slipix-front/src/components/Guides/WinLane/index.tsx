@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Youtube from '@components/Youtube/index'
+import Youtube from '@components/Youtube'
 import { motion } from 'framer-motion'
 
 import { useTitle } from '@/hooks/useTitle'
@@ -68,7 +68,7 @@ const WinLane = () => {
         <p className="paragraph">Le farming sous tour est totalement différent avec un <span className="blue">mage</span> et un <span className="red">assassin</span> par exemple.</p>
         <p className="paragraph">Au final le farming c'est les golds et les golds c'est ce qui va rendre votre game facile ou difficile, alors n'hésitez pas à vous entrainer!</p>
         <p className="paragraph beforeYoutube">J'ai trouvé cette vidéo super détaillée et intéressante pour <span className="green">améliorer votre farming</span>. N'hésitez pas à aller la voir (elle est en anglais mais c'est la + qualitative sur YouTube).</p>
-        <Youtube videoId="jOSyf1NQspo" SameSite="" />
+        <Youtube idYoutube="jOSyf1NQspo" />
       </div>
       <div className="backgroundParagraphe winLane__matchUp">
         <h2><i className="fas fa-trophy icons__trophy" />Le match-up<i className="fas fa-trophy icons__trophy" /></h2>
@@ -85,9 +85,9 @@ const WinLane = () => {
         <p className="paragraph">En revanche contre Syndra c'est très compliqué donc au lieu de prendre <span className="red">embrasement</span> (ignite) je prend <span className="purple">téléportation</span> pour tenir le début de partie !</p>
         <p className="paragraph">Tout ça je le sais comment ? Parce que je l'ai vécu et j'ai analysé mon match-up, faites de même il faut juste du temps et des games !</p>
         <p className="paragraph betweenYoutube">ça donne quoi de pas connaître son match-up ? Voici un coaching en bas elo ou l'abonné est totalement perdu face à un champion qu'il ne connait pas.</p>
-        <Youtube videoId="yGKJDd4YsSc" SameSite="" />
+        <Youtube idYoutube="yGKJDd4YsSc" />
         <p className="paragraph betweenYoutube">Encore une exemple:  Coaching d'un abonné jouant support, il a un match-up positif mais il n'en profite pas parce qu'il connait pas son match-up !</p>
-        <Youtube videoId="47gDddxq9h4" SameSite="" />
+        <Youtube idYoutube="47gDddxq9h4" />
       </div>
       <div className="backgroundParagraphe winLane__roaming">
         <h2><i className="fas fa-exchange-alt icons__change" />Le roaming<i className="fas fa-exchange-alt icons__change" /></h2>
@@ -99,11 +99,11 @@ const WinLane = () => {
         <p className="paragraph">(il peut choisir de vous suivre mais c'est très risqué car il va perdre beaucoup de farm et d'xp, sans oublier qu'il a peut être un champion très mauvais pour roam).</p>
         <p className="paragraph">Avec ce roaming vous allez mettre énormément de pression, forcer les adversaires à jouer safe, <span className="red">récupérer des kills</span> et ainsi débloquer des objectifs et j'en passe !</p>
         <p className="paragraph betweenYoutube">Voici un tutoriel coaching "comment gagner avec le roaming" et prendre beaucoup d'avantage !</p>
-        <Youtube videoId="phBLIwFJNfw" SameSite="" />
+        <Youtube idYoutube="phBLIwFJNfw" />
         <p className="paragraph betweenYoutube">Petit gameplay fun ou j'essaye un Lee Sin full roaming support (inspiré d'un Corréen qui le joue en grand master). Vous allez voir le nombre d'occasions et de roaming qu'on peut faire pendant les games !</p>
-        <Youtube videoId="V20Ifzt9cas" SameSite="" />
+        <Youtube idYoutube="V20Ifzt9cas" />
         <p className="paragraph betweenYoutube">Un autre de mes gameplays en midlane ou je prend très vite l'avantage sur ma lane et j'en profite pour aller aider mon jungle, ma toplane, ma botlane !</p>
-        <Youtube videoId="0XX3w0cHiAM" SameSite="" />
+        <Youtube idYoutube="0XX3w0cHiAM" />
       </div>
       <div className="backgroundParagraphe winLane__wave">
         <h2><i className="fas fa-balance-scale icons__balance" />La gestion de la wave<i className="fas fa-balance-scale icons__balance" /></h2>
@@ -116,19 +116,19 @@ const WinLane = () => {
           <p className="paragraph">Avec votre freeze il va aussi ne pas pouvoir avancer, et perdre beaucoup de sbires.  à noter que le freeze est bien meilleur <span className="red">contre un champion corps à corps</span> car il ne pourra pas récupérer son farm si vous le zonez bien.</p>
         </div>
         <p className="paragraph beforeYoutube">Voici un coaching explicatif sur la gestion de wave, ça devrait compléter le guide</p>
-        <Youtube videoId="rzKIH_zGRNo" SameSite="" />
+        <Youtube idYoutube="rzKIH_zGRNo" />
         <p className="paragraph afterYoutube">Les timing back sont très important dans League of Legends !</p>
         <p className="paragraph">On remarque souvent en bas elo que le problème vient aussi du timing back, ils restent souvent pour rien sur la lane, trop peu de PV, trop de peu de mana ou bien trop de golds sur eux !</p>
         <p className="paragraph">Pour bien optimiser votre timing back, soyez bien sûr d'avoir push votre lane, d'avoir assez de mana/pv pour rester!</p>
         <p className="paragraph"><span className="gold">Il faut back seulement quand on ne peut plus tenir ou quand on a les golds pour un objet clé</span> par exemple (chapitre perdu pour un mage AP mid)</p>
         <p className="paragraph betweenYoutube">dans cette vidéo coaching on va parler des agression, et des timing back!</p>
-        <Youtube videoId="tYBaoo4oxes" SameSite="" />
+        <Youtube idYoutube="tYBaoo4oxes" />
         <p className="paragraph betweenYoutube">Une vidéo coaching ou je vous montre comment impacter la map avec un bon timing back ainsi que le roaming</p>
-        <Youtube videoId="uAmTtf3wwBY" SameSite="" />
+        <Youtube idYoutube="uAmTtf3wwBY" />
         <p className="paragraph betweenYoutube">Une vidéo intéressante ou je vous donne 3 techniques pour gagner votre lane !</p>
-        <Youtube videoId="cJFKzvSRScg" SameSite="" />
+        <Youtube idYoutube="cJFKzvSRScg" />
         <p className="paragraph betweenYoutube">Un coaching d"un abonné ou je lui explique la domination de lane pour avoir une grande présence en early game.</p>
-        <Youtube videoId="xtqB3kAPWRc" SameSite="" />
+        <Youtube idYoutube="xtqB3kAPWRc" />
       </div>
       <div className="backgroundParagraphe winLane__end">
         <p className="paragraph">Pour résumer sur cette page qui parle de la phase de lane, entraînez vous au farming, connaissez vos match-up, bougez et apportez votre présence sur la carte, utilisez le <span className="green">push</span> et le <span className="blue">freeze</span> au bon moment !</p>

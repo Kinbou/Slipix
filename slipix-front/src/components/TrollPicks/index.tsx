@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import slugify from 'react-slugify'
 import { motion } from 'framer-motion'
 
+import { apiBaseUrl } from '@middlewares/index'
 import Loader from '@components/Loader/index'
 import {
   animationOne, cardList, card
@@ -20,7 +20,7 @@ const TrollPicks = ({
   trollpickSoonIsLoad,
   setTrollpickActifIsLoad,
   setTrollpickSoonIsLoad
-}) => {
+}: any) => {
   useTitle('TrollPicks')
   useEffect(() => {
     fetchTrollpickActif()
@@ -59,8 +59,8 @@ const TrollPicks = ({
             initial="in"
             animate="out"
           >
-            { trollpicksActif.length !== 0 && (
-              trollpicksActif.map((trollpick) => (
+            {trollpicksActif.length !== 0 && (
+              trollpicksActif.map((trollpick: any) => (
                 <div
                   className="trollpicks__cards__line tutoriels__cards__line__one"
                   key={trollpick.id}
@@ -72,7 +72,7 @@ const TrollPicks = ({
                       variants={card}
                     >
                       <h3 className="trollpicks__cards__card__title news__cards__first__title">{trollpick.title}</h3>
-                      <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick.image}`} alt="" />
+                      <img src={`${apiBaseUrl}/images/trollpicks/${trollpick.image}`} alt="" />
                     </motion.div>
                   </Link>
                 </div>
@@ -82,7 +82,7 @@ const TrollPicks = ({
             <>
               <div className="betweenParagraph" />
               <h2>Prochainement</h2>
-              {trollpicksSoon.map((trollpick) => (
+              {trollpicksSoon.map((trollpick: any) => (
                 <motion.div
                   className="trollpicks__cards__line tutoriels__cards__line__one"
                   key={trollpick.id}
@@ -91,7 +91,7 @@ const TrollPicks = ({
                   <div className="trollpicks__cards__card trollpicks__cards__cardSoon">
                     <p className="trollpicks__cards__cardSoon__content">Bientôt disponible</p>
                     <h3 className="trollpicks__cards__card__title news__cards__first__title">{trollpick.title}</h3>
-                    <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/trollpicks/${trollpick.image}`} alt="" />
+                    <img src={`${apiBaseUrl}/images/trollpicks/${trollpick.image}`} alt="" />
                   </div>
                 </motion.div>
               ))}
@@ -102,25 +102,6 @@ const TrollPicks = ({
       )}
     </motion.div>
   )
-}
-
-TrollPicks.propTypes = {
-  fetchTrollpickActif: PropTypes.func.isRequired,
-  fetchTrollpickSoon: PropTypes.func.isRequired,
-  setTrollpickActifIsLoad: PropTypes.func.isRequired,
-  setTrollpickSoonIsLoad: PropTypes.func.isRequired,
-  trollpickActifIsLoad: PropTypes.bool.isRequired,
-  trollpickSoonIsLoad: PropTypes.bool.isRequired,
-  trollpicksActif: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired
-    }).isRequired
-  ).isRequired,
-  trollpicksSoon: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired
-    }).isRequired
-  ).isRequired
 }
 
 export default TrollPicks

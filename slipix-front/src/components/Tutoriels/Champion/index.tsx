@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
 import { Link, useParams } from 'react-router-dom'
 
 import { pipe, urlBack } from '@/utils/selectors'
 import Loader from '@components/Loader/index'
-import Youtube from '@components/Youtube/index'
+import Youtube from '@components/Youtube'
 import './zac.scss'
 
 // images
@@ -16,7 +15,7 @@ const Champion = ({
   setChampionIsLoad,
   championIsLoad,
   stateName
-}) => {
+}: any) => {
   const slug = useParams()
   // permet de récupérer le nom du champion dans l'url
   stateName(slug)
@@ -116,7 +115,7 @@ const Champion = ({
                 <div className="zac__content__asset__list__left">
                   <h4 className="zac__content__asset__list__left__force"><i className="fas fa-plus-circle zac__content__asset__list__left__force__icon" />Forces</h4>
                   <div className="zac__content__asset__list__left__content">
-                    {pipe(champion[0].strength).map((strengths) => (
+                    {pipe(champion[0].strength).map((strengths: any) => (
                       <p><span className="dashes gold">-</span>{strengths}</p>
                     ))}
                   </div>
@@ -124,7 +123,7 @@ const Champion = ({
                 <div className="zac__content__asset__list__right">
                   <h4><i className="fas fa-minus-circle zac__content__asset__list__right__icon" />Faiblesses</h4>
                   <div className="zac__content__asset__list__right__content">
-                    {pipe(champion[0].weakness).map((weaknes) => (
+                    {pipe(champion[0].weakness).map((weaknes: any) => (
                       <p><span className="dashes gold">-</span>{weaknes}</p>
                     ))}
                   </div>
@@ -166,7 +165,7 @@ const Champion = ({
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">
-                    <Youtube videoId={pipe(champion[0].youtube_identifiant)[1]} SameSite="" />
+                    <Youtube idYoutube={pipe(champion[0].youtube_identifiant)[1]} />
                   </div>
                   <div className="zac__content__carry__content__right secondary">
                     <div className="zac__content__carry__content__right__content">
@@ -185,7 +184,7 @@ const Champion = ({
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">
-                    <Youtube videoId={pipe(champion[0].youtube_identifiant)[1]} SameSite="" />
+                    <Youtube idYoutube={pipe(champion[0].youtube_identifiant)[1]} />
                   </div>
                   <div className="zac__content__carry__content__right secondary">
                     <div className="zac__content__carry__content__right__content">
@@ -204,7 +203,7 @@ const Champion = ({
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">
-                    <Youtube videoId={pipe(champion[0].youtube_identifiant)[1]} SameSite="" />
+                    <Youtube idYoutube={pipe(champion[0].youtube_identifiant)[1]} />
                   </div>
                   <div className="zac__content__carry__content__right secondary">
                     <div className="zac__content__carry__content__right__content">
@@ -225,7 +224,7 @@ const Champion = ({
             <div className="zac__content__carry">
               <div className="zac__content__carry__content">
                 <div className="zac__content__carry__content__left">
-                  <Youtube videoId={pipe(champion[0].youtube_identifiant)[2]} SameSite="" />
+                  <Youtube idYoutube={pipe(champion[0].youtube_identifiant)[2]} />
                 </div>
                 <div className="zac__content__carry__content__right secondary">
                   <div className="zac__content__carry__content__right__content">
@@ -249,7 +248,7 @@ const Champion = ({
               <div className="zac__content__carry">
                 <div className="zac__content__carry__content">
                   <div className="zac__content__carry__content__left">
-                    <Youtube videoId={pipe(champion[0].youtube_identifiant)[3]} SameSite="" />
+                    <Youtube idYoutube={pipe(champion[0].youtube_identifiant)[3]} />
                   </div>
                   <div className="zac__content__carry__content__right secondary">
                     <div className="zac__content__carry__content__right__content">
@@ -270,13 +269,13 @@ const Champion = ({
             {/* SERIES TUTO KATARINA */}
             {champion[0].name === 'katarina' && (
               <>
-                {pipe(champion[0].youtube_identifiant).map((katarina) => (
+                {pipe(champion[0].youtube_identifiant).map((katarina: any) => (
                   <>
                     {pipe(champion[0].youtube_identifiant).indexOf(katarina) !== 0 && (
                     <div className="zac__content__carry">
                       <div className="zac__content__carry__content">
                         <div className="zac__content__carry__content__left">
-                          <Youtube videoId={katarina} SameSite="" />
+                          <Youtube idYoutube={katarina} />
                         </div>
                         <div className="zac__content__carry__content__right secondary">
                           <div className="zac__content__carry__content__right__content">
@@ -304,13 +303,13 @@ const Champion = ({
               <>
                 <p className="intro afterYoutube zed">VOICI UNE SERIE DE GAMEPLAYS EXPLICATIFS TRES COMPLETS POUR SAVOIR COMMENT JOUER ZED DIRECTEMENT SUR LE TERRAIN !</p>
                 <p className="paragraph">Si vous avez des questions n'hésitez pas à les poser directement en commentaires sur la vidéo YouTube</p>
-                {pipe(champion[0].youtube_identifiant).map((zed) => (
+                {pipe(champion[0].youtube_identifiant).map((zed: any) => (
                   <>
                     {pipe(champion[0].youtube_identifiant).indexOf(zed) !== 0 && (
                     <div className="zac__content__carry">
                       <div className="zac__content__carry__content">
                         <div className="zac__content__carry__content__center">
-                          <Youtube videoId={zed} SameSite="" />
+                          <Youtube idYoutube={zed} />
                         </div>
                       </div>
                     </div>
@@ -324,44 +323,6 @@ const Champion = ({
       )}
     </div>
   )
-}
-
-Champion.propTypes = {
-  fetchOneChampion: PropTypes.func.isRequired,
-  championIsLoad: PropTypes.bool.isRequired,
-  setChampionIsLoad: PropTypes.func.isRequired,
-  stateName: PropTypes.func.isRequired,
-  champion: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
-      lane: PropTypes.string.isRequired,
-      intro: PropTypes.string.isRequired,
-      pictureHead: PropTypes.string.isRequired,
-      history: PropTypes.string.isRequired,
-      sort_passif_picture: PropTypes.string.isRequired,
-      sort_passif_name: PropTypes.string.isRequired,
-      sort_passif_content: PropTypes.string.isRequired,
-      sort_a_picture: PropTypes.string.isRequired,
-      sort_a_name: PropTypes.string.isRequired,
-      sort_a_content: PropTypes.string.isRequired,
-      sort_z_picture: PropTypes.string.isRequired,
-      sort_z_name: PropTypes.string.isRequired,
-      sort_z_content: PropTypes.string.isRequired,
-      sort_e_picture: PropTypes.string.isRequired,
-      sort_e_name: PropTypes.string.isRequired,
-      sort_e_content: PropTypes.string.isRequired,
-      sort_r_picture: PropTypes.string.isRequired,
-      sort_r_name: PropTypes.string.isRequired,
-      sort_r_content: PropTypes.string.isRequired,
-      youtube_identifiant: PropTypes.string.isRequired,
-      youtube_actor: PropTypes.string.isRequired,
-      youtube_intro: PropTypes.string.isRequired,
-      youtube_content_coaching: PropTypes.string.isRequired,
-      strength: PropTypes.string.isRequired,
-      weakness: PropTypes.string.isRequired
-    }).isRequired
-  ).isRequired
 }
 
 export default Champion
