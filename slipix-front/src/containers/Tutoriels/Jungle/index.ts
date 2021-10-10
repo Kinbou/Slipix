@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 // import Champion from '@components/Tutoriels/Jungle/Zac';
-import Jungle from '@components/Tutoriels/Jungle/index'
+import Champions from '@components/Tutoriels/Champions/index'
 
 import {
   fetchAllLane,
@@ -14,11 +14,6 @@ import {
 } from '@/actions/lanes'
 
 const mapStateToProps = (state) => ({
-  // nom de la prop à remplir: donnée à récupérer dans le state
-
-  // offers: state.offers.allOffers,
-  // champion: state.champions.champion,
-  // appIsLoading: state.global.appIsLoading,
   name: state.lanes.name,
   laneActif: state.lanes.listLaneActif,
   laneSoon: state.lanes.listLaneSoon,
@@ -27,7 +22,6 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  // nom de la prop à remplir: callback qui contient un appel à dispatch
   fetchAllLane: () => {
     dispatch(fetchAllLane())
   },
@@ -57,4 +51,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Jungle)
+)(Champions)

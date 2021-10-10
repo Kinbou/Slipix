@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import { motion } from 'framer-motion'
 
+import { apiBaseUrl } from '@middlewares/index'
 import Loader from '@components/Loader/index'
 import {
   animationOne, cardList, card
 } from '@/utils/animations/index'
-import './jungle.scss'
+import './champions.scss'
 
-const Jungle = ({
+const Champions = ({
   stateNameLane,
   laneActif,
   laneSoon,
@@ -20,9 +20,8 @@ const Jungle = ({
   fetchAllLane,
   fetchSoonLane,
   name
-}) => {
-  const slug = useParams()
-  // permet de récupérer le nom du champion dans l'url
+}: any) => {
+  const slug = useParams()   // permet de récupérer le nom du champion dans l'url
   stateNameLane(slug)
   useEffect(() => {
     fetchAllLane()
@@ -59,7 +58,7 @@ const Jungle = ({
               className="jungle__cards"
               key="listChampions"
             >
-              {laneActif.map((listChampion) => (
+              {laneActif.map((listChampion: any) => (
                 <>
                   <motion.div
                     key={listChampion.name}
@@ -69,7 +68,7 @@ const Jungle = ({
                     {listChampion.actif === 1 && (
                     <Link to={`/tutoriels-champions/${listChampion.lane}/${listChampion.name}`}>
                       <div className="">
-                        <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${listChampion.pictureChampion}`} alt="" />
+                        <img src={`${apiBaseUrl}/images/champions/${listChampion.pictureChampion}`} alt="" />
                         <h3>{listChampion.name}</h3>
                       </div>
                     </Link>
@@ -84,10 +83,10 @@ const Jungle = ({
               <div className="betweenParagraph" />
               <h2>Prochainement</h2>
               <div className="jungle__cards">
-                {laneSoon.map((listChampion) => (
+                {laneSoon.map((listChampion: any) => (
                   <>
                     <div className="jungle__cards__cardSoon" key={listChampion.name}>
-                      <img src={`https://backend.slipix-progresser-sur-league-of-legends.fr/images/champions/${listChampion.pictureChampion}`} alt="" />
+                      <img src={`${apiBaseUrl}/images/champions/${listChampion.pictureChampion}`} alt="" />
                       <p className="jungle__cards__cardSoon__content">Bientôt disponible</p>
                       <h3>{listChampion.name}</h3>
                     </div>
@@ -106,28 +105,4 @@ const Jungle = ({
   )
 }
 
-Jungle.propTypes = {
-  stateNameLane: PropTypes.func.isRequired,
-  fetchAllLane: PropTypes.func.isRequired,
-  fetchSoonLane: PropTypes.func.isRequired,
-  laneIsLoad: PropTypes.bool.isRequired,
-  laneIsLoad2: PropTypes.bool.isRequired,
-  setLaneIsLoad: PropTypes.func.isRequired,
-  setLaneIsLoad2: PropTypes.func.isRequired,
-  name: PropTypes.objectOf(
-    PropTypes.shape({
-      lane: PropTypes.string.isRequired
-    }).isRequired
-  ).isRequired,
-  laneActif: PropTypes.arrayOf(
-    PropTypes.shape({
-      lane: PropTypes.string.isRequired
-    }).isRequired
-  ).isRequired,
-  laneSoon: PropTypes.arrayOf(
-    PropTypes.shape({
-    }).isRequired
-  ).isRequired
-}
-
-export default Jungle
+export default Champions

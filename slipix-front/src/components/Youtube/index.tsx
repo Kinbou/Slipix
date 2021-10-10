@@ -1,32 +1,17 @@
-import React, { Component } from 'react';
-import YouTube from 'react-youtube';
+import React from "react";
 
-import './youtube.scss';
+const Youtube = ({ idYoutube }: any) => {
 
-class Youtube extends Component {
-
-  render() {
-    const opts = {
-      height: '390',
-      width: '640',
-      margin: '1rem',
-      playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 0,
-      },
-    };
-    const { videoId } = this.props;
-    return (
-      <YouTube
-        videoId={videoId}
-        opts={opts}
-        onReady={this.videoOnReady}
-        onPlay={this.videoOnPlay}
-        onStateChange={this.videoStateChange}
-        SameSite="Strict"
-      />
-    );
-  }
+  return (
+    <iframe
+    width="640"
+    height="390"
+    src={`https://www.youtube.com/embed/${idYoutube}`}
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+  </iframe>
+  )
 }
 
 export default Youtube;
