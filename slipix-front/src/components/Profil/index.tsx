@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import './profil.scss';
 import InputProfil from '@components/Inputs';
@@ -17,7 +16,7 @@ const Profil = ({
   updateUser,
   updateAvatarUser,
   displayAlert,
-}) => {
+}: any) => {
   const inputUploadRef = useRef();
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
@@ -276,20 +275,6 @@ const Profil = ({
       )}
     </div>
   );
-};
-
-Profil.propTypes = {
-  showModal: PropTypes.string.isRequired,
-  displayAlert: PropTypes.func.isRequired,
-  displayModal: PropTypes.func.isRequired,
-  user: PropTypes.arrayOf(
-    PropTypes.shape({
-      avatar: PropTypes.string.isRequired,
-      pseudo: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
-  updateUser: PropTypes.func.isRequired,
-  updateAvatarUser: PropTypes.func.isRequired,
 };
 
 export default Profil;

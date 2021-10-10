@@ -1,0 +1,420 @@
+
+.menu-background {
+  position: fixed;
+  background-color: rgba(0,0,0,0.6);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+
+.menu {
+  &__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3em;
+    margin: 0px 10px;
+    padding: 5px 5px;
+    position: relative;
+    
+    z-index: 1;
+    cursor: pointer;
+
+    &::before, &:after {
+      position: absolute;
+      opacity: 1;
+      height: 100%;
+      width: 3px;
+      content: '';
+      background: #f1ab4f;
+      transition: all 0.3s;
+    }
+    &:before {
+      left: 0px;
+      top: 0px;
+    }
+    &:after {
+      right: 0px;
+      bottom: 0px;
+    }
+    &:hover:before, &:hover:after {
+      opacity: 1;
+      height: 2px;
+      width: 100%;
+      color: #c28f2c;
+    }
+    &--active {
+      color: #c28f2c;
+    }
+  }
+}
+
+.header {
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  z-index: 99;
+
+  &__logo {
+    display: none;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(28,36,45,0.5);
+    height: 80px;
+    padding: 0 2rem;
+    position: relative;
+    &__account {
+      &__button {
+        position: relative;
+        border: 1px solid #fa5;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        font-size: 1.4em;
+        
+        &:hover {
+          color: #fa5;
+          background-color: black;
+        }
+      }
+    }
+    &__global {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      align-items: center;
+    }
+    &__menu{
+      &__container {
+        z-index: 99;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #0c1015;
+        color: white;
+        padding: 1rem;
+        min-width: 50%;
+        border-radius: 0 0 1rem 0;
+        transition:all .10s ease-in-out;
+        a {
+          display: block;
+          line-height: 2;
+          border-bottom: 1px solid #ffaa55;
+          &:last-child {
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.label__errors {
+  color: red;
+  text-align: left;
+  font-size: .7em;
+  padding: .3rem 0 0 .2rem;
+}
+.captcha {
+  transform: scale(.9);
+  margin: auto;
+  position: relative;
+  min-height: 99px;
+  img {
+    position: absolute;
+    width: 35%;
+    right: -75px;
+    top: -40px;
+    pointer-events: none;
+  }
+  &__content {
+    margin: 1rem auto;
+  }
+}
+
+
+.inputAnimation--errors {
+  border-bottom: red 1px solid;
+}
+.authentification {
+  &__nav {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: -30px;
+    &__content {
+      display: inline-block;
+      position: relative;
+      &::before {
+        min-width: 100%;
+        content: "";
+        display: block;
+        position: absolute;
+        background-image: url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/logo/authentification/banniereRegistration.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 42px;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 14px);
+        pointer-events: none;
+      }
+      &__picture {
+        position: absolute;
+        width: 35%;
+        pointer-events: none;
+        &--login {
+          left: -60px;
+        }
+        &--registration {
+          right: -60px;
+        }
+      }
+    }
+    &__profil {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      &__content {
+        margin: auto 1rem;
+        font-family: 'Gotu';
+        text-transform: capitalize;
+      }
+      &__avatar {
+        &:hover .authentification__nav__profil__avatar__dropdownList{
+          display: block;
+        }
+        &:active .authentification__nav__profil__avatar__dropdownList{
+          display: block;
+        }
+        &__image {
+          width: 50px;
+          margin: auto;
+          border-radius: 50%;
+          background-color: blanchedalmond;
+          position: relative;
+        }
+        &__dropdownList {
+          display: none;
+          top: 50px;
+          border-radius: 0 0 5px 5px;
+          max-width: 150px;
+          box-shadow: 0px 1px 2px brown;
+          background-color: rgba(28,36,45,0.9);
+          position: absolute;
+          width: 100%;
+          right: 1px;
+          z-index: 1000;
+          &__list {
+            padding:20px;
+            border-bottom: none;
+            &:hover {
+              border-bottom: none;
+              background-color: RGBa(200,200,200,0.1);
+            }
+          }
+          a {
+            display: block;
+            text-decoration: none;
+            color: brown;
+            border-bottom: 2px solid transparent;
+            padding: 10px;
+            &:hover {
+              color: orange;
+              border-bottom: 2px solid gold;
+            }
+          }
+        }
+      }
+    }
+
+    &__item {
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+      font-size: inherit;
+      font-family: inherit;
+      border: 0;
+      padding: .5rem 1.5rem;
+      background-color: #d1d3dc;
+      color: #3d5471;
+      width: 107px;
+
+      &--active {
+        background-color: #4abb6d;
+        color: #fff;
+      }
+
+      &:not(&--active):hover {
+        background-color: #ffaa55;
+        color: #fff;
+      }
+
+      &:first-child {
+        border-radius: .4rem 0 0 .4rem;
+      }
+
+      &:last-child {
+        border-radius: 0 .4rem .4rem 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1168px) {
+  .header{
+    a {
+      font-size: 1.1em;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .header{
+    position: fixed;
+    width: 100%;
+    a {
+      font-size: 1.6em;
+      padding: .5rem;
+    }
+
+    &__logo {
+      display: block;
+      width: 7%;
+    }
+
+    &__nav {
+      &__menu {
+        z-index: 95;
+        &__two{
+          top: 10px;
+          padding: .8rem 0 0 1rem;
+          border-radius: 0 0 0 10px;
+        }
+        &__one {
+          padding: 5rem 0 1rem;
+        }
+      }
+      &__global {
+        display: flex;
+        flex-direction: column;
+      }
+      &__menu, &__menuBurger {
+        display: flex;
+        flex-flow: column nowrap;
+        background-color: #0D2538;
+        transition: transform .3s ease-in-out;
+        position: fixed;
+        right: 0;
+        height: auto;
+        width: 300px;
+        &__item{
+          &::before, &:after {
+            opacity: 0;
+          }
+        }
+        &__one{
+          top: 0;
+        }
+        &__two{
+          padding-bottom: .8rem 0 0 1rem;
+          border-radius: 0 0 0 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .captcha__content > div {
+    width: auto!important;
+    height: 150px!important;
+    iframe {
+      height: auto;
+      width: 380px;
+    }
+  }
+}
+@media (max-width: 755px) {
+  .header__logo {
+    width: 9%;
+  }
+}
+
+@media (max-width: 660px) {
+  .captcha__content > div {
+    iframe {
+      width: 340px!important;
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .header {
+    &__logo {
+      width: 13%;
+    }
+  }
+  .captcha {
+    left: -30px;
+  }
+  .global-input {
+    margin: 1.5rem .5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .authentification {
+    &__nav__content__picture {
+      &--login {
+        left: -50px;
+      }
+      &--registration {
+        right: -50px;
+      }
+    }
+    &__nav__content::before {
+      left: 95px;
+      width: calc(100% + 40px);
+    }
+    &__nav__item {
+      width: 95px;
+      padding: .5rem 1.5rem .5rem 1rem;
+    }
+  }
+}
+
+@media (max-width: 436px) {
+  .captcha__content > div {
+    font-size: .6rem!important;
+    iframe {
+      width: 300px!important;
+      .rc-anchor-checkbox-label {
+        font-size: .8rem!important;
+      }
+    }
+  }
+  .header {
+    position: fixed;
+    a {
+      font-size: 1.5em;
+      padding: .5rem;
+    }
+    &__logo {
+      width: 18%;
+    }
+    &__nav {
+      &__menu {
+        &__two{
+          padding-bottom: .5rem;
+        }
+      }
+    }
+ 
+  }
+}
+

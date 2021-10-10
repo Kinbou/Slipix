@@ -46,12 +46,6 @@ function SkyBox() {
   const texture = loader.load([
     '/profil1.jpg',
     '/profil2.jpg',
-    // '/Plan_de_travail_1.png',
-    // '/Plan_de_travail_2.png',
-    // '/Plan_de_travail_3.png',
-    // '/Plan_de_travail_4.png',
-    // '/Plan_de_travail_5.png',
-    // '/Plan_de_travail_6.png',
     '/profil3.jpg',
     '/profil4.jpg',
     '/profil5.jpg',
