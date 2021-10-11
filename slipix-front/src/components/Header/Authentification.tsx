@@ -6,6 +6,8 @@ import Login from '@containers/Login/index'
 import Registration from '@containers/Registration/index'
 import ForgotPassword from '@containers/ForgotPassword/index'
 import { urlBack } from '@/utils/selectors'
+import './header.scss'
+// import styles from './header.module.scss'
 
 const Authentification = ({ showModal, displayModal }: any) => {
   const handleLogin = () => {

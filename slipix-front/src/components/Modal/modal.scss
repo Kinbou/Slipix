@@ -43,16 +43,23 @@
 }
 
 .global-button {
+  border: none;
+  font-size: 1em;
   color: #fff;
   background-color: #2d3f57;
-  border: none;
+  cursor: pointer;
+  
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
 
-  font-size: 1em;
   &--light {
     color: #2d3f57;
     background-color: #E3E5EC;
   }
-  &:hover {
+
+  &:hover:not(:disabled) {
     background-color:  #ffaa55;
     color: #fff;
   }

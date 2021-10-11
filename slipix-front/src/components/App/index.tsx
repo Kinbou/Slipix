@@ -158,9 +158,9 @@ const App = ({ showAlert }: any) => {
     <div className="app">
       <ScrollToTop />
       <BackgroundImage appClass={appClass}>
-        {appClass === 'profil' && (
+        {/* {appClass === 'profil' && (
           <BackgroundProfil />
-        )}
+        )} */}
       </BackgroundImage>
       <Header />
       <main>

@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useRef, useState } from 'react'
-import PropTypes from 'prop-types'
-// import Reaptcha from 'reaptcha'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { motion } from 'framer-motion'
 
@@ -20,7 +18,7 @@ const Login = ({
   const [checkedRemember, setCheckedRemember] = useState(false)
   const [checkedCaptcha, setCheckedCaptcha] = useState('')
   const [errorCaptcha, setErrorCaptcha] = useState('')
-  const [errorFront, setErrorFront] = useState({ email: '', password: '' }) // voir si il ne faut pas mettre "null" à la place de ""
+  const [errorFront, setErrorFront] = useState({ email: '', password: ''})
   const captchaRef = useRef()
 
   const onExpire = () => {
@@ -113,46 +111,30 @@ const Login = ({
 
         <div className="captcha">
           <img src={`${urlBack}/images/logo/tristanaCaptcha300.png`} alt="" />
-          {/* <Reaptcha
-            sitekey="6Le1jp0aAAAAAOUpDSbuRIioKNiPRrqLdX_erLPU"
-            onVerify={(response) => setCheckedCaptcha(response)}
-            theme="dark"
-            className="captcha__content"
-            onExpire={onExpire}
-            ref={captchaRef}
-          /> */}
             <ReCAPTCHA
               sitekey="6Le1jp0aAAAAAOUpDSbuRIioKNiPRrqLdX_erLPU"
               className="captcha__content"
-              onChange={(response: any) => setCheckedCaptcha(response)}
+              onChange={(response: any) => (console.log({ response }), setCheckedCaptcha(response))}
               ref={captchaRef}
+              theme="dark"
             />,
           {errorCaptcha && <p>{errorCaptcha}</p>}
         </div>
         <button
           type="submit"
           className="global-button"
-          disabled={errorFront.email !== null || errorFront.password !== null || !errorCaptcha === null || checkedCaptcha === null}
+          disabled={
+            errorFront.email
+              || errorFront.password
+              || errorCaptcha
+              || !checkedCaptcha
+          }
         >Se connecter
         </button>
       </form>
       <button type="button" className="login__link" onClick={handleForgotPasseword}>Mot de passe oublié ?</button>
     </motion.div>
   )
-}
-
-Login.defaultProps = {
-  errorLogin: null,
-}
-
-Login.propTypes = {
-  displayModal: PropTypes.func.isRequired,
-  loginUser: PropTypes.func.isRequired,
-  errorLogin: PropTypes.arrayOf(
-    PropTypes.shape({
-      email: PropTypes.string,
-    }),
-  ),
 }
 
 export default Login
