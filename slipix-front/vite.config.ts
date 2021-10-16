@@ -10,11 +10,12 @@ export default defineConfig({
       '@containers': '/src/containers',
       '@middlewares': '/src/middlewares',
       '@pages': '/src/pages',
+      '@store': '/src/store',
       '@': '/src'
     }
   },
   plugins: [
     svgrPlugin(),
     react()
-  ]
+  ],
 })
