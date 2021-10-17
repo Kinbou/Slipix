@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import './profil.scss';
@@ -16,7 +16,7 @@ const Profil = ({
   updateUser,
   updateAvatarUser,
   displayAlert,
-}: any) => {
+}: any): React.ReactElement => {
   const inputUploadRef = useRef();
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
@@ -38,19 +38,22 @@ const Profil = ({
     }
   }, [user]);
 
-  const removeError = (key) => {
+  const removeError = (key: any) => {
     if (errors && errors[key]) {
+      // @ts-ignore
       delete errors[key];
       setErrors(errors);
     }
   };
 
   const handleClickUpload = () => {
+    // @ts-ignore
     inputUploadRef.current.click();
   };
 
-  const onFileChange = (e) => {
+  const onFileChange = (e: any) => {
     setImgType(e.target.files[0].type);
+    // @ts-ignore
     setNewAvatar(URL.createObjectURL(e.target.files[0]));
     displayModal('crop');
   };
@@ -58,32 +61,37 @@ const Profil = ({
 
   const verifyPseudo = () => {
     if (!pseudo.length) {
+      // @ts-ignore
       setErrors({ ...errors, pseudo: 'Ton pseudo est obligatoire' });
     }
     if (pseudo && pseudo.length < 3) {
+      // @ts-ignore
       setErrors({ ...errors, pseudo: 'Ton pseudo ne fait pas 3 caractères' });
     }
   };
 
   const verifyPassword = () => {
     if (currentPassword.length && currentPassword.length < 8) {
+      // @ts-ignore
       setErrors({ ...errors, currentPassword: 'Ton mot de passe ne contient pas 8 caractères' });
     }
   };
 
   const verifyNewPassword = () => {
     if (newPassword.length && newPassword.length < 8) {
+      // @ts-ignore
       setErrors({ ...errors, newPassword: 'Ton mot de passe ne contient pas 8 caractères' });
     }
   };
 
   const verifyConfirmPassword = () => {
     if (newPassword !== confirmNewPassword) {
+      // @ts-ignore
       setErrors({ ...errors, confirmNewPassword: 'Ton mot de passe n\'est pas identique au précédent' });
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     if (avatar !== user.avatar) {
       const blob = await fetch(avatar).then((r) => r.blob());
@@ -99,25 +107,32 @@ const Profil = ({
 
     const data = {};
     if (pseudo !== user.pseudo && pseudo.length > 3) {
+      // @ts-ignore
       data.pseudo = pseudo;
     }
     if (name !== user.name) {
+      // @ts-ignore
       data.name = name;
     }
     if (newPassword && newPassword.length >= 6 && currentPassword.length >= 6 && newPassword === confirmNewPassword) {
+      // @ts-ignore
       data.password = currentPassword;
+      // @ts-ignore
       data.newPassword = newPassword;
+      // @ts-ignore
       data.confirmNewPassword = confirmNewPassword;
     }
     if (currentPassword && (newPassword.length < 6 || confirmNewPassword.length < 6)) {
       setErrors((err) => ({
+        // @ts-ignore
         ...err,
         newPassword: 'Le nouveau mot de passe doit avoir au minimum 6 caractères',
       }));
     }
-
+    // @ts-ignore
     if (errors && !errors.newPassword && currentPassword && (newPassword !== confirmNewPassword)) {
       setErrors((err) => ({
+        // @ts-ignore
         ...err,
         newPassword: 'La confirmation du mot de passe doit être identique au nouveau mot de passe',
       }));
@@ -133,11 +148,12 @@ const Profil = ({
 
   const onCancel = () => {
     setNewAvatar(null);
+    // @ts-ignore
     inputUploadRef.current.value = '';
     displayModal('');
   };
 
-  const onCrop = (url) => {
+  const onCrop = (url: any) => {
     setAvatar(url);
     onCancel();
   };
@@ -147,6 +163,7 @@ const Profil = ({
       <div className="breadcrumb">
         <Link to="/" className="breadcrumb__link">Accueil</Link> &gt; Mon profil
       </div>
+      {/* @ts-ignore */}
       <input type="file" style={{ visibility: 'hidden' }} accept="image/*" ref={inputUploadRef} onChange={onFileChange} />
       {showModal === 'crop' && <Modal content={<Crop img={newAvatar} imgType={imgType} onCancel={onCancel} onCrop={onCrop} />} />}
       <h1 className="globalTitle-page">Mon profil</h1>
@@ -174,11 +191,13 @@ const Profil = ({
                     classNames={['global-input']}
                     onChange={setName}
                     onCancel={() => setName(user.name)}
+                    // @ts-ignore
                     disabled
                     setFocused={() => removeError('name')}
                   />
                 </div>
               </label>
+              {/* @ts-ignore */}
               <label className={`${errors && errors.pseudo ? 'account-profil__container__label account-profil__container__label--errors' : 'account-profil__container__label'}`}>
                 <span>Pseudo</span>
                 <div>
@@ -189,10 +208,12 @@ const Profil = ({
                     classNames={['global-input']}
                     onChange={setPseudo}
                     onCancel={() => setPseudo(user.pseudo)}
+                    // @ts-ignore
                     disabled
                     setFocused={() => removeError('pseudo')}
                     onBlur={verifyPseudo}
                   />
+                  {/* @ts-ignore */}
                   { (errors && errors.pseudo) && <p className="account-profil__container__error">{ errors.pseudo }</p> }
                 </div>
               </label>
@@ -212,6 +233,7 @@ const Profil = ({
           </div>
           <div className="account-profil__container">
             <h2 className="account-profil__subtitle">Mot de passe</h2>
+            {/* @ts-ignore */}
             <label className={`${errors && errors.currentPassword ? 'account-profil__container__label account-profil__container__label--errors' : 'account-profil__container__label'}`}>
               <span>Mot de passe actuel</span>
               <div>
@@ -223,12 +245,15 @@ const Profil = ({
                   onChange={setCurrentPassword}
                   onCancel={() => setCurrentPassword('')}
                   onBlur={verifyPassword}
+                  // @ts-ignore
                   disabled
                   setFocused={() => removeError('currentPassword')}
                 />
+                {/* @ts-ignore */}
                 { (errors && errors.currentPassword) && <p className="account-profil__container__error">{ errors.currentPassword }</p> }
               </div>
             </label>
+            {/* @ts-ignore */}
             <label className={`${errors && errors.newPassword ? 'account-profil__container__label account-profil__container__label--errors' : 'account-profil__container__label'}`}>
               <span>Nouveau mot de passe</span>
               <div>
@@ -240,12 +265,15 @@ const Profil = ({
                   onChange={setNewPassword}
                   onCancel={() => setNewPassword('')}
                   onBlur={verifyNewPassword}
+                  // @ts-ignore
                   disabled
                   setFocused={() => removeError('newPassword')}
                 />
+                {/* @ts-ignore */}
                 { (errors && errors.newPassword) && <p className="account-profil__container__error">{ errors.newPassword }</p> }
               </div>
             </label>
+            {/* @ts-ignore */}
             <label className={`${errors && errors.confirmNewPassword ? 'account-profil__container__label account-profil__container__label--errors' : 'account-profil__container__label'}`}>
               <span>Confirmation du nouveau mot de passe</span>
               <div>
@@ -257,9 +285,11 @@ const Profil = ({
                   onChange={setConfirmNewPassword}
                   onCancel={() => setConfirmNewPassword('')}
                   onBlur={verifyConfirmPassword}
+                  // @ts-ignore
                   disabled
                   setFocused={() => removeError('confirmNewPassword')}
                 />
+                {/* @ts-ignore */}
                 { (errors && errors.confirmNewPassword) && <p className="account-profil__container__error">{ errors.confirmNewPassword }</p> }
               </div>
             </label>

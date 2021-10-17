@@ -13,12 +13,12 @@ export const fetchOneChampion = () => ({
   type: FETCH_ONE_CHAMPION,
 });
 
-export const saveChampion = (champion) => ({
+export const saveChampion = (champion: any) => ({
   type: SAVE_CHAMPION,
   champion,
 });
 
-export const stateName = (name) => ({
+export const stateName = (name: any) => ({
   type: STATE_NAME,
   name,
 });

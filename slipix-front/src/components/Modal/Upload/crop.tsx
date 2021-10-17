@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 import Cropper from 'react-easy-crop'
 
 import getCroppedImg from '@/utils/cropImage'
@@ -15,7 +15,7 @@ const Crop = ({
   imgType,
   onCancel,
   onCrop
-}) => {
+}: any): React.ReactElement => {
   const [crop, setCrop] = useState({ x: 0, y: 0 })
   const [zoom, setZoom] = useState(1)
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null)
@@ -55,7 +55,9 @@ const Crop = ({
       <div className="crop__controls">
         <input type="range" min={1} max={3} step={0.1} value={zoom} onChange={(e) => setZoom(+e.target.value)} />
         <div className="crop__controls__buttons">
+          {/* @ts-ignore */}
           <button onClick={onCancel} alt="" type="button" className="crop__controls__buttons__button crop__controls__buttons__button--cancel">Annuler</button>
+          {/* @ts-ignore */}
           <button onClick={sendImage} alt="" type="button" className="crop__controls__buttons__button crop__controls__buttons__button--validate">Valider</button>
         </div>
       </div>

@@ -13,15 +13,15 @@ import {
   setLaneIsLoad2
 } from '@/actions/lanes'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   name: state.lanes.name,
-  laneActif: state.lanes.listLaneActif,
-  laneSoon: state.lanes.listLaneSoon,
+  laneActif: state.lanes.listLaneActif || [],
+  laneSoon: state.lanes.listLaneSoon || [],
   laneIsLoad: state.lanes.laneIsLoad,
   laneIsLoad2: state.lanes.laneIsLoad2
 })
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: any) => ({
   fetchAllLane: () => {
     dispatch(fetchAllLane())
   },
@@ -31,19 +31,19 @@ const mapDispatchToProps = (dispatch) => ({
   // setAppLoading: () => {
   //   dispatch(setAppLoading());
   // },
-  stateNameLane: (name) => {
+  stateNameLane: (name: any) => {
     dispatch(stateNameLane(name))
   },
-  saveAllLane: (listLane) => {
+  saveAllLane: (listLane: any) => {
     dispatch(saveAllLane(listLane))
   },
-  saveSoonLane: (listLaneSoon) => {
+  saveSoonLane: (listLaneSoon: any) => {
     dispatch(saveSoonLane(listLaneSoon))
   },
-  setLaneIsLoad: (value) => {
+  setLaneIsLoad: (value: any) => {
     dispatch(setLaneIsLoad(value))
   },
-  setLaneIsLoad2: (value) => {
+  setLaneIsLoad2: (value: any) => {
     dispatch(setLaneIsLoad2(value))
   }
 })

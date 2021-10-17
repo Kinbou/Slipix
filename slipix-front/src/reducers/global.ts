@@ -16,10 +16,12 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action = {}) => {
+  // @ts-ignore
   switch (action.type) {
     case SET_APP_LOADING:
       return {
         ...state,
+        // @ts-ignore
         appIsLoad: action.value
       }
 
@@ -27,20 +29,25 @@ const reducer = (state = initialState, action = {}) => {
     case SHOW_MENU:
       return {
         ...state,
+        // @ts-ignore
         showMenu: action.name
       }
 
     case SHOW_MODAL:
       return {
         ...state,
+        // @ts-ignore
         showModal: action.name,
+        // @ts-ignore
         modalParams: action.params
       }
 
     case SHOW_ALERT:
       return {
         ...state,
+        // @ts-ignore
         alertMessage: action.message,
+        // @ts-ignore
         alertSuccess: action.success,
         showAlert: !state.showAlert
       }

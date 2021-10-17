@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import './alert.scss'
 
-const Alert = ({ message, isSuccess, displayAlert }) => {
+const Alert = ({ message, isSuccess, displayAlert }: any) => {
   useEffect(() => {
     const timeoutId = setTimeout(
       () => {

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import {
   Canvas, extend, useThree, useFrame,
 } from 'react-three-fiber';
@@ -26,8 +26,10 @@ const CameraControls = () => {
 
   // Ref to the controls, so that we can update them on every frame using useFrame
   const controls = useRef();
+  // @ts-ignore
   useFrame(() => controls.current.update());
   return (
+    // @ts-ignore
     <orbitControls
       ref={controls}
       args={[camera, domElement]}
@@ -82,6 +84,7 @@ function Sphere() {
         attach="material"
         envMap={cubeCamera.renderTarget.texture}
         color="white"
+        // @ts-ignore
         roughness={0.1}
         metalness={0.5}
       />

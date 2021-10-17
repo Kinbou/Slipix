@@ -10,22 +10,22 @@ export const fetchAllLane = () => ({
   type: FETCH_ALL_LANE,
 });
 
-export const stateNameLane = (name) => ({
+export const stateNameLane = (name: any) => ({
   type: STATE_NAME_LANE,
   name,
 });
 
-export const saveAllLane = (listLane) => ({
+export const saveAllLane = (listLane: any) => ({
   type: SAVE_ALL_LANE,
   listLane,
 });
 
-export const setLaneIsLoad = (value) => ({
+export const setLaneIsLoad = (value: any) => ({
   type: SET_LANE_IS_LOAD,
   value,
 });
 
-export const setLaneIsLoad2 = (value) => ({
+export const setLaneIsLoad2 = (value: any) => ({
   type: SET_LANE_IS_LOAD2,
   value,
 });
@@ -34,7 +34,7 @@ export const fetchSoonLane = () => ({
   type: FETCH_SOON_LANE,
 });
 
-export const saveSoonLane = (listLaneSoon) => ({
+export const saveSoonLane = (listLaneSoon: any) => ({
   type: SAVE_SOON_LANE,
   listLaneSoon,
 });

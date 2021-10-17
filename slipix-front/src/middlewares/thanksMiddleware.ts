@@ -9,7 +9,7 @@ import {
 
 import { apiBaseUrl } from './index'
 
-const thanksMiddleware = (store) => (next) => (action) => {
+const thanksMiddleware = (store: any) => (next: any) => (action: any) => {
   switch (action.type) {
     case FETCH_ALL_THANKS:
       axios({

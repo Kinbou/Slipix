@@ -6,10 +6,12 @@ const initialState = {
 };
 
 const competencesReducer = (state = initialState, action = {}) => {
+  // @ts-ignore
   switch (action.type) {
     case SAVE_COMPETENCE:
       return {
         ...state,
+        // @ts-ignore
         competence: action.competence,
       };
 

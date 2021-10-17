@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React from 'react'
 import { useTitle } from '@/hooks/useTitle'
 import { motion } from 'framer-motion'
 

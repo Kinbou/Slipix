@@ -16,24 +16,24 @@ export const UPDATE_AVATAR_USER = 'UPDATE_AVATAR_USER';
 export const FORGOT_PASSWORD_SEND_EMAIL = 'FORGOT_PASSWORD_SEND_EMAIL';
 
 
-export const loginUser = (emailUser, passwordUser, checkedRememberUser, checkedCaptchaUser) => ({
+export const loginUser = (emailUser: any, passwordUser: any, checkedRememberUser: any, checkedCaptchaUser: any) => ({
   type: LOGIN_USER,
   payload: {
     emailUser, passwordUser, checkedRememberUser, checkedCaptchaUser,
   },
 });
 
-export const loginUserErrors = (data) => ({
+export const loginUserErrors = (data: any) => ({
   type: LOGIN_USER_ERRORS,
   data,
 });
 
-export const errorLoginUser = (dataError) => ({
+export const errorLoginUser = (dataError: any) => ({
   type: ERROR_LOGIN_USER,
   dataError,
 });
 
-export const fetchUser = (user) => ({
+export const fetchUser = (user: any) => ({
   type: FETCH_USER,
   user,
 });
@@ -42,17 +42,17 @@ export const requestUserAuthentification = () => ({
   type: REQUEST_USER_AUTHENTIFICATION,
 });
 
-export const fetchRequestUserData = (userData) => ({
+export const fetchRequestUserData = (userData: any) => ({
   type: FETCH_REQUEST_USER_DATA,
   userData,
 });
 
-export const fetchUserRegistration = (data) => ({
+export const fetchUserRegistration = (data: any) => ({
   type: FETCH_USER_REGISTRATION,
   data,
 });
 
-export const fetchUserRegistrationErrors = (data) => ({
+export const fetchUserRegistrationErrors = (data: any) => ({
   type: FETCH_USER_REGISTRATION_ERRORS,
   data,
 });
@@ -61,17 +61,17 @@ export const logoutUser = () => ({
   type: LOGOUT_USER,
 });
 
-export const updateUser = (userData) => ({
+export const updateUser = (userData: any) => ({
   type: UPDATE_USER,
   userData,
 });
 
-export const updateAvatarUser = (file) => ({
+export const updateAvatarUser = (file: any) => ({
   type: UPDATE_AVATAR_USER,
   file,
 });
 
-export const forgotPasswordSendEmail = (email) => ({
+export const forgotPasswordSendEmail = (email: any) => ({
   type: FORGOT_PASSWORD_SEND_EMAIL,
   email,
 });

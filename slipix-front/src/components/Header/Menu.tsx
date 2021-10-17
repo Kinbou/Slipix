@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import { NavLink, Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -32,7 +32,7 @@ const Menu = ({
   user,
   requestUserAuthentification,
   logoutUser
-}: any) => {
+}: any): React.ReactElement => {
   useEffect(() => {
     requestUserAuthentification()
   }, [])
@@ -41,6 +41,7 @@ const Menu = ({
   const test = useRef(null)
   const handleModal = () => {
     const button = test.current
+    // @ts-ignore
     displayModal('login', button.getBoundingClientRect())
   }
 
@@ -49,10 +50,12 @@ const Menu = ({
   }
 
   const handleClassActive = () => {
+    // @ts-ignore
     document.getElementsByClassName(classes.authentification__nav__profil__avatar__image).className = cx(classes.authentification__nav__profil__avatar__image, classes['authentification__nav__profil__avatar__image--active'])
   }
 
   return (
+    // @ts-ignore
     <Ul open={open}>
       <div className={classes.menuBackground} onClick={() => setOpen(!open)}> </div>
       <div className={classes.header__nav__global}>
@@ -136,6 +139,7 @@ const Menu = ({
             activeClassName={classes['menu__link--active']}
             exact
             onClick={() => setOpen(!open)}
+            // @ts-ignore
             onChange={handleClassActive()}
           >
             Me contacter
@@ -175,29 +179,6 @@ const Menu = ({
         </div>
       </div>
     </Ul>
-  )
-}
-Menu.propTypes = {
-  open: PropTypes.bool.isRequired,
-  setOpen: PropTypes.func.isRequired,
-  displayModal: PropTypes.func.isRequired,
-  showModal: PropTypes.string.isRequired,
-  requestUserAuthentification: PropTypes.func.isRequired,
-  logoutUser: PropTypes.func.isRequired,
-  user: PropTypes.arrayOf(
-    PropTypes.shape({
-      avatar: PropTypes.string,
-      pseudo: PropTypes.string
-    })
-  )
-}
-
-Menu.defaultProps = {
-  user: PropTypes.arrayOf(
-    PropTypes.shape({
-      avatar: '',
-      pseudo: ''
-    })
   )
 }
 

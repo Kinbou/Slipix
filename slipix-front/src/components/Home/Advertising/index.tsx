@@ -1,4 +1,3 @@
-import React from 'react';
 
 import discord from '@/assets/images/socialNetwork/Discord.png';
 import discordTitle from '@/assets/images/discordTitle.png';

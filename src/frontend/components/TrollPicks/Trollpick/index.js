@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Youtube from 'src/frontend/components/Youtube';
 import PropTypes from 'prop-types';

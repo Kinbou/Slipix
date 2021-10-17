@@ -2,10 +2,10 @@
   "name": "slipix-front",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "prebuild": "tsc",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview --host"
   },
   "dependencies": {
     "axios": "^0.22.0",
@@ -40,9 +40,11 @@
     "@babel/preset-react": "^7.14.5",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-google-recaptcha": "^2.1.2",
     "@types/react-router-dom": "^5.3.0",
     "@types/styled-components": "^5.1.14",
     "@types/three": "^0.133.0",
+    "@types/zxcvbn": "^4.4.1",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
     "@vitejs/plugin-react": "^1.0.0",

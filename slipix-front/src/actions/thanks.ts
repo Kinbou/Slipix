@@ -6,12 +6,12 @@ export const fetchAllThanks = () => ({
   type: FETCH_ALL_THANKS,
 });
 
-export const saveAllThanks = (listThanks) => ({
+export const saveAllThanks = (listThanks: any) => ({
   type: SAVE_ALL_THANKS,
   listThanks,
 });
 
-export const setThanksIsLoad = (value) => ({
+export const setThanksIsLoad = (value: any) => ({
   type: SET_THANKS_IS_LOAD,
   value,
 });

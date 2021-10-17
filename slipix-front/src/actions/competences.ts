@@ -7,7 +7,7 @@ export const fetchOneCompetence = () => ({
   type: FETCH_ONE_COMPETENCE,
 });
 
-export const saveCompetence = (competence) => ({
+export const saveCompetence = (competence: any) => ({
   type: SAVE_COMPETENCE,
   competence,
 });

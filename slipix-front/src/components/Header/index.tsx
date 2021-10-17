@@ -1,4 +1,3 @@
-import React from 'react'
 import cx from 'classnames'
 
 import logoSlipix from '@/assets/images/SlipixLogo.png'

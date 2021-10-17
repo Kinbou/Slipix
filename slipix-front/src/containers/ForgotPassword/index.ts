@@ -6,18 +6,18 @@ import {
   forgotPasswordSendEmail
 } from '@/actions/user'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
 
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  displayModal: (name) => {
+const mapDispatchToProps = (dispatch: any) => ({
+  displayModal: (name: any) => {
     dispatch(showModal(name))
   },
-  displayAlert: (message, success) => {
+  displayAlert: (message: any, success: any) => {
     dispatch(showAlert(message, success))
   },
-  forgotPasswordSendEmail: (email) => {
+  forgotPasswordSendEmail: (email: any) => {
     dispatch(forgotPasswordSendEmail(email))
   }
 })

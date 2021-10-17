@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import useClickOutside from '@/hooks/useClickOutside';
 
@@ -14,13 +14,13 @@ const index = ({
   setFocused,
   onFocus,
   onBlur,
-}) => {
+}: any): React.ReactElement => {
   const elementRef = useRef();
   const inputRef = useRef();
   const [disabled, setDisabled] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
 
-  const onClose = () => {
+  const onClose = (): void => {
     if (onBlur) {
       onBlur();
     }
@@ -36,8 +36,10 @@ const index = ({
   // Permet d'auto focus le input
   useEffect(() => {
     if (showPassword || !showPassword || !disabled) {
+      // @ts-ignore
       inputRef.current.focus();
       // Permets de mettre le curseur à la fin du input
+      // @ts-ignore
       if (['password', 'text', 'search', 'url', 'tel'].includes(type.toLowerCase()) && value) inputRef.current.setSelectionRange(value.length, value.length);
     }
   }, [disabled, showPassword]);
@@ -45,9 +47,11 @@ const index = ({
   useClickOutside(elementRef, () => onClose()); // Le ref de la div parent
 
   return (
+    // @ts-ignore
     <div ref={elementRef}>
       {' '}
       <input
+        // @ts-ignore
         ref={inputRef}
         type={showPassword ? 'text' : type}
         value={value}

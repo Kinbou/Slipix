@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Route, useLocation, Switch } from 'react-router-dom';
 import Analytics from 'react-router-ga';

@@ -4,7 +4,7 @@ import { FETCH_ONE_COMPETENCE, saveCompetence } from '@/actions/competences'
 
 import { apiBaseUrl } from './index'
 
-const competencesMiddleware = (store) => (next) => (action) => {
+const competencesMiddleware = (store: any) => (next: any) => (action: any) => {
   switch (action.type) {
     case FETCH_ONE_COMPETENCE:
       axios.get(`${apiBaseUrl}/competences/1`)

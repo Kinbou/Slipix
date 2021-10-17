@@ -12,7 +12,7 @@ import {
 
 import { apiBaseUrl } from './index'
 
-const lanesMiddleware = (store) => (next) => (action) => {
+const lanesMiddleware = (store: any) => (next: any) => (action: any) => {
   const { name } = store.getState().lanes
   switch (action.type) {
     case FETCH_ALL_LANE:

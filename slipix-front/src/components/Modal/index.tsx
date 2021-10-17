@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -7,8 +6,8 @@ import { animationModal, transition } from '@/utils/animations/index'
 
 const Modal = ({
   displayModal, content, showModal, modalParams
-}) => {
-  const closeModal = () => {
+}: any) => {
+  const closeModal = (): void => {
     displayModal('')
   }
 
@@ -66,13 +65,6 @@ const Modal = ({
           )}
     </AnimatePresence>
   )
-}
-
-Modal.propTypes = {
-  content: PropTypes.element.isRequired,
-  displayModal: PropTypes.func.isRequired,
-  showModal: PropTypes.string.isRequired,
-  modalParams: PropTypes.object.isRequired
 }
 
 export default Modal

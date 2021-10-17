@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { motion } from 'framer-motion'
 
@@ -23,6 +23,7 @@ const Login = ({
 
   const onExpire = () => {
     setCheckedCaptcha('')
+    // @ts-ignore
     captchaRef.current.reset()
   }
 
@@ -113,8 +114,10 @@ const Login = ({
           <img src={`${urlBack}/images/logo/tristanaCaptcha300.png`} alt="" />
             <ReCAPTCHA
               sitekey="6Le1jp0aAAAAAOUpDSbuRIioKNiPRrqLdX_erLPU"
+              // @ts-ignore
               className="captcha__content"
-              onChange={(response: any) => (console.log({ response }), setCheckedCaptcha(response))}
+              onChange={(response: any): void => (console.log({ response }), setCheckedCaptcha(response))}
+              // @ts-ignore
               ref={captchaRef}
               theme="dark"
             />,
@@ -123,6 +126,7 @@ const Login = ({
         <button
           type="submit"
           className="global-button"
+          // @ts-ignore
           disabled={
             errorFront.email
               || errorFront.password

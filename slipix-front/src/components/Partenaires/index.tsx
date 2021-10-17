@@ -1,4 +1,3 @@
-import React from 'react';
 // import title from '../../assets/images/PARTENAIRES.png';
 // import instantGaming from '../../assets/images/InstantGamingSLIPIX22.png';
 // import twitch from '../../assets/images/TwitchSLIPIX.png';

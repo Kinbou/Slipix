@@ -3,7 +3,7 @@ export const SHOW_MENU = 'SHOW_MENU';
 export const SHOW_MODAL = 'SHOW_MODAL';
 export const SHOW_ALERT = 'SHOW_ALERT';
 
-export const setAppLoading = (value) => ({
+export const setAppLoading = (value: any) => ({
   type: SET_APP_LOADING,
   value,
 });

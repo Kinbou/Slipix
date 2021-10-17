@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
@@ -21,18 +21,23 @@ const EmailVerification = () => {
     if (id && hash && expires && signature) {
       axios.get(`${urlBack}/api/auth/email/verify/${id}/${hash}?expires=${expires}&signature=${signature}`, { headers: { Accept: 'application/json' } })
         .then((result) => {
+          // @ts-ignore
           setIsValid(true);
+          // @ts-ignore
           setMessage(result.data.message);
         })
         .catch((err) => {
+          // @ts-ignore
           setIsValid(false);
           setMessage(err.response.data.message);
         })
         .finally(() => {
+          // @ts-ignore
           setLoading(false);
         });
     }
     else {
+      // @ts-ignore
       Redirect('/');
     }
   }, [id, hash, expires, signature]);

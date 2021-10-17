@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -50,6 +49,7 @@ const Presentation = () => {
           faciliter votre navigation et votre progression.
         </p><br />
         <p>N'hésitez pas à rejoindre le <a href="https://discord.com/invite/fsTYTg5" className="presentation__discord" target="_blanc">discord</a> de la <span className="red">#TEAMSLIP</span> et me suivre sur les réseaux sociaux ainsi que les plateformes <span className="presentation__youtube">Youtube</span> et <span className="presentation__twitch">Twitch</span>.</p>
+        {/* @ts-ignore */}
         <SocialNetwork className="presentation__socialNetwork" />
         <p>tout le contenu de ce site est bien évidemment gratuit, si vous désirez soutenir son avancée de plusieurs manières n'hésitez pas à cliquer ici :  <Link to="/me-soutenir" className="link">Me soutenir</Link>
         </p> <br />

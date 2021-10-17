@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import Youtube from '@components/Youtube'
 import { motion } from 'framer-motion'

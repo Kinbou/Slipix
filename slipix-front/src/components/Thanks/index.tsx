@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import { useTitle } from '@/hooks/useTitle'
@@ -13,7 +13,7 @@ const Thanks = ({
   setThanksIsLoad,
   thanksIsLoad,
   thanks
-}) => {
+}: any): React.ReactElement => {
   useTitle('Remerciements')
   useEffect(() => {
     fetchAllThanks()
@@ -38,7 +38,7 @@ const Thanks = ({
           </div>
           <div className="thanks__cards">
             {/* eslint-disable-next-line react/prop-types */}
-            {thanks.thanks.map((listThanks) => (
+            {thanks.thanks.map((listThanks: any) => (
               <div className={`thanks__cards__card ${listThanks.borderColor}`} key={listThanks.id}>
                 <div className="glass" />
                 <div className="thanks__cards__card__box">
@@ -55,7 +55,7 @@ const Thanks = ({
                   {listThanks.name === 'Soularyön'
                     ? (
                       <>
-                        {pipe(listThanks.content).map((content) => (
+                        {pipe(listThanks.content).map((content: any) => (
                           // eslint-disable-next-line react/no-danger
                           <p className="thanks__cards__card__box__content" dangerouslySetInnerHTML={{ __html: content }} key={content} />
                         ))}
@@ -74,23 +74,6 @@ const Thanks = ({
       )}
     </div>
   )
-}
-
-Thanks.propTypes = {
-  fetchAllThanks: PropTypes.func.isRequired,
-  thanksIsLoad: PropTypes.bool.isRequired,
-  setThanksIsLoad: PropTypes.func.isRequired,
-  thanks: PropTypes.arrayOf(
-    PropTypes.shape({
-      thanks: PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.number.isRequired,
-          map: PropTypes.array.isRequired
-        }).isRequired
-      ).isRequired
-    }).isRequired
-  ).isRequired
-
 }
 
 export default Thanks

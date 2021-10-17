@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { Route, useLocation, Switch } from 'react-router-dom'
+//@ts-ignore
 import Analytics from 'react-router-ga'
 import PropTypes from 'prop-types'
 import { AnimatePresence } from 'framer-motion'
@@ -60,23 +61,23 @@ const BackgroundImage = styled.div`
   background-size: cover;
   position: fixed;
   background-color: black;
-  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }) => appClass}/format-standard.jpg);
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }: any) => appClass}/format-standard.jpg);
 
   /* Grand écran */
   @media (min-width: 3400px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }) => appClass}/format-3440x1440.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }: any) => appClass}/format-3440x1440.jpg)
   }
   /* Grand écran */
   @media (min-width: 2000px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }) => appClass}/format-2560x1440.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }: any) => appClass}/format-2560x1440.jpg)
   }
   /* Format tablette */
   @media (max-width: 1024px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }) => appClass}/format-tablette.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }: any) => appClass}/format-tablette.jpg)
   }
   /* Format phone */
   @media (max-width: 600px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }) => appClass}/format-phone.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }: any) => appClass}/format-phone.jpg)
   }
 `
 
@@ -157,6 +158,7 @@ const App = ({ showAlert }: any) => {
   return (
     <div className="app">
       <ScrollToTop />
+      {/* @ts-ignore */}
       <BackgroundImage appClass={appClass}>
         {/* {appClass === 'profil' && (
           <BackgroundProfil />
@@ -168,6 +170,7 @@ const App = ({ showAlert }: any) => {
           ? <Loader />
           : (
           <Analytics id="UA-176591379-1" debug>
+            {/* @ts-ignore */}
             <ScrollToTopButton />
             {showAlert && <Alert />}
             <AnimatePresence exitBeforeEnter>
