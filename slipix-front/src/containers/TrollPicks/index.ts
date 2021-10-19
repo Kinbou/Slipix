@@ -10,7 +10,7 @@ import {
   setTrollpickSoonIsLoad
 } from '@/actions/trollpicks'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   // nom de la prop à remplir: donnée à récupérer dans le state
   trollpick: state.trollpicks.trollpick,
   trollpicksActif: state.trollpicks.trollpicksActif,
@@ -19,7 +19,7 @@ const mapStateToProps = (state) => ({
   trollpickSoonIsLoad: state.trollpicks.trollpickSoonIsLoad
 })
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: any) => ({
   // nom de la prop à remplir: callback qui contient un appel à dispatch
   fetchTrollpickActif: () => {
     dispatch(fetchTrollpickActif())
@@ -34,10 +34,12 @@ const mapDispatchToProps = (dispatch) => ({
   },
 
   setTrollpickActifIsLoad: () => {
+    // @ts-ignore
     dispatch(setTrollpickActifIsLoad())
   },
-
+  
   setTrollpickSoonIsLoad: () => {
+    // @ts-ignore
     dispatch(setTrollpickSoonIsLoad())
   }
 })

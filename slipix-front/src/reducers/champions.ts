@@ -7,16 +7,19 @@ const initialState = {
 }
 
 const championsReducer = (state = initialState, action = {}) => {
+  // @ts-ignore
   switch (action.type) {
     case SAVE_CHAMPION:
       return {
         ...state,
+        // @ts-ignore
         champion: action.champion
       }
-
+      
     case STATE_NAME:
       return {
         ...state,
+        // @ts-ignore
         name: action.name
       }
 

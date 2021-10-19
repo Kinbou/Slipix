@@ -1,5 +1,5 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
+// @ts-ignore
 import { useMediaPredicate } from 'react-media-hook'
 import PropTypes from 'prop-types'
 
@@ -10,7 +10,7 @@ import logoSlipix from '@/assets/images/SlipixLogo.png'
 const Header = ({
   showMenu,
   displayMenu
-}) => {
+}: any): React.ReactElement => {
   const isMobile = useMediaPredicate('(max-width: 1024px)')
 
   const handleMenuClose = () => {
@@ -32,7 +32,8 @@ const Header = ({
       <nav className="header__nav">
         {isMobile && (
           <>
-            <button type="button" className="header__nav__menu__burger" onClick={handleMenuBurger} activeClassName="header__nav__menu__item--active"><i className="fas fa-bars"> </i></button>
+          {/* @ts-ignore */}
+            <button type="button" className="header__nav__menu__burger" onClick={handleMenuBurger}activeClassName="header__nav__menu__item--active"><i className="fas fa-bars"> </i></button>
             {showMenu === 'burger' && (
             <>
               <div className="menu-background" onClick={handleMenuClose}> </div>

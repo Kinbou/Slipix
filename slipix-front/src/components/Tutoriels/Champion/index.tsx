@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { pipe, urlBack } from '@/utils/selectors'
@@ -31,7 +31,7 @@ const Champion = ({
       directement en commentaires sur la <span className="gold">vidéo YouTube</span>
     </p>
   )
-  const filter = (elemInArray, nameArray) => (
+  const filter = (elemInArray: any, nameArray: any) => (
     pipe(champion[0].youtube_identifiant)[elemInArray] && nameArray.includes(champion[0].name)
   )
 

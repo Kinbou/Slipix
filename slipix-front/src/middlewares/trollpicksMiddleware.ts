@@ -13,7 +13,7 @@ import {
 
 import { apiBaseUrl } from './index'
 
-const championsMiddleware = (store) => (next) => (action) => {
+const championsMiddleware = (store: any) => (next: any) => (action: any) => {
   const { nameTrollpick } = store.getState().trollpicks
   switch (action.type) {
     case FETCH_ONE_TROLLPICK:

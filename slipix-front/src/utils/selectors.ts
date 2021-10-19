@@ -1,25 +1,26 @@
 import slugify from 'react-slugify';
 import classNames from 'classnames';
 
-export const slugifyName = (name) => slugify(name, {
+export const slugifyName = (name: any) => slugify(name, {
+  // @ts-ignore
   lower: true,
 });
 
 // pipe = barre verticale
 // Créer plusieurs string (tableau) à chaque |
-export const pipe = (data) => {
+export const pipe = (data: any) => {
   const pipes = data.split('|');
   return pipes;
 };
 
 // Créer plusieurs string (tableau) à chaque -
-export const hyphen = (data) => {
+export const hyphen = (data: any) => {
   const hyphenn = data.split('-');
   return hyphenn;
 };
 
 // Dynamic label
-export const labelClassname = (input) => {
+export const labelClassname = (input: any) => {
   if (input !== null) {
     if (typeof input === 'number') {
       return classNames({ 'label--active': input > 0 });
@@ -30,7 +31,7 @@ export const labelClassname = (input) => {
 };
 
 // Format date : dd/mm/yyyy à hh/mm
-export const formatDate = (date, dateOnly = false) => {
+export const formatDate = (date: any, dateOnly: boolean = false) => {
   if (date === null || date === '') {
     return '';
   }
@@ -44,7 +45,7 @@ export const formatDate = (date, dateOnly = false) => {
   return `${(`0${newDate.getDate()}`).slice(-2)}/${(`0${newDate.getMonth() + 1}`).slice(-2)}/${newDate.getFullYear()} à ${(`0${newDate.getHours()}`).slice(-2)}h${(`0${newDate.getMinutes()}`).slice(-2)}`;
 };
 
-export const validEmail = (data) => {
+export const validEmail = (data: any) => {
   // eslint-disable-next-line no-useless-escape
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (!re.test(String(data).toLowerCase())) {

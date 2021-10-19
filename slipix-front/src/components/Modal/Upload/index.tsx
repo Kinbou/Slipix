@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React from 'react'
+import {useEffect} from 'react'
 // import PropTypes from 'prop-types';
 // import Loader from '@components/Loader';
 
@@ -9,7 +9,7 @@ const Upload = ({
   profilUploadImage,
   displayModal,
   changeProfilInput
-}) => {
+}: any): React.ReactElement => {
   useEffect(() => {
     if (upload.status === 2) {
       changeProfilInput('picture', upload.uploadedFile)
@@ -25,13 +25,13 @@ const Upload = ({
     setUploadData('uploadPercentage', 0)
   }, [])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault()
     profilUploadImage()
     setUploadData('status', 1)
   }
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     const file = e.target.files[0]
 
     if (typeof file !== 'undefined') {

@@ -3,18 +3,46 @@ import react from '@vitejs/plugin-react'
 import svgrPlugin from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  resolve: {
-    alias: {
-      '@components': '/src/components',
-      '@containers': '/src/containers',
-      '@middlewares': '/src/middlewares',
-      '@pages': '/src/pages',
-      '@': '/src'
+export default defineConfig(({ command }) => {
+
+  const baseConfig = {
+    resolve: {
+      alias: {
+        '@components': '/src/components',
+        '@containers': '/src/containers',
+        '@middlewares': '/src/middlewares',
+        '@pages': '/src/pages',
+        '@store': '/src/store',
+        '@': '/src'
+      },
+    },
+    build: {
+      sourcemap: true
     }
-  },
-  plugins: [
+  }
+
+  const plugins = [
     svgrPlugin(),
-    react()
   ]
+
+  if (command === 'build') {
+    return {
+      ...baseConfig,
+      plugins,
+      esbuild: {
+        jsxInject: 'import React from "react";',
+      },
+    }
+  } else {
+    return {
+      ...baseConfig,
+      plugins: [
+        ...plugins,
+        react()
+      ],
+    }
+  }
+
 })
+
+

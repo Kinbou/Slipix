@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import zxcvbn from 'zxcvbn';
 import PropTypes from 'prop-types';
 import './passwordStrength.scss';

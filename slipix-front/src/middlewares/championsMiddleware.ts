@@ -10,7 +10,7 @@ import {
 
 import { apiBaseUrl } from './index'
 
-const championsMiddleware = (store) => (next) => (action) => {
+const championsMiddleware = (store: any) => (next: any) => (action: any): any => {
 
   switch (action.type) {
     case FETCH_ALL_CHAMPIONS:

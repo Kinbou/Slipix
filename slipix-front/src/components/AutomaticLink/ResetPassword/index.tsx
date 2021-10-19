@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation, Redirect } from 'react-router-dom'
 import axios from 'axios'
 import PropTypes from 'prop-types'
@@ -11,7 +11,7 @@ import { urlBack, urlLocal, labelClassname } from '@/utils/selectors'
 import Loader from '@components/Loader/index'
 import PasswordStrength from '@/utils/passwordLength/index'
 
-const ResetPassword = ({ displayAlert }) => {
+const ResetPassword = ({ displayAlert }: any): React.ReactElement => {
   const { search } = useLocation()
   const token = new URLSearchParams(search).get('token')
   const email = new URLSearchParams(search).get('email')
@@ -20,7 +20,7 @@ const ResetPassword = ({ displayAlert }) => {
   const [message, setMessage] = useState(null)
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [errorsFront, setErrorsFront] = useState({ password: null, confirmPassword: null })
+  const [errorsFront, setErrorsFront] = useState({ password: '', confirmPassword: '' })
 
   const verifyPassword = () => {
     if (!password.length) {
@@ -40,13 +40,15 @@ const ResetPassword = ({ displayAlert }) => {
     }
   }
 
-  const updateError = (key) => {
+  const updateError = (key: any): any => {
+    // @ts-ignore
     if (errorsFront && errorsFront[key]) {
+      // @ts-ignore
       errorsFront[key] = null
     }
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault()
     if (token && email && password && confirmPassword) {
       axios.post(`${urlBack}/api/auth/password/reset`, {
@@ -61,9 +63,14 @@ const ResetPassword = ({ displayAlert }) => {
         }
       })
         .then((result) => {
+          // @ts-ignore
           if (result.data.message === 'passwords.token') {
             displayAlert('Tu as déja réinitialisé ton mot de passe', false)
-          } else displayAlert(result.data.message, true)
+          } else 
+          {
+            // @ts-ignore
+            displayAlert(result.data.message, true)
+          }
         })
         .catch((errors) => {
           displayAlert(errors.response.data, false)
@@ -95,7 +102,7 @@ const ResetPassword = ({ displayAlert }) => {
                         className: errorsFront && errorsFront.password ? 'inputAnimation inputAnimation--errors' : 'inputAnimation'
                       }}
                       defaultValue={password}
-                      changeCallback={(e) => {
+                      changeCallback={(e: any) => {
                         setPassword(e)
                       }}
                       setFocused={() => updateError('password')}
@@ -113,6 +120,7 @@ const ResetPassword = ({ displayAlert }) => {
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       onBlur={verifyConfirmPassword}
+                      // @ts-ignore
                       onFocus={() => setErrorsFront({ ...errorsFront, password: null })}
                     />
                     <label className={labelClassname(confirmPassword)}>Confirmation du mot de passe</label>

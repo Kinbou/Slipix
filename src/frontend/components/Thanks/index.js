@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTitle } from 'src/hooks/useTitle';
 import { pipe } from 'src/utils/selectors';
 import Loader from 'src/frontend/components/Loader';

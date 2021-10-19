@@ -7,16 +7,16 @@ import {
   loginUser
 } from '@/actions/user'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   errorLogin: state.users.errorLogin
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  displayModal: (name) => {
+const mapDispatchToProps = (dispatch: any) => ({
+  displayModal: (name: any) => {
     dispatch(showModal(name))
   },
 
-  loginUser: (emailUser, passwordUser, checkedRememberUser, checkedCaptchaUser) => {
+  loginUser: (emailUser: any, passwordUser: any, checkedRememberUser: any, checkedCaptchaUser: any) => {
     dispatch(loginUser(emailUser, passwordUser, checkedRememberUser, checkedCaptchaUser))
   }
 //   displayAlert: (message, success) => {

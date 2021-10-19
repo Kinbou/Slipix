@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { motion } from 'framer-motion'
@@ -9,7 +9,7 @@ import { animationOne, transition } from '@/utils/animations/index'
 import PasswordStrength from '@/utils/passwordLength/index'
 import './registration.scss'
 
-const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
+const Registration = ({ fetchUserRegistration, errorsRegistration }: any) => {
   const [email, setEmail] = useState('')
   const [pseudo, setPseudo] = useState('')
   const [password, setPassword] = useState('')
@@ -21,20 +21,23 @@ const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
     if (errorsRegistration) {
       let dataErrors = ''
       if (errorsRegistration.email) {
+        // @ts-ignore
         dataErrors = ({ ...dataErrors, email: errorsRegistration.email[0] })
       }
       if (errorsRegistration.pseudo) {
+        // @ts-ignore
         dataErrors = ({ ...dataErrors, pseudo: errorsRegistration.pseudo[0] })
       }
       setErrors(dataErrors)
     }
   }, [errorsRegistration])
 
-  const handleRegistration = (e) => {
+  const handleRegistration = (e: any) => {
     e.preventDefault()
     // eslint-disable-next-line prefer-const
     if (!email && !pseudo && !password && !confirmPassword && !isLegalMentionsChecked) {
       setErrors({
+        // @ts-ignore
         ...errors,
         email: '*Ton email est requis',
         pseudo: '*Ton pseudo est requis',
@@ -47,31 +50,39 @@ const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
     if (!email.length || !pseudo.length || !password.length || !confirmPassword.length || isLegalMentionsChecked === false) {
       let dataError = ''
       if (!email.length) {
+        // @ts-ignore
         dataError = { ...dataError, email: '*Ton email est requis' }
       }
       if (!pseudo.length) {
+        // @ts-ignore
         dataError = { ...dataError, pseudo: '*Ton pseudo est requis' }
       }
       if (!password.length) {
+        // @ts-ignore
         dataError = { ...dataError, password: '*Ton mot de passe est requis' }
       }
       if (!confirmPassword.length) {
+        // @ts-ignore
         dataError = { ...dataError, confirmPassword: '*La confirmation de ton mot de passe est requis' }
       }
       if (isLegalMentionsChecked === false) {
+        // @ts-ignore
         dataError = { ...dataError, isLegalMentionsChecked: '*Tu dois accepter les mentions légales' }
       }
       setErrors(dataError)
       return
     }
     if (pseudo.length <= 2) {
+      // @ts-ignore
       setErrors({ ...errors, pseudo: '*Ton pseudo est requis' })
     }
     if (password.length < 8) {
+      // @ts-ignore
       setErrors({ ...errors, password: 'Ton mot de passe est requis' })
     }
 
     if (confirmPassword !== password) {
+      // @ts-ignore
       setErrors({ ...errors, confirmPassword: 'Ta confirmation de password doit être identique à ton mdp' })
     }
 
@@ -93,38 +104,46 @@ const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
 
   const verifyEmail = () => {
     if (!validEmail(email) && email.length) {
+      // @ts-ignore
       setErrors({ ...errors, email: '*Ton email n\'est pas valide' })
     } else if (!email.length) {
+      // @ts-ignore
       setErrors({ ...errors, email: '*Ton email est obligatoire' })
     }
   }
 
   const verifyPseudo = () => {
     if (pseudo.length < 3) {
+      // @ts-ignore
       setErrors({ ...errors, pseudo: '*Ton pseudo doit contenir au moins 3 caractères' })
     }
   }
 
   const verifyPassword = () => {
     if (!password.length) {
+      // @ts-ignore
       setErrors({ ...errors, password: '*Ton mot de passe est obligatoire' })
     }
     if (password.length < 8) {
+      // @ts-ignore
       setErrors({ ...errors, password: '*Ton mot de passe doit contenir au moins 8 caractères' })
     }
   }
 
   const verifyConfirmPassword = () => {
     if (!confirmPassword) {
+      // @ts-ignore
       setErrors({ ...errors, confirmPassword: '*La confirmation du mot de passe est obligatoire' })
     }
     if (password && password !== confirmPassword) {
+      // @ts-ignore
       setErrors({ ...errors, confirmPassword: '*Ta confirmation du mot de passe est différente du mot de passe' })
     }
   }
 
-  const updateError = (key) => {
+  const updateError = (key: any) => {
     if (errors && errors[key]) {
+      // @ts-ignore
       delete errors[key]
       setErrors(errors)
     }
@@ -149,6 +168,7 @@ const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
             <input
               name="email"
               type="text"
+              // @ts-ignore
               className={errors && errors.email ? 'inputAnimation inputAnimation--errors' : 'inputAnimation'}
               placeholder=""
               value={email}
@@ -157,12 +177,14 @@ const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
               onBlur={verifyEmail}
             />
             <label className={labelClassname(email)}>Adresse email</label>
+            {/* @ts-ignore */}
             { (errors && errors.email) && <p className="label__errors">{ errors.email }</p> }
           </div>
           <div className="global-input">
             <input
               name="pseudo"
               type="text"
+              // @ts-ignore
               className={errors && errors.pseudo ? 'inputAnimation inputAnimation--errors' : 'inputAnimation'}
               value={pseudo}
               onChange={(e) => setPseudo(e.target.value)}
@@ -170,6 +192,7 @@ const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
               onBlur={verifyPseudo}
             />
             <label className={labelClassname(pseudo)}>Pseudo</label>
+            {/* @ts-ignore */}
             { (errors && errors.pseudo) && <p className="label__errors">{ errors.pseudo }</p> }
           </div>
           <div className="global-input">
@@ -183,22 +206,25 @@ const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
               inputProps={{
                 name: 'password',
                 autoComplete: 'off',
+                // @ts-ignore
                 className: errors && errors.password ? 'inputAnimation inputAnimation--errors' : 'inputAnimation'
               }}
               defaultValue={password}
-              changeCallback={(e) => {
+              changeCallback={(e: any) => {
                 setPassword(e)
               }}
               setFocused={() => updateError('password')}
               onBlur={verifyPassword}
             ><label className={labelClassname(password)}>Mot de passe</label>
             </PasswordStrength>
+            {/* @ts-ignore */}
             { (errors && errors.password) && <p className="label__errors">{ errors.password }</p> }
           </div>
           <div className="global-input">
             <input
               name="confirmPassword"
               type="password"
+              // @ts-ignore
               className={errors && errors.confirmPassword ? 'inputAnimation inputAnimation--errors' : 'inputAnimation'}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
@@ -206,10 +232,12 @@ const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
               onBlur={verifyConfirmPassword}
             />
             <label className={labelClassname(confirmPassword)}>Confirmer le mot de passe</label>
+            {/* @ts-ignore */}
             { (errors && errors.confirmPassword) && <p className="label__errors">{ errors.confirmPassword }</p> }
           </div>
           <div className="registration__form__legalmentions">
             <input name="mentionsChecked" type="checkbox" onChange={(e) => setisLegalMentionsChecked(e.target.checked)} /> J'ai lu et accepté les <Link to="/mentions-legales" target="_blank" className="">mentions légales</Link>
+            {/* @ts-ignore */}
             { (errors && errors.isLegalMentionsChecked && !isLegalMentionsChecked) && <p className="label__errors">{ errors.isLegalMentionsChecked }</p> }
           </div>
           <button
@@ -239,14 +267,6 @@ const Registration = ({ fetchUserRegistration, errorsRegistration }) => {
       </div>
     </motion.div>
   )
-}
-
-Registration.propTypes = {
-  fetchUserRegistration: PropTypes.func.isRequired,
-  errorsRegistration: PropTypes.objectOf(
-    PropTypes.shape({
-    }).isRequired
-  ).isRequired
 }
 
 export default Registration

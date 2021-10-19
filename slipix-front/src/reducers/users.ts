@@ -12,28 +12,33 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action = {}) => {
+  // @ts-ignore
   switch (action.type) {
     case FETCH_USER:
       return {
         ...state,
+        // @ts-ignore
         user: action.user,
       };
 
     case FETCH_REQUEST_USER_DATA:
       return {
         ...state,
+        // @ts-ignore
         user: action.userData,
       };
 
     case FETCH_USER_REGISTRATION_ERRORS:
       return {
         ...state,
+        // @ts-ignore
         errorsRegistration: action.data,
       };
 
     case ERROR_LOGIN_USER:
       return {
         ...state,
+        // @ts-ignore
         errorLogin: action.dataError,
       };
 

@@ -4,16 +4,16 @@ import Header from '@components/Header/index'
 
 import { showMenu, showModal } from '@/actions/global'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   showMenu: state.global.showMenu,
   showModal: state.global.showModal
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  displayMenu: (name) => {
+const mapDispatchToProps = (dispatch: any) => ({
+  displayMenu: (name: any) => {
     dispatch(showMenu(name))
   },
-  displayModal: (name) => {
+  displayModal: (name: any) => {
     dispatch(showModal(name))
   }
 })

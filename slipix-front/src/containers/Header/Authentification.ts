@@ -4,12 +4,12 @@ import Authentification from '@components/Header/Authentification'
 
 import { showModal } from '@/actions/global'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   showModal: state.global.showModal
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  displayModal: (name) => {
+const mapDispatchToProps = (dispatch: any) => ({
+  displayModal: (name: any) => {
     dispatch(showModal(name))
   }
 })

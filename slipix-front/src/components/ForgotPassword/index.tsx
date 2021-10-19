@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { labelClassname, validEmail } from '@/utils/selectors';
 import './forgotpassword.scss';
 
-const ForgotPassword = ({ forgotPasswordSendEmail }) => {
+const ForgotPassword = ({ forgotPasswordSendEmail }: any): React.ReactElement => {
   const [email, setEmail] = useState('');
-  const [errors, setErrors] = useState({ email: null });
+  const [errors, setErrors] = useState({ email: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     if (!validEmail(email)) {
       setErrors({ ...errors, email: "*L'email est invalide" });
@@ -19,8 +19,10 @@ const ForgotPassword = ({ forgotPasswordSendEmail }) => {
     }
   };
 
-  const removeError = (key) => {
+  const removeError = (key: any) => {
+    // @ts-ignore
     if (errors && errors[key]) {
+      // @ts-ignore
       delete errors[key];
       setErrors(errors);
     }

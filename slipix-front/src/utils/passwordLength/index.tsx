@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import zxcvbn from 'zxcvbn'
-import PropTypes from 'prop-types'
 
 import './passwordStrength.scss'
 
-const isTooShort = (password, minLength) => password.length < minLength
+const isTooShort = (password: any, minLength: any) => password.length < minLength
 
 const PasswordStrength = ({
   changeCallback = null,
@@ -21,7 +20,7 @@ const PasswordStrength = ({
   children,
   setFocused,
   onBlur
-}) => {
+}: any) => {
   const reactPasswordStrengthInput = useRef()
   const [score, setScore] = useState(0)
   const [isValid, setIsValid] = useState(false)
@@ -35,13 +34,16 @@ const PasswordStrength = ({
     setScore(0)
     setIsValid(false)
     setPassword('')
+    // @ts-ignore
     reactPasswordStrengthInput.current.value = ''
     if (changeCallback !== null) {
+      // @ts-ignore
       changeCallback('')
     }
   }
-
+  
   const handleChange = () => {
+    // @ts-ignore
     const passwordValue = reactPasswordStrengthInput.current.value
 
     let scoreValue = 0
@@ -108,27 +110,6 @@ const PasswordStrength = ({
       <div className={`${namespaceClassName}-strength-bar`} />
     </div>
   )
-}
-
-PasswordStrength.defaultProps = {
-  setFocused: null
-}
-
-PasswordStrength.propTypes = {
-  changeCallback: PropTypes.func.isRequired,
-  className: PropTypes.string.isRequired,
-  defaultValue: PropTypes.string.isRequired,
-  inputProps: PropTypes.object.isRequired,
-  minLength: PropTypes.number.isRequired,
-  minScore: PropTypes.number.isRequired,
-  namespaceClassName: PropTypes.string.isRequired,
-  scoreWords: PropTypes.array.isRequired,
-  style: PropTypes.object.isRequired,
-  tooShortWord: PropTypes.string.isRequired,
-  userInputs: PropTypes.array.isRequired,
-  children: PropTypes.node.isRequired,
-  setFocused: PropTypes.func,
-  onBlur: PropTypes.func.isRequired
 }
 
 export default PasswordStrength

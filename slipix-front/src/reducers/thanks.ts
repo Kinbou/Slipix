@@ -7,16 +7,19 @@ const initialState = {
 };
 
 const thanksReducer = (state = initialState, action = {}) => {
+  // @ts-ignore
   switch (action.type) {
     case SAVE_ALL_THANKS:
       return {
         ...state,
+        // @ts-ignore
         thanks: action.listThanks,
       };
 
     case SET_THANKS_IS_LOAD:
       return {
         ...state,
+        // @ts-ignore
         thanksIsLoad: action.value,
       };
 

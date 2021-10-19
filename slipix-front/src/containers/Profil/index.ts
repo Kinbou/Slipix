@@ -5,24 +5,24 @@ import Profil from '@components/Profil/index'
 import { showModal, showAlert } from '@/actions/global'
 import { updateUser, updateAvatarUser } from '@/actions/user'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   showModal: state.global.showModal,
   user: state.users.user,
   successAvatarUpdate: state.users.successAvatarUpdate,
   showAlert: state.global.showAlert
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  displayModal: (name) => {
+const mapDispatchToProps = (dispatch: any) => ({
+  displayModal: (name: any) => {
     dispatch(showModal(name))
   },
-  updateUser: (userData) => {
+  updateUser: (userData: any) => {
     dispatch(updateUser(userData))
   },
-  updateAvatarUser: (file) => {
+  updateAvatarUser: (file: any) => {
     dispatch(updateAvatarUser(file))
   },
-  displayAlert: (message, success) => {
+  displayAlert: (message: any, success: any) => {
     dispatch(showAlert(message, success))
   }
 })

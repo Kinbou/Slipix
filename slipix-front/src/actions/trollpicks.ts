@@ -14,7 +14,7 @@ export const fetchOneTrollpick = () => ({
   type: FETCH_ONE_TROLLPICK,
 });
 
-export const saveTrollpick = (trollpick) => ({
+export const saveTrollpick = (trollpick: any) => ({
   type: SAVE_TROLLPICK,
   trollpick,
 });
@@ -27,7 +27,7 @@ export const trollpickIsLoad = () => ({
   type: TROLLPICK_IS_LOAD,
 });
 
-export const stateNameTrollpick = (nameTrollpick) => ({
+export const stateNameTrollpick = (nameTrollpick: any) => ({
   type: STATE_NAME_TROLLPICK,
   nameTrollpick,
 });
@@ -36,12 +36,12 @@ export const fetchTrollpickActif = () => ({
   type: FETCH_TROLLPICK_ACTIF,
 });
 
-export const saveTrollpickActif = (trollpicksActif) => ({
+export const saveTrollpickActif = (trollpicksActif: any) => ({
   type: SAVE_TROLLPICK_ACTIF,
   trollpicksActif,
 });
 
-export const setTrollpickActifIsLoad = (value) => ({
+export const setTrollpickActifIsLoad = (value: any) => ({
   type: SET_TROLLPICK_ACTIF_IS_LOAD,
   value,
 });
@@ -50,12 +50,12 @@ export const fetchTrollpickSoon = () => ({
   type: FETCH_TROLLPICK_SOON,
 });
 
-export const saveTrollpickSoon = (trollpicksSoon) => ({
+export const saveTrollpickSoon = (trollpicksSoon: any) => ({
   type: SAVE_TROLLPICK_SOON,
   trollpicksSoon,
 });
 
-export const setTrollpickSoonIsLoad = (value) => ({
+export const setTrollpickSoonIsLoad = (value: any) => ({
   type: SET_TROLLPICK_SOON_IS_LOAD,
   value,
 });

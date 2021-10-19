@@ -21,7 +21,7 @@ import {
 import { apiBaseUrl } from './index'
 import { showModal, showAlert, setAppLoading } from '@/actions/global'
 
-const userMiddleware = (store) => (next) => (action) => {
+const userMiddleware = (store: any) => (next: any) => (action: any) => {
   // const { rememberMe, userData } = store.getState().user;
 
   switch (action.type) {
@@ -43,12 +43,15 @@ const userMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           const date = new Date()
+          // @ts-ignore
           new Cookie().set('token', response.data.access_token, {
             path: '/',
+            // @ts-ignore
             expires: action.payload.checkedRememberUser ? new Date(date.setTime(date.getTime() + (response.data.expires_in * 60 * 1000))) : null,
             secure: true,
             httpOnly: false
           })
+          // @ts-ignore
           store.dispatch((fetchUser(response.data.user)))
           store.dispatch((showModal('')))
           store.dispatch((showAlert('Tu es bien connecté', true)))
@@ -200,6 +203,7 @@ const userMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           store.dispatch(showModal(''))
+          // @ts-ignore
           store.dispatch(showAlert(response.data.message, true))
         })
         .catch((error) => {

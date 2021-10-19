@@ -4,17 +4,17 @@ import Menu from '@components/Header/Menu'
 import { showMenu, showModal } from '@/actions/global'
 import { requestUserAuthentification, logoutUser } from '@/actions/user'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   showMenu: state.global.showMenu,
   showModal: state.global.showModal,
   user: state.users.user
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  displayMenu: (name) => {
+const mapDispatchToProps = (dispatch: any) => ({
+  displayMenu: (name: any) => {
     dispatch(showMenu(name))
   },
-  displayModal: (name, params) => {
+  displayModal: (name: any, params: any) => {
     dispatch(showModal(name, params))
   },
   requestUserAuthentification: () => {

@@ -4,14 +4,14 @@ import trollpick from '@components/TrollPicks/Trollpick/index'
 
 import { stateNameTrollpick, fetchOneTrollpick, setTrollpickIsLoad } from '@/actions/trollpicks'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: any) => ({
   // nom de la prop à remplir: donnée à récupérer dans le state
   trollpick: state.trollpicks.trollpick,
   name: state.trollpicks.nameTrollpick.name,
   trollpickIsLoad: state.trollpicks.trollpickIsLoad
 })
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: any) => ({
   // nom de la prop à remplir: callback qui contient un appel à dispatch
   // fetchAllChampions: () => {
   //   dispatch(fetchAllChampions());
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(fetchOneTrollpick())
   },
 
-  stateNameTrollpick: (nameTrollpick) => {
+  stateNameTrollpick: (nameTrollpick: any) => {
     dispatch(stateNameTrollpick(nameTrollpick))
   },
   setTrollpickIsLoad: () => {
