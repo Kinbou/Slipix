@@ -4,6 +4,8 @@ Site sur le thème de League Of Legends, vous y retrouverez principalement des g
 https://www.slipix-progresser-sur-league-of-legends.fr/
 
 # Technologies utilisées
+ViteJs
 ReactJs
+TypeScript
 Laravel
 PhpMyAdmin
