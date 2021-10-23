@@ -30,11 +30,15 @@
     display: flex;
     justify-content: space-evenly;
     margin: 2rem;
+    &__runes {
+      width: 48px;
+      height: 48px;
+    }
     img {
       width: 25%;
       border-radius: 35%;
     }
-    &__xin{
+    &__xin, &__Braum{
       filter: drop-shadow(0 0 0.75rem #fbfc40);
     }
     &__thresh, &__Jinx{
@@ -43,7 +47,7 @@
     &__caitlyn {
       filter: drop-shadow(0 0 0.75rem #e40b19);
     }
-    &__kaïsa {
+    &__kaïsa, &__Twisted {
       filter: drop-shadow(0 0 0.75rem #aa58db);
     }
     &__lucian {
@@ -112,6 +116,9 @@
         filter: drop-shadow(0 0 0.75rem #b94220);
         width: 30%;
       }
+      &__Twisted {
+        filter: drop-shadow(0 0 0.75rem #b94220);
+      }
       &__tartiSett {
         filter: drop-shadow(0 0 0.75rem #40fbae);
       }
@@ -126,6 +133,10 @@
       &__xin, &__thresh, &__kaïsa, &__lucian, &__caitlyn, &__zed, &__tartiSett {
         width: 35%;
         filter: drop-shadow(0 0 0.75rem #642b21);
+      }
+      &__Braum {
+        width: 20%;
+        filter: drop-shadow(0 0 0.75rem #3A99B3);
       }
     }
     &__capture {
@@ -154,11 +165,15 @@
         filter: drop-shadow(0 0 0.75rem #e40b19);
         width: 15%;
       }
+      &__Braum {
+        filter: drop-shadow(0 0 0.75rem #e40b19);
+        width: 20%;
+      }
       &__thresh {
         width: 40%;
         filter: drop-shadow(0 0 0.75rem #40fbae);
       }
-      &__kaïsa , &__lucian {
+      &__kaïsa , &__lucian, &__Twisted {
         filter: drop-shadow(0 0 0.75rem #aa58db);
       }
       &__zed {
