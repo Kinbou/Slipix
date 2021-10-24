@@ -8,23 +8,16 @@ services:
       - ./slipix-front/dist:/usr/local/apache2/htdocs
     ports:
       - 8999:80
-  front:
-    container_name: slipix_front
-    image: httpd:2.4.51
-    volumes:
-      - ./dist:/usr/local/apache2/htdocs
-    ports:
-      - 8888:80
 
   back:
     container_name: slipix_back
     env_file:
-      - ./src/backend/.env.local
+      - ./backend/.env.local
     build:
-      context: ./src/backend
+      context: ./backend
       dockerfile: Dockerfile
     volumes:
-      - ./src/backend:/app
+      - ./backend:/app
     ports:
       - 8000:8000
 
