@@ -66,7 +66,7 @@ const Trollpick = ({
             <ul>
               {indexRune.map((id) => (
                 <div className="trollpick__runes__list__content trollpick__runes__list__border" key={id}>
-                  <img className="trollpick__pictures" src={`${apiBaseUrl}/images/runes/${pipe(trollpick[0].rune_iconRune)[id]}`} alt="" />
+                  <img className="trollpick__pictures trollpick__pictures__runes" src={`${apiBaseUrl}/images/runes/${pipe(trollpick[0].rune_iconRune)[id]}`} alt="" />
                   <li className="paragraph "><span className={`definition ${pipe(trollpick[0].rune_colorName)[id]}`}>{pipe(trollpick[0].rune_nameRune)[id]} :</span>{pipe(trollpick[0].rune_contentRune)[id]}</li>
                 </div>
               ))}
