@@ -1,5 +1,7 @@
+/* eslint-disable no-undef */
 // @ts-ignore
 import { Slide } from 'react-slideshow-image'
+import 'react-slideshow-image/dist/styles.css'
 
 import youtube from '@/assets/images/banner/YoutubeSLIPIX.jpg'
 import twitch from '@/assets/images/banner/twitchSlipixSlide.jpg'
@@ -13,13 +15,13 @@ const Slideshow = (): React.ReactElement => {
     transitionDuration: 900,
     infinite: true,
     indicators: false,
-    arrows: true
+    arrows: true,
   }
 
   return (
     <div className="containerSlide">
       <Slide {...proprietes}>
-        <div className="containerSlide__each-slide">
+        <div className="each-slide">
           <img src={youtube} alt="youtube" className="containerSlide__each-slide__image" />
           <div className="containerSlide__each-slide__image__content containerSlide__each-slide__image__content__youtube">
             <h2>Rejoignez moi sur Youtube !</h2>

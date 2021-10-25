@@ -1,8 +1,8 @@
 
-import discord from '@/assets/images/socialNetwork/Discord.png';
-import discordTitle from '@/assets/images/discordTitle.png';
-import teamSlip from '@/assets/images/teamSlip.png';
-import './advertising.scss';
+import discord from '@/assets/images/socialNetwork/discord.png'
+import discordTitle from '@/assets/images/socialNetwork/discordTitle.png'
+import teamSlip from '@/assets/images/teamSlip.png'
+import './advertising.scss'
 
 const Publicity = () => (
   <div className="publi">
@@ -21,6 +21,6 @@ const Publicity = () => (
       </div>
     </a>
   </div>
-);
+)
 
-export default Publicity;
+export default Publicity
