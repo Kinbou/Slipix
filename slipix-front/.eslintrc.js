@@ -48,6 +48,7 @@ module.exports = {
     'react/no-unescaped-entities': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/state-in-constructor': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
   settings: {
     'import/resolver': {
