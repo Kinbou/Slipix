@@ -41,7 +41,7 @@ const Slideshow = (): React.ReactElement => {
           <img src={coaching} alt="coaching" className="containerSlide__each-slide__image" />
           <div className="containerSlide__each-slide__image__content containerSlide__each-slide__image__content__coaching">
             <h2>Rejoignez LA #TEAMSLIP SUR DISCORD !</h2>
-            <p>+ de 7000 membres</p>
+            <p>+ de 14000 membres</p>
             {/* @ts-ignore */}
             <a href="https://discord.gg/xsZbWs" target="_blanc" label><button type="button">Cliquez Ici</button></a>
           </div>
