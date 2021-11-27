@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import { NavLink, Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import cx from 'classnames'
 
 import Modal from '@containers/Modal/index'
@@ -10,16 +9,20 @@ import { urlBack } from '@/utils/selectors'
 
 import classes from './header.module.scss'
 
+interface MenuProps {
+  open: boolean;
+}
+
 const Ul = styled.ul`
   list-style: none;
-  display: contents;
+  display: ${({ open }: MenuProps) => open ? 'contents' : 'none'};
 
   @media (max-width: 1000px) {
     .header__nav__menu {
-      transform: ${({ open }: any) => (open ? 'translateX(0)' : 'translateX(100%)')};
+      transform: ${({ open }: MenuProps) => (open ? 'translateX(0)' : 'translateX(100%)')};
     }
     .menu-background {
-      display: ${({ open }: any) => (open ? 'block' : 'none')};
+      display: ${({ open }: MenuProps) => (open ? 'block' : 'none')};
     }
   }
 `
@@ -31,7 +34,7 @@ const Menu = ({
   showModal,
   user,
   requestUserAuthentification,
-  logoutUser
+  logoutUser,
 }: any): React.ReactElement => {
   useEffect(() => {
     requestUserAuthentification()

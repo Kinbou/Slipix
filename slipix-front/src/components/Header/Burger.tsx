@@ -11,7 +11,6 @@ const StyledBurger = styled.div`
   right: 20px;
   display: flex;
   z-index: 99;
-  display: none;
 
   @media (max-width: 1000px) {
     display: flex;
@@ -41,7 +40,7 @@ const StyledBurger = styled.div`
   }
 `
 
-const Burger = (): React.ReactElement => {
+const Burger = () => {
   const [open, setOpen] = useState(false)
   return (
     <>

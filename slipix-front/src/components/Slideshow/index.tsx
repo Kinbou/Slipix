@@ -3,7 +3,7 @@
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 
-import youtube from '@/assets/images/banner/YoutubeSLIPIX.jpg'
+import youtube from '@/assets/images/banner/youtubeSlipix.png'
 import twitch from '@/assets/images/banner/twitchSlipixSlide.jpg'
 import coaching from '@/assets/images/banner/CoachingSLIPIX.jpg'
 
