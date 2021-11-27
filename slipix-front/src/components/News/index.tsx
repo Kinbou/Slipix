@@ -15,26 +15,26 @@ const listVideo = [
     link: 'https://youtu.be/kvn4p1-6ThA',
     title: 'Duo avec Wakz',
     content: "Vous n'êtes pas prêts !",
-    picture: alpha
+    picture: alpha,
   },
   {
     link: 'https://youtu.be/VONlsy2yZR4',
     title: 'Amoumou nucléaire',
     content: 'Des oneshots explosifs !',
-    picture: cestNormal
+    picture: cestNormal,
   },
   {
     link: 'https://www.youtube.com/watch?v=6yQWJw7jn0U',
     title: 'Lulucleaire',
     content: 'Enorminus les dégats !',
-    picture: lesDegats
+    picture: lesDegats,
   },
   {
     link: 'https://www.youtube.com/watch?v=vePP8SmsYkE',
     title: 'Poignona',
     content: 'Indestructible !',
-    picture: poignona
-  }
+    picture: poignona,
+  },
 ]
 
 const News = () => {

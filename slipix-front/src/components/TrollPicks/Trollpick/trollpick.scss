@@ -41,7 +41,7 @@
     &__xin, &__Braum{
       filter: drop-shadow(0 0 0.75rem #fbfc40);
     }
-    &__thresh, &__Jinx{
+    &__thresh, &__Jinx, &__Olaf{
       filter: drop-shadow(0 0 0.75rem #40fbae);
     }
     &__caitlyn {
@@ -112,7 +112,7 @@
         filter: drop-shadow(0 0 0.75rem #aa58db);
         width: 25%;
       }
-      &__zed {
+      &__zed, &__Olaf {
         filter: drop-shadow(0 0 0.75rem #b94220);
         width: 30%;
       }
@@ -130,7 +130,7 @@
         width: 24%;
         filter: drop-shadow(0 0 0.75rem #c8686f);
       }
-      &__xin, &__thresh, &__kaïsa, &__lucian, &__caitlyn, &__zed, &__tartiSett {
+      &__xin, &__thresh, &__kaïsa, &__lucian, &__caitlyn, &__zed, &__tartiSett, &__Olaf {
         width: 35%;
         filter: drop-shadow(0 0 0.75rem #642b21);
       }
@@ -171,6 +171,10 @@
       }
       &__thresh {
         width: 40%;
+        filter: drop-shadow(0 0 0.75rem #40fbae);
+      }
+      &__Olaf {
+        width: 30%;
         filter: drop-shadow(0 0 0.75rem #40fbae);
       }
       &__kaïsa , &__lucian, &__Twisted {

@@ -1,13 +1,12 @@
-
-import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import Youtube from '@components/Youtube';
-import parse from 'html-react-parser';
+import { useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import Youtube from '@components/Youtube'
+import parse from 'html-react-parser'
 
 import { apiBaseUrl } from '@middlewares/index'
-import { pipe } from '@/utils/selectors';
-import './trollpick.scss';
-import Loader from '@components/Loader';
+import { pipe } from '@/utils/selectors'
+import './trollpick.scss'
+import Loader from '@components/Loader'
 
 const Trollpick = ({
   stateNameTrollpick,
@@ -16,20 +15,20 @@ const Trollpick = ({
   setTrollpickIsLoad,
   trollpickIsLoad,
 }: any) => {
-  const slug = useParams();
+  const slug = useParams()
   // permet de récupérer le nom du trollpicks dans l'url
 
-  stateNameTrollpick(slug);
+  stateNameTrollpick(slug)
   useEffect(() => {
-    fetchOneTrollpick();
+    fetchOneTrollpick()
     // await useTitle(`Trollpicks - ${trollpick[0].name}`);
     return () => {
-      setTrollpickIsLoad();
+      setTrollpickIsLoad()
       // useTitle(`Trollpicks - ${trollpick[0].name}`);
-    };
-  }, []);
+    }
+  }, [])
 
-  const indexRune = [0, 1, 2, 3, 4, 5];
+  const indexRune = [0, 1, 2, 3, 4, 5]
   // useTitle('Trollpicks');
 
   return (
@@ -111,23 +110,25 @@ const Trollpick = ({
             {trollpick[0].gameplay_method === 5 && (
             <>
               <img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />
-                {pipe(trollpick[0].gameplay_content2).map((content: any) => (
-                  <p className="paragraph">{parse(content)}</p>
+                {pipe(trollpick[0].gameplay_content2).map((content: any, index: number) => (
+                  <p className="paragraph" key={index}>{parse(content)}</p>
                 ))}
               <img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[1]}`} alt="" />
-              {pipe(trollpick[0].gameplay_content3).map((content: any) => (
-                <p className="paragraph">{parse(content)}</p>
+              {pipe(trollpick[0].gameplay_content3).map((content: any, index: number) => (
+                <p className="paragraph" key={index}>{parse(content)}</p>
               ))}
             </>
             )}
           </div>
-          {trollpick[0].gameplay_method === 4 ? (
-            pipe(trollpick[0].gameplay_introVideo).map((content: string) => (
-              <p className="paragraph">{content}</p>
-            ))
-          ) : (
+          {trollpick[0].gameplay_method === 4
+            ? (
+                pipe(trollpick[0].gameplay_introVideo).map((content: string, index: number) => (
+              <p className="paragraph" key={index}>{content}</p>
+                ))
+              )
+            : (
             <p className="paragraph afterYoutube">{trollpick[0].gameplay_introVideo}</p>
-          )}
+              )}
           <div className="introTrollpickYoutube" />
           {pipe(trollpick[0].gameplay_video).map((content: string) => (
             <>
@@ -141,14 +142,16 @@ const Trollpick = ({
           {pipe(trollpick[0].weakness_content).map((content: string) => (
             <p className="paragraph" key={content}>{parse(content)} </p>
           ))}
-          {trollpick[0].weakness_method === 1 ? (
+          {trollpick[0].weakness_method === 1
+            ? (
             <>
               <Youtube idYoutube={trollpick[0].weakness_picture} />
               <div className="afterYoutube" />
             </>
-          ) : (
+              )
+            : (
             <img className={`trollpick__pictures__trollWeakness trollpick__pictures__trollWeakness__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${trollpick[0].weakness_picture}`} alt="" />
-          )}
+              )}
           {pipe(trollpick[0].weakness_end).map((content: string) => (
             <p className="paragraph" key={content}>{parse(content)}</p>
           ))}
@@ -162,7 +165,7 @@ const Trollpick = ({
       </>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Trollpick;
+export default Trollpick
