@@ -1,6 +1,13 @@
 .support {
   color: white;
   text-align: center;
+
+  .logo {
+    display: flex;
+    &__tiktok {
+      width: 27%;
+    }
+  }
   &__paragraph{
     margin: 6rem 0 2rem 0;
   }

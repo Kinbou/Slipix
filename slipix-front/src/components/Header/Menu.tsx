@@ -9,20 +9,16 @@ import { urlBack } from '@/utils/selectors'
 
 import classes from './header.module.scss'
 
-interface MenuProps {
-  open: boolean;
-}
-
 const Ul = styled.ul`
   list-style: none;
-  display: ${({ open }: MenuProps) => open ? 'contents' : 'none'};
+  display: contents;
 
   @media (max-width: 1000px) {
     .header__nav__menu {
-      transform: ${({ open }: MenuProps) => (open ? 'translateX(0)' : 'translateX(100%)')};
+      transform: ${({ open }: any) => (open ? 'translateX(-100%)' : 'translateX(100%)')};
     }
     .menu-background {
-      display: ${({ open }: MenuProps) => (open ? 'block' : 'none')};
+      display: ${({ open }: any) => (open ? 'block' : 'none')};
     }
   }
 `
@@ -61,7 +57,7 @@ const Menu = ({
     // @ts-ignore
     <Ul open={open}>
       <div className={classes.menuBackground} onClick={() => setOpen(!open)}> </div>
-      <div className={classes.header__nav__global}>
+      <div className={cx(classes.header__nav__global, { [classes['header__nav__global--open']]: open })}>
         {['login', 'registration', 'forgotPassword'].includes(showModal) && (
           <Modal content={<Authentification />} />
         )}

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import { useTitle } from '@/hooks/useTitle'
 import { motion } from 'framer-motion'
 
@@ -11,7 +10,7 @@ import Slideshow from '@components/Slideshow/index'
 import teeShirt from '@/assets/images/support/teeShirt.png'
 import cupYasuo from '@/assets/images/support/cupYasuo.png'
 import cupTroll from '@/assets/images/support/cupTroll.png'
-import facebook from '@/assets/images/socialNetwork/Facebook.png'
+import tiktok from '@/assets/images/socialNetwork/tiktok.png'
 import twitter from '@/assets/images/socialNetwork/twitter.png'
 import instagram from '@/assets/images/socialNetwork/Instagram.png'
 import twitchPrime from '@/assets/images/twitchPrime.png'
@@ -36,12 +35,6 @@ const Support = () => {
           et je vous en remercie énormément.
         </p><br />
         <p>Il existe plusieurs façons de le faire, que ça soit gratuit ou payant.</p>
-        {/* <div className="support__content__utip">
-          <h5>me soutenir gratuitement avec utip<img className="support__content__utip__image" src={utip} alt="" /></h5>
-        </div>
-        <div>
-          <p className="support__content__utip__content">Le principe est simple : Vous pouvez regarder des publicités d'une durée de 20 secondes environ et le site <span className="green">Utip</span> me reversera de l'argent.<br />  ça ne vous coûtera rien, seulement un peu de votre temps alors merci si vous prenez la peine de le faire. N'oubliez pas de désactiver votre <span className="red">ADBLOCK</span>. <a className="link" type="a" href="https://utip.io/slipix" target="_blanc">Cliquez ici</a></p>
-        </div> */}
         <div className="betweenParagraph" />
         <div className="support__content__twitch support__paragraph">
           <h5>Me soutenir gratuitement avec  <img src={twitchPrime} alt="" /> </h5>
@@ -64,9 +57,9 @@ const Support = () => {
             concours pour gagner des skins sur <span className="green">League of Legends</span> et d'autres cadeaux
           </p>
           <div className="support__content__social__picture">
-            <a href="https://www.facebook.com/Slipix/" target="_blanc"><img className="support__content__social__picture__card" src={facebook} alt="" /></a>
-            <a href="https://twitter.com/SlipixLoL" target="_blanc"><img className="support__content__social__picture__card" src={twitter} alt="" /></a>
-            <a href="https://www.instagram.com/slipixlol/?hl=fr" target="_blanc"><img className="support__content__social__picture__card" src={instagram} alt="" /></a>
+            <a href="https://www.tiktok.com/@slipixtv" className="logo logo__tiktok" target="_blanc"><img className="support__content__social__picture__card" src={tiktok} alt="" /></a>
+            <a href="https://twitter.com/SlipixLoL" target="_blanc"><img className="support__content__social__picture__card logo" src={twitter} alt="" /></a>
+            <a href="https://www.instagram.com/slipixlol/?hl=fr" target="_blanc"><img className="support__content__social__picture__card logo" src={instagram} alt="" /></a>
           </div>
         </div>
         <div className="betweenParagraph" />

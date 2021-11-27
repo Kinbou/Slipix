@@ -9,14 +9,13 @@ const StyledBurger = styled.div`
   position: fixed;
   top:20px;
   right: 20px;
-  display: flex;
   z-index: 99;
+  display: ${({ open }: {open: boolean}) => open ? 'flex' : 'none'};
 
   @media (max-width: 1000px) {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
-    z-index: 99;
   }
 
   div {

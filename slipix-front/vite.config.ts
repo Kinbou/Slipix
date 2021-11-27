@@ -4,8 +4,14 @@ import svgrPlugin from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
-
   const baseConfig = {
+    // server: {
+    //   proxy: {
+    //     '^/api': {
+    //       target: 'http://localhost:8000',
+    //     },
+    //   },
+    // },
     resolve: {
       alias: {
         '@components': '/src/components',
@@ -13,12 +19,12 @@ export default defineConfig(({ command }) => {
         '@middlewares': '/src/middlewares',
         '@pages': '/src/pages',
         '@store': '/src/store',
-        '@': '/src'
+        '@': '/src',
       },
     },
     build: {
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   }
 
   const plugins = [
@@ -33,16 +39,14 @@ export default defineConfig(({ command }) => {
         jsxInject: 'import React from "react";',
       },
     }
-  } else {
+  }
+  else {
     return {
       ...baseConfig,
       plugins: [
         ...plugins,
-        react()
+        react(),
       ],
     }
   }
-
 })
-
-
