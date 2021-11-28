@@ -87,7 +87,7 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-
+      transition: all 0.3s ease-in-out;
       align-items: center;
     }
     &__menu{
@@ -300,8 +300,16 @@
         }
       }
       &__global {
-        display: flex;
+        position: relative;
+        top: -2.5em;
         flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s ease-in-out;
+        transform: translateX(150%);
+      }
+      &__global--open {
+        transition: all 0.3s ease-in-out;
+        transform: translateX(2em);
       }
       &__menu, &__menuBurger {
         display: flex;

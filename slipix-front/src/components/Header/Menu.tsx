@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import { NavLink, Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import cx from 'classnames'
 
 import Modal from '@containers/Modal/index'
@@ -16,7 +15,7 @@ const Ul = styled.ul`
 
   @media (max-width: 1000px) {
     .header__nav__menu {
-      transform: ${({ open }: any) => (open ? 'translateX(0)' : 'translateX(100%)')};
+      transform: ${({ open }: any) => (open ? 'translateX(-100%)' : 'translateX(100%)')};
     }
     .menu-background {
       display: ${({ open }: any) => (open ? 'block' : 'none')};
@@ -31,7 +30,7 @@ const Menu = ({
   showModal,
   user,
   requestUserAuthentification,
-  logoutUser
+  logoutUser,
 }: any): React.ReactElement => {
   useEffect(() => {
     requestUserAuthentification()
@@ -58,7 +57,7 @@ const Menu = ({
     // @ts-ignore
     <Ul open={open}>
       <div className={classes.menuBackground} onClick={() => setOpen(!open)}> </div>
-      <div className={classes.header__nav__global}>
+      <div className={cx(classes.header__nav__global, { [classes['header__nav__global--open']]: open })}>
         {['login', 'registration', 'forgotPassword'].includes(showModal) && (
           <Modal content={<Authentification />} />
         )}

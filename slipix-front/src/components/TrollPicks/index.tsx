@@ -6,7 +6,9 @@ import { motion } from 'framer-motion'
 import { apiBaseUrl } from '@middlewares/index'
 import Loader from '@components/Loader/index'
 import {
-  animationOne, cardList, card
+  animationOne,
+  cardList,
+  card,
 } from '@/utils/animations/index'
 import { useTitle } from '@/hooks/useTitle'
 import './trollPicks.scss'
@@ -19,7 +21,7 @@ const TrollPicks = ({
   trollpickActifIsLoad,
   trollpickSoonIsLoad,
   setTrollpickActifIsLoad,
-  setTrollpickSoonIsLoad
+  setTrollpickSoonIsLoad,
 }: any) => {
   useTitle('TrollPicks')
   useEffect(() => {

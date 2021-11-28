@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useTitle } from '@/hooks/useTitle'
 import { animationOne, transition } from '@/utils/animations/index'
 
-import refuseResist from '@/assets/images/refuseResist.png'
+import tds from '@/assets/images/teamDuSud.png'
 import './contact.scss'
 
 const Contact = () => {
@@ -28,7 +28,7 @@ const Contact = () => {
           </p>
           <p>-M'envoyer directement un message privé sur Discord en rejoignant le serveur <span className="red">#TEAMSLIP</span><a className="contact__content__link" type="a" href="https://discord.gg/fsTYTg5" target="_blanc">Cliquez ici</a></p>
           <h4 className="red"><i className="fas fa-exclamation-triangle icons__exclamation" /> NOTES IMPORTANTES <i className="fas fa-exclamation-triangle icons__exclamation" /></h4>
-          <p className="contact__content__refuseResist">Je ne prend plus de réservations pour du coaching car je veux me concentrer sur le coaching de ma team REFUSE RESIST.<img src={refuseResist} alt="" /><br /> Il est donc inutile de m'envoyer un message privé sur discord à ce sujet.<br /> Pareil pour les "conseils", il y a mes vidéos, mes guides et mes coachings en live pour ça. Ce n'est pas que je veux pas c'est que je n'ai pas le temps de répondre par écrit.</p>
+          <p className="contact__content__refuseResist">Je ne prend plus de réservations pour du coaching car je veux me concentrer sur la TEAM DU SUD..<img src={tds} alt="" /><br /> Il est donc inutile de m'envoyer un message privé sur discord à ce sujet.<br /> Pareil pour les "conseils", il y a mes vidéos, mes guides et mes coachings en live pour ça. Ce n'est pas que je veux pas c'est que je n'ai pas le temps de répondre par écrit.</p>
         </div>
       </div>
     </motion.div>
