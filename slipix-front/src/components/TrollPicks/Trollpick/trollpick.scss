@@ -41,7 +41,7 @@
     &__xin, &__Braum{
       filter: drop-shadow(0 0 0.75rem #fbfc40);
     }
-    &__thresh, &__Jinx, &__Olaf{
+    &__thresh, &__Jinx, &__Olaf, &__sushimi{
       filter: drop-shadow(0 0 0.75rem #40fbae);
     }
     &__caitlyn {
@@ -116,7 +116,7 @@
         filter: drop-shadow(0 0 0.75rem #b94220);
         width: 30%;
       }
-      &__Twisted {
+      &__Twisted, &__sushimi {
         filter: drop-shadow(0 0 0.75rem #b94220);
       }
       &__tartiSett {
@@ -134,7 +134,7 @@
         width: 35%;
         filter: drop-shadow(0 0 0.75rem #642b21);
       }
-      &__Braum {
+      &__Braum, &__sushimi {
         width: 20%;
         filter: drop-shadow(0 0 0.75rem #3A99B3);
       }
