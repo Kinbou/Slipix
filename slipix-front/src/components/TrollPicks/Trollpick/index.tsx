@@ -82,13 +82,16 @@ const Trollpick = ({
             {pipe(trollpick[0].gameplay_content).map((content: string) => (
               <p className="paragraph" key={content}>{parse(content)}</p>
             ))}
-            {/* Pour Thresh */}
+            {/* Pour Thresh, Ultcian */}
             {trollpick[0].gameplay_method === 2 && (
               <>
                 <img className="trollpick__pictures__capture" src={`${apiBaseUrl}/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />
                 <div>{parse(trollpick[0].gameplay_content2)}</div>
-                <img className="trollpick__pictures__capture" src={`${apiBaseUrl}/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[1]}`} alt="" />
-                <p className="paragraph">{parse(trollpick[0].gameplay_content3)}</p>
+                <img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[1]}`} alt="" />
+                {console.log(pipe(trollpick[0].gameplay_content3))}
+                {pipe(trollpick[0].gameplay_content3).map((content: string) => (
+                  <p className="paragraph" key={content}>{parse(content)}</p>
+                ))}
               </>
             )}
             {/* Pour Xin Zhao / JINX */}
