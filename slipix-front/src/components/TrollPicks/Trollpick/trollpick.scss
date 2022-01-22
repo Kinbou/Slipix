@@ -38,7 +38,7 @@
       width: 25%;
       border-radius: 35%;
     }
-    &__xin, &__Braum{
+    &__xin, &__Braum, &__ultcian{
       filter: drop-shadow(0 0 0.75rem #fbfc40);
     }
     &__thresh, &__Jinx, &__Olaf, &__sushimi{
@@ -95,7 +95,7 @@
       width: 20%;
       border-radius: 15px;
       margin: 2rem 0 3rem 0;
-      &__xin {
+      &__xin, &__ultcian {
         filter: drop-shadow(0 0 0.75rem #642b21);
       }
       &__thresh {
@@ -147,6 +147,9 @@
       &__tartiSett {
         width: 20%;
       }
+      &__ultcian {
+        width: 25%;
+      }
     }
     &__troll {
       width: 40%;
@@ -168,6 +171,10 @@
       &__Braum {
         filter: drop-shadow(0 0 0.75rem #e40b19);
         width: 20%;
+      }
+      &__Braum, &__ultcian {
+        filter: drop-shadow(0 0 0.75rem #e40b19);
+        width: 30%;
       }
       &__thresh {
         width: 40%;
