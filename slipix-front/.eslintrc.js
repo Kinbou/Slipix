@@ -34,6 +34,7 @@ module.exports = {
         allowSamePrecedence: true,
       },
     ],
+    'import/no-duplicates': ['error', { considerQueryString: true }],
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/href-no-hash': 'off',
     'jsx-a11y/anchor-is-valid': 'off',

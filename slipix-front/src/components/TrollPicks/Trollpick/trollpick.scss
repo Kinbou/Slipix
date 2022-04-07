@@ -38,7 +38,7 @@
       width: 25%;
       border-radius: 35%;
     }
-    &__xin, &__Braum, &__ultcian{
+    &__xin, &__Braum, &__ultcian, &__mordecasseur{
       filter: drop-shadow(0 0 0.75rem #fbfc40);
     }
     &__thresh, &__Jinx, &__Olaf, &__sushimi{
@@ -98,7 +98,7 @@
       &__xin, &__ultcian {
         filter: drop-shadow(0 0 0.75rem #642b21);
       }
-      &__thresh {
+      &__thresh, &__mordecasseur {
         width: 25%;
         border-radius: 50%;
         filter: drop-shadow(0 0 0.75rem #40fbae);
@@ -126,7 +126,7 @@
     &__trollContent {
       border-radius: 15px;
       margin: 2rem 0 3rem 0;
-      &__Jinx {
+      &__Jinx, &__mordecasseur {
         width: 24%;
         filter: drop-shadow(0 0 0.75rem #c8686f);
       }

@@ -1,5 +1,4 @@
 const Youtube = ({ idYoutube }: any) => {
-
   return (
     <iframe
     width="640"
@@ -12,4 +11,4 @@ const Youtube = ({ idYoutube }: any) => {
   )
 }
 
-export default Youtube;
+export default Youtube
