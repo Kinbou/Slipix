@@ -7,7 +7,7 @@ import {
   fetchTrollpickActif,
   setTrollpickIsLoad,
   setTrollpickActifIsLoad,
-  setTrollpickSoonIsLoad
+  setTrollpickSoonIsLoad,
 } from '@/actions/trollpicks'
 
 const mapStateToProps = (state: any) => ({
@@ -16,7 +16,7 @@ const mapStateToProps = (state: any) => ({
   trollpicksActif: state.trollpicks.trollpicksActif,
   trollpicksSoon: state.trollpicks.trollpicksSoon,
   trollpickActifIsLoad: state.trollpicks.trollpickActifIsLoad,
-  trollpickSoonIsLoad: state.trollpicks.trollpickSoonIsLoad
+  trollpickSoonIsLoad: state.trollpicks.trollpickSoonIsLoad,
 })
 
 const mapDispatchToProps = (dispatch: any) => ({
@@ -37,14 +37,14 @@ const mapDispatchToProps = (dispatch: any) => ({
     // @ts-ignore
     dispatch(setTrollpickActifIsLoad())
   },
-  
+
   setTrollpickSoonIsLoad: () => {
     // @ts-ignore
     dispatch(setTrollpickSoonIsLoad())
-  }
+  },
 })
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(trollpicks)

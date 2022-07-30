@@ -9,6 +9,7 @@ import alpha from '@/assets/images/news/alpha.jpg'
 import cestNormal from '@/assets/images/news/cestNormal.jpg'
 import lesDegats from '@/assets/images/news/lesDegats.jpg'
 import poignona from '@/assets/images/news/poignona.jpg'
+import { useEffect } from 'react'
 
 const listVideo = [
   {
@@ -37,8 +38,13 @@ const listVideo = [
   },
 ]
 
-const News = () => {
+const News = ({ fetchAllNews }: any) => {
   useTitle('Nouveautés')
+
+  useEffect(() => {
+    console.log('useEffect')
+    fetchAllNews()
+  }, [])
   return (
     <motion.div
       key="new"

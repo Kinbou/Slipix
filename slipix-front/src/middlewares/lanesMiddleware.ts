@@ -6,7 +6,7 @@ import {
   saveAllLane,
   saveSoonLane,
   setLaneIsLoad,
-  setLaneIsLoad2
+  setLaneIsLoad2,
 } from '@/actions/lanes'
 // import { setLaneIsLoad } from '@/actions/global';
 
@@ -18,7 +18,7 @@ const lanesMiddleware = (store: any) => (next: any) => (action: any) => {
     case FETCH_ALL_LANE:
       axios({
         method: 'get',
-        url: `${apiBaseUrl}/lanes/${name.lane}/actif`
+        url: `${apiBaseUrl}/lanes/${name.lane}/actif`,
       })
         .then((response) => {
           store.dispatch(saveAllLane(response.data))
@@ -34,7 +34,7 @@ const lanesMiddleware = (store: any) => (next: any) => (action: any) => {
     case FETCH_SOON_LANE:
       axios({
         method: 'get',
-        url: `${apiBaseUrl}/lanes/${name.lane}/soon`
+        url: `${apiBaseUrl}/lanes/${name.lane}/soon`,
       })
         .then((response) => {
           store.dispatch(saveSoonLane(response.data))
