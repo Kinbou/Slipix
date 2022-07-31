@@ -8,7 +8,7 @@ const newsMiddleware = (store: any) => (next: any) => (action: any) => {
     case FETCH_ALL_NEWS:
       axios({
         method: 'GET',
-        url: 'http://localhost:5000/api/v1/news',
+        url: 'https://backend-api.slipix-progresser-sur-league-of-legends.fr/api/v1/news',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
