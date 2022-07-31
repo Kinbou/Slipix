@@ -5,10 +5,10 @@ import { animationOne, transition } from '@/utils/animations/index'
 import './home.scss'
 
 // picture TENDANCES
-import Winrate from '@/assets/images/picturesYoutube/36-Winrate.jpg'
-import otpTeemo from '@/assets/images/picturesYoutube/otpTeemo.jpg'
-import visiteFer4Garen from '@/assets/images/picturesYoutube/visiteFer4Garen.jpg'
-import Xin90000 from '@/assets/images/picturesYoutube/Xin90000.jpg'
+import Boom from '@/assets/images/picturesYoutube/boom.jpg'
+import Legolash from '@/assets/images/picturesYoutube/legolash.jpg'
+import Morgrana from '@/assets/images/picturesYoutube/morgrana.jpg'
+import Tahmquiche from '@/assets/images/picturesYoutube/tahmquiche.jpg'
 
 // picture
 import logoLol from '@/assets/images/logoLol.png'
@@ -43,10 +43,10 @@ const Home = () => {
           <h2>Découvrez les 4 vidéos tendances</h2>
         </div>
         <div className="home__news">
-          <a href="https://youtu.be/aYa9Um6mmW0" target="_blanc"><img src={Winrate} alt="36% winrate" /></a>
-          <a href="https://www.youtube.com/watch?v=CVRFZDJRmc0" target="_blanc"><img src={otpTeemo} alt="otp teemo" /></a>
-          <a href="https://youtu.be/MMSXDskFFKE" target="_blanc"><img src={visiteFer4Garen} alt="Visite fer 4 Garen" /></a>
-          <a href="https://youtu.be/Je09x4vu6MU" target="_blanc"><img src={Xin90000} alt="Xin 9000000" /></a>
+          <a href="https://www.youtube.com/watch?v=OVFiLjXNgTQ" target="_blanc"><img src={Boom} alt="Boom" /></a>
+          <a href="https://www.youtube.com/watch?v=9_2jTP6FEVc" target="_blanc"><img src={Legolash} alt="Legolash" /></a>
+          <a href="https://www.youtube.com/watch?v=U0RruXXnfs0" target="_blanc"><img src={Morgrana} alt="Morgrana" /></a>
+          <a href="https://www.youtube.com/watch?v=EA7D1EHgp1s" target="_blanc"><img src={Tahmquiche} alt="Tahmquiche" /></a>
         </div>
         <h2>Mes réseaux sociaux et plateformes</h2>
         <SocialNetwork />
