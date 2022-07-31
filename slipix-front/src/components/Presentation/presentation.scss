@@ -1,5 +1,8 @@
 .presentation {
   font-size: 1.1em;
+  .margin {
+    margin-left: .5rem;
+  }
   h1 {
     padding: 5rem 0 3rem 0;
   }
@@ -28,13 +31,15 @@
   }
   &__content__refuseResist {
     position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
   &__image {
-    &__refuseResist {
-      width: 8%;
+    &__tds {
+      width: 5%;
       margin: .5rem;
-      position: absolute;
-      bottom: -45px;
+      border-radius: 5px;
     }
     &__utip {
       width: 5%;
@@ -73,11 +78,6 @@
     h2 {
       font-size: 1.5em;
     }
-    &__image {
-      &__refuseResist {
-        bottom: -32px;
-      }
-    }
   }
 }
 
@@ -88,11 +88,6 @@
     p {
       font-size: 1.3em;
     }
-    &__image {
-      &__refuseResist {
-        bottom: -32px;
-      }
-    }
   }
 }
 
@@ -100,11 +95,10 @@
   .presentation__background {
     margin: 3rem .5rem 3rem .5rem;
     padding: 1rem 1rem;
-
-    &__image {
-      &__refuseResist {
-        bottom: -22px;
-      }
+  }
+  .presentation__image {
+    &__tds {
+      width: 15%;
     }
   }
 }
@@ -124,9 +118,8 @@
       width: 75%;
     }
     &__image {
-      &__refuseResist {
-        bottom: -11px;
-        width: 12%;
+      &__tds {
+        width: 10%;
       }
     }
   }

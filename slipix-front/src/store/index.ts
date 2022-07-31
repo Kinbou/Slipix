@@ -8,6 +8,7 @@ import lanesMiddleware from '@/middlewares/lanesMiddleware'
 import thanksMiddleware from '@/middlewares/thanksMiddleware'
 import trollpicksMiddleware from '@/middlewares/trollpicksMiddleware'
 import usersMiddleware from '@/middlewares/userMiddleware'
+import newsMiddleware from '@middlewares/newsMiddleware'
 
 // on combine plusieurs enhancers : devTools et chaque middleware
 const enhancers = composeWithDevTools(
@@ -17,13 +18,14 @@ const enhancers = composeWithDevTools(
     lanesMiddleware,
     thanksMiddleware,
     trollpicksMiddleware,
-    usersMiddleware
-  )
+    usersMiddleware,
+    newsMiddleware,
+  ),
 )
 
 const store = createStore(
   reducer,
-  enhancers
+  enhancers,
 )
 
 export default store

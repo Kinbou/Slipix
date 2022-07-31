@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { Route, useLocation, Switch } from 'react-router-dom'
-//@ts-ignore
+// @ts-ignore
 import Analytics from 'react-router-ga'
 import PropTypes from 'prop-types'
 import { AnimatePresence } from 'framer-motion'
@@ -16,7 +16,7 @@ import Footer from '@components/Footer/Footer'
 import Alert from '@containers/Alert/index'
 import Home from '@components/Home/index'
 import Presentation from '@components/Presentation/index'
-import News from '@components/News/index'
+import News from '@containers/News/News'
 import Support from '@components/Support/index'
 import Contact from '@components/Contact/index'
 import Thanks from '@containers/Thanks/index'
@@ -132,7 +132,7 @@ const App = ({ showAlert }: any) => {
     profil: isProfil,
     legalNotice: isLegalNotice,
     emailVerification: isEmailVerification,
-    resetPassword: isResetPassword
+    resetPassword: isResetPassword,
   })
   const [imgLoaded, setImgLoaded] = useState(true)
 
@@ -212,7 +212,7 @@ const App = ({ showAlert }: any) => {
 }
 
 App.propTypes = {
-  showAlert: PropTypes.bool.isRequired
+  showAlert: PropTypes.bool.isRequired,
 }
 
 export default App

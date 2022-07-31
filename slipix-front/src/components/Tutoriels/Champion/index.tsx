@@ -1,3 +1,7 @@
+/* eslint-disable import/no-duplicates */
+// eslint-disable-next-line import/no-duplicates
+/* eslint-disable multiline-ternary */
+/* eslint-disable react/jsx-key */
 import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
@@ -14,7 +18,7 @@ const Champion = ({
   champion,
   setChampionIsLoad,
   championIsLoad,
-  stateName
+  stateName,
 }: any) => {
   const slug = useParams()
   // permet de récupérer le nom du champion dans l'url
@@ -135,7 +139,7 @@ const Champion = ({
               <h4>Comment Carry avec {champion[0].name} ?</h4>
               <div className="zac__content__carry__content">
                 <div className="zac__content__carry__content__left">
-                  <Youtube videoId={pipe(champion[0].youtube_identifiant)[0]} SameSite="" />
+                  <Youtube idYoutube={pipe(champion[0].youtube_identifiant)[0]} SameSite="" />
                 </div>
                 <div className="zac__content__carry__content__right">
                   <h6>{champion[0].youtube_intro}</h6>

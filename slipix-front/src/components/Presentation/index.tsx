@@ -7,7 +7,7 @@ import { useTitle } from '@/hooks/useTitle'
 import { animationOne, transition } from '@/utils/animations/index'
 import SocialNetwork from '@components/SocialNetwork/index'
 // images
-import refuseResist from '@/assets/images/refuseResist.png'
+import tds from '@/assets/images/teamDuSud.png'
 import coachingSlipix from '@/assets/images/presentation/coachingSlipix.jpg'
 
 const Presentation = () => {
@@ -37,7 +37,7 @@ const Presentation = () => {
         <p>Je suis actuellement à 2000 heures d'experience de coaching en <span className="orange">SoloQ</span>/<span className="orange">DuoQ</span> et 1000 heures en Team complète.
         </p>
         <p>Je ne prend plus de réservations coaching <span className="orange">SoloQ</span>/<span className="orange">DuoQ</span> depuis juin 2020 afin de me concentrer exclusivement sur le coaching de team</p><br />
-        <p className="presentation__content__refuseResist">Je suis en ce moment leader de la Team <span className="red">REFUSE RESIST</span><img src={refuseResist} alt="" className="presentation__image__refuseResist" /></p><p> qui a pour objectif  de rejoindre la <span className="blue">Ligue 2</span>.</p>
+        <p className="presentation__content__refuseResist">Je suis actuellement Membre du Collectif indépendant<span className="red margin">TDS</span>, qui à pour objectif d'avoir une Team à notre nom en <span className="red margin">LFL</span>.<img src={tds} alt="" className="presentation__image__tds" /></p>
         <br />
         <p className="presentation__but">Le but de ce site est simple :<br />
           - Vous aider avec des <span className="green">guides</span> sur la <span className="presentation__game">macro-game</span> et la <span className="presentation__game">micro-gestion</span><br />

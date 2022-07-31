@@ -9,15 +9,13 @@ const StyledBurger = styled.div`
   position: fixed;
   top:20px;
   right: 20px;
-  display: flex;
   z-index: 99;
-  display: none;
+  display: ${({ open }: {open: boolean}) => open ? 'flex' : 'none'};
 
   @media (max-width: 1000px) {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
-    z-index: 99;
   }
 
   div {
@@ -41,7 +39,7 @@ const StyledBurger = styled.div`
   }
 `
 
-const Burger = (): React.ReactElement => {
+const Burger = () => {
   const [open, setOpen] = useState(false)
   return (
     <>

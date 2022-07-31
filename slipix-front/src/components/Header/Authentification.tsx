@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import Login from '@containers/Login/index'
 import Registration from '@containers/Registration/index'
 import ForgotPassword from '@containers/ForgotPassword/index'
+import Reconstruction from '@components/Reconstruction'
 import { urlBack } from '@/utils/selectors'
 import './header.scss'
 // import styles from './header.module.scss'
@@ -38,9 +39,9 @@ const Authentification = ({ showModal, displayModal }: any) => {
         </div>
       </nav>
 
-      {showModal === 'login' && (<Login />)}
-      {showModal === 'registration' && (<Registration />)}
-      {showModal === 'forgotPassword' && (<ForgotPassword />)}
+      {showModal === 'login' && (<Reconstruction />)}
+      {showModal === 'registration' && (<Reconstruction />)}
+      {showModal === 'forgotPassword' && (<Reconstruction />)}
 
     </>
   )
@@ -48,7 +49,7 @@ const Authentification = ({ showModal, displayModal }: any) => {
 
 Authentification.propTypes = {
   showModal: PropTypes.string.isRequired,
-  displayModal: PropTypes.func.isRequired
+  displayModal: PropTypes.func.isRequired,
 }
 
 export default Authentification

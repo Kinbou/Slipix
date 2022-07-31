@@ -1,25 +1,24 @@
-
-import { useLocation } from 'react-router-dom';
-import classNames from 'classnames';
+import { useLocation } from 'react-router-dom'
+import classNames from 'classnames'
 // images
-import facebook from '@/assets/images/socialNetwork/Facebook.png';
-import twitch from '@/assets/images/socialNetwork/Twitch.png';
-import twitter from '@/assets/images/socialNetwork/twitter.png';
-import youtube from '@/assets/images/socialNetwork/Youtube.png';
-import instagram from '@/assets/images/socialNetwork/Instagram.png';
-import './socialNetwork.scss';
+import tiktok from '@/assets/images/socialNetwork/tiktok.png'
+import twitch from '@/assets/images/socialNetwork/Twitch.png'
+import twitter from '@/assets/images/socialNetwork/twitter.png'
+import youtube from '@/assets/images/socialNetwork/Youtube.png'
+import instagram from '@/assets/images/socialNetwork/Instagram.png'
+import './socialNetwork.scss'
 
 const SocialNetwork = () => {
-  const location = useLocation();
+  const location = useLocation()
   // return the current pathname
-  const currentPath = location.pathname;
-  const isHome = currentPath === '/';
-  const isPresentation = currentPath === '/presentation';
+  const currentPath = location.pathname
+  const isHome = currentPath === '/'
+  const isPresentation = currentPath === '/presentation'
 
   const appClass = classNames('socialNetwork', {
     'socialNetwork--home': isHome,
     'socialNetwork--presentation': isPresentation,
-  });
+  })
   return (
     <div className={appClass}>
       <div className="socialNetwork__card socialNetwork__card__youtube" data-state="#about">
@@ -37,9 +36,9 @@ const SocialNetwork = () => {
         </a>
       </div>
       <div className="socialNetwork__card socialNetwork__card__facebook" data-state="#about">
-        <a href="https://fr-fr.facebook.com/Slipix/" target="_blanc">
+        <a href="https://www.tiktok.com/@slipixtv" target="_blanc">
           <div className="socialNetwork__card__cover">
-            <img src={facebook} alt="facebook" className="socialNetwork__card__cover__picture" />
+            <img src={tiktok} alt="tiktok" className="socialNetwork__card__cover__picture" />
           </div>
         </a>
       </div>
@@ -58,7 +57,7 @@ const SocialNetwork = () => {
         </a>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SocialNetwork;
+export default SocialNetwork

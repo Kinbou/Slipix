@@ -34,6 +34,7 @@ module.exports = {
         allowSamePrecedence: true,
       },
     ],
+    'import/no-duplicates': ['error', { considerQueryString: true }],
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/href-no-hash': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
@@ -48,6 +49,7 @@ module.exports = {
     'react/no-unescaped-entities': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/state-in-constructor': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
   settings: {
     'import/resolver': {

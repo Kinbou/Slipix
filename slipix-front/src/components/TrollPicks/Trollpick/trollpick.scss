@@ -38,10 +38,10 @@
       width: 25%;
       border-radius: 35%;
     }
-    &__xin, &__Braum{
+    &__xin, &__Braum, &__ultcian, &__mordecasseur {
       filter: drop-shadow(0 0 0.75rem #fbfc40);
     }
-    &__thresh, &__Jinx{
+    &__thresh, &__Jinx, &__Olaf, &__sushimi{
       filter: drop-shadow(0 0 0.75rem #40fbae);
     }
     &__caitlyn {
@@ -95,10 +95,10 @@
       width: 20%;
       border-radius: 15px;
       margin: 2rem 0 3rem 0;
-      &__xin {
+      &__xin, &__ultcian {
         filter: drop-shadow(0 0 0.75rem #642b21);
       }
-      &__thresh {
+      &__thresh, &__mordecasseur {
         width: 25%;
         border-radius: 50%;
         filter: drop-shadow(0 0 0.75rem #40fbae);
@@ -112,11 +112,11 @@
         filter: drop-shadow(0 0 0.75rem #aa58db);
         width: 25%;
       }
-      &__zed {
+      &__zed, &__Olaf {
         filter: drop-shadow(0 0 0.75rem #b94220);
         width: 30%;
       }
-      &__Twisted {
+      &__Twisted, &__sushimi {
         filter: drop-shadow(0 0 0.75rem #b94220);
       }
       &__tartiSett {
@@ -126,15 +126,15 @@
     &__trollContent {
       border-radius: 15px;
       margin: 2rem 0 3rem 0;
-      &__Jinx {
+      &__Jinx, &__mordecasseur {
         width: 24%;
         filter: drop-shadow(0 0 0.75rem #c8686f);
       }
-      &__xin, &__thresh, &__kaïsa, &__lucian, &__caitlyn, &__zed, &__tartiSett {
+      &__xin, &__thresh, &__kaïsa, &__lucian, &__caitlyn, &__zed, &__tartiSett, &__Olaf {
         width: 35%;
         filter: drop-shadow(0 0 0.75rem #642b21);
       }
-      &__Braum {
+      &__Braum, &__sushimi {
         width: 20%;
         filter: drop-shadow(0 0 0.75rem #3A99B3);
       }
@@ -146,6 +146,9 @@
       filter: drop-shadow(0 0 0.75rem #40fbae);
       &__tartiSett {
         width: 20%;
+      }
+      &__ultcian {
+        width: 25%;
       }
     }
     &__troll {
@@ -169,8 +172,16 @@
         filter: drop-shadow(0 0 0.75rem #e40b19);
         width: 20%;
       }
+      &__Braum, &__ultcian {
+        filter: drop-shadow(0 0 0.75rem #e40b19);
+        width: 30%;
+      }
       &__thresh {
         width: 40%;
+        filter: drop-shadow(0 0 0.75rem #40fbae);
+      }
+      &__Olaf {
+        width: 30%;
         filter: drop-shadow(0 0 0.75rem #40fbae);
       }
       &__kaïsa , &__lucian, &__Twisted {
