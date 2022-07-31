@@ -8,7 +8,7 @@ import {
   saveTrollpickActif,
   saveTrollpickSoon,
   setTrollpickActifIsLoad,
-  setTrollpickSoonIsLoad
+  setTrollpickSoonIsLoad,
 } from '@/actions/trollpicks'
 
 import { apiBaseUrl } from './index'
