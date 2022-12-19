@@ -1,3 +1,4 @@
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 // @ts-ignore
 import { useMediaPredicate } from 'react-media-hook'
@@ -9,7 +10,7 @@ import logoSlipix from '@/assets/images/SlipixLogo.png'
 
 const Header = ({
   showMenu,
-  displayMenu
+  displayMenu,
 }: any): React.ReactElement => {
   const isMobile = useMediaPredicate('(max-width: 1024px)')
 
@@ -20,7 +21,8 @@ const Header = ({
   const handleMenuBurger = () => {
     if (showMenu === 'burger') {
       handleMenuClose()
-    } else {
+    }
+    else {
       (
         displayMenu('burger')
       )
@@ -62,14 +64,14 @@ const Header = ({
                 >
                   Guides
                 </NavLink>
-                <NavLink
+                {/* <NavLink
                   to="/tutoriels-champions"
                   className="header__nav__menu__item"
                   activeClassName="header__nav__menu__item--active"
                   exact
                 >
                   Tutoriels champions
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   to="/trollpicks"
                   className="header__nav__menu__item"
@@ -142,14 +144,14 @@ const Header = ({
             >
               Guides
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/tutoriels-champions"
               className="header__nav__menu__item"
               activeClassName="header__nav__menu__item--active"
               exact
             >
               Tutoriels champions
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/trollpicks"
               className="header__nav__menu__item"
@@ -203,7 +205,7 @@ const Header = ({
 
 Header.propTypes = {
   showMenu: PropTypes.string.isRequired,
-  displayMenu: PropTypes.func.isRequired
+  displayMenu: PropTypes.func.isRequired,
 }
 
 export default Header

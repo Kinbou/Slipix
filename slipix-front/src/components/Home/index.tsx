@@ -12,7 +12,7 @@ import Tahmquiche from '@/assets/images/picturesYoutube/tahmquiche.jpg'
 
 // picture
 import logoLol from '@/assets/images/logoLol.png'
-import logoSlipix from '@/assets/images/SlipixLogo.png'
+import logoSlipix from '@/assets/images/logoSlipix.png'
 
 // import
 import SocialNetwork from '@components/SocialNetwork/index'
@@ -32,12 +32,12 @@ const Home = () => {
       <div className="home">
         <div className="home__introduction">
           <img className="home__introduction__logo" src={logoLol} alt="" />
-          <h1>Bienvenue sur mon site League of Legends</h1>
-          <img className="home__introduction__logo" src={logoSlipix} alt="Slipix" />
+          <h1>Bienvenue sur le League of trollpicks</h1>
+          <img className="home__introduction__logo home__introduction__logoSlipix " src={logoSlipix} alt="Slipix" />
         </div>
         <div className="home__introduction__content">
           <p><strong className="home__introduction__content__important">Progresser </strong>et <strong className="home__introduction__content__important">apprendre</strong> peu importe votre niveau, dans la bonne ambiance c'est ici !</p><br />
-          <p className="home__introduction__content__italic">"La persévérance, c'est ce qui rend l'impossible possible, le possible probable et le probable réalisé." <span className="home__introduction__content__important">-Moine de IONIA</span></p>
+          <p className="home__introduction__content__italic">"C’est en achetant n’importe quoi qu’on OneShot n’importe quoi" <span className="home__introduction__content__important">-Slipou</span></p>
         </div>
         <div className="home__content">
           <h2>Découvrez les 4 vidéos tendances</h2>

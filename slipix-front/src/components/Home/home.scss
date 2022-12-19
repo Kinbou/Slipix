@@ -15,7 +15,12 @@
     &__logo {
       width: 5%!important;
       margin: auto 0;
+
       filter: drop-shadow(0 0 0.55rem #e39200);
+
+      &Slipix {
+        border-radius: 50%;
+      }
     }
     img {
       width: 6%;

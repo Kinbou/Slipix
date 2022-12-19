@@ -24,6 +24,7 @@ const TrollPicks = ({
   setTrollpickSoonIsLoad,
 }: any) => {
   useTitle('TrollPicks')
+
   useEffect(() => {
     fetchTrollpickActif()
     fetchTrollpickSoon()
@@ -74,7 +75,7 @@ const TrollPicks = ({
                       variants={card}
                     >
                       <h3 className="trollpicks__cards__card__title news__cards__first__title">{trollpick.title}</h3>
-                      <img src={`${apiBaseUrl}/images/trollpicks/${trollpick.image}`} alt="" />
+                      <img src={`${apiBaseUrl}/${trollpick.image}`} alt="" />
                     </motion.div>
                   </Link>
                 </div>
