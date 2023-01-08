@@ -36,11 +36,11 @@ const Home = () => {
           <img className="home__introduction__logo home__introduction__logoSlipix " src={logoSlipix} alt="Slipix" />
         </div>
         <div className="home__introduction__content">
-          <p><strong className="home__introduction__content__important">Progresser </strong>et <strong className="home__introduction__content__important">apprendre</strong> peu importe votre niveau, dans la bonne ambiance c'est ici !</p><br />
-          <p className="home__introduction__content__italic">"C’est en achetant n’importe quoi qu’on OneShot n’importe quoi" <span className="home__introduction__content__important">-Slipou</span></p>
+          <p>Le site parfait pour <strong className="home__introduction__content__important">apprendre</strong> et <strong className="home__introduction__content__important">maîtriser</strong> les trollpicks !</p><br />
+          <p className="home__introduction__content__italic">"C’est en achetant n’importe quoi qu’on OneShot n’importe qui" <span className="home__introduction__content__important">-Slipix</span></p>
         </div>
         <div className="home__content">
-          <h2>Découvrez les 4 vidéos tendances</h2>
+          <h2>Découvrez les vidéos tendances trollpicks</h2>
         </div>
         <div className="home__news">
           <a href="https://www.youtube.com/watch?v=OVFiLjXNgTQ" target="_blanc"><img src={Boom} alt="Boom" /></a>

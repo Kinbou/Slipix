@@ -72,13 +72,13 @@ const Menu = ({
             Accueil
           </NavLink>
           <NavLink
-            to="/nouveaute"
+            to="/trollpicks"
             className={classes.menu__link}
             activeClassName={classes['menu__link--active']}
             exact
             onClick={() => setOpen(!open)}
           >
-            Nouveautés
+            Trollpicks
           </NavLink>
           <NavLink
             to="/guides"
@@ -88,24 +88,6 @@ const Menu = ({
             onClick={() => setOpen(!open)}
           >
             Guides
-          </NavLink>
-          <NavLink
-            to="/tutoriels-champions"
-            className={classes.menu__link}
-            activeClassName={classes['menu__link--active']}
-            exact
-            onClick={() => setOpen(!open)}
-          >
-            Tutoriels champions
-          </NavLink>
-          <NavLink
-            to="/trollpicks"
-            className={classes.menu__link}
-            activeClassName={classes['menu__link--active']}
-            exact
-            onClick={() => setOpen(!open)}
-          >
-            Trollpicks
           </NavLink>
           <NavLink
             to="/presentation"
@@ -125,13 +107,6 @@ const Menu = ({
           >
             me soutenir
           </NavLink>
-          <a
-            href="https://teespring.com/stores/boutique-teamslip"
-            target="_blanc"
-            className={classes.menu__link}
-          >
-            Boutique
-          </a>
           <NavLink
             to="/me-contacter"
             className={classes.menu__link}

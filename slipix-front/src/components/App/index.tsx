@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import classNames from 'classnames'
 import { Route, useLocation, Switch } from 'react-router-dom'
 // @ts-ignore
@@ -10,13 +10,13 @@ import styled from 'styled-components'
 // // == Import
 import dataImages from '@/utils/dataImages.json'
 import { useResolution } from '@/utils/selectors'
+import { apiBaseUrl } from '@middlewares/index'
 import Loader from '@components/Loader/index'
 import Header from '@containers/Header/index'
 import Footer from '@components/Footer/Footer'
 import Alert from '@containers/Alert/index'
 import Home from '@components/Home/index'
 import Presentation from '@components/Presentation/index'
-import News from '@containers/News/News'
 import Support from '@components/Support/index'
 import Contact from '@components/Contact/index'
 import Thanks from '@containers/Thanks/index'
@@ -37,16 +37,9 @@ import LowElo from '@components/Guides/LowElo/index'
 import WinLane from '@components/Guides/WinLane/index'
 import VisionGame from '@components/Guides/VisionGame/index'
 
-// Tutoriels
-import Tutoriels from '@components/Tutoriels/index'
-import Champion from '@containers/Tutoriels/Champion/index'
-
 // Trollpicks
 import TrollPicks from '@containers/TrollPicks/index'
 import Trollpick from '@containers/TrollPicks/Trollpick/index'
-
-// Lanes
-import Jungle from '@containers/Tutoriels/Jungle/index'
 
 // Automatic Link
 import EmailVerification from '@components/AutomaticLink/EmailVerification/index'
@@ -61,27 +54,27 @@ const BackgroundImage = styled.div`
   background-size: cover;
   position: fixed;
   background-color: black;
-  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }: any) => appClass}/format-standard.jpg);
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-standard.jpg);
 
   /* Grand écran */
   @media (min-width: 3400px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }: any) => appClass}/format-3440x1440.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-3440x1440.jpg)
   }
   /* Grand écran */
   @media (min-width: 2000px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }: any) => appClass}/format-2560x1440.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-2560x1440.jpg)
   }
   /* Format tablette */
   @media (max-width: 1024px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }: any) => appClass}/format-tablette.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-tablette.jpg)
   }
   /* Format phone */
   @media (max-width: 600px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(https://backend.slipix-progresser-sur-league-of-legends.fr/images/backgroundPages/${({ appClass }: any) => appClass}/format-phone.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-phone.jpg)
   }
 `
 
-// == Composant
+// == Composants
 const App = ({ showAlert }: any) => {
   const location = useLocation()
   const currentPath = location.pathname
@@ -90,12 +83,6 @@ const App = ({ showAlert }: any) => {
   const isNews = currentPath === '/nouveaute'
   const isThanks = currentPath === '/remerciements'
   const isProfil = currentPath === '/profil'
-  const isTutoriel = currentPath === '/tutoriels-champions'
-  const isTop = currentPath.includes('/tutoriels-champions/toplane')
-  const isJungle = currentPath.includes('/tutoriels-champions/jungle')
-  const isMid = currentPath.includes('/tutoriels-champions/mid')
-  const isAdc = currentPath.includes('/tutoriels-champions/adc')
-  const isSupport = currentPath.includes('/tutoriels-champions/support')
   const isTrollPicks = currentPath.includes('/trollpicks')
   const isSupportPage = currentPath === '/me-soutenir'
   const isContact = currentPath === '/me-contacter'
@@ -114,12 +101,6 @@ const App = ({ showAlert }: any) => {
     presentation: isPresentation,
     news: isNews,
     thanks: isThanks,
-    tutoriels: isTutoriel,
-    tutorielJungle: isJungle,
-    tutorielTop: isTop,
-    tutorielMid: isMid,
-    tutorielAdc: isAdc,
-    tutorielSupport: isSupport,
     support: isSupportPage,
     contact: isContact,
     guides: isGuides,
@@ -147,13 +128,13 @@ const App = ({ showAlert }: any) => {
   //   await Promise.all(promises)
   //   setImgLoaded(true)
   // }
-  useEffect(() => {
-    // const format = useResolution()
-    // const imagesCopy = { ...dataImages[appClass] }
-    // const images = [...imagesCopy.otherImage]
-    // images.push(imagesCopy.background[format])
-    // cacheImages(images)
-  }, [appClass])
+  // useEffect(() => {
+  // const format = useResolution()
+  // const imagesCopy = { ...dataImages[appClass] }
+  // const images = [...imagesCopy.otherImage]
+  // images.push(imagesCopy.background[format])
+  // cacheImages(images)
+  // }, [appClass])
 
   return (
     <div className="app">
@@ -179,10 +160,6 @@ const App = ({ showAlert }: any) => {
                   <Home />
                 </Route>
                 <Route exact path="/presentation" component={Presentation} />
-                <Route exact path="/nouveaute" component={News} />
-                <Route exact path="/tutoriels-champions" component={Tutoriels} />
-                <Route exact path="/tutoriels-champions/:lane" component={Jungle} />
-                <Route exact path="/tutoriels-champions/:lane/:name" component={Champion} />
                 <Route exact path="/guides" component={Guides} />
                 <Route exact path="/guides/mental&rage" component={MentalRage} />
                 <Route exact path="/guides/role-champion" component={RoleChampion} />

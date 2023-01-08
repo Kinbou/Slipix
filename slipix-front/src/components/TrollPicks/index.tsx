@@ -44,13 +44,13 @@ const TrollPicks = ({
     >
       <h1 className="globalTitle-page">TrollPicks</h1>
       <div className="backgroundParagraphe trollpicks__intro">
-        <h4>Vous trouverez ici mes TrollPicks favoris de la faille</h4>
-        <p className="paragraph">Les trollpicks et les picks exotiques font partie de League of Legends depuis toujours!</p>
-        <p className="paragraph">Vous l'avez peut être déjà remarqué dans mon contenu mais je suis fan de ce genre de gameplays "originaux" !</p>
-        <p className="paragraph">L'avantage d'un pick exotique ou d'un trollpick c'est premièrement de se taper des bonnes barres de rire mais surtout de surprendre vos adversaires!</p>
+        <h4>Mes TrollPicks favoris dans League of Legends en SAISON 13</h4>
+        <p className="paragraph">Les Trollpicks et les picks exotiques font partie de League of Legends depuis toujours !</p>
+        <p className="paragraph">Vous l'avez sûrement déjà remarqué dans mes vidéos,  je suis fan des gameplays différents et originaux !</p>
+        <p className="paragraph">L'avantage d'un pick exotique et d'un trollpick c'est premièrement de se taper des bonnes barres de rire mais surtout de surprendre vos adversaires !</p>
         <p className="paragraph">Voici mes trollpicks que je joue le + souvent, que j'ai theorycraft moi même, adapté moi même à la meta.</p>
         <p className="paragraph red trollpicks__intro__warning">Attention</p>
-        <p className="paragraph"><i className="fas fa-exclamation-triangle icons__exclamation red" />Ce ne sont pas des picks optimaux pour monter en ranked ou rush le ladder mais vous allez sûrement prendre beaucoup de plaisir !<i className="fas fa-exclamation-triangle icons__exclamation red" /></p>
+        <p className="paragraph"><i className="fas fa-exclamation-triangle icons__exclamation red" />Ce ne sont pas des picks optimaux pour monter en ranked ou pour atteindre des objectifs, jouez les en NORMALE DRAFT pour bien vous amuser !<i className="fas fa-exclamation-triangle icons__exclamation red" /></p>
       </div>
       {(!trollpickActifIsLoad || !trollpickSoonIsLoad) && <Loader />}
 
