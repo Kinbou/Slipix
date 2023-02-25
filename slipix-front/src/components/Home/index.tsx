@@ -32,7 +32,7 @@ const Home = () => {
       <div className="home">
         <div className="home__introduction">
           <img className="home__introduction__logo" src={logoLol} alt="" />
-          <h1>Bienvenue sur le League of trollpicks</h1>
+          <h1>Bienvenue sur League of trollpicks</h1>
           <img className="home__introduction__logo home__introduction__logoSlipix " src={logoSlipix} alt="Slipix" />
         </div>
         <div className="home__introduction__content">

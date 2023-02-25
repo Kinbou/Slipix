@@ -42,7 +42,7 @@ const TrollPicks = ({
       exit="end"
       variants={animationOne}
     >
-      <h1 className="globalTitle-page">TrollPicks</h1>
+      <h1 className="globalTitle-page">Trollpicks</h1>
       <div className="backgroundParagraphe trollpicks__intro">
         <h4>Mes TrollPicks favoris dans League of Legends en SAISON 13</h4>
         <p className="paragraph">Les Trollpicks et les picks exotiques font partie de League of Legends depuis toujours !</p>

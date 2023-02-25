@@ -24,6 +24,7 @@ services:
   db:
     container_name: slipix_db
     image: mariadb:10.3.31
+    command: [mysqld, --general-log, --slow-query-log]
     ports:
       - 127.0.0.1:3306:3306
     environment:

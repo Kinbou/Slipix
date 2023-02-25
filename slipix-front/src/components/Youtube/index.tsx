@@ -1,8 +1,8 @@
 const Youtube = ({ idYoutube }: any) => {
   return (
     <iframe
-    width="640"
-    height="390"
+    width="600"
+    height="350"
     src={`https://www.youtube.com/embed/${idYoutube}`}
     title="YouTube video player"
     frameBorder="0"

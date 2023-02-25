@@ -10,7 +10,7 @@ import styled from 'styled-components'
 // // == Import
 import dataImages from '@/utils/dataImages.json'
 import { useResolution } from '@/utils/selectors'
-import { apiBaseUrl } from '@middlewares/index'
+// import { apiBaseUrl } from '@middlewares/index'
 import Loader from '@components/Loader/index'
 import Header from '@containers/Header/index'
 import Footer from '@components/Footer/Footer'
@@ -44,6 +44,8 @@ import Trollpick from '@containers/TrollPicks/Trollpick/index'
 // Automatic Link
 import EmailVerification from '@components/AutomaticLink/EmailVerification/index'
 import ResetPassword from '@containers/AutomaticLink/ResetPassword/index'
+
+const apiBaseUrl: string = typeof import.meta.env.VITE_API_BASE_URL === 'string' ? import.meta.env.VITE_API_BASE_URL : ''
 
 const BackgroundImage = styled.div`
 /* object-fit: fill; */
