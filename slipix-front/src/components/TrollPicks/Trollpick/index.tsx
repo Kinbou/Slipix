@@ -67,10 +67,10 @@ const Trollpick = ({
           <img className="trollpick__pictures__rune" src={`${apiBaseUrl}/${trollpick?.runePicture}`} alt="" />
           <div className="trollpick__runes__list">
             <ul>
-              {trollpick?.runes.map((rune: { id: number, image: string, color: string, title: string, trollpickRunes: { description: string } }) => (
+              {trollpick?.trollpickRunes.map((rune: { id: number, description: string, rune: { image: string, color: string, title: string } }) => (
                 <div className="trollpick__runes__list__content trollpick__runes__list__border" key={rune?.id}>
-                  <img className="trollpick__pictures trollpick__pictures__runes" src={`${apiBaseUrl}/${rune?.image}`} alt="" />
-                  <li className="paragraph"><span className={`definition ${rune?.color}`}>{rune?.title} :</span>{rune?.trollpickRunes?.description}</li>
+                  <img className="trollpick__pictures trollpick__pictures__runes" src={`${apiBaseUrl}/${rune?.rune?.image}`} alt="" />
+                  <li className="paragraph"><span className={`definition ${rune?.rune?.color}`}>{rune?.rune?.title} :</span>{rune?.description}</li>
                 </div>
               ))}
               <li className="paragraph">{trollpick?.runeContentEnd}</li>
