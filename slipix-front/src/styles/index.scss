@@ -24,7 +24,7 @@
 
 @media (max-width: 1550px) {
   .globalTitle-page {
-    font-size: 4em;
+    font-size: 3.9em;
   }
   .paragraph {
     font-size: 1.3em;
@@ -131,8 +131,8 @@
 
 //paragraph
 .paragraph {
-  line-height: 1.2em;
-  font-size: 1.6em;
+  line-height: 1.6em;
+  font-size: 1.4em;
   margin-bottom: 1rem;
 }
 
@@ -151,7 +151,6 @@
   background-color: $gold;
   margin-left: 1rem;
   padding: .3rem;
-  // font-size: 1.5em;
   border-radius: 5px;
   color: black;
 
@@ -186,9 +185,8 @@
   margin: 2rem;
   border-radius: 10px;
   border: 2px solid transparent;
-  transition:all .2s ease-in-out;
+  transition: all .2s ease-in-out;
   box-shadow: 0 28px 16px -26px black;
-  transition:all .6s ease-in-out;
 
   &:hover {
   transform:scale(1.03);
@@ -200,7 +198,6 @@
 
 .betweenParagraph {
   margin: 2rem 2rem 1rem 2rem;
-  // padding-top: 2rem;
   border-top: solid 2px $gold;
 }
 
