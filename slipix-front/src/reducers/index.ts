@@ -7,6 +7,7 @@ import lanesReducer from './lanes'
 import thanksReducer from './thanks'
 import trollpicksReducer from './trollpicks'
 import usersReducer from './users'
+import newsReducer from './news'
 
 const rootReducer = combineReducers({
   global: globalReducer,
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   lanes: lanesReducer,
   thanks: thanksReducer,
   trollpicks: trollpicksReducer,
-  users: usersReducer
+  users: usersReducer,
+  news: newsReducer,
 })
 
 export default rootReducer

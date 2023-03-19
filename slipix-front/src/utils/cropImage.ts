@@ -1,13 +1,13 @@
 const createImage = (url: any) => new Promise((resolve, reject) => {
-  const image = new Image();
-  image.addEventListener('load', () => resolve(image));
-  image.addEventListener('error', (error) => reject(error));
-  image.setAttribute('crossOrigin', 'anonymous');
-  image.src = url;
-});
+  const image = new Image()
+  image.addEventListener('load', () => resolve(image))
+  image.addEventListener('error', (error) => reject(error))
+  image.setAttribute('crossOrigin', 'anonymous')
+  image.src = url
+})
 
-function getRadianAngle(degreeValue: any) {
-  return (degreeValue * Math.PI) / 100;
+function getRadianAngle (degreeValue: any) {
+  return (degreeValue * Math.PI) / 100
 }
 
 /**
@@ -18,39 +18,39 @@ function getRadianAngle(degreeValue: any) {
  * @param {string} imgType - Optional image type
  * @param {number} rotation - Optional rotation parameter
  */
-export default async function getCroppedImage(
+export default async function getCroppedImage (
   imgSrc: any,
   pixelCrop: any,
   resize = { width: 500, height: 500 },
   imgType = 'image/jpeg',
   rotation = 0,
 ) {
-  const image = await createImage(imgSrc);
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
+  const image = await createImage(imgSrc)
+  const canvas = document.createElement('canvas')
+  const ctx = canvas.getContext('2d')
 
   // @ts-ignore
-  const maxSize = Math.max(image.width, image.height);
-  const safeArea = 2 * ((maxSize / 2) * Math.sqrt(2));
-  const midSafeArea = safeArea / 2;
+  const maxSize = Math.max(image.width, image.height)
+  const safeArea = 2 * ((maxSize / 2) * Math.sqrt(2))
+  const midSafeArea = safeArea / 2
 
-  canvas.width = safeArea;
-  canvas.height = safeArea;
-
-  // @ts-ignore
-  ctx.translate(midSafeArea, midSafeArea);
-  // @ts-ignore
-  ctx.rotate(getRadianAngle(rotation));
-  // @ts-ignore
-  ctx.translate(-midSafeArea, -midSafeArea);
+  canvas.width = safeArea
+  canvas.height = safeArea
 
   // @ts-ignore
-  ctx.drawImage(image, midSafeArea - (image.width * 0.5), midSafeArea - (image.height * 0.5));
+  ctx.translate(midSafeArea, midSafeArea)
   // @ts-ignore
-  const data = ctx.getImageData(0, 0, safeArea, safeArea);
+  ctx.rotate(getRadianAngle(rotation))
+  // @ts-ignore
+  ctx.translate(-midSafeArea, -midSafeArea)
 
-  canvas.width = pixelCrop.width;
-  canvas.height = pixelCrop.height;
+  // @ts-ignore
+  ctx.drawImage(image, midSafeArea - (image.width * 0.5), midSafeArea - (image.height * 0.5))
+  // @ts-ignore
+  const data = ctx.getImageData(0, 0, safeArea, safeArea)
+
+  canvas.width = pixelCrop.width
+  canvas.height = pixelCrop.height
 
   // @ts-ignore
   ctx.putImageData(
@@ -59,20 +59,20 @@ export default async function getCroppedImage(
     Math.round(0 - midSafeArea + (image.width * 0.5) - pixelCrop.x),
     // @ts-ignore
     Math.round(0 - midSafeArea + (image.height * 0.5) - pixelCrop.y),
-  );
+  )
 
   return new Promise((resolve) => {
-    const oc = document.createElement('canvas');
-    const octx = oc.getContext('2d');
+    const oc = document.createElement('canvas')
+    const octx = oc.getContext('2d')
 
-    oc.width = resize.width;
-    oc.height = resize.height;
+    oc.width = resize.width
+    oc.height = resize.height
 
     // @ts-ignore
-    octx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, resize.width, resize.height);
+    octx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, resize.width, resize.height)
 
-    oc.toBlob((file) => {
-      resolve(URL.createObjectURL(file));
-    }, imgType);
-  });
+    oc.toBlob((file: any) => {
+      resolve(URL.createObjectURL(file))
+    }, imgType)
+  })
 }

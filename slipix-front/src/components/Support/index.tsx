@@ -52,7 +52,7 @@ const Support = () => {
         <div className="support__content__social support__paragraph">
           <h5>Me suivre c'est me soutenir <i className="fas fa-headset icons__headset" /></h5>
           <p>Vous pouvez me suivre sur mes réseaux sociaux pour ne rien rater de mon contenu !</p>
-          <p>J'utilise actuellement : <span className="facebook">Facebook</span>, <span className="blue">Twitter</span>,
+          <p>J'utilise actuellement : <span className="">Tiktok</span>, <span className="blue">Twitter</span>,
             <span className="instagram"> Instagram</span> alors n'hésitez pas à me rejoindre. J'organise des
             concours pour gagner des skins sur <span className="green">League of Legends</span> et d'autres cadeaux
           </p>
@@ -60,19 +60,6 @@ const Support = () => {
             <a href="https://www.tiktok.com/@slipixtv" className="logo logo__tiktok" target="_blanc"><img className="support__content__social__picture__card" src={tiktok} alt="" /></a>
             <a href="https://twitter.com/SlipixLoL" target="_blanc"><img className="support__content__social__picture__card logo" src={twitter} alt="" /></a>
             <a href="https://www.instagram.com/slipixlol/?hl=fr" target="_blanc"><img className="support__content__social__picture__card logo" src={instagram} alt="" /></a>
-          </div>
-        </div>
-        <div className="betweenParagraph" />
-        <div className="support__content__shop support__paragraph">
-          <h5>Me soutenir avec un achat <i className="fas fa-shopping-cart icons__cart" /></h5>
-          <p>Vous pouvez soutenir le site en achetant un des produits de la boutique <span className="red">#TEAMSLIP</span><a className="link" href="https://teespring.com/stores/boutique-teamslip" target="_blanc">Cliquez ici</a></p>
-          <p>Vous y retrouverez des produits en cohérence avec League of Legends et
-            autres délires de mes lives !
-          </p>
-          <div className="support__content__shop__pictures">
-            <a href="https://teespring.com/stores/boutique-teamslip" target="_blanc"><img className="support__content__shop__pictures__picture effectImage" src={teeShirt} alt="" /></a>
-            <a href="https://teespring.com/stores/boutique-teamslip" target="_blanc"><img className="support__content__shop__pictures__picture effectImage" src={cupYasuo} alt="" /></a>
-            <a href="https://teespring.com/stores/boutique-teamslip" target="_blanc"><img className="support__content__shop__pictures__picture effectImage" src={cupTroll} alt="" /></a>
           </div>
         </div>
       </div>

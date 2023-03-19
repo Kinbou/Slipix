@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 import {
-  animationOne, cardList, card, animationCardsPage
+  animationOne, cardList, card, animationCardsPage,
 } from '@/utils/animations/index'
 import { useTitle } from '@/hooks/useTitle'
 
@@ -26,7 +26,8 @@ const Guides = () => {
       variants={animationCardsPage}
     >
       <h1 className="globalTitle-page">Guides League of Legends</h1>
-      <p className="guides__intro">Vous trouverez ici mes guides & conseils pour vous aider</p>
+      <p className="guides__intro">Ce sont des guides que j'ai moi même créé à l'aide de <span className='gold'>joueurs pro</span> sur League of Legends. Il y a des astuces sur la <span className='gold'>pratique</span> et beaucoup de théories pour vous aider à progresser.</p>
+      <p className="guides__intro">Pas mal de <span className='gold'>thématiques</span> différentes pour devenir un bon joueur sur ce jeu très frustrant dans la défaite.</p>
       <div className="guides__together__cards">
         <motion.div
           className="guides__cards"

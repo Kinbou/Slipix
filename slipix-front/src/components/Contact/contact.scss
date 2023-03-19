@@ -7,6 +7,14 @@
     }
   }
 
+  &Tds {
+    position: absolute;
+    bottom: -5px;
+    width: 1.5em;
+    margin: .5rem;
+    border-radius: 5px;
+  }
+
   &__background {
     margin: 2rem 20rem 5rem 20rem;
     background-color:rgba(0, 0, 0, 0.7);
@@ -39,13 +47,6 @@
     }
     &__refuseResist {
       position: relative;
-      img {
-        width: 7%;
-        margin: .5rem;
-        position: absolute;
-        bottom: 70px;
-        border-radius: 5px;
-      }
     }
     h4 {
       margin: 2rem auto 0rem;
@@ -56,31 +57,10 @@
   }
 }
 
-@media (max-width: 1750px) {
-  .contact {
-    &__content__refuseResist  {
-      position: relative;
-      img {
-        width: 5.5%;
-        margin: .5rem;
-        position: absolute;
-        bottom: 80px;
-      }
-    }
-  }
-}
-
-
 @media (max-width: 1590px) {
   .contact {
     &__background {
       margin: 2rem 10rem 5rem 10rem;
-    }
-    &__content__refuseResist  {
-      img {
-        bottom: 90px;
-        width: 4.5%;
-      }
     }
   }
 }
@@ -97,27 +77,11 @@
   }
 }
 
-@media (max-width: 1000px) {
-  .contact.contact__content__refuseResist  {
-    img {
-      bottom: 100px;
-    }
-  }
-}
-
 @media (max-width: 834px) {
   .contact {
     &__background {
       margin: 1rem .5rem;
       padding-bottom: 1.5rem;
-    }
-  }
-}
-
-@media (max-width: 680px) {
-  .contact__content__refuseResist  {
-    img {
-      bottom: 165px;
     }
   }
 }
@@ -133,45 +97,6 @@
     }
     p {
       font-size: 0.8em;
-    }
-    &__content__refuseResist {
-      img {
-        width: 8%;
-        bottom: 125px;
-      }
-    }
-  }
-}
-
-@media (max-width: 534px) {
-  .contact__content__refuseResist > img {
-    bottom: 160px;
-  }
-}
-
-@media (max-width: 456px) {
-  .contact__content__refuseResist  {
-    img {
-      bottom: 163px;
-      width: 9%;
-    }
-  }
-}
-
-@media (max-width: 375px) {
-  .contact__content__refuseResist {
-    img {
-      bottom: 225px;
-      width: 10%;
-    }
-  }
-}
-
-@media (max-width: 330px) {
-  .contact__content__refuseResist  {
-    img {
-      bottom: 255px;
-      width: 12%;
     }
   }
 }

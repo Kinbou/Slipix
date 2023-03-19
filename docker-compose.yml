@@ -24,8 +24,9 @@ services:
   db:
     container_name: slipix_db
     image: mariadb:10.3.31
+    command: [mysqld, --general-log, --slow-query-log]
     ports:
-      - 3306:3306
+      - 127.0.0.1:3306:3306
     environment:
       MARIADB_ROOT_PASSWORD: '5CR37P455'
       MARIADB_DATABASE: eran7268_slipix
@@ -38,4 +39,4 @@ services:
     container_name: adminer
     image: adminer:4.8.1-standalone
     ports:
-      - 8777:8080
+      - 127.0.0.1:8777:8080

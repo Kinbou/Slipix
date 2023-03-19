@@ -6,9 +6,11 @@ import './presentation.scss'
 import { useTitle } from '@/hooks/useTitle'
 import { animationOne, transition } from '@/utils/animations/index'
 import SocialNetwork from '@components/SocialNetwork/index'
+
 // images
-import tds from '@/assets/images/teamDuSud.png'
+import tds from '@/assets/images/presentation/tds.png'
 import coachingSlipix from '@/assets/images/presentation/coachingSlipix.jpg'
+import logoSlipix from '@/assets/images/logoSlipix.png'
 
 const Presentation = () => {
   useTitle('Présentation')
@@ -24,27 +26,27 @@ const Presentation = () => {
     >
       <h1 className="globalTitle-page">Présentation</h1>
       <div className="presentation__background">
-        <h2>Salut c'est <span className="red">Slipix</span>  Bienvenue sur mon site Officiel !</h2>
-        <img className="presentation__coaching" src={coachingSlipix} alt="" />
-        <p>Joueur de League of Legends depuis 2014, Coach <span className="red">Mental</span>/<span className="red">Stratégique</span> depuis 2018.</p>
-        <p>YouTuber/Streamer sur <span className="purple">Twitch</span> par passion depuis 2016, j'ai toujours aimé
-          le contact avec ma communauté.
-        </p>
+        <h2>Salut c'est <span className="red">Slipix</span>  bienvenue sur LEAGUE OF TROLLPICKS !</h2>
+        <img className="presentation__coaching" src={logoSlipix} alt="" />
+        <p>Joueur de League of Legends depuis 2014, <span className='red'>créateur de trollpicks</span> depuis 2015.</p>
+        <p>Coach League of Legends de 2017 à 2019, animateur <span className='twitch'>twitch</span>/<span className='red'>youtube</span> depuis 2019.</p>
         <br />
-        <p>Je me suis trouvé une passion pour le Coaching quand j'ai appris 2-3
-          trucs à des amis sur League of Legends, et depuis je ne m'en lasse pas.
-        </p><br />
-        <p>Je suis actuellement à 2000 heures d'experience de coaching en <span className="orange">SoloQ</span>/<span className="orange">DuoQ</span> et 1000 heures en Team complète.
-        </p>
-        <p>Je ne prend plus de réservations coaching <span className="orange">SoloQ</span>/<span className="orange">DuoQ</span> depuis juin 2020 afin de me concentrer exclusivement sur le coaching de team</p><br />
-        <p className="presentation__content__refuseResist">Je suis actuellement Membre du Collectif indépendant<span className="red margin">TDS</span>, qui à pour objectif d'avoir une Team à notre nom en <span className="red margin">LFL</span>.<img src={tds} alt="" className="presentation__image__tds" /></p>
+        <p>J'ai toujours inventé des "picks/builds" originaux sur tous les jeux que j'ai joué et ça depuis mon enfance.</p><br />
+        <p>Ça a commencé sur <span className='orange'>Pokemon</span> version <span className='red'>Rouge Feu</span> ou mon équipe était composée seulement de Pokemon Gros.</p>
+        <p>Ça a suivit sur <span className='orange'>Diablo 2</span> avec des stuffs PVP originaux puis sur Dofus également et même des classes d'armes ridicules pendant mon époque <span className='orange'>Call of Duty</span> !</p>
         <br />
-        <p className="presentation__but">Le but de ce site est simple :<br />
-          - Vous aider avec des <span className="green">guides</span> sur la <span className="presentation__game">macro-game</span> et la <span className="presentation__game">micro-gestion</span><br />
-          - Vous aider avec des <span className="green">tutoriels</span> complets sur vos champions favoris<br />
-          - Theory crafter dans l'âme je vous proposerai du contenu fun sur des
-          <span className="blue"> trollpicks</span> que j'ai travaillé.<br />
-          - Vous partager mon <span className="green">savoir</span> sur League of Legends ainsi que mon contenu <span className="red">Youtube</span><br /><br />
+        <p>Vous l'aurez compris j'aime joué différement, à ma sauce. Pourquoi ? Tout simplement parce que ça m'amuse, c'est le but d'un jeu non ?</p>
+        <p>Jamais j'aurai imaginé un jour vivre des trollpicks sur League of legends et pourtant ...</p>
+        <br />
+        <p>Aujourd'hui je suis le CEO de la <span className='blue'>TDS E-SPORT</span><img src={tds} alt="" className="presentation__image__tds" /> (TEAM DU SUD) avec <span className='red'>Sixen</span> qui a pour but de rejoindre la LFL!</p><br />
+        <p>Je vis grâce à <span className='twitch'>Twitch</span>/<span className='red'>Youtube</span> principalement en réalisant à 80% du temps du contenu autour de mes créations. (20% c'est un peu de tryhard sur Gragas)</p>
+        <br />
+        {/* <p className="presentation__content__refuseResist">Je suis actuellement Membre du Collectif indépendant<span className="red margin">TDS</span>, qui à pour objectif d'avoir une Team à notre nom en <span className="red margin">LFL</span>.<img src={tds} alt="" className="presentation__image__tds" /></p> */}
+        <p className="presentation__but">Le but de ce site est simple :<br /><br />
+          - Vous partager mes <span className='green'>trollpicks</span> et mon contenu <span className='twitch'>Twitch</span>/<span className='red'>Youtube</span><br />
+          - Vous donner les conseils pour reproduire les trollpicks à la perfection<br />
+          - Vous montrer la vrai valeur du jeu League of Legends et son potentiel<br />
+          - Vous aider avec mes <span className='orange'>guides</span> realisés par moi même et des joueurs Pro<br /><br />
           Vous trouverez des liens direct avec mes vidéos <span className="red">Youtube</span> pour
           faciliter votre navigation et votre progression.
         </p><br />

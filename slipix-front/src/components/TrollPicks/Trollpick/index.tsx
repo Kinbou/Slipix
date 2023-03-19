@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Youtube from '@components/Youtube'
 import parse from 'html-react-parser'
@@ -7,6 +7,11 @@ import { apiBaseUrl } from '@middlewares/index'
 import { pipe } from '@/utils/selectors'
 import './trollpick.scss'
 import Loader from '@components/Loader'
+
+interface ImageProps {
+  id: number,
+  urlImage: string,
+}
 
 const Trollpick = ({
   stateNameTrollpick,
@@ -28,7 +33,6 @@ const Trollpick = ({
     }
   }, [])
 
-  const indexRune = [0, 1, 2, 3, 4, 5]
   // useTitle('Trollpicks');
 
   return (
@@ -41,128 +45,148 @@ const Trollpick = ({
         <div className="breadcrumb">
           <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
           <Link className="breadcrumb__link" to="/trollpicks"> trollpicks</Link> &gt;
-          {trollpick[0].name}
+          {trollpick.name}
         </div>
-        <h1 className="globalTitle-page">{trollpick[0].name}</h1>,
-        <p className="paragraph">Salut la <span className="red">#TEAMSLIP</span> c'est Coach Slipix et on va parler de <span className="green">{trollpick[0].name_intro}</span> {trollpick[0].name_intro2} dans League of Legends !</p>
-        <img className="logo" src={`${apiBaseUrl}/images/trollpicks/${trollpick[0].logo}`} alt="" />
+        <h1 className="globalTitle-page">{trollpick.name}</h1>,
+        <p className="paragraph">Salut la <span className="red">#TEAMSLIP</span> c'est Coach Slipix et on va parler de <span className="gold">{trollpick?.nameIntro}</span> {trollpick?.nameIntro2} dans League of Legends !</p>
+        <img className="logo" src={`${apiBaseUrl}/${trollpick?.logo}`} alt="" />
         <div className="backgroundParagraphe">
-          <p className="intro">{parse(trollpick[0].intro_intro)}</p>
-          {pipe(trollpick[0].intro_content).map((content: string) => (
-            <p className="paragraph" key={content}>{parse(content)}</p>
-          ))}
+          <p className="intro">{trollpick?.introIntro && parse(trollpick?.introIntro)}</p>
+          {trollpick?.introContent && parse(trollpick?.introContent)}
           <div className="trollpick__pictures">
-            {pipe(trollpick[0].intro_picture).map((picture: string) => (
-              <img className={`trollpick__pictures__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${picture}`} key={picture} alt="" />
+            {trollpick.trollpickIntroImages.map((img: ImageProps) => (
+              <img className={`trollpick__pictures__${trollpick?.nameIntro}`} src={`${apiBaseUrl}/${img?.urlImage}`} key={img.id} alt="" />
             ))}
           </div>
         </div>
+
+        {/* Page de runes */}
         <div className="backgroundParagraphe trollpick__runes">
-          <h2><i className="fas fa-scroll icons__rune" />La page de rune<i className="fas fa-scroll icons__rune" /></h2>
-          <p className="paragraph">{trollpick[0].rune_intro}</p>
-          <img className="trollpick__pictures__rune" src={`${apiBaseUrl}/images/trollpicks/${trollpick[0].rune_picture}`} alt="" />
+          <h2><i className="fas fa-scroll icons__rune" />La page des runes<i className="fas fa-scroll icons__rune" /></h2>
+          <p className="paragraph">Voici selon moi la meilleure page des runes pour <span className='gold'>{trollpick.name}</span>. Vous pouvez modifier à votre sauce si vous avez des préférences !</p>
+          <img className="trollpick__pictures__rune" src={`${apiBaseUrl}/${trollpick?.runePicture}`} alt="" />
           <div className="trollpick__runes__list">
             <ul>
-              {indexRune.map((id) => (
-                <div className="trollpick__runes__list__content trollpick__runes__list__border" key={id}>
-                  <img className="trollpick__pictures trollpick__pictures__runes" src={`${apiBaseUrl}/images/runes/${pipe(trollpick[0].rune_iconRune)[id]}`} alt="" />
-                  <li className="paragraph "><span className={`definition ${pipe(trollpick[0].rune_colorName)[id]}`}>{pipe(trollpick[0].rune_nameRune)[id]} :</span>{pipe(trollpick[0].rune_contentRune)[id]}</li>
+              {trollpick?.trollpickRunes.map((rune: { id: number, description: string, rune: { image: string, color: string, title: string } }) => (
+                <div className="trollpick__runes__list__content trollpick__runes__list__border" key={rune?.id}>
+                  <img className="trollpick__pictures trollpick__pictures__runes" src={`${apiBaseUrl}/${rune?.rune?.image}`} alt="" />
+                  <li className="paragraph"><span className={`definition ${rune?.rune?.color}`}>{rune?.rune?.title} :</span>{rune?.description}</li>
                 </div>
               ))}
-              <li className="paragraph">{trollpick[0].rune_contentEnd}</li>
+              <li className="paragraph">{trollpick?.runeContentEnd}</li>
             </ul>
           </div>
         </div>
+
+        {/* Les objets */}
         <div className="backgroundParagraphe">
-          <h2><i className="fas fa-gamepad icons__gameplay" />Le gameplay<i className="fas fa-gamepad icons__gameplay" /></h2>
-          {pipe(trollpick[0].gameplay_intro).map((content: string) => (
-            <p className="paragraph" key={content}>{parse(content)}</p>
-          ))}
-          <div className="trollpick__gameplay__content">
-            {pipe(trollpick[0].gameplay_content).map((content: string) => (
-              <p className="paragraph" key={content}>{parse(content)}</p>
-            ))}
-            {/* Pour Thresh, Ultcian */}
-            {trollpick[0].gameplay_method === 2 && (
-              <>
-                <img className="trollpick__pictures__capture" src={`${apiBaseUrl}/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />
-                <div>{parse(trollpick[0].gameplay_content2)}</div>
-                <img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[1]}`} alt="" />
-                {console.log(pipe(trollpick[0].gameplay_content3))}
-                {pipe(trollpick[0].gameplay_content3).map((content: string) => (
-                  <p className="paragraph" key={content}>{parse(content)}</p>
-                ))}
-              </>
-            )}
-            {/* Pour Xin Zhao / JINX */}
-            {(trollpick[0].gameplay_method === 1) && (
-              <>
-                <img className={`trollpick__pictures__trollContent trollpick__pictures__trollContent__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${trollpick[0].gameplay_contentImage}`} alt="" />
-                <div>{parse(trollpick[0].gameplay_content2)}</div>
-              </>
-            )}
-            {trollpick[0].gameplay_method === 3 && (
-            <p className="paragraph gold">{trollpick[0].gameplay_content2}</p>
-            )}
-            {trollpick[0].gameplay_method === 4 && (
-            <>
-              <div className="lucianMissiles__gameplay__content__important">{parse(trollpick[0].gameplay_content2)}</div>
-              <p className="paragraph gold">{trollpick[0].gameplay_content3}</p>
-            </>
-            )}
-            {trollpick[0].gameplay_method === 5 && (
-            <>
-              <img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[0]}`} alt="" />
-                {pipe(trollpick[0].gameplay_content2).map((content: any, index: number) => (
-                  <p className="paragraph" key={index}>{parse(content)}</p>
-                ))}
-              <img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${pipe(trollpick[0].gameplay_contentImage)[1]}`} alt="" />
-              {pipe(trollpick[0].gameplay_content3).map((content: any, index: number) => (
-                <p className="paragraph" key={index}>{parse(content)}</p>
-              ))}
-            </>
-            )}
-          </div>
-          {trollpick[0].gameplay_method === 4
-            ? (
-                pipe(trollpick[0].gameplay_introVideo).map((content: string, index: number) => (
-              <p className="paragraph" key={index}>{content}</p>
-                ))
-              )
-            : (
-            <p className="paragraph afterYoutube">{trollpick[0].gameplay_introVideo}</p>
-              )}
-          <div className="introTrollpickYoutube" />
-          {pipe(trollpick[0].gameplay_video).map((content: string) => (
-            <>
-              <Youtube idYoutube={content} />
-              <div className="betweenYoutube" />
-            </>
-          ))}
-        </div>
-        <div className="backgroundParagraphe">
-          <h2><i className="fas fa-skull-crossbones icons__crossbones" />Les Faiblesses<i className="fas fa-skull-crossbones icons__crossbones" /></h2>
-          {pipe(trollpick[0].weakness_content).map((content: string) => (
-            <p className="paragraph" key={content}>{parse(content)} </p>
-          ))}
-          {trollpick[0].weakness_method === 1
-            ? (
-            <>
-              <Youtube idYoutube={trollpick[0].weakness_picture} />
-              <div className="afterYoutube" />
-            </>
-              )
-            : (
-            <img className={`trollpick__pictures__trollWeakness trollpick__pictures__trollWeakness__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${trollpick[0].weakness_picture}`} alt="" />
-              )}
-          {pipe(trollpick[0].weakness_end).map((content: string) => (
-            <p className="paragraph" key={content}>{parse(content)}</p>
-          ))}
+          <h2><i className="fas fa-gavel icons__gameplay" />Les objets<i className="fas fa-gavel icons__gameplay" /></h2>
+          {trollpick?.objectsContent && parse(trollpick?.objectsContent)}
+          {trollpick?.objects.length && (
+            trollpick.objects.map((object: any) => (<img key={object.id} src={`${apiBaseUrl}/${object.image}`} className="trollpick__objects" alt="" />))
+          )}
         </div>
 
+        {/* Les sort d'invocateurs */}
         <div className="backgroundParagraphe">
-          <p className="paragraph">Amusez vous bien et j'espère que cette présentation de {trollpick[0].name} vous aura donné envie d'essayer le champion.</p>
-          <img className={`trollpick__pictures__end trollpick__pictures__end__${trollpick[0].name_intro}`} src={`${apiBaseUrl}/images/trollpicks/${trollpick[0].end_picture}`} alt="" />
+          <h2><i className="fas fa-dragon icons__gameplay" />Les sorts d'invocateurs<i className="fas fa-dragon icons__gameplay" /></h2>
+          <p className="invocateur__title"><span className="gold">{trollpick.nameIntro}</span> peut se jouer :</p>
+          <div className='spells' style={{ justifyContent: trollpick.trollpick_lanes.length > 2 ? 'space-around' : 'center' }}>
+              {trollpick.trollpick_lanes.map((lane: any) => (
+                <div key={lane.id} style={{ margin: '0 1.5rem' }}>
+                  <img src={`${apiBaseUrl}/${lane.lane.image}`} className="invocateur__img" alt="" />
+                    <div className="spells__spellContent">
+                    <p style={{ fontSize: '1.4em' }}>{lane.lane.name}</p>
+                      <div className='line'>
+                        <img className="imgSorts" src={`${apiBaseUrl}/${lane?.first_level?.first_spell?.image}`} alt="" /> + <img src={`${apiBaseUrl}/${lane?.first_level?.second_spell?.image}`} className="imgSorts" alt="" />
+                      </div>
+                      {lane.second_level_id && (
+                        <div className='line'>
+                        <img className="imgSorts" src={`${apiBaseUrl}/${lane?.second_level?.first_spell?.image}`} alt="" /> + <img src={`${apiBaseUrl}/${lane?.second_level?.second_spell?.image}`} className="imgSorts" alt="" />
+                      </div>
+                      )}
+                    </div>
+                </div>
+              ))}
+          </div>
+
+        </div>
+
+        {/* Les sorts du champion */}
+        <div className="backgroundParagraphe">
+          <h2><i className="fas fa-hat-wizard icons__gameplay" />Les sorts du champion<i className="fas fa-hat-wizard icons__gameplay" /></h2>
+          <p className="invocateur__title">Voici l'ordre des sorts à maxer en priorité quand vous jouez <span className='gold'>{trollpick.name}</span>:</p>
+          <div className='championSpells'>
+            {trollpick?.sortsOrder?.split('+')?.map((el: string, index: number) => (
+              <>
+              <div key={el} className='content'>
+                <p className='paragraph'>{el}</p>
+                <img className="imgSorts" src={`${apiBaseUrl}/images/trollpicks/${trollpick.name.replaceAll(' ', '')}/spells/spell${el}.png`} alt="" />
+              </div>
+              {console.log('index', index, trollpick?.sortsOrder?.split('+').length)}
+              {index + 1 !== trollpick?.sortsOrder?.split('+').length && <span className="more">+</span>}
+              </>
+            ))}
+          </div>
+          <p className='paragraph'>{trollpick.spellsEnd}</p>
+        </div>
+
+        {/* Les Gameplays */}
+        <div className="backgroundParagraphe">
+          <h2><i className="fas fa-gamepad icons__gameplay" />Le gameplay<i className="fas fa-gamepad icons__gameplay" /></h2>
+          {trollpick?.gameplayIntro && parse(trollpick?.gameplayIntro)}
+          <div className="trollpick__gameplay__content">
+            {/* Contenue */}
+            {trollpick?.gameplayContents?.[0]?.description && parse(trollpick?.gameplayContents?.[0]?.description)}
+
+            {/* Image */}
+            {trollpick.gameplayImages[0] && (<img className={`trollpick__pictures__trollContent trollpick__pictures__trollContent__${trollpick?.nameIntro}`} src={`${apiBaseUrl}/${trollpick?.gameplayImages?.[0]?.urlImage}`} alt="" />)}
+
+            {/* Contenu */}
+            {trollpick?.gameplayContents[1] && <div>{parse(trollpick?.gameplayContents?.[1]?.description)}</div>}
+
+            {/* Image */}
+            {trollpick?.gameplayImages[1] && (<img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick?.nameIntro}`} src={`${apiBaseUrl}/${trollpick?.gameplayImages?.[1]?.urlImage}`} alt="" />)}
+
+            {/* Contenu */}
+            {trollpick?.gameplayContents[2] && <div>{parse(trollpick?.gameplayContents?.[2]?.description)}</div>}
+          </div>
+        </div>
+
+        {/* Weakness */}
+        <div className="backgroundParagraphe">
+          <h2><i className="fas fa-skull-crossbones icons__crossbones" />Les Faiblesses et Counters<i className="fas fa-skull-crossbones icons__crossbones" /></h2>
+          <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+            {trollpick?.trollpick_counters?.map((counter: any) => (
+              <div className='weakness__content' key={counter.id}>
+                <img className="imgChampions" src={`${apiBaseUrl}/${counter.champion.image}`} alt="" />
+                <p className='paragraph' style={{ width: '100%' }}>{parse(counter.description)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Les vidéos */}
+        <div className="backgroundParagraphe">
+          <h2><i className="fab fa-youtube icons__gameplay" />Les Vidéos<i className="fab fa-youtube icons__gameplay" /></h2>
+          <div>
+          <p className='paragraph'>Voici toutes mes vidéos sur <span className='gold'>{trollpick.name}</span>. Régalez vous et n'oubliez pas le petit commentaire pour soutenir c'est gratuit.</p>
+          <div className="introTrollpickYoutube" />
+          <div>
+            {trollpick?.gameplayVideosYoutubes.map((video: any) => (
+              <>
+                <Youtube idYoutube={video?.urlVideo} />
+                {/* <div className="betweenYoutube" /> */}
+              </>
+            ))}
+          </div>
+          </div>
+        </div>
+
+        {/* End */}
+        <div className="backgroundParagraphe">
+          <p className="paragraph">Amusez vous bien et j'espère que cette présentation de {trollpick.name} vous aura donné envie d'essayer le champion.</p>
+          <img className={`trollpick__pictures__end trollpick__pictures__end__${trollpick?.nameIntro}`} src={`${apiBaseUrl}/${trollpick?.endPicture}`} alt="" />
           <p className="end">N'hésitez pas à aller consulter les autres trollpicks de Coach slipix</p>
         </div>
       </>

@@ -18,7 +18,7 @@ const Login = ({
   const [checkedRemember, setCheckedRemember] = useState(false)
   const [checkedCaptcha, setCheckedCaptcha] = useState('')
   const [errorCaptcha, setErrorCaptcha] = useState('')
-  const [errorFront, setErrorFront] = useState({ email: '', password: ''})
+  const [errorFront, setErrorFront] = useState({ email: '', password: '' })
   const captchaRef = useRef()
 
   const onExpire = () => {
@@ -116,7 +116,7 @@ const Login = ({
               sitekey="6Le1jp0aAAAAAOUpDSbuRIioKNiPRrqLdX_erLPU"
               // @ts-ignore
               className="captcha__content"
-              onChange={(response: any): void => (console.log({ response }), setCheckedCaptcha(response))}
+              onChange={(response: any): void => setCheckedCaptcha(response)}
               // @ts-ignore
               ref={captchaRef}
               theme="dark"
@@ -128,10 +128,10 @@ const Login = ({
           className="global-button"
           // @ts-ignore
           disabled={
-            errorFront.email
-              || errorFront.password
-              || errorCaptcha
-              || !checkedCaptcha
+            errorFront.email ||
+              errorFront.password ||
+              errorCaptcha ||
+              !checkedCaptcha
           }
         >Se connecter
         </button>
