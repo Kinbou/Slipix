@@ -43,8 +43,8 @@ const Trollpick = ({
       {trollpickIsLoad && (
       <>
         <div className="breadcrumb">
-          <Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
-          <Link className="breadcrumb__link" to="/trollpicks"> trollpicks</Link> &gt;
+          <Link className="breadcrumb__link" to="/">Accueil</Link><span style={{ margin: '0 .3rem' }}>&gt;</span>
+          <Link className="breadcrumb__link" to="/trollpicks">trollpicks</Link><span style={{ margin: '0 .3rem' }}>&gt;</span>
           {trollpick.name}
         </div>
         <h1 className="globalTitle-page">{trollpick.name}</h1>,
