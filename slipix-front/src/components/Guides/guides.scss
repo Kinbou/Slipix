@@ -1,7 +1,7 @@
 .guides {
 
   h3 {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #ffaa55;
     margin: 1rem;
   }
@@ -23,7 +23,7 @@
       display: inline-block;
       text-align: center;
       color: white;
-      background-color: rgba(28,36,45,0.8);;
+      background-color: rgba(28,36,45,0.8);
       border-radius: 10px;
       padding: 1rem;
       border: 2px solid transparent;
@@ -31,7 +31,6 @@
       -webkit-box-shadow: 0 28px 16px -26px black;
       -moz-box-shadow: 0 28px 16px -26px black;
       box-shadow: 0 28px 16px -26px black;
-      transition:all .6s ease-in-out;
       -webkit-transition:all .6s ease-in-out;
       -moz-transition:all .6s ease-in-out;
       -ms-transition:all .6s ease-in-out;
@@ -39,18 +38,18 @@
       &:hover {
         transform:scale(1.03);
         transition: .1s;
-       -webkit-transform:scale(1.03);
-       -moz-transform:scale(1.03);
-       -ms-transform:scale(1.03);
-       -o-transform:scale(1.03);
-       -webkit-box-shadow: 0 58px 40px -56px black;
-       -moz-box-shadow: 0 58px 36px -56px black;
-       box-shadow: 0 58px 36px -56px black;
-       -webkit-transition: .3s ease-in-out;
-       -moz-transition: .3s ease-in-out;
-       -ms-transition: .3s ease-in-out;
-       -o-transition: .3s ease-in-out;
-       border-color: #021320;
+        -webkit-transform:scale(1.03);
+        -moz-transform:scale(1.03);
+        -ms-transform:scale(1.03);
+        -o-transform:scale(1.03);
+        -webkit-box-shadow: 0 58px 40px -56px black;
+        -moz-box-shadow: 0 58px 36px -56px black;
+        box-shadow: 0 58px 36px -56px black;
+        -webkit-transition: .3s ease-in-out;
+        -moz-transition: .3s ease-in-out;
+        -ms-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
+        border-color: #021320;
       }
     }
   }

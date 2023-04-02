@@ -1,25 +1,21 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 import classNames from 'classnames';
 import './loader.scss';
 
 const Loader = ({ withMargin }: any) => {
-  const spinnerClass = classNames('spinner', { 'spinner--margin': withMargin });
+	const spinnerClass = classNames('spinner', { 'spinner--margin': withMargin });
 
-  return (
-    <div className={spinnerClass}>
-      <div className="bounce1"> </div>
-      <div className="bounce2"> </div>
-      <div className="bounce3"> </div>
-    </div>
-  );
-};
-
-Loader.propTypes = {
-  withMargin: PropTypes.bool,
+	return (
+		<div className={spinnerClass}>
+			<div className="bounce1"> </div>
+			<div className="bounce2"> </div>
+			<div className="bounce3"> </div>
+		</div>
+	);
 };
 
 Loader.defaultProps = {
-  withMargin: true,
+	withMargin: true,
 };
 
 export default Loader;
