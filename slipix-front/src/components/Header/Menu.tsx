@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import cx from 'classnames'
 
 import Modal from '@containers/Modal/index'
-import Authentification from '@containers/Header/Authentification'
+// import Authentification from '@containers/Header/Authentification'
 
 import classes from './header.module.scss'
 
@@ -28,9 +28,6 @@ const Menu = ({
   showModal,
   requestUserAuthentification,
 }: any): React.ReactElement => {
-  useEffect(() => {
-    requestUserAuthentification()
-  }, [])
 
   const handleClassActive = () => {
     // @ts-ignore
@@ -42,60 +39,54 @@ const Menu = ({
     <Ul open={open}>
       <div className={classes.menuBackground} onClick={() => setOpen(!open)}> </div>
       <div className={cx(classes.header__nav__global, { [classes['header__nav__global--open']]: open })}>
-        {['login', 'registration', 'forgotPassword'].includes(showModal) && (
+        {/* {['login', 'registration', 'forgotPassword'].includes(showModal) && (
           <Modal content={<Authentification />} />
-        )}
+        )} */}
         <div className={cx(classes.header__nav__menu, classes.header__nav__menu__one)}>
           <NavLink
             to="/"
-            className={classes.menu__link}
-            activeClassName={classes['menu__link--active']}
-            exact
+            className={({isActive}) => isActive ? cx(classes.menu__link, classes['menu__link--active']) : classes.menu__link}
+            exact={"true"}
             onClick={() => setOpen(!open)}
           >
             Accueil
           </NavLink>
           <NavLink
             to="/trollpicks"
-            className={classes.menu__link}
-            activeClassName={classes['menu__link--active']}
-            exact
+            className={({isActive}) => isActive ? cx(classes.menu__link, classes['menu__link--active']) : classes.menu__link}
+            exact={"true"}
             onClick={() => setOpen(!open)}
           >
             Trollpicks
           </NavLink>
           <NavLink
             to="/guides"
-            className={classes.menu__link}
-            activeClassName={classes['menu__link--active']}
-            exact
+            className={({isActive}) => isActive ? cx(classes.menu__link, classes['menu__link--active']) : classes.menu__link}
+            exact={"true"}
             onClick={() => setOpen(!open)}
           >
             Guides
           </NavLink>
           <NavLink
             to="/presentation"
-            className={classes.menu__link}
-            activeClassName={classes['menu__link--active']}
-            exact
+            className={({isActive}) => isActive ? cx(classes.menu__link, classes['menu__link--active']) : classes.menu__link}
+            exact={"true"}
             onClick={() => setOpen(!open)}
           >
             Présentation
           </NavLink>
           <NavLink
             to="/me-soutenir"
-            className={classes.menu__link}
-            activeClassName={classes['menu__link--active']}
-            exact
+            className={({isActive}) => isActive ? cx(classes.menu__link, classes['menu__link--active']) : classes.menu__link}
+            exact={"true"}
             onClick={() => setOpen(!open)}
           >
             me soutenir
           </NavLink>
           <NavLink
             to="/me-contacter"
-            className={classes.menu__link}
-            activeClassName={classes['menu__link--active']}
-            exact
+            className={({isActive}) => isActive ? cx(classes.menu__link, classes['menu__link--active']) : classes.menu__link}
+            exact={"true"}
             onClick={() => setOpen(!open)}
             // @ts-ignore
             onChange={handleClassActive()}

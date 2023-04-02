@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import PropTypes from 'prop-types'
 
 import { useTitle } from '@/hooks/useTitle'
 import { pipe } from '@/utils/selectors'
@@ -28,7 +27,6 @@ const Thanks = ({
         <>
           <h1 className="globalTitle-page">Remerciements</h1>
           <div className="thanks__backgroundParagraphe">
-
             <p className="paragraph">Yo le Slip, on a décidé de te faire une petite surprise !
             </p>
             <p className="paragraph"> voit par toi-même à quel point tu as changé l'évolution de beaucoup de joueur sur la faille de l'invocateur ;)

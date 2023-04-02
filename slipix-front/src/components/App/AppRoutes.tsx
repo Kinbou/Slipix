@@ -109,7 +109,7 @@ const router = createBrowserRouter([
       <BasePage>
         <Support />
       </BasePage>
-    )
+    ),
   },
   {
     path: "/me-contacter",

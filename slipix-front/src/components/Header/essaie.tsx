@@ -44,7 +44,7 @@ const Header = ({
                   to="/"
                   className="header__nav__menu__item"
                   activeClassName="header__nav__menu__item--active"
-                  exact
+                  exact={"true"}
                 >
                   Accueil
                 </NavLink>
@@ -52,7 +52,7 @@ const Header = ({
                   to="/nouveaute"
                   className="header__nav__menu__item"
                   activeClassName="header__nav__menu__item--active"
-                  exact
+                  exact={"true"}
                 >
                   Nouveautés
                 </NavLink>
@@ -60,23 +60,15 @@ const Header = ({
                   to="/guides"
                   className="header__nav__menu__item"
                   activeClassName="header__nav__menu__item--active"
-                  exact
+                  exact={"true"}
                 >
                   Guides
                 </NavLink>
-                {/* <NavLink
-                  to="/tutoriels-champions"
-                  className="header__nav__menu__item"
-                  activeClassName="header__nav__menu__item--active"
-                  exact
-                >
-                  Tutoriels champions
-                </NavLink> */}
                 <NavLink
                   to="/trollpicks"
                   className="header__nav__menu__item"
                   activeClassName="header__nav__menu__item--active"
-                  exact
+                  exact={"true"}
                 >
                   Trollpicks
                 </NavLink>
@@ -84,7 +76,7 @@ const Header = ({
                   to="/presentation"
                   className="header__nav__menu__item"
                   activeClassName="header__nav__menu__item--active"
-                  exact
+                  exact={"true"}
                 >
                   Présentation
                 </NavLink>
@@ -92,7 +84,7 @@ const Header = ({
                   to="/me-soutenir"
                   className="header__nav__menu__item"
                   activeClassName="header__nav__menu__item--active"
-                  exact
+                  exact={"true"}
                 >
                   me soutenir
                 </NavLink>
@@ -107,7 +99,7 @@ const Header = ({
                   to="/me-contacter"
                   className="header__nav__menu__item"
                   activeClassName="header__nav__menu__item--active"
-                  exact
+                  exact={"true"}
                 >
                   Me contacter
                 </NavLink>
@@ -124,7 +116,7 @@ const Header = ({
               to="/"
               className="header__nav__menu__item"
               activeClassName="header__nav__menu__item--active"
-              exact
+              exact={"true"}
             >
               Accueil
             </NavLink>
@@ -132,7 +124,7 @@ const Header = ({
               to="/nouveaute"
               className="header__nav__menu__item"
               activeClassName="header__nav__menu__item--active"
-              exact
+              exact={"true"}
             >
               Nouveautés
             </NavLink>
@@ -140,7 +132,7 @@ const Header = ({
               to="/guides"
               className="header__nav__menu__item"
               activeClassName="header__nav__menu__item--active"
-              exact
+              exact={"true"}
             >
               Guides
             </NavLink>
@@ -148,7 +140,7 @@ const Header = ({
               to="/tutoriels-champions"
               className="header__nav__menu__item"
               activeClassName="header__nav__menu__item--active"
-              exact
+              exact={"true"}
             >
               Tutoriels champions
             </NavLink> */}
@@ -156,7 +148,7 @@ const Header = ({
               to="/trollpicks"
               className="header__nav__menu__item"
               activeClassName="header__nav__menu__item--active"
-              exact
+              exact={"true"}
             >
               Trollpicks
             </NavLink>
@@ -166,7 +158,7 @@ const Header = ({
               to="/presentation"
               className="header__nav__menu__item"
               activeClassName="header__nav__menu__item--active"
-              exact
+              exact={"true"}
             >
               Présentation
             </NavLink>
@@ -174,7 +166,7 @@ const Header = ({
               to="/me-soutenir"
               className="header__nav__menu__item"
               activeClassName="header__nav__menu__item--active"
-              exact
+              exact={"true"}
             >
               me soutenir
             </NavLink>
@@ -189,7 +181,7 @@ const Header = ({
               to="/me-contacter"
               className="header__nav__menu__item"
               activeClassName="header__nav__menu__item--active"
-              exact
+              exact={"true"}
             >
               Me contacter
             </NavLink>

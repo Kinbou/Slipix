@@ -54,7 +54,7 @@ const Trollpick = ({
           <p className="intro">{trollpick?.introIntro && parse(trollpick?.introIntro)}</p>
           {trollpick?.introContent && parse(trollpick?.introContent)}
           <div className="trollpick__pictures">
-            {trollpick.trollpickIntroImages.map((img: ImageProps) => (
+            {trollpick?.trollpickIntroImages?.map((img: ImageProps) => (
               <img className={`trollpick__pictures__${trollpick?.nameIntro}`} src={`${apiBaseUrl}/${img?.urlImage}`} key={img.id} alt="" />
             ))}
           </div>
@@ -67,7 +67,7 @@ const Trollpick = ({
           <img className="trollpick__pictures__rune" src={`${apiBaseUrl}/${trollpick?.runePicture}`} alt="" />
           <div className="trollpick__runes__list">
             <ul>
-              {trollpick?.trollpickRunes.map((rune: { id: number, description: string, rune: { image: string, color: string, title: string } }) => (
+              {trollpick?.trollpickRunes?.map((rune: { id: number, description: string, rune: { image: string, color: string, title: string } }) => (
                 <div className="trollpick__runes__list__content trollpick__runes__list__border" key={rune?.id}>
                   <img className="trollpick__pictures trollpick__pictures__runes" src={`${apiBaseUrl}/${rune?.rune?.image}`} alt="" />
                   <li className="paragraph"><span className={`definition ${rune?.rune?.color}`}>{rune?.rune?.title} :</span>{rune?.description}</li>
@@ -82,8 +82,8 @@ const Trollpick = ({
         <div className="backgroundParagraphe">
           <h2><i className="fas fa-gavel icons__gameplay" />Les objets<i className="fas fa-gavel icons__gameplay" /></h2>
           {trollpick?.objectsContent && parse(trollpick?.objectsContent)}
-          {trollpick?.objects.length && (
-            trollpick.objects.map((object: any) => (<img key={object.id} src={`${apiBaseUrl}/${object.image}`} className="trollpick__objects" alt="" />))
+          {trollpick?.objects?.length && (
+            trollpick?.objects.map((object: any) => (<img key={object.id} src={`${apiBaseUrl}/${object.image}`} className="trollpick__objects" alt="" />))
           )}
         </div>
 
@@ -91,8 +91,8 @@ const Trollpick = ({
         <div className="backgroundParagraphe">
           <h2><i className="fas fa-dragon icons__gameplay" />Les sorts d'invocateurs<i className="fas fa-dragon icons__gameplay" /></h2>
           <p className="invocateur__title"><span className="gold">{trollpick.nameIntro}</span> peut se jouer :</p>
-          <div className='spells' style={{ justifyContent: trollpick.trollpick_lanes.length > 2 ? 'space-around' : 'center' }}>
-              {trollpick.trollpick_lanes.map((lane: any) => (
+          <div className='spells' style={{ justifyContent: trollpick?.trollpick_lanes?.length > 2 ? 'space-around' : 'center' }}>
+              {trollpick?.trollpick_lanes?.map((lane: any) => (
                 <div key={lane.id} style={{ margin: '0 1.5rem' }}>
                   <img src={`${apiBaseUrl}/${lane.lane.image}`} className="invocateur__img" alt="" />
                     <div className="spells__spellContent">
@@ -123,7 +123,6 @@ const Trollpick = ({
                 <p className='paragraph'>{el}</p>
                 <img className="imgSorts" src={`${apiBaseUrl}/images/trollpicks/${trollpick.name.replaceAll(' ', '')}/spells/spell${el}.png`} alt="" />
               </div>
-              {console.log('index', index, trollpick?.sortsOrder?.split('+').length)}
               {index + 1 !== trollpick?.sortsOrder?.split('+').length && <span className="more">+</span>}
               </>
             ))}
@@ -140,16 +139,16 @@ const Trollpick = ({
             {trollpick?.gameplayContents?.[0]?.description && parse(trollpick?.gameplayContents?.[0]?.description)}
 
             {/* Image */}
-            {trollpick.gameplayImages[0] && (<img className={`trollpick__pictures__trollContent trollpick__pictures__trollContent__${trollpick?.nameIntro}`} src={`${apiBaseUrl}/${trollpick?.gameplayImages?.[0]?.urlImage}`} alt="" />)}
+            {trollpick?.gameplayImages?.[0] && (<img className={`trollpick__pictures__trollContent trollpick__pictures__trollContent__${trollpick?.nameIntro}`} src={`${apiBaseUrl}/${trollpick?.gameplayImages?.[0]?.urlImage}`} alt="" />)}
 
             {/* Contenu */}
-            {trollpick?.gameplayContents[1] && <div>{parse(trollpick?.gameplayContents?.[1]?.description)}</div>}
+            {trollpick?.gameplayContents?.[1] && <div>{parse(trollpick?.gameplayContents?.[1]?.description)}</div>}
 
             {/* Image */}
-            {trollpick?.gameplayImages[1] && (<img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick?.nameIntro}`} src={`${apiBaseUrl}/${trollpick?.gameplayImages?.[1]?.urlImage}`} alt="" />)}
+            {trollpick?.gameplayImages?.[1] && (<img className={`trollpick__pictures__capture trollpick__pictures__capture__${trollpick?.nameIntro}`} src={`${apiBaseUrl}/${trollpick?.gameplayImages?.[1]?.urlImage}`} alt="" />)}
 
             {/* Contenu */}
-            {trollpick?.gameplayContents[2] && <div>{parse(trollpick?.gameplayContents?.[2]?.description)}</div>}
+            {trollpick?.gameplayContents?.[2] && <div>{parse(trollpick?.gameplayContents?.[2]?.description)}</div>}
           </div>
         </div>
 
@@ -173,7 +172,7 @@ const Trollpick = ({
           <p className='paragraph'>Voici toutes mes vidéos sur <span className='gold'>{trollpick.name}</span>. Régalez vous et n'oubliez pas le petit commentaire pour soutenir c'est gratuit.</p>
           <div className="introTrollpickYoutube" />
           <div>
-            {trollpick?.gameplayVideosYoutubes.map((video: any) => (
+            {trollpick?.gameplayVideosYoutubes?.map((video: any) => (
               <>
                 <Youtube idYoutube={video?.urlVideo} />
                 {/* <div className="betweenYoutube" /> */}
