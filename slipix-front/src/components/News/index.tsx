@@ -42,7 +42,6 @@ const News = ({ fetchAllNews }: any) => {
   useTitle('Nouveautés')
 
   useEffect(() => {
-    console.log('useEffect')
     fetchAllNews()
   }, [])
   return (
@@ -59,7 +58,7 @@ const News = ({ fetchAllNews }: any) => {
         <div className="news__cards">
           <div className="news__cards__ligne">
             {listVideo.map((data) => (
-              <a href={data.link} target="_blanc">
+              <a href={data.link} target="_blanc" key={data.title}>
                 <div className="news__cards__card news__cards__first">
                   <h2 className="news__cards__card__title news__cards__first__title  red">{data.title}</h2>
                   <img src={data.picture} alt="" />

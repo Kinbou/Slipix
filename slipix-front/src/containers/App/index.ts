@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import App from '@components/App/index'
+import App from '@components/App/App'
 import { setAppLoading } from '@/actions/global'
 
 const mapStateToProps = (state: any) => ({
