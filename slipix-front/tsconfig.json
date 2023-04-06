@@ -23,7 +23,7 @@
       "@containers/*": ["src/containers/*"],
       "@middlewares/*": ["src/middlewares/*"],
       "@pages/*": ["src/pages/*"],
-      "@store/*": ["src/store/*"],
+      "@store/*": ["src/store2/*"],
       "@/*": ["src/*"],
     },
   },

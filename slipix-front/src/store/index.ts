@@ -1,31 +1,20 @@
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import { configureStore } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { trollpickReducer } from './trollpick/trollpick.slice';
 
-import reducer from '@/reducers/index'
-import championsMiddleware from '@/middlewares/championsMiddleware'
-import competencesMiddleware from '@/middlewares/competencesMiddleware'
-import lanesMiddleware from '@/middlewares/lanesMiddleware'
-import thanksMiddleware from '@/middlewares/thanksMiddleware'
-import trollpicksMiddleware from '@/middlewares/trollpicksMiddleware'
-import usersMiddleware from '@/middlewares/userMiddleware'
-import newsMiddleware from '@middlewares/newsMiddleware'
+export const store = configureStore({
+	middleware: (getDefaultMiddleware) =>
+		getDefaultMiddleware({
+			serializableCheck: false,
+		}),
+	reducer: {
+		trollpick: trollpickReducer,
+	},
+	// devTools: process.env.NODE_ENV !== 'production',
+});
 
-// on combine plusieurs enhancers : devTools et chaque middleware
-const enhancers = composeWithDevTools(
-  applyMiddleware(
-    championsMiddleware,
-    competencesMiddleware,
-    lanesMiddleware,
-    thanksMiddleware,
-    trollpicksMiddleware,
-    usersMiddleware,
-    newsMiddleware,
-  ),
-)
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
 
-const store = createStore(
-  reducer,
-  enhancers,
-)
-
-export default store
+export type RootState = ReturnType<typeof store.getState>;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

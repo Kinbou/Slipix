@@ -6,7 +6,7 @@ import Home from '@components/Home';
 import Presentation from '@components/Presentation/index';
 import Support from '@components/Support/index';
 import Contact from '@components/Contact/index';
-import Thanks from '@containers/Thanks/index';
+import Thanks from '@components/Thanks/index';
 import MentionLegales from '@components/Legal-mentions/index';
 
 // Guides
@@ -18,8 +18,8 @@ import LowElo from '@components/Guides/LowElo/index';
 import WinLane from '@components/Guides/WinLane/index';
 
 // Trollpicks
-import TrollPicks from '@containers/TrollPicks/index';
-import Trollpick from '@containers/TrollPicks/Trollpick/index';
+import TrollPicks from '@components/TrollPicks/index';
+import Trollpick from '@components/TrollPicks/Trollpick/index';
 
 const router = createBrowserRouter([
 	{
