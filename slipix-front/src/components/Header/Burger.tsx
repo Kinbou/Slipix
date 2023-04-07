@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import styled from 'styled-components'
+import { useState } from 'react';
+import styled from 'styled-components';
 
-import Menu from '@containers/Header/Menu'
+import Menu from '@components/Header/Menu';
 
 const StyledBurger = styled.div`
   width: 2.5rem;
@@ -37,21 +37,21 @@ const StyledBurger = styled.div`
       transform: ${({ open }: any) => (open ? 'rotate(-37deg)' : 'rotate(0)')};
     }
   }
-`
+`;
 
 const Burger = () => {
-  const [open, setOpen] = useState(false)
-  return (
-    <>
-      {/* @ts-ignore */}
-      <StyledBurger open={open} onClick={() => setOpen(!open)}>
-        <div />
-        <div />
-        <div />
-      </StyledBurger>
-      <Menu open={open} setOpen={setOpen} />
-    </>
-  )
-}
+	const [open, setOpen] = useState(false);
+	return (
+		<>
+			{/* @ts-ignore */}
+			<StyledBurger open={open} onClick={() => setOpen(!open)}>
+				<div />
+				<div />
+				<div />
+			</StyledBurger>
+			<Menu open={open} setOpen={setOpen} />
+		</>
+	);
+};
 
-export default Burger
+export default Burger;

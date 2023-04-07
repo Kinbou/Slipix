@@ -7,7 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 import dataImages from '@/utils/dataImages.json';
 import { useResolution } from '@/utils/selectors';
 
-import Alert from '@containers/Alert/index';
+import Alert from '@components/Alert/index';
 
 import ScrollToTopButton from '@components/ScrollToTopButton';
 import { AppRoutes } from '@/components/App/AppRoutes';

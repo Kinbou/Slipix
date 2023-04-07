@@ -1,27 +1,27 @@
-import React from 'react'
-import classNames from 'classnames'
-import styled from 'styled-components'
+import React from 'react';
+import classNames from 'classnames';
+import styled from 'styled-components';
 
-const apiBaseUrl: string = typeof import.meta.env.VITE_API_BASE_URL === 'string' ? import.meta.env.VITE_API_BASE_URL : ''
+const apiBaseUrl: string = typeof import.meta.env.VITE_API_BASE_URL === 'string' ? import.meta.env.VITE_API_BASE_URL : '';
 
 enum LIST_BACKGROUND {
-  "/" = "home",
-  "/guides" = "guides",
-  "/guides/mental&rage" = "mentalRage",
-  "/guides/role-champion" = "roleChampion",
-  "/guides/progresser-sur-leagueOfLegends" = "progressLol",
-  "/guides/sortir-du-bas-elo" = "lowElo",
-  "/guides/gagner-sa-phase-de-lane" = "winLane",
-  "/presentation" = "presentation",
-  "/me-soutenir" = "support",
-  "/me-contacter" = "contact",
-  "/mentions-legales" = "legalNotice",
-  "/remerciement" = "thanks",
+  '/' = 'home',
+  '/guides' = 'guides',
+  '/guides/mental&rage' = 'mentalRage',
+  '/guides/role-champion' = 'roleChampion',
+  '/guides/progresser-sur-leagueOfLegends' = 'progressLol',
+  '/guides/sortir-du-bas-elo' = 'lowElo',
+  '/guides/gagner-sa-phase-de-lane' = 'winLane',
+  '/presentation' = 'presentation',
+  '/me-soutenir' = 'support',
+  '/me-contacter' = 'contact',
+  '/mentions-legales' = 'legalNotice',
+  '/remerciement' = 'thanks',
 }
 
 const BackgroundImage = ({ pathname }: { pathname: string}) => {
 
-  const BackgroundImageTest = styled.div`
+	const BackgroundImageTest = styled.div`
 /* object-fit: fill; */
   z-index: -1;
   width: 100%;
@@ -48,20 +48,20 @@ const BackgroundImage = ({ pathname }: { pathname: string}) => {
   @media (max-width: 600px) {
     background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-phone.jpg)
   }
-`
+`;
 
-  const choiceBackground = () => {
-    {/* @ts-ignore */}
-    const result = pathname?.includes('/trollpicks') ? 'trollPicks' : LIST_BACKGROUND[pathname]
-    return result;
-  }
+	const choiceBackground = () => {
+		{/* @ts-ignore */}
+		const result = pathname?.includes('/trollpicks') ? 'trollPicks' : LIST_BACKGROUND[pathname];
+		return result;
+	};
 
-  const appClass = classNames(choiceBackground())
+	const appClass = classNames(choiceBackground());
 
-  return (
-    /* @ts-ignore */
-    <BackgroundImageTest appClass={appClass} />
-  )
-}
+	return (
+	/* @ts-ignore */
+		<BackgroundImageTest appClass={appClass} />
+	);
+};
 
-export default BackgroundImage
+export default BackgroundImage;
