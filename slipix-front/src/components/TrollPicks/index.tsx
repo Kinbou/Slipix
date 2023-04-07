@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import slugify from 'react-slugify';
 import { motion } from 'framer-motion';
 
-import { apiBaseUrl } from '@middlewares/index';
 import Loader from '@components/Loader/index';
 import {
 	animationOne,
@@ -16,14 +15,18 @@ import { useAppDispatch, useAppSelector } from '@/store';
 import { trollpick_actions } from '@/store/trollpick/trollpick.slice';
 import { selectTrollpick } from '@/store/trollpick/trollpick.slice';
 
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+
 const TrollPicks = () => {
 	useTitle('TrollPicks');
 	const dispatch = useAppDispatch();
 	const { trollpickActif, trollpickSoon } = useAppSelector(selectTrollpick);
 
 	useEffect(() => {
-		dispatch(trollpick_actions.getTrollpicksActif());
-		dispatch(trollpick_actions.getTrollpicksSoon());
+		if (!trollpickActif.length) {
+			dispatch(trollpick_actions.getTrollpicksActif());
+			dispatch(trollpick_actions.getTrollpicksSoon());
+		}
 		return () => {
 			// setTrollpickActifIsLoad(false);
 			// setTrollpickSoonIsLoad(false);

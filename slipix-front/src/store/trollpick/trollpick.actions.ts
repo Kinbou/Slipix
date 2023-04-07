@@ -1,11 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { getTrollpickActif, getTrollpickSoon } from '@/api/trollpick/trollpick-api';
-
-// const getSettings = createAsyncThunk<AppSettings>('app/get-settings', async () => {
-// 	const response = await new ApplicativeApi().getConfig();
-// 	return response;
-// });
+import { getTrollpickActif, getTrollpickSoon, getTrollpick } from '@/api/trollpick/trollpick-api';
 
 const getTrollpicksActif = createAsyncThunk<any>('trollpick/get-active', async () => {
 	const response = await getTrollpickActif();
@@ -17,8 +12,14 @@ const getTrollpicksSoon = createAsyncThunk<any>('trollpick/get-soon', async () =
 	return response;
 });
 
+const getOneTrollpick = createAsyncThunk<any>('trollpick/get-one', async (id: any) => {
+	const response = await getTrollpick(id);
+	return response;
+});
+
 
 export const trollpickActions = {
 	getTrollpicksActif,
 	getTrollpicksSoon,
+	getOneTrollpick,
 };
