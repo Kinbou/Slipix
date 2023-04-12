@@ -1,25 +1,24 @@
-import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { BasePage } from './BasePage';
-import Home from '@components/Home';
-import Presentation from '@components/Presentation/index';
-import Support from '@components/Support/index';
-import Contact from '@components/Contact/index';
-import Thanks from '@components/Thanks/index';
-import MentionLegales from '@components/Legal-mentions/index';
+import Home from '@pages/Home/Home';
+import Presentation from '@pages/Presentation/Presentation';
+import Support from '@pages/Support/Support';
+import Contact from '@pages/Contact/contact';
+import Thanks from '@pages/Thanks/Thanks';
+import MentionLegales from '@pages/Legal-mentions/legalMentions';
 
 // Guides
-import Guides from '@components/Guides/index';
-import MentalRage from '@components/Guides/Mental&rage/index';
-import RoleChampion from '@components/Guides/RoleChampion/index';
-import ProgressLol from '@components/Guides/ProgressLol/index';
-import LowElo from '@components/Guides/LowElo/index';
-import WinLane from '@components/Guides/WinLane/index';
+import Guides from '@pages/Guides/Guides';
+import MentalRage from '@pages/Guides/Mental&rage/MentalRage';
+import RoleChampion from '@pages/Guides/RoleChampion/RoleChampion';
+import ProgressLol from '@pages/Guides/ProgressLol/ProgressLol';
+import LowElo from '@pages/Guides/LowElo/LowElo';
+import WinLane from '@pages/Guides/WinLane/WinLane';
 
 // Trollpicks
-import TrollPicks from '@components/TrollPicks/index';
-import Trollpick from '@components/TrollPicks/Trollpick/index';
+import TrollPicks from '@pages/TrollPicks/Trollpicks';
+import Trollpick from '@pages/TrollPicks/Trollpick/Trollpick';
 
 const router = createBrowserRouter([
 	{

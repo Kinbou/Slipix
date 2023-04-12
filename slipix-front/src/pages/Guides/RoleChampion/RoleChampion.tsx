@@ -1,0 +1,190 @@
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+import { useTitle } from '@/hooks/useTitle';
+import { animationOne, transition } from '@/utils/animations/index';
+import './roleChampion.scss';
+
+// images
+import logoSlipix from '@/assets/images/guides/roleChampion/slipixLogoRole.png';
+import twistedfast from '@/assets/images/guides/roleChampion/twistedfast.jpg';
+import superRammus from '@/assets/images/guides/roleChampion/superRammus.jpg';
+import riverWick from '@/assets/images/guides/roleChampion/riverWick.jpg';
+import coupleTroll from '@/assets/images/guides/roleChampion/coupleTroll.png';
+import duplaisir from '@/assets/images/guides/roleChampion/duplaisir.jpg';
+import pasFacile from '@/assets/images/guides/roleChampion/pasFacile.jpg';
+import banYasuo from '@/assets/images/guides/roleChampion/banYasuo.jpg';
+import trollPicture from '@/assets/images/guides/roleChampion/trollPicture.jpg';
+
+import Youtube from '@components/Youtube/Youtube';
+
+const RoleChampion = () => {
+	useTitle('Trouver son Rôle/Champion');
+	return (
+		<motion.div
+			className="roleChampion"
+			key="roleChampion"
+			initial="out"
+			animate="in"
+			exit="out"
+			variants={animationOne}
+			transition={transition}
+		>
+			<div className="breadcrumb">
+				<Link className="breadcrumb__link" to="/">Accueil</Link> &gt;
+				<Link className="breadcrumb__link" to="/guides"> guides</Link> &gt;
+        Rôle/Champion
+			</div>
+			<h1 className="globalTitle-page">Trouver son Rôle/Champion</h1>
+			<p className="paragraph">Salut la <span className="red">#TeamSlip</span> c&apos;est coach Slipix et on va parler des <span className="blue">rôles</span> et des <span className="red">champions</span> dans League of Legends</p>
+			<img className="logo" src={logoSlipix} alt="" />
+			<div className="backgroundParagraphe roleChampion__intro">
+				<p className="intro">
+          Trouver son rôle et son champion est primordial dans League of Legends !
+				</p>
+				<p className="paragraph">
+          C&apos;est un jeu ou vous aurez beaucoup de moments difficiles donc autant jouer
+          les <span className="red">champions</span> qu&apos;on aime et qui nous font aimer le jeu !
+				</p>
+				<p className="paragraph">
+          Les questions que je reçois le + souvent pendant mes lives, mes coachings
+          ou sur mes réseaux sociaux sont par rapport aux <span className="red">champions</span> ou rôles.
+				</p>
+				<p className="paragraph">Exemple : &quot;Slipix donne moi un <span className="red">champions</span> fort pour 1v9&quot; ou encore &quot;Hey
+          Slipix tu as une idée de <span className="red">champions</span> à jouer en midlane?&quot;.
+				</p>
+				<div className="roleChampion__intro__pictures">
+					<img className="roleChampion__intro__pictures__picture" src={twistedfast} alt="" />
+					<img className="roleChampion__intro__pictures__picture" src={superRammus} alt="" />
+					<img className="roleChampion__intro__pictures__picture" src={riverWick} alt="" />
+				</div>
+				<p className="paragraph">
+          Et pourtant il faut trouver seul son <span className="blue">rôle</span> et son <span className="red">champion</span> ! C&apos;est comme
+          demander à  quelqu&apos;un quel instrument de musique jouer alors que de base on
+          préfère la guitare.
+				</p>
+				<p className="paragraph">
+          Vous l&apos;avez donc compris, jouez ce que vous aimez ! Maintenant on arrive à
+          la phase &quot;compliquée&quot; c&apos;est de savoir vraiment ce que vous aimez faire dans
+          League of Legends.
+				</p>
+				<p className="paragraph">Pour ça il faut se poser les bonnes questions et vous allez voir que
+          ensemble on va y arriver héhé
+				</p>
+				<img className="roleChampion__intro__heart" src={coupleTroll} alt="" />
+			</div>
+			<div className="backgroundParagraphe roleChampion__role">
+				<h2 className="roleChampion__role__title"><i className="fas fa-university icon__temple" />Trouver son rôle<i className="fas fa-university icon__temple" /></h2>
+				<p className="roleChampion__role__content paragraph">Premièrement il ne faut pas s&apos;attarder à &quot;gagner&quot; mais à prendre du plaisir, ne l&apos;oubliez jamais je sais que je me répète mais ça reste un jeu ! Par exemple moi j&apos;ai un meilleur winrate en midlane mais ce n&apos;est pas pour autant que je vais jouer QUE midlane<br /> (il faut voir ses priorités, monter en elo ou bien s&apos;amuser).
+				</p>
+				<img className="roleChampion__role__picture" src={duplaisir} alt="" />
+				<p className="paragraph">Trouver son <span className="blue">rôle</span> determinera votre playstyle et ensuite vous allez pouvoir
+          adapter vos champions à votre <span className="blue">rôle</span>! <br />(Je conseille d&apos;abord de trouver le
+				<span className="blue"> rôle</span> puis de s&apos;interesser aux champions du <span className="blue">rôle</span>, ce n&apos;est que mon avis).
+				</p><br />
+				<p className="paragraph">Il est très important de savoir ce qu&apos;on recherche dans League of Legends
+          : Monter le + haut possible en ranked ou bien juste s&apos;amuser en normal draft?
+				</p>
+				<p className="paragraph">Dans ces cas la pour le tryhard de la ranked il vaut mieux trouver son
+          rôle principal (avec 3 champions pour optimiser) et ensuite un <span className="blue">rôle </span>
+          secondaire en cas d&apos;autofill (avec 2 champions pour optimiser).
+				</p>
+				<p className="roleChampion__lists"><i className="fas fa-feather-alt icon" />Les questions à se poser pour trouver son rôle <i className="fas fa-feather-alt icon" /></p>
+				<ul>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />J&apos;aime jouer seul ou bien en intéraction avec mes alliés ?</li>
+					<p className="roleChampion__role__list paragraph">Si vous préférez jouer seul dans votre coin, la toplane sera votre paradis en jouant des duellistes ! Pas besoin de se regrouper parfois pour gagner des parties.</p>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />J&apos;aime être présent sur la map et être très mobile ?</li>
+					<p className="roleChampion__role__list paragraph">Si vous aimez avoir une grande présence sur la carte, le rôle de jungle/midlane sera parfait pour vous ! C&apos;est avec le roaming d&apos;un midlaner et l&apos;initiative d&apos;un jungler que les parties sont gagnées.</p>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />J&apos;aime farm et last hit les sbires ?</li>
+					<p className="roleChampion__role__list paragraph">Si vous n&apos;aimez pas le farming de sbires, le rôle de support et de jungle sera optimal. Et si vous aimez ça, le rôle d&apos;ADC sera parfait !</p>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />J&apos;aime faire des teamfights ?</li>
+					<p className="roleChampion__role__list paragraph">Si vous aimez faire des bon gros teamfights, vous pouvez opter pour la toplane en jouant un tank qui va initier le combat, tout comme un jungle tank ou bruiser qui fera la même.</p>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />J&apos;aime faire les objectifs ?</li>
+					<p className="roleChampion__role__list paragraph">Si vous aimez faire les objectifs neutres (Drake, Herald, Nashor) le rôle de jungle est la pour vous ! C&apos;est avec le smite qu&apos;on fait ces objectifs.</p>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />J&apos;aime faire des gros dégâts (du DPS) ?</li>
+					<p className="roleChampion__role__list paragraph">Si vous aimez arroser vos ennemis d&apos;une pluie de dégâts que ça soit du BURST ou du DPS il est temps pour vous de jouer Midlane ou bien ADC.</p>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />J&apos;aime protéger mes alliés ?</li>
+					<p className="roleChampion__role__list paragraph">Si vous aimez sauver et protéger vos alliés de leurs pires bêtises, le rôle de support saura faire honneur à votre esprit d&apos;entraide.</p>
+				</ul>
+				<p className="roleChampion__role__introYoutube paragraph">Pour vous aider en + de ma technique des questions/réponses voici une vidéo ou je vous explique comment trouver son <span className="blue">rôle</span> avec de la remise en forme !</p>
+				<Youtube idYoutube="Z7G2ywfAQz0" />
+				<p className="roleChampion__afterYoutube paragraph">Une fois que vous avez enfin trouvé votre rôle de rêve, on va ensemble s&apos;attaquer aux <span className="red">champions</span> ! Ne pas oublier que pour avoir une courbe de progression stable et positive, il faut jouer très souvent le même rôle et ne pas s&apos;éparpiller !</p>
+				<p className="roleChampion__introYoutube paragraph">Voici un exemple parfait d&apos;un coaching sur un abonné qui jouait tous les <span className="blue">rôles</span> à la fois, on remarque une manque de connaissance de ses match-ups, à ne pas faire si vous voulez monter en rankeds rapidement.</p>
+				<Youtube idYoutube="uKVDl9wCl2U" />
+			</div>
+			<div className="backgroundParagraphe roleChampion__champion">
+				<h2 className="roleChampion__champion__title"><i className="fab fa-phoenix-framework icon__phoenix" />Trouver son Champion<i className="fab fa-phoenix-framework icon__phoenix" /></h2>
+				<p className="paragraph">Il y a environ 150 <span className="red">champions</span> dans League of Legends, tous avec une
+          identité unique ainsi que des kits de sorts différents.
+				</p>
+				<p className="paragraph">Et oui le charme de League of Legends c&apos;est aussi son vaste choix de gameplay !</p>
+				<p className="paragraph">Le problème c&apos;est que ce côté positif de large choix est également un vice
+          pour votre progression dans le jeu.
+				</p>
+				<img className="roleChampion__champion__picture roleChampion__champion__picture__notEasy" src={pasFacile} alt="" />
+				<p className="paragraph">J&apos;ai souvent remarqué que dans mes coachings, les élèves bas elo (Fer,
+          Bronze,Argent,Or) changeaient très souvent de <span className="red">champions</span> et se lassaient
+          très vite d&apos;un <span className="red">champion</span>. C&apos;est le problème quand on a beaucoup de choix.
+				</p>
+				<p className="space paragraph">Par exemple quand on veut acheter une voiture c&apos;est bien + simple de
+          choisir quand on a le choix entre 5 modèles au lieu de 150.
+				</p>
+				<p className="paragraph">Maintenant que vous avez trouvé votre <span className="blue">rôle</span> (j&apos;espère grâce à mon
+          aide) il est temps de choisir votre premier champion !
+				</p>
+				<p className="paragraph">Ce que je conseille au début, c&apos;est de faire beaucoup de normales games en
+          draft et non en classée pour ne pas abîmer votre MMR.
+				</p>
+				<p className="space paragraph">Jouez sur le même <span className="blue">rôle</span> tous les <span className="red">champions</span> que vous trouvez intéressants,
+          c&apos;est vital pour votre préparation aux rankeds.
+				</p>
+				<p className="paragraph">Attention de ne pas spam un seul champion sans avoir essayé les autres, il
+          vaut mieux commencer à en découvrir plusieurs avant de faire son ultime choix.
+				</p>
+				<img className="roleChampion__champion__picture roleChampion__champion__picture__yasuo" src={banYasuo} alt="" />
+				<p className="paragraph">Si par exemple vous voullez devenir un joueur de toplane, vous pouvez
+          essayer plein de <span className="red">champions</span> différents en toplane jusqu&apos;à trouver votre coup de coeur !
+				</p>
+				<p className="paragraph">Une fois que vous avez mis de côté dans votre tête environ 5 <span className="red">champions</span> que
+          vous adorez, il est temps de faire la même technique que pour trouver son
+				<span className="blue"> rôle</span> : Les Questions/Réponses.
+				</p>
+				<p className="roleChampion__lists"><i className="fas fa-feather-alt icon" />Les questions à se poser pour trouver son champion <i className="fas fa-feather-alt icon" /></p>
+				<ul>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />Mon champion doit savoir gérer les duels ?</li>
+					<p className="roleChampion__role__list paragraph">Si vous aimez vous battre et principalement en duel optez pour les bruisers comme Darius, Jax ou Renekton ainsi que les assassins tels que Zed, Fizz ou Talon !</p>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />Mon champion doit être au corps à corps ou à distance ? </li>
+					<p className="roleChampion__role__list paragraph">Pas vraiment compliqué mais c&apos;est toujours bien de le préciser, ne vous forcez pas à jouer des corps à corps ou des distances si vous n&apos;aimez pas ça.</p>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />Mon champion doit être facile ou dur à jouer ? </li>
+					<p className="roleChampion__role__list paragraph"> Et oui on a pas tous envie de forcément faire des plays ou des montages en jouant du Yasuo, Zed et j&apos;en passe ! Si vous aimez les champions facile ne vous en privez pas, et à l&apos;inverse si vous aimez les combos et les plays lancez-vous !</p>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />Mon champion doit être fort en début de partie ou en fin de partie ? </li>
+					<p className="roleChampion__role__list paragraph">Très important de s&apos;adapter à son champion, si vous aimez jouer relativement safe en début et milieu de partie prenez des champions qui sont redoutables en fin de partie comme Veigar, Vayne, Kayle ou encore Jax ! Pareil pour le contraire si vous aimez mettre du rythme choisissez des champions redoutables en début de partie comme Olaf, Draven, Lee Sin ou bien Qiyana !</p>
+					<li><i className="fas fa-arrow-alt-circle-right icon" />Mon champion est-il bon pour monter en elo ? </li>
+					<p className="roleChampion__role__list paragraph">Voici la question piège, je reçois beaucoup trop de messages dans ce style. Au début le but n&apos;est pas de trouver un champion bon pour monter mais un champion avec lequel on prend du plaisir ! De + on peut monter avec TOUS les champions, alors ne vous prenez pas la tête à vous demander si votre champion est fort ou non, jouer les champions forts c&apos;est important à partir du Master+ pour optimiser son winrate.</p>
+				</ul>
+				<p className="roleChampion__introYoutube paragraph">Pour vous aider en + de ma technique des questions/réponses voici une vidéo ou je vous explique comment trouver son <span className="red">champion</span> avec de la remise en forme !</p>
+				<Youtube idYoutube="q-rWwaUQ-4I" />
+				<p className="roleChampion__betweenYoutube paragraph">Maintenant on passe à une vidéo qui va vous montrer 3 <span className="red">champions</span> à OTP (One trick Pony) ça consiste à jouer que un seul <span className="red">champion</span> et de le spam pour très vite le maîtriser, ce sont en principe des <span className="red">champions</span> qui sont redoutable une fois qu&apos;on a un bon nombre de games dessus. Essayez les et à vous de carry !</p>
+				<Youtube idYoutube="OMRt2MQJIgw" />
+				<p className="roleChampion__betweenYoutube paragraph">Encore une vidéo ou je vous présente 5 <span className="red">champions</span> à OTP ! Et bah dis donc il est plein de ressources ce Coach Slipix héhé</p>
+				<Youtube idYoutube="ffEnte7s3bQ" />
+				<p className="roleChampion__betweenYoutube paragraph">On enchaine avec une vidéo ou je vous présente 3 <span className="red">champions</span> qui ont du potentiel et qui sont surtout très polyvalents, c&apos;est à dire qu&apos;ils n&apos;ont pas vraiment de gros counterpicks et ils sauront s&apos;adapter à la composition de votre équipe !</p>
+				<Youtube idYoutube="MAB-VUtQQL8" />
+				<p className="roleChampion__betweenYoutube paragraph">Je me devais de réaliser cette vidéo car beaucoup d&apos;entre vous détestent les tanks mais ne savent pas comment les contrer. Voici une liste de 3 <span className="red">champions</span> pour les faire pleurer !</p>
+				<Youtube idYoutube="MXTAwZAZyyk" />
+				<p className="roleChampion__betweenYoutube paragraph">Une liste de <span className="red">champions</span> qui ont atteint de très gros pourcentages de victoires en saison 10 ! Il en faut pour tous les goûts, allez-y les tryharders celle la est pour vous !</p>
+				<Youtube idYoutube="J_WiOifXAv4" />
+				<p className="roleChampion__betweenYoutube paragraph">Et pour terminer une liste de <span className="red">champions</span> que je trouve super fun dans le jeu, dans la victoire ou la défaite ! (Ce n&apos;est que mon avis et je préfère vous le partager)</p>
+				<Youtube idYoutube="RnO3eqRYNNk" />
+			</div>
+			<div className="backgroundParagraphe roleChampion__end">
+				<p className="paragraph">Pour résumer sur cette page qui parle de votre rôle et de votre champion, n&apos;hésitez pas à vous poser les bonnes questions pour vite trouver votre playstyle et ainsi commencer une bonne courbe de progression !<br /> N&apos;oubliez pas que ça reste un jeu il faut s&apos;amuser, <span className="gold">ne vous forcez pas à jouer des champions forts que vous n&apos;aimez pas...</span></p>
+				<p className="paragraph">J&apos;espère que ce guide vous aura aider, à bientot sur la faille la <span className="red">#TEAMSLIP</span></p>
+				<img className="roleChampion__champion__picture roleChampion__champion__picture__troll" src={trollPicture} alt="" />
+				<p className="end">N&apos;hésitez pas à aller consulter les autres guides de COACH SLIPIX</p>
+			</div>
+		</motion.div>
+	);
+};
+
+export default RoleChampion;
