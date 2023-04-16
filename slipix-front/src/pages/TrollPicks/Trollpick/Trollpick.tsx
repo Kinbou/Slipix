@@ -5,10 +5,12 @@ import { useTitle } from '@/hooks/useTitle';
 import Youtube from '@components/Youtube/Youtube';
 import parse from 'html-react-parser';
 
+import { selectTrollpick, trollpick_actions } from '@/store/trollpick/trollpick.slice';
+import { Objects, Lanes, Counter, Video, Rune } from '@/api/trollpick/models';
+
+import Loader from '@components/Loader';
 
 import './trollpick.scss';
-import Loader from '@components/Loader';
-import { selectTrollpick, trollpick_actions } from '@/store/trollpick/trollpick.slice';
 
 interface ImageProps {
   id: number,
@@ -23,7 +25,9 @@ const Trollpick = () => {
 	useTitle(`Trollpicks - ${slug.name}`);
 
 	useEffect(() => {
-		dispatch(trollpick_actions.getOneTrollpick(slug.id));
+		if (slug.id) {
+			dispatch(trollpick_actions.getOneTrollpick(slug.id));
+		}
 	}, []);
 
 
@@ -59,7 +63,7 @@ const Trollpick = () => {
 						<img className="trollpick__pictures__rune" src={`${apiBaseUrl}/${trollpick?.runePicture}`} alt="" />
 						<div className="trollpick__runes__list">
 							<ul>
-								{trollpick?.trollpickRunes?.map((rune: { id: number, description: string, rune: { image: string, color: string, title: string } }) => (
+								{trollpick?.trollpickRunes?.map((rune: Rune) => (
 									<div className="trollpick__runes__list__content trollpick__runes__list__border" key={rune?.id}>
 										<img className="trollpick__pictures trollpick__pictures__runes" src={`${apiBaseUrl}/${rune?.rune?.image}`} alt="" />
 										<li className="paragraph"><span className={`definition ${rune?.rune?.color}`}>{rune?.rune?.title} :</span>{rune?.description}</li>
@@ -74,9 +78,9 @@ const Trollpick = () => {
 					<div className="backgroundParagraphe">
 						<h2><i className="fas fa-gavel icons__gameplay" />Les objets<i className="fas fa-gavel icons__gameplay" /></h2>
 						{trollpick?.objectsContent && parse(trollpick?.objectsContent)}
-						{trollpick?.objects?.length && (
-							trollpick?.objects.map((object: any) => (<img key={object.id} src={`${apiBaseUrl}/${object.image}`} className="trollpick__objects" alt="" />))
-						)}
+						{trollpick?.objects?.length ? (
+							trollpick?.objects.map((object: Objects) => (<img key={object.id} src={`${apiBaseUrl}/${object.image}`} className="trollpick__objects" alt="" />))
+						) : null}
 					</div>
 
 					{/* Les sort d'invocateurs */}
@@ -84,7 +88,7 @@ const Trollpick = () => {
 						<h2><i className="fas fa-dragon icons__gameplay" />Les sorts d&apos;invocateurs<i className="fas fa-dragon icons__gameplay" /></h2>
 						<p className="invocateur__title"><span className="gold">{trollpick.nameIntro}</span> peut se jouer :</p>
 						<div className='spells' style={{ justifyContent: trollpick?.trollpick_lanes?.length > 2 ? 'space-around' : 'center' }}>
-							{trollpick?.trollpick_lanes?.map((lane: any) => (
+							{trollpick?.trollpick_lanes?.map((lane: Lanes) => (
 								<div key={lane.id} style={{ margin: '0 1.5rem' }}>
 									<img src={`${apiBaseUrl}/${lane.lane.image}`} className="invocateur__img" alt="" />
 									<div className="spells__spellContent">
@@ -92,11 +96,11 @@ const Trollpick = () => {
 										<div className='line'>
 											<img className="imgSorts" src={`${apiBaseUrl}/${lane?.first_level?.first_spell?.image}`} alt="" /> + <img src={`${apiBaseUrl}/${lane?.first_level?.second_spell?.image}`} className="imgSorts" alt="" />
 										</div>
-										{lane.second_level_id && (
+										{lane.second_level_id ? (
 											<div className='line'>
 												<img className="imgSorts" src={`${apiBaseUrl}/${lane?.second_level?.first_spell?.image}`} alt="" /> + <img src={`${apiBaseUrl}/${lane?.second_level?.second_spell?.image}`} className="imgSorts" alt="" />
 											</div>
-										)}
+										) : null}
 									</div>
 								</div>
 							))}
@@ -148,7 +152,7 @@ const Trollpick = () => {
 					<div className="backgroundParagraphe">
 						<h2><i className="fas fa-skull-crossbones icons__crossbones" />Les Faiblesses et Counters<i className="fas fa-skull-crossbones icons__crossbones" /></h2>
 						<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-							{trollpick?.trollpick_counters?.map((counter: any) => (
+							{trollpick?.trollpick_counters?.map((counter: Counter) => (
 								<div className='weakness__content' key={counter.id}>
 									<img className="imgChampions" src={`${apiBaseUrl}/${counter.champion.image}`} alt="" />
 									<p className='paragraph' style={{ width: '100%' }}>{parse(counter.description)}</p>
@@ -164,7 +168,7 @@ const Trollpick = () => {
 							<p className='paragraph'>Voici toutes mes vidéos sur <span className='gold'>{trollpick.name}</span>. Régalez vous et n&apos;oubliez pas le petit commentaire pour soutenir c&apos;est gratuit.</p>
 							<div className="introTrollpickYoutube" />
 							<div>
-								{trollpick?.gameplayVideosYoutubes?.map((video: any) => (
+								{trollpick?.gameplayVideosYoutubes?.map((video: Video) => (
 									<>
 										<Youtube idYoutube={video?.urlVideo} />
 									</>

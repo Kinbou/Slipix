@@ -1,8 +1,7 @@
-import React from 'react';
 import classNames from 'classnames';
 import './loader.scss';
 
-const Loader = ({ withMargin }: any) => {
+const Loader = ({ withMargin }: { withMargin: boolean }) => {
 	const spinnerClass = classNames('spinner', { 'spinner--margin': withMargin });
 
 	return (

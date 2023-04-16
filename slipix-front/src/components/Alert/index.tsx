@@ -2,7 +2,13 @@ import { useEffect } from 'react';
 import classNames from 'classnames';
 import './alert.scss';
 
-const Alert = ({ message, isSuccess, displayAlert }: any) => {
+interface AlertProps {
+	message: string;
+	isSuccess: boolean;
+	displayAlert: () => void;
+}
+
+const Alert = ({ message, isSuccess, displayAlert }: AlertProps) => {
 	useEffect(() => {
 		const timeoutId = setTimeout(
 			() => {

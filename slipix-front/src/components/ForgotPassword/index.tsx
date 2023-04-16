@@ -4,11 +4,15 @@ import React, { useState } from 'react';
 import { labelClassname, validEmail } from '@/utils/selectors';
 import './forgotpassword.scss';
 
-const ForgotPassword = ({ forgotPasswordSendEmail }: any): React.ReactElement => {
+interface ForgotPasswordProps {
+	forgotPasswordSendEmail: (value: string) => void;
+}
+
+const ForgotPassword = ({ forgotPasswordSendEmail }: ForgotPasswordProps): React.ReactElement => {
 	const [email, setEmail] = useState('');
 	const [errors, setErrors] = useState({ email: '' });
 
-	const handleSubmit = (e: any) => {
+	const handleSubmit = (e: React.MouseEvent) => {
 		e.preventDefault();
 		if (!validEmail(email)) {
 			setErrors({ ...errors, email: '*L\'email est invalide' });
@@ -18,7 +22,7 @@ const ForgotPassword = ({ forgotPasswordSendEmail }: any): React.ReactElement =>
 		}
 	};
 
-	const removeError = (key: any) => {
+	const removeError = (key: string) => {
 		// @ts-ignore
 		if (errors && errors[key]) {
 			// @ts-ignore

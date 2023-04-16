@@ -1,12 +1,17 @@
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import './modal.scss';
 import { animationModal, transition } from '@/utils/animations/index';
 
+interface ModalProps {
+	displayModal: (value: string) => void;
+	content: string;
+	showModal: string;
+}
+
 const Modal = ({
 	displayModal, content, showModal,
-}: any) => {
+}: ModalProps) => {
 	const closeModal = (): void => {
 		displayModal('');
 	};

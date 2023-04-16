@@ -13,18 +13,23 @@ const Ul = styled.ul`
 
   @media (max-width: 1000px) {
     .header__nav__menu {
-      transform: ${({ open }: any) => (open ? 'translateX(-100%)' : 'translateX(100%)')};
+      transform: ${({ open }: { open: boolean }) => (open ? 'translateX(-100%)' : 'translateX(100%)')};
     }
     .menu-background {
-      display: ${({ open }: any) => (open ? 'block' : 'none')};
+      display: ${({ open }: { open: boolean }) => (open ? 'block' : 'none')};
     }
   }
 `;
 
+interface MenuProps {
+	open: boolean,
+	setOpen: (value: boolean) => void,
+}
+
 const Menu = ({
 	open,
 	setOpen,
-}: any): React.ReactElement => {
+}: MenuProps): React.ReactElement => {
 
 	const handleClassActive = () => {
 		// @ts-ignore
@@ -32,13 +37,9 @@ const Menu = ({
 	};
 
 	return (
-	// @ts-ignore
 		<Ul open={open}>
 			<div className={classes.menuBackground} onClick={() => setOpen(!open)}> </div>
 			<div className={cx(classes.header__nav__global, { [classes['header__nav__global--open']]: open })}>
-				{/* {['login', 'registration', 'forgotPassword'].includes(showModal) && (
-          <Modal content={<Authentification />} />
-        )} */}
 				<div className={cx(classes.header__nav__menu, classes.header__nav__menu__one)}>
 					<NavLink
 						to="/"
@@ -88,10 +89,10 @@ const Menu = ({
 					<NavLink
 						to="/me-contacter"
 						className={({isActive}) => isActive ? cx(classes.menu__link, classes['menu__link--active']) : classes.menu__link}
+						// @ts-ignore
 						exact={'true'}
 						onClick={() => setOpen(!open)}
-						// @ts-ignore
-						onChange={handleClassActive()}
+						onChange={handleClassActive}
 					>
             Me contacter
 					</NavLink>

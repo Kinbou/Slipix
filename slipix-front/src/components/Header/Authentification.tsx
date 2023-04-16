@@ -1,12 +1,15 @@
-import React from 'react';
 import classNames from 'classnames';
 
-import Reconstruction from '@components/Reconstruction';
 import { urlBack } from '@/utils/selectors';
 import './header.scss';
 // import styles from './header.module.scss'
 
-const Authentification = ({ showModal, displayModal }: any) => {
+interface AuthenticationProps {
+	showModal: string;
+	displayModal: (value: string) => void;
+}
+
+const Authentification = ({ showModal, displayModal }: AuthenticationProps) => {
 	const handleLogin = () => {
 		displayModal('login');
 	};
@@ -36,9 +39,6 @@ const Authentification = ({ showModal, displayModal }: any) => {
 				</div>
 			</nav>
 
-			{showModal === 'login' && (<Reconstruction />)}
-			{showModal === 'registration' && (<Reconstruction />)}
-			{showModal === 'forgotPassword' && (<Reconstruction />)}
 
 		</>
 	);

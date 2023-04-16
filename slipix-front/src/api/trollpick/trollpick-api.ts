@@ -20,7 +20,7 @@ export const getTrollpickSoon = async () => {
 	return res.json(); 
 };
 
-export const getTrollpick = async (id: number) => {
+export const getTrollpick = async (id: string) => {
 	const res = await fetch(`${apiBaseUrl}/api/v1/trollpicks/${id}`, {
 		headers: {
 			accept: 'application/json',
