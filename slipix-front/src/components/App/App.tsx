@@ -1,18 +1,10 @@
-import React, { useState } from 'react';
-// @ts-ignore
-import Analytics from 'react-router-ga';
+import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-
-// // == Import
-import dataImages from '@/utils/dataImages.json';
-import { useResolution } from '@/utils/selectors';
-
-import Alert from '@components/Alert/index';
 
 import ScrollToTopButton from '@components/ScrollToTopButton';
 import { AppRoutes } from '@/components/App/AppRoutes';
 
-const App = ({ showAlert }: any) => {
+const App = () => {
 //  })
 	const [imgLoaded, setImgLoaded] = useState(true);
 
@@ -39,9 +31,7 @@ const App = ({ showAlert }: any) => {
 		<div className="app">
 			<main>
 				<AnimatePresence>
-					{/* @ts-ignore */}
-					<ScrollToTopButton /> 
-					{showAlert && <Alert />}
+					<ScrollToTopButton />
 					<AppRoutes />
 				</AnimatePresence>
 				{/* <Analytics id="UA-176591379-1" debug> */}

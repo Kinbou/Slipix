@@ -1,4 +1,4 @@
-const Youtube = ({ idYoutube }: any) => {
+const Youtube = ({ idYoutube }: { idYoutube: string}) => {
 	return (
 		<iframe
 			width="600"

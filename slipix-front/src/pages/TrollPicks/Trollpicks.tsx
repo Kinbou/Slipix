@@ -14,6 +14,7 @@ import './trollPicks.scss';
 import { useAppDispatch, useAppSelector } from '@/store';
 import { trollpick_actions } from '@/store/trollpick/trollpick.slice';
 import { selectTrollpick } from '@/store/trollpick/trollpick.slice';
+import { Trollpick } from '@/api/trollpick/models';
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
@@ -62,7 +63,7 @@ const TrollPicks = () => {
 						animate="out"
 					>
 						{trollpickActif.length !== 0 && (
-							trollpickActif.map((trollpick: any) => (
+							trollpickActif.map((trollpick: Trollpick) => (
 								<div
 									className="trollpicks__cards__line tutoriels__cards__line__one"
 									key={trollpick.id}
@@ -84,7 +85,7 @@ const TrollPicks = () => {
 							<>
 								<div className="betweenParagraph" />
 								<h2>Prochainement</h2>
-								{trollpickSoon.map((trollpick: any) => (
+								{trollpickSoon.map((trollpick: Trollpick) => (
 									<motion.div
 										className="trollpicks__cards__line tutoriels__cards__line__one"
 										key={trollpick.id}

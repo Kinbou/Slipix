@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import styled from 'styled-components';
 
@@ -19,7 +18,7 @@ enum LIST_BACKGROUND {
   '/remerciement' = 'thanks',
 }
 
-const BackgroundImage = ({ pathname }: { pathname: string}) => {
+const BackgroundImage = ({ pathname }: { pathname: keyof typeof LIST_BACKGROUND }) => {
 
 	const BackgroundImageTest = styled.div`
 /* object-fit: fill; */
@@ -30,28 +29,27 @@ const BackgroundImage = ({ pathname }: { pathname: string}) => {
   background-size: cover;
   position: fixed;
   background-color: black;
-  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-standard.jpg);
+  background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)), url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: { appClass: string }) => appClass}/format-standard.jpg);
 
   /* Grand écran */
   @media (min-width: 3400px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-3440x1440.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: { appClass: string }) => appClass}/format-3440x1440.jpg)
   }
   /* Grand écran */
   @media (min-width: 2000px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-2560x1440.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: { appClass: string }) => appClass}/format-2560x1440.jpg)
   }
   /* Format tablette */
   @media (max-width: 1024px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-tablette.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: { appClass: string }) => appClass}/format-tablette.jpg)
   }
   /* Format phone */
   @media (max-width: 600px) {
-    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: any) => appClass}/format-phone.jpg)
+    background-image:linear-gradient(rgba(23, 48, 66, 0.4), rgba(3, 23, 32, 0.4)),url(${apiBaseUrl}/images/backgroundPages/${({ appClass }: { appClass: string }) => appClass}/format-phone.jpg)
   }
 `;
 
 	const choiceBackground = () => {
-		{/* @ts-ignore */}
 		const result = pathname?.includes('/trollpicks') ? 'trollPicks' : LIST_BACKGROUND[pathname];
 		return result;
 	};
@@ -59,7 +57,6 @@ const BackgroundImage = ({ pathname }: { pathname: string}) => {
 	const appClass = classNames(choiceBackground());
 
 	return (
-	/* @ts-ignore */
 		<BackgroundImageTest appClass={appClass} />
 	);
 };

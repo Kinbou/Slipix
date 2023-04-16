@@ -1,9 +1,19 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState, useRef, useEffect } from 'react';
 import useClickOutside from '@/hooks/useClickOutside';
 
+interface InputsProps {
+	type: string;
+	value: string;
+	name: string;
+	onChange: () => void;
+	onCancel: () => void;
+	classNames: any;
+	setFocused: () => void;
+	onFocus: () => void;
+	onBlur: () => void;
+}
 
-const index = ({
+const Inputs = ({
 	type,
 	value = '',
 	name,
@@ -13,10 +23,10 @@ const index = ({
 	setFocused,
 	onFocus,
 	onBlur,
-}: any): React.ReactElement => {
-	const elementRef = useRef();
-	const inputRef = useRef();
-	const [disabled, setDisabled] = useState(true);
+}: InputsProps): React.ReactElement => {
+	const elementRef = useRef<HTMLDivElement>(null);
+	const inputRef = useRef<HTMLInputElement>(null);
+	const [disabled, setDisabled] = useState<boolean>(true);
 	const [showPassword, setShowPassword] = useState(false);
 
 	const onClose = (): void => {
@@ -35,28 +45,23 @@ const index = ({
 	// Permet d'auto focus le input
 	useEffect(() => {
 		if (showPassword || !showPassword || !disabled) {
-			// @ts-ignore
-			inputRef.current.focus();
-			// Permets de mettre le curseur à la fin du input
-			// @ts-ignore
-			if (['password', 'text', 'search', 'url', 'tel'].includes(type.toLowerCase()) && value) inputRef.current.setSelectionRange(value.length, value.length);
+			inputRef?.current?.focus();
+			if (['password', 'text', 'search', 'url', 'tel'].includes(type.toLowerCase()) && value) inputRef?.current?.setSelectionRange(value.length, value.length);
 		}
 	}, [disabled, showPassword]);
 
-	useClickOutside(elementRef, () => onClose()); // Le ref de la div parent
+	useClickOutside(elementRef, () => onClose());
 
 	return (
-	// @ts-ignore
 		<div ref={elementRef}>
 			{' '}
 			<input
-				// @ts-ignore
 				ref={inputRef}
 				type={showPassword ? 'text' : type}
 				value={value}
-				onChange={(e) => onChange(e.target.value)}
+				onChange={onChange}
 				name={name}
-				className={[classNames.join(' '), disabled ? '' : 'account-profil__container__label__disabled'].join(' ')}
+				className={[classNames?.join(' '), disabled ? '' : 'account-profil__container__label__disabled'].join(' ')}
 				disabled={disabled}
 				onFocus={onFocus}
 			/>
@@ -93,10 +98,10 @@ const index = ({
 	);
 };
 
-index.defaultProps = {
+Inputs.defaultProps = {
 	setFocused: null,
 	onFocus: null,
 	onBlur: null,
 };
 
-export default index;
+export default Inputs;
