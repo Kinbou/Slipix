@@ -4,13 +4,13 @@
 @import '04_base';
 
 .globalTitle-page {
-  font-family: 'Squada One', cursive;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 4.9em;
+  // font-family: 'Squada One', cursive;
+  // text-transform: uppercase;
+  // text-align: center;
+  // font-size: 4.9em;
   padding: 3rem 0 3rem 0;
-  color: $gold;
-  text-shadow: 2px 2px  30px black;
+  // color: $gold;
+  // text-shadow: 2px 2px  30px black;
 }
 
 .breadcrumb {
@@ -18,14 +18,14 @@
   margin: 2rem 3rem;
   text-align: left;
   &__link:hover {
-    color: $gold;
+    // color: $gold;
   }
 }
 
 @media (max-width: 1550px) {
-  .globalTitle-page {
-    font-size: 3.9em;
-  }
+  // .globalTitle-page {
+  //   font-size: 3.9em;
+  // }
   .paragraph {
     font-size: 1.3em;
   }
@@ -35,10 +35,10 @@
 }
 
 @media (max-width: 1000px) {
-  .globalTitle-page {
-    font-size: 3.2em;
-    padding-top: 120px!important;
-  }
+  // .globalTitle-page {
+  //   font-size: 3.2em;
+  //   padding-top: 120px!important;
+  // }
   .breadcrumb {
     margin: 0 3rem;
     padding-top: 120px;
@@ -52,10 +52,10 @@
 }
 
 @media (max-width: 450px) {
-  .globalTitle-page {
-    font-size: 2.5em;
-    padding-top: 100px!important;
-  }
+  // .globalTitle-page {
+  //   font-size: 2.5em;
+  //   padding-top: 100px!important;
+  // }
   .breadcrumb {
     margin: 0 1rem;
   }
@@ -72,52 +72,52 @@
 }
 
 // Colors
-.red {
-  color: $red;
-}
-.green {
-  color: $green;
-}
-.gold {
-  color: $gold;
-}
-.blue {
-  color: $blue;
-}
-.purple {
-  color: $purple;
-}
-.twitch {
-  color: $twitch;
-}
-.orange {
-  color: $orange;
-}
-.facebook {
-  color: $facebook;
-}
-.instagram {
-  color: $instagram;
-}
-.turquoise {
-  color: $turquoise;
-}
-.jaune {
-  color: $jaune;
-}
-.pink {
-  color: $pink;
-}
+// .red {
+//   color: $red;
+// }
+// .green {
+//   color: $green;
+// }
+// .gold {
+//   color: $gold;
+// }
+// .blue {
+//   color: $blue;
+// }
+// .purple {
+//   color: $purple;
+// }
+// .twitch {
+//   color: $twitch;
+// }
+// .orange {
+//   color: $orange;
+// }
+// .facebook {
+//   color: $facebook;
+// }
+// .instagram {
+//   color: $instagram;
+// }
+// .turquoise {
+//   color: $turquoise;
+// }
+// .jaune {
+//   color: $jaune;
+// }
+// .pink {
+//   color: $pink;
+// }
 
-.black {
-  color: $black;
-}
+// .black {
+//   color: $black;
+// }
 
 // youtube
 .betweenYoutube {
   margin: 5rem 2rem 1rem 2rem;
   padding-top: 2rem;
-  border-top: solid 1px $red;
+  // border-top: solid 1px $red;
 }
 .introYoutube {
   padding: 4rem 0 1rem 0;
@@ -138,7 +138,7 @@
 
 .intro {
   font-size: 2em;
-  color: $gold;
+  // color: $gold;
   margin-bottom: 2rem;
 }
 
@@ -148,16 +148,16 @@
 }
 
 .link {
-  background-color: $gold;
+  // background-color: $gold;
   margin-left: 1rem;
   padding: .3rem;
   border-radius: 5px;
   color: black;
 
   &:hover {
-    border: $gold solid 1px;
+    // border: $gold solid 1px;
     background-color: black;
-    color: $gold;
+    // color: $gold;
   }
 }
 
@@ -175,7 +175,7 @@
 }
 
 .end {
-  color: $gold;
+  // color: $gold;"
   margin: 1rem;
   font-size: 2em;
 }
@@ -192,13 +192,13 @@
   transform:scale(1.03);
   transition: .1s;
   box-shadow: 0 58px 36px -56px black;
-  border-color: $gold;
+  // border-color: $gold;
   }
 }
 
 .betweenParagraph {
   margin: 2rem 2rem 1rem 2rem;
-  border-top: solid 2px $gold;
+  // border-top: solid 2px $gold;
 }
 
 .icons {

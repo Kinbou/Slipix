@@ -1,7 +1,3 @@
-import cx from 'classnames';
-
-import styles from './button.module.scss';
-
 export interface ButtonProps {
   category: 'primary' | 'secondary' | 'tertiary' | 'link' | 'transparent';
   children: React.ReactNode;
@@ -15,7 +11,7 @@ export interface ButtonProps {
 const Button = (props: ButtonProps) => {
 	return (
 		<button
-			className={cx(styles.button, props.className)}
+			className='button'
 			type={props.type}
 			disabled={props.disabled}
 			onClick={props.onClick}

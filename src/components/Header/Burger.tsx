@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import styled from 'styled-components';
-
-import Menu from '@components/Header/Menu';
+import cx from 'classnames';
 
 const StyledBurger = styled.div`
   width: 2.5rem;
@@ -10,7 +8,8 @@ const StyledBurger = styled.div`
   top:20px;
   right: 20px;
   z-index: 99;
-  display: ${({ open }: {open: boolean}) => open ? 'flex' : 'none'};
+
+  cursor: pointer;
 
   @media (max-width: 1000px) {
     display: flex;
@@ -39,16 +38,19 @@ const StyledBurger = styled.div`
   }
 `;
 
-const Burger = () => {
-	const [open, setOpen] = useState(false);
+const Burger = ({ handleClick, open }: any) => {
 	return (
 		<>
-			<StyledBurger open={open} onClick={() => setOpen(!open)}>
+			{/* <StyledBurger open={open} onClick={handleClick}>
 				<div />
 				<div />
 				<div />
-			</StyledBurger>
-			<Menu open={open} setOpen={setOpen} />
+			</StyledBurger>  */}
+			<div className={cx('fixed top-20px right-20px')} onClick={handleClick}>
+				<div className='rotate-0 bg-black w-2.5rem h-0.25rem rounded-lg' />
+				<div className='translate-x-0 bg-black w-2.5rem h-0.25rem rounded-lg' />
+				<div className='rotate-0 bg-black w-2.5rem h-0.25rem rounded-lg' />
+			</div> 
 		</>
 	);
 };

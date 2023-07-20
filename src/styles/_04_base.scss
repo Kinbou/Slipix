@@ -18,7 +18,7 @@ body {
 
   &::-webkit-scrollbar {
     width: 10px;
-    background-color: $gold;
+    // background-color: $gold;
   }
 
   /* Track */
@@ -28,7 +28,7 @@ body {
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background-color: $gold;
+    // background-color: $gold;
     border-radius: 10px;
   }
   // &::-webkit-scrollbar-track-piece {
@@ -40,15 +40,15 @@ main {
   min-height: calc(100vh - 160px);
 }
 
-h1 {
-  font-family: 'Squada One', cursive;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.1em;
-  margin: auto 0;
-  text-shadow: 2px 2px  30px black;
-  color: $gold;
-}
+// h1 {
+//   font-family: 'Squada One', cursive;
+//   text-transform: uppercase;
+//   text-align: center;
+//   font-size: 1.1em;
+//   margin: auto 0;
+//   text-shadow: 2px 2px  30px black;
+//   // color: $gold;
+// }
 
 h2 {
   font-family: 'Squada One', cursive;
@@ -57,7 +57,7 @@ h2 {
   font-size: 3.4em;
   margin: 2rem 0 5rem 0;
   text-shadow: 2px 2px  30px black;
-  color: $gold;
+  // color: $gold;
 }
 
 h3 {
@@ -69,5 +69,5 @@ h3 {
 iframe {
   border-radius: 10px;
   margin: 1rem;
-  box-shadow: 0 58px 36px -56px $gold;
+  // box-shadow: 0 58px 36px -56px $gold;
 }

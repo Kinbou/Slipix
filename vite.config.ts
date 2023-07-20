@@ -1,17 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgrPlugin from 'vite-plugin-svgr';
+import UnoCss from 'unocss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
 	const baseConfig = {
-		// server: {
-		//   proxy: {
-		//     '^/api': {
-		//       target: 'http://localhost:8000',
-		//     },
-		//   },
-		// },
 		resolve: {
 			alias: {
 				'@components': '/src/components',
@@ -28,6 +22,8 @@ export default defineConfig(({ command }) => {
 
 	const plugins = [
 		svgrPlugin(),
+		UnoCss(),
+		// react(),
 	];
 
 	if (command === 'build') {
@@ -36,6 +32,11 @@ export default defineConfig(({ command }) => {
 			plugins,
 			esbuild: {
 				jsxInject: 'import React from "react";',
+			},
+			css: {
+				modules: {
+					localsConvention: 'camelCase',
+				},
 			},
 		};
 	}

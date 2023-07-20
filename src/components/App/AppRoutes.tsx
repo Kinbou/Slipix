@@ -4,7 +4,7 @@ import { BasePage } from './BasePage';
 import Home from '@pages/Home/Home';
 import Presentation from '@pages/Presentation/Presentation';
 import Support from '@pages/Support/Support';
-import Contact from '@pages/Contact/contact';
+import Contact from '@pages/Contact';
 import Thanks from '@pages/Thanks/Thanks';
 import MentionLegales from '@pages/Legal-mentions/legalMentions';
 
