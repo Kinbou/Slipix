@@ -6,7 +6,7 @@ import Presentation from '@pages/Presentation/Presentation';
 import Support from '@pages/Support/Support';
 import Contact from '@pages/Contact';
 import Thanks from '@pages/Thanks/Thanks';
-import MentionLegales from '@pages/Legal-mentions/legalMentions';
+import MentionLegales from '@pages/LegalMentions';
 
 // Guides
 import Guides from '@pages/Guides/Guides';

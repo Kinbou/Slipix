@@ -1,20 +1,8 @@
 import React, { useId } from 'react';
-import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
 
 import headerCss from './header.module.css';
-
-const Ul = styled.div`
-  list-style: none;
-  display: contents;
-
-  @media (max-width: 1000px) {
-    .menu-background {
-      display: ${({ open }: { open: boolean }) => (open ? 'block' : 'none')};
-    }
-  }
-`;
 
 const Menu = ({ display, open }: { display?: string, open?: boolean }): React.ReactElement => {
 
@@ -67,8 +55,9 @@ const Menu = ({ display, open }: { display?: string, open?: boolean }): React.Re
 					to={item.link}
 					key={item.id}
 					className={({isActive}) => 
-						cx(headerCss.menuItem, {
+						cx({
 							[headerCss['menuItem--active']]: isActive,
+							[headerCss.menuItem]: display === undefined,
 						})}
 				>
 					{item.name}

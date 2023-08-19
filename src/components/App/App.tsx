@@ -6,7 +6,7 @@ import { AppRoutes } from '@/components/App/AppRoutes';
 const App = () => {
 	return (
 		<div className="app">
-			<main className="uppercase tracking-widest leading-relaxed text-xl">
+			<main className="uppercase tracking-widest text text-white">
 				<AnimatePresence>
 					<ScrollToTopButton />
 					<AppRoutes />

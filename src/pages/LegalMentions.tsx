@@ -2,14 +2,13 @@ import { motion } from 'framer-motion';
 
 import { useTitle } from '@/hooks/useTitle';
 import { animationOne, transition } from '@/utils/animations/index';
-import './legal-mentions.scss';
 
 const LegalMentions = () => {
 	useTitle('Mentions légales');
 
 	return (
 		<motion.div
-			className="legal-mentions"
+			className="flex flex-col items-center text-center justify-center text-legal_mention p-3em"
 			key="legalNotice"
 			initial="out"
 			animate="in"
@@ -17,8 +16,8 @@ const LegalMentions = () => {
 			variants={animationOne}
 			transition={transition}
 		>
-			<h1 className="globalTitle-page">Mentions légales</h1>
-			<section className="legal-mentions__content">
+			<h1 className="h1">Mentions légales</h1>
+			<section className="text">
 				<p>
           Merci de lire avec attention les différentes modalités d’utilisation du
           présent site avant d’y parcourir ses pages. En vous connectant sur ce
@@ -27,15 +26,15 @@ const LegalMentions = () => {
           confiance dans l’économie numérique, les responsables du présent site
           internet slipix-progresser-sur-league-of-legends.fr sont :
 				</p>
-				<h2 className="legal-mentions__title">Editeur du site</h2>
+				<h2 className="h2 text-gold">Editeur du site</h2>
 				<p>Société : Slipix</p>
 				<p>Responsable éditorial : Jennifer BOUQUIN</p>
 				<p>Site Web : https://www.slipix-progresser-sur-league-of-legends.fr/</p>
-				<h2 className="legal-mentions__title">Hébergement</h2>
+				<h2 className="h2 text-gold">Hébergement</h2>
 				<p>Hébergeur : Société 02Switch</p>
 				<p>222 Boulevard Gustave Flaubert, 63000 Clermont-Ferrand, France</p>
 				<p>Site Web : www.o2switch.fr/</p>
-				<h2 className="legal-mentions__title">Conditions d'utilisation</h2>
+				<h2 className="h2 text-gold">Conditions d'utilisation</h2>
 				<p>
           Ce site est proposé en différents langages web (HTML, HTML5, Javascript,
           CSS, etc…) pour un meilleur confort d’utilisation et un graphisme plus
@@ -87,7 +86,7 @@ const LegalMentions = () => {
           d’accepter ou de refuser un hyperlien sans avoir à en justifier sa
           décision.
 				</p>
-				<h2 className="legal-mentions__title">Services fournis</h2>
+				<h2 className="h2 text-gold">Services fournis</h2>
 				<p>L’ensemble des activités de l'association ainsi que ses informations sont
           présentés sur notre site slipix-progresser-sur-league-of-legends.fr.
 				</p>
@@ -102,7 +101,7 @@ const LegalMentions = () => {
           fr sont données à titre indicatif, et sont susceptibles de changer ou
           d’évoluer sans préavis.
 				</p>
-				<h2 className="legal-mentions__title">Limitation contractuelles sur les données</h2>
+				<h2 className="h2 text-gold">Limitation contractuelles sur les données</h2>
 				<p>Les informations contenues sur ce site sont aussi précises que possible
           et le site remis à jour à différentes périodes de l’année, mais peut
           toutefois contenir des inexactitudes ou des omissions. Si vous constatez
@@ -125,7 +124,7 @@ const LegalMentions = () => {
           en direction d’autres ressources présentes sur le réseau Internet ne
           sauraient engager la responsabilité de SLIPIX
 				</p>
-				<h2 className="legal-mentions__title">Propriété intellectuelle</h2>
+				<h2 className="h2 text-gold">Propriété intellectuelle</h2>
 				<p>Tout le contenu du présent site slipix-progresser-sur-league-of-legends.
           fr, incluant, de façon non limitative, les graphismes, images, textes,
           vidéos, animations/index, sons, logos, gifs et icônes ainsi que leur mise en
@@ -143,7 +142,7 @@ const LegalMentions = () => {
           pourraient intenter une action en justice à votre encontre.
 				</p>
 
-				<h2 className="legal-mentions__title">Litiges</h2>
+				<h2 className="h2 text-gold">Litiges</h2>
 				<p>
           Les présentes conditions du site slipix-progresser-sur-league-of-legends.
           fr sont régies par les lois françaises et toutes contestations ou litiges
@@ -173,7 +172,7 @@ const LegalMentions = () => {
           assume les risques liés à l'utilisation de son identifiant et mot de
           passe. Le site décline toute responsabilité
 				</p>
-				<h2 className="legal-mentions__title">Données personnelles</h2>
+				<h2 className="h2 text-gold">Données personnelles</h2>
 				<p>SLIPIX se conforme à la Réglementation de Protection des Données Personnelles</p>
 				<p>De manière générale, vous n’êtes pas tenu de nous communiquer vos données
           personnelles lorsque vous visitez notre site Internet

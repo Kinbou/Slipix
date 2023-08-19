@@ -18,12 +18,14 @@ const Header = () => {
 	};
 
 	return (
-		<header className={classes.header}>
-			<nav className={cx(classes.header__nav, classes.active)}>
-				<img src={logoSlipix} alt="logo" className={classes.header__logo} />
-				{isMobile && <div className={headerCss.burgerMenu}>
+		<header className='flex h-80px justify-center bg-bgColor'>
+			<nav className={cx('flex items-center justify-center', classes.active)}>
+				<img src={logoSlipix} alt="logo" className='hidden' />
+				{isMobile && <div className={cx(headerCss.burgerMenu, {
+					['right-0px']: openBurger,
+				})}>
 					<Burger handleClick={handleClick} open={openBurger} />
-					{openBurger && <Menu display="mobile" open={openBurger} />}
+					<Menu display="mobile" open={openBurger} />
 				</div>}
 				{!isMobile && <Menu />}
 			</nav>

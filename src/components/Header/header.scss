@@ -51,23 +51,23 @@
 }
 
 .header {
-  position: relative;
-  color: #fff;
-  text-transform: uppercase;
-  z-index: 99;
+  // position: relative;
+  // color: #fff;
+  // text-transform: uppercase;
+  // z-index: 99;
 
-  &__logo {
-    display: none;
-  }
+  // &__logo {
+  //   display: none;
+  // }
 
   &__nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(28,36,45,0.5);
-    height: 80px;
-    padding: 0 2rem;
-    position: relative;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    // background-color: rgba(28,36,45,0.5);
+    // height: 80px;
+    // padding: 0 2rem;
+    // position: relative;
     &__account {
       &__button {
         position: relative;
