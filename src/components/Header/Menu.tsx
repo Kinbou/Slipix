@@ -46,7 +46,7 @@ const Menu = ({ display, open }: { display?: string, open?: boolean }): React.Re
 	];
 
 	return (
-		<div className={cx({
+		<div className={cx('text',{
 			[headerCss['mobile--open']]: open,
 			[headerCss.mobile]: display === 'mobile',
 		})}>

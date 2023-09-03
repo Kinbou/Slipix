@@ -19,6 +19,7 @@ const Home = () => {
 			exit="exit"
 			variants={animationOne}
 			transition={transition}
+			className='text'
 		>
 			<div className='flex items-center flex-col'>
 				<HomeHeader />

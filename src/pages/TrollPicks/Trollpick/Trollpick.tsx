@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@/store';
 import { useTitle } from '@/hooks/useTitle';
-import Youtube from '@components/Youtube/Youtube';
+import Youtube from '@components/Youtube';
 import parse from 'html-react-parser';
 
 import { selectTrollpick, trollpick_actions } from '@/store/trollpick/trollpick.slice';

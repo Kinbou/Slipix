@@ -1,6 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useId } from 'react';
 
 import {
 	cardList, card, animationCardsPage,
@@ -13,88 +13,81 @@ import laneWin from '@/assets/images/guides/laneWin.jpg';
 import progression from '@/assets/images/guides/progression.jpg';
 import mentalWin from '@/assets/images/guides/mentalWin.jpg';
 import lowEloProblem from '@/assets/images/picturesYoutube/PROBLEMEBASELO.jpg';
-import './guides.scss';
+
+interface ListGuidesProps {
+	key: string,
+	location: string,
+	title: string,
+	image: React.ReactNode,
+}
 
 const Guides = () => {
 	useTitle('Guides');
+
+	const listGuides: ListGuidesProps[] = [
+		{
+			key: useId(),
+			location: '/guides/role-champion',
+			title: 'Trouver son rôle/champion',
+			image: role,
+		},
+		{
+			key: useId(),
+			location: '/guides/progresser-sur-leagueOfLegends',
+			title: 'Progresser sur League of Legends',
+			image: progression,
+		},
+		{
+			key: useId(),
+			location: '/guides/sortir-du-bas-elo',
+			title: 'Sortir du bas elo',
+			image: lowEloProblem,
+		},
+		{
+			key: useId(),
+			location: '/guides/gagner-sa-phase-de-lane',
+			title: 'Gagner sa phase de lane',
+			image: laneWin,
+		},
+		{
+			key: useId(),
+			location: '/guides/mental&rage',
+			title: 'Le mental & la rage',
+			image: mentalWin,
+		},
+	];
 	return (
 		<motion.div
-			className="guides"
+			className="flex flex-col items-center text"
 			key="guides"
 			initial="in"
 			animate="out"
 			exit="end"
 			variants={animationCardsPage}
 		>
-			<h1 className="globalTitle-page">Guides League of Legends</h1>
-			<p className="guides__intro">Ce sont des guides que j&apos;ai moi même créé à l&apos;aide de <span className='gold'>joueurs pro</span> sur League of Legends. Il y a des astuces sur la <span className='gold'>pratique</span> et beaucoup de théories pour vous aider à progresser.</p>
-			<p className="guides__intro">Pas mal de <span className='gold'>thématiques</span> différentes pour devenir un bon joueur sur ce jeu très frustrant dans la défaite.</p>
-			<div className="guides__together__cards">
+			<h1 className="h1 my-1em">Guides League of Legends</h1>
+			<p>Ce sont des guides que j&apos;ai moi même créé à l&apos;aide de <span className='text-gold'>joueurs pro</span> sur League of Legends. Il y a des astuces sur la <span className='text-gold'>pratique</span> et beaucoup de théories pour vous aider à progresser.</p>
+			<p>Pas mal de <span className='text-gold'>thématiques</span> différentes pour devenir un bon joueur sur ce jeu très frustrant dans la défaite.</p>
+			<div>
 				<motion.div
-					className="guides__cards"
 					variants={cardList}
 					initial="in"
 					key="listGuides"
 					animate="out"
+					className='flex flex-wrap justify-center'
 				>
-					<Link to="/guides/role-champion">
-						<motion.div
-							className="guides__cards__card"
-							variants={card}
-							key="guideRoleChampion"
-						>
-							<h3 className='guides__cards__card__title'>Trouver son rôle/champion</h3>
-							<img src={role} alt="" />
-						</motion.div>
-					</Link>
-					<Link to="/guides/progresser-sur-leagueOfLegends">
-						<motion.div
-							className="guides__cards__card"
-							variants={card}
-							key="guideProgressLol"
-						>
-							<h3>Progresser sur League of Legends</h3>
-							<img src={progression} alt="" />
-						</motion.div>
-					</Link>
-
-					<Link to="/guides/sortir-du-bas-elo">
-						<motion.div
-							className="guides__cards__card"
-							variants={card}
-							key="guideLowElo"
-						>
-							<h3>Sortir du bas Elo</h3>
-							<img src={lowEloProblem} alt="" />
-						</motion.div>
-					</Link>
-					<Link to="/guides/gagner-sa-phase-de-lane">
-						<motion.div
-							className="guides__cards__card"
-							variants={card}
-							key="guideWinLane"
-						>
-							<h3>Gagner sa phase de lane</h3>
-							<img src={laneWin} alt="" />
-						</motion.div>
-					</Link>
-
-					<Link to="/guides/mental&rage">
-						<motion.div
-							className="guides__cards__card"
-							variants={card}
-							key="guideMentalRage"
-						>
-							<h3>Le mental & la rage</h3>
-							<img className="guides__cards__card__test__picture" src={mentalWin} alt="" />
-						</motion.div>
-					</Link>
-					{/* <Link to="/guides/vision-du-jeu">
-          <div className="guides__cards__card">
-            <h3>La vision du jeu</h3>
-            <img src={gameWin} alt="" />
-          </div>
-        </Link> */}
+					{listGuides.map((guide: ListGuidesProps) => (
+						<Link className='w-550px m-1em text-center bg-bgColor p-1rem rounded-md border border-solid shadow-3xl border-transparent transition-all hover:scale-103 hover:duration-100 hover:shadow-hoverGuideCard durantion-300' to={guide.location} key={guide.key}>
+							<motion.div
+								className=""
+								variants={card}
+								key={guide.key}
+							>
+								<h3 className='h3 text-gold m-1rem'>{guide.title}</h3>
+								<img className='w-100% rounded-md' src={guide.image} alt="" />
+							</motion.div>
+						</Link>
+					))}
 				</motion.div>
 			</div>
 		</motion.div>

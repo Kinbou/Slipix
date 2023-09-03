@@ -1,6 +1,5 @@
 import { useId } from 'react';
 import { useLocation } from 'react-router-dom';
-import classNames from 'classnames';
 
 // images
 import tiktok from '@/assets/images/socialNetwork/tiktok.png';

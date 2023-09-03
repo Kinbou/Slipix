@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { BasePage } from './BasePage';
 import Home from '@pages/Home/Home';
-import Presentation from '@pages/Presentation/Presentation';
+import Presentation from '@pages/Presentation';
 import Support from '@pages/Support/Support';
 import Contact from '@pages/Contact';
 import Thanks from '@pages/Thanks/Thanks';

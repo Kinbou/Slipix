@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import Header from '@components/Header';
-import Footer from '@components/Footer/Footer';
+import Footer from '@components/Footer';
 import ScrollToTop from '@components/ScrollToTop';
 
 import BackgroundImage from '@components/BackgroundImage';

@@ -1,12 +1,13 @@
-export interface ButtonProps {
+import { PropsWithChildren } from 'react';
+
+export type ButtonProps = PropsWithChildren<{
   category: 'primary' | 'secondary' | 'tertiary' | 'link' | 'transparent';
-  children: React.ReactNode;
   className?: string;
   onClick?: () => void;
   disabled?: boolean;
   type?: 'button' | 'submit';
   key?: string;
-}
+}>;
 
 const Button = (props: ButtonProps) => {
 	return (

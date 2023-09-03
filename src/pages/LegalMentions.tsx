@@ -34,7 +34,7 @@ const LegalMentions = () => {
 				<p>Hébergeur : Société 02Switch</p>
 				<p>222 Boulevard Gustave Flaubert, 63000 Clermont-Ferrand, France</p>
 				<p>Site Web : www.o2switch.fr/</p>
-				<h2 className="h2 text-gold">Conditions d'utilisation</h2>
+				<h2 className="h2 text-gold">Conditions d&apos;utilisation</h2>
 				<p>
           Ce site est proposé en différents langages web (HTML, HTML5, Javascript,
           CSS, etc…) pour un meilleur confort d’utilisation et un graphisme plus
@@ -87,7 +87,7 @@ const LegalMentions = () => {
           décision.
 				</p>
 				<h2 className="h2 text-gold">Services fournis</h2>
-				<p>L’ensemble des activités de l'association ainsi que ses informations sont
+				<p>L’ensemble des activités de l&apos;association ainsi que ses informations sont
           présentés sur notre site slipix-progresser-sur-league-of-legends.fr.
 				</p>
 				<p>
@@ -106,7 +106,7 @@ const LegalMentions = () => {
           et le site remis à jour à différentes périodes de l’année, mais peut
           toutefois contenir des inexactitudes ou des omissions. Si vous constatez
           une lacune, erreur ou ce qui paraît être un dysfonctionnement, merci de
-          bien vouloir utiliser l'adresse mail donnée, en décrivant le problème de
+          bien vouloir utiliser l&apos;adresse mail donnée, en décrivant le problème de
           la manière la plus précise possible (page posant problème, type
           d’ordinateur et de navigateur utilisé, …).
 				</p>
@@ -154,8 +154,8 @@ const LegalMentions = () => {
 				<p>
           Les sources des informations diffusées sur le site
           slipix-progresser-sur-league-of-legends.fr sont réputées fiables mais le
-          site ne garantit pas qu'il soit exempt de défauts, d'erreurs ou
-          d'omissions.
+          site ne garantit pas qu&apos;il soit exempt de défauts, d&apos;erreurs ou
+          d&apos;omissions.
 				</p>
 				<p>
           Les informations communiquées sont présentées à titre indicatif et général
@@ -163,13 +163,13 @@ const LegalMentions = () => {
           slipix-progresser-sur-league-of-legends.fr ne peut être tenu responsable
           de la modification des dispositions administratives et juridiques
           survenant après la publication. De même, le site ne peut être tenue
-          responsable de l'utilisation et de l'interprétation de l'information
+          responsable de l&apos;utilisation et de l&apos;interprétation de l&apos;information
           contenue dans ce site.
 				</p>
 				<p>
-          L'utilisateur s'assure de garder son mot de passe secret. Toute
+          L&apos;utilisateur s&apos;assure de garder son mot de passe secret. Toute
           divulgation du mot de passe, quelle que soit sa forme, est interdite. Il
-          assume les risques liés à l'utilisation de son identifiant et mot de
+          assume les risques liés à l&apos;utilisation de son identifiant et mot de
           passe. Le site décline toute responsabilité
 				</p>
 				<h2 className="h2 text-gold">Données personnelles</h2>
