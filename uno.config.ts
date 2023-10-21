@@ -5,8 +5,9 @@ export default defineConfig({
 	shortcuts: {
 		// colors
 		'red': 'text-red-800',
-		'green': 'color-rgb(115, 255, 0)',
-		// 'blue': 'color-#00cefe',
+		'green': 'color-#4ADE80',
+		'gold': 'color-#ffaa55',
+		'blue': 'color-#00cefe',
 		// 'blue': 'rgb(13, 151, 185)',
 		'purple': 'color-#ab70eafc',
 		'orange': 'color-#ffa600',
@@ -28,14 +29,28 @@ export default defineConfig({
 			hover:text-gold
 			hover:bg-black hover:border-black`,
 
+		// card transition border
+		'card': `border
+			rounded-xl
+			border-solid
+			shadow-3xl
+			border-transparent
+			transition-all
+			hover:scale-102
+			hover:duration-300
+			hover:shadow-hoverGuideCard
+			durantion-600
+			hover:border-gold
+			`,
+
 		'global_title': 'py-12 text-6xl text-center text-#ffaa55 font-squada',
 
-		'text': 'text-xl leading-normal',
+		'text': 'text-1.5em leading-normal',
 
 		'divider': 'border-gold border w-80%',
 
 		'h1': 'text-6xl text-gold flex items-center font-squada',
-		'h2': 'text-5xl text-shadow-default',
+		'h2': 'text-3xl text-shadow-default',
 		'h3': 'text-4xl',
 	},
 	theme: {
@@ -59,6 +74,7 @@ export default defineConfig({
 		},
 		fontFamily: {
 			squada: ['Squada One', 'cursive'],
+			beba: ['Beba Neus', 'cursive'],
 		},
 		fontSize: {
 			xl: '1.45rem',
@@ -79,6 +95,8 @@ export default defineConfig({
 			'filterGreyBlue': '0 0 0.75rem #465568',
 			'filterBlack': '0 0 0.75rem #232122',
 			'filterYellow': '0 0 0.50rem rgb(220, 207, 20)',
+			'filterObject': '0 0 0.20rem gold',
+			'filterCounter': '0 0 0.8rem rgb(88, 1, 1)',
 		},
 		textShadow: {
 			'default': '2px 2px 30px black',

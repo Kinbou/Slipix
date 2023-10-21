@@ -5,7 +5,6 @@ import App from '@components/App/App';
 import { store } from '@/store';
 
 import 'virtual:uno.css';
-import '@/styles/index.scss';
 
 ReactDOM.createRoot(document.getElementById('root') as Element).render(
 	<Provider store={store}>
