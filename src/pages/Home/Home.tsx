@@ -23,7 +23,7 @@ const Home = () => {
 		>
 			<div className='flex items-center flex-col'>
 				<HomeHeader />
-				<div className="flex items-center flex-col rounded-md bg-bgWhite border border-solid border-gold mb-4em p-1em text">
+				<div className="flex items-center flex-col rounded-md border border-solid border-gold bg-bgWhite mb-4em p-1em text-2xl">
 					<p className='block p-y-.3em'>Le site parfait pour <strong className="text-gold">apprendre</strong> et <strong className="text-gold">maîtriser</strong> les trollpicks !</p>
 					<p className="block p-y-.3em">&quot;C’est en achetant n’importe quoi qu’on OneShot n’importe qui&quot; <span className="text-gold">-Slipix</span></p>
 				</div>

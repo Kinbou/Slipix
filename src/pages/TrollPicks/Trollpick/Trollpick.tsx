@@ -34,9 +34,7 @@ const Trollpick = () => {
 		}
 	}, []);
 
-	console.log('pagecategory', PageCategory);
 	return (
-
 		<div className='text'>
 			{/* {!trollpickIsLoad && <Loader />} */}
 			{true && (
@@ -48,7 +46,7 @@ const Trollpick = () => {
 						<img className="w-25%" src={`${apiBaseUrl}/${trollpick?.logo}`} alt="" />
 
 						<Background>
-							<p className="gold mb-1.5rem text">{trollpick?.introIntro && parse(trollpick?.introIntro)}</p>
+							<p className="gold mb-1.5rem">{trollpick?.introIntro && parse(trollpick?.introIntro)}</p>
 							{trollpick?.introContent && parse(trollpick?.introContent)}
 							<div className="flex justify-evenly m-2em">
 								{trollpick?.trollpickIntroImages?.map((img: ImageProps) => (
@@ -86,18 +84,18 @@ const Trollpick = () => {
 
 						{/* Les sort d'invocateurs */}
 						<Background title="Les sorts d'invocateurs" iconName='fas fa-dragon'>
-							<p className="mb-2rem text-1.5em"><span className="gold">{trollpick.nameIntro}</span> peut se jouer :</p>
+							<p className="mb-1.8rem text-1.8rem"><span className="gold">{trollpick.nameIntro}</span> peut se jouer :</p>
 							<div className='flex' style={{ justifyContent: trollpick?.trollpick_lanes?.length > 2 ? 'space-around' : 'center' }}>
 								{trollpick?.trollpick_lanes?.map((lane: Lanes) => (
 									<div key={lane.id} className='mx-1.5rem'>
 										<img src={`${apiBaseUrl}/${lane.lane.image}`} className="w-80px" alt="" />
 										<div className="flex flex-col border-2px border-solid border-gold rounded-xl p-1rem">
 											<p>{lane.lane.name}</p>
-											<div className='flex items-center text-2em'>
+											<div className='flex items-center text-2rem'>
 												<img className="w-60px m-.5rem rounded-md" src={`${apiBaseUrl}/${lane?.first_level?.first_spell?.image}`} alt="" /> + <img src={`${apiBaseUrl}/${lane?.first_level?.second_spell?.image}`} className="w-60px rounded-md m-0.5rem" alt="" />
 											</div>
 											{lane.second_level_id ? (
-												<div className='flex items-center text-2em'>
+												<div className='flex items-center text-2rem'>
 													<img className="w-60px m-0.5rem rounded-md" src={`${apiBaseUrl}/${lane?.second_level?.first_spell?.image}`} alt="" /> + <img src={`${apiBaseUrl}/${lane?.second_level?.second_spell?.image}`} className="w-60px m-.5rem" alt="" />
 												</div>
 											) : null}
@@ -110,7 +108,7 @@ const Trollpick = () => {
 
 						{/* Les sorts du champion */}
 						<Background title='Les sorts du champion' iconName='fas fa-hat-wizard'>
-							<p className="text-xl mb-2rem">Voici l&apos;ordre des sorts à maxer en priorité quand vous jouez <span className='gold'>{trollpick.name}</span>:</p>
+							<p className="mb-2rem text-1.6rem">Voici l&apos;ordre des sorts à maxer en priorité quand vous jouez <span className='gold'>{trollpick.name}</span>:</p>
 							<div className='flex items-center justify-center mb-2rem'>
 								{trollpick?.sortsOrder?.split('+')?.map((el: string, index: number) => (
 									<>
@@ -118,7 +116,7 @@ const Trollpick = () => {
 											<p>{el}</p>
 											<img className="w-60px" src={`${apiBaseUrl}/images/trollpicks/${trollpick.name.replaceAll(' ', '')}/spells/spell${el}.png`} alt="" />
 										</div>
-										{index + 1 !== trollpick?.sortsOrder?.split('+').length && <span className="text-2em my-.5rem">+</span>}
+										{index + 1 !== trollpick?.sortsOrder?.split('+').length && <span className="text-2rem my-.5rem">+</span>}
 									</>
 								))}
 							</div>
@@ -178,7 +176,7 @@ const Trollpick = () => {
 						<Background>
 							<p>Amusez vous bien et j&apos;espère que cette présentation de <span className='gold'>{trollpick.name}</span> vous aura donné envie d&apos;essayer le champion.</p>
 							<img className={'w-20% rounded-xl my-4em drop-shadow-filterGold'} src={`${apiBaseUrl}/${trollpick?.endPicture}`} alt="" />
-							<p className="text-xl">N&apos;hésitez pas à aller consulter les autres trollpicks de Coach slipix</p>
+							<p className="text-2xl">N&apos;hésitez pas à aller consulter les autres trollpicks de Coach slipix</p>
 						</Background>
 					</div>
 				</>

@@ -8,7 +8,7 @@ const LegalMentions = () => {
 
 	return (
 		<motion.div
-			className="flex flex-col items-center text-center justify-center text-legal_mention p-3em"
+			className="flex flex-col items-center text-center justify-center text-legal_mention p-3rem"
 			key="legalNotice"
 			initial="out"
 			animate="in"

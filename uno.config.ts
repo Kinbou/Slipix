@@ -8,7 +8,6 @@ export default defineConfig({
 		'green': 'color-#4ADE80',
 		'gold': 'color-#ffaa55',
 		'blue': 'color-#00cefe',
-		// 'blue': 'rgb(13, 151, 185)',
 		'purple': 'color-#ab70eafc',
 		'orange': 'color-#ffa600',
 		'black': 'color-black',
@@ -18,16 +17,46 @@ export default defineConfig({
 		'pink': 'color-#ff80af',
 
 		// button
-		'button': `black
-			bg-#ffaa55
+		'button': `
+			black
+			
 			border-rounded
-			py-1
-			px-2
-			border-gold
+			py-.4rem
+			px-.7rem
+			cursor-pointer
+			text-xl
 			overflow-clip
 			border
+			`,
+			
+		'buttonPrimary': `
+			bg-#ffaa55
+			border-gold
 			hover:text-gold
-			hover:bg-black hover:border-black`,
+			hover:bg-black
+			hover:border-black`,
+
+		'buttonYoutube': `
+			text-red-900
+			bg-transparent
+			border-red-900
+			hover:text-white
+			hover:bg-red-900`,
+
+		'buttonTwitch': `
+			text-#9aa5f4
+			bg-transparent
+			border-#9aa5f4
+			hover:text-white
+			hover:bg-#9aa5f4`,
+
+		'buttonDiscord': `
+			text-#7289D9
+			bg-transparent
+			border-#7289D9
+			hover:text-white
+			hover:bg-#7289D9`,
+			
 
 		// card transition border
 		'card': `border
@@ -37,7 +66,7 @@ export default defineConfig({
 			border-transparent
 			transition-all
 			hover:scale-102
-			hover:duration-300
+			hover:duration-200
 			hover:shadow-hoverGuideCard
 			durantion-600
 			hover:border-gold
@@ -45,18 +74,18 @@ export default defineConfig({
 
 		'global_title': 'py-12 text-6xl text-center text-#ffaa55 font-squada',
 
-		'text': 'text-1.5em leading-normal',
+		'text': 'text-1.4rem leading-normal',
 
 		'divider': 'border-gold border w-80%',
 
 		'h1': 'text-6xl text-gold flex items-center font-squada',
-		'h2': 'text-3xl text-shadow-default',
+		'h2': 'text-5xl text-shadow-default',
 		'h3': 'text-4xl',
+		'h4': 'text-3xl',
 	},
 	theme: {
 		colors: {
 			gold: '#ffaa55',
-			// bluee: '#44acd4',
 			contact: 'rgba(0, 0, 0, 0.7)',
 			support: 'rgba(9, 30, 51, 0.7)',
 			legal_mention: 'rgba(255, 255, 255, 0.874)',

@@ -14,7 +14,6 @@ import { trollpick_actions, selectTrollpick } from '@/store/trollpick/trollpick.
 
 import { Trollpick } from '@/api/trollpick/models';
 
-import './trollPicks.scss';
 import Background from '@pages/Guides/Background';
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
@@ -29,7 +28,7 @@ interface TrollpickCardProps {
 const TrollpickCard = ({ name, id, title, image }: TrollpickCardProps) => {
 	return (
 		<div
-			className="m-1em rounded-md trollpicks__cards__cardActif bg-bgColor w-35% pl-.5em"
+			className="m-1em rounded-md card bg-bgColor w-35% pl-.5em"
 			key={id}
 		>
 			<Link to={`/trollpicks/${slugify(name)}/${id}`}>
@@ -38,7 +37,7 @@ const TrollpickCard = ({ name, id, title, image }: TrollpickCardProps) => {
 					key={id}
 					variants={card}
 				>
-					<h3 className="h2 text-gold font-squada w-50%">{title}</h3>
+					<h3 className="text-gold font-squada w-50% h4">{title}</h3>
 					{image && <img className='rounded-md w-45%' src={`${apiBaseUrl}/${image}`} alt="" />}
 				</motion.div>
 			</Link>

@@ -56,8 +56,8 @@ const SocialNetwork = () => {
 	];
 
 	return (
-		<div className='border border-solid border-gold rounded w-80% p-y-2em mb-2em bg-bgCard'>
-			<h2 className='text-gold h2'>Mes réseaux sociaux et plateformes</h2>
+		<div className='border border-solid border-gold rounded w-80% bg-bgCard flex flex-col items-center py-2em'>
+			<h2 className='text-gold h3 text-shadow-default mb-4rem'>Mes réseaux sociaux et plateformes</h2>
 			<div className="flex justify-center">
 				{listSocialNetwork.map((item: ListSocialNetworkProps) => (
 					<div key={item.id} className="flex duration-300 flex-col justify-evenly text-center hover:duration-500 hover:shadow-3xl w-15%" data-state="#about">
