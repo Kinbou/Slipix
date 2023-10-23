@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import parse from 'html-react-parser';
 import cx from 'classnames';
 
-import { Objects, Lanes, Counter, Video, Rune } from '@/api/trollpick/models';
-import { useAppDispatch, useAppSelector } from '@/store';
-import { selectTrollpick, trollpick_actions } from '@/store/trollpick/trollpick.slice';
+import { Objects, Lanes, Counter, Video, Rune, Trollpick } from '@/api/trollpick/models';
+import { getTrollpick } from '@/api/trollpick/trollpick-api';
 import { useTitle } from '@/hooks/useTitle';
 import { PageCategory } from '@/models/breadcrumb';
 
@@ -14,30 +13,31 @@ import Breadcrumb from '@components/Breadcrumb/Breadcrumb';
 import Youtube from '@components/Youtube';
 import Loader from '@components/Loader';
 
-import './trollpick.scss';
-
 interface ImageProps {
   id: number,
   urlImage: string,
 }
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
-const Trollpick = () => {
-	const dispatch = useAppDispatch();
-	const { trollpick } = useAppSelector(selectTrollpick);
+const TrollpickPage = () => {
+	const [trollpick, setTrollpick] = useState<Trollpick>();
 	const slug = useParams();
 	useTitle(`Trollpicks - ${slug.name}`);
 
+	const fetchTrollpick = async (id: string) => {
+		const res = await getTrollpick(id);
+		setTrollpick(res);
+	};
+
 	useEffect(() => {
 		if (slug.id) {
-			dispatch(trollpick_actions.getOneTrollpick(slug.id));
+			fetchTrollpick(slug.id);
 		}
 	}, []);
 
 	return (
 		<div className='text'>
-			{/* {!trollpickIsLoad && <Loader />} */}
-			{true && (
+			{trollpick ? (
 				<>
 					<Breadcrumb pageName={trollpick.name} pageCategory={PageCategory?.trollpicks} />
 					<div className='flex flex-col items-center'>
@@ -179,10 +179,10 @@ const Trollpick = () => {
 							<p className="text-2xl">N&apos;hésitez pas à aller consulter les autres trollpicks de Coach slipix</p>
 						</Background>
 					</div>
-				</>
-			)}
+				</> 
+			): <Loader />}
 		</div>
 	);
 };
 
-export default Trollpick;
+export default TrollpickPage;

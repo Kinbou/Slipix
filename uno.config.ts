@@ -130,5 +130,26 @@ export default defineConfig({
 		textShadow: {
 			'default': '2px 2px 30px black',
 		},
+		animation: {
+			'wiggle': 'wiggle 1s ease-in-out infinite',
+			'three-bounce': 'three-bounce 1s ease-in-out infinite',
+		},
+		keyframes: {
+			wiggle: {
+				'0%, 80%, 100%': { transform: 'scale(0)' },
+				'40%': { transform: 'scale(1.0' },
+			},
+			// three bounce
+			'three-bounce': {
+				'0%, 100%': {
+					transform: 'scale(0.5)',
+					opacity: 0.5,
+				},
+				'50%': {
+					transform: 'scale(2)',
+					opacity: 1,
+				},
+			},
+		},
 	},
 });
