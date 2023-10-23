@@ -70,22 +70,22 @@ const RoleChampion = () => {
 		{
 			id: useId(),
 			question: 'Mon champion doit être au corps à corps ou à distance ?',
-			answer: 'Pas vraiment compliqué mais c&apos;est toujours bien de le préciser, ne vous forcez pas à jouer des corps à corps ou des distances si vous n&apos;aimez pas ça.',
+			answer: 'Pas vraiment compliqué mais c\'est toujours bien de le préciser, ne vous forcez pas à jouer des corps à corps ou des distances si vous n\'aimez pas ça.',
 		},
 		{
 			id: useId(),
 			question: 'Mon champion doit être facile ou dur à jouer ?',
-			answer: 'Et oui on a pas tous envie de forcément faire des plays ou des montages en jouant du Yasuo, Zed et j&apos;en passe ! Si vous aimez les champions facile ne vous en privez pas, et à l&apos;inverse si vous aimez les combos et les plays lancez-vous !',
+			answer: 'Et oui on a pas tous envie de forcément faire des plays ou des montages en jouant du Yasuo, Zed et j\'en passe ! Si vous aimez les champions facile ne vous en privez pas, et à l\'inverse si vous aimez les combos et les plays lancez-vous !',
 		},
 		{
 			id: useId(),
 			question: 'Mon champion doit être fort en début de partie ou en fin de partie ?',
-			answer: 'Très important de s&apos;adapter à son champion, si vous aimez jouer relativement safe en début et milieu de partie prenez des champions qui sont redoutables en fin de partie comme Veigar, Vayne, Kayle ou encore Jax ! Pareil pour le contraire si vous aimez mettre du rythme choisissez des champions redoutables en début de partie comme Olaf, Draven, Lee Sin ou bien Qiyana !',
+			answer: 'Très important de s\'adapter à son champion, si vous aimez jouer relativement safe en début et milieu de partie prenez des champions qui sont redoutables en fin de partie comme Veigar, Vayne, Kayle ou encore Jax ! Pareil pour le contraire si vous aimez mettre du rythme choisissez des champions redoutables en début de partie comme Olaf, Draven, Lee Sin ou bien Qiyana !',
 		},
 		{
 			id: useId(),
 			question: 'Mon champion est-il bon pour monter en elo ?',
-			answer: 'Voici la question piège, je reçois beaucoup trop de messages dans ce style. Au début le but n&apos;est pas de trouver un champion bon pour monter mais un champion avec lequel on prend du plaisir ! De + on peut monter avec TOUS les champions, alors ne vous prenez pas la tête à vous demander si votre champion est fort ou non, jouer les champions forts c&apos;est important à partir du Master+ pour optimiser son winrate.',
+			answer: 'Voici la question piège, je reçois beaucoup trop de messages dans ce style. Au début le but n\'est pas de trouver un champion bon pour monter mais un champion avec lequel on prend du plaisir ! De + on peut monter avec TOUS les champions, alors ne vous prenez pas la tête à vous demander si votre champion est fort ou non, jouer les champions forts c\'est important à partir du Master+ pour optimiser son winrate.',
 		},
 	];
 

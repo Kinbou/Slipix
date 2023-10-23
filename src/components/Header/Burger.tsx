@@ -18,7 +18,7 @@ const Burger = ({ handleClick, open }: BurgerProps) => {
 				<div className={cx('-rotate-0 bg-black w-2.5rem h-0.25rem rounded-lg origin-left transition-all duration-300', {
 					['-rotate-37 bg-white']: open,
 				})} />
-			</div> 
+			</div>
 		</>
 	);
 };

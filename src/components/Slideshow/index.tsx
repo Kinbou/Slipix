@@ -3,12 +3,11 @@
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
+import Button from '@components/Buttons/Button/Button';
+
 import youtube from '@/assets/images/banner/youtubeSlipix.png';
 import twitch from '@/assets/images/banner/twitchSlipixSlide.jpg';
 import coaching from '@/assets/images/banner/CoachingSLIPIX.jpg';
-
-import './slideshow.scss';
-import Button from '@components/Buttons/Button/Button';
 
 const Slideshow = (): React.ReactElement => {
 	const proprietes = {

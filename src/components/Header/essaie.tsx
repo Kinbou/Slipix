@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
+
 // @ts-ignore
 import { useMediaPredicate } from 'react-media-hook';
 

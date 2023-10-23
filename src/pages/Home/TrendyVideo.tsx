@@ -1,14 +1,14 @@
 
-import React, { useId } from 'react';
+import { useId } from 'react';
 
-import Boom from '@/assets/images/picturesYoutube/boom.jpg';
-import Legolash from '@/assets/images/picturesYoutube/legolash.jpg';
-import Morgrana from '@/assets/images/picturesYoutube/morgrana.jpg';
-import Tahmquiche from '@/assets/images/picturesYoutube/tahmquiche.jpg';
+import dracolaf from '@/assets/images/picturesYoutube/dracolaf.png';
+import impossibleGragas from '@/assets/images/picturesYoutube/impossibleGragas.jpg';
+import merguezEzreal from '@/assets/images/picturesYoutube/merguezEzreal.jpg';
+import tartibriar from '@/assets/images/picturesYoutube/tartibriar.jpg';
 
 interface VideosProps {
 	key: string,
-	image: React.ReactNode,
+	image: string,
 	title: string,
 	url: string
 }
@@ -17,25 +17,25 @@ const TrendyVideo = () => {
 	const videos: VideosProps[] = [
 		{
 			key: useId(),
-			image: Boom,
-			title: 'Boom',
-			url: 'https://www.youtube.com/watch?v=OVFiLjXNgTQ',
+			image: impossibleGragas,
+			title: 'impossibleGragas',
+			url: 'https://www.youtube.com/watch?v=BGmUcsaWLYQ',
 		},
 		{
 			key: useId(),
-			image: Legolash,
-			title: 'Legolash',
-			url: 'https://www.youtube.com/watch?v=9_2jTP6FEVc',
+			image: merguezEzreal,
+			title: 'merguezEzreal',
+			url: 'https://www.youtube.com/watch?v=xdJ1ZswDB_A&t',
 		},	{
 			key: useId(),
-			image: Morgrana,
-			title: 'Morgrana',
-			url: 'https://www.youtube.com/watch?v=U0RruXXnfs0',
+			image: dracolaf,
+			title: 'dracolaf',
+			url: 'https://www.youtube.com/watch?v=PwiZeYTZuGQ&t',
 		},	{
 			key: useId(),
-			image: Tahmquiche,
-			title: 'Tahmquiche',
-			url: 'https://www.youtube.com/watch?v=EA7D1EHgp1s',
+			image: tartibriar,
+			title: 'tartibriar',
+			url: 'https://www.youtube.com/watch?v=jtnYlwWNGrw',
 		},
 	];
 	return (

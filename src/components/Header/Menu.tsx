@@ -56,7 +56,7 @@ const Menu = ({ display, open }: { display?: string, open?: boolean }): React.Re
 					key={item.id}
 					className={({isActive}) => 
 						cx({
-							[headerCss['menuItem--active']]: isActive,
+							['text-gold']: isActive,
 							[headerCss.menuItem]: display === undefined,
 						})}
 				>

@@ -64,7 +64,7 @@ const Trollpick = () => {
 									{trollpick?.trollpickRunes?.map((rune: Rune) => (
 										<div className="flex border-solid border-gold border-b mb-1rem p-1em" key={rune?.id}>
 											<img className="w-48px rounded-50% h-48px" src={`${apiBaseUrl}/${rune?.rune?.image}`} alt="" />
-											<li className='flex-col items-start justify-center flex m-l-1rem'><p className={`decoration-underline p-0 ${rune?.rune?.color}`}>{rune?.rune?.title}:</p><p className='text-left'>{rune?.description}</p></li>
+											<li className='flex-col items-start justify-center flex m-l-1rem'><p className={`decoration-underline p-0 text-${rune?.rune?.color}`}>{rune?.rune?.title}:</p><p className='text-left'>{rune?.description}</p></li>
 										</div>
 									))}
 									<li>{trollpick?.runeContentEnd}</li>

@@ -12,7 +12,7 @@ import role from '@/assets/images/guides/roleChampion.jpg';
 import laneWin from '@/assets/images/guides/laneWin.jpg';
 import progression from '@/assets/images/guides/progression.jpg';
 import mentalWin from '@/assets/images/guides/mentalWin.jpg';
-import lowEloProblem from '@/assets/images/picturesYoutube/PROBLEMEBASELO.jpg';
+import lowEloProblem from '@/assets/images/guides/PROBLEMEBASELO.jpg';
 
 interface ListGuidesProps {
 	key: string,

@@ -34,7 +34,7 @@ const Presentation = () => {
 				<br /><br />
 				<p>Vous l&apos;aurez compris j&apos;aime joué différement, à ma sauce. Pourquoi ? Tout simplement parce que ça m&apos;amuse, c&apos;est le but d&apos;un jeu non ?</p>
 				<p>Jamais j&apos;aurai imaginé un jour vivre des trollpicks sur League of legends et pourtant ...</p>
-				<p>Aujourd&apos;hui je suis le CEO de la <span className='blue'>TDS E-SPORT</span><img src={tds} alt="" className="rounded-md w-4% ml-.5em mt-.5em -mb-.4em mr-.5em" /> (TEAM DU SUD) avec <span className='red'>Sixen</span> qui a pour but de rejoindre la LFL!</p>
+				<p>Aujourd&apos;hui je suis le CEO de la <span className='blue'>TDS E-SPORT</span><img src={tds} alt="" className="rounded-md w-4% ml-.5em mt-.5em -mb-.4em mr-.5em" /> (TEAM DU SUD) avec <span className='red'>Sixen</span> qui se bat en LFL pour le titre!</p>
 				<p>Je vis grâce à <span className='twitch'>Twitch</span>/<span className='red'>Youtube</span> principalement en réalisant à 80% du temps du contenu autour de mes créations. (20% c&apos;est un peu de tryhard sur Gragas)</p>
 				<ul className='flex flex-col items-start m-y-2em'>
 						Le but de ce site est simple :

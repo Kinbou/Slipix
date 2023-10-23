@@ -8,7 +8,7 @@ export default defineConfig({
 		'green': 'color-#4ADE80',
 		'gold': 'color-#ffaa55',
 		'blue': 'color-#00cefe',
-		'purple': 'color-#ab70eafc',
+		'purple': 'color-#8791D7',
 		'orange': 'color-#ffa600',
 		'black': 'color-black',
 		'facebook': 'color-#4267b2',
@@ -19,7 +19,6 @@ export default defineConfig({
 		// button
 		'button': `
 			black
-			
 			border-rounded
 			py-.4rem
 			px-.7rem
@@ -97,6 +96,7 @@ export default defineConfig({
 		},
 		textColor: {
 			blue: '#44acd4',
+			purple: '#8791D7',
 		},
 		minHeight: {
 			fullscreen: 'calc(100vh - 160px)',

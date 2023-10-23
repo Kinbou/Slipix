@@ -6,7 +6,6 @@ import logoSlipix from '@/assets/images/SlipixLogo.png';
 import Burger from './Burger';
 import Menu from './Menu';
 
-import classes from './header.module.scss';
 import headerCss from './header.module.css';
 
 const Header = () => {
@@ -19,7 +18,7 @@ const Header = () => {
 
 	return (
 		<header className='flex h-80px justify-center bg-bgColor'>
-			<nav className={cx('flex items-center justify-center', classes.active)}>
+			<nav className={cx('flex items-center justify-center')}>
 				<img src={logoSlipix} alt="logo" className='hidden' />
 				{isMobile && <div className={cx(headerCss.burgerMenu, {
 					['right-0px']: openBurger,

@@ -133,7 +133,7 @@ const LowElo = () => {
 				<p>Vous avez de quoi vous régaler sur Youtube et Twitch avec les différents animateurs français ! Prenez le temps de regarder et de bien analyser leurs gameplays, c&apos;est toujours bénéfique.</p>
 				<p className="mt-3em">Voici ma playlist YouTube la + complète de League of Legends ! Elle regroupe des <span className="text-green">guides sur tous les thèmes du jeu</span> (environ 100 vidéos au total) Alors régalez vous et je vous promet que la fin sera meilleure que Game of Thrones !</p>
 				<Button>
-					<a href="https://www.youtube.com/playlist?list=PL-u0LV-sQuCqk66I3UstmE1PxvKeSq-XS">Playlist complète: APPRENDRE SUR LEAGUE OF LEGENDS</a>
+					<a target='_blanc' href="https://www.youtube.com/playlist?list=PL-u0LV-sQuCqk66I3UstmE1PxvKeSq-XS">Playlist complète: APPRENDRE SUR LEAGUE OF LEGENDS</a>
 				</Button>
 			</Background>
 			<Background title='Le rythme de jeu' iconName='fas fa-gamepad'>
