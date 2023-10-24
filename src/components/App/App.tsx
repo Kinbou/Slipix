@@ -8,9 +8,7 @@ import '@/styles/reset.css';
 
 
 const TRACKING_ID = 'G-VWTG2C936V';
-ReactGA.initialize(TRACKING_ID, {
-	debug: true,
-});
+ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
 	useEffect(() => {

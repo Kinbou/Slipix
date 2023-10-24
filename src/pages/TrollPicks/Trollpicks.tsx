@@ -28,7 +28,7 @@ interface TrollpickCardProps {
 const TrollpickCard = ({ name, id, title, image }: TrollpickCardProps) => {
 	return (
 		<div
-			className="m-1em rounded-md card bg-bgColor w-35% pl-.5em"
+			className="m-1em rounded-md card bg-bgGuide w-35% pl-.5em"
 			key={id}
 		>
 			<Link to={`/trollpicks/${slugify(name)}/${id}`}>
@@ -37,7 +37,7 @@ const TrollpickCard = ({ name, id, title, image }: TrollpickCardProps) => {
 					key={id}
 					variants={card}
 				>
-					<h3 className="text-gold font-squada w-50% h4">{title}</h3>
+					<h3 className="gold font-squada w-50% h4">{title}</h3>
 					{image && <img className='rounded-md w-45%' src={`${apiBaseUrl}/${image}`} alt="" />}
 				</motion.div>
 			</Link>
@@ -76,7 +76,7 @@ const TrollPicks = () => {
 				<p>Vous l&apos;avez sûrement déjà remarqué dans mes vidéos,  je suis fan des gameplays différents et originaux !</p>
 				<p>L&apos;avantage d&apos;un pick exotique et d&apos;un trollpick c&apos;est premièrement de se taper des bonnes barres de rire mais surtout de surprendre vos adversaires !</p>
 				<p>Voici mes trollpicks que je joue le + souvent, que j&apos;ai theorycraft moi même, adapté moi même à la meta.</p>
-				<p className="red text-3xl mt-1em">Attention</p>
+				<p className="red text-2xl mt-1em">Attention</p>
 				<p><i className="fas fa-exclamation-triangle red mx-0.5em" />Ce ne sont pas des picks optimaux pour monter en ranked ou pour atteindre des objectifs, jouez les en NORMALE DRAFT pour bien vous amuser !<i className="fas fa-exclamation-triangle icons__exclamation red mx-0.5em" /></p>
 			</Background>
 

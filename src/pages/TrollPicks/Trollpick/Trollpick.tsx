@@ -36,13 +36,13 @@ const TrollpickPage = () => {
 	}, []);
 
 	return (
-		<div className='text'>
+		<div>
 			{trollpick ? (
 				<>
 					<Breadcrumb pageName={trollpick.name} pageCategory={PageCategory?.trollpicks} />
 					<div className='flex flex-col items-center'>
 						<h1 className="h1 my-1em">{trollpick.name}</h1>
-						<p>Salut la <span className="red">#TEAMSLIP</span> c&apos;est Coach Slipix et on va parler de <span className="gold">{trollpick?.nameIntro}</span> {trollpick?.nameIntro2} dans League of Legends !</p>
+						<p>Salut la <span className="red">#TEAMSLIP</span> c&apos;est Coach Slipix et on va parler de <span className="gold">{trollpick?.nameIntro}</span> {trollpick?.nameIntro2} dans League of Legends!</p>
 						<img className="w-25%" src={`${apiBaseUrl}/${trollpick?.logo}`} alt="" />
 
 						<Background>
@@ -64,7 +64,7 @@ const TrollpickPage = () => {
 									{trollpick?.trollpickRunes?.map((rune: Rune) => (
 										<div className="flex border-solid border-gold border-b mb-1rem p-1em" key={rune?.id}>
 											<img className="w-48px rounded-50% h-48px" src={`${apiBaseUrl}/${rune?.rune?.image}`} alt="" />
-											<li className='flex-col items-start justify-center flex m-l-1rem'><p className={`decoration-underline p-0 text-${rune?.rune?.color}`}>{rune?.rune?.title}:</p><p className='text-left'>{rune?.description}</p></li>
+											<li className='flex-col items-start justify-center flex m-l-1rem'><p className={`decoration-underline p-0 ${rune?.rune?.color}`}>{rune?.rune?.title}:</p><p className='text-left'>{rune?.description}</p></li>
 										</div>
 									))}
 									<li>{trollpick?.runeContentEnd}</li>

@@ -66,7 +66,7 @@ const Guides = () => {
 			variants={animationCardsPage}
 		>
 			<h1 className="h1 my-1em">Guides League of Legends</h1>
-			<p>Ce sont des guides que j&apos;ai moi même créé à l&apos;aide de <span className='text-gold'>joueurs pro</span> sur League of Legends. Il y a des astuces sur la <span className='text-gold'>pratique</span> et beaucoup de théories pour vous aider à progresser.</p>
+			<p className='text-bold'>Ce sont des guides que j&apos;ai moi même créé à l&apos;aide de <span className='text-gold'>joueurs pro</span> sur League of Legends. Il y a des astuces sur la <span className='text-gold'>pratique</span> et beaucoup de théories pour vous aider à progresser.</p>
 			<p>Pas mal de <span className='text-gold'>thématiques</span> différentes pour devenir un bon joueur sur ce jeu très frustrant dans la défaite.</p>
 			<div>
 				<motion.div
@@ -77,7 +77,7 @@ const Guides = () => {
 					className='flex flex-wrap justify-center'
 				>
 					{listGuides.map((guide: ListGuidesProps) => (
-						<Link className='w-550px m-1em text-center bg-bgColor p-1rem rounded-md border border-solid shadow-3xl border-transparent transition-all hover:scale-103 hover:duration-100 hover:shadow-hoverGuideCard durantion-300' to={guide.location} key={guide.key}>
+						<Link className='w-550px m-1em text-center p-1rem rounded-md border border-solid shadow-3xl border-transparent transition-all hover:scale-103 hover:duration-100 hover:shadow-hoverGuideCard durantion-300 bg-support' to={guide.location} key={guide.key}>
 							<motion.div
 								className=""
 								variants={card}

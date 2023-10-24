@@ -39,8 +39,8 @@ const TrendyVideo = () => {
 		},
 	];
 	return (
-		<div className='flex flex-col items-center rounded-md border border-solid border-gold p-2rem bg-bgWhite mb-5em m-x-5rem'>
-			<h2 className='text-gold h3 text-shadow-default'>Découvrez les vidéos tendance trollpicks</h2>
+		<div className='flex flex-col items-center rounded-md border border-solid p-2rem bg-bgCard mb-5em m-x-5rem border-gold'>
+			<h2 className='gold h3 text-shadow-default'>Découvrez les vidéos tendance trollpicks</h2>
 			<div className="flex items-center justify-center w-80% flex-wrap">
 				{videos.map((video) => (
 					<a key={video.key} className='contents' href={video.url} target="_blanc"><img className='rounded-md border border-solid border-transparent transition-all hover:scale-103 duration-300 m-1em w-35% hover:border-blue hover:duration-200' src={video.image} alt={video.title} /></a>

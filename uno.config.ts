@@ -31,7 +31,7 @@ export default defineConfig({
 		'buttonPrimary': `
 			bg-#ffaa55
 			border-gold
-			hover:text-gold
+			hover:gold
 			hover:bg-black
 			hover:border-black`,
 
@@ -77,26 +77,22 @@ export default defineConfig({
 
 		'divider': 'border-gold border w-80%',
 
-		'h1': 'text-6xl text-gold flex items-center font-squada',
+		'h1': 'text-6xl gold flex items-center font-squada',
 		'h2': 'text-5xl text-shadow-default',
 		'h3': 'text-4xl',
 		'h4': 'text-3xl',
 	},
 	theme: {
 		colors: {
-			gold: '#ffaa55',
 			contact: 'rgba(0, 0, 0, 0.7)',
-			support: 'rgba(9, 30, 51, 0.7)',
+			support: 'rgba(9, 30, 51, 0.8)',
 			legal_mention: 'rgba(255, 255, 255, 0.874)',
 			bgColor: 'rgba(28,36, 45, .5)',
-			bgCard: 'rgba(28,36, 45, .15)',
-			bgWhite: 'rgba( 255, 255, 255, 0.1)',
+			bgCard: 'rgba(28,36, 45, .55)',
+			bgWhite: 'rgba(255, 255, 255, 0.1)',
 			bgPresentation: 'rgba(35, 22, 4, 0.7)',
-			bgGuide: 'rgba(28, 36, 45, 0.8)',
-		},
-		textColor: {
-			blue: '#44acd4',
-			purple: '#8791D7',
+			bgGuide: 'rgba(28, 36, 45, 0.9)',
+			gold:'#ffaa55',
 		},
 		minHeight: {
 			fullscreen: 'calc(100vh - 160px)',
