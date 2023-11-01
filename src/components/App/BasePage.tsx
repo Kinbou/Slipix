@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 import Header from '@components/Header'
 import Footer from '@components/Footer'
@@ -16,13 +16,9 @@ export interface BasePageProps {
 export const BasePage = ({ children, showHeader = true }: BasePageProps) => {
   const { pathname } = useLocation()
 
-  useEffect(() => {
-    console.log(
-      'basepage page view',
-      window.location.pathname + window.location.search,
-    )
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [window.location.pathname])
+  const TRACKING_ID = 'G-VWTG2C936V'
+  ReactGA.initialize(TRACKING_ID)
+  ReactGA.send({ hitType: 'pageview', page: pathname, title: pathname })
 
   return (
     <>
