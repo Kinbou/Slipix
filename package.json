@@ -60,6 +60,7 @@
     "eslint-plugin-react": "^7.32.2",
     "postcss": "^8.4.27",
     "postcss-preset-env": "^9.1.1",
+    "prettier": "3.0.3",
     "sass": "^1.65.1",
     "typescript": "^5.0.4",
     "unocss": "^0.55.0",
