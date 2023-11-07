@@ -52,25 +52,25 @@
     position: absolute;
     top: -2px;
     padding-left: 1rem;
-    right: -300px;
+    right: 0px;
     box-sizing: border-box;
-    background-color: #0c1015;
-    color: white;
     min-width: 30%;
     border-radius: 0 0 1rem 0;
     transition:all .5s ease-in-out;
     display: flex;
     font-size: 0.8em;
     flex-direction: column;
+    background-color: #0c1015;
     border: 1px solid #c28f2c;
+    color: white;
   }
 
   .mobile {
-    display: flex;
     flex-direction: column;
+    display: none;
     padding: 1rem 0;
     right: 30%;
-    transition: all .10s ;
+    transition: all .10s;
   }
 
 

@@ -1,16 +1,19 @@
 interface SupportComponentProps {
-  title: string;
-  icon?: React.ReactNode;
-  children: React.ReactNode;
+  title: string
+  icon?: React.ReactNode
+  children: React.ReactNode
 }
 
 const SupportComponent = ({ title, icon, children }: SupportComponentProps) => {
-	return (
-		<div className="my-12 px-10">
-			<h5 className="text-gold mb-12 text-title_h5">{title}{icon}</h5>
-			{children}
-		</div>
-	);
-};
+  return (
+    <div>
+      <h2 className="text-gold mb-1rem h3">
+        {title}
+        {icon}
+      </h2>
+      {children}
+    </div>
+  )
+}
 
-export default SupportComponent;
+export default SupportComponent

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { PropsWithChildren, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import ReactGA from 'react-ga4'
 
@@ -8,10 +8,9 @@ import ScrollToTop from '@components/ScrollToTop'
 
 import BackgroundImage from '@components/BackgroundImage'
 
-export interface BasePageProps {
-  children: React.ReactNode
+export type BasePageProps = PropsWithChildren<{
   showHeader?: boolean
-}
+}>
 
 export const BasePage = ({ children, showHeader = true }: BasePageProps) => {
   const { pathname } = useLocation()
