@@ -54,7 +54,7 @@ const Menu = ({
     <div
       className={cx('text', {
         ['hidden right-0']: display === 'mobile',
-        ['flex flex-col pr-4rem pt-4rem text-1.2rem transition-all duration-600']:
+        ['flex flex-col pr-2rem pt-4rem text-1.2rem transition-all duration-600']:
           open,
       })}
     >

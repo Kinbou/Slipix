@@ -20,12 +20,14 @@ export default defineConfig({
     button: `
 			black
 			border-rounded
-			py-.4rem
-			px-.7rem
 			cursor-pointer
-			text-xl
+      py-.2rem
+      px-.5rem
+			text
 			overflow-clip
 			border
+			lg:py-.4rem
+			lg:px-.7rem
 			`,
 
     buttonPrimary: `
@@ -72,14 +74,14 @@ export default defineConfig({
 
     global_title: 'py-12 text-6xl text-center text-#ffaa55 font-squada',
 
-    text: '2xl:text-1.4rem leading-normal xs:text-0.8rem',
+    text: 'xl:text-1.4rem md:text-1.2rem leading-normal text-0.8rem',
 
     divider: 'border-gold border w-80%',
 
-    h1: 'xl:text-6xl xs:text-2xl gold flex items-center font-squada',
-    h2: 'xl:text-5xl text-shadow-default xs:text-xl',
-    h3: 'xl:text-4xl xs:text-1.2rem',
-    h4: 'xl:text-3xl',
+    h1: 'lg:text-6xl text-2xl gold flex items-center font-squada',
+    h2: 'lg:text-5xl text-shadow-default xs:text-xl',
+    h3: 'lg:text-4xl text-1.2rem',
+    h4: 'lg:text-3xl',
   },
   theme: {
     breakpoints: {

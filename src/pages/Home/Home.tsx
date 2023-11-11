@@ -23,7 +23,7 @@ const Home = () => {
     >
       <div className="flex items-center text-center flex-col">
         <HomeHeader />
-        <div className="flex items-center flex-col rounded-md border border-solid border-gold bg-bgCard mb-4em p-1em lg:w-auto w-95%">
+        <div className="flex items-center flex-col rounded-md border border-solid border-gold bg-bgCard  lg:mb-4em p-1em lg:w-auto w-95%">
           <p className="block p-y-.3em">
             Le site parfait pour <strong className="gold">apprendre</strong> et{' '}
             <strong className="gold">maîtriser</strong> les trollpicks !

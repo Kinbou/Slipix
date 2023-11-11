@@ -24,12 +24,12 @@ const Presentation = () => {
     >
       <h1 className="h1 mt-1em">Présentation</h1>
       <div className="lg:w-70% w-90% bg-bgPresentation my-3em rounded-md flex flex-col items-center p-1rem lg:p-2rem">
-        <h2 className="h2">
+        <h2 className="h3">
           Salut c&apos;est <span className="red">Slipix</span> bienvenue sur
           LEAGUE OF TROLLPICKS !
         </h2>
         <img
-          className="rounded-md w-18% shadow-black shadow-3xl mb-2em"
+          className="rounded-md w-18% shadow-black shadow-3xl my-1rem lg:my-2rem"
           src={logoSlipix}
           alt=""
         />

@@ -64,13 +64,13 @@ const Guides = () => {
       variants={animationCardsPage}
     >
       <h1 className="h1 my-1em">Guides League of Legends</h1>
-      <p className="text-bold">
+      <p className="text-bold mx-1rem text-center">
         Ce sont des guides que j&apos;ai moi même créé à l&apos;aide de{' '}
         <span className="text-gold">joueurs pro</span> sur League of Legends. Il
         y a des astuces sur la <span className="text-gold">pratique</span> et
         beaucoup de théories pour vous aider à progresser.
       </p>
-      <p>
+      <p className="mx-1rem text-center">
         Pas mal de <span className="text-gold">thématiques</span> différentes
         pour devenir un bon joueur sur ce jeu très frustrant dans la défaite.
       </p>
