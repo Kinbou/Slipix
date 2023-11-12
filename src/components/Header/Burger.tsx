@@ -1,56 +1,44 @@
-import { useState } from 'react';
-import styled from 'styled-components';
+import cx from 'classnames'
 
-import Menu from '@components/Header/Menu';
+interface BurgerProps {
+  handleClick: () => void
+  open: boolean
+}
 
-const StyledBurger = styled.div`
-  width: 2.5rem;
-  height: 2rem;
-  position: fixed;
-  top:20px;
-  right: 20px;
-  z-index: 99;
-  display: ${({ open }: {open: boolean}) => open ? 'flex' : 'none'};
+const Burger = ({ handleClick, open }: BurgerProps) => {
+  return (
+    <div
+      className={
+        'fixed top-20px right-20px flex justify-around flex-col flex-nowrap cursor-pointer h-35px z-10'
+      }
+      onClick={handleClick}
+    >
+      <div
+        className={cx(
+          'rotate-0 bg-black w-2.5rem h-0.25rem rounded-lg origin-left transition-all duration-300',
+          {
+            ['rotate-37 bg-white']: open,
+          },
+        )}
+      />
+      <div
+        className={cx(
+          'translate-x-0 bg-black w-2.5rem h-0.25rem rounded-lg transition-all duration-300',
+          {
+            ['opacity-0']: open,
+          },
+        )}
+      />
+      <div
+        className={cx(
+          '-rotate-0 bg-black w-2.5rem h-0.25rem rounded-lg origin-left transition-all duration-300',
+          {
+            ['-rotate-37 bg-white']: open,
+          },
+        )}
+      />
+    </div>
+  )
+}
 
-  @media (max-width: 1000px) {
-    display: flex;
-    justify-content: space-around;
-    flex-flow: column nowrap;
-  }
-
-  div {
-    width: 2.5rem;
-    height: .25rem;
-    background-color: ${({ open }: { open: boolean }): string => (open ? '#ccc' : 'black')};
-    border-radius: 10px;
-    transform-origin: 1px;
-    transition: all .3s linear;
-
-    &:nth-child(1) {
-      transform: ${({ open }: { open: boolean }): string => (open ? 'rotate(37deg)' : 'rotate(0)')};
-    }
-    &:nth-child(2) {
-      transform: ${({ open }: { open: boolean }) => (open ? 'translateX(100%)' : 'translateX(0)')};
-      opacity: ${({ open }: { open: boolean }) => (open ? 0 : 1)};
-    }
-    &:nth-child(3) {
-      transform: ${({ open }: { open: boolean }) => (open ? 'rotate(-37deg)' : 'rotate(0)')};
-    }
-  }
-`;
-
-const Burger = () => {
-	const [open, setOpen] = useState(false);
-	return (
-		<>
-			<StyledBurger open={open} onClick={() => setOpen(!open)}>
-				<div />
-				<div />
-				<div />
-			</StyledBurger>
-			<Menu open={open} setOpen={setOpen} />
-		</>
-	);
-};
-
-export default Burger;
+export default Burger

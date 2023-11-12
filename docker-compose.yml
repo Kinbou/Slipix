@@ -9,18 +9,6 @@ services:
     ports:
       - 8999:80
 
-  back:
-    container_name: slipix_back
-    env_file:
-      - ./backend/.env.local
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    volumes:
-      - ./backend:/app
-    ports:
-      - 8000:8000
-
   db:
     container_name: slipix_db
     image: mariadb:10.3.31

@@ -1,38 +1,40 @@
-import cx from 'classnames';
+import { PropsWithChildren } from 'react'
+import cx from 'classnames'
 
-import styles from './button.module.scss';
-
-export interface ButtonProps {
-  category: 'primary' | 'secondary' | 'tertiary' | 'link' | 'transparent';
-  children: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-  disabled?: boolean;
-  type?: 'button' | 'submit';
-  key?: string;
-}
+export type ButtonProps = PropsWithChildren<{
+  category: 'primary' | 'youtube' | 'twitch' | 'discord'
+  className?: string
+  onClick?: () => void
+  disabled?: boolean
+  type?: 'button' | 'submit'
+}>
 
 const Button = (props: ButtonProps) => {
-	return (
-		<button
-			className={cx(styles.button, props.className)}
-			type={props.type}
-			disabled={props.disabled}
-			onClick={props.onClick}
-		>
-			{props.children}
-		</button>
-	);
-};
+  return (
+    <button
+      className={cx('button', {
+        ['buttonPrimary']: props.category === 'primary',
+        ['buttonYoutube']: props.category === 'youtube',
+        ['buttonTwitch']: props.category === 'twitch',
+        ['buttonDiscord']: props.category === 'discord',
+      })}
+      type={props.type}
+      disabled={props.disabled}
+      onClick={props.onClick}
+    >
+      {props.children}
+    </button>
+  )
+}
 
 const defaultProps = {
-	className: undefined,
-	category: 'primary',
-	onClick: undefined,
-	disabled: false,
-	type: 'button',
-};
+  className: undefined,
+  category: 'primary',
+  onClick: undefined,
+  disabled: false,
+  type: 'button',
+}
 
-Button.defaultProps = defaultProps;
+Button.defaultProps = defaultProps
 
-export default Button;
+export default Button

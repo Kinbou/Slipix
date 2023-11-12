@@ -19,6 +19,7 @@ const getOneTrollpick = createAsyncThunk<Trollpick, string>('trollpick/get-one',
 });
 
 
+
 export const trollpickActions = {
 	getTrollpicksActif,
 	getTrollpicksSoon,

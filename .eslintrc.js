@@ -1,50 +1,20 @@
 module.exports = {
-	'globals': {
-		defineProps: 'readonly',
-		defineExpose: 'readonly',
-		defineEmits: 'readonly',
-	},
-	'env': {
-		'browser': true,
-		'es2021': true,
-	},
-	'extends': [
-		'eslint:recommended',
-		'plugin:react/recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:react/jsx-runtime',
-	],
-	'overrides': [
-	],
-	'parser': '@typescript-eslint/parser',
-	'parserOptions': {
-		'ecmaVersion': 'latest',
-		'sourceType': 'module',
-	},
-	'plugins': [
-		'react',
-		'@typescript-eslint',
-	],
-	'rules': {
-		'indent': [
-			'error',
-			'tab',
-		],
-		'linebreak-style': [
-			'error',
-			'unix',
-		],
-		'quotes': [
-			'error',
-			'single',
-		],
-		'semi': [
-			'error',
-			'always',
-		],
-		'comma-dangle': [
-			'error',
-			'always-multiline',
-		],
-	},
-};
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react-refresh'],
+  rules: {
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+    'react-hooks/exhaustive-deps': 'off',
+    semi: ['error', 'never'],
+  },
+}
