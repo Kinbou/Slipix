@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://leagueoftrollpicks.fr/</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/guides</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>  
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/guides/role-champion</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leagueoftrollpicks.fr/guides/progresser-sur-leagueOfLegends</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leagueoftrollpicks.fr/guides/sortir-du-bas-elo</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leagueoftrollpicks.fr/guides/gagner-sa-phase-de-lane</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://leagueoftrollpicks.fr/guides/mental&amp;rage</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
+  <!-- ///////////// TROLLPICKS ////////////////////// -->
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/xin-zhao-autoroute/1</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/thresh-flak-oneshot/2</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url> -->
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/caitlyn-sniper/3</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/kaisa-laser/4</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/lucian-lance-missiles/5</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/zed-foret/6</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/jinx-bombardement/7</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/dracolaf/8</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/braum-paf/9</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/tartisett/12</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/nami-sushi/16</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/ultcian/17</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/mordecasseur/18</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/grotilus/19</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/ajax/20</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/trollpicks/tartarius/21</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/presentation</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/me-soutenir</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://leagueoftrollpicks.fr/me-contacter</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leagueoftrollpicks.fr/mentions-legales</loc>
+    <lastmod>2018-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

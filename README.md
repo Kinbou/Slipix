@@ -7,5 +7,4 @@ https://www.slipix-progresser-sur-league-of-legends.fr/
 ViteJs
 ReactJs
 TypeScript
-Laravel
 PhpMyAdmin
