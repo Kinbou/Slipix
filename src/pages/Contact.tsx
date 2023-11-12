@@ -12,7 +12,7 @@ const Contact = () => {
   useTitle('Me contacter')
   return (
     <motion.div
-      className="color-white flex flex-col items-center leading-relaxed min-h-fullscreen"
+      className="flex flex-col items-center leading-relaxed min-h-fullscreen"
       key="contact"
       initial="out"
       animate="in"
@@ -20,10 +20,10 @@ const Contact = () => {
       variants={animationOne}
       transition={transition}
     >
-      <h1 className="h1 mb-1rem">Me Contacter</h1>
-      <div className="bg-contact w-3/5 py-12 px-20 rounded-3xl text-start <md:px-5 <md:w-95% <xl:w-80% mb-8">
+      <h1 className="h1 mt-1rem">Me Contacter</h1>
+      <div className="bg-contact w-3/5 py-12 px-20 rounded-3xl text-start my-3em <md:px-5 <md:w-95% <xl:w-80% mb-8">
         <div>
-          <p className="pb-2 h3 font-600">
+          <p className="pb-2 h4 font-600">
             Pour me contacter c'est simple il y a 2 options :
           </p>
           <ul>

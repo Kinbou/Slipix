@@ -7,9 +7,11 @@ import headerCss from './header.module.css'
 const Menu = ({
   display,
   open,
+  handleClickBurgerMenu,
 }: {
   display?: string
   open?: boolean
+  handleClickBurgerMenu?: () => void
 }): React.ReactElement => {
   interface ListNavProps {
     link: string
@@ -68,6 +70,11 @@ const Menu = ({
               [headerCss.menuItem]: display === undefined,
             })
           }
+          onClick={() => {
+            if (handleClickBurgerMenu) {
+              handleClickBurgerMenu()
+            }
+          }}
         >
           {item.name}
         </NavLink>
