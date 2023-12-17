@@ -1,10 +1,12 @@
 FROM node:bookworm AS builder
-COPY . /home/node/app
 WORKDIR /home/node/app
-ENV SHELL=/usr/bin/bash
+COPY package.json pnpm-lock.yaml ./
 RUN wget -qO- https://get.pnpm.io/install.sh | sh -
 ENV PATH="$PATH:/root/.local/share/pnpm"
 RUN pnpm install
+COPY ./src ./src
+COPY index.html postcss.config.js tsconfig.json uno.config.ts vite.config.ts ./
+ENV SHELL=/usr/bin/bash
 ENV NODE_ENV=production
 RUN pnpm run build
 
