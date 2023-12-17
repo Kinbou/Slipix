@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@ctrl/react-adsense': ^1.7.0
   '@reduxjs/toolkit': ^2.0.1
   '@types/react': ^18.2.43
   '@types/react-dom': ^18.2.17
@@ -53,6 +54,7 @@ specifiers:
   zxcvbn: ^4.4.2
 
 dependencies:
+  '@ctrl/react-adsense': 1.7.0
   '@reduxjs/toolkit': 2.0.1_56w24abmtad75yqcpttrg3mf54
   axios: 1.6.2
   classnames: 2.3.2
@@ -881,6 +883,12 @@ packages:
     dependencies:
       postcss-selector-parser: 6.0.13
     dev: true
+
+  /@ctrl/react-adsense/1.7.0:
+    resolution: {integrity: sha512-TrDGbAo8KRPHnX/Jtv9CkMV90vK7M/sz8KNECTQgcsHO4e5GyNZL3jqCY4WA0MCwfT48NH34qzyV9e2SWsceLw==}
+    dependencies:
+      tslib: 2.6.2
+    dev: false
 
   /@emotion/is-prop-valid/0.8.8:
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
@@ -5844,7 +5852,6 @@ packages:
 
   /tslib/2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
-    dev: true
 
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
